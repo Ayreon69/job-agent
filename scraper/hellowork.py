@@ -15,7 +15,7 @@ from urllib.parse import quote
 from playwright.sync_api import Page, sync_playwright
 
 BASE_URL = "https://www.hellowork.com"
-SEARCH_URL = BASE_URL + "/fr-fr/emploi/recherche.html?k={query}&p={page}"
+SEARCH_URL = BASE_URL + "/fr-fr/emploi/recherche.html?k={query}&l={location}&d=all&p={page}"
 COOKIE_BUTTON = "button:has-text(\"Accepter\")"
 
 logger = logging.getLogger(__name__)
@@ -45,12 +45,12 @@ def _extract_source_id(url: str) -> str:
     return match.group(1)
 
 
-def search_jobs(page: Page, query: str, max_pages: int = 1) -> list[JobListing]:
+def search_jobs(page: Page, query: str, location: str = "", max_pages: int = 1) -> list[JobListing]:
     """Scrape search result pages for a query, returning job summaries."""
     listings: list[JobListing] = []
 
     for page_num in range(1, max_pages + 1):
-        url = SEARCH_URL.format(query=quote(query), page=page_num)
+        url = SEARCH_URL.format(query=quote(query), location=quote(location), page=page_num)
         logger.info("Fetching search page %d: %s", page_num, url)
         page.goto(url, timeout=30000)
         page.wait_for_timeout(2000)
@@ -128,7 +128,7 @@ def fetch_job_detail(page: Page, listing: JobListing) -> dict:
     }
 
 
-def scrape(query: str, max_pages: int = 1, headless: bool = True) -> list[dict]:
+def scrape(query: str, location: str = "", max_pages: int = 1, headless: bool = True) -> list[dict]:
     """Run the full scrape (search + detail) for a query, return job dicts."""
     results: list[dict] = []
 
@@ -136,8 +136,8 @@ def scrape(query: str, max_pages: int = 1, headless: bool = True) -> list[dict]:
         browser = p.chromium.launch(headless=headless)
         page = browser.new_page()
 
-        listings = search_jobs(page, query, max_pages=max_pages)
-        logger.info("Found %d listings for query %r", len(listings), query)
+        listings = search_jobs(page, query, location=location, max_pages=max_pages)
+        logger.info("Found %d listings for query %r in %r", len(listings), query, location or "(national)")
 
         for listing in listings:
             try:

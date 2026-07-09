@@ -42,5 +42,16 @@ c'est le premier endroit à vérifier (`fetch_job_detail` dans `scraper/hellowor
   disponible mais pas testé à grande échelle).
 - Pas de retry/backoff sur échec réseau individuel (une offre en échec est juste
   loggée et sautée, cf. `scraper/run.py`).
-- Pas encore de filtrage géographique appliqué au scraping lui-même (les règles de
-  ciblage géo du CLAUDE.md s'appliqueront à l'étape scoring, pas ici).
+
+**Correctif post-session (2026-07-10) — filtrage géographique :**
+Hellowork ne référence que des offres France (pas de Suisse/UAE/Moyen-Orient) : les
+priorités géo hautes du CLAUDE.md (Suisse romande, UAE) devront venir d'autres
+sources à scraper plus tard. En attendant, le scraping était non filtré côté requête
+(résultats dispersés dans toute la France/Belgique/Luxembourg). Corrigé en ajoutant
+le paramètre de localisation Hellowork (`l=`) : `scraper/hellowork.py` accepte
+maintenant un paramètre `location`, et `scraper/run.py` cible par défaut
+`Rhône-Alpes` (élargi de Lyon pour couvrir aussi Grenoble, Annecy, Saint-Étienne...).
+Testé : `python -m scraper.run --query "data analyst" --pages 1` → 30 offres, toutes
+en 69/38/74/01 (+ Clermont-Ferrand en marge de région). Le paramètre de rayon
+Hellowork (`ray=`) n'a pas d'effet observé en `d=all` ; c'est bien `l=<région>` qui
+fait le filtrage.
