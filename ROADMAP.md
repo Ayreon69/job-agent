@@ -55,3 +55,12 @@ Testé : `python -m scraper.run --query "data analyst" --pages 1` → 30 offres,
 en 69/38/74/01 (+ Clermont-Ferrand en marge de région). Le paramètre de rayon
 Hellowork (`ray=`) n'a pas d'effet observé en `d=all` ; c'est bien `l=<région>` qui
 fait le filtrage.
+
+**Correctif post-session (2026-07-10) — exclusion Alternance/Stage :**
+Le scraping remontait aussi des offres Alternance et Stage, non pertinentes pour un
+profil 3,5+ ans d'XP en poste. Hellowork filtre le type de contrat via des paramètres
+`c=` répétés dans l'URL (ex: `c=CDI&c=CDD&c=Freelance...`) plutôt qu'une liste
+séparée par virgules. `scraper/hellowork.py` envoie désormais tous les types de
+contrat sauf Alternance/Stage/Stage de lycée (`CONTRACT_TYPES` dans
+`scraper/hellowork.py`, personnalisable via le paramètre `contract_types`). Testé :
+30 offres scrapées, aucune Alternance/Stage dans les résultats.
