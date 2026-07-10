@@ -1,8 +1,11 @@
 """Index the user profile into ChromaDB and expose similarity search over it.
 
-Embeddings are generated locally via ChromaDB's default embedding function
-(sentence-transformers all-MiniLM-L6-v2, downloaded on first use) — no API
-key or external call required.
+Embeddings are generated locally via sentence-transformers, using a
+multilingual model (paraphrase-multilingual-mpnet-base-v2) — no API key or
+external call required. ChromaDB's own default embedding function
+(all-MiniLM-L6-v2) was tried first but proved too weak on French job-offer
+text and on distinguishing real matches from noise; see ROADMAP.md session 2
+follow-up for the comparison.
 """
 
 from __future__ import annotations
@@ -11,12 +14,18 @@ from pathlib import Path
 
 import chromadb
 from chromadb.api.models.Collection import Collection
+from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 
 from scoring.embeddings.parser import Chunk, parse_profile_dir
 
 PROFILE_DIR = Path(__file__).parent.parent / "profile"
 CHROMA_PATH = Path(__file__).parent / "chroma"
 COLLECTION_NAME = "profile"
+EMBEDDING_MODEL = "paraphrase-multilingual-mpnet-base-v2"
+
+
+def get_embedding_function() -> SentenceTransformerEmbeddingFunction:
+    return SentenceTransformerEmbeddingFunction(model_name=EMBEDDING_MODEL)
 
 
 def get_client() -> chromadb.ClientAPI:
@@ -33,7 +42,7 @@ def build_index(profile_dir: Path = PROFILE_DIR) -> Collection:
     client.delete_collection(COLLECTION_NAME) if COLLECTION_NAME in {
         c.name for c in client.list_collections()
     } else None
-    collection = client.create_collection(COLLECTION_NAME)
+    collection = client.create_collection(COLLECTION_NAME, embedding_function=get_embedding_function())
 
     collection.add(
         ids=[c.id for c in chunks],
@@ -57,7 +66,7 @@ def _chunk_from_result(id_: str, document: str, metadata: dict) -> Chunk:
 def search_profile(query: str, n_results: int = 3) -> list[Chunk]:
     """Return the top-N profile chunks most relevant to a query, by embedding similarity."""
     client = get_client()
-    collection = client.get_collection(COLLECTION_NAME)
+    collection = client.get_collection(COLLECTION_NAME, embedding_function=get_embedding_function())
 
     results = collection.query(query_texts=[query], n_results=n_results)
 

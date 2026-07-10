@@ -94,13 +94,37 @@ sur 4 requêtes représentatives des cas d'usage scoring :
   compétence maîtrisée)
 
 **Décision technique :** embeddings locaux plutôt que via l'API Mistral, pour rester
-gratuit/offline sur cette étape d'apprentissage RAG. Si la qualité de retrieval
-s'avère insuffisante en session 3 (scoring), reconsidérer un modèle d'embedding plus
-gros ou une API dédiée.
+gratuit/offline sur cette étape d'apprentissage RAG.
 
 **Limites connues :**
 - `build_index` supprime et recrée la collection à chaque exécution (pas d'update
   incrémental) — acceptable vu la taille du profil (30 chunks), à revoir si le
   profil grossit significativement.
-- Pas de test sur la qualité de retrieval au-delà d'une inspection manuelle des
-  résultats ci-dessus.
+
+**Correctif post-session (2026-07-10) — retrieval réaliste et changement de modèle
+d'embedding :**
+Les 4 requêtes de test initiales étaient trop faciles (vocabulaire proche des chunks
+eux-mêmes). Un test plus sérieux avec le modèle par défaut (`all-MiniLM-L6-v2`,
+anglais) sur des extraits bruts de vraies offres scrapées a montré des résultats
+médiocres, et surtout aucune séparation nette entre un vrai match et du bruit total
+(ex: une requête "recette de tarte aux pommes" obtenait un score de distance
+similaire aux vraies requêtes de scoring). Diagnostic : modèle faible en français,
+mal adapté au texte RH bruité.
+
+Remplacé par `paraphrase-multilingual-mpnet-base-v2` via
+`SentenceTransformerEmbeddingFunction` (nécessite `sentence-transformers` + `torch`,
+ajoutés à requirements.txt). Résultat sur les mêmes tests : nette séparation
+d'échelle entre vraies requêtes (distance ~0.33-0.65) et bruit total (~0.85), ce qui
+donne un seuil exploitable pour la session 3 (ex: flag_uncertain si la meilleure
+distance dépasse ~0.7-0.75).
+
+**Limite non résolue par le changement de modèle — ambiguïté géographique fine :**
+Sur une requête piège "poste basé à Zurich, environnement suisse-allemand",
+`rule_switzerland_mobility` (qui ne s'applique qu'à la Suisse **romande**) remonte
+quand même en 2e position, à un score très proche de la bonne réponse
+(`rule_lyon_no_mobility`). Le RAG sémantique capte "Suisse" mais pas la distinction
+romande/alémanique — c'est une limite structurelle de la similarité par embedding
+sur ce type de nuance géographique précise, pas un problème de modèle. À traiter
+explicitement dans l'agent de scoring (session 3) : vérifier la ville/canton par une
+règle simple avant d'appliquer `rule_switzerland_mobility`, ne pas se fier uniquement
+au retrieval sémantique pour cette distinction.
