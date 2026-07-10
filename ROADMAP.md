@@ -128,3 +128,26 @@ sur ce type de nuance géographique précise, pas un problème de modèle. À tr
 explicitement dans l'agent de scoring (session 3) : vérifier la ville/canton par une
 règle simple avant d'appliquer `rule_switzerland_mobility`, ne pas se fier uniquement
 au retrieval sémantique pour cette distinction.
+
+**Retest (2026-07-11) après mise à jour de geography_rules.md :** un nouveau chunk
+dédié `rule_switzerland_german_italian` a été ajouté, énonçant explicitement que
+Zurich/Bâle/Berne/Tessin ne sont PAS la Suisse romande et sont en dernière priorité
+géographique. Réindexation (31 chunks) et re-test sur la même requête piège Zurich :
+
+```
+0.3590  rule_switzerland_mobility        (romande — toujours 1er, à tort)
+0.3899  rule_switzerland_german_italian  (désambiguïsation — 2e, dans le top 3)
+0.3954  priority_order
+0.4281  rule_lyon_no_mobility
+```
+
+Amélioration réelle mais partielle : `rule_switzerland_mobility` reste en tête
+(distance légèrement meilleure), mais le chunk de désambiguïsation apparaît
+désormais dans la fenêtre par défaut de `search_profile` (`n_results=3`), donc
+l'agent de scoring reçoit les deux chunks contradictoires ensemble et peut arbitrer
+correctement — à condition de lire l'intégralité des chunks retournés, pas
+seulement le premier. Le risque resterait entier si un futur appelant limitait la
+recherche à `n_results=1` ou traitait le premier résultat comme la règle unique à
+appliquer. À garder en tête pour l'implémentation de l'agent de scoring en session 3 :
+toujours passer `n_results >= 3` sur les requêtes géographiques, et faire arbitrer
+le LLM sur l'ensemble des chunks plutôt que sur le seul meilleur score.
