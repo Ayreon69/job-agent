@@ -5,7 +5,7 @@ Suivi de session à session. Voir CLAUDE.md pour le contexte projet complet.
 ## Étapes
 
 1. **Scraper + stockage SQLite (Hellowork)** — ✅ terminé (2026-07-10)
-2. Indexation profil utilisateur dans ChromaDB — à faire
+2. **Indexation profil utilisateur dans ChromaDB** — ✅ terminé (2026-07-10)
 3. Scoring d'une offre via agent (score + justification) — à faire
 4. Génération d'analyse de candidature (markdown structuré) — à faire
 5. Wrapper FastAPI (endpoint `/analyze`) — à faire
@@ -64,3 +64,43 @@ séparée par virgules. `scraper/hellowork.py` envoie désormais tous les types 
 contrat sauf Alternance/Stage/Stage de lycée (`CONTRACT_TYPES` dans
 `scraper/hellowork.py`, personnalisable via le paramètre `contract_types`). Testé :
 30 offres scrapées, aucune Alternance/Stage dans les résultats.
+
+## Session 2 (2026-07-10) — Indexation du profil dans ChromaDB
+
+**Livré :**
+- `scoring/embeddings/parser.py` — parse les fichiers `scoring/profile/*.md` en
+  chunks : découpage sur les headers `## chunk: nom`, extraction de la ligne
+  `Tags: ...` en liste, le reste devient le texte du chunk. Un chunk = un id
+  `nom_fichier::nom_chunk`.
+- `scoring/embeddings/index.py` — construit la collection ChromaDB (`build_index`)
+  et expose `search_profile(query, n_results=3)` pour la recherche par similarité.
+  Client ChromaDB persistant sur disque (`scoring/embeddings/chroma/`, gitignored).
+  Embeddings générés localement via la fonction par défaut de ChromaDB
+  (sentence-transformers `all-MiniLM-L6-v2`, téléchargé au premier lancement,
+  ~80 Mo, pas de clé API ni coût).
+- `scoring/embeddings/build.py` — point d'entrée CLI : `python -m scoring.embeddings.build`.
+
+**Test réel effectué :** 30 chunks indexés depuis les 4 fichiers profil
+(achievements.md, skills.md, constraints.md, geography_rules.md). Recherche testée
+sur 4 requêtes représentatives des cas d'usage scoring :
+- "RAG et agents LLM" → remonte `rule_role_priority_current` et
+  `skills_intermediaires_llm`
+- "Poste à Dubai, relocalisation" → remonte `priority_order` et
+  `rule_uae_middle_east`
+- "Poste à Lyon reporting" → remonte `power_bi_dashboards` et
+  `rule_lyon_no_mobility`
+- "Gouvernance des données" (gap connu) → remonte `skills_notions_seulement`,
+  cohérent avec la règle d'honnêteté du CLAUDE.md (pas de faux positif de
+  compétence maîtrisée)
+
+**Décision technique :** embeddings locaux plutôt que via l'API Mistral, pour rester
+gratuit/offline sur cette étape d'apprentissage RAG. Si la qualité de retrieval
+s'avère insuffisante en session 3 (scoring), reconsidérer un modèle d'embedding plus
+gros ou une API dédiée.
+
+**Limites connues :**
+- `build_index` supprime et recrée la collection à chaque exécution (pas d'update
+  incrémental) — acceptable vu la taille du profil (30 chunks), à revoir si le
+  profil grossit significativement.
+- Pas de test sur la qualité de retrieval au-delà d'une inspection manuelle des
+  résultats ci-dessus.
