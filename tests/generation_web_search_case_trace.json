@@ -1,0 +1,14 @@
+{
+  "offer_id": 9999,
+  "tone_chunk_used": "geography_rules::rule_lyon_no_mobility",
+  "tone_rag_query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+  "tone_rag_distance": 0.3036,
+  "web_search_used": true,
+  "web_search_result": null,
+  "steps": [
+    "règle de ton récupérée: geography_rules::rule_lyon_no_mobility (distance=0.3036) pour zone='rhone_alpes'",
+    "offre jugée trop courte/générique, tentative de web_search('Entreprise Test SARL')",
+    "web_search indisponible (aucun fournisseur configuré) — analyse basée uniquement sur l'offre",
+    "analyse générée"
+  ]
+}
