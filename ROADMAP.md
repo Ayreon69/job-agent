@@ -320,3 +320,198 @@ tracée dans le JSON (`requirement_atom` step, un log par atome).
 significativement (un appel par atome au lieu d'un par exigence groupée) —
 pas un problème de coût (recherche locale, pas d'appel LLM), mais à surveiller
 si le nombre d'exigences/atomes extraits croît sur des offres plus verbeuses.
+
+## Session 4 (2026-07-11) : agent de génération d'analyse de candidature
+
+**Objectif :** transformer la sortie de l'agent de scoring (session 3) en une
+analyse de candidature structurée en markdown, dans l'esprit des analyses
+produites habituellement en conversation — sans recalculer la géographie
+(consommée telle quelle depuis `ScoringResult`), en respectant strictement le
+ton dicté par la zone, et sans jamais lisser les gaps/incertitudes.
+
+**Implémentation (`generation/analysis.py`, `generation/run.py`) :**
+- `generate_analysis(result, offer_title, offer_description, company_name)` :
+  boucle de décision en 5 étapes, tracée dans un `GenerationTrace` (même
+  principe d'auditabilité que le `DecisionTrace` de session 3) :
+  1. Consomme `result.geography_zone` déjà calculé par `check_geography_rules`
+     — aucun nouveau calcul géographique.
+  2. `search_profile` sur la requête de ton associée à cette zone
+     (`ZONE_TO_QUERY`, réutilisé tel quel depuis `scoring/agent.py` pour que
+     scoring et génération récupèrent le même chunk de ton pour une même
+     zone), avec `n_results=1` — un seul chunk de règle par zone dans
+     `geography_rules.md`.
+  3. `web_search(company_name)` — **stub désactivé** : décision prise en
+     amont (AskUserQuestion) de ne pas intégrer de vraie API de recherche web
+     cette session, pour rester cohérent avec la règle d'honnêteté du
+     CLAUDE.md (ne jamais fabriquer de contexte non vérifié). La fonction est
+     appelée quand l'offre est jugée trop courte/générique
+     (`_should_search_web`, heuristique sur la longueur du texte), logue
+     l'appel, et retourne toujours `None`. Prête à être branchée sur une
+     vraie API plus tard sans changer l'appelant.
+  4. Génère le markdown via un unique appel LLM (`call_llm`, pas
+     `call_llm_json` — la sortie est du markdown, pas du JSON structuré),
+     avec un prompt système qui liste les matches/gaps/uncertain_flags du
+     scoring et impose le format à 4 sections : Résumé du matching, Gaps et
+     incertitudes, Questions d'entretien probables, Angle de candidature.
+  5. Distinction explicite dans le prompt entre "gap confirmé" (compétence
+     constatée absente) et "flag_uncertain" (aucun match RAG fiable, ce qui
+     n'est pas la même chose qu'une absence confirmée) — l'analyse générée
+     doit refléter cette nuance, pas la diluer.
+- `generation/run.py` : CLI chaînant scoring (session 3) puis génération pour
+  une offre de la base SQLite (`python -m generation.run --offer-id N
+  [--output analyse.md] [--trace-file trace.json]`).
+
+**Bug trouvé et corrigé en testant (règle de silence géographique) :**
+Le premier prompt système interdisait de *mentionner* la mobilité mais pas de
+*nier* sa nécessité. Résultat observé sur l'offre 24 (zone `rhone_alpes`,
+`rule_lyon_no_mobility` — silence total attendu) : le LLM a généré la phrase
+*"La localisation en Rhône-Alpes correspond parfaitement à la zone
+géographique prioritaire de l'offre, **sans nécessité de mobilité**."* — une
+violation subtile : nommer l'absence de mobilité revient à en parler, ce que
+la règle interdit tout autant que l'affirmer. Corrigé en renforçant
+explicitement le prompt système : interdiction du mot "mobilité" et de ses
+synonymes (relocalisation, expatriation, international, conjoint,
+déménagement) sous toute forme, y compris négative, avec l'explication
+"nommer l'absence de mobilité revient à en parler". Reformulation regénérée,
+plus aucune occurrence trouvée par recherche automatique
+(`grep -iE "mobilit|relocalisation|conjoint|expatriation|international"`) sur
+les 3 analyses de test.
+
+**Tests réels sur les 3 offres de la session 3 :**
+| Offre | Zone | Règle de ton appliquée | Gap honnête cité | Flag incertain distingué | Mention mobilité |
+|---|---|---|---|---|---|
+| 7 | rhone_alpes | rule_lyon_no_mobility | dbt, intégration ERP/MES (SAP) | aucun (tous les gaps sont confirmés) | aucune |
+| 15 | rhone_alpes | rule_lyon_no_mobility | animation d'ateliers, gouvernance formelle | aucun (tous les gaps sont confirmés) | aucune |
+| 24 | rhone_alpes | rule_lyon_no_mobility | gouvernance QMS, secteur régulé, outils médicaux | **gouvernance QMS (ISO 13485/FDA/EU MDR) marquée "flag incertain" séparément du gap confirmé**, avec la nuance explicite "absence de preuve fiable, pas une absence confirmée" | aucune |
+
+Sur l'offre 24, la distinction gap/incertain fonctionne comme prévu grâce au
+correctif de granularité atomique de ce même jour : le `flag_uncertain`
+déclenché sur "ISO 13485" isolé (voir plus haut) remonte bien jusqu'à la
+section "Flags incertains" de l'analyse générée, séparée de la section "Gaps
+confirmés" — la nuance entre "on n'a pas trouvé de preuve" et "on a constaté
+une absence" est préservée de bout en bout du pipeline scoring → génération.
+
+**Exemple de sortie complète (offre 24, après correctif) :**
+Voir `generation/analyses_test/analysis_24.md` (versionné) — extrait de la
+section la plus significative :
+
+```
+## Gaps et incertitudes
+### Gaps confirmés (compétences absentes)
+1. **Gouvernance QMS et conformité réglementaire** :
+   - Aucune expérience en gouvernance formelle des données QMS
+     (ISO 13485, FDA 21 CFR Part 820, EU MDR) ou dans un secteur régulé...
+
+### Flags incertains (absence de preuve fiable, pas une absence confirmée)
+- **Gouvernance et gestion des données QMS** (ISO 13485, FDA 21 CFR Part 820,
+  EU MDR) : Aucun élément dans le profil ne permet de confirmer ou d'infirmer
+  une expérience dans ce domaine spécifique. À clarifier en entretien.
+```
+
+**Traces de génération versionnées :** `generation/analyses_test/` contient
+les 3 analyses markdown (`analysis_7.md`, `analysis_15.md`, `analysis_24.md`)
+et leurs traces JSON (`trace_gen_*.json`, chunk de ton utilisé, distance RAG,
+décision web_search, étapes loguées).
+
+**Limites connues à traiter plus tard :**
+- `web_search` reste un stub désactivé — aucune offre testée n'a eu besoin de
+  contexte entreprise supplémentaire (les 3 descriptions dépassaient le seuil
+  de 300 caractères de `_should_search_web`), donc le chemin "offre courte,
+  recherche web déclenchée" n'a pas encore été testé avec une vraie offre
+  générique. À revisiter si une offre courte apparaît dans un futur scraping.
+- Un seul appel LLM (`call_llm`, pas JSON) génère tout le markdown d'un coup
+  — pas de validation structurelle automatique du format de sortie (sections
+  attendues, absence de fabrication) au-delà du prompt et de la vérification
+  manuelle par grep sur la mobilité. Une régression future sur le respect du
+  format ne serait pas détectée automatiquement sans un test dédié.
+- Le prompt de génération fait implicitement confiance aux matches/gaps déjà
+  validés par `_validate_items` en session 3 — aucune revalidation côté
+  génération si jamais `ScoringResult` est construit autrement (ex: appel
+  direct sans passer par `score_offer`).
+
+## Correctif post-session 4 (2026-07-11) : test du chemin web_search + test de structure automatique
+
+**1. Test du chemin web_search non exercé.** Les 3 offres testées en session 4
+avaient toutes une description dépassant le seuil de 300 caractères de
+`_should_search_web`, donc le chemin "offre courte → web_search déclenché"
+n'avait jamais été exercé. Test dédié dans `tests/test_generation.py` :
+construction directe d'un `ScoringResult` (sans passer par `score_offer`,
+volontairement) pour une offre fictive très courte ("Data Analyst recherché.
+Poste basé à Lyon. Expérience SQL et Power BI souhaitée. CDI." — 89
+caractères), appel direct à `generate_analysis`. Résultat :
+- `_should_search_web` retourne bien `True` sur ce cas (`assert` dans le
+  test).
+- `web_search("Entreprise Test SARL")` est appelée, loguée dans
+  `GenerationTrace.steps`, retourne bien `None` sans lever d'erreur (stub
+  désactivé, comportement attendu).
+- L'analyse générée reste complète (4 sections présentes, 4416 caractères) et
+  cohérente malgré l'absence de contexte entreprise : le LLM ne fabrique pas
+  d'information sur "Entreprise Test SARL", et ajoute même une section "À
+  éviter" avertissant explicitement de ne pas promettre des compétences non
+  documentées — comportement prudent, pas un crash ni une section vide.
+
+Trace complète du cas (`tests/generation_web_search_case_trace.json`, versionnée) :
+```json
+{
+  "offer_id": 9999,
+  "tone_chunk_used": "geography_rules::rule_lyon_no_mobility",
+  "tone_rag_query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+  "tone_rag_distance": 0.3036,
+  "web_search_used": true,
+  "web_search_result": null,
+  "steps": [
+    "règle de ton récupérée: geography_rules::rule_lyon_no_mobility (distance=0.3036) pour zone='rhone_alpes'",
+    "offre jugée trop courte/générique, tentative de web_search('Entreprise Test SARL')",
+    "web_search indisponible (aucun fournisseur configuré) — analyse basée uniquement sur l'offre",
+    "analyse générée"
+  ]
+}
+```
+Analyse markdown complète versionnée dans `tests/generation_web_search_case.md`.
+
+**2. Test de structure automatique (`tests/test_generation.py`).** Trois
+vérifications mécaniques sur chaque analyse générée :
+- présence et ordre des 4 sections attendues (`##` headers) ;
+- garde-fou anti-fabrication : pour chaque match, au moins un mot-clé de sa
+  **justification** (`matched_chunk_summary`) doit apparaître dans
+  `scoring/profile/*.md` ;
+- absence totale de vocabulaire lié à la mobilité (mobilité, relocalisation,
+  expatriation, international, conjoint, déménagement — y compris formes
+  négatives) pour toute offre en zone `rhone_alpes` ou `autre_france`.
+
+Lancé sur les 3 offres déjà validées manuellement (7, 15, 24) plus le nouveau
+cas web_search — **2 bugs trouvés dans le test lui-même au premier run (2/4
+cas passés), corrigés avant de faire confiance au test :**
+
+1. **Faux négatif sur l'apostrophe typographique** : l'offre 15 a généré le
+   titre `## Questions d'entretien probables` avec une apostrophe
+   typographique (’) au lieu de l'apostrophe droite (') utilisée dans
+   `EXPECTED_SECTIONS`, faisant échouer la détection de section alors que la
+   section était bien présente et au bon endroit. Corrigé des deux côtés :
+   (a) le prompt système de génération précise maintenant explicitement
+   d'utiliser l'apostrophe droite dans les titres de section, et (b) le test
+   normalise quand même les apostrophes avant comparaison
+   (`_normalize_apostrophes`), plutôt que de faire confiance à cette
+   consigne pour être toujours respectée.
+2. **Garde-fou anti-fabrication testait le mauvais champ** : le test
+   vérifiait initialement que le libellé `skill` (ex: "Prétraitement et
+   nettoyage des données", "Décloisonnement des silos métiers") partageait
+   un mot avec le profil — mais ce libellé est la reformulation par le LLM du
+   **besoin de l'offre**, pas un terme du profil candidat. C'est
+   `matched_chunk_summary` (ex: "Expérience en traitement de données
+   structurées via pandas, numpy, scikit-learn...") qui porte la
+   justification réellement censée provenir du profil. Corrigé en vérifiant
+   `matched_chunk_summary` au lieu de `skill` — sur ce point précis, aucune
+   vraie fabrication n'a été détectée, seulement un test mal ciblé au départ.
+
+Après ces deux corrections, rerun complet : **4/4 cas passés** (offres 7, 15,
+24, + cas web_search), confirmant qu'aucune vraie régression de format ou de
+fabrication n'existait dans le pipeline de génération lui-même — les échecs
+initiaux étaient entièrement imputables au test, pas au code de génération.
+
+**Limite restante :** le garde-fou anti-fabrication reste un contrôle de
+cohérence lexicale basique (chevauchement de mots-clés), pas une vérification
+sémantique — il ne détecterait pas une justification qui réutilise des mots du
+profil dans un sens détourné ou exagéré. Suffisant comme filet de sécurité
+mécanique, pas comme garantie d'honnêteté complète (qui reste portée par le
+prompt et la relecture humaine ponctuelle).
