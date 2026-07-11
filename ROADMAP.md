@@ -6,7 +6,7 @@ Suivi de session à session. Voir CLAUDE.md pour le contexte projet complet.
 
 1. **Scraper + stockage SQLite (Hellowork)** — ✅ terminé (2026-07-10)
 2. **Indexation profil utilisateur dans ChromaDB** — ✅ terminé (2026-07-10)
-3. Scoring d'une offre via agent (score + justification) — à faire
+3. **Scoring d'une offre via agent (score + justification)** — ✅ terminé (2026-07-11)
 4. Génération d'analyse de candidature (markdown structuré) — à faire
 5. Wrapper FastAPI (endpoint `/analyze`) — à faire
 6. Dockerisation — à faire
@@ -151,3 +151,118 @@ recherche à `n_results=1` ou traitait le premier résultat comme la règle uniq
 appliquer. À garder en tête pour l'implémentation de l'agent de scoring en session 3 :
 toujours passer `n_results >= 3` sur les requêtes géographiques, et faire arbitrer
 le LLM sur l'ensemble des chunks plutôt que sur le seul meilleur score.
+
+## Session 3 (2026-07-11) — Agent de scoring
+
+**Partie A — `check_geography_rules` (déterministe, hors RAG) :**
+- `scoring/geography.py` — matching en dur par ville connue (priorité 1) puis
+  département/code postal (priorité 2, Rhône-Alpes uniquement), avec repli
+  prudent sur `autre_france`/`inconnu` selon `check_geography_rules_spec.md`.
+- `tests/test_geography.py` — 11/11 cas de la spec passés.
+- **2 bugs trouvés et corrigés en testant sur des localisations réelles de la
+  base (pas seulement les cas de la spec) :**
+  1. Le format Hellowork `"Ville - NN"` (ex: `"Saint-Priest - 69"`, vu dès la
+     session 1) n'était pas reconnu par le regex de département, qui ne
+     couvrait que `(NN)` et `département NN`. Corrigé en ajoutant le pattern
+     `- NN` en fin de chaîne.
+  2. `"Belgique - Antwerpen"` (offre réellement scrapée en session 1) était
+     classé à tort `autre_france` par un fallback trop généreux ("texte non
+     vide sans ville connue → France"). Corrigé en ajoutant une liste de pays
+     étrangers hors périmètre (Belgique, Luxembourg, Allemagne...) qui
+     retombent sur `inconnu` plutôt que sur une règle France non pertinente.
+- Cas limite non résolu et documenté plutôt que sur-conçu : `"Lyon ou Genève"`
+  (deux villes valides dans le même texte) matche Genève par ordre de tri
+  interne, comportement arbitraire non couvert par la spec.
+
+**Partie B — Agent de scoring :**
+- `scoring/llm.py` — client Mistral minimal (`call_llm_json`), clé
+  `MISTRAL_API_KEY` chargée depuis `.env` (`.env.example` fourni, versionné).
+- `scoring/agent.py` — boucle de décision : géographie déterministe en premier
+  → `flag_uncertain("géographie")` si zone inconnue sans bloquer le scoring →
+  recherche RAG du chunk de ton via le nom de zone (pas le texte brut de
+  localisation) → extraction LLM des exigences de l'offre (plafonnée à 10,
+  voir limite ci-dessous) → recherche RAG séparée par exigence
+  (`n_results=3`) avec `flag_uncertain` si la meilleure distance dépasse
+  `NOISE_THRESHOLD=0.75` (seuil identifié en session 2) → arbitrage final LLM
+  produisant score, matches, gaps, résumé.
+- `scoring/run.py` — point d'entrée CLI : `python -m scoring.run --offer-id N
+  [--trace-file chemin.json]`.
+
+**Partie C — Traçabilité :**
+- `DecisionTrace` dans `scoring/agent.py` logue chaque requête RAG (étape,
+  query, chunks retournés avec distance, conclusion) et chaque
+  `flag_uncertain`, en JSON exportable via `--trace-file`. Exemples réels dans
+  `scoring/traces_test/`.
+
+**Environnement — venv dédié créé (`job-agent/.venv`) :**
+`chromadb` et `mistralai` ont des exigences `opentelemetry` mutuellement
+incompatibles (chromadb veut `opentelemetry-api==1.43.0` +
+`opentelemetry-semantic-conventions==0.64b0`, mistralai plafonne cette
+dernière à `<0.61`). Installer les deux dans l'environnement Python global
+(qui sert aussi d'autres projets comme instagrapi/mitmproxy) cassait l'import
+de l'un ou l'autre selon l'ordre d'installation. Un venv isolé résout la
+résolution de dépendances proprement. **À partir de maintenant, toutes les
+commandes du projet doivent utiliser `job-agent/.venv/Scripts/python.exe`**,
+pas le Python global.
+
+**Bug externe contourné — `mistralai==2.6.0` (et `2.5.2`) mal empaqueté :**
+Le wheel PyPI de `mistralai` n'expose pas `Mistral` depuis `mistralai/`
+directement (`mistralai/__init__.py` absent, seuls les sous-modules
+`azure/client/extra/gcp` existent) — `from mistralai import Mistral` échoue à
+l'import alors que le SDK est bien installé. La classe existe réellement dans
+`mistralai.client.sdk.Mistral`. `scoring/llm.py` essaie d'abord l'import
+normal puis retombe sur ce chemin interne, avec un commentaire expliquant
+pourquoi. À surveiller : si une future version de `mistralai` corrige son
+empaquetage, le fallback deviendra inutile mais restera inoffensif.
+
+**Test réel effectué sur 3 offres en base :**
+| Offre | Titre | Zone | Score | Gaps honnêtes | Incertains |
+|---|---|---|---|---|---|
+| 7 | Data Analyst Senior - Lyon | rhone_alpes | 85 | dbt, SAP/MES, gouvernance formelle | 0 |
+| 15 | Business Analyst Data Gouvernance | rhone_alpes | 70 | gouvernance formelle, contexte grand compte, outils marché (Collibra/Alation), désalignement IA vs data classique | 0 |
+| 24 | Quality System Data Analyst (QMS) | rhone_alpes | 68 | gouvernance QMS (ISO 13485/FDA/EU MDR), audits réglementaires, secteur régulé | 0 |
+
+Les 3 zones géographiques sont correctement déterminées (Lyon → ville connue,
+Le Pont-de-Claix → département 38). Les gaps sont honnêtement signalés dans
+les 3 cas, cohérents avec la règle d'honnêteté du CLAUDE.md — notamment la
+gouvernance formelle des données, systématiquement décrite comme "notions
+seulement" ou "expérience technique mais pas formelle", jamais présentée
+comme acquise.
+
+**2 bugs trouvés et corrigés pendant les tests réels (offre 24, avant fix) :**
+1. **Bruit dans l'extraction d'exigences** : le LLM extrayait jusqu'à 23
+   variantes quasi-redondantes d'une même compétence (`data cleansing`,
+   `data validation`, `data quality checks`...), diluant le signal et gonflant
+   artificiellement le nombre de matches. Corrigé en plafonnant l'extraction à
+   10 exigences (`MAX_SKILLS` dans `scoring/agent.py`) et en demandant
+   explicitement au LLM de regrouper les variantes proches en une seule
+   entrée composite plutôt que de les lister séparément.
+2. **Item de gap malformé** : le LLM a une fois produit un objet hors schéma
+   (`{"phrase libre...": ""}` au lieu de `{"skill": ..., "note": ...}`),
+   silencieusement laissé tel quel dans la sortie. Corrigé par une validation
+   défensive (`_validate_items`) qui filtre tout objet ne respectant pas
+   exactement le schéma attendu, plutôt que de faire confiance aveuglément au
+   JSON retourné malgré le `response_format=json_object`. Ajout aussi d'une
+   règle explicite : une compétence ne peut jamais apparaître à la fois dans
+   `matches` et `gaps` (observé sur "dbt" dans l'offre 7) — en cas de
+   contradiction du LLM avec lui-même, le gap l'emporte par prudence.
+
+**Limites connues à traiter plus tard :**
+- Le seuil de bruit RAG (0.75) est appliqué par exigence individuelle, mais
+  une exigence formulée en phrase longue et composite (comme
+  "gouvernance et gestion des données QMS (ISO 13485, FDA 21 CFR Part 820, EU
+  MDR)" après le fix du bug 1) peut matcher un chunk générique avec une
+  distance sous le seuil, masquant ainsi un gap réel que `flag_uncertain`
+  aurait dû signaler si chaque norme avait été cherchée séparément. Ce n'est
+  pas un problème dans les tests actuels (le LLM a quand même identifié le
+  gap dans son propre jugement final), mais reste un compromis entre
+  "moins de bruit" (fix de cette session) et "détection fine des gaps"
+  (potentiellement perdue) à surveiller sur d'autres offres.
+- Pas de gestion de cache/coût sur les appels LLM (extraction + arbitrage
+  final = 2 appels Mistral par offre, sans compter les futurs appels de
+  génération de candidature en session 4).
+- Le score et les matches/gaps dépendent entièrement du jugement du LLM sur
+  la pertinence sémantique des chunks retrouvés — pas de garde-fou
+  supplémentaire si le LLM se trompe d'appréciation malgré un contexte RAG
+  correct (contrairement au cas géographique, sorti du RAG justement pour
+  cette raison).

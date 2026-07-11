@@ -65,6 +65,18 @@ def _chunk_from_result(id_: str, document: str, metadata: dict) -> Chunk:
 
 def search_profile(query: str, n_results: int = 3) -> list[Chunk]:
     """Return the top-N profile chunks most relevant to a query, by embedding similarity."""
+    return [chunk for chunk, _distance in search_profile_with_scores(query, n_results=n_results)]
+
+
+def search_profile_with_scores(query: str, n_results: int = 3) -> list[tuple[Chunk, float]]:
+    """Like search_profile, but also returns each chunk's cosine distance.
+
+    Lower distance = more similar. Empirically (session 2 retest), real matches
+    fall around ~0.33-0.65 and unrelated noise around ~0.85 with the current
+    model — see ROADMAP.md for the full comparison. Used by the scoring agent to
+    detect when nothing relevant was retrieved (flag_uncertain) instead of
+    guessing from a weak match.
+    """
     client = get_client()
     collection = client.get_collection(COLLECTION_NAME, embedding_function=get_embedding_function())
 
@@ -73,5 +85,9 @@ def search_profile(query: str, n_results: int = 3) -> list[Chunk]:
     ids = results["ids"][0]
     documents = results["documents"][0]
     metadatas = results["metadatas"][0]
+    distances = results["distances"][0]
 
-    return [_chunk_from_result(i, d, m) for i, d, m in zip(ids, documents, metadatas)]
+    return [
+        (_chunk_from_result(i, d, m), dist)
+        for i, d, m, dist in zip(ids, documents, metadatas, distances)
+    ]

@@ -1,0 +1,266 @@
+{
+  "offer_id": 24,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "38",
+    "match_method": "departement"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement",
+      "query": "gouvernance et gestion des données QMS (ISO 13485, FDA 21 CFR Part 820, EU MDR)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5357,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5585,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5619,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5357, match retenu"
+    },
+    {
+      "step": "requirement",
+      "query": "nettoyage/validation/fiabilisation de données (structurées et non structurées)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5225,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5619,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5659,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5225, match retenu"
+    },
+    {
+      "step": "requirement",
+      "query": "analyse statistique avancée (tests, régression, distributions, modélisation prédictive)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4814,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4943,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5378,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4814, match retenu"
+    },
+    {
+      "step": "requirement",
+      "query": "développement et automatisation de KPIs/dashboards qualité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4601,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4976,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5229,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4601, match retenu"
+    },
+    {
+      "step": "requirement",
+      "query": "data mining et extraction d'insights à partir de sources variées",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4581,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4641,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5261,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4581, match retenu"
+    },
+    {
+      "step": "requirement",
+      "query": "machine learning (feature selection, optimisation de classificateurs, modèles prédictifs)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1785,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4144,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5671,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.1785, match retenu"
+    },
+    {
+      "step": "requirement",
+      "query": "traitement de grands jeux de données dans un environnement régulé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5069,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5172,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5741,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5069, match retenu"
+    },
+    {
+      "step": "requirement",
+      "query": "maîtrise des outils de reporting et d'analyse (ex: Python, R, SQL, outils BI)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.257,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3944,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.3995,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2570, match retenu"
+    },
+    {
+      "step": "requirement",
+      "query": "support aux audits réglementaires et conformité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4724,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4836,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4925,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4724, match retenu"
+    },
+    {
+      "step": "requirement",
+      "query": "collaboration avec les équipes IT/Qualité pour l'amélioration des systèmes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4448,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4985,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5138,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4448, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}
