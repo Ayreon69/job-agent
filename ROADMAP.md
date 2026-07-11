@@ -248,16 +248,6 @@ comme acquise.
    contradiction du LLM avec lui-même, le gap l'emporte par prudence.
 
 **Limites connues à traiter plus tard :**
-- Le seuil de bruit RAG (0.75) est appliqué par exigence individuelle, mais
-  une exigence formulée en phrase longue et composite (comme
-  "gouvernance et gestion des données QMS (ISO 13485, FDA 21 CFR Part 820, EU
-  MDR)" après le fix du bug 1) peut matcher un chunk générique avec une
-  distance sous le seuil, masquant ainsi un gap réel que `flag_uncertain`
-  aurait dû signaler si chaque norme avait été cherchée séparément. Ce n'est
-  pas un problème dans les tests actuels (le LLM a quand même identifié le
-  gap dans son propre jugement final), mais reste un compromis entre
-  "moins de bruit" (fix de cette session) et "détection fine des gaps"
-  (potentiellement perdue) à surveiller sur d'autres offres.
 - Pas de gestion de cache/coût sur les appels LLM (extraction + arbitrage
   final = 2 appels Mistral par offre, sans compter les futurs appels de
   génération de candidature en session 4).
@@ -266,3 +256,67 @@ comme acquise.
   supplémentaire si le LLM se trompe d'appréciation malgré un contexte RAG
   correct (contrairement au cas géographique, sorti du RAG justement pour
   cette raison).
+
+## Correctif post-session 3 (2026-07-11) : granularité atomique du matching RAG
+
+**Problème :** le seuil de bruit RAG (0.75) était appliqué à la phrase
+composite entière d'une exigence (ex: "gouvernance et gestion des données QMS
+(ISO 13485, FDA 21 CFR Part 820, EU MDR)"). Une phrase longue peut matcher un
+chunk générique avec une distance sous le seuil même si aucune des normes
+citées individuellement n'a de vrai équivalent dans le profil — le bruit d'un
+élément peut être masqué par la longueur de la phrase composite. Le
+regroupement du bug 1 (session 3, `MAX_SKILLS`), pensé pour réduire le bruit
+d'affichage, avait comme effet de bord de diluer aussi le signal de matching.
+
+**Correctif :** séparation de la granularité de recherche et de la
+granularité d'affichage dans `scoring/agent.py` :
+- `_extract_requirements` demande au LLM, pour chaque exigence (toujours
+  plafonnée à `MAX_SKILLS`), un libellé composite (`label`, affichage) ET la
+  liste des éléments atomiques qui le composent (`atoms`, matching), ex.
+  `label="gouvernance et gestion des données QMS (ISO 13485, FDA 21 CFR Part
+  820, EU MDR)"` → `atoms=["ISO 13485", "FDA 21 CFR Part 820", "EU MDR",
+  "gouvernance des données QMS", ...]`.
+- `_search_requirement` fait une recherche `search_profile` séparée
+  (n_results=3) sur CHAQUE atome, avec le seuil `NOISE_THRESHOLD=0.75` évalué
+  individuellement par atome — jamais sur la phrase composite globale.
+- Principe "maillon faible" : si au moins un atome dépasse le seuil de bruit,
+  `flag_uncertain(label)` est déclenché pour toute l'exigence composite, même
+  si d'autres atomes de la même exigence ont bien matché. Un bon match sur un
+  élément ne doit jamais masquer l'absence de match sur un autre.
+- Le contexte envoyé au LLM d'arbitrage final distingue maintenant
+  explicitement les exigences "incertaines malgré un match partiel" des
+  exigences "sans aucun match", pour que le LLM ne traite pas les chunks
+  partiels comme une confirmation de compétence acquise.
+
+**Cas concret observé (offre 24, avant/après) :**
+Avant le correctif (`trace_24.json`, recherche sur composite) : la requête
+`"gouvernance et gestion des données QMS (ISO 13485, FDA 21 CFR Part 820, EU
+MDR)"` obtenait `best_distance=0.5357` (chunk `geography_rules::
+rule_role_priority_current`) → **"match retenu"**, aucun `flag_uncertain`
+déclenché pour cette exigence.
+
+Après le correctif (`trace_24_atomic.json`, recherche par atome) : sur les 7
+atomes de la même exigence, 6 matchent sous le seuil (0.49–0.65), mais
+**"ISO 13485" isolé obtient `best_distance=0.7625`** (meilleur chunk retrouvé :
+`achievements::power_bi_dashboards`, sans rapport réel) — au-dessus du seuil
+de bruit. Confirmé indépendamment : une recherche brute sur "ISO 13485" seul
+retourne 0.7625/0.7722/0.7790, et sur "FDA 21 CFR Part 820" seul 0.6508
+(passe de justesse). Résultat : `flag_uncertain("gouvernance et gestion des
+données QMS...")` est maintenant bien déclenché, alors que l'ancien
+comportement composite ne l'aurait pas fait. Dans ce cas précis le score final
+et les gaps affichés au LLM d'arbitrage restaient corrects (le LLM avait
+identifié le gap QMS de lui-même dans son jugement final, comme noté en
+session 3), mais le signal structuré `uncertain_flags` — utilisé par le
+pipeline en amont du jugement LLM — était jusqu'ici silencieusement faux sur
+ce cas. Score final inchangé à 65-68 selon les runs (variabilité normale du
+LLM d'arbitrage), gaps toujours honnêtement listés.
+
+**Test :** rerun complet sur l'offre 24
+(`scoring/traces_test/trace_24_atomic.json`), 5 gaps identifiés dont la
+gouvernance QMS désormais marquée incertaine avec la bonne cause atomique
+tracée dans le JSON (`requirement_atom` step, un log par atome).
+
+**Limite restante :** le nombre d'appels `search_profile` par offre augmente
+significativement (un appel par atome au lieu d'un par exigence groupée) —
+pas un problème de coût (recherche locale, pas d'appel LLM), mais à surveiller
+si le nombre d'exigences/atomes extraits croît sur des offres plus verbeuses.

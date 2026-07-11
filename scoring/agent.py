@@ -8,10 +8,17 @@ Decision loop:
      a missing geography match must not block the rest of the pipeline.
   3. search_profile on the *zone name*, not the offer's raw location text, to
      fetch the matching tone rule chunk(s) from geography_rules.md.
-  4. Extract the offer's key requirements (skills, seniority) via the LLM,
-     then search_profile separately for each requirement (n_results >= 3).
-  5. For each requirement, if nothing relevant comes back (best distance above
-     NOISE_THRESHOLD), flag_uncertain(requirement) instead of guessing.
+  4. Extract the offer's key requirements (skills, seniority) via the LLM.
+     Each requirement has a composite display label (grouped, capped to
+     MAX_SKILLS) AND a list of atomic elements it bundles together (e.g. the
+     individual standards inside "gouvernance QMS (ISO 13485, FDA 21 CFR Part
+     820, EU MDR)"). Grouping is for display only.
+  5. search_profile runs on each ATOM separately (n_results >= 3), never on
+     the composite label — a composite sentence can find a passable-looking
+     match as a whole even when none of its individual parts are actually
+     covered by the profile. If any single atom's best distance exceeds
+     NOISE_THRESHOLD, flag_uncertain(requirement_label): one weak link is
+     enough, even if other atoms of the same requirement matched well.
   6. Ask the LLM to produce the final structured verdict from all the
      gathered context (geography verdict, tone chunks, matched achievements,
      honest gaps, uncertain flags).
@@ -142,38 +149,85 @@ MAX_SKILLS = 10
 
 
 def _extract_requirements(offer_title: str, offer_description: str) -> dict:
-    """Ask the LLM to pull out key requirements from the raw offer text."""
+    """Ask the LLM to pull out key requirements from the raw offer text.
+
+    Each requirement is a composite label (for display / grouping, capped to
+    MAX_SKILLS) plus its "atoms": the individual technical items it bundles
+    together (e.g. distinct standards/tools mentioned in the same sentence).
+    Matching runs on the atoms, not the composite label — see _search_requirement.
+    """
     system_prompt = (
         "Tu extrais les exigences clés d'une offre d'emploi data/IA. Réponds en JSON "
-        f"strict avec les clés: skills (liste d'AU PLUS {MAX_SKILLS} compétences ou "
-        "exigences distinctes, en ne gardant que les plus significatives pour évaluer "
-        "l'adéquation du candidat — regrouper les variantes proches d'une même "
-        "compétence en une seule entrée plutôt que de les lister séparément, "
-        "par exemple 'nettoyage/validation/fiabilisation de données' plutôt que trois "
-        "entrées distinctes 'data cleansing', 'data validation', 'data quality checks'), "
+        f"strict avec les clés: skills (liste d'AU PLUS {MAX_SKILLS} objets), "
         "seniority (chaîne libre décrivant le niveau d'expérience demandé, ou null si "
         "non précisé), role_focus (\"ia_agents_llm\" si le poste est orienté "
-        "agents/LLM/RAG, \"data_classique\" sinon)."
+        "agents/LLM/RAG, \"data_classique\" sinon). "
+        "Chaque objet de skills doit avoir EXACTEMENT les clés: "
+        "\"label\" (le libellé composite lisible regroupant les variantes proches d'une "
+        "même compétence, ex: 'gouvernance et gestion des données QMS (ISO 13485, FDA 21 "
+        "CFR Part 820, EU MDR)') et \"atoms\" (liste des éléments techniques atomiques qui "
+        "composent ce libellé, chacun recherchable indépendamment, ex: [\"ISO 13485\", "
+        "\"FDA 21 CFR Part 820\", \"EU MDR\", \"gouvernance des données QMS\"] — si le "
+        "libellé ne regroupe qu'un seul élément, atoms contient cet unique élément)."
     )
     user_prompt = f"Titre: {offer_title}\n\nDescription:\n{offer_description[:3000]}"
     result = call_llm_json(system_prompt, user_prompt)
-    result["skills"] = (result.get("skills") or [])[:MAX_SKILLS]
+    raw_skills = (result.get("skills") or [])[:MAX_SKILLS]
+
+    skills = []
+    for item in raw_skills:
+        if not isinstance(item, dict):
+            continue
+        label = item.get("label")
+        atoms = item.get("atoms") or []
+        if not isinstance(label, str) or not label.strip():
+            continue
+        atoms = [a for a in atoms if isinstance(a, str) and a.strip()]
+        if not atoms:
+            atoms = [label]
+        skills.append({"label": label, "atoms": atoms})
+    result["skills"] = skills
     return result
 
 
-def _search_requirement(trace: DecisionTrace, requirement: str) -> tuple[list[str], bool]:
-    """search_profile for one requirement; returns (matched chunk texts, is_uncertain)."""
-    results = search_profile_with_scores(requirement, n_results=3)
-    best_distance = min((dist for _c, dist in results), default=1.0)
+def _search_requirement(trace: DecisionTrace, label: str, atoms: list[str]) -> tuple[list[str], bool]:
+    """search_profile on each atomic element of a (possibly composite) requirement.
 
-    if best_distance > NOISE_THRESHOLD or not results:
-        trace.log_rag("requirement", requirement, 3, results, "aucun match fiable -> flag_uncertain")
-        trace.flag_uncertain(requirement)
-        return [], True
+    Matching granularity is deliberately finer than display granularity: a
+    composite label like "gouvernance QMS (ISO 13485, FDA 21 CFR Part 820, EU
+    MDR)" can find a mediocre-but-passable match as a whole sentence even when
+    none of its individual standards are actually covered by the profile. One
+    weak atom is enough to flag the whole requirement uncertain — a good match
+    on one atom must not hide the absence of a match on another.
+    """
+    matched_chunks: list[str] = []
+    worst_distance = 0.0
+    any_uncertain = False
 
-    conclusion = f"best_distance={best_distance:.4f}, match retenu"
-    trace.log_rag("requirement", requirement, 3, results, conclusion)
-    return [chunk.text for chunk, _dist in results], False
+    for atom in atoms:
+        results = search_profile_with_scores(atom, n_results=3)
+        best_distance = min((dist for _c, dist in results), default=1.0)
+        worst_distance = max(worst_distance, best_distance)
+
+        if best_distance > NOISE_THRESHOLD or not results:
+            trace.log_rag(
+                "requirement_atom", f"[{label}] {atom}", 3, results,
+                "aucun match fiable -> flag_uncertain",
+            )
+            any_uncertain = True
+            continue
+
+        trace.log_rag(
+            "requirement_atom", f"[{label}] {atom}", 3, results,
+            f"best_distance={best_distance:.4f}, match retenu",
+        )
+        matched_chunks.extend(chunk.text for chunk, _dist in results)
+
+    if any_uncertain:
+        trace.flag_uncertain(label)
+        return matched_chunks, True
+
+    return matched_chunks, False
 
 
 def score_offer(offer_id: int, title: str, location: str, description: str) -> ScoringResult:
@@ -198,11 +252,15 @@ def score_offer(offer_id: int, title: str, location: str, description: str) -> S
     role_focus = requirements.get("role_focus")
     logger.info("[offer %s] extracted requirements: %s", offer_id, requirements)
 
-    # 5. Une recherche RAG séparée par exigence technique.
+    # 5. Une recherche RAG séparée par élément atomique de chaque exigence
+    #    (le libellé composite ne sert qu'à l'affichage, voir _search_requirement).
     requirement_context: dict[str, list[str]] = {}
+    requirement_uncertain: dict[str, bool] = {}
     for skill in skills:
-        chunks, uncertain = _search_requirement(trace, skill)
-        requirement_context[skill] = chunks
+        label = skill["label"]
+        chunks, uncertain = _search_requirement(trace, label, skill["atoms"])
+        requirement_context[label] = chunks
+        requirement_uncertain[label] = uncertain
 
     # 6. Arbitrage final par le LLM à partir de tout le contexte rassemblé.
     system_prompt = (
@@ -232,10 +290,18 @@ def score_offer(offer_id: int, title: str, location: str, description: str) -> S
         context_parts.append(f"Orientation du poste: {role_focus}")
 
     for skill, chunks in requirement_context.items():
-        if chunks:
-            context_parts.append(f"Compétence '{skill}' — chunks profil trouvés:\n" + "\n---\n".join(chunks))
+        if requirement_uncertain[skill]:
+            if chunks:
+                context_parts.append(
+                    f"Compétence '{skill}' — AU MOINS UN élément constitutif n'a AUCUN match "
+                    "fiable dans le profil, malgré un match partiel sur d'autres éléments "
+                    "(gap potentiel, un maillon faible suffit — ne pas considérer comme acquis) :\n"
+                    + "\n---\n".join(chunks)
+                )
+            else:
+                context_parts.append(f"Compétence '{skill}' — AUCUN match fiable dans le profil (gap potentiel).")
         else:
-            context_parts.append(f"Compétence '{skill}' — AUCUN match fiable dans le profil (gap potentiel).")
+            context_parts.append(f"Compétence '{skill}' — chunks profil trouvés:\n" + "\n---\n".join(chunks))
 
     context_parts.append(f"Description complète de l'offre:\n{(description or '')[:3000]}")
 
