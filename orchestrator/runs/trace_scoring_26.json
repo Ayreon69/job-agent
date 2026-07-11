@@ -1,0 +1,611 @@
+{
+  "offer_id": 26,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[SQL (lecture, compréhension, validation des données)] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Power BI (conception de dashboards, structure des rapports)] Power BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.3422,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6163,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6182,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3422, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Power BI (conception de dashboards, structure des rapports)] conception de dashboards",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4794,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5516,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5783,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4794, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Power BI (conception de dashboards, structure des rapports)] structure des rapports",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.501,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5749,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5879,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5010, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Recueil et cadrage des besoins métiers] recueil des besoins",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4636,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4781,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5007,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4636, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Recueil et cadrage des besoins métiers] cadrage des besoins",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4028,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4627,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.4858,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4028, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Recueil et cadrage des besoins métiers] analyse métier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4016,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4636,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4878,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4016, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formalisation des exigences fonctionnelles] exigences fonctionnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4955,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5309,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5605,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4955, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formalisation des exigences fonctionnelles] spécifications fonctionnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5205,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5335,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5337,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5205, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Définition et calcul des KPIs] KPIs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6348,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6891,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7348,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6348, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Définition et calcul des KPIs] règles de calcul",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.7044,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7096,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7104,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7044, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Définition et calcul des KPIs] indicateurs décisionnels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3869,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.3982,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.482,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3869, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maquettage de dashboards orientés utilisateur] maquettage",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5226,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5401,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.564,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5226, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maquettage de dashboards orientés utilisateur] dashboards",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.572,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6102,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6104,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5720, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maquettage de dashboards orientés utilisateur] UX/UI Data Visualization",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6373,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.645,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6905,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6373, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Validation et qualité des données] validation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4553,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5265,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5675,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4553, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Validation et qualité des données] qualité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4455,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4573,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4983,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4455, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Validation et qualité des données] tests data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.639,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6545,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6581,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6390, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec équipes Data et métiers] collaboration Data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5435,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5799,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5932,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5435, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec équipes Data et métiers] travail d'équipe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6501,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.658,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6593,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6501, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec équipes Data et métiers] communication métier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5711,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.575,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6072,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5711, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Culture Data et produits analytiques] culture Data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6306,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6721,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6876,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6306, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Culture Data et produits analytiques] produits analytiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.572,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5907,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6049,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5720, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sensibilité UX/UI appliquée à la Data Visualization] UX/UI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7182,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7203,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7643,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7182, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sensibilité UX/UI appliquée à la Data Visualization] Data Visualization",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6212,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6262,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6418,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6212, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}

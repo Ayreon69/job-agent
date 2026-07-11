@@ -1,0 +1,956 @@
+{
+  "offer_id": 29,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "villeurbanne",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise avancée d'Excel (formules complexes, tableaux croisés dynamiques, macros)] Excel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.686,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6954,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7006,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6860, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise avancée d'Excel (formules complexes, tableaux croisés dynamiques, macros)] formules complexes Excel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6975,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7151,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7218,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6975, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise avancée d'Excel (formules complexes, tableaux croisés dynamiques, macros)] tableaux croisés dynamiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7161,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7272,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7412,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7161, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise avancée d'Excel (formules complexes, tableaux croisés dynamiques, macros)] macros Excel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7179,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7223,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7484,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7179, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des processus de facturation (collecte, intégration, contrôle, batchs)] processus de facturation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.518,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5428,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5529,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5180, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des processus de facturation (collecte, intégration, contrôle, batchs)] collecte de données de facturation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5338,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5383,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5404,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5338, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des processus de facturation (collecte, intégration, contrôle, batchs)] intégration de données de facturation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5157,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5193,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5304,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5157, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des processus de facturation (collecte, intégration, contrôle, batchs)] contrôle de factures",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5489,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5877,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5968,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5489, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des processus de facturation (collecte, intégration, contrôle, batchs)] batchs de facturation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5155,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5167,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5401,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5155, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des processus de facturation (collecte, intégration, contrôle, batchs)] échéanciers de facturation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5502,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5602,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5608,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5502, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des réclamations et litiges clients (niveau 2, résolution, suivi)] gestion des réclamations clients",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4391,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4782,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.5189,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4391, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des réclamations et litiges clients (niveau 2, résolution, suivi)] résolution de litiges",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6859,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7001,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7179,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6859, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des réclamations et litiges clients (niveau 2, résolution, suivi)] suivi des réclamations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4679,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5588,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.573,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4679, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des réclamations et litiges clients (niveau 2, résolution, suivi)] support niveau 2",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5649,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6291,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6866,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5649, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation d'outils CRM pour la gestion client et facturation] CRM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6386,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.654,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6888,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6386, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation d'outils CRM pour la gestion client et facturation] gestion client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4674,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4772,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5259,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4674, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation d'outils CRM pour la gestion client et facturation] facturation CRM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5784,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6332,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6344,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5784, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et correction des erreurs d'intégration dans les flux de données] analyse d'erreurs d'intégration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5347,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6071,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6251,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5347, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et correction des erreurs d'intégration dans les flux de données] correction de flux de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5665,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5839,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5851,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5665, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et correction des erreurs d'intégration dans les flux de données] détection d'anomalies dans les données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5672,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5908,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6232,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5672, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes internes (commerce, service client, comptabilité)] travail d'équipe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6501,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.658,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6593,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6501, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes internes (commerce, service client, comptabilité)] collaboration inter-services",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5625,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5729,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5739,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5625, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes internes (commerce, service client, comptabilité)] coordination avec commerce",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5411,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6411,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6462,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5411, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes internes (commerce, service client, comptabilité)] coordination avec service client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.486,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4873,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.496,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4860, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes internes (commerce, service client, comptabilité)] coordination avec comptabilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6257,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6418,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6537,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6257, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration continue des processus (facturation, intégration, contrôle)] amélioration continue",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5652,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6346,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5652, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration continue des processus (facturation, intégration, contrôle)] optimisation des processus",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.3833,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5157,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5163,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3833, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration continue des processus (facturation, intégration, contrôle)] processus de facturation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.518,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5428,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5529,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5180, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation et montée en compétence des équipes internes sur les processus de facturation] formation interne",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.668,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7061,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7373,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6680, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation et montée en compétence des équipes internes sur les processus de facturation] montée en compétence",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4966,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5813,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5902,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4966, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation et montée en compétence des équipes internes sur les processus de facturation] transmission de connaissances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.567,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5716,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5999,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5670, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation et montée en compétence des équipes internes sur les processus de facturation] processus de facturation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.518,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5428,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5529,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5180, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance du secteur de l'énergie (tarifs, réglementations, acteurs du marché)] secteur de l'énergie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6117,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6174,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6486,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6117, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance du secteur de l'énergie (tarifs, réglementations, acteurs du marché)] tarifs énergétiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.54,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6599,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5400, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance du secteur de l'énergie (tarifs, réglementations, acteurs du marché)] réglementations énergie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6035,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6527,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6693,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6035, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance du secteur de l'énergie (tarifs, réglementations, acteurs du marché)] acteurs du marché de l'énergie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.521,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5588,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5788,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5210, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rigueur et organisation dans la gestion des données et des priorités] rigueur",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6892,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6965,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7063,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6892, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rigueur et organisation dans la gestion des données et des priorités] organisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6156,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6183,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6591,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6156, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rigueur et organisation dans la gestion des données et des priorités] gestion des priorités",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4502,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5345,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5428,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4502, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rigueur et organisation dans la gestion des données et des priorités] gestion des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4495,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4645,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.468,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4495, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}

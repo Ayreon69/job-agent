@@ -1,0 +1,910 @@
+{
+  "offer_id": 5,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "38",
+    "match_method": "departement"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance d'entrepôts de données décisionnels] conception entrepôts de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4027,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4284,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4484,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4027, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance d'entrepôts de données décisionnels] maintenance entrepôts de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4935,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5327,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5504,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4935, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance d'entrepôts de données décisionnels] data warehousing",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5368,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5734,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5806,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5368, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance d'entrepôts de données décisionnels] optimisation entrepôts de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4895,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5234,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5498,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4895, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Processus ETL/ELT (intégration, transformation et mise à disposition des données)] ETL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5149,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6996,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.7092,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5149, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Processus ETL/ELT (intégration, transformation et mise à disposition des données)] ELT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.622,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.686,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6896,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6220, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Processus ETL/ELT (intégration, transformation et mise à disposition des données)] intégration de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5271,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5429,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5546,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5271, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Processus ETL/ELT (intégration, transformation et mise à disposition des données)] transformation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5458,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5518,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5588,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5458, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Processus ETL/ELT (intégration, transformation et mise à disposition des données)] mise à disposition des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4685,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4816,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4864,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4685, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance et conformité des données (RGPD)] gouvernance des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4729,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4871,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5233,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4729, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance et conformité des données (RGPD)] RGPD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6895,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6907,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7125,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6895, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance et conformité des données (RGPD)] cycle de vie de la donnée",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5674,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6717,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6945,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5674, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance et conformité des données (RGPD)] conformité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5018,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5359,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5799,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5018, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance d'indicateurs et tableaux de bord] conception indicateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4666,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4985,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5473,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4666, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance d'indicateurs et tableaux de bord] tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7165,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7214,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7329,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7165, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance d'indicateurs et tableaux de bord] maintenance indicateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.558,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5807,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6191,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5580, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance d'indicateurs et tableaux de bord] KPI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6698,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7258,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7576,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6698, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance d'indicateurs et tableaux de bord] reporting décisionnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4944,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5167,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5191,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4944, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Versioning et maintenance d'applications décisionnelles] versioning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6198,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6654,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6198, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Versioning et maintenance d'applications décisionnelles] maintenance applicative",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5299,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5762,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5993,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5299, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Versioning et maintenance d'applications décisionnelles] gestion de version",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5001,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5009,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5412,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5001, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Versioning et maintenance d'applications décisionnelles] produit décisionnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3797,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.3939,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4161,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3797, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de documentations technico-fonctionnelles] documentation technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5417,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5538,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5743,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5417, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de documentations technico-fonctionnelles] documentation fonctionnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4463,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4766,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.517,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4463, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de documentations technico-fonctionnelles] rédaction de documentation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4664,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5115,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5286,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4664, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support technique et fonctionnel] support technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.608,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6152,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6393,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6080, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support technique et fonctionnel] support fonctionnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5532,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5682,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5832,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5532, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support technique et fonctionnel] assistance technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5646,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5686,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.579,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5646, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les Product Owners (PO) et équipes techniques] collaboration PO",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6612,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.686,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6906,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6612, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les Product Owners (PO) et équipes techniques] travail en équipe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6223,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6245,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6359,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6223, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les Product Owners (PO) et équipes techniques] communication technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5955,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6105,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.624,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5955, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les Product Owners (PO) et équipes techniques] agilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5955,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6736,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.688,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5955, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils et processus internes (amélioration continue)] amélioration des processus",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4003,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4602,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5018,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4003, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils et processus internes (amélioration continue)] outils internes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4922,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5163,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5184,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4922, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils et processus internes (amélioration continue)] optimisation des outils",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4686,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5165,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5205,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4686, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[SQL et bases de données relationnelles] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[SQL et bases de données relationnelles] bases de données relationnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4881,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5423,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5459,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4881, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[SQL et bases de données relationnelles] requêtage SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3276,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5929,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6862,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3276, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}

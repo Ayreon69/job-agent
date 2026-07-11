@@ -1,0 +1,1028 @@
+{
+  "offer_id": 21,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de modèles prédictifs avec Python et frameworks de machine learning] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de modèles prédictifs avec Python et frameworks de machine learning] machine learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1937,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5103,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.1937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de modèles prédictifs avec Python et frameworks de machine learning] modèles prédictifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3951,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4361,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5737,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3951, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de modèles prédictifs avec Python et frameworks de machine learning] développement de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4623,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5203,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5363,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4623, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyses statistiques avancées (tests d'hypothèses, régression, séries temporelles, inférence causale, études par cohortes)] analyses statistiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.4655,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5401,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5825,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4655, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyses statistiques avancées (tests d'hypothèses, régression, séries temporelles, inférence causale, études par cohortes)] tests d'hypothèses",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5962,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6702,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6941,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5962, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyses statistiques avancées (tests d'hypothèses, régression, séries temporelles, inférence causale, études par cohortes)] régression",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5514,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5846,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6509,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5514, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyses statistiques avancées (tests d'hypothèses, régression, séries temporelles, inférence causale, études par cohortes)] séries temporelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6668,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.7019,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7101,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6668, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyses statistiques avancées (tests d'hypothèses, régression, séries temporelles, inférence causale, études par cohortes)] inférence causale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6937,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7525,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7888,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyses statistiques avancées (tests d'hypothèses, régression, séries temporelles, inférence causale, études par cohortes)] études par cohortes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5273,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5946,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6248,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5273, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Segmentation des joueurs (clustering et analyse comportementale)] segmentation des joueurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6597,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6725,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6869,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6597, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Segmentation des joueurs (clustering et analyse comportementale)] clustering",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.69,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6993,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7167,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6900, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Segmentation des joueurs (clustering et analyse comportementale)] analyse comportementale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5068,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.597,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.607,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5068, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données comportementales des joueurs et insights post-lancement/live-ops] analyse des données comportementales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4707,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5272,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5474,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4707, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données comportementales des joueurs et insights post-lancement/live-ops] insights post-lancement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5509,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6068,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6122,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5509, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données comportementales des joueurs et insights post-lancement/live-ops] live-ops",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7062,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7277,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7306,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7062, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données comportementales des joueurs et insights post-lancement/live-ops] comportement des joueurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6802,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6874,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7144,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6802, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeu] tests A/B",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.644,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7089,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7298,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6440, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeu] conception de tests",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5749,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5878,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5921,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5749, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeu] interprétation de tests",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5926,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.664,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.683,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5926, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeu] fonctionnalités de jeu",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6029,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6282,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6545,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6029, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeu] mises à jour de jeu",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6109,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6683,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6811,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6109, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse des feedbacks joueurs] NLP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5013,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6103,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6117,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5013, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse des feedbacks joueurs] pipelines NLP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5027,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5139,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5232,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5027, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse des feedbacks joueurs] collecte de feedbacks",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6113,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6203,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.6276,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6113, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse des feedbacks joueurs] traitement de feedbacks",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5526,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5727,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5773,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5526, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse des feedbacks joueurs] analyse de feedbacks",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5444,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5788,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5846,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5444, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de l'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs] analyse de sentiment",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.657,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7516,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.7519,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6570, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de l'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs] modélisation de sentiment",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.639,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7309,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7401,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6390, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de l'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs] suivi des tendances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5466,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6135,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5466, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de l'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs] satisfaction des joueurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7569,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7994,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.8146,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de LLMs et GenAI pour la synthèse et la classification des feedbacks] LLMs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5515,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6097,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6306,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5515, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de LLMs et GenAI pour la synthèse et la classification des feedbacks] GenAI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.7502,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7879,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.8,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de LLMs et GenAI pour la synthèse et la classification des feedbacks] synthèse de feedbacks",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6339,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6532,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6534,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6339, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de LLMs et GenAI pour la synthèse et la classification des feedbacks] classification de feedbacks",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5693,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6315,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6321,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5693, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de Snowflake et Microsoft Fabric pour l'analyse de données et le développement de modèles] Snowflake",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5503,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.8609,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.8748,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5503, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de Snowflake et Microsoft Fabric pour l'analyse de données et le développement de modèles] Microsoft Fabric",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7118,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7209,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7291,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7118, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de Snowflake et Microsoft Fabric pour l'analyse de données et le développement de modèles] analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4916,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5031,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4776, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de Snowflake et Microsoft Fabric pour l'analyse de données et le développement de modèles] développement de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4623,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5203,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5363,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4623, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création de tableaux de bord automatisés et rapports avec Power BI et Microsoft Fabric] Power BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.3422,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6163,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6182,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3422, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création de tableaux de bord automatisés et rapports avec Power BI et Microsoft Fabric] tableaux de bord automatisés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.408,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.509,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5383,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4080, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création de tableaux de bord automatisés et rapports avec Power BI et Microsoft Fabric] rapports",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5934,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5985,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6177,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5934, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création de tableaux de bord automatisés et rapports avec Power BI et Microsoft Fabric] visualisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6191,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6351,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6191, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Modélisation de l'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs",
+    "Utilisation de LLMs et GenAI pour la synthèse et la classification des feedbacks"
+  ]
+}

@@ -1,0 +1,1140 @@
+{
+  "offer_id": 20,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "38",
+    "match_method": "departement"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données et reporting (KPI, tableaux de bord, tendances)] analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4916,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5031,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4776, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données et reporting (KPI, tableaux de bord, tendances)] reporting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6373,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6755,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6099, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données et reporting (KPI, tableaux de bord, tendances)] KPI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6698,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7258,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7576,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6698, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données et reporting (KPI, tableaux de bord, tendances)] tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7165,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7214,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7329,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7165, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données et reporting (KPI, tableaux de bord, tendances)] tendances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5876,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6323,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.64,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5876, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données et reporting (KPI, tableaux de bord, tendances)] business insights",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4782,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4907,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5464,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4782, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de visualisation et Business Intelligence (Power BI, outils de reporting)] Power BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.3422,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6163,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6182,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3422, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de visualisation et Business Intelligence (Power BI, outils de reporting)] visualisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6191,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6351,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6191, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de visualisation et Business Intelligence (Power BI, outils de reporting)] Business Intelligence",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4158,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4312,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5184,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4158, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de visualisation et Business Intelligence (Power BI, outils de reporting)] outils de reporting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4843,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5065,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5162,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4843, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et administration de Salesforce (CRM, super utilisateur, formation)] Salesforce",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5385,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6354,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6579,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5385, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et administration de Salesforce (CRM, super utilisateur, formation)] CRM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6386,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.654,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6888,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6386, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et administration de Salesforce (CRM, super utilisateur, formation)] super utilisateur",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5844,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5916,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6227,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5844, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et administration de Salesforce (CRM, super utilisateur, formation)] formation utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4595,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5454,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5524,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4595, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et administration de Salesforce (CRM, super utilisateur, formation)] gestion de Salesforce",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5588,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6098,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.625,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5588, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des processus et excellence opérationnelle] optimisation des processus",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.3833,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5157,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5163,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3833, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des processus et excellence opérationnelle] excellence opérationnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5286,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5827,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6121,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5286, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des processus et excellence opérationnelle] amélioration continue",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5652,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6346,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5652, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des processus et excellence opérationnelle] efficacité des processus",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.3841,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4809,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5276,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3841, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des exigences métiers et amélioration des outils digitaux] gestion des exigences métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.3987,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4276,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4279,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3987, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des exigences métiers et amélioration des outils digitaux] amélioration des outils digitaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4412,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5067,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5115,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4412, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des exigences métiers et amélioration des outils digitaux] recueil des besoins",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4636,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4781,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5007,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4636, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des exigences métiers et amélioration des outils digitaux] tests",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7049,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7069,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7362,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7049, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des exigences métiers et amélioration des outils digitaux] validation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5846,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6461,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6511,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5846, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des exigences métiers et amélioration des outils digitaux] déploiement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5399,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5434,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5587,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5399, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes IT et Master Data] collaboration IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5735,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6086,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6305,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5735, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes IT et Master Data] Master Data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5544,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5558,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6129,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5544, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes IT et Master Data] qualité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4455,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4573,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4983,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4455, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes IT et Master Data] performance des systèmes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5098,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.528,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5607,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5098, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes IT et Master Data] expérience utilisateur",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5878,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6008,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6056,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5878, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des notifications clients et conformité aux procédures (BD, réglementations)] notifications clients",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5552,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5706,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5956,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5552, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des notifications clients et conformité aux procédures (BD, réglementations)] gestion des changements",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3875,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4511,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5305,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3875, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des notifications clients et conformité aux procédures (BD, réglementations)] conformité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6268,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6574,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7312,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6268, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des notifications clients et conformité aux procédures (BD, réglementations)] procédures BD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5124,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5778,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5862,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5124, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des notifications clients et conformité aux procédures (BD, réglementations)] politiques de notification",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5329,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5535,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5592,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5329, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et gestion des relations clients (réunions, feedback, Voice of the Customer)] communication client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4789,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5437,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.589,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4789, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et gestion des relations clients (réunions, feedback, Voice of the Customer)] gestion des relations clients",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5053,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5257,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5684,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5053, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et gestion des relations clients (réunions, feedback, Voice of the Customer)] réunions clients",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.606,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6303,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6353,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6060, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et gestion des relations clients (réunions, feedback, Voice of the Customer)] feedback client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4947,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5541,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5653,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4947, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et gestion des relations clients (réunions, feedback, Voice of the Customer)] Voice of the Customer",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6198,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6227,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6421,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6198, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils Microsoft Office (Excel, PowerPoint, Word)] Microsoft Office",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6969,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7261,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7285,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6969, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils Microsoft Office (Excel, PowerPoint, Word)] Excel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.686,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6954,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7006,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6860, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils Microsoft Office (Excel, PowerPoint, Word)] PowerPoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.607,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7358,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7448,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6070, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils Microsoft Office (Excel, PowerPoint, Word)] Word",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6411,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7664,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.782,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6411, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience dans les industries réglementées (pharmaceutique, dispositifs médicaux, santé)] industrie pharmaceutique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4881,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6446,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6578,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4881, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience dans les industries réglementées (pharmaceutique, dispositifs médicaux, santé)] dispositifs médicaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5605,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6124,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6504,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5605, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience dans les industries réglementées (pharmaceutique, dispositifs médicaux, santé)] santé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6152,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6744,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6861,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6152, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience dans les industries réglementées (pharmaceutique, dispositifs médicaux, santé)] industries réglementées",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4524,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5918,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6057,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4524, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}

@@ -1,0 +1,12 @@
+{
+  "offer_id": 31,
+  "decisions": [
+    "description jugée trop courte/tronquée (48 caractères < 300) — tentative de re-scraping ciblé avant scoring",
+    "re-scraping échoué (Error(\"BrowserType.launch: Executable doesn't exist at C:\\\\Users\\\\Rayan\\\\AppData\\\\Local\\\\ms-playwright\\\\chromium_headless_shell-1228\\\\chrome-headless-shell-win64\\\\chrome-headless-shell.exe\\n╔════════════════════════════════════════════════════════════╗\\n║ Looks like Playwright was just installed or updated.       ║\\n║ Please run the following command to download new browsers: ║\\n║                                                            ║\\n║     playwright install                                     ║\\n║                                                            ║\\n║ <3 Playwright Team                                         ║\\n╚════════════════════════════════════════════════════════════╝\")) — poursuite avec la description existante en connaissance de cause",
+    "scoring terminé: score=95, zone=inconnu, gaps=0, uncertain_flags=1",
+    "zone géographique 'inconnu' détectée — pipeline poursuivi (scoring + génération), mais le résultat sera marqué 'a_valider_geographie' plutôt que d'appliquer silencieusement une règle de ton par défaut",
+    "génération de l'analyse terminée"
+  ],
+  "final_status": "a_valider_geographie",
+  "error": null
+}

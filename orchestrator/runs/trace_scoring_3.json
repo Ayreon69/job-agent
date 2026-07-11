@@ -1,0 +1,1071 @@
+{
+  "offer_id": 3,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise avancée d'Excel pour la modélisation financière et l'analyse de données] Excel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.686,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6954,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7006,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6860, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise avancée d'Excel pour la modélisation financière et l'analyse de données] modélisation financière",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5692,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5829,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5976,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise avancée d'Excel pour la modélisation financière et l'analyse de données] tableaux croisés dynamiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7161,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7272,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7412,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7161, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise avancée d'Excel pour la modélisation financière et l'analyse de données] formules Excel avancées",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.6412,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6547,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6568,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6412, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise avancée d'Excel pour la modélisation financière et l'analyse de données] analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4916,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5031,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4776, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Interrogation et gestion de bases de données SQL] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Interrogation et gestion de bases de données SQL] requêtes SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3098,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5934,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6618,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3098, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Interrogation et gestion de bases de données SQL] gestion de bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3898,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4375,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5019,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3898, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Interrogation et gestion de bases de données SQL] jointures SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4824,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6837,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6847,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4824, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Interrogation et gestion de bases de données SQL] optimisation de requêtes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5469,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.558,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5671,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5469, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Construction et suivi de budgets annuels] budget",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6227,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6986,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6998,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6227, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Construction et suivi de budgets annuels] suivi budgétaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5429,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5762,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6022,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5429, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Construction et suivi de budgets annuels] planification financière",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5501,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5633,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6192,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5501, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Construction et suivi de budgets annuels] allocation budgétaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5857,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6693,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6764,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5857, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de business plans et prévisions financières] business plan",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5742,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5788,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6462,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5742, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de business plans et prévisions financières] prévision financière",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4868,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5404,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6197,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4868, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de business plans et prévisions financières] modélisation financière",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5692,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5829,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5976,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de business plans et prévisions financières] scénarios financiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5347,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5653,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.626,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5347, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation des modèles de forecast et analyse de trésorerie] forecast",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5795,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6191,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6364,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5795, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation des modèles de forecast et analyse de trésorerie] automatisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3734,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4765,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3734, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation des modèles de forecast et analyse de trésorerie] analyse de trésorerie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5226,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5609,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5624,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5226, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation des modèles de forecast et analyse de trésorerie] prévision de trésorerie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5342,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5877,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4846, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation des modèles de forecast et analyse de trésorerie] scripts financiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6317,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6412,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6419,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6317, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création et maintenance de tableaux de bord de suivi des ventes multi-canaux] tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7165,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7214,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7329,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7165, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création et maintenance de tableaux de bord de suivi des ventes multi-canaux] visualisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6191,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6351,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6191, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création et maintenance de tableaux de bord de suivi des ventes multi-canaux] suivi des ventes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5325,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5574,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5921,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5325, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création et maintenance de tableaux de bord de suivi des ventes multi-canaux] multi-canaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6793,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7045,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.713,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6793, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création et maintenance de tableaux de bord de suivi des ventes multi-canaux] reporting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6373,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6755,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6099, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des écarts entre prévisions et réalisations financières] analyse des écarts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.5117,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5384,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5915,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5117, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des écarts entre prévisions et réalisations financières] prévision vs réalisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4469,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5284,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6364,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4469, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des écarts entre prévisions et réalisations financières] contrôle financier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.593,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6456,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6539,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5930, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des écarts entre prévisions et réalisations financières] performance financière",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5578,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5872,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6642,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5578, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de rentabilité par marque, canal ou typologie client] analyse de rentabilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4319,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4621,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4924,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4319, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de rentabilité par marque, canal ou typologie client] segmentation client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5937,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6267,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6462,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de rentabilité par marque, canal ou typologie client] performance par marque",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5201,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5392,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5649,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5201, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de rentabilité par marque, canal ou typologie client] performance par canal",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6089,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6133,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6778,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6089, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Extraction et retraitement des données comptables pour fiabiliser P&L et bilans] données comptables",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5232,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5861,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5892,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5232, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Extraction et retraitement des données comptables pour fiabiliser P&L et bilans] P&L (Profit & Loss)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5879,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6466,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6661,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5879, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Extraction et retraitement des données comptables pour fiabiliser P&L et bilans] bilan comptable",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6282,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6807,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6873,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6282, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Extraction et retraitement des données comptables pour fiabiliser P&L et bilans] retraitement de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5401,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5866,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5913,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5401, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Extraction et retraitement des données comptables pour fiabiliser P&L et bilans] fiabilisation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4703,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4973,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5423,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4703, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes financières et opérationnelles] travail d'équipe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6501,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.658,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6593,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6501, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes financières et opérationnelles] collaboration transverse",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6297,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6364,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6693,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6297, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes financières et opérationnelles] communication financière",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6757,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6874,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.7033,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6757, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes financières et opérationnelles] alignement opérationnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6579,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.663,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6673,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6579, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}

@@ -1,0 +1,818 @@
+{
+  "offer_id": 28,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en reprise de données et migration] reprise de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5157,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5448,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6076,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5157, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en reprise de données et migration] migration de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.555,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.6105,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.613,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5550, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en reprise de données et migration] stratégie de migration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.4775,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.4813,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.4847,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4775, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en reprise de données et migration] mapping des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5896,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.629,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6341,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5896, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en reprise de données et migration] spécifications de reprise",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4669,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5797,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5921,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4669, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Qualification et recette des données] qualification des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.3742,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4417,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4524,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3742, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Qualification et recette des données] recette fonctionnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6619,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6852,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6962,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6619, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Qualification et recette des données] contrôle qualité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4586,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.473,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5022,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4586, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Qualification et recette des données] anomalies de recette",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.68,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7487,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7627,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6800, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Qualification et recette des données] TNR (Tests de Non-Régression)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6493,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.6759,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6895,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6493, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[SQL et manipulation de gros volumes de données] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[SQL et manipulation de gros volumes de données] manipulation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4995,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5495,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5735,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4995, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[SQL et manipulation de gros volumes de données] contrôle de gros volumes de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.546,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5617,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5629,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5460, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de spécifications fonctionnelles] spécifications fonctionnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5205,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5335,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5337,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5205, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de spécifications fonctionnelles] documentation technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5417,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5538,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5743,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5417, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de spécifications fonctionnelles] modes opératoires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5903,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6186,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6391,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5903, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de spécifications fonctionnelles] procédures",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5884,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6031,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6061,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5884, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Coordination multi-acteurs (métiers, IT, projets)] coordination d'équipes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6722,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6823,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.694,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6722, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Coordination multi-acteurs (métiers, IT, projets)] gestion de projet",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4704,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5231,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5262,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4704, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Coordination multi-acteurs (métiers, IT, projets)] collaboration métiers-IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.55,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5907,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5929,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5500, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Coordination multi-acteurs (métiers, IT, projets)] plan de bascule",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.566,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5752,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6172,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5660, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance du domaine Collectif Santé/Prévoyance] Collectif Santé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5736,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7262,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.7265,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5736, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance du domaine Collectif Santé/Prévoyance] Prévoyance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4617,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.6133,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6355,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4617, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance du domaine Collectif Santé/Prévoyance] métiers de l'assurance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4752,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5331,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5526,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4752, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de l'IA dans un contexte projet (ex: Claude Code)] IA en contexte projet",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4061,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4307,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4339,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4061, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de l'IA dans un contexte projet (ex: Claude Code)] Claude Code",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.536,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6463,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.7258,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5360, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de l'IA dans un contexte projet (ex: Claude Code)] automatisation par IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3402,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4264,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4339,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3402, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Leadership et communication] leadership",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6835,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.748,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7733,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6835, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Leadership et communication] communication écrite et orale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5975,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6052,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6203,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5975, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Leadership et communication] conduite du changement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5032,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5427,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6376,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5032, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Leadership et communication] accompagnement des métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4518,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4778,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5143,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4518, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rigueur et esprit d'équipe] rigueur",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6892,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6965,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7063,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6892, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rigueur et esprit d'équipe] esprit d'équipe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7233,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7283,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.74,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7233, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rigueur et esprit d'équipe] sens des responsabilités",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.584,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6223,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6401,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5840, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}

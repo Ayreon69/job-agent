@@ -1,0 +1,1002 @@
+{
+  "offer_id": 12,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "74",
+    "match_method": "departement"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets digitaux et roadmap] gestion de projets digitaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4675,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.489,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5402,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4675, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets digitaux et roadmap] roadmap digitale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.639,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6698,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6775,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6390, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets digitaux et roadmap] plan de déploiement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4929,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4935,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.4942,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4929, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets digitaux et roadmap] coordination de prestataires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5435,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5498,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5594,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5435, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets digitaux et roadmap] suivi de projets",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4158,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4883,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5162,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4158, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données marketing et reporting] analyse de données marketing",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4813,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.499,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5617,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4813, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données marketing et reporting] reporting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6373,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6755,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6099, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données marketing et reporting] collecte de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5234,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5288,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5491,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5234, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données marketing et reporting] préparation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4308,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4425,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4577,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4308, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données marketing et reporting] tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7165,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7214,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7329,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7165, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données marketing et reporting] statistiques digitales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5219,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5402,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5418,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5219, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des canaux digitaux (site internet, e-boutique, application)] site internet",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6629,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6811,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.709,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6629, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des canaux digitaux (site internet, e-boutique, application)] e-boutique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5645,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7247,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7272,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5645, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des canaux digitaux (site internet, e-boutique, application)] application mobile",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5645,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.621,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6477,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5645, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des canaux digitaux (site internet, e-boutique, application)] gestion de contenu digital",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5645,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5744,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5847,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5645, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des canaux digitaux (site internet, e-boutique, application)] UX-UI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6919,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7012,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7297,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6919, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des canaux digitaux (site internet, e-boutique, application)] amélioration UX-UI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5202,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5232,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5524,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5202, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Billetterie digitale et administration de plateformes] billetterie digitale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5841,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6732,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6886,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5841, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Billetterie digitale et administration de plateformes] administration de plateformes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5187,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5236,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5398,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5187, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Billetterie digitale et administration de plateformes] gestion des tarifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.3744,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5065,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.533,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3744, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Billetterie digitale et administration de plateformes] gestion des offres",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4723,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4758,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4924,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4723, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Billetterie digitale et administration de plateformes] mise à jour de contenus",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5786,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.659,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6889,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5786, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et innovation digitale] veille technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5358,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5861,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5358, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et innovation digitale] innovation digitale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6276,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6628,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.676,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6276, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et innovation digitale] veille sur les innovations digitales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5876,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5947,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5957,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5876, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration transverse et coordination d'équipes] collaboration transverse",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6297,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6364,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6693,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6297, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration transverse et coordination d'équipes] coordination d'équipes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6722,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6823,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.694,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6722, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration transverse et coordination d'équipes] travail en équipe marketing",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5827,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5834,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5892,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5827, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration transverse et coordination d'équipes] travail en équipe opérationnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5593,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5609,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5856,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5593, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des délais et qualité des livrables] respect des délais",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.4313,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4797,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6183,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4313, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des délais et qualité des livrables] qualité des livrables",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5208,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5243,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5998,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5208, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des délais et qualité des livrables] gestion de la qualité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4688,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5348,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5387,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4688, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Stratégie digitale et développement d'offres multimodales] stratégie digitale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5767,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6219,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6261,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5767, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Stratégie digitale et développement d'offres multimodales] développement d'offres multimodales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4688,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.5676,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5691,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4688, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Stratégie digitale et développement d'offres multimodales] innovation en transport",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.5974,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6137,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6192,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5974, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de suivi et d'analyse (statistiques, tableaux de bord)] outils de suivi",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5031,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.505,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5075,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5031, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de suivi et d'analyse (statistiques, tableaux de bord)] outils d'analyse",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4488,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4815,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.507,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4488, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de suivi et d'analyse (statistiques, tableaux de bord)] statistiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5258,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6218,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6402,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5258, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de suivi et d'analyse (statistiques, tableaux de bord)] tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7165,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7214,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7329,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7165, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Relation avec les partenaires et prestataires externes] gestion de partenaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5742,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.588,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5906,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5742, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Relation avec les partenaires et prestataires externes] relation avec prestataires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.45,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5054,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5664,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4500, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Relation avec les partenaires et prestataires externes] coordination externe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6326,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6883,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.697,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6326, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}
