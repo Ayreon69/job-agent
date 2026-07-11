@@ -25,9 +25,20 @@ CREATE TABLE IF NOT EXISTS jobs (
     description TEXT,
     published_at TEXT,
     scraped_at TEXT NOT NULL DEFAULT (datetime('now')),
+    status TEXT NOT NULL DEFAULT 'nouveau',
     UNIQUE(source, source_id)
 );
 """
+
+# Statuts possibles de jobs.status, gérés par l'orchestrateur (session 5) :
+#   nouveau                 - pas encore traité
+#   analyse                 - scoring + génération réussis
+#   a_valider_geographie    - traité avec succès mais zone géographique
+#                              "inconnu" (session 3) : ne pas faire confiance
+#                              silencieusement au ton généré, valider à la main
+#   echec                   - une étape a levé une exception ; voir la trace
+#                              orchestrateur pour le détail
+JOB_STATUSES = ("nouveau", "analyse", "a_valider_geographie", "echec")
 
 
 @dataclass
@@ -48,6 +59,17 @@ class Job:
 def init_db(db_path: Path = DEFAULT_DB_PATH) -> None:
     with connect(db_path) as conn:
         conn.executescript(SCHEMA)
+        _migrate_add_status_column(conn)
+
+
+def _migrate_add_status_column(conn: sqlite3.Connection) -> None:
+    """CREATE TABLE IF NOT EXISTS in SCHEMA doesn't touch a table that already
+    exists without the new column (databases created before session 5) — add
+    it explicitly if missing, defaulting existing rows to 'nouveau'.
+    """
+    columns = {row[1] for row in conn.execute("PRAGMA table_info(jobs)").fetchall()}
+    if "status" not in columns:
+        conn.execute("ALTER TABLE jobs ADD COLUMN status TEXT NOT NULL DEFAULT 'nouveau'")
 
 
 @contextmanager
@@ -92,3 +114,9 @@ def upsert_job(conn: sqlite3.Connection, job: Job) -> bool:
 def count_jobs(db_path: Path = DEFAULT_DB_PATH) -> int:
     with connect(db_path) as conn:
         return conn.execute("SELECT COUNT(*) FROM jobs").fetchone()[0]
+
+
+def set_job_status(conn: sqlite3.Connection, job_id: int, status: str) -> None:
+    if status not in JOB_STATUSES:
+        raise ValueError(f"Unknown job status {status!r}, expected one of {JOB_STATUSES}")
+    conn.execute("UPDATE jobs SET status = ? WHERE id = ?", (status, job_id))

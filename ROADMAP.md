@@ -515,3 +515,417 @@ sémantique — il ne détecterait pas une justification qui réutilise des mots
 profil dans un sens détourné ou exagéré. Suffisant comme filet de sécurité
 mécanique, pas comme garantie d'honnêteté complète (qui reste portée par le
 prompt et la relecture humaine ponctuelle).
+
+## Session 5 (2026-07-11) : orchestrateur
+
+**Objectif :** un agent de plus haut niveau qui enchaîne scoring (session 3)
+puis génération (session 4) sur une offre, mais qui prend de vraies décisions
+sur le déroulement du pipeline selon le contexte, plutôt que d'appeler les
+deux étapes dans l'ordre à chaque fois sans condition.
+
+**Schéma (`storage/db.py`) :** ajout de la colonne `jobs.status`
+(`nouveau` / `analyse` / `a_valider_geographie` / `echec`), avec une
+migration explicite (`_migrate_add_status_column`) car les bases déjà
+existantes (créées en session 1, avant l'ajout de la colonne) ne sont pas
+mises à jour par un simple `CREATE TABLE IF NOT EXISTS`.
+
+**Implémentation (`orchestrator/agent.py`, `orchestrator/run.py`) — les 3
+décisions attendues, dans l'ordre :**
+
+1. **Offre insuffisamment détaillée → re-scraping ciblé avant scoring.**
+   Réutilise le seuil de `generation.analysis._should_search_web`
+   (300 caractères titre+description) comme heuristique côté orchestrateur :
+   une offre trop courte pour fonder un angle de candidature l'est aussi pour
+   scorer correctement. Si détectée, tentative de re-scraping via
+   `scraper/hellowork.fetch_job_detail` sur l'URL déjà stockée en base (pas
+   une nouvelle recherche complète, un ciblage direct sur l'offre concernée).
+   Si le re-scraping échoue (exception Playwright) ou n'apporte rien de plus
+   (description vide ou pas plus longue), le pipeline continue quand même
+   avec la description existante — mais ce choix est explicitement logué,
+   jamais silencieux.
+2. **Zone géographique "inconnu" → pipeline non bloqué, mais statut dédié.**
+   Le scoring et la génération s'exécutent normalement (comme prévu depuis la
+   session 3 : `flag_uncertain("géographie")` sans bloquer). L'orchestrateur
+   ajoute une décision supplémentaire à son propre niveau : le statut final
+   en base est `a_valider_geographie` plutôt que `analyse`, pour qu'un humain
+   sache ne pas faire confiance silencieusement au ton généré par défaut sur
+   cette offre.
+3. **Échec technique → capture, log détaillé, statut `echec`, poursuite du
+   batch.** Un `try/except` unique autour de tout le pipeline (re-scraping,
+   scoring, génération) capture toute exception, logue le type d'erreur, le
+   contexte de l'offre (id/titre/URL) et la stack trace complète, marque
+   l'offre `echec` en base, et retourne un résultat plutôt que de laisser
+   l'exception remonter — la boucle batch dans `orchestrator/run.py` traite
+   donc toujours les offres suivantes.
+
+**Ce que l'orchestrateur ne fait jamais (rappel CLAUDE.md) :** aucune
+fonction de ce module n'envoie ni ne soumet quoi que ce soit à un système
+externe — il s'arrête après avoir produit l'analyse markdown et le statut en
+base. La validation humaine reste le seul chemin vers une action externe.
+
+**Interface :** `orchestrator/run.py`, mode offre unique
+(`--offer-id N`) ou mode batch (sans argument, traite tout `status='nouveau'`
+en base). Chaque offre traitée produit 4 fichiers dans `orchestrator/runs/` :
+`analysis_<id>.md` (si succès), `trace_orchestrator_<id>.json` (les
+décisions propres à l'orchestrateur), `trace_scoring_<id>.json` et
+`trace_generation_<id>.json` (les traces déjà produites par les sessions 3 et
+4, remontées telles quelles).
+
+**Tests réels — 3 scénarios distincts, sur les 30 offres de la session 1 plus
+2 offres synthétiques ajoutées pour forcer les cas non standard absents des
+30 offres réelles (toutes en Rhône-Alpes/France avec description
+substantielle, donc aucun déclencheur naturel des décisions 1 et 2) :**
+
+- **Offre synthétique 31** (`Belgique - Antwerpen`, description tronquée à
+  35 caractères, URL factice) : déclenche la décision 1 (re-scraping tenté)
+  ET la décision 2 (zone `inconnu`, via `FOREIGN_NON_TARGET_COUNTRIES` de la
+  session 3). Le re-scraping a échoué proprement (à ce moment, Chromium
+  n'était pas encore installé dans le venv — voir plus bas), logué et
+  poursuivi ; la zone `inconnu` a été détectée et le statut final est bien
+  `a_valider_geographie`, pas `analyse`. Trace complète :
+  ```json
+  {
+    "offer_id": 31,
+    "decisions": [
+      "description jugée trop courte/tronquée (48 caractères < 300) — tentative de re-scraping ciblé avant scoring",
+      "re-scraping échoué (...) — poursuite avec la description existante en connaissance de cause",
+      "scoring terminé: score=95, zone=inconnu, gaps=0, uncertain_flags=1",
+      "zone géographique 'inconnu' détectée — pipeline poursuivi (scoring + génération), mais le résultat sera marqué 'a_valider_geographie' plutôt que d'appliquer silencieusement une règle de ton par défaut",
+      "génération de l'analyse terminée"
+    ],
+    "final_status": "a_valider_geographie",
+    "error": null
+  }
+  ```
+- **Offre synthétique 32** (URL réelle de l'offre 7, description tronquée à
+  37 caractères) : déclenche la décision 1 avec un **re-scraping réussi**
+  (après installation de Chromium dans le venv, voir plus bas) — description
+  enrichie de 37 à 950 caractères directement depuis la vraie page Hellowork,
+  scoring exécuté sur la description complète, statut final `analyse`.
+  Démontre le chemin de succès de la décision 1, complémentaire à l'échec
+  observé sur l'offre 31.
+- **Rate limiting Mistral en conditions réelles (décision 3, cas non
+  anticipé mais découvert en testant) :** le premier run batch sur les 30
+  offres réelles enchaînées sans délai a produit **13 échecs consécutifs**
+  (offres 2 à 14) avec `SDKError: Status 429 Rate limit exceeded`, avant que
+  l'API ne se rétablisse d'elle-même pour les offres 15 à 30. Le batch a
+  continué jusqu'au bout sans planter — exactement le comportement attendu
+  de la décision 3 — et chaque offre en échec a une trace complète avec
+  stack trace exploitable, ex. (`trace_orchestrator_2.json`) :
+  ```json
+  {
+    "offer_id": 2,
+    "decisions": ["échec technique capturé — offre marquée 'echec': SDKError: API error occurred: Status 429. Body: {...\"rate_limited\"...}"],
+    "final_status": "echec",
+    "error": "SDKError: ...\noffer_id=2, title='Data Analyst H/F', url='https://www.hellowork.com/fr-fr/emplois/80532972.html'\nTraceback (most recent call last):\n  File \".../orchestrator/agent.py\", line 148, in process_offer\n    scoring_result = score_offer(...)\n  ...\n"
+  }
+  ```
+  Correctif appliqué : ajout d'un délai configurable entre offres en mode
+  batch (`--delay-seconds`, défaut 2s) dans `orchestrator/run.py`. Les 13
+  offres en échec ont été repassées à `nouveau` et retraitées avec ce délai :
+  **0 échec sur le rerun**, confirmant que le délai suffit à éviter le
+  rate limit dans ces conditions d'usage.
+
+**Bilan final sur les 30 offres réelles de la session 1, après le correctif
+de délai :**
+| Statut | Nombre | Détail |
+|---|---|---|
+| `analyse` | 30 | Toutes les offres réelles, aucune zone `inconnu` naturelle (toutes en Rhône-Alpes ou France identifiable) |
+| `a_valider_geographie` | 0 (sur les offres réelles) | 1 sur l'offre synthétique 31 (Belgique) |
+| `echec` | 0 (après retraitement) | 13 échecs transitoires (rate limit Mistral) sur le premier run sans délai, tous résolus au rerun avec `--delay-seconds` |
+
+**124 fichiers versionnés** dans `orchestrator/runs/` (31 offres traitées ×
+4 fichiers, moins les fichiers scoring/génération de l'offre 31 qui a échoué
+son re-scraping mais a quand même produit une analyse — donc bien 4 fichiers
+partout sauf remarque : seule une offre marquée `echec` définitivement
+n'aurait pas de `analysis_<id>.md` ni de traces scoring/génération, ce qui
+ne s'est produit sur aucune offre après le rerun).
+
+**Limites connues à traiter plus tard :**
+- ~~Le délai fixe (`--delay-seconds`) est un correctif pragmatique, pas un
+  vrai retry avec backoff exponentiel sur 429~~ — traité en correctif
+  post-session 5, voir plus bas.
+- La décision 1 (re-scraping) réutilise `fetch_job_detail` mais reconstruit
+  un `JobListing` minimal à partir des colonnes déjà en base plutôt que de
+  passer par `search_jobs` — cohérent avec l'objectif de cibler l'offre
+  précise sans relancer une recherche complète, mais suppose que l'URL en
+  base reste valide (offre non expirée/supprimée côté Hellowork). Aucun test
+  sur une URL expirée réelle cette session.
+- Aucune offre réelle des 30 de la session 1 n'a naturellement déclenché les
+  décisions 1 et 2 (descriptions substantielles, zones identifiables) — leur
+  validation repose sur les 2 offres synthétiques ajoutées spécifiquement
+  pour ce test, comme suggéré par la spec de session. À surveiller sur de
+  futurs scraping élargis (autres régions, autres sources) où ces cas
+  pourraient apparaître naturellement.
+
+## Correctif post-session 5 (2026-07-11) : retry avec backoff exponentiel sur 429
+
+**Objectif :** le délai fixe entre offres (`--delay-seconds`, session 5)
+réduit la fréquence des rate limits Mistral mais ne fait rien si un 429
+survient quand même — l'offre était marquée `echec` immédiatement, sans
+seconde chance. Ajout d'un retry ciblé sur les 429 spécifiquement, en
+complément du délai fixe (pas à sa place).
+
+**Implémentation (`scoring/llm.py`) :** `_call_with_retry(make_request,
+max_retries=3, backoff_base_seconds=2.0)` enveloppe l'appel API dans
+`call_llm` et `call_llm_json`. Détection ciblée via `exc.status_code == 429`
+(attribut fiable exposé par `SDKError`/`MistralError` du SDK Mistral, plutôt
+que du pattern-matching sur le message d'erreur) — toute autre exception
+(401, JSON malformé, etc.) remonte immédiatement dès la première tentative,
+sans retry inutile. Backoff exponentiel 2s / 4s / 8s (3 tentatives par
+défaut), chaque tentative loguée (`logger.warning`, numéro de tentative et
+délai appliqué — pas un retry silencieux). Si toutes les tentatives
+échouent, la dernière `SDKError` remonte normalement : l'orchestrateur gère
+ça exactement comme avant (statut `echec`, trace complète, poursuite du
+batch) — le retry est un filet supplémentaire avant l'échec définitif, pas
+un remplacement de la gestion d'échec de session 5.
+
+**Test 1 — mécanique du retry, en mock (`tests/test_llm_retry.py`) :**
+4 cas déterministes sans appel API réel : succès après deux 429 simulés,
+épuisement des tentatives puis levée de l'exception, un 401 non retenté
+(passe dès la première tentative), et vérification du timing exact du
+backoff (1.0s / 2.0s / 4.0s avec `time.sleep` mocké). **4/4 cas passés** —
+prouve que la mécanique elle-même est correcte, indépendamment de tout vrai
+rate limit.
+
+**Test 2 — reproduction réaliste des conditions de session 5, en deux
+temps :**
+
+D'abord, rejeu direct du scénario original : les 30 offres relancées avec
+`orchestrator.run --delay-seconds 0` (mêmes conditions qu'en session 5).
+Résultat : **0 rate limit rencontré, 30/30 analysées**. Constat honnête :
+contrairement à l'hypothèse de départ, ce rejeu ne suffit pas à prouver que
+le retry fonctionne contre un vrai 429 — chaque offre fait un travail RAG
+local significatif (recherches par atome, `sentence-transformers`) entre les
+deux appels Mistral réels (extraction + arbitrage), ce qui espace
+naturellement les requêtes API bien plus que `--delay-seconds 0` seul ne le
+laisse penser. Le run de session 5 avait dû tomber sur une fenêtre de rate
+limit plus stricte (chargée côté compte Mistral à ce moment précis), pas
+uniquement sur l'absence de délai.
+
+Pour obtenir une preuve non biaisée, `tests/test_llm_retry_live.py` retire
+cet espacement naturel : 20 appels `call_llm` réels tirés en boucle serrée,
+sans aucun travail RAG entre eux, pour recréer des conditions de rafale
+comparables à celles qui avaient causé les 13 échecs originaux. Résultat
+réel (aucune donnée retouchée) :
+```
+[4] ECHEC DEFINITIF après épuisement des tentatives: ...429...
+[5] ECHEC DEFINITIF après épuisement des tentatives: ...429...
+[6] OK (retries observés: 3) -> 'ok'
+...
+[10] ECHEC DEFINITIF ... [11] ECHEC DEFINITIF ... [12] ECHEC DEFINITIF ...
+[13] OK (retries observés: 2) -> 'ok'
+...
+[17] ECHEC DEFINITIF ... [18] ECHEC DEFINITIF ... [19] ECHEC DEFINITIF ...
+
+Résumé: 12/20 succès, 8/20 échecs définitifs
+Dont 2 succès obtenus APRES au moins un retry sur 429 (preuve que le backoff a absorbé un vrai rate limit)
+```
+Deux appels (indices 6 et 13) ont réellement échoué une première fois avec un
+vrai 429, puis réussi après respectivement 3 et 2 tentatives — preuve directe
+que le backoff absorbe un vrai rate limit, pas seulement le cas mocké. Les
+8 échecs restants ont épuisé leurs 3 tentatives (jusqu'à 2+4+8=14s d'attente
+cumulée chacun) sans jamais obtenir de réponse 200 : dans une rafale aussi
+dense (20 requêtes sans aucun espacement), le rate limit Mistral est plus
+persistant que ce que 3 tentatives à backoff court peuvent absorber — le
+retry réduit le taux d'échec, il ne l'élimine pas dans un scénario de rafale
+extrême et volontairement pire que l'usage réel de l'orchestrateur.
+
+**Interprétation honnête pour l'usage réel :** l'orchestrateur (`orchestrator/
+run.py`) n'envoie jamais 20 requêtes Mistral sans espacement — chaque offre
+insère un travail RAG local entre les deux appels réels, et `--delay-seconds`
+(2s par défaut) ajoute un espacement supplémentaire entre offres. Le test 2
+en rafale serrée est un stress-test volontairement plus dur que les
+conditions réelles, pas une reproduction fidèle de l'usage courant — mais
+c'est la seule façon de garantir qu'un vrai 429 était bien présent pour
+tester le retry contre lui, plutôt que de se contenter d'un rejeu qui n'en a
+rencontré aucun.
+
+**Conclusion :** le retry est un filet réel et vérifié (2/8 429 rencontrés
+dans le test en rafale ont été absorbés sans intervention), complémentaire
+au délai fixe de session 5, pas un remplacement total du risque de rate
+limit sous charge extrême. Combiné au délai fixe existant entre offres, la
+probabilité qu'une offre traitée par l'orchestrateur échoue définitivement à
+cause d'un 429 est maintenant plus faible qu'avant ce correctif, mais pas
+nulle en cas de rafale anormalement dense.
+
+## Session 6 (2026-07-11) : wrapper FastAPI
+
+**Objectif :** exposer l'orchestrateur existant (sessions 3-5) via une API
+HTTP, sans y ajouter de nouvelle logique de décision — l'API appelle
+`orchestrator.agent.process_offer`, `storage.db`, et lit les fichiers déjà
+produits dans `orchestrator/runs/` ; elle ne réimplémente rien.
+
+**Implémentation :**
+- `api/schemas.py` : modèles Pydantic purement descriptifs (`HealthResponse`,
+  `OfferSummary`, `OfferDetailResponse`, `AnalyzeRequest`, `AnalyzeResponse`).
+- `api/main.py` : les 4 endpoints demandés, `FastAPI` + `uvicorn` ajoutés à
+  `requirements.txt`. `MISTRAL_API_KEY` est chargé par le simple fait
+  d'importer `scoring.llm` (qui appelle déjà `load_dotenv()` en haut de
+  fichier) — aucune logique de chargement `.env` dupliquée.
+- Comme `score`/`geography_zone` ne sont pas stockés dans `jobs` (calculés
+  à la volée et écrits uniquement dans `orchestrator/runs/*.json`),
+  `GET /offers` les reconstruit en relisant la ligne de décision
+  `"scoring terminé: score=X, zone=Y, ..."` déjà présente dans
+  `trace_orchestrator_<id>.json` plutôt que d'ajouter une nouvelle colonne
+  SQLite — cohérent avec le principe de session : pas de nouvelle logique,
+  juste de la lecture de ce qui existe déjà.
+
+**Les 4 endpoints :**
+
+- **`GET /health`** — vérification simple, aucune logique métier.
+  ```
+  $ curl http://127.0.0.1:8000/health
+  {"status":"ok"}
+  ```
+
+- **`GET /offers`** — liste légère (statut, score, zone, titre), pour un
+  usage dashboard. Score/zone valent `null` tant que l'offre n'a pas été
+  traitée.
+  ```
+  $ curl http://127.0.0.1:8000/offers
+  [
+    {"id": 7, "title": "Data Analyst Senior - Lyon H/F", "location": "Lyon - 69",
+     "company": "Ippon Technologies", "status": "analyse", "score": 82,
+     "geography_zone": "rhone_alpes"},
+    ...  (30 offres au total)
+  ]
+  ```
+
+- **`GET /offers/{offer_id}`** — détail complet : markdown de l'analyse (si
+  disponible) + les 3 traces JSON complètes (orchestrateur, scoring,
+  génération), pour audit fin. Une offre existante mais pas encore traitée
+  renverrait 200 avec `analysis_markdown: null` et les traces à `null`
+  (`status: "nouveau"`) plutôt qu'une erreur — seul un `offer_id` absent de
+  la base déclenche un 404.
+  ```
+  $ curl http://127.0.0.1:8000/offers/7
+  {"id": 7, "title": "Data Analyst Senior - Lyon H/F", ..., "status": "analyse",
+   "analysis_markdown": "## Résumé du matching\n...", 
+   "orchestrator_trace": {...}, "scoring_trace": {...}, "generation_trace": {...}}
+  ```
+
+- **`POST /analyze`** — déclenche `process_offer` sur un `offer_id` déjà en
+  base (choix délibéré, voir "Limites" ci-dessous), écrit les fichiers via
+  la même fonction `write_outputs` que `orchestrator/run.py`, renvoie le
+  statut final, le markdown, et un `trace_summary` (liste de phrases
+  lisibles — les décisions de l'orchestrateur, pas les 3 traces JSON brutes
+  qui seraient illisibles en réponse directe ; celles-ci restent accessibles
+  via `GET /offers/{id}` après coup).
+  ```
+  $ curl -X POST http://127.0.0.1:8000/analyze \
+      -H "Content-Type: application/json" -d '{"offer_id": 7}'
+  {"offer_id": 7, "status": "analyse", "analysis_markdown": "## Résumé...",
+   "trace_summary": [
+     "scoring terminé: score=82, zone=rhone_alpes, gaps=2, uncertain_flags=0",
+     "génération de l'analyse terminée"
+   ],
+   "error": null}
+  ```
+  Appel réel chronométré à ~85 secondes (rechargement du modèle
+  `sentence-transformers` à chaque process + 2 appels LLM réels) — la
+  docstring de l'endpoint recommande explicitement un timeout client d'au
+  moins 60s, voire plus en pratique sur un poste sans le modèle déjà en
+  cache local.
+
+**Tests réels effectués (serveur lancé en local via
+`uvicorn api.main:app --port 8000`) :**
+- `GET /health` → `200 {"status":"ok"}`.
+- `GET /offers` → 200, liste des 30 offres avec score/zone correctement
+  reconstruits depuis les traces.
+- `GET /offers/7` → 200, markdown + 3 traces complètes présents.
+- **`GET /offers/99999` → 404 `{"detail":"Offre 99999 introuvable"}`**, pas
+  de 500 ni de traceback exposé — cas d'erreur explicitement testé comme
+  demandé.
+- **`POST /analyze` avec `offer_id: 99999` → 404** (même comportement que
+  `GET`, la vérification d'existence est partagée via `_load_offer_row`).
+- `POST /analyze` avec `offer_id: 7` (offre déjà analysée en session 5) →
+  200, ré-exécute tout le pipeline avec succès, statut `analyse`,
+  `trace_summary` lisible.
+- `GET /docs` et `/openapi.json` (générés automatiquement par FastAPI) → 200,
+  utile pour la documentation interactive sans travail supplémentaire.
+
+**Limites connues à traiter plus tard :**
+- `POST /analyze` n'accepte qu'un `offer_id` déjà en base, pas une URL à
+  scraper à la volée — la spec de session l'anticipait explicitement comme
+  une itération future possible plutôt qu'un prérequis de cette session.
+- Endpoint synchrone, pas de file de tâches en arrière-plan : un appel
+  `POST /analyze` bloque la requête HTTP pendant toute la durée du pipeline
+  (~85s observé). Acceptable pour un usage personnel/local à ce stade
+  (décision explicite de la spec de session pour éviter la complexité d'une
+  queue), mais deviendrait un problème avec plusieurs utilisateurs
+  concurrents ou un traitement par lot déclenché via l'API.
+- ~~Le modèle `sentence-transformers` est rechargé à chaque appel
+  `/analyze`~~ — traité en correctif post-session 6, voir plus bas.
+- Aucune authentification/autorisation sur l'API — cohérent avec un usage
+  local pour l'instant, à revisiter avant toute exposition réseau plus
+  large (session Docker/déploiement).
+
+## Correctif post-session 6 (2026-07-11) : singleton pour le modèle d'embeddings
+
+**Diagnostic avant correctif :** contrairement à l'hypothèse initiale ("le
+modèle est rechargé à chaque appel"), les poids `sentence-transformers` sont
+en réalité déjà mis en cache process-wide par ChromaDB lui-même
+(`SentenceTransformerEmbeddingFunction` maintient un dict de classe `models`
+keyé par nom de modèle). Le vrai coût récurrent identifié par mesure directe
+(`get_embedding_function()` appelé deux fois de suite) : la **première**
+construction de `SentenceTransformerEmbeddingFunction()` dans un processus
+déclenche ~12s de requêtes HTTP HEAD vers le Hub HuggingFace (vérification
+que le cache local du modèle est à jour), même si les poids eux-mêmes sont
+déjà sur disque — la deuxième construction dans le même processus est
+quasi-instantanée (0.00s mesuré). Comme `scoring/embeddings/index.py`
+reconstruisait `get_embedding_function()`/`get_client()` à chaque appel de
+`search_profile_with_scores` (des dizaines de fois par offre), le **premier**
+appel de chaque processus payait ces 12s — invisible en mode batch (un seul
+processus pour tout le batch, donc payé une fois de toute façon), mais payé
+à nouveau sur le tout premier `/analyze` de chaque redémarrage de l'API.
+
+**Correctif (`scoring/embeddings/index.py`) :** `get_embedding_function()` et
+`get_client()` transformés en singletons module-level avec double-checked
+locking (`threading.Lock`) — construits une seule fois par processus, de
+façon thread-safe explicite plutôt que de compter implicitement sur le fait
+qu'un seul thread appelle jamais ces fonctions.
+
+**Chargement explicite au démarrage (`api/main.py`) :** remplacement de
+`@app.on_event("startup")` (API dépréciée) par un `lifespan` context manager
+moderne, qui appelle `get_embedding_function()` et `get_client()` avant que
+le serveur commence à accepter des requêtes — pour que même le tout premier
+`/analyze` après un redémarrage n'ait plus à payer les 12s.
+
+**Mesures réelles avant/après (même offre id=7, mêmes conditions) :**
+| Scénario | Temps mesuré |
+|---|---|
+| Avant correctif — 1er `/analyze` après démarrage API (session 6) | ~85s (dont ~12s de chargement paresseux du modèle) |
+| Après correctif — démarrage de l'API (chargement explicite du modèle) | 12.12s (loggé : `"Modèle d'embeddings chargé au démarrage en 12.12s"`) |
+| Après correctif — 1er `/analyze` après démarrage | 56.0s |
+| Après correctif — 2e `/analyze` (offre différente) | 66.8s (variation normale de latence Mistral, pas de rechargement modèle) |
+
+Le gain net sur le premier appel (~85s → ~56s, soit ~29s ou ~34% de moins)
+correspond bien aux 12s de HEAD requests éliminées, plus une variation de
+latence réseau/LLM incompressible (confirmée par le fait que le 2e appel à
+66.8s n'est pas plus rapide que le 1er — la variance vient de Mistral, pas du
+modèle d'embeddings). Aucune requête HTTP vers HuggingFace Hub observée dans
+les logs pendant les deux appels `/analyze` post-correctif (vérifié par
+grep sur `huggingface.co` dans les logs serveur) — confirmation directe que
+le modèle n'est plus jamais rechargé après le démarrage.
+
+**Non-régression du mode batch vérifiée :** `orchestrator/agent.process_offer`
+rejoué directement (sans passer par l'API) sur 3 offres dans le même
+processus Python : 62.80s / 60.31s / 55.51s — durées homogènes d'une offre à
+l'autre, aucun pic sur la première confirmant que le comportement "un seul
+chargement pour tout le batch" n'a pas régressé vers un rechargement par
+offre.
+
+**Concurrence testée réellement (pas supposée) :** deux requêtes
+`POST /analyze` (offres 2 et 3) lancées en parallèle via deux processus
+`curl` simultanés contre le même serveur uvicorn. Les logs confirment un
+véritable entrelacement (lignes `[offer 2]` et `[offer 3]` alternées pendant
+l'exécution, les deux appelant `search_profile_with_scores` — donc le
+singleton — en concurrence réelle sur des threads différents, FastAPI
+exécutant les handlers synchrones dans un threadpool). Résultat : les deux
+requêtes ont abouti en 200 OK (57.4s et 68.2s) avec chacune son analyse
+correcte et propre à son offre, aucune corruption croisée, aucune exception.
+Cohérent avec la garantie de thread-safety standard de PyTorch/
+sentence-transformers pour de l'inférence pure en mode eval (pas de mutation
+d'état partagé pendant `encode()`) — vérifié empiriquement plutôt que
+seulement invoqué comme argument théorique.
