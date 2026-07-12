@@ -16,9 +16,11 @@ Decision loop:
   5. search_profile runs on each ATOM separately (n_results >= 3), never on
      the composite label — a composite sentence can find a passable-looking
      match as a whole even when none of its individual parts are actually
-     covered by the profile. If any single atom's best distance exceeds
-     NOISE_THRESHOLD, flag_uncertain(requirement_label): one weak link is
-     enough, even if other atoms of the same requirement matched well.
+     covered by the profile. If any single atom's best distance exceeds the
+     dynamic noise threshold (get_noise_threshold(), correctif post-session
+     9 — see scoring/embeddings/index.py), flag_uncertain(requirement_label):
+     one weak link is enough, even if other atoms of the same requirement
+     matched well.
   6. Ask the LLM to produce the final structured verdict from all the
      gathered context (geography verdict, tone chunks, matched achievements,
      honest gaps, uncertain flags).
@@ -33,15 +35,22 @@ import json
 import logging
 from dataclasses import dataclass, field
 
-from scoring.embeddings.index import search_profile_with_scores
+from scoring.embeddings.index import get_noise_threshold, search_profile_with_scores
 from scoring.geography import GeographyVerdict, check_geography_rules
 from scoring.llm import call_llm_json
 
 logger = logging.getLogger(__name__)
 
-# Distance de bruit identifiée en session 2 (ROADMAP.md) : au-delà de ce seuil,
-# le meilleur chunk retrouvé n'est plus considéré comme un vrai match.
-NOISE_THRESHOLD = 0.75
+# Seuil de bruit RAG (correctif post-session 9) : lu dynamiquement à chaque
+# score_offer() plutôt qu'une constante figée — get_noise_threshold() lit la
+# baseline recalculée à chaque build de l'index (voir
+# scoring/embeddings/index.py) sur le profil et le modèle d'embedding
+# ACTUELS, avec repli automatique sur l'ancien seuil fixe (0.75, la valeur
+# calibrée en session 2 sur un profil de 31 chunks) si aucune baseline n'est
+# disponible. Lu une fois par appel plutôt qu'au niveau module : un rebuild
+# d'index en cours de vie du process (rare mais possible, ex. via
+# scoring.embeddings.build lancé à côté d'un process API long-vécu) doit se
+# refléter au prochain scoring sans redémarrage.
 
 ZONE_TO_QUERY = {
     "rhone_alpes": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
@@ -124,7 +133,7 @@ def _validate_items(items: list, required_keys: set[str]) -> list[dict]:
     return valid
 
 
-def _fetch_geography_tone_chunks(trace: DecisionTrace, zone: str) -> list[str]:
+def _fetch_geography_tone_chunks(trace: DecisionTrace, zone: str, noise_threshold: float) -> list[str]:
     query = ZONE_TO_QUERY.get(zone)
     if query is None:
         # zone == "inconnu": no tone rule applies, nothing to fetch.
@@ -134,11 +143,12 @@ def _fetch_geography_tone_chunks(trace: DecisionTrace, zone: str) -> list[str]:
     best_distance = min((dist for _c, dist in results), default=1.0)
     conclusion = (
         f"best_distance={best_distance:.4f}, "
-        f"{'ok' if best_distance <= NOISE_THRESHOLD else 'au-dessus du seuil de bruit'}"
+        f"{'ok' if best_distance <= noise_threshold else 'au-dessus du seuil de bruit'} "
+        f"(seuil={noise_threshold:.4f})"
     )
     trace.log_rag("geography_tone", query, 3, results, conclusion)
 
-    if best_distance > NOISE_THRESHOLD:
+    if best_distance > noise_threshold:
         trace.flag_uncertain("ton_geographique")
         return []
 
@@ -190,7 +200,7 @@ def _extract_requirements(offer_title: str, offer_description: str) -> dict:
     return result
 
 
-def _search_requirement(trace: DecisionTrace, label: str, atoms: list[str]) -> tuple[list[str], bool]:
+def _search_requirement(trace: DecisionTrace, label: str, atoms: list[str], noise_threshold: float) -> tuple[list[str], bool]:
     """search_profile on each atomic element of a (possibly composite) requirement.
 
     Matching granularity is deliberately finer than display granularity: a
@@ -209,7 +219,7 @@ def _search_requirement(trace: DecisionTrace, label: str, atoms: list[str]) -> t
         best_distance = min((dist for _c, dist in results), default=1.0)
         worst_distance = max(worst_distance, best_distance)
 
-        if best_distance > NOISE_THRESHOLD or not results:
+        if best_distance > noise_threshold or not results:
             trace.log_rag(
                 "requirement_atom", f"[{label}] {atom}", 3, results,
                 "aucun match fiable -> flag_uncertain",
@@ -233,6 +243,13 @@ def _search_requirement(trace: DecisionTrace, label: str, atoms: list[str]) -> t
 def score_offer(offer_id: int, title: str, location: str, description: str) -> ScoringResult:
     trace = DecisionTrace(offer_id=offer_id)
 
+    # 0. Seuil de bruit lu une fois par offre (pas au niveau module — voir
+    #    commentaire plus haut) : reflète la baseline calculée au dernier
+    #    build de l'index (profil + modèle actuels), avec repli automatique
+    #    sur l'ancien seuil fixe si aucune baseline n'est disponible.
+    noise_threshold = get_noise_threshold()
+    logger.info("[offer %s] seuil de bruit utilisé: %.4f", offer_id, noise_threshold)
+
     # 1. Géographie en premier, avant tout appel RAG.
     geo_verdict = check_geography_rules(location)
     trace.geography_verdict = geo_verdict
@@ -243,7 +260,7 @@ def score_offer(offer_id: int, title: str, location: str, description: str) -> S
         trace.flag_uncertain("géographie")
 
     # 3. Chunks de ton géographique, via le nom de zone, pas le texte brut de l'offre.
-    tone_chunks = _fetch_geography_tone_chunks(trace, geo_verdict.zone)
+    tone_chunks = _fetch_geography_tone_chunks(trace, geo_verdict.zone, noise_threshold)
 
     # 4. Extraction des exigences clés de l'offre.
     requirements = _extract_requirements(title, description or "")
@@ -258,7 +275,7 @@ def score_offer(offer_id: int, title: str, location: str, description: str) -> S
     requirement_uncertain: dict[str, bool] = {}
     for skill in skills:
         label = skill["label"]
-        chunks, uncertain = _search_requirement(trace, label, skill["atoms"])
+        chunks, uncertain = _search_requirement(trace, label, skill["atoms"], noise_threshold)
         requirement_context[label] = chunks
         requirement_uncertain[label] = uncertain
 
