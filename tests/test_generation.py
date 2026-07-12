@@ -17,7 +17,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
-from generation.analysis import _should_search_web, generate_analysis, trace_to_json
+from generation.analysis import _should_search_web, generate_analysis, structured_analysis_to_json, trace_to_json
 from scoring.agent import ScoringResult, score_offer
 from storage.db import connect
 
@@ -37,6 +37,18 @@ MOBILITY_WORDS_RE = re.compile(
 
 # Stopwords/generic connector words that would trivially "match" any profile
 # text and defeat the anti-fabrication check if not excluded.
+# Gap/uncertain counts previously validated by hand this session (session 9
+# follow-up structured-output correctif) — see ROADMAP.md. Re-running
+# score_offer calls the LLM again, which isn't deterministic, so a drift here
+# is a WARNING, not a hard failure: what actually matters is that
+# structured.gaps/uncertain_flags always equal ScoringResult's own fields for
+# THIS run (see check_structured_matches_scoring), not that scoring produces
+# byte-identical output across runs.
+EXPECTED_GAPS_UNCERTAIN = {
+    7: (4, 1),
+    24: (4, 1),
+}
+
 SKILL_STOPWORDS = {
     "et", "de", "des", "du", "la", "le", "les", "un", "une", "en", "pour", "dans",
     "avec", "sur", "au", "aux", "ou", "a", "d", "l", "qualité", "gestion", "outils",
@@ -119,21 +131,40 @@ def check_no_fabricated_skills(markdown: str, matches: list[dict], profile_text:
     return problems
 
 
+def check_structured_matches_scoring(structured, result: ScoringResult) -> list[str]:
+    """structured_analysis (session 9 follow-up) must be a faithful mirror of
+    ScoringResult's own matches/gaps/uncertain_flags — not a re-interpretation.
+    Since it's built in Python (not a second LLM call), this should hold
+    exactly, every time.
+    """
+    problems = []
+    if structured.matches != result.matches:
+        problems.append(f"structured.matches diverge de ScoringResult.matches: {structured.matches!r} != {result.matches!r}")
+    if structured.gaps != result.gaps:
+        problems.append(f"structured.gaps diverge de ScoringResult.gaps: {structured.gaps!r} != {result.gaps!r}")
+    if structured.uncertain_flags != result.uncertain_flags:
+        problems.append(f"structured.uncertain_flags diverge de ScoringResult.uncertain_flags: {structured.uncertain_flags!r} != {result.uncertain_flags!r}")
+    return problems
+
+
 def run_case(label: str, result: ScoringResult, offer_title: str, offer_description: str,
              company_name: str | None, profile_text: str) -> bool:
-    markdown, trace = generate_analysis(result, offer_title, offer_description, company_name)
+    markdown, structured, trace = generate_analysis(result, offer_title, offer_description, company_name)
 
     problems = []
     problems += check_sections(markdown)
     problems += check_no_mobility(markdown, result.geography_zone)
     problems += check_no_fabricated_skills(markdown, result.matches, profile_text)
+    problems += check_structured_matches_scoring(structured, result)
 
     ok = not problems
     status = "OK" if ok else "FAIL"
-    print(f"\n[{status}] {label} (zone={result.geography_zone}, {len(markdown)} caractères)")
+    print(f"\n[{status}] {label} (zone={result.geography_zone}, {len(markdown)} caractères, "
+          f"structured: {len(structured.matches)} matches / {len(structured.gaps)} gaps / "
+          f"{len(structured.uncertain_flags)} uncertain)")
     for p in problems:
         print(f"       - {p}")
-    return ok, markdown, trace
+    return ok, markdown, structured, trace
 
 
 def main() -> None:
@@ -148,7 +179,15 @@ def main() -> None:
             offer_id=offer["id"], title=offer["title"], location=offer["location"],
             description=offer["description"],
         )
-        ok, _md, _trace = run_case(f"offre {offer_id}", result, offer["title"], offer["description"], offer["company"], profile_text)
+        ok, _md, structured, _trace = run_case(f"offre {offer_id}", result, offer["title"], offer["description"], offer["company"], profile_text)
+        expected = EXPECTED_GAPS_UNCERTAIN.get(offer_id)
+        if expected is not None:
+            exp_gaps, exp_uncertain = expected
+            if len(structured.gaps) != exp_gaps or len(structured.uncertain_flags) != exp_uncertain:
+                print(f"       - [WARN] offre {offer_id}: {len(structured.gaps)} gaps / "
+                      f"{len(structured.uncertain_flags)} uncertain, valeur historiquement observée "
+                      f"{exp_gaps} gaps / {exp_uncertain} uncertain (le scoring LLM n'est pas déterministe, "
+                      f"un écart n'est pas forcément une régression — voir ROADMAP.md)")
         total += 1
         failures += 0 if ok else 1
 
@@ -175,7 +214,7 @@ def main() -> None:
         reasoning_summary="Offre générique mais compétences de base alignées.",
         trace=None,
     )
-    ok, md, trace = run_case(
+    ok, md, structured, trace = run_case(
         "offre courte/générique (test web_search)", result, short_title, short_description,
         "Entreprise Test SARL", profile_text,
     )
@@ -188,6 +227,9 @@ def main() -> None:
 
     Path("tests/generation_web_search_case.md").write_text(md, encoding="utf-8")
     Path("tests/generation_web_search_case_trace.json").write_text(trace_to_json(trace), encoding="utf-8")
+    Path("tests/generation_web_search_case_structured.json").write_text(
+        structured_analysis_to_json(structured), encoding="utf-8"
+    )
 
     print(f"\n{total - failures}/{total} cas passés")
     if failures:

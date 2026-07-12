@@ -18,7 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
-from generation.analysis import generate_analysis, trace_to_json
+from generation.analysis import generate_analysis, structured_analysis_to_json, trace_to_json
 from scoring.agent import score_offer
 from storage.db import connect
 
@@ -50,7 +50,7 @@ def main() -> None:
         location=offer["location"],
         description=offer["description"],
     )
-    markdown, trace = generate_analysis(
+    markdown, structured, trace = generate_analysis(
         scoring_result,
         offer_title=offer["title"],
         offer_description=offer["description"] or "",
@@ -59,6 +59,8 @@ def main() -> None:
 
     print(f"\n=== Analyse — offre {offer['id']} ({offer['title']}) ===\n")
     print(markdown)
+    print("\n=== Analyse structurée ===\n")
+    print(structured_analysis_to_json(structured))
 
     if args.output:
         Path(args.output).write_text(markdown, encoding="utf-8")

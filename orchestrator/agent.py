@@ -43,6 +43,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from generation.analysis import generate_analysis
+from generation.analysis import structured_analysis_to_json
 from generation.analysis import trace_to_json as generation_trace_to_json
 from scoring.agent import score_offer
 from scoring.agent import trace_to_json as scoring_trace_to_json
@@ -77,6 +78,7 @@ class OrchestrationResult:
     trace: OrchestratorTrace
     scoring_trace_json: str | None = None
     generation_trace_json: str | None = None
+    structured_analysis_json: str | None = None
 
 
 def _offer_text_is_thin(title: str, description: str | None) -> bool:
@@ -166,7 +168,7 @@ def process_offer(offer: dict) -> OrchestrationResult:
                 "silencieusement une règle de ton par défaut"
             )
 
-        markdown, generation_trace = generate_analysis(
+        markdown, structured_analysis, generation_trace = generate_analysis(
             scoring_result,
             offer_title=offer["title"],
             offer_description=description or "",
@@ -187,6 +189,7 @@ def process_offer(offer: dict) -> OrchestrationResult:
             trace=trace,
             scoring_trace_json=scoring_trace_to_json(scoring_result.trace),
             generation_trace_json=generation_trace_to_json(generation_trace),
+            structured_analysis_json=structured_analysis_to_json(structured_analysis),
         )
 
     except Exception as exc:

@@ -118,88 +118,18 @@ def _read_markdown(offer_id: int) -> str | None:
     return path.read_text(encoding="utf-8") if path.exists() else None
 
 
-def _parse_gaps_and_uncertain(markdown: str) -> tuple[list[str], list[str]]:
-    """Extract short gap/uncertain-flag labels from the analysis markdown for
-    the dashboard's flag counts (session 9).
-
-    No structured field carries this in the traces (scoring's own trace JSON
-    only has `uncertain_flags`, and even that one doesn't record `gaps` —
-    both live only as prose inside the LLM-generated markdown, see
-    ScoringResult vs trace_scoring_<id>.json). Since the generation prompt
-    fixes the top-level heading ("## Gaps et incertitudes", enforced and
-    tested in tests/test_generation.py) but not the subheading wording or
-    bullet style beneath it — real examples vary between "### Gaps confirmés
-    (compétences absentes)", "### **Gaps confirmés**", "**Gaps confirmés
-    (...) :**", etc. — this parses by position (everything between the
-    top-level heading and the next one) and by list-item syntax ("- " or
-    "N. "), not by matching a fixed subheading string. A "confirmés"/
-    "incertains" keyword split tracks which half of the section each bullet
-    belongs to. Bold **Label** prefixes are extracted as the short label;
-    lines with no bold prefix are skipped (e.g. explanatory continuation
-    lines under a numbered item) to avoid double-counting one gap as two
-    bullets.
+def _read_structured_analysis(offer_id: int) -> dict | None:
+    """matches/gaps/uncertain_flags, straight from generation's
+    StructuredAnalysis (session 9 follow-up) — a faithful, non-LLM
+    reformatting of ScoringResult's own fields, persisted by
+    orchestrator/run.py as structured_analysis_<id>.json. Replaces the
+    earlier markdown-reparsing approach (_parse_gaps_and_uncertain /
+    _parse_matching_summary, removed): that parsed prose whose subheading
+    wording wasn't contractual, which worked in practice but depended on an
+    LLM output format with no guarantee. This reads a field the generation
+    agent commits to directly instead.
     """
-    lines = markdown.splitlines()
-    section_start = next((i for i, l in enumerate(lines) if l.strip() == "## Gaps et incertitudes"), None)
-    if section_start is None:
-        return [], []
-
-    section_end = next(
-        (i for i in range(section_start + 1, len(lines)) if lines[i].strip().startswith("## ")),
-        len(lines),
-    )
-    section_lines = lines[section_start + 1 : section_end]
-
-    gaps: list[str] = []
-    uncertain: list[str] = []
-    current_bucket = gaps  # gaps come first in the fixed section order
-
-    import re
-
-    label_re = re.compile(r"^[-*]\s+\*\*(.+?)\*\*|^\d+\.\s+\*\*(.+?)\*\*")
-
-    for line in section_lines:
-        stripped = line.strip()
-        lower = stripped.lower()
-        if "incertain" in lower and ("flag" in lower or "###" in stripped or stripped.startswith("**")):
-            current_bucket = uncertain
-            continue
-        if lower.startswith(("*aucun", "aucun flag", "aucun gap")):
-            continue
-        match = label_re.match(stripped)
-        if match:
-            label = (match.group(1) or match.group(2)).strip()
-            current_bucket.append(label)
-
-    return gaps, uncertain
-
-
-def _parse_matching_summary(markdown: str) -> str | None:
-    """First bullet under "## Résumé du matching" as a short matching summary
-    (session 9 dashboard detail panel) — deliberately not the full section,
-    which can run to 6+ bullets of prose. Same positional approach as
-    _parse_gaps_and_uncertain: the top-level heading is fixed by the
-    generation prompt, but the subheading immediately below it varies
-    ("**Points forts alignés sur l'offre :**", "### Points forts majeurs",
-    "**Points forts clés** :", ...) so this skips straight to the first
-    real list item rather than matching a fixed subheading string.
-    """
-    lines = markdown.splitlines()
-    section_start = next((i for i, l in enumerate(lines) if l.strip() == "## Résumé du matching"), None)
-    if section_start is None:
-        return None
-
-    import re
-
-    item_re = re.compile(r"^[-*]\s+(.+)")
-    for line in lines[section_start + 1 :]:
-        stripped = line.strip()
-        if stripped.startswith("## "):
-            break
-        match = item_re.match(stripped)
-        if match:
-            return match.group(1).strip()
-    return None
+    return _read_json_trace(offer_id, "structured_analysis")
 
 
 def _score_and_zone_from_trace(offer_id: int) -> tuple[int | None, str | None]:
@@ -290,11 +220,9 @@ def list_offers() -> list[OfferSummary]:
     for r in rows:
         offer_id = r[0]
         score, zone = _score_and_zone_from_trace(offer_id)
-        markdown = _read_markdown(offer_id)
-        gaps_count = uncertain_count = None
-        if markdown:
-            gaps, uncertain = _parse_gaps_and_uncertain(markdown)
-            gaps_count, uncertain_count = len(gaps), len(uncertain)
+        structured = _read_structured_analysis(offer_id)
+        gaps_count = len(structured["gaps"]) if structured else None
+        uncertain_count = len(structured["uncertain_flags"]) if structured else None
         summaries.append(
             OfferSummary(
                 id=offer_id, title=r[1], location=r[2], company=r[3],
@@ -315,8 +243,7 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
     """
     offer = _load_offer_row(offer_id)
     score, zone = _score_and_zone_from_trace(offer_id)
-    markdown = _read_markdown(offer_id)
-    gaps, uncertain = _parse_gaps_and_uncertain(markdown) if markdown else ([], [])
+    structured = _read_structured_analysis(offer_id)
     return OfferDetailResponse(
         id=offer["id"],
         title=offer["title"],
@@ -326,10 +253,10 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
         status=offer["status"],
         score=score,
         geography_zone=zone,
-        matching_summary=_parse_matching_summary(markdown) if markdown else None,
-        gaps=gaps,
-        uncertain_flags=uncertain,
-        analysis_markdown=markdown,
+        matches=structured["matches"] if structured else [],
+        gaps=structured["gaps"] if structured else [],
+        uncertain_flags=structured["uncertain_flags"] if structured else [],
+        analysis_markdown=_read_markdown(offer_id),
         orchestrator_trace=_read_json_trace(offer_id, "trace_orchestrator"),
         scoring_trace=_read_json_trace(offer_id, "trace_scoring"),
         generation_trace=_read_json_trace(offer_id, "trace_generation"),

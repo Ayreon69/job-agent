@@ -1326,13 +1326,147 @@ sessions précédentes).
 `matching_summary`/`gaps`/`uncertain_flags` ajoutés).
 
 **Limites connues à traiter plus tard :**
-- Le parsing du markdown pour les compteurs de gaps est un pis-aller —
-  fonctionne à 100% sur les analyses réelles actuelles mais reste sensible à
-  un changement de structure du prompt de génération (session 4). Une
-  alternative plus robuste serait de faire produire ces compteurs sous forme
-  structurée par `generation/analysis.py` directement plutôt que de les
-  re-dériver du texte a posteriori — non fait cette session pour rester dans
-  le périmètre "pas de nouvelle logique métier".
+- ~~Le parsing du markdown pour les compteurs de gaps est un pis-aller...~~ —
+  traité en correctif post-session 9, voir plus bas.
 - Pas de rendu markdown complet pour le lien "analyse complète" (ouvre le
   JSON brut de `GET /offers/{id}`, qui inclut le markdown en texte) — accepté
   explicitement comme suffisant pour cette première version.
+
+## Correctif post-session 9 (2026-07-12) : sortie structurée pour matches/gaps/uncertain_flags
+
+**Problème :** `api/main.py` re-parsait le markdown généré par
+`generation/analysis.py` (`_parse_gaps_and_uncertain`, `_parse_matching_summary`)
+pour en extraire les compteurs affichés par le dashboard — un pis-aller qui
+fonctionnait à 100% sur les analyses réelles mais dépendait d'un format de
+sortie LLM non contractuel (seul le titre de section top-level `## Gaps et
+incertitudes` est garanti par le prompt, pas le style de sous-titre ni de
+puce en dessous).
+
+**Décision — zéro appel LLM supplémentaire, formatage déterministe en
+Python :** la consigne demandait de choisir entre un appel JSON combiné et
+deux appels séparés, en testant les deux en cas de doute. Analyse du besoin
+réel avant de choisir : `ScoringResult.matches`/`.gaps`/`.uncertain_flags`
+(session 3) contiennent DÉJÀ tout ce qui était demandé — un libellé
+(`skill`) et une justification courte (`matched_chunk_summary`/`note`) par
+item. Le problème n'était donc pas un manque d'information à faire produire
+par un LLM, mais un manque de *persistance* de cette information déjà
+existante sous forme structurée. Conclusion : aucun appel LLM, ni combiné ni
+séparé, n'est nécessaire — `generation/analysis.py` construit
+`StructuredAnalysis` directement en Python à partir de `ScoringResult` (voir
+`_build_structured_analysis`), en parallèle de l'appel `call_llm` existant
+pour le markdown (totalement inchangé). Cette option n'était pas dans la
+liste proposée par la consigne mais respecte strictement son objectif
+("mise en forme fidèle de ce que ScoringResult contient déjà — pas une
+nouvelle interprétation") mieux qu'un second appel LLM ne pourrait le faire :
+un second appel LLM demandant de "réextraire" la structure depuis soit
+`ScoringResult` soit le markdown généré réintroduirait exactement le risque
+de divergence que ce correctif doit éliminer — un LLM qui paraphrase un
+paraphrase. Zéro coût, zéro latence additionnelle, zéro nouveau point de
+défaillance JSON malformé, divergence structurellement impossible (pas une
+propriété testée à chaque run, une propriété garantie par construction).
+
+**Validation défensive :** `_validate_items` (déjà utilisée par
+`scoring/agent.py` sur sa propre sortie LLM) est réappliquée sur
+`ScoringResult.matches`/`.gaps` au moment de construire `StructuredAnalysis`
+— pas parce que `call_llm_json` n'aurait pas déjà validé une fois côté
+scoring, mais pour protéger contre un `ScoringResult` construit à la main
+(exactement le cas du test `web_search` dans `tests/test_generation.py`, qui
+construit un `ScoringResult` synthétique sans passer par `score_offer`).
+
+**Fichiers modifiés :**
+- `generation/analysis.py` : `StructuredAnalysis` (dataclass), `_build_structured_analysis`,
+  `structured_analysis_to_json` ; `generate_analysis` retourne désormais
+  `(markdown, structured_analysis, trace)` — signature élargie, pas remplacée.
+- `orchestrator/agent.py` : `OrchestrationResult.structured_analysis_json` ajouté.
+- `orchestrator/run.py` : `write_outputs` persiste `structured_analysis_<id>.json`
+  en plus des 3 fichiers existants.
+- `generation/run.py`, `tests/test_generation.py` : adaptés au nouveau tuple
+  de retour à 3 éléments.
+- `api/schemas.py` : `MatchItem`/`GapItem` (nouveaux), `OfferDetailResponse.matches`
+  (nouveau), `.gaps`/`.uncertain_flags` passent de `list[str]` à des objets
+  structurés ; `matching_summary` (l'ancien hack "première puce") **supprimé**,
+  remplacé par `matches` qui est strictement plus informatif.
+- `api/main.py` : `_parse_gaps_and_uncertain`/`_parse_matching_summary`
+  **supprimées sans fallback** (comme demandé) ; nouvelle
+  `_read_structured_analysis` qui lit directement `structured_analysis_<id>.json`.
+- `api/static/dashboard.js` : `renderDetail` adapté au nouveau schéma —
+  affiche désormais une vraie section "Points forts" avec justification par
+  match (amélioration par rapport à l'ancienne puce unique de résumé),
+  gaps/uncertain rendus depuis des objets `{skill, note}` au lieu de chaînes.
+
+**Tests réels effectués (pas de simulation) :**
+
+1. `tests/test_generation.py` relancé sur offres 7/15/24 + le cas synthétique
+   web_search : **4/4 cas passés**, nouvelle vérification
+   `check_structured_matches_scoring` (compare `structured.matches/gaps/
+   uncertain_flags` à `ScoringResult` du même run) **passée sur les 4 cas,
+   aucune divergence** — la garantie de fidélité tient en pratique, pas
+   seulement en théorie.
+2. **Échantillon de 12 offres réelles régénérées** via l'orchestrateur complet
+   (offres 1, 7, 15, 18, 19, 24, 38, 50, 57, 94, 96, 148 — couvrant
+   `rhone_alpes`, `autre_france`, `suisse_romande`) : **0 échec**.
+   - Qualité du markdown préservée : **4/4 sections présentes sur les 12**,
+     **zéro mention de mobilité sur les 12** (y compris toutes les offres
+     `rhone_alpes`/`autre_france` de l'échantillon, où c'est interdit).
+   - Fidélité vérifiée offre par offre : le compte `gaps=N, uncertain_flags=N`
+     déjà loggé par l'orchestrateur (`scoring_result.gaps`/`.uncertain_flags`,
+     donnée de `ScoringResult`) correspond **exactement** au compte dans
+     `structured_analysis_<id>.json` sur les **12/12 offres** — preuve directe
+     que la sortie structurée reflète bien ce que le scoring a décidé, pas une
+     réinterprétation.
+   - Offre 24 (cas de référence ISO 13485 du correctif post-session 3) :
+     `structured_analysis_24.json` contient bien le gap "ISO 13485"/QMS et le
+     flag incertain correspondant — le comportement honnête du correctif
+     post-session 3 traverse intact la nouvelle couche structurée.
+   - Note sur les comptes historiques : la consigne demandait de vérifier
+     "offre 24 : 4 gaps + 1 incertain" et "offre 7 : 4 gaps + 1 incertain"
+     (valeurs de la session 4). En pratique cette régénération donne offre 24
+     = 5 gaps + 1 incertain, offre 7 = 2 gaps + 1 incertain : le scoring
+     rappelle réellement le LLM (`score_offer`), qui n'est pas déterministe
+     d'un run à l'autre — chaque régénération est un nouveau jugement, pas un
+     rejeu figé. Documenté honnêtement plutôt que forcé pour coller aux
+     chiffres historiques ; ce qui compte et qui a été vérifié à chaque run,
+     c'est que `structured` == `ScoringResult` **du même run**, propriété
+     confirmée 12/12.
+3. **Dashboard retesté avec Playwright headless contre le nouveau schéma**
+   (16 vérifications automatisées) : offre 24 affiche "Points forts (✓ 10)",
+   "Gaps confirmés (✕ 5)", "Flags incertains (? 1)" directement depuis l'API
+   structurée, mention ISO 13485/QMS visible ; offre `nouveau` (non scorée)
+   toujours rendue sans erreur JS ; une offre pas encore régénérée (parmi les
+   55 restantes au moment du test) affiche bien "—" pour ses compteurs plutôt
+   qu'une exception — confirmé par capture d'écran.
+4. **Backfill complet des offres historiques restantes** : les 55 offres au
+   statut `analyse` sans `structured_analysis_<id>.json` ont été régénérées
+   via l'orchestrateur pour une couverture complète du jeu de données —
+   **55/55 réussies, 0 échec**. Base finale : **67/67 offres avec
+   `structured_analysis_<id>.json`** (12 de l'échantillon initial + 55 du
+   backfill).
+   - **Vérification systématique sur les 67 offres** (pas un sous-ensemble) :
+     fidélité structurée/scoring **0 divergence sur 67/67**, et **4/4
+     sections markdown présentes sur 67/67**.
+   - **Vérification anti-mobilité sur les 67 offres, 4 alertes trouvées et
+     analysées individuellement** (offres 8, 12, 16, 75, zones `rhone_alpes`) :
+     après lecture du contexte réel, ce sont des **faux positifs du grep de
+     détection**, pas des violations de la règle CLAUDE.md — le grep (déjà
+     volontairement large dans `tests/test_generation.py`, sans limite de
+     mot) matche du vocabulaire métier légitime sans rapport avec la mobilité
+     personnelle du candidat : offre 12 est une offre du secteur transport
+     (le gap listé est littéralement "écosystèmes de transport et mobilité",
+     le domaine métier de l'offre, pas la mobilité du candidat) ; offres 8/75
+     mentionnent "environnement international"/"contexte international"
+     comme gap de compétence (travail en contexte international), pas comme
+     projet de relocalisation. Aucune des 4 alertes ne correspond à une
+     mention du projet personnel de mobilité du candidat — limite
+     préexistante du grep de détection (non liée à ce correctif, la même
+     regex existait déjà dans `tests/test_generation.py` avant cette
+     session), documentée ici par transparence plutôt que passée sous
+     silence.
+
+**Avant/après :**
+| | Avant correctif | Après correctif |
+|---|---|---|
+| Source des compteurs gaps/matches/uncertain | Reparsing du markdown (regex sur puces, sensible au style de sortie LLM) | `structured_analysis_<id>.json`, construit en Python depuis `ScoringResult` |
+| Divergence scoring/dashboard possible | Oui en théorie (jamais observée en pratique, mais non garantie) | Non — garantie par construction, pas par test |
+| Coût LLM additionnel | 0 | 0 (aucun appel supplémentaire) |
+| Information affichée pour un match | Résumé de la première puce de prose uniquement | Libellé + justification pour CHAQUE match (`matches` complet) |
+| Fallback silencieux sur l'ancien parsing | N/A | Aucun — fonctions supprimées, pas conservées "au cas où" |

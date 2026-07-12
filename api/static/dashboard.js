@@ -124,11 +124,10 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-// Renders **bold** markdown spans as <strong> — matching_summary/gaps text
-// comes straight from the LLM-generated analysis, which reliably uses
-// **label** for emphasis (see generation/analysis.py's prompt). Not a full
-// markdown renderer (the spec explicitly doesn't ask for one for this first
-// version) — just enough so raw "**" characters don't leak into the UI.
+// Renders **bold** markdown spans as <strong> — the analysis_markdown link
+// target still contains LLM-generated **label** emphasis (see
+// generation/analysis.py's prompt). Not a full markdown renderer, just
+// enough so raw "**" characters don't leak into the UI where used.
 function escapeAndBold(str) {
   const escaped = escapeHtml(str);
   return escaped.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
@@ -200,11 +199,20 @@ function renderDetail(detail) {
     return;
   }
 
+  // matches/gaps/uncertain_flags now come structured from the API (session 9
+  // follow-up: generation/analysis.py's StructuredAnalysis, a faithful
+  // Python-side mirror of ScoringResult — not re-parsed from the markdown
+  // anymore). Each match/gap item carries its own short justification, so
+  // the dashboard can show a real matching summary instead of the old
+  // single "first bullet of prose" hack.
+  const matchesHtml = detail.matches.length
+    ? `<ul>${detail.matches.map((m) => `<li><strong>${escapeHtml(m.skill)}</strong> — ${escapeHtml(m.matched_chunk_summary)}</li>`).join("")}</ul>`
+    : "<p>Aucun match identifié.</p>";
   const gapsHtml = detail.gaps.length
-    ? `<ul>${detail.gaps.map((g) => `<li>${escapeAndBold(g)}</li>`).join("")}</ul>`
+    ? `<ul>${detail.gaps.map((g) => `<li><strong>${escapeHtml(g.skill)}</strong> — ${escapeHtml(g.note)}</li>`).join("")}</ul>`
     : "<p>Aucun gap confirmé.</p>";
   const uncertainHtml = detail.uncertain_flags.length
-    ? `<ul>${detail.uncertain_flags.map((g) => `<li>${escapeAndBold(g)}</li>`).join("")}</ul>`
+    ? `<ul>${detail.uncertain_flags.map((f) => `<li>${escapeHtml(f)}</li>`).join("")}</ul>`
     : "<p>Aucun flag incertain.</p>";
 
   panel.innerHTML = `
@@ -213,8 +221,8 @@ function renderDetail(detail) {
     <dl>
       <dt>Score</dt>
       <dd>${detail.score === null || detail.score === undefined ? "—" : detail.score + " / 100"}</dd>
-      <dt>Résumé du matching</dt>
-      <dd>${detail.matching_summary ? escapeAndBold(detail.matching_summary) : "—"}</dd>
+      <dt>Points forts (✓ ${detail.matches.length})</dt>
+      <dd>${matchesHtml}</dd>
       <dt>Gaps confirmés (✕ ${detail.gaps.length})</dt>
       <dd>${gapsHtml}</dd>
       <dt>Flags incertains (? ${detail.uncertain_flags.length})</dt>
