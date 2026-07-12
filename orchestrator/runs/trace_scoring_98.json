@@ -1,0 +1,913 @@
+{
+  "offer_id": 98,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "annecy",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en TypeScript et Node.js] TypeScript",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6717,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6955,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7019,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6717, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en TypeScript et Node.js] Node.js",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6773,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7039,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7443,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6773, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en TypeScript et Node.js] développement backend",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4712,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5027,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5288,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4712, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en TypeScript et Node.js] développement API",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.363,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4387,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4398,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3630, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en TypeScript et Node.js] microservices",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5115,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5226,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5232,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5115, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et déploiement sur AWS] AWS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6992,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7053,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7257,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6992, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et déploiement sur AWS] cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6519,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6775,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7519,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6519, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et déploiement sur AWS] déploiement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5399,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5434,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5587,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5399, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et déploiement sur AWS] scalabilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6755,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.677,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6638, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et déploiement sur AWS] architecture cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4933,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5594,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5687,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4933, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de solutions d'IA générative (LLM, agents, RAG)] IA générative",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5299,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5461,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5694,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5299, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de solutions d'IA générative (LLM, agents, RAG)] LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5624,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6051,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6565,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5624, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de solutions d'IA générative (LLM, agents, RAG)] agents IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5296,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6175,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de solutions d'IA générative (LLM, agents, RAG)] RAG",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7246,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7449,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7099, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de solutions d'IA générative (LLM, agents, RAG)] intégration API IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4387,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.552,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5572,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4387, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des flux de données et normalisation] flux de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5213,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5342,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5515,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5213, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des flux de données et normalisation] normalisation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5319,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5577,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.584,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5319, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des flux de données et normalisation] data pipelines",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4101,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5579,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5723,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4101, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines CI/CD et livraison continue (GitLab)] CI/CD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7213,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7378,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.743,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7213, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines CI/CD et livraison continue (GitLab)] GitLab",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6542,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6674,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6766,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6542, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines CI/CD et livraison continue (GitLab)] livraison continue",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5779,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6286,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6448,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5779, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines CI/CD et livraison continue (GitLab)] automatisation des déploiements",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3498,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.3503,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4544,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3498, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement front-end avec Angular] Angular",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.763,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7771,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.8257,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement front-end avec Angular] développement front-end",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4938,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5238,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5666,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4938, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement front-end avec Angular] framework JavaScript",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5834,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6283,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.656,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5834, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données NoSQL (MongoDB, DynamoDB)] MongoDB",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7181,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7392,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7464,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7181, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données NoSQL (MongoDB, DynamoDB)] DynamoDB",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.6407,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6572,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6854,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6407, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données NoSQL (MongoDB, DynamoDB)] NoSQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.42,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5946,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6912,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4200, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données NoSQL (MongoDB, DynamoDB)] bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5296,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5451,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5505,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies agiles (Scrum, Kanban)] méthodologies agiles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5316,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5354,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5375,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5316, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies agiles (Scrum, Kanban)] Scrum",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7148,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7431,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7551,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7148, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies agiles (Scrum, Kanban)] Kanban",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7822,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.7846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.8148,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies agiles (Scrum, Kanban)] gestion de projet agile",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4358,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4499,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4737,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4358, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architectures événementielles] architectures événementielles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6089,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6642,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.6797,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6089, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architectures événementielles] event-driven architecture",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5895,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6091,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6232,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5895, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des performances et robustesse des applications] optimisation des performances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4671,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5325,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5676,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4671, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des performances et robustesse des applications] robustesse des applications",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4858,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5248,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.543,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4858, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des performances et robustesse des applications] scalabilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6755,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.677,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6638, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Développement front-end avec Angular",
+    "Méthodologies agiles (Scrum, Kanban)"
+  ]
+}

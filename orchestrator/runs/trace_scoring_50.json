@@ -1,0 +1,1163 @@
+{
+  "offer_id": 50,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "annecy",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de données avec dbt (semantic layer, KPIs, documentation, tests)] dbt",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6137,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6225,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6247,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6137, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de données avec dbt (semantic layer, KPIs, documentation, tests)] semantic layer",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6243,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6321,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6624,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6243, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de données avec dbt (semantic layer, KPIs, documentation, tests)] KPI definitions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6203,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7112,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7275,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6203, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de données avec dbt (semantic layer, KPIs, documentation, tests)] data modeling",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4952,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5178,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5249,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4952, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de données avec dbt (semantic layer, KPIs, documentation, tests)] data documentation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4915,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5419,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5425,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4915, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de données avec dbt (semantic layer, KPIs, documentation, tests)] data testing",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5532,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6086,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6208,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5532, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de données avec dbt (semantic layer, KPIs, documentation, tests)] data contracts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4716,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5865,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5933,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4716, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance et qualité des données (observabilité, data contracts, single source of truth)] data governance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5609,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.562,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.565,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5609, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance et qualité des données (observabilité, data contracts, single source of truth)] data quality",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4688,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5409,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5499,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4688, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance et qualité des données (observabilité, data contracts, single source of truth)] data observability",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5833,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5894,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5922,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5833, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance et qualité des données (observabilité, data contracts, single source of truth)] data contracts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4716,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5865,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5933,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4716, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance et qualité des données (observabilité, data contracts, single source of truth)] single source of truth",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.7432,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7751,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.778,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7432, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes Data Engineering et Data Science (pipelines, feature engineering, model readiness)] data pipelines",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4101,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5579,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5723,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4101, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes Data Engineering et Data Science (pipelines, feature engineering, model readiness)] feature engineering",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.63,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6447,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6525,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6300, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes Data Engineering et Data Science (pipelines, feature engineering, model readiness)] model readiness",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5015,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5113,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5619,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5015, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes Data Engineering et Data Science (pipelines, feature engineering, model readiness)] cross-team collaboration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6624,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6661,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6663,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6624, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et gestion du cycle de vie des modèles (Azure ML, monitoring, déploiement)] MLOps",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6473,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.653,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6802,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6473, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et gestion du cycle de vie des modèles (Azure ML, monitoring, déploiement)] Azure ML",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6132,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6204,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6228,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6132, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et gestion du cycle de vie des modèles (Azure ML, monitoring, déploiement)] model lifecycle management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4637,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5807,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.583,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4637, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et gestion du cycle de vie des modèles (Azure ML, monitoring, déploiement)] model monitoring",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5187,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5608,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5785,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5187, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et gestion du cycle de vie des modèles (Azure ML, monitoring, déploiement)] model deployment",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4706,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4945,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5119,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4706, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception d'agents IA et structuration des données pour le raisonnement automatisé (POC, eCom, Marketing)] Agentic AI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5035,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5385,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5687,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5035, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception d'agents IA et structuration des données pour le raisonnement automatisé (POC, eCom, Marketing)] AI agents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4938,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5169,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5712,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4938, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception d'agents IA et structuration des données pour le raisonnement automatisé (POC, eCom, Marketing)] data structuring for AI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4811,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5042,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5167,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4811, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception d'agents IA et structuration des données pour le raisonnement automatisé (POC, eCom, Marketing)] POC design",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6418,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6775,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6776,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6418, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception d'agents IA et structuration des données pour le raisonnement automatisé (POC, eCom, Marketing)] eCom insights",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5436,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5453,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5854,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5436, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception d'agents IA et structuration des données pour le raisonnement automatisé (POC, eCom, Marketing)] Marketing insights",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5328,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5532,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.562,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5328, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évaluation et intégration d'outils IA (stack technique, maturité, adéquation)] AI tooling evaluation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4137,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4457,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.446,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4137, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évaluation et intégration d'outils IA (stack technique, maturité, adéquation)] AI stack integration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5402,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5582,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5688,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5402, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évaluation et intégration d'outils IA (stack technique, maturité, adéquation)] technology maturity assessment",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5616,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5792,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5874,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5616, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture data et prise de décision technique (roadmap, patterns, documentation)] data architecture",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5183,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5218,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5284,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5183, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture data et prise de décision technique (roadmap, patterns, documentation)] technical decision-making",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4269,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4443,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4484,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4269, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture data et prise de décision technique (roadmap, patterns, documentation)] architecture patterns",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.563,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6261,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6564,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5630, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture data et prise de décision technique (roadmap, patterns, documentation)] technical documentation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5377,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5386,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5425,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5377, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture data et prise de décision technique (roadmap, patterns, documentation)] roadmap contribution",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5961,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6243,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6337,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5961, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et application pragmatique (modèles, frameworks, tendances)] technology watch",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6097,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6604,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.676,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6097, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et application pragmatique (modèles, frameworks, tendances)] AI frameworks",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4303,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.493,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5021,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4303, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et application pragmatique (modèles, frameworks, tendances)] AI models",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4355,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4717,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5099,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4355, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et application pragmatique (modèles, frameworks, tendances)] pragmatic adoption",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.545,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5475,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5944,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5450, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et application pragmatique (modèles, frameworks, tendances)] hype filtering",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6119,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6721,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6818,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6119, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Mentorat et amélioration des standards (code reviews, bonnes pratiques, modélisation)] mentoring",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7294,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7463,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7481,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7294, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Mentorat et amélioration des standards (code reviews, bonnes pratiques, modélisation)] code reviews",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5632,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6177,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6335,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5632, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Mentorat et amélioration des standards (code reviews, bonnes pratiques, modélisation)] best practices",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5681,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5703,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5893,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5681, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Mentorat et amélioration des standards (code reviews, bonnes pratiques, modélisation)] modeling standards",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5331,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.539,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5416,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5331, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Domaines métiers (Sales, Marketing, Finance, Supply Chain, eCom)] Sales analytics",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5508,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5577,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5601,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5508, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Domaines métiers (Sales, Marketing, Finance, Supply Chain, eCom)] Marketing analytics",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5233,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5322,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.585,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5233, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Domaines métiers (Sales, Marketing, Finance, Supply Chain, eCom)] Finance analytics",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.4692,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5736,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6082,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Domaines métiers (Sales, Marketing, Finance, Supply Chain, eCom)] Supply Chain analytics",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5197,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5311,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5391,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5197, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Domaines métiers (Sales, Marketing, Finance, Supply Chain, eCom)] eCommerce analytics",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5407,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5621,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5632,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5407, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}

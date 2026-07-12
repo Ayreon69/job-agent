@@ -1,0 +1,818 @@
+{
+  "offer_id": 40,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'agents IA et assistants métiers basés sur les LLM] LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5624,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6051,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6565,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5624, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'agents IA et assistants métiers basés sur les LLM] agents IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5296,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6175,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'agents IA et assistants métiers basés sur les LLM] assistants métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5516,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.563,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5848,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5516, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'agents IA et assistants métiers basés sur les LLM] développement LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4598,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5332,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5579,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4598, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Industrialisation de cas d'usage en IA Générative] IA Générative",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5445,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5898,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5914,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5445, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Industrialisation de cas d'usage en IA Générative] industrialisation IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.586,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6129,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6149,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5860, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Industrialisation de cas d'usage en IA Générative] cas d'usage IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4461,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5284,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5313,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4461, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Valorisation des données via des plateformes Data & IA] valorisation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4353,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4442,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4923,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4353, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Valorisation des données via des plateformes Data & IA] plateforme Data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4648,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5128,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5307,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4648, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Valorisation des données via des plateformes Data & IA] plateforme IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5025,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5317,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5543,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5025, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Valorisation des données via des plateformes Data & IA] data platform",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.487,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5195,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5263,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4870, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de solutions NLP et traitement du langage naturel] NLP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5013,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6103,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6117,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5013, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de solutions NLP et traitement du langage naturel] traitement du langage naturel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.4709,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5203,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5886,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4709, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de solutions NLP et traitement du langage naturel] solutions NLP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.597,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6584,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6603,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5970, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Science et modélisation statistique] Data Science",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4536,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5714,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5766,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4536, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Science et modélisation statistique] modélisation statistique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.4909,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5276,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5802,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4909, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Science et modélisation statistique] machine learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1937,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5103,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.1937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des processus métiers par l'IA] optimisation processus métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4065,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.445,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4668,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4065, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des processus métiers par l'IA] IA pour processus métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3884,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3963,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4073,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3884, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des processus métiers par l'IA] automatisation IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3694,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4125,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4705,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3694, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Python pour le développement IA et Data Science] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Python pour le développement IA et Data Science] développement IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4454,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4826,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5009,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4454, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Python pour le développement IA et Data Science] Data Science",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4536,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5714,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5766,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4536, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Frameworks et bibliothèques pour le machine learning et le deep learning (TensorFlow, PyTorch, scikit-learn)] TensorFlow",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.733,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7441,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.8032,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7330, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Frameworks et bibliothèques pour le machine learning et le deep learning (TensorFlow, PyTorch, scikit-learn)] PyTorch",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6909,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7303,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7305,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6909, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Frameworks et bibliothèques pour le machine learning et le deep learning (TensorFlow, PyTorch, scikit-learn)] scikit-learn",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5307,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5659,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6069,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5307, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Frameworks et bibliothèques pour le machine learning et le deep learning (TensorFlow, PyTorch, scikit-learn)] machine learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1937,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5103,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.1937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Frameworks et bibliothèques pour le machine learning et le deep learning (TensorFlow, PyTorch, scikit-learn)] deep learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.3561,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5696,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5843,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3561, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et manipulation de données avec SQL et bases de données] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et manipulation de données avec SQL et bases de données] bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5296,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5451,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5505,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et manipulation de données avec SQL et bases de données] manipulation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4995,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5495,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5735,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4995, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et mise en production de modèles IA (MLOps)] MLOps",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6473,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.653,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6802,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6473, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et mise en production de modèles IA (MLOps)] déploiement modèles IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4055,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4268,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4449,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4055, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et mise en production de modèles IA (MLOps)] mise en production IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4645,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4816,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4924,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4645, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}

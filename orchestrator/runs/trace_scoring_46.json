@@ -1,0 +1,1258 @@
+{
+  "offer_id": 46,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et déploiement de modèles de Machine Learning et IA Générative] Machine Learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1946,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4358,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5108,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.1946, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et déploiement de modèles de Machine Learning et IA Générative] IA Générative",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5445,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5898,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5914,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5445, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et déploiement de modèles de Machine Learning et IA Générative] déploiement de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4625,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4722,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4901,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4625, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et déploiement de modèles de Machine Learning et IA Générative] modèles personnalisés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5065,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5509,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5679,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5065, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et déploiement de modèles de Machine Learning et IA Générative] modèles managés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.403,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4788,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4030, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architectures AI/ML scalables dans le cloud public (AWS, GCP, Azure)] architectures AI/ML",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4548,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5286,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5419,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4548, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architectures AI/ML scalables dans le cloud public (AWS, GCP, Azure)] cloud public",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5988,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7475,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5988, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architectures AI/ML scalables dans le cloud public (AWS, GCP, Azure)] AWS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6992,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7053,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7257,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6992, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architectures AI/ML scalables dans le cloud public (AWS, GCP, Azure)] GCP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7223,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.7268,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7316,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7223, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architectures AI/ML scalables dans le cloud public (AWS, GCP, Azure)] Azure",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6237,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.672,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.688,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6237, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architectures AI/ML scalables dans le cloud public (AWS, GCP, Azure)] scalabilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6755,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.677,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6638, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et industrialisation des modèles (MLflow, Kubeflow)] MLOps",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6473,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.653,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6802,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6473, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et industrialisation des modèles (MLflow, Kubeflow)] MLflow",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5893,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6024,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6106,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5893, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et industrialisation des modèles (MLflow, Kubeflow)] Kubeflow",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7125,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7453,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7653,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7125, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et industrialisation des modèles (MLflow, Kubeflow)] industrialisation des modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4574,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4908,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5463,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4574, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et industrialisation des modèles (MLflow, Kubeflow)] pipelines MLOps",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5327,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5605,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6025,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5327, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Solutions d'IA générative (LLM, RAG, vector DB)] IA générative",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5299,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5461,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5694,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5299, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Solutions d'IA générative (LLM, RAG, vector DB)] LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5624,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6051,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6565,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5624, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Solutions d'IA générative (LLM, RAG, vector DB)] RAG",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7246,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7449,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7099, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Solutions d'IA générative (LLM, RAG, vector DB)] vector DB",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.6485,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6601,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6784,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6485, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Solutions d'IA générative (LLM, RAG, vector DB)] bases vectorielles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7022,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7479,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7732,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7022, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de modèles AI/ML dans des applications (FastAPI, Flask)] intégration de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.526,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5502,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5548,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5260, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de modèles AI/ML dans des applications (FastAPI, Flask)] FastAPI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6272,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6675,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6712,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6272, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de modèles AI/ML dans des applications (FastAPI, Flask)] Flask",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7245,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7532,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.757,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7245, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de modèles AI/ML dans des applications (FastAPI, Flask)] applications existantes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4376,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4841,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4849,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4376, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Orchestration de workflows (Airflow, MWAA, Step Functions, Cloud Composer, Cloud Workflows)] Airflow",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6394,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7731,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7755,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6394, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Orchestration de workflows (Airflow, MWAA, Step Functions, Cloud Composer, Cloud Workflows)] MWAA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7051,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7228,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7338,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7051, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Orchestration de workflows (Airflow, MWAA, Step Functions, Cloud Composer, Cloud Workflows)] Step Functions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6804,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7271,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7367,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6804, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Orchestration de workflows (Airflow, MWAA, Step Functions, Cloud Composer, Cloud Workflows)] Cloud Composer",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5926,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6314,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.663,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5926, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Orchestration de workflows (Airflow, MWAA, Step Functions, Cloud Composer, Cloud Workflows)] Cloud Workflows",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4943,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5812,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6078,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4943, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Orchestration de workflows (Airflow, MWAA, Step Functions, Cloud Composer, Cloud Workflows)] orchestration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7062,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7569,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7735,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7062, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[CI/CD et Infrastructure as Code (GitLab, Terraform)] CI/CD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7213,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7378,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.743,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7213, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[CI/CD et Infrastructure as Code (GitLab, Terraform)] GitLab",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6542,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6674,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6766,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6542, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[CI/CD et Infrastructure as Code (GitLab, Terraform)] Terraform",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7617,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7722,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.7749,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[CI/CD et Infrastructure as Code (GitLab, Terraform)] Infrastructure as Code",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4644,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5318,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5463,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4644, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conteneurisation et déploiement (Docker, Kubernetes, ECS, EKS, Lambda, Cloud Run, GKS, Cloud Functions)] Docker",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7566,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7796,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7965,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conteneurisation et déploiement (Docker, Kubernetes, ECS, EKS, Lambda, Cloud Run, GKS, Cloud Functions)] Kubernetes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6349,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.635,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6388,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6349, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conteneurisation et déploiement (Docker, Kubernetes, ECS, EKS, Lambda, Cloud Run, GKS, Cloud Functions)] ECS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6068,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6201,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6249,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6068, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conteneurisation et déploiement (Docker, Kubernetes, ECS, EKS, Lambda, Cloud Run, GKS, Cloud Functions)] EKS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6586,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6657,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7121,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6586, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conteneurisation et déploiement (Docker, Kubernetes, ECS, EKS, Lambda, Cloud Run, GKS, Cloud Functions)] Lambda",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6665,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7367,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7487,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6665, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conteneurisation et déploiement (Docker, Kubernetes, ECS, EKS, Lambda, Cloud Run, GKS, Cloud Functions)] Cloud Run",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.552,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6504,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6827,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5520, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conteneurisation et déploiement (Docker, Kubernetes, ECS, EKS, Lambda, Cloud Run, GKS, Cloud Functions)] GKS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7623,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7733,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7748,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conteneurisation et déploiement (Docker, Kubernetes, ECS, EKS, Lambda, Cloud Run, GKS, Cloud Functions)] Cloud Functions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5671,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.661,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6768,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5671, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conteneurisation et déploiement (Docker, Kubernetes, ECS, EKS, Lambda, Cloud Run, GKS, Cloud Functions)] conteneurisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6433,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6589,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6599,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6433, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conteneurisation et déploiement (Docker, Kubernetes, ECS, EKS, Lambda, Cloud Run, GKS, Cloud Functions)] déploiement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5399,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5434,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5587,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5399, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en Python et frameworks associés (LangChain, LlamaIndex)] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en Python et frameworks associés (LangChain, LlamaIndex)] LangChain",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6613,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7291,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6613, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en Python et frameworks associés (LangChain, LlamaIndex)] LlamaIndex",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6673,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6886,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7055,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6673, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en Python et frameworks associés (LangChain, LlamaIndex)] développement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5583,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5605,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5583, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données vectorielles (PostgreSQL pgvector, OpenSearch, Vertex AI Vector Search)] PostgreSQL pgvector",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.6664,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6877,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7079,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6664, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données vectorielles (PostgreSQL pgvector, OpenSearch, Vertex AI Vector Search)] OpenSearch",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6892,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6995,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7097,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6892, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données vectorielles (PostgreSQL pgvector, OpenSearch, Vertex AI Vector Search)] Vertex AI Vector Search",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6591,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.6686,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6874,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6591, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données vectorielles (PostgreSQL pgvector, OpenSearch, Vertex AI Vector Search)] bases vectorielles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7022,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7479,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7732,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7022, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "CI/CD et Infrastructure as Code (GitLab, Terraform)",
+    "Conteneurisation et déploiement (Docker, Kubernetes, ECS, EKS, Lambda, Cloud Run, GKS, Cloud Functions)"
+  ]
+}

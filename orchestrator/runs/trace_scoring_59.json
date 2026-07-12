@@ -1,0 +1,772 @@
+{
+  "offer_id": 59,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "grenoble",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et configuration de Microsoft Copilot (M365 Copilot, Copilot Studio, Copilot for Azure)] Microsoft Copilot",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6857,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7051,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7493,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6857, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et configuration de Microsoft Copilot (M365 Copilot, Copilot Studio, Copilot for Azure)] M365 Copilot",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6968,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7049,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7397,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6968, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et configuration de Microsoft Copilot (M365 Copilot, Copilot Studio, Copilot for Azure)] Copilot Studio",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5617,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6004,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.62,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5617, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et configuration de Microsoft Copilot (M365 Copilot, Copilot Studio, Copilot for Azure)] Copilot for Azure",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6192,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6235,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6504,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6192, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et configuration de Microsoft Copilot (M365 Copilot, Copilot Studio, Copilot for Azure)] déploiement Microsoft Copilot",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.668,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6804,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6809,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6680, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et configuration de Microsoft Copilot (M365 Copilot, Copilot Studio, Copilot for Azure)] configuration Microsoft Copilot",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6885,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7148,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7387,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6885, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et implémentation d'agents IA personnalisés avec Copilot Studio et Power Platform] agents IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5296,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6175,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et implémentation d'agents IA personnalisés avec Copilot Studio et Power Platform] Copilot Studio",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5617,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6004,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.62,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5617, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et implémentation d'agents IA personnalisés avec Copilot Studio et Power Platform] Power Platform",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5257,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6826,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6835,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5257, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et implémentation d'agents IA personnalisés avec Copilot Studio et Power Platform] conception agents IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5183,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5541,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5943,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5183, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et implémentation d'agents IA personnalisés avec Copilot Studio et Power Platform] implémentation agents IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5104,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.53,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.532,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5104, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise sur l'écosystème Microsoft 365 et Azure] Microsoft 365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7081,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7597,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7735,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7081, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise sur l'écosystème Microsoft 365 et Azure] Azure",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6237,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.672,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.688,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6237, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise sur l'écosystème Microsoft 365 et Azure] écosystème Microsoft",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.646,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6834,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6882,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6460, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Accompagnement des utilisateurs et équipes IT sur les solutions IA Microsoft] formation utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4595,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5454,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5524,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4595, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Accompagnement des utilisateurs et équipes IT sur les solutions IA Microsoft] support utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5309,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5861,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5309, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Accompagnement des utilisateurs et équipes IT sur les solutions IA Microsoft] accompagnement équipes IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5089,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5309,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.535,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5089, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Accompagnement des utilisateurs et équipes IT sur les solutions IA Microsoft] solutions IA Microsoft",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5836,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6082,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6439,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5836, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Avant-vente technique et rédaction de propositions pour projets IA] avant-vente technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5815,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5902,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6055,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5815, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Avant-vente technique et rédaction de propositions pour projets IA] rédaction propositions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.497,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5261,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.54,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4970, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Avant-vente technique et rédaction de propositions pour projets IA] projets IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.433,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4721,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4751,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4330, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité, sécurité et gouvernance des données dans les déploiements IA] conformité données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5105,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5603,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5925,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5105, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité, sécurité et gouvernance des données dans les déploiements IA] sécurité données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5541,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5878,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5917,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5541, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité, sécurité et gouvernance des données dans les déploiements IA] gouvernance données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5035,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5245,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5527,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5035, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité, sécurité et gouvernance des données dans les déploiements IA] déploiements IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4252,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4753,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4821,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4252, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Certifications Microsoft (solutions logicielles et infrastructures)] certifications Microsoft",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5335,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.625,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.675,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5335, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Certifications Microsoft (solutions logicielles et infrastructures)] solutions logicielles Microsoft",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5351,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5655,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.618,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5351, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Certifications Microsoft (solutions logicielles et infrastructures)] infrastructures Microsoft",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.528,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5968,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6278,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5280, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Infogérance et conseil IT] infogérance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4859,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5106,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5842,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4859, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Infogérance et conseil IT] conseil IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5007,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5284,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5778,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5007, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation numérique avec l'environnement Microsoft] transformation numérique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6202,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6368,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6568,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6202, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation numérique avec l'environnement Microsoft] environnement Microsoft",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6376,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.651,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6882,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6376, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}

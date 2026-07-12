@@ -1,0 +1,889 @@
+{
+  "offer_id": 47,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "38",
+    "match_method": "departement"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de pipelines RAG (Retrieval-Augmented Generation)] RAG",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7246,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7449,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7099, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de pipelines RAG (Retrieval-Augmented Generation)] Retrieval-Augmented Generation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5598,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5608,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5776,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5598, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de pipelines RAG (Retrieval-Augmented Generation)] stratégies de récupération documentaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5884,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.652,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.656,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5884, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de pipelines RAG (Retrieval-Augmented Generation)] chunking",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7574,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7877,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7946,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de pipelines RAG (Retrieval-Augmented Generation)] reranking",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6985,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7199,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7412,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6985, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de pipelines RAG (Retrieval-Augmented Generation)] recherche hybride",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.641,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6446,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6769,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6410, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de pipelines RAG (Retrieval-Augmented Generation)] optimisation de la couche vectorielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6815,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6822,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6834,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6815, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et développement d'agents IA] agents IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5296,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6175,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et développement d'agents IA] Tool Calling",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5927,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5979,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6061,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5927, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et développement d'agents IA] workflows multi-agents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4504,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4774,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5228,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4504, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et développement d'agents IA] raisonnement multi-étapes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5392,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6001,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6454,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5392, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et développement d'agents IA] Human-in-the-loop",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6787,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7298,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7377,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6787, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et développement d'agents IA] gestion du contexte",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4184,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5212,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5438,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4184, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de frameworks et harnais d'évaluation pour modèles LLM] frameworks d'évaluation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4916,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5285,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5419,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4916, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de frameworks et harnais d'évaluation pour modèles LLM] harnais d'évaluation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5038,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5489,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5653,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5038, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de frameworks et harnais d'évaluation pour modèles LLM] mesure de la qualité des modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4813,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5463,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5636,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4813, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de frameworks et harnais d'évaluation pour modèles LLM] robustesse des modèles LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4841,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5342,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5515,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4841, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en TypeScript pour SDK IA interne] TypeScript",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6717,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6955,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7019,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6717, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en TypeScript pour SDK IA interne] SDK IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5558,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5562,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5601,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5558, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en TypeScript pour SDK IA interne] composants réutilisables",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6328,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6827,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6832,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6328, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Prompt Engineering avancé] Prompt Engineering",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5465,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5543,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5927,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5465, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Prompt Engineering avancé] Few-shot Learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4127,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5349,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5741,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4127, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Prompt Engineering avancé] Chain-of-Thought",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6967,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7245,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7503,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6967, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de l'IA dans le cycle de développement logiciel (SDLC)] SDLC",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.631,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.632,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6544,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6310, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de l'IA dans le cycle de développement logiciel (SDLC)] Intégration IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5464,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.559,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5627,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5464, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de l'IA dans le cycle de développement logiciel (SDLC)] bonnes pratiques IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3874,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.3917,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4513,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3874, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes produit et développement] collaboration équipes produit",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6006,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6061,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6151,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6006, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes produit et développement] collaboration équipes développement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5091,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5327,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5557,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5091, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes produit et développement] cas d'usage IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4461,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5284,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5313,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4461, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Montée en compétence des équipes sur les technologies LLM] formation équipes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.644,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6484,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6634,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6440, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Montée en compétence des équipes sur les technologies LLM] autonomie des équipes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.538,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6275,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6394,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5380, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Montée en compétence des équipes sur les technologies LLM] technologies LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4782,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5664,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5775,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4782, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Industrialisation de solutions IA pour la production] industrialisation IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.586,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6129,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6149,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5860, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Industrialisation de solutions IA pour la production] solutions IA robustes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6067,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6234,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6347,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6067, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Industrialisation de solutions IA pour la production] production",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6586,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6841,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6586, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modèles de langage (LLM)] LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5624,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6051,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6565,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5624, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modèles de langage (LLM)] modèles de langage",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.4808,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5425,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5958,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4808, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Développement de pipelines RAG (Retrieval-Augmented Generation)"
+  ]
+}

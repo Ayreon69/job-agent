@@ -1,0 +1,611 @@
+{
+  "offer_id": 95,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "villeurbanne",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Talend pour l'alimentation de bases de données, création de web services/API et intégration de sources externes semi-structurées] Talend",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.4987,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5856,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6585,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4987, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Talend pour l'alimentation de bases de données, création de web services/API et intégration de sources externes semi-structurées] alimentation de bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4438,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4578,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4817,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4438, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Talend pour l'alimentation de bases de données, création de web services/API et intégration de sources externes semi-structurées] création de web services",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4929,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.513,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5154,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4929, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Talend pour l'alimentation de bases de données, création de web services/API et intégration de sources externes semi-structurées] création d'API",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.3549,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4588,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4665,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3549, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Talend pour l'alimentation de bases de données, création de web services/API et intégration de sources externes semi-structurées] intégration de sources externes semi-structurées",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.567,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6084,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6387,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5670, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et gestion d'architectures data] architecture data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5116,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5147,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5291,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5116, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et gestion d'architectures data] conception de flux de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4525,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4804,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4816,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4525, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et gestion d'architectures data] stockage des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5795,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6087,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6404,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5795, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données relationnelles (MySQL, PostgreSQL)] MySQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5282,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6928,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7518,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5282, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données relationnelles (MySQL, PostgreSQL)] PostgreSQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.526,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6356,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6804,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5260, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données relationnelles (MySQL, PostgreSQL)] bases de données relationnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4881,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5423,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5459,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4881, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cloud AWS] AWS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6992,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7053,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7257,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6992, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cloud AWS] Cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6405,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6918,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7486,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6405, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des APIs] APIs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4207,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5235,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.555,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4207, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des APIs] gestion des APIs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.3518,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4516,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.483,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3518, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance des données et gestion des référentiels] gouvernance des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4729,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4871,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5233,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4729, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance des données et gestion des référentiels] gestion des référentiels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4916,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5523,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5597,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4916, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Qualité des données] qualité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4455,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4573,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4983,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4455, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des accès à la plateforme BI] gestion des accès",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.524,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5347,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5401,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5240, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des accès à la plateforme BI] plateforme BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4519,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5244,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6005,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4519, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pilotage fonctionnel et opérationnel de projets data] pilotage de projets data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.369,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4525,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4661,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3690, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pilotage fonctionnel et opérationnel de projets data] gestion de portefeuilles de sujets",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5055,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5561,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5595,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5055, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Management d'équipe et montée en compétences] management d'équipe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5792,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6145,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6335,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5792, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Management d'équipe et montée en compétences] montée en compétences",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.482,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4883,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5206,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4820, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Management d'équipe et montée en compétences] mentorat technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6277,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6448,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6481,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6277, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}

@@ -1,0 +1,751 @@
+{
+  "offer_id": 60,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et de ses librairies pour le traitement, l'analyse de données et la modélisation statistique (pandas, polars, scikit-learn, matplotlib, xgboost, pandera, geopandas, numpy)] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et de ses librairies pour le traitement, l'analyse de données et la modélisation statistique (pandas, polars, scikit-learn, matplotlib, xgboost, pandera, geopandas, numpy)] pandas",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6433,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7341,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7519,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6433, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et de ses librairies pour le traitement, l'analyse de données et la modélisation statistique (pandas, polars, scikit-learn, matplotlib, xgboost, pandera, geopandas, numpy)] polars",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7494,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7973,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.8437,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7494, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et de ses librairies pour le traitement, l'analyse de données et la modélisation statistique (pandas, polars, scikit-learn, matplotlib, xgboost, pandera, geopandas, numpy)] scikit-learn",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5307,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5659,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6069,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5307, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et de ses librairies pour le traitement, l'analyse de données et la modélisation statistique (pandas, polars, scikit-learn, matplotlib, xgboost, pandera, geopandas, numpy)] matplotlib",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7147,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7166,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7207,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7147, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et de ses librairies pour le traitement, l'analyse de données et la modélisation statistique (pandas, polars, scikit-learn, matplotlib, xgboost, pandera, geopandas, numpy)] xgboost",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7988,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.8058,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.8073,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et de ses librairies pour le traitement, l'analyse de données et la modélisation statistique (pandas, polars, scikit-learn, matplotlib, xgboost, pandera, geopandas, numpy)] pandera",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7988,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.8059,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.8212,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et de ses librairies pour le traitement, l'analyse de données et la modélisation statistique (pandas, polars, scikit-learn, matplotlib, xgboost, pandera, geopandas, numpy)] geopandas",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7208,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.7437,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.7581,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7208, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et de ses librairies pour le traitement, l'analyse de données et la modélisation statistique (pandas, polars, scikit-learn, matplotlib, xgboost, pandera, geopandas, numpy)] numpy",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7223,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.726,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7792,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7223, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des bases de données SQL (PostgreSQL, Teradata)] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des bases de données SQL (PostgreSQL, Teradata)] PostgreSQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.526,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6356,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6804,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5260, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des bases de données SQL (PostgreSQL, Teradata)] Teradata",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.7076,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7108,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7314,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7076, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en modélisation statistique et machine learning (validation croisée, feature engineering)] modélisation statistique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.4909,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5276,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5802,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4909, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en modélisation statistique et machine learning (validation croisée, feature engineering)] machine learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1937,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5103,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.1937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en modélisation statistique et machine learning (validation croisée, feature engineering)] validation croisée",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5254,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5681,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6065,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5254, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en modélisation statistique et machine learning (validation croisée, feature engineering)] feature engineering",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.63,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6447,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6525,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6300, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de Spark (PySpark, Scala) pour le traitement de grandes volumétries de données] Spark",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7311,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7911,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.804,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7311, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de Spark (PySpark, Scala) pour le traitement de grandes volumétries de données] PySpark",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7215,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7353,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7491,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7215, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de Spark (PySpark, Scala) pour le traitement de grandes volumétries de données] Scala",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7488,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.7579,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7688,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7488, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Recueil de besoins et animation d'ateliers métiers] recueil de besoins",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.456,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5021,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4560, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Recueil de besoins et animation d'ateliers métiers] animation d'ateliers métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6063,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6511,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6534,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6063, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication efficace et vulgarisation des résultats] communication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6237,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6465,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6632,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6237, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication efficace et vulgarisation des résultats] vulgarisation des résultats",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4486,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5026,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5178,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4486, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de documents de cadrage de projet] rédaction de documents de cadrage",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4716,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5349,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5734,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4716, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception fonctionnelle du besoin métier au sein d'un SI] conception fonctionnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4705,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.539,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5449,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4705, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception fonctionnelle du besoin métier au sein d'un SI] besoin métier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4918,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5107,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5372,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4918, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception fonctionnelle du besoin métier au sein d'un SI] SI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6717,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6885,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7327,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6717, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique sur les outils data] veille technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5358,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5861,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5358, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Autonomie et proactivité dans la résolution de problèmes] autonomie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5714,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.634,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6424,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5714, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Autonomie et proactivité dans la résolution de problèmes] proactivité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5689,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6429,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6634,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5689, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Autonomie et proactivité dans la résolution de problèmes] résolution de problèmes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5942,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6289,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6688,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5942, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Maîtrise de Python et de ses librairies pour le traitement, l'analyse de données et la modélisation statistique (pandas, polars, scikit-learn, matplotlib, xgboost, pandera, geopandas, numpy)"
+  ]
+}

@@ -1,0 +1,588 @@
+{
+  "offer_id": 44,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et déploiement de solutions d'IA] conception de solutions d'IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4446,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5068,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5081,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4446, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et déploiement de solutions d'IA] déploiement de solutions d'IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4031,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.462,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4625,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4031, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et déploiement de solutions d'IA] industrialisation de solutions d'IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4739,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5133,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5224,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4739, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture de systèmes d'IA] architecture de systèmes d'IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4722,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5177,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5597,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4722, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture de systèmes d'IA] définition d'architectures techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5185,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.552,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5553,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5185, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation de processus métiers par l'IA] optimisation de processus",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.3809,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5312,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5319,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3809, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation de processus métiers par l'IA] intégration de l'IA dans les processus métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3908,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4091,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4185,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3908, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support technique avant-vente et réponse aux appels d'offres] support technique avant-vente",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5318,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5443,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5468,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5318, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support technique avant-vente et réponse aux appels d'offres] réponse aux appels d'offres",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4985,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.527,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5587,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4985, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support technique avant-vente et réponse aux appels d'offres] éléments techniques des appels d'offres",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.451,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4663,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4693,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4510, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conseil technique en IA pour les clients] conseil technique en IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4117,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4213,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4328,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4117, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conseil technique en IA pour les clients] évaluation de la faisabilité des cas d'usage IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3517,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4276,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4575,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3517, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conseil technique en IA pour les clients] accompagnement des clients en IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3623,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4376,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4515,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3623, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Audit et optimisation de projets IA existants] audit de projets IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4797,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.482,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4942,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4797, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Audit et optimisation de projets IA existants] optimisation de projets IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4513,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4663,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4929,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4513, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique en IA] veille technologique en IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4484,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4528,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.47,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4484, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique en IA] proposition de solutions innovantes en IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.439,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4819,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5019,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4390, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes pluridisciplinaires] travail en équipe pluridisciplinaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5374,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5836,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5956,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5374, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes pluridisciplinaires] collaboration avec les équipes internes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5189,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5536,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5575,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5189, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes pluridisciplinaires] coordination avec les équipes avant-vente",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5646,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5824,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5986,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5646, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Robustesse et scalabilité des solutions d'IA] solutions d'IA robustes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5379,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.545,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5889,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5379, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Robustesse et scalabilité des solutions d'IA] solutions d'IA scalables",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5147,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5383,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5817,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5147, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évolution des cas d'usage IA] évolution des cas d'usage IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4184,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.475,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.497,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4184, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évolution des cas d'usage IA] amélioration continue des cas d'usage IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.391,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4371,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4731,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3910, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}

@@ -1,0 +1,1006 @@
+{
+  "offer_id": 62,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "grenoble",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation mathématique et algorithmique pour l'apprentissage automatique] modélisation mathématique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6239,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7032,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7046,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6239, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation mathématique et algorithmique pour l'apprentissage automatique] algorithmes de contrôle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4931,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5572,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5685,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4931, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation mathématique et algorithmique pour l'apprentissage automatique] apprentissage automatique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.2163,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4212,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4507,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2163, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation mathématique et algorithmique pour l'apprentissage automatique] machine learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1937,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5103,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.1937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation mathématique et algorithmique pour l'apprentissage automatique] modèles mathématiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5883,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6369,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6736,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5883, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et validation de prototypes en Python] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et validation de prototypes en Python] prototypage",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5097,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5309,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5616,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5097, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et validation de prototypes en Python] validation de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4761,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5439,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5547,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4761, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et validation de prototypes en Python] développement de prototypes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4907,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5046,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5615,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4907, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et analyse de données cliniques complexes et bruitées] analyse de données cliniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5836,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6167,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6504,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5836, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et analyse de données cliniques complexes et bruitées] données bruitées",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.599,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6512,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6549,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5990, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et analyse de données cliniques complexes et bruitées] traitement de données variables",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5091,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5277,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5091, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et analyse de données cliniques complexes et bruitées] data analysis",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4736,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.518,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5268,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4736, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Simulation clinique à grande échelle et tests de sécurité] simulation clinique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5959,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5982,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6014,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5959, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Simulation clinique à grande échelle et tests de sécurité] tests de sécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5454,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6209,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6348,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5454, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Simulation clinique à grande échelle et tests de sécurité] virtual patient datasets",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6217,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6348,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6356,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6217, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Simulation clinique à grande échelle et tests de sécurité] optimisation d'outils de simulation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4965,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5136,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5349,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4965, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes d'ingénierie et transfert technologique] transfert technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5868,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5872,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5941,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5868, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes d'ingénierie et transfert technologique] collaboration interdisciplinaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6146,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6305,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6483,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6146, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes d'ingénierie et transfert technologique] C++",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7712,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7791,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.8316,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes d'ingénierie et transfert technologique] intégration logicielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4492,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5422,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5441,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4492, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes d'ingénierie et transfert technologique] développement embarqué",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4778,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5188,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5452,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4778, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes d'ingénierie et transfert technologique] développement cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4679,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5868,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6156,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4679, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité aux normes et réglementations des dispositifs médicaux (IEC 62304, ISO 13485)] IEC 62304",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6659,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7143,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7277,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6659, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité aux normes et réglementations des dispositifs médicaux (IEC 62304, ISO 13485)] ISO 13485",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7625,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7722,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.779,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité aux normes et réglementations des dispositifs médicaux (IEC 62304, ISO 13485)] réglementation médicale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4421,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6775,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6865,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4421, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité aux normes et réglementations des dispositifs médicaux (IEC 62304, ISO 13485)] conformité réglementaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.496,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5406,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5535,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4960, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité aux normes et réglementations des dispositifs médicaux (IEC 62304, ISO 13485)] dispositifs médicaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5605,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6124,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6504,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5605, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de documentation technique pour soumissions réglementaires (CE/FDA)] documentation technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5417,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5538,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5743,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5417, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de documentation technique pour soumissions réglementaires (CE/FDA)] soumissions réglementaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4044,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5759,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5851,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4044, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de documentation technique pour soumissions réglementaires (CE/FDA)] CE marking",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.6245,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6469,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6822,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6245, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de documentation technique pour soumissions réglementaires (CE/FDA)] FDA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5562,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6945,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7157,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5562, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de documentation technique pour soumissions réglementaires (CE/FDA)] rédaction de documentation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4664,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5115,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5286,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4664, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Physiologie du diabète et contrôle glycémique] physiologie du diabète",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.8265,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.8521,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.9062,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Physiologie du diabète et contrôle glycémique] contrôle glycémique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7248,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7995,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.8081,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7248, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Physiologie du diabète et contrôle glycémique] diabétologie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7878,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.794,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.8748,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traçabilité des recherches et gestion de la qualité] traçabilité des recherches",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5033,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5491,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5824,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5033, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traçabilité des recherches et gestion de la qualité] gestion de la qualité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4688,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5348,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5387,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4688, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traçabilité des recherches et gestion de la qualité] qualité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4455,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4573,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4983,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4455, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation d'algorithmes pour environnements embarqués ou cloud] optimisation d'algorithmes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5629,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.583,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5995,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5629, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation d'algorithmes pour environnements embarqués ou cloud] environnements embarqués",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5472,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5993,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6217,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5472, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation d'algorithmes pour environnements embarqués ou cloud] cloud computing",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5305,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6876,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6892,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5305, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Collaboration avec les équipes d'ingénierie et transfert technologique",
+    "Conformité aux normes et réglementations des dispositifs médicaux (IEC 62304, ISO 13485)",
+    "Physiologie du diabète et contrôle glycémique"
+  ]
+}
