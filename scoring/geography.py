@@ -15,7 +15,7 @@ from dataclasses import dataclass
 from typing import Literal
 
 Zone = Literal["suisse_romande", "rhone_alpes", "uae_gcc", "suisse_autre", "autre_france", "inconnu"]
-MatchMethod = Literal["departement", "ville_connue", "aucun"]
+MatchMethod = Literal["departement", "ville_connue", "canton_abbr", "aucun"]
 
 
 @dataclass
@@ -40,10 +40,33 @@ RHONE_ALPES_VILLES = [
 
 # Suisse romande : Fribourg est traité comme romand par approximation documentée
 # (canton majoritairement francophone), voir spec "Cas particuliers".
+#
+# Complété en session 11 (correctif jobup.ch) : un scraping réel sur jobup.ch
+# a révélé que "Gland", "Renens", "Palezieux", "Marin-Epagnier" (villes
+# vaudoises/neuchâteloises réelles, vues sur des offres réelles) n'étaient
+# pas reconnues et retombaient à tort en "autre_france" (4 offres sur 34
+# scrapées mal classées lors du premier test réel de cette source — voir
+# ROADMAP.md session 11). La spec d'origine (check_geography_rules_spec.md)
+# ne prévoyait qu'une liste fermée de grandes villes pour la Suisse romande,
+# sans mécanisme de repli comme le département pour Rhône-Alpes — gap
+# jamais détecté avant parce que jobup.ch (la vraie source de la priorité 1
+# géographique) n'avait jamais été scrapée jusqu'ici.
 SUISSE_ROMANDE_VILLES = [
     "geneve", "geneva", "lausanne", "neuchatel", "yverdon-les-bains", "yverdon",
     "nyon", "vevey", "montreux", "fribourg", "freiburg", "sion", "vaud", "valais",
+    "gland", "renens", "palezieux", "marin-epagnier", "marin epagnier",
+    "morges", "rolle", "aigle", "bulle", "delemont", "la chaux-de-fonds",
+    "la chaux de fonds", "le locle",
 ]
+
+# Suffixe d'abréviation cantonale suisse tel qu'utilisé par jobup.ch (ex:
+# "Renens VD", "Marin-Epagnier (NE)") : un signal fort et générique en
+# complément de la liste de villes ci-dessus, qui ne peut pas énumérer
+# toutes les communes vaudoises/neuchâteloises/genevoises/fribourgeoises/
+# valaisannes existantes — même principe que le repli département pour
+# Rhône-Alpes (_find_departement_code), appliqué au format cantonal suisse.
+# VD=Vaud, NE=Neuchâtel, GE=Genève, FR=Fribourg, VS=Valais.
+SUISSE_ROMANDE_CANTON_ABBR_RE = re.compile(r"\b(VD|NE|GE|FR|VS)\b")
 
 UAE_GCC_VILLES = [
     "dubai", "dubai", "abu dhabi", "abou dabi", "uae", "emirats", "sharjah",
@@ -147,32 +170,44 @@ def check_geography_rules(offer_location: str) -> GeographyVerdict:
         if keyword:
             return _make_verdict(zone, keyword, "ville_connue")
 
-    # 2. Pas de ville connue : tenter un matching par département (Rhône-Alpes
-    #    uniquement, cf. spec — les autres zones n'ont pas de logique département).
+    # 2. Pas de ville connue : abréviation cantonale suisse romande (VD/NE/GE/
+    #    FR/VS, cf. commentaire sur SUISSE_ROMANDE_CANTON_ABBR_RE) — repli pour
+    #    les communes non énumérées dans SUISSE_ROMANDE_VILLES, même principe
+    #    que le repli département pour Rhône-Alpes ci-dessous. Matché sur le
+    #    texte BRUT (pas `normalized`, qui est en minuscules) car ces
+    #    abréviations sont significatives en majuscules seulement — "ne" en
+    #    minuscules serait un simple fragment de mot français, pas un signal.
+    canton_match = SUISSE_ROMANDE_CANTON_ABBR_RE.search(text)
+    if canton_match:
+        return _make_verdict("suisse_romande", canton_match.group(1), "canton_abbr")
+
+    # 3. Toujours pas de ville connue : tenter un matching par département
+    #    (Rhône-Alpes uniquement, cf. spec — les autres zones n'ont pas de
+    #    logique département).
     dept_code = _find_departement_code(text)
     if dept_code and dept_code in RHONE_ALPES_DEPARTEMENTS:
         return _make_verdict("rhone_alpes", dept_code, "departement")
 
-    # 3. "Suisse" seul, sans ville précisée : ne jamais présumer romande.
+    # 4. "Suisse" seul, sans ville précisée : ne jamais présumer romande.
     if re.search(r"\bsuisse\b|\bswitzerland\b", normalized) and dept_code is None:
         return _make_verdict("inconnu", None, "aucun")
 
-    # 4. Mention générique de la France, sans ville/département identifiable.
+    # 5. Mention générique de la France, sans ville/département identifiable.
     if re.search(r"\bfrance\b", normalized):
         return _make_verdict("autre_france", None, "aucun")
 
-    # 5. Pays étranger connu mais hors des zones ciblées (ex: Belgique, Luxembourg) :
+    # 6. Pays étranger connu mais hors des zones ciblées (ex: Belgique, Luxembourg) :
     #    ne jamais classer en "autre_france" par défaut, ce qui appliquerait à tort
     #    la règle "zéro signal de mobilité" pensée pour la France.
     foreign_keyword = _find_first_keyword(normalized, FOREIGN_NON_TARGET_COUNTRIES)
     if foreign_keyword:
         return _make_verdict("inconnu", foreign_keyword, "aucun")
 
-    # 6. Mot-clé générique "remote"/"télétravail" sans pays précisé.
+    # 7. Mot-clé générique "remote"/"télétravail" sans pays précisé.
     if re.search(r"\bremote\b|\bt[ée]l[ée]travail\b", normalized):
         return _make_verdict("inconnu", None, "aucun")
 
-    # 7. Reste : par défaut prudent, seul un texte non vide sans aucun signal
+    # 8. Reste : par défaut prudent, seul un texte non vide sans aucun signal
     #    d'un pays étranger est traité comme "autre_france" (cf. spec: "Paris 8e"
     #    doit donner autre_france sans mention explicite de "France").
     if text.strip():

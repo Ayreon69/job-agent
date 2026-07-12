@@ -52,11 +52,13 @@ concurrency:
 jobs:
   scrape-and-score:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
-      # Generous but bounded: 30 offers * (2s delay + up to ~15s scoring +
-      # generation) is a few minutes in practice, but Playwright launches
-      # and Mistral API latency can vary. Caps a hang rather than letting a
-      # stuck job burn the whole Actions minutes budget.
+    timeout-minutes: 90
+      # Bumped from 60 (session 11): a real Hellowork-only run already took
+      # ~49 minutes for 36 offers (session 8 first run) — adding jobup.ch
+      # roughly doubles the per-run offer volume on the first pass, before
+      # the upsert-dedup makes subsequent runs process only the delta. Caps
+      # a hang rather than letting a stuck job burn the whole Actions
+      # minutes budget.
 
     steps:
       - name: Checkout repository
@@ -87,7 +89,10 @@ jobs:
       - name: Build ChromaDB profile index
         run: python -m scoring.embeddings.build
 
-      - name: Run scraper (Hellowork, default queries/region)
+      - name: Run scraper (Hellowork + jobup.ch, default queries/regions)
+        # --source defaults to "both" (scraper/run.py): Hellowork covers
+        # Rhône-Alpes, jobup.ch covers Suisse romande (session 11) — one
+        # invocation runs both sources sequentially in the same job.
         run: python -m scraper.run
 
       - name: Run orchestrator batch (status='nouveau' only)

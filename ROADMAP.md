@@ -1887,3 +1887,183 @@ du correctif readonly qui ne modifie pas le chemin `full`.
 dynamique, exec signal handling), `docker/entrypoint.sh` (skip index en
 readonly), `api/main.py` (API_MODE, imports différés), `api/schemas.py`
 (`embeddings_loaded: bool | None`).
+
+## Session 11 (2026-07-13) : jobup.ch — Suisse romande, priorité géographique 1
+
+**Objectif :** ajouter jobup.ch comme deuxième source de scraping, ciblée sur
+la Suisse romande (Genève, Vaud, Neuchâtel) — la vraie priorité 1 de
+CLAUDE.md, jamais testée de bout en bout jusqu'ici (tout le système n'avait
+tourné que sur Rhône-Alpes via Hellowork depuis la session 1).
+
+### Reconnaissance (avant tout code de production)
+
+Un `web_fetch` exploratoire préalable avait montré que les paramètres
+`term=`/`region=` devinés sur la page d'accueil ne filtraient PAS réellement
+(41528 offres génériques retournées pour "data analyst" + Genève). Plutôt
+que de deviner davantage, la vraie syntaxe a été découverte en pilotant
+Playwright comme un utilisateur réel : remplissage du champ "Profession ou
+mots-clés" (`#synonym-typeahead-text-field`) et du champ "Villes ou régions"
+(`#location-typeahead-text-field`), sélection d'une vraie suggestion du
+typeahead, clic sur "Recherche", puis lecture de l'URL résultante.
+
+**Syntaxe réelle confirmée** (contraste net avec le résultat non filtré
+initial — 22-24 offres réelles vs 41528) :
+```
+https://www.jobup.ch/fr/emplois/?location=<slug>&term=<query>&employment-type=<code>&page=<n>
+```
+- `location` : un slug de ville/canton que jobup résout lui-même via son
+  typeahead (`genève`, `vaud`, `neuchâtel` — accentué, minuscule) — pas du
+  texte libre ; une valeur non reconnue retombe silencieusement sur le
+  listing national non filtré, exactement comme le devinage initial cassé.
+  Confirmé directement navigable sans repasser par l'interaction JS à chaque
+  fois (testé : navigation directe vers l'URL produit le même résultat
+  filtré).
+- `employment-type` : un code entier par type de contrat, non documenté
+  nulle part et sans ordre logique évident — découvert en ouvrant le vrai
+  panneau de filtre "Type de contrat" et en lisant l'URL produite par chaque
+  case cochée : `Temporaire=1`, `Indépendant=2`, `Stage=3`, `Revenu
+  complémentaire=4`, `Durée indéterminée=5`, `Apprentissage=6`. Plusieurs
+  codes se combinent en répétant le paramètre (`&employment-type=1&employment-type=2&employment-type=5`),
+  vérifié : 210 résultats = exactement 173+36+1 (comptes individuels des 3
+  codes combinés).
+- `page` : pagination 1-indexée, confirmée via les vrais liens de
+  pagination sur une page de résultats large (367 offres).
+
+**Structure de la page de résultats** (stable sur ~20 échantillons de
+reconnaissance) :
+- `[data-cy="serp-item"]` : une carte par offre.
+- `[data-cy="job-link"]` : lien titre (le titre complet est dans l'attribut
+  `title`, pas seulement le texte visible parfois tronqué).
+- Champs en paires de lignes texte brut : `"Lieu de travail:"` / valeur,
+  `"Taux d'activité:"` / valeur, `"Type de contrat:"` / valeur — **pas
+  systématiquement présents** : les gros employeurs (CERN, UNICEF,
+  SonarSource) omettent parfois complètement `"Type de contrat:"` et/ou
+  `"Taux d'activité:"`, contrairement à Hellowork où chaque carte a toujours
+  les mêmes champs. Le parsing tolère l'absence d'un label plutôt que de
+  supposer une position fixe.
+- `[data-cy="vacancy-description"]` sur la page de détail : sélecteur fiable
+  pour la description complète.
+- Date de publication : premier motif "DD mois AAAA" absolu dans le texte de
+  la page de détail (ex: "25 juin 2026"), apparaît juste après le titre —
+  plus fiable que le texte relatif de la carte ("Il y a 3 semaines").
+
+### Adaptation du vocabulaire de recherche
+
+Les requêtes par défaut de Hellowork ont été testées telles quelles sur
+jobup avant d'être copiées aveuglément : `"data scientist"` (14 résultats) et
+`"data analyst"` (24 résultats) fonctionnent identiquement, mais
+**`"IA générative agent LLM"` retourne ZÉRO résultat** sur jobup (phrase
+française trop spécifique pour son moteur de recherche, contrairement à
+Hellowork). Remplacée par `"intelligence artificielle"` (12 résultats
+confirmés), le vocabulaire le plus proche que jobup résout réellement — testé
+et confirmé non vide avant adoption, pas supposé équivalent.
+
+### Scraper (scraper/jobup.py)
+
+Même structure que `scraper/hellowork.py` (dataclass `JobListing`,
+`search_jobs`/`fetch_job_detail`/`scrape`). `source='jobup'` dans le schéma
+`storage/db.py` existant (`UNIQUE(source, source_id)` déjà conçu pour
+plusieurs sources). Cible Genève/Vaud/Neuchâtel uniquement — jamais
+Zurich/Berne/Bâle, cohérent avec `check_geography_rules` (`suisse_autre`,
+priority_rank 4, la zone la plus basse des quatre zones classées).
+
+`scrape()` déduplique par `source_id` à travers les régions AVANT de
+récupérer les détails (une offre à Genève peut apparaître aussi dans une
+recherche Vaud si les index de jobup se chevauchent géographiquement) — évite
+de fetcher/stocker la même offre deux fois dans un seul appel.
+
+**Filtre de contrat en deux couches**, pas une seule :
+1. `employment-type` au niveau URL (couche principale, comme Hellowork) :
+   inclut Temporaire/Indépendant/Durée indéterminée, exclut Stage/
+   Apprentissage/Revenu complémentaire.
+2. **Filet de sécurité sur le titre** (`_looks_like_internship`), ajouté
+   après un test réel : 3 offres sur 34 scrapées avaient un titre
+   explicitement "Stagiaire"/"Internship" mais un `employment-type` mal
+   classé par jobup lui-même comme "Temporaire" ou "Durée indéterminée" (pas
+   "Stage") — un vrai défaut de qualité des données côté jobup, pas un bug
+   du filtre URL. Regex `\b(stagiaire|stage|internship|intern)\b` avec
+   limites de mot, vérifiée sans faux positif sur les 34 offres réelles
+   (ex: "International Business Analyst" ne matche pas).
+
+### Bug réel découvert et corrigé : couverture géographique Suisse romande incomplète
+
+**Le test de bout en bout demandé a révélé un vrai bug préexistant**, jamais
+détecté avant parce que jobup.ch (la vraie source de la priorité 1) n'avait
+jamais été scrapée : `SUISSE_ROMANDE_VILLES` dans `scoring/geography.py` ne
+contenait qu'une liste fermée de grandes villes (Genève, Lausanne,
+Neuchâtel, Yverdon, Nyon, Vevey, Montreux, Fribourg, Sion) — sans mécanisme
+de repli comme le code département pour Rhône-Alpes. Sur les 34 offres
+réelles scrapées, **4 (Gland, Renens VD, Palézieux, Marin-Epagnier NE)
+étaient mal classées `autre_france`** au lieu de `suisse_romande` —
+appliquant à tort la règle "zéro mobilité" pensée pour la France à des
+offres suisses, et leur retirant la priority_rank 1.
+
+**Corrigé** dans `scoring/geography.py` :
+- Ajout des villes réelles manquantes à `SUISSE_ROMANDE_VILLES` (Gland,
+  Renens, Palézieux, Marin-Epagnier, + Morges/Rolle/Aigle/Bulle/Delémont/La
+  Chaux-de-Fonds/Le Locle en prévision — mêmes cantons, pas encore vues dans
+  une offre réelle mais du même type de gap).
+- **Nouveau mécanisme de repli générique** : `SUISSE_ROMANDE_CANTON_ABBR_RE`
+  détecte l'abréviation cantonale suisse telle qu'utilisée par jobup (ex:
+  "Renens VD", "Marin-Epagnier (NE)") — VD/NE/GE/FR/VS — même principe que
+  le repli département pour Rhône-Alpes, pour ne pas devoir énumérer toutes
+  les communes vaudoises/neuchâteloises/genevoises/fribourgeoises/
+  valaisannes existantes. Matché sur le texte BRUT (pas la version
+  normalisée en minuscules, où "ne" en minuscule serait un simple fragment
+  de mot français) — vérifié qu'une ville alémanique connue (ex: "Winterthur
+  ZH") reste classée `suisse_autre` via la liste de villes AVANT que le
+  repli cantonal romand ne soit même consulté (ordre de priorité préservé).
+
+**Revalidation complète** : les 34/34 offres jobup réelles reclassées
+`suisse_romande` après correctif (0 restant en `autre_france`). Les 11 cas
+originaux de `check_geography_rules_spec.md` toujours corrects (aucune
+régression) + 6 nouveaux cas ajoutés à `tests/test_geography.py`
+(17/17 passés).
+
+### Intégration
+
+- `scraper/run.py` réécrit pour supporter `--source hellowork|jobup|both`
+  (défaut `both`) — une seule invocation lance les deux sources séquentiellement.
+  `hellowork.py` exporte désormais aussi `DEFAULT_JOB_QUERIES` (auparavant
+  seulement dans l'ancien `run.py`), symétrique à `jobup.DEFAULT_QUERIES`.
+- `.github/workflows/scrape-and-score.yml` : aucun changement de commande
+  nécessaire (`python -m scraper.run` sans `--source` scrape déjà les deux
+  par défaut) — seulement le commentaire mis à jour et le timeout bumpé de
+  60 à 90 minutes (une exécution Hellowork seule avait déjà pris ~49 minutes
+  en session 8 ; ajouter jobup double approximativement le volume du
+  premier run avant que la dédup par upsert ne réduise les runs suivants au
+  delta).
+
+### Tests réels effectués (pas de simulation)
+
+1. **Scraping réel** (`scraper.run --source jobup --pages 1`, requêtes par
+   défaut, Genève+Vaud+Neuchâtel) : **38 offres scrapées, 34 nouvelles
+   lignes insérées**, `source='jobup'` dans SQLite.
+2. **Vérification géographique** : `check_geography_rules` appliqué aux 34
+   locations réelles stockées — 34/34 `suisse_romande` après correctif (0
+   avant, avec 4 mal classées). Aucune offre alémanique n'a fuité dans
+   l'échantillon.
+3. **Orchestrateur complet sur 5 offres jobup.ch réelles** (168, 170-173,
+   hors les 3 stages détectés a posteriori) : **5/5 réussies, 0 échec** —
+   premier test de bout en bout de la priorité géographique 1 depuis le
+   début du projet. `geography_verdict.zone='suisse_romande'`,
+   `priority_rank=1` confirmé sur les 5 traces scoring réelles. Trace de
+   génération confirmée utilisant le bon chunk de ton
+   (`rule_switzerland_other_mobility`), pas une règle par défaut.
+4. **Anti-doublons croisés** : test contrôlé avec deux offres synthétiques
+   de MÊME titre ET MÊME `source_id` mais `source` différent
+   (`hellowork`/`jobup`) — les deux insérées comme lignes séparées (la
+   contrainte `UNIQUE(source, source_id)` est bien scopée par source).
+   Réinsertion du même `(source, source_id)` correctement ignorée (retour
+   `False`). Données de test nettoyées après vérification.
+5. **Qualité des données jobup** (limite documentée, pas un bug du
+   scraper) : 3/34 offres réelles avaient un `employment-type` jobup
+   incohérent avec leur propre titre ("Stagiaire..." classé "Temporaire"
+   par jobup) — corrigé avec un filet de sécurité sur le titre (voir
+   ci-dessus), pas silencieusement ignoré.
+
+**Fichiers :** `scraper/jobup.py` (nouveau), `scraper/hellowork.py`
+(export `DEFAULT_JOB_QUERIES`), `scraper/run.py` (réécrit, flag `--source`),
+`.github/workflows/scrape-and-score.yml` (commentaire + timeout),
+`scoring/geography.py` (villes manquantes + repli cantonal),
+`tests/test_geography.py` (6 nouveaux cas).
