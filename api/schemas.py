@@ -8,8 +8,15 @@ from __future__ import annotations
 from pydantic import BaseModel, Field
 
 
+class HealthChecks(BaseModel):
+    mistral_key_present: bool = Field(description="MISTRAL_API_KEY is set and non-empty in the environment — presence only, not validity (a real Mistral call would be needed to verify the key actually works, which /health deliberately avoids)")
+    embeddings_loaded: bool = Field(description="The sentence-transformers model + ChromaDB client singletons (session 6) were constructed successfully at startup")
+    database_accessible: bool = Field(description="The SQLite connection can be opened and responds to a trivial query")
+
+
 class HealthResponse(BaseModel):
-    status: str
+    status: str = Field(description="'ok' if all checks pass, 'degraded' if any check fails")
+    checks: HealthChecks
 
 
 class OfferSummary(BaseModel):
