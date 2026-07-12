@@ -80,6 +80,18 @@ def get_client() -> chromadb.ClientAPI:
     return _client
 
 
+def is_initialized() -> bool:
+    """Report whether the embedding function + ChromaDB client singletons are
+    already constructed, WITHOUT triggering construction if they aren't
+    (session 7 follow-up: used by GET /health to report real readiness
+    rather than lazily loading the model just to answer a health check —
+    the API's lifespan hook is expected to have already called
+    get_embedding_function()/get_client() at startup; this only reads the
+    module-level state).
+    """
+    return _embedding_function is not None and _client is not None
+
+
 def build_index(profile_dir: Path = PROFILE_DIR) -> Collection:
     """Parse the profile markdown files and (re)build the ChromaDB collection."""
     chunks = parse_profile_dir(profile_dir)

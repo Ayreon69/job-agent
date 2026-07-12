@@ -929,3 +929,197 @@ Cohérent avec la garantie de thread-safety standard de PyTorch/
 sentence-transformers pour de l'inférence pure en mode eval (pas de mutation
 d'état partagé pendant `encode()`) — vérifié empiriquement plutôt que
 seulement invoqué comme argument théorique.
+
+## Session 7 (2026-07-12) : dockerisation de l'API
+
+**Objectif :** empaqueter ce qui existe déjà (sessions 3-6 : scoring,
+génération, orchestrateur, RAG, API FastAPI) dans un conteneur Docker
+fonctionnel — aucune nouvelle logique métier.
+
+**Blocage matériel rencontré avant tout test :** Docker Desktop refusait de
+démarrer ("Virtualization support not detected"). Diagnostic confirmé via
+PowerShell (`Get-CimInstance Win32_Processor | Select
+VirtualizationFirmwareEnabled` → `False`) : la virtualisation (VT-x) était
+désactivée au niveau du BIOS/firmware, pas un problème logiciel contournable.
+Résolu par l'utilisateur en activant VT-x dans le BIOS et en redémarrant la
+machine — aucune action possible depuis l'agent tant que ce n'était pas fait,
+tests bloqués jusque-là plutôt que simulés.
+
+**Fichiers produits :**
+- `docker/Dockerfile` — image basée sur `python:3.11-slim` (aligné sur la
+  version locale du venv, 3.11.9).
+- `docker/requirements-lock.txt` — `pip freeze` complet du `job-agent/.venv`
+  local fonctionnel, installé à la place de `requirements.txt` (non pinné,
+  `>=`) pour que le conteneur reproduise exactement l'environnement qui a
+  résolu le conflit opentelemetry de la session 3
+  (`opentelemetry-semantic-conventions==0.60b1` dans l'environnement réel,
+  et non 0.64b0 comme supposé à l'époque — corrigé ici par la mesure directe
+  plutôt que par la mémoire de la session 3).
+- `docker/entrypoint.sh` — construit l'index ChromaDB au premier démarrage
+  si `scoring/embeddings/chroma/` est vide (cas d'un volume neuf), sinon ne
+  fait rien. Sans ça, un volume fraîchement créé aurait fait échouer
+  systématiquement `search_profile()` (`NotFoundError` sur la collection
+  manquante) et donc chaque offre en `echec` dès le premier `/analyze`.
+- `docker-compose.yml` — un service, 3 volumes nommés (`storage`, `chroma`,
+  `orchestrator/runs`), variables d'env via `.env`.
+- `.dockerignore` — exclut `.venv/` (1.5GB), `.git/`, les DB/index locaux.
+- `.env.example` — recréé (existait en théorie depuis la session 3 mais
+  n'avait en fait jamais été committé — trouvé manquant en préparant cette
+  session).
+
+**Le fallback `mistralai` (session 3) et l'installation Playwright ont été
+testés explicitement, pas supposés fonctionner :**
+- Fallback d'import `mistralai` (`scoring/llm.py`, try/except vers
+  `mistralai.client.sdk.Mistral`) : identique en conteneur, aucune
+  adaptation nécessaire — le bug est dans le wheel PyPI lui-même, pas lié à
+  l'environnement.
+- `RUN python -m playwright install --with-deps chromium` : a nécessité une
+  longue liste de libs système Debian (`libnss3`, `libatk-bridge2.0-0`,
+  `libgbm1`, etc., voir Dockerfile) installées en amont via `apt-get` —
+  sans elles, `playwright install --with-deps` échoue. Testé avec succès :
+  voir le test de re-scraping réel plus bas, qui confirme que Chromium
+  fonctionne réellement en conteneur, pas seulement que l'installation
+  s'est terminée sans erreur.
+
+**Build réel — deux tentatives, la première ayant révélé un vrai problème :**
+
+| Tentative | Temps | Taille image | Résultat |
+|---|---|---|---|
+| 1 (torch non contraint) | 13m42s | **13.2GB** | Build réussi, mais anormalement lourd |
+| 2 (torch CPU-only forcé) | 5m36s | **6.62GB** | Build réussi, taille attendue |
+
+Diagnostic de l'écart : `docker/requirements-lock.txt` contenait
+`torch==2.13.0` sans préciser la variante — le `.venv` local avait résolu la
+variante `+cpu` (confirmé : `torch.__version__` → `2.13.0+cpu` en local),
+mais un `pip install` de ce même pin dans l'image Debian slim a résolu par
+défaut la variante CUDA (`2.13.0+cu130`, ~9GB de bibliothèques NVIDIA
+embarquées) — vérifié directement (`docker run --rm job-agent python -c
+"import torch; print(torch.version.cuda)"` → `13.0` sur le premier build).
+Ce projet n'utilise jamais le GPU (l'inférence `sentence-transformers` tourne
+sur CPU, comme documenté depuis la session 2). Corrigé en retirant `torch`
+de `requirements-lock.txt` et en l'installant séparément depuis l'index
+officiel CPU-only de PyTorch
+(`--index-url https://download.pytorch.org/whl/cpu`) avant le reste des
+dépendances — confirmé par le nom du wheel téléchargé au 2e build
+(`torch-2.13.0+cpu-...`, 191.8MB au lieu de la roue CUDA nettement plus
+grosse).
+
+**Tests réels effectués (`docker compose up -d`, conteneur `job-agent-api-1`) :**
+1. `GET /health` → `200 {"status":"ok"}`.
+2. `GET /offers` sur un volume neuf → `[]` (base vide, comme attendu).
+3. Offre de test insérée directement via `docker exec` (URL Hellowork réelle
+   de la session 3/7, description tronquée à 37 caractères) pour forcer
+   spécifiquement le chemin de re-scraping de la décision 1 (session 5).
+4. **`POST /analyze` réel, chaîne complète testée depuis le conteneur** :
+   logs confirmant `"re-scraping réussi: description enrichie de 37 à 950
+   caractères"` — **Playwright/Chromium fonctionne réellement en
+   conteneur**, pas seulement installé — puis scoring (RAG via ChromaDB +
+   appel Mistral réel), génération (2e appel Mistral réel), statut final
+   `analyse`. Réponse `200 OK` en 56.0s (comparable aux temps mesurés en
+   local sessions 5-6).
+5. `GET /offers/{id}` → détail complet (markdown + 3 traces JSON) présent.
+6. `GET /offers/99999` → **404** `{"detail":"Offre 99999 introuvable"}`, pas
+   de 500 — cas d'erreur explicitement re-testé depuis le conteneur.
+7. **Persistance testée par un vrai redémarrage** (`docker restart
+   job-agent-api-1`, pas juste supposée) : les logs de redémarrage confirment
+   `"[entrypoint] Index ChromaDB déjà présent (volume persisté), pas de
+   reconstruction."` (pas de reconstruction inutile de l'index), et
+   `GET /offers` après redémarrage renvoie toujours l'offre analysée avant
+   l'arrêt (`status: "analyse"`, `score: 78`), avec son markdown et ses
+   traces toujours accessibles via `GET /offers/1`.
+
+**Limites connues à traiter plus tard :**
+- L'image reste à 6.62GB malgré la correction torch — `sentence-transformers`
+  (poids du modèle pré-téléchargés, ~1.1GB), Chromium (~300MB), et les
+  dépendances Python restantes (chromadb, mistralai, torch CPU) representent
+  un poids incompressible pour ce stack, pas un problème d'optimisation
+  Docker à ce stade (pas de multi-stage build tenté cette session).
+- `docker/requirements-lock.txt` fige des versions exactes issues d'un
+  `pip freeze` ponctuel — à régénérer manuellement si `requirements.txt`
+  évolue dans une future session, pas de mécanisme automatique de
+  synchronisation entre les deux fichiers.
+- ~~Le `HEALTHCHECK` du Dockerfile n'a pas été testé en conditions d'échec~~
+  — traité en correctif post-session 7, voir plus bas.
+
+## Correctif post-session 7 (2026-07-12) : /health distingue "process up" de "pipeline configuré"
+
+**Problème :** `GET /health` renvoyait `200 {"status": "ok"}` dès que le
+process FastAPI tournait, sans vérifier que le pipeline derrière était
+réellement utilisable. Un `docker-compose up` avec un `.env` mal rempli
+(`MISTRAL_API_KEY` vide ou absente) aurait donné un conteneur "sain" en
+apparence, avec chaque `/analyze` échouant silencieusement au premier appel
+LLM — le pire moment pour découvrir un problème de configuration.
+
+**Implémentation :**
+- `scoring/embeddings/index.py` : nouvelle fonction `is_initialized()` qui
+  lit l'état des singletons `_embedding_function`/`_client` (session 6) SANS
+  les construire — contrairement à `get_embedding_function()`/`get_client()`,
+  un appel à `is_initialized()` ne déclenche jamais de chargement paresseux.
+  Nécessaire pour que `/health` ne paie jamais le coût d'un chargement modèle
+  juste pour répondre à un ping de monitoring.
+- `api/main.py` : `GET /health` fait 3 vérifications, aucune ne fait
+  d'appel réseau :
+  1. `mistral_key_present` — présence/non-vacuité de `MISTRAL_API_KEY` dans
+     l'environnement (`os.environ`), pas sa validité (vérifier la validité
+     nécessiterait un vrai appel Mistral, explicitement exclu).
+  2. `embeddings_loaded` — `is_initialized()`, donc reflète un échec réel du
+     chargement au démarrage (`lifespan`, session 6) plutôt que de répondre
+     "ok" par défaut si ce chargement avait échoué silencieusement.
+  3. `database_accessible` — ouverture de connexion SQLite + `SELECT 1`,
+     capturée dans un `try/except` (pas de présomption que la DB répond).
+- Réponse structurée : `{"status": "ok"|"degraded", "checks": {...}}`
+  (`api/schemas.py`, `HealthChecks`) plutôt qu'un `"ok"` binaire opaque.
+- **Décision sur le code HTTP** : 200 si tout passe, **503** si un seul check
+  échoue. Raisonnement : un `HEALTHCHECK` Docker ou un futur load balancer
+  n'inspecte généralement que le code HTTP, pas le corps JSON — un `200` avec
+  `"degraded"` caché dans la réponse serait silencieusement ignoré par ce
+  genre d'outil, ce qui annulerait l'intérêt de détecter le problème au
+  niveau du conteneur plutôt qu'au premier `/analyze` en échec. Le
+  `HEALTHCHECK` existant du Dockerfile (`curl -f`) échoue déjà nativement sur
+  tout code ≥400, donc aucune modification du Dockerfile n'a été nécessaire
+  pour que ce changement soit pris en compte par Docker.
+
+**Tests réels — les deux cas demandés, via de vrais conteneurs (pas de mock) :**
+
+1. **Chemin nominal**, conteneur relancé via `docker compose up -d` avec le
+   vrai `.env` monté :
+   ```
+   $ curl -s -w "\nHTTP_STATUS:%{http_code}\n" http://localhost:8000/health
+   {"status":"ok","checks":{"mistral_key_present":true,"embeddings_loaded":true,"database_accessible":true}}
+   HTTP_STATUS:200
+   ```
+
+2. **Cas d'échec explicitement provoqué** : conteneur relancé avec
+   `docker run -e MISTRAL_API_KEY=` (vide, sans passer par `.env`) sur les
+   mêmes volumes persistés :
+   ```
+   $ curl -s -w "\nHTTP_STATUS:%{http_code}\n" http://localhost:8003/health
+   {"status":"degraded","checks":{"mistral_key_present":false,"embeddings_loaded":true,"database_accessible":true}}
+   HTTP_STATUS:503
+   ```
+   Résultat exactement conforme à l'objectif : `mistral_key_present: false`
+   isolé des deux autres checks restés `true` (le modèle d'embeddings et la
+   base restent fonctionnels même sans clé Mistral — seul l'appel LLM
+   échouerait, ce que `/health` signale maintenant AVANT le premier
+   `/analyze` raté, sans avoir eu besoin de faire cet appel réel pour le
+   détecter).
+
+**Avant/après sur ce cas précis :**
+| | Avant correctif | Après correctif |
+|---|---|---|
+| Réponse `/health` avec clé vide | `200 {"status":"ok"}` (faux positif) | `503 {"status":"degraded","checks":{"mistral_key_present":false,...}}` |
+| Détectable par un `HEALTHCHECK` Docker/monitoring | Non — ressemble à un conteneur sain | Oui — code 503 explicite |
+| Moment de découverte du problème | Au premier `/analyze` (échec `echec`, après un appel Mistral raté) | Au démarrage du conteneur, sans appel réseau |
+
+**Incident de test rencontré (documenté par transparence) :** le premier
+test du cas nominal après rebuild a montré un `/health` toujours sans le
+champ `checks` — le conteneur `docker compose up` réutilisait une image
+`job-agent-api:latest` obsolète (construite par un `docker compose build`
+antérieur, distincte du tag `job-agent:latest` que je reconstruisais
+manuellement). Diagnostiqué via `docker exec ... grep` (le code source dans
+le conteneur ne contenait pas les nouvelles fonctions), corrigé en retaguant
+l'image à jour (`docker tag job-agent:latest job-agent-api:latest`) plutôt
+qu'en relançant un rebuild complet inutile. Point de vigilance à garder pour
+les prochaines sessions Docker : `docker build -t X` et `docker compose
+build` gèrent des tags d'image séparés par défaut, ils ne se synchronisent
+pas automatiquement.

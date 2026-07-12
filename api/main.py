@@ -16,23 +16,25 @@ call, so this module doesn't duplicate the .env loading logic.
 from __future__ import annotations
 
 import logging
+import os
 import time
 from contextlib import asynccontextmanager
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Response
 
 import scoring.llm  # noqa: F401  (side effect: load_dotenv() for MISTRAL_API_KEY)
 from api.schemas import (
     AnalyzeRequest,
     AnalyzeResponse,
+    HealthChecks,
     HealthResponse,
     OfferDetailResponse,
     OfferSummary,
 )
 from orchestrator.agent import process_offer
 from orchestrator.run import write_outputs, DEFAULT_OUTPUT_DIR
-from scoring.embeddings.index import get_client, get_embedding_function
+from scoring.embeddings.index import get_client, get_embedding_function, is_initialized
 from storage.db import connect, init_db
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -122,11 +124,54 @@ def _score_and_zone_from_trace(offer_id: int) -> tuple[int | None, str | None]:
 
 
 @app.get("/health", response_model=HealthResponse)
-def health() -> HealthResponse:
-    """No business logic — just confirms the process is up and the DB is reachable."""
-    with connect() as conn:
-        conn.execute("SELECT 1")
-    return HealthResponse(status="ok")
+def health(response: Response) -> HealthResponse:
+    """Distinguishes "the process is up" from "the pipeline is actually
+    configured correctly" (session 7 follow-up — the previous version always
+    returned 200 {"status": "ok"} as long as the process was alive, which
+    would NOT have caught a docker-compose up with a missing/empty
+    MISTRAL_API_KEY: the container would look healthy while every /analyze
+    silently failed).
+
+    Three checks, none of which make a network call (deliberately — this
+    endpoint must stay cheap to poll and must never spend a real Mistral
+    request just to answer a health check):
+      - mistral_key_present: presence/non-emptiness only, not validity. A
+        real Mistral call would be needed to confirm the key actually
+        authenticates, which is out of scope here by design.
+      - embeddings_loaded: reads the session-6 singleton state via
+        is_initialized() WITHOUT constructing it — if the lifespan startup
+        hook failed to load the model, this reports that failure instead of
+        lazily loading the model just to make the check pass.
+      - database_accessible: SQLite connection opens and answers a trivial
+        query — not a full read/write test, just reachability.
+
+    HTTP status: 200 when every check passes, 503 (Service Unavailable) if
+    any fails. Decision: a monitoring/orchestration layer (e.g. Docker's own
+    HEALTHCHECK, or a future load balancer) needs the STATUS CODE to act
+    automatically — a 200 with "degraded" buried in the JSON body would be
+    silently ignored by anything that only checks for a 2xx response, which
+    defeats the point of catching this at the container level rather than
+    at the first failed /analyze.
+    """
+    mistral_key_present = bool(os.environ.get("MISTRAL_API_KEY", "").strip())
+    embeddings_loaded = is_initialized()
+
+    try:
+        with connect() as conn:
+            conn.execute("SELECT 1")
+        database_accessible = True
+    except Exception:
+        database_accessible = False
+
+    checks = HealthChecks(
+        mistral_key_present=mistral_key_present,
+        embeddings_loaded=embeddings_loaded,
+        database_accessible=database_accessible,
+    )
+    all_ok = mistral_key_present and embeddings_loaded and database_accessible
+    response.status_code = 200 if all_ok else 503
+
+    return HealthResponse(status="ok" if all_ok else "degraded", checks=checks)
 
 
 @app.get("/offers", response_model=list[OfferSummary])

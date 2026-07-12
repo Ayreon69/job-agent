@@ -1,0 +1,22 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      # Named volumes, not bind mounts to a host path: the SQLite DB and the
+      # ChromaDB index must survive `docker compose down`/container restarts
+      # (session 7 requirement), but don't need to be human-browsable on the
+      # host filesystem the way generated markdown analyses might.
+      - job-agent-storage:/app/storage
+      - job-agent-chroma:/app/scoring/embeddings/chroma
+      - job-agent-runs:/app/orchestrator/runs
+
+volumes:
+  job-agent-storage:
+  job-agent-chroma:
+  job-agent-runs:

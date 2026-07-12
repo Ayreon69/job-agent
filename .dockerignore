@@ -1,0 +1,16 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.git/
+.env
+*.db
+*.sqlite3
+storage/*.db
+scoring/embeddings/chroma/
+orchestrator/runs/
+.vscode/
+.idea/
