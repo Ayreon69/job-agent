@@ -1597,3 +1597,86 @@ session 2 : passage de `all-MiniLM-L6-v2` à ce modèle).
 | Comportement si baseline indisponible | N/A | Repli sur 0.75, jamais de crash (3 scénarios de panne testés) |
 | Seuil actuel (profil réel, 30 chunks) | 0.75 (fixe) | 0.6699 (dynamique) — plus strict, détection plus fine confirmée sur offre 24 |
 | Offres déjà scorées (67 en base) | Scorées avec 0.75 | Inchangées (décision : pas de backfill systématique cette fois, seules 7/15/24 régénérées pour la validation demandée) — le nouveau seuil s'applique automatiquement à toute nouvelle offre via le prochain run GitHub Actions ou `/analyze` |
+
+## Correctif post-session 9 (2026-07-13) : ergonomie du dashboard — accordéon + lien offre originale
+
+**Problème signalé après usage réel avec les 67 offres en base :**
+1. Le clic sur une ligne affichait le détail dans un panneau fixe SOUS le
+   tableau entier — avec 67 lignes, cliquer sur une offre en haut de liste
+   obligeait à scroller jusqu'en bas pour voir son détail.
+2. L'URL Hellowork de l'offre (`jobs.url`, en base depuis la session 1)
+   n'apparaissait nulle part dans le dashboard.
+
+**1. Accordéon — implémentation :**
+- `api/static/index.html` : suppression de la section `<section
+  id="detail-panel">` fixe en bas de page.
+- `api/static/dashboard.js` — `renderTable()` insère désormais une
+  `<tr class="detail-row">` (une seule cellule `colspan="6"`) **directement
+  après** la ligne de l'offre développée (`expandedOfferId`), pas ailleurs
+  dans le DOM. `selectOffer(offerId)` implémente le bascule : même offre
+  reclique → `expandedOfferId = null` (ferme) ; offre différente →
+  remplace `expandedOfferId` (ferme l'ancienne, ouvre la nouvelle à sa
+  position). Un seul `renderTable()` complet à chaque clic reconstruit tout
+  le tableau avec la ligne de détail à la bonne position — plus simple et
+  plus robuste que d'essayer de déplacer un élément DOM existant, au prix
+  de reconstruire les lignes déjà affichées (négligeable avec 67 lignes).
+- `api/static/dashboard.css` : le panneau de détail vit maintenant dans une
+  `<td>` de la table (`tr.detail-row > td { padding: 0; }`, le vrai padding
+  déplacé sur `.detail-panel` à l'intérieur) plutôt que dans une `<section>`
+  de page — mêmes règles de style pour le contenu (`h2`, `dl`, `ul`,
+  `.full-link`), seul le conteneur change.
+
+**2. Lien vers l'offre originale :**
+- **Déjà exposé côté API** : `OfferDetailResponse.url` (session 6) était
+  déjà rempli depuis `jobs.url` par `_load_offer_row` dans `api/main.py` —
+  aucune modification nécessaire côté `api/schemas.py`/`api/main.py`, c'est
+  bien de l'exposition, la donnée existait déjà bout en bout. Le manque
+  était uniquement côté frontend : `dashboard.js` ne lisait/affichait
+  jamais ce champ.
+- `originalOfferLinkHtml(detail)` (dashboard.js) : lien `<a
+  target="_blank" rel="noopener">Voir l'offre originale ↗</a>`, positionné
+  juste sous le titre de l'offre dans le panneau (première ligne visible du
+  détail, avant même les métadonnées zone/statut) — visible sans avoir à
+  chercher.
+
+**Tests réels effectués (Playwright headless, 18 vérifications automatisées,
+contre les 67 offres réelles de la base — pas de mock) :**
+
+1. **Position HAUT de liste** (1ère ligne) : détail apparaît, et
+   vérification structurelle forte — le `nextElementSibling` de la ligne
+   cliquée dans le DOM est bien la ligne de détail (`data-detail-for`
+   correspondant), pas juste "quelque part dans la page". Reclic sur la
+   même ligne → ligne de détail disparaît du DOM.
+2. **Position MILIEU de liste** (ligne ~34/67) : détail apparaît ; vérifié
+   par mesure de `bounding_box()` que le panneau de détail est positionné
+   pixel-perfect juste sous la ligne cliquée (delta < 5px), pas ailleurs sur
+   la page — capture d'écran à l'appui.
+3. **Changement de sélection** : clic sur une offre différente pendant
+   qu'une autre est ouverte → l'ancienne ligne de détail disparaît du DOM
+   AVANT que la nouvelle n'apparaisse (vérifié : jamais plus d'une
+   `tr.detail-row` présente simultanément, y compris pendant la transition).
+4. **Position BAS de liste** (dernière ligne) : détail apparaît
+   correctement, ferme bien la précédente ouverture.
+5. **Lien offre originale** : présent dans le panneau, URL réelle
+   `https://www.hellowork.com/fr-fr/emplois/80521087.html` (pas un
+   placeholder), `target="_blank"`. **Test de clic réel** (pas juste
+   inspection des attributs) : `page.expect_popup()` + clic effectif sur le
+   lien → un nouvel onglet s'ouvre réellement, chargé sur la vraie URL
+   Hellowork.
+6. **Aucune régression** : 0 erreur console JS sur l'ensemble du parcours de
+   test (chargement initial + 5 ouvertures/fermetures d'accordéon + 1 clic
+   de lien externe).
+
+**Captures d'écran** (comportement réel, pas de maquette) : accordéon ouvert
+sur la 3e ligne de la liste (lien "Voir l'offre originale" visible juste
+sous le titre) et sur une ligne au milieu de la liste (les lignes suivantes
+poussées vers le bas, pas de scroll nécessaire pour voir le détail juste
+après avoir cliqué).
+
+**Avant/après :**
+| | Avant correctif | Après correctif |
+|---|---|---|
+| Position du panneau de détail | Fixe, en bas de page (après les 67 lignes) | Inséré juste sous la ligne cliquée, à sa position exacte dans le tableau |
+| Scroll nécessaire pour voir le détail (offre en haut de liste) | Oui, jusqu'en bas de la page | Non, visible immédiatement |
+| Comportement au clic sur une 2e offre | Contenu du panneau remplacé, toujours en bas | Ancienne ligne de détail fermée, nouvelle ouverte à sa propre position |
+| Lien vers l'offre originale | Absent du dashboard | Visible en première ligne du panneau, cliquable, nouvel onglet — testé avec navigation réelle |

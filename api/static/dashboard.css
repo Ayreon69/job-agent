@@ -155,11 +155,24 @@ tbody tr.selected {
   color: #8a5a00;
 }
 
+/* Accordion detail row (session 9 follow-up): a <tr><td colspan> inserted
+   directly after the clicked offer row, not a fixed panel at the bottom of
+   the page — see dashboard.js selectOffer(). Reuses the .detail-panel
+   naming for the inner content block so the rest of the rules below (h2,
+   dl, ul, .full-link) apply unchanged regardless of where the markup lives
+   in the DOM. */
+tr.detail-row > td {
+  padding: 0;
+  border-bottom: 1px solid var(--border);
+  cursor: default;
+}
+
+tr.detail-row:hover {
+  background: transparent;
+}
+
 .detail-panel {
-  margin-top: 1.5rem;
   padding: 1rem 1.2rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
 }
 
 .detail-panel h2 {
@@ -171,6 +184,12 @@ tbody tr.selected {
   color: #888;
   font-size: 0.85rem;
   margin-bottom: 0.8rem;
+}
+
+.detail-panel .original-offer-link {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .detail-panel dl {
