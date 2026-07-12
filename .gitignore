@@ -14,9 +14,15 @@ venv/
 !.env.example
 
 # Data / DB
+# storage/jobs.db IS versioned (see .github/workflows/scrape-and-score.yml,
+# session 8): a GitHub Actions run starts from a clean checkout each time, so
+# the SQLite DB is committed back by the workflow itself to persist which
+# offers are already known/scored across runs. Other *.db/*.sqlite3 files
+# (local experiments, test DBs) stay ignored.
 *.sqlite3
 *.db
 storage/*.db
+!storage/jobs.db
 
 # ChromaDB
 chroma/

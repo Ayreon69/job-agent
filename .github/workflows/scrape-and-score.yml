@@ -1,0 +1,108 @@
+name: Scrape and score job offers
+
+# Runs the existing pipeline as-is (no new decision logic here): scraper
+# (session 1) -> orchestrator batch mode (session 5, with the 429 backoff
+# retry from its follow-up correctif). Never submits a candidacy — see
+# CLAUDE.md "Ce que l'agent ne doit jamais faire".
+#
+# Direct Python execution rather than the session-7 Docker image: GitHub's
+# hosted runners already give a clean Python 3.11 environment per job, so
+# building/pulling the ~6.6GB Docker image would only add time (image
+# transfer, docker-in-docker layer) without buying anything Docker-specific
+# actually needs here (no host-level isolation concern on a throwaway
+# runner). The Docker image stays the deployment artifact for the API
+# (session 7); this workflow is a separate, simpler execution path for the
+# batch job.
+#
+# Persistence: GitHub Actions runners start from a clean checkout every run
+# (no local volumes like docker-compose gives locally). storage/jobs.db
+# (which offers are already known, and their status) and orchestrator/runs/
+# (generated analyses + traces) are committed back to the repo by this
+# workflow's own last step. See ROADMAP.md session 8 for why this was chosen
+# over actions/cache (not durable/versioned, LRU eviction) or artifacts (no
+# auto-restore, 90-day retention). scoring/embeddings/chroma/ (the ChromaDB
+# vector index) is NOT persisted this way: it's rebuilt from the static,
+# already-versioned scoring/profile/*.md files at the start of every run
+# instead (cheap — a few seconds — and avoids committing a binary index that
+# would just be regenerated identically from source anyway).
+
+on:
+  schedule:
+    # Daily at 06:00 UTC (~08:00 Europe/Paris) — reasonable for the current
+    # offer volume (a few dozen offers/day at most from one Hellowork query
+    # set). Change the cron expression here to go weekly if volume stays low
+    # and daily proves unnecessary.
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}
+    # Manual trigger for testing without waiting for the cron, and for
+    # on-demand runs between scheduled ones.
+
+permissions:
+  contents: write
+    # Needed for the bot commit that persists storage/jobs.db and
+    # orchestrator/runs/ back to the repo at the end of the job.
+
+concurrency:
+  group: scrape-and-score
+  cancel-in-progress: false
+    # Never cancel a mid-flight run to start another: the batch commits
+    # jobs.db back to the repo at the end, so two overlapping runs writing
+    # to the same file would race. Queue instead of cancelling.
+
+jobs:
+  scrape-and-score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+      # Generous but bounded: 30 offers * (2s delay + up to ~15s scoring +
+      # generation) is a few minutes in practice, but Playwright launches
+      # and Mistral API latency can vary. Caps a hang rather than letting a
+      # stuck job burn the whole Actions minutes budget.
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: docker/requirements-lock.txt
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # Same locked dependency set as the Docker image (session 7), for
+          # the same reason: requirements.txt alone is unpinned, and a fresh
+          # resolve could land on a different opentelemetry-semantic-conventions
+          # version than the one known to work (see ROADMAP.md session 3).
+          pip install torch==2.13.0 --index-url https://download.pytorch.org/whl/cpu
+          pip install -r docker/requirements-lock.txt
+
+      - name: Install Playwright Chromium
+        run: python -m playwright install --with-deps chromium
+
+      - name: Build ChromaDB profile index
+        run: python -m scoring.embeddings.build
+
+      - name: Run scraper (Hellowork, default queries/region)
+        run: python -m scraper.run
+
+      - name: Run orchestrator batch (status='nouveau' only)
+        env:
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+        run: python -m orchestrator.run
+
+      - name: Commit updated data (jobs.db + orchestrator/runs/)
+        run: |
+          git config user.name "job-agent-bot"
+          git config user.email "actions@github.com"
+          git add storage/jobs.db orchestrator/runs/
+          if git diff --cached --quiet; then
+            echo "Aucun changement à committer (aucune nouvelle offre / aucun résultat modifié)."
+          else
+            git commit -m "chore: mise à jour automatique des offres et analyses [skip ci]"
+            git push
+          fi
