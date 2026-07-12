@@ -30,6 +30,16 @@ CONTRACT_TYPES = [
     "Fonctionnaire",
 ]
 
+# Requêtes par défaut (session 1) — désormais réexportées ici (au lieu de
+# vivre uniquement dans scraper/run.py) pour que scraper/run.py puisse s'y
+# référer sans dupliquer la liste, symétriquement à jobup.py's own
+# DEFAULT_QUERIES (session 11).
+DEFAULT_JOB_QUERIES = [
+    "data scientist",
+    "data analyst",
+    "IA générative agent LLM",
+]
+
 logger = logging.getLogger(__name__)
 
 

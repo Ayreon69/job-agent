@@ -21,6 +21,22 @@ CASES = [
     ("Suisse", "inconnu", None, False),
     ("Full remote", "inconnu", None, False),
     ("Fribourg", "suisse_romande", 1, True),
+    # Correctif session 11 (scraping jobup.ch réel) : villes vaudoises/
+    # neuchâteloises réelles absentes de SUISSE_ROMANDE_VILLES à l'origine,
+    # découvert par un scraping réel (4/34 offres mal classées avant
+    # correctif — voir ROADMAP.md).
+    ("Gland", "suisse_romande", 1, True),
+    ("Renens VD", "suisse_romande", 1, True),
+    ("Palézieux", "suisse_romande", 1, True),
+    ("Marin-Epagnier (NE)", "suisse_romande", 1, True),
+    # Repli abréviation cantonale (SUISSE_ROMANDE_CANTON_ABBR_RE) pour une
+    # commune non énumérée explicitement — le mécanisme générique, pas
+    # seulement les 4 villes ci-dessus qui ont aussi été ajoutées en dur.
+    ("Villaz-Saint-Pierre FR", "suisse_romande", 1, True),
+    # Non-régression : une abréviation cantonale suisse-alémanique connue ne
+    # doit jamais être classée romande — la ville connue (suisse_autre) doit
+    # gagner avant que le repli cantonal romand ne soit même consulté.
+    ("Winterthur ZH", "suisse_autre", 4, True),
 ]
 
 
