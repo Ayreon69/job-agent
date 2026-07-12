@@ -29,7 +29,7 @@
           "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.3036, ok"
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
     },
     {
       "step": "requirement_atom",
@@ -102,29 +102,6 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[cadrage et diagnostic de maturité data] analyse maturité data",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4892,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.515,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "constraints::current_employment",
-          "distance": 0.5306,
-          "source_file": "constraints.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4892, match retenu"
-    },
-    {
-      "step": "requirement_atom",
       "query": "[recueil des besoins et cas d'usage métiers] recueil des besoins",
       "n_results": 3,
       "results": [
@@ -145,29 +122,6 @@
         }
       ],
       "conclusion": "best_distance=0.4636, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[recueil des besoins et cas d'usage métiers] analyse des besoins métiers",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.3897,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4085,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.4245,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3897, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -194,26 +148,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[recueil des besoins et cas d'usage métiers] user stories",
+      "query": "[recueil des besoins et cas d'usage métiers] analyse métier",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6575,
+          "id": "achievements::churn_model",
+          "distance": 0.4016,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::whisper_nlp_pipeline",
-          "distance": 0.7062,
+          "id": "achievements::pricing_tool",
+          "distance": 0.4636,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.7084,
-          "source_file": "skills.md"
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4878,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6575, match retenu"
+      "conclusion": "best_distance=0.4016, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -309,95 +263,95 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[rédaction de spécifications fonctionnelles et techniques] spécifications fonctionnelles",
+      "query": "[rédaction de spécifications fonctionnelles et techniques] rédaction de spécifications fonctionnelles",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.5205,
+          "distance": 0.4447,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4574,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.5335,
+          "distance": 0.4696,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4447, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[rédaction de spécifications fonctionnelles et techniques] rédaction de spécifications techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4561,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4658,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::mistral_chatbot",
-          "distance": 0.5337,
+          "distance": 0.4675,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5205, match retenu"
+      "conclusion": "best_distance=0.4561, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[rédaction de spécifications fonctionnelles et techniques] spécifications techniques",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.541,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5468,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5479,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5410, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[rédaction de spécifications fonctionnelles et techniques] rédaction de documentation",
+      "query": "[rédaction de spécifications fonctionnelles et techniques] documentation fonctionnelle",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.4664,
+          "distance": 0.4463,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.5115,
+          "distance": 0.4766,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::mistral_chatbot",
-          "distance": 0.5286,
+          "distance": 0.517,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4664, match retenu"
+      "conclusion": "best_distance=0.4463, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[rédaction de spécifications fonctionnelles et techniques] cahier des charges",
+      "query": "[rédaction de spécifications fonctionnelles et techniques] documentation technique",
       "n_results": 3,
       "results": [
         {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5417,
+          "source_file": "achievements.md"
+        },
+        {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.6125,
+          "distance": 0.5538,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6264,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6385,
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5743,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6125, match retenu"
+      "conclusion": "best_distance=0.5417, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -424,26 +378,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[coordination entre équipes techniques et métiers] collaboration métiers-techniques",
+      "query": "[coordination entre équipes techniques et métiers] collaboration technique-métier",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.5721,
+          "distance": 0.5052,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5999,
+          "distance": 0.517,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6024,
-          "source_file": "achievements.md"
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.56,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5721, match retenu"
+      "conclusion": "best_distance=0.5052, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -470,99 +424,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[coordination entre équipes techniques et métiers] alignement métiers-techniques",
+      "query": "[mise à jour de la documentation data] documentation data",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5593,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5486,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5629,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::certifications",
-          "distance": 0.5625,
+          "distance": 0.5636,
           "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5694,
-          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5593, match retenu"
+      "conclusion": "best_distance=0.5486, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[gestion de la documentation fonctionnelle et technique] documentation fonctionnelle",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.4463,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.4766,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.517,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4463, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[gestion de la documentation fonctionnelle et technique] documentation technique",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5417,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5538,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5743,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5417, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[gestion de la documentation fonctionnelle et technique] mise à jour de documentation",
+      "query": "[mise à jour de la documentation data] mise à jour documentation",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5675,
+          "distance": 0.5696,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.569,
+          "distance": 0.5707,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::certifications",
-          "distance": 0.5967,
-          "source_file": "skills.md"
+          "id": "achievements::churn_model",
+          "distance": 0.5955,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5675, match retenu"
+      "conclusion": "best_distance=0.5696, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[gestion de la documentation fonctionnelle et technique] gestion de la documentation",
+      "query": "[mise à jour de la documentation data] gestion de la documentation",
       "n_results": 3,
       "results": [
         {
@@ -585,7 +493,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[optimisation et adaptation des processus métiers] optimisation des processus",
+      "query": "[adaptation des processus métiers] optimisation des processus",
       "n_results": 3,
       "results": [
         {
@@ -608,72 +516,49 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[optimisation et adaptation des processus métiers] adaptation des processus métiers",
+      "query": "[adaptation des processus métiers] amélioration des processus métiers",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.3867,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.4026,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.4907,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3867, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[optimisation et adaptation des processus métiers] amélioration continue",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5652,
+          "distance": 0.4098,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::commission_automation",
-          "distance": 0.6346,
+          "distance": 0.43,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.6638,
+          "distance": 0.467,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5652, match retenu"
+      "conclusion": "best_distance=0.4098, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[optimisation et adaptation des processus métiers] processus data-driven",
+      "query": "[adaptation des processus métiers] transformation des processus",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.448,
-          "source_file": "skills.md"
+          "id": "achievements::churn_model",
+          "distance": 0.5077,
+          "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5023,
-          "source_file": "skills.md"
+          "id": "achievements::commission_automation",
+          "distance": 0.5604,
+          "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5126,
-          "source_file": "skills.md"
+          "id": "achievements::pricing_tool",
+          "distance": 0.5638,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4480, match retenu"
+      "conclusion": "best_distance=0.5077, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -723,49 +608,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[décloisonnement des silos métiers] collaboration inter-départements",
+      "query": "[décloisonnement des silos métiers] collaboration inter-métiers",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.6054,
+          "distance": 0.577,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6153,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.628,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6054, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[décloisonnement des silos métiers] briser les silos",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_gaps_specifiques_cern",
-          "distance": 0.6947,
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.606,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7182,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.7576,
+          "id": "achievements::agentic_coding",
+          "distance": 0.6206,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6947, match retenu"
+      "conclusion": "best_distance=0.5770, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -815,53 +677,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[connaissance des outils du marché en data management] plateformes data",
+      "query": "[connaissance des outils du marché en data management] technologies data",
       "n_results": 3,
       "results": [
         {
           "id": "skills::certifications",
-          "distance": 0.4685,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.4822,
+          "distance": 0.4705,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5072,
+          "distance": 0.4907,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5243,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4685, match retenu"
+      "conclusion": "best_distance=0.4705, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[connaissance des outils du marché en data management] logiciels data",
+      "query": "[socle data et gouvernance des données] socle data",
       "n_results": 3,
       "results": [
         {
           "id": "skills::certifications",
-          "distance": 0.4545,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.4554,
+          "distance": 0.6443,
           "source_file": "skills.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.4738,
+          "distance": 0.6568,
           "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6726,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4545, match retenu"
+      "conclusion": "best_distance=0.6443, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[méthodologies de gouvernance des données] gouvernance des données",
+      "query": "[socle data et gouvernance des données] gouvernance des données",
       "n_results": 3,
       "results": [
         {
@@ -884,7 +746,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[méthodologies de gouvernance des données] data governance",
+      "query": "[socle data et gouvernance des données] data governance",
       "n_results": 3,
       "results": [
         {
@@ -904,52 +766,6 @@
         }
       ],
       "conclusion": "best_distance=0.5609, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[méthodologies de gouvernance des données] stratégie data",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4697,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.4776,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4815,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4697, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[méthodologies de gouvernance des données] gestion des données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.4495,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.4645,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.468,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4495, match retenu"
     }
   ],
   "uncertain_flags": []

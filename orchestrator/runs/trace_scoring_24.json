@@ -29,7 +29,7 @@
           "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.3036, ok"
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
     },
     {
       "step": "requirement_atom",
@@ -148,30 +148,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[gouvernance et gestion des données QMS (ISO 13485, FDA 21 CFR Part 820, EU MDR)] data governance",
+      "query": "[gouvernance et gestion des données QMS (ISO 13485, FDA 21 CFR Part 820, EU MDR)] traçabilité des données",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::certifications",
-          "distance": 0.5609,
+          "id": "achievements::churn_model",
+          "distance": 0.5833,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5918,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5989,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5833, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gouvernance et gestion des données QMS (ISO 13485, FDA 21 CFR Part 820, EU MDR)] disponibilité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5061,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.562,
+          "distance": 0.5119,
           "source_file": "achievements.md"
         },
         {
           "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.565,
+          "distance": 0.5189,
           "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.5609, match retenu"
+      "conclusion": "best_distance=0.5061, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[cartographie et analyse des flux de données] cartographie des données",
+      "query": "[cartographie et intégration des sources de données] cartographie des données",
       "n_results": 3,
       "results": [
         {
@@ -194,49 +217,95 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[cartographie et analyse des flux de données] mapping des flux de données",
+      "query": "[cartographie et intégration des sources de données] flux de données",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.5761,
+          "distance": 0.5213,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5899,
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5342,
           "source_file": "skills.md"
         },
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5905,
+          "id": "skills::certifications",
+          "distance": 0.5515,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5761, match retenu"
+      "conclusion": "best_distance=0.5213, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[cartographie et analyse des flux de données] data flow analysis",
+      "query": "[cartographie et intégration des sources de données] intégration des sources de données",
       "n_results": 3,
       "results": [
         {
+          "id": "skills::certifications",
+          "distance": 0.4878,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5113,
+          "source_file": "achievements.md"
+        },
+        {
           "id": "achievements::snowflake_etl",
-          "distance": 0.5485,
+          "distance": 0.5545,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4878, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[cartographie et intégration des sources de données] harmonisation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5853,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6059,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::certifications",
-          "distance": 0.5605,
+          "distance": 0.6061,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5853, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[cartographie et intégration des sources de données] collecte de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5234,
           "source_file": "skills.md"
         },
         {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.575,
-          "source_file": "geography_rules.md"
+          "id": "achievements::churn_model",
+          "distance": 0.5288,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5491,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5485, match retenu"
+      "conclusion": "best_distance=0.5234, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -286,76 +355,99 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[qualité et intégrité des données] data quality checks",
+      "query": "[qualité et intégrité des données] vérification de la qualité des données",
       "n_results": 3,
       "results": [
         {
           "id": "skills::certifications",
-          "distance": 0.464,
+          "distance": 0.4617,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5759,
+          "distance": 0.4905,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.6011,
+          "distance": 0.5649,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4640, match retenu"
+      "conclusion": "best_distance=0.4617, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[qualité et intégrité des données] data reconciliations",
+      "query": "[qualité et intégrité des données] réconciliation des données",
       "n_results": 3,
       "results": [
         {
+          "id": "achievements::churn_model",
+          "distance": 0.4994,
+          "source_file": "achievements.md"
+        },
+        {
           "id": "skills::certifications",
-          "distance": 0.5564,
+          "distance": 0.5346,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.6805,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6813,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5623,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5564, match retenu"
+      "conclusion": "best_distance=0.4994, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[qualité et intégrité des données] data integrity",
+      "query": "[qualité et intégrité des données] revue des tendances",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::certifications",
-          "distance": 0.5766,
-          "source_file": "skills.md"
-        },
-        {
           "id": "achievements::churn_model",
-          "distance": 0.6343,
+          "distance": 0.529,
           "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.6475,
-          "source_file": "geography_rules.md"
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5746,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5944,
+          "source_file": "constraints.md"
         }
       ],
-      "conclusion": "best_distance=0.5766, match retenu"
+      "conclusion": "best_distance=0.5290, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[prétraitement et nettoyage des données (structurées et non structurées)] prétraitement des données",
+      "query": "[qualité et intégrité des données] évaluation d'impact des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5353,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.538,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6176,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5353, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[prétraitement et exploration des données (structurées et non structurées)] prétraitement des données",
       "n_results": 3,
       "results": [
         {
@@ -378,7 +470,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[prétraitement et nettoyage des données (structurées et non structurées)] nettoyage des données",
+      "query": "[prétraitement et exploration des données (structurées et non structurées)] nettoyage des données",
       "n_results": 3,
       "results": [
         {
@@ -401,99 +493,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[prétraitement et nettoyage des données (structurées et non structurées)] data preprocessing",
+      "query": "[prétraitement et exploration des données (structurées et non structurées)] exploration de données",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5356,
-          "source_file": "skills.md"
+          "id": "achievements::churn_model",
+          "distance": 0.5606,
+          "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5455,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.559,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5356, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[prétraitement et nettoyage des données (structurées et non structurées)] data cleansing",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6205,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.6293,
-          "source_file": "skills.md"
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5703,
+          "source_file": "achievements.md"
         },
         {
           "id": "skills::certifications",
-          "distance": 0.6391,
+          "distance": 0.573,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.6205, match retenu"
+      "conclusion": "best_distance=0.5606, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[prétraitement et nettoyage des données (structurées et non structurées)] structured data",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5737,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5937,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6182,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5737, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[prétraitement et nettoyage des données (structurées et non structurées)] unstructured data",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6376,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6479,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.6749,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6376, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[data mining et extraction d'informations] data mining",
+      "query": "[prétraitement et exploration des données (structurées et non structurées)] data mining",
       "n_results": 3,
       "results": [
         {
@@ -516,164 +539,164 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[data mining et extraction d'informations] extraction d'informations",
+      "query": "[prétraitement et exploration des données (structurées et non structurées)] données structurées",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5418,
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5335,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5786,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_ml",
-          "distance": 0.602,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5472,
           "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5558,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.5418, match retenu"
+      "conclusion": "best_distance=0.5335, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[data mining et extraction d'informations] information extraction",
+      "query": "[prétraitement et exploration des données (structurées et non structurées)] données non structurées",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5726,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5933,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_ml",
-          "distance": 0.6006,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5647,
           "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5865,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6143,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5726, match retenu"
+      "conclusion": "best_distance=0.5647, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[développement et automatisation de KPIs et tableaux de bord qualité] KPIs qualité",
+      "query": "[développement et automatisation de KPI et tableaux de bord qualité] KPI qualité",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5933,
+          "distance": 0.6109,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.6268,
+          "distance": 0.6514,
           "source_file": "skills.md"
         },
         {
-          "id": "skills::certifications",
-          "distance": 0.6353,
-          "source_file": "skills.md"
+          "id": "achievements::churn_model",
+          "distance": 0.6697,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5933, match retenu"
+      "conclusion": "best_distance=0.6109, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[développement et automatisation de KPIs et tableaux de bord qualité] tableaux de bord qualité",
+      "query": "[développement et automatisation de KPI et tableaux de bord qualité] tableaux de bord",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.6875,
+          "distance": 0.7165,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.7052,
+          "distance": 0.7214,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.706,
-          "source_file": "achievements.md"
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7329,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.6875, match retenu"
+      "conclusion": "aucun match fiable -> flag_uncertain"
     },
     {
       "step": "requirement_atom",
-      "query": "[développement et automatisation de KPIs et tableaux de bord qualité] automatisation des KPIs",
+      "query": "[développement et automatisation de KPI et tableaux de bord qualité] automatisation des rapports",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4274,
+          "distance": 0.3308,
           "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4982,
-          "source_file": "achievements.md"
         },
         {
           "id": "achievements::commission_automation",
-          "distance": 0.5132,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4274, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[développement et automatisation de KPIs et tableaux de bord qualité] dashboards",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.572,
+          "distance": 0.4161,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6102,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6104,
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4656,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5720, match retenu"
+      "conclusion": "best_distance=0.3308, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[développement et automatisation de KPIs et tableaux de bord qualité] quality metrics",
+      "query": "[développement et automatisation de KPI et tableaux de bord qualité] indicateurs de performance",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.601,
+          "distance": 0.4941,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.6222,
+          "distance": 0.5374,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::certifications",
-          "distance": 0.6237,
+          "distance": 0.5745,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.6010, match retenu"
+      "conclusion": "best_distance=0.4941, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[développement et automatisation de KPI et tableaux de bord qualité] visualisation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6051,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6057,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6123,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6051, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -697,75 +720,6 @@
         }
       ],
       "conclusion": "best_distance=0.4630, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[analyse statistique et modélisation prédictive] statistical trending",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "constraints::education",
-          "distance": 0.5683,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6086,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6304,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5683, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[analyse statistique et modélisation prédictive] modélisation prédictive",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.3784,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_ml",
-          "distance": 0.4552,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5943,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3784, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[analyse statistique et modélisation prédictive] predictive modeling",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_ml",
-          "distance": 0.3724,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.409,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "constraints::education",
-          "distance": 0.5942,
-          "source_file": "constraints.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3724, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -838,30 +792,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[analyse statistique et modélisation prédictive] maximum likelihood estimators",
+      "query": "[analyse statistique et modélisation prédictive] estimateurs de maximum de vraisemblance",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.5454,
+          "distance": 0.4078,
           "source_file": "achievements.md"
         },
         {
-          "id": "constraints::education",
-          "distance": 0.6104,
-          "source_file": "constraints.md"
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4974,
+          "source_file": "skills.md"
         },
         {
-          "id": "skills::skills_maitrisees_ml",
-          "distance": 0.6147,
-          "source_file": "skills.md"
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6006,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5454, match retenu"
+      "conclusion": "best_distance=0.4078, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[machine learning et optimisation de classifieurs] machine learning",
+      "query": "[analyse statistique et modélisation prédictive] modélisation prédictive",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3784,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4552,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5943,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3784, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse statistique et modélisation prédictive] trend analysis",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5481,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5566,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.596,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5481, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[machine learning et algorithmes de classification] machine learning",
       "n_results": 3,
       "results": [
         {
@@ -884,53 +884,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[machine learning et optimisation de classifieurs] algorithmes de machine learning",
+      "query": "[machine learning et algorithmes de classification] algorithmes de classification",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_maitrisees_ml",
-          "distance": 0.2377,
+          "distance": 0.5427,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.4768,
-          "source_file": "achievements.md"
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6076,
+          "source_file": "skills.md"
         },
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5,
+          "distance": 0.6476,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.2377, match retenu"
+      "conclusion": "best_distance=0.5427, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[machine learning et optimisation de classifieurs] feature selection",
+      "query": "[machine learning et algorithmes de classification] sélection de features",
       "n_results": 3,
       "results": [
         {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.6175,
-          "source_file": "geography_rules.md"
-        },
-        {
           "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6295,
+          "distance": 0.593,
           "source_file": "geography_rules.md"
         },
         {
-          "id": "skills::skills_maitrisees_ml",
-          "distance": 0.6695,
-          "source_file": "skills.md"
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6165,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6489,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6175, match retenu"
+      "conclusion": "best_distance=0.5930, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[machine learning et optimisation de classifieurs] optimisation de classifieurs",
+      "query": "[machine learning et algorithmes de classification] optimisation de classifieurs",
       "n_results": 3,
       "results": [
         {
@@ -953,168 +953,191 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[machine learning et optimisation de classifieurs] classifiers",
+      "query": "[machine learning et algorithmes de classification] outils de machine learning",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_maitrisees_ml",
-          "distance": 0.6661,
+          "distance": 0.1863,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.667,
+          "id": "achievements::churn_model",
+          "distance": 0.4339,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_langues",
-          "distance": 0.6684,
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4444,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.6661, match retenu"
+      "conclusion": "best_distance=0.1863, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[support aux audits réglementaires et internes (données traçables et reproductibles)] support aux audits",
+      "query": "[support réglementaire et audit (données qualité)] support réglementaire",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5482,
+          "id": "achievements::pricing_tool",
+          "distance": 0.4775,
           "source_file": "achievements.md"
         },
         {
+          "id": "achievements::churn_model",
+          "distance": 0.5428,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5754,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4775, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[support réglementaire et audit (données qualité)] audit interne",
+      "n_results": 3,
+      "results": [
+        {
           "id": "achievements::commission_automation",
-          "distance": 0.5718,
+          "distance": 0.6012,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.649,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::certifications",
-          "distance": 0.575,
+          "distance": 0.6673,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5482, match retenu"
+      "conclusion": "best_distance=0.6012, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[support aux audits réglementaires et internes (données traçables et reproductibles)] audits réglementaires",
+      "query": "[support réglementaire et audit (données qualité)] audit client",
       "n_results": 3,
       "results": [
         {
+          "id": "skills::certifications",
+          "distance": 0.5684,
+          "source_file": "skills.md"
+        },
+        {
           "id": "achievements::commission_automation",
-          "distance": 0.5491,
+          "distance": 0.5777,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6299,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5684, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[support réglementaire et audit (données qualité)] audit qualité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5387,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5614,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5878,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5387, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[support réglementaire et audit (données qualité)] traçabilité des données audit",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5418,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5712,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5819,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5418, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[support réglementaire et audit (données qualité)] intégrité des données audit",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5449,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5668,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6406,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5449, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[support réglementaire et audit (données qualité)] réponses aux observations d'audit",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.47,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.5845,
+          "distance": 0.5407,
           "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6131,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5491, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[support aux audits réglementaires et internes (données traçables et reproductibles)] audits internes",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.5974,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.6468,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6482,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5974, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[support aux audits réglementaires et internes (données traçables et reproductibles)] données traçables",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5601,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.5647,
-          "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5708,
+          "distance": 0.5479,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5601, match retenu"
+      "conclusion": "best_distance=0.4700, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[support aux audits réglementaires et internes (données traçables et reproductibles)] données reproductibles",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.574,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5824,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5928,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5740, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[support aux audits réglementaires et internes (données traçables et reproductibles)] audit readiness",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5732,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.5814,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.583,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5732, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[expertise des outils de reporting et systèmes qualité (collaboration IT et Digital)] outils de reporting qualité",
+      "query": "[expertise des outils de reporting et systèmes qualité] outils de reporting qualité",
       "n_results": 3,
       "results": [
         {
@@ -1137,121 +1160,214 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[expertise des outils de reporting et systèmes qualité (collaboration IT et Digital)] systèmes qualité",
+      "query": "[expertise des outils de reporting et systèmes qualité] SME qualité",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.541,
+          "distance": 0.4794,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5608,
-          "source_file": "skills.md"
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5278,
+          "source_file": "achievements.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5662,
+          "id": "achievements::pricing_tool",
+          "distance": 0.5612,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5410, match retenu"
+      "conclusion": "best_distance=0.4794, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[expertise des outils de reporting et systèmes qualité (collaboration IT et Digital)] validation de systèmes",
+      "query": "[expertise des outils de reporting et systèmes qualité] validation des systèmes",
       "n_results": 3,
       "results": [
         {
+          "id": "achievements::churn_model",
+          "distance": 0.5564,
+          "source_file": "achievements.md"
+        },
+        {
           "id": "skills::certifications",
-          "distance": 0.5566,
+          "distance": 0.5576,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5854,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5857,
+          "distance": 0.566,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5566, match retenu"
+      "conclusion": "best_distance=0.5564, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[expertise des outils de reporting et systèmes qualité (collaboration IT et Digital)] déploiement de systèmes",
+      "query": "[expertise des outils de reporting et systèmes qualité] déploiement des systèmes",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.447,
+          "distance": 0.4624,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.4919,
+          "id": "achievements::churn_model",
+          "distance": 0.4915,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.4932,
+          "id": "achievements::pricing_tool",
+          "distance": 0.4963,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4470, match retenu"
+      "conclusion": "best_distance=0.4624, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[expertise des outils de reporting et systèmes qualité (collaboration IT et Digital)] collaboration IT",
+      "query": "[expertise des outils de reporting et systèmes qualité] collaboration IT-Qualité",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::agentic_coding",
+          "distance": 0.5569,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5573,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
           "distance": 0.5735,
           "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6086,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6305,
-          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5735, match retenu"
+      "conclusion": "best_distance=0.5569, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[expertise des outils de reporting et systèmes qualité (collaboration IT et Digital)] collaboration Digital",
+      "query": "[expérience dans les industries réglementées (médical, pharmaceutique, aérospatial)] industrie médicale",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5777,
+          "id": "achievements::pricing_tool",
+          "distance": 0.4732,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6205,
-          "source_file": "skills.md"
+          "id": "achievements::churn_model",
+          "distance": 0.6275,
+          "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.6289,
-          "source_file": "skills.md"
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6337,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5777, match retenu"
+      "conclusion": "best_distance=0.4732, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[expérience dans les industries réglementées (médical, pharmaceutique, aérospatial)] industrie pharmaceutique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4881,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6446,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6578,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4881, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[expérience dans les industries réglementées (médical, pharmaceutique, aérospatial)] industrie aérospatiale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6127,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6858,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7022,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6127, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[expérience dans les industries réglementées (médical, pharmaceutique, aérospatial)] environnements réglementés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5081,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5359,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5422,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5081, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[expérience dans les industries réglementées (médical, pharmaceutique, aérospatial)] données industrielles complexes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5068,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5471,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4846, match retenu"
     }
   ],
   "uncertain_flags": [
-    "gouvernance et gestion des données QMS (ISO 13485, FDA 21 CFR Part 820, EU MDR)"
+    "gouvernance et gestion des données QMS (ISO 13485, FDA 21 CFR Part 820, EU MDR)",
+    "développement et automatisation de KPI et tableaux de bord qualité"
   ]
 }

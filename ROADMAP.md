@@ -1470,3 +1470,130 @@ construit un `ScoringResult` synthétique sans passer par `score_offer`).
 | Coût LLM additionnel | 0 | 0 (aucun appel supplémentaire) |
 | Information affichée pour un match | Résumé de la première puce de prose uniquement | Libellé + justification pour CHAQUE match (`matches` complet) |
 | Fallback silencieux sur l'ancien parsing | N/A | Aucun — fonctions supprimées, pas conservées "au cas où" |
+
+## Correctif post-session 9 (2026-07-12) : baseline de bruit RAG calculée dynamiquement
+
+**Problème :** `NOISE_THRESHOLD = 0.75` était une constante en dur dans
+`scoring/agent.py`, calibrée une fois en session 2 sur un profil de 31
+chunks et le modèle `paraphrase-multilingual-mpnet-base-v2`. Rien ne
+garantissait sa validité si le profil grossissait ou si le modèle
+d'embedding changeait à nouveau (ça avait déjà été le cas une fois, voir
+session 2 : passage de `all-MiniLM-L6-v2` à ce modèle).
+
+**Implémentation :**
+- `scoring/embeddings/index.py` — `NOISE_PROBE_QUERIES` : 5 requêtes
+  hors-sujet et variées (cuisine "recette de tarte aux pommes" — le probe
+  original de session 2, gardé pour la continuité historique —, météo,
+  sport, actualités, jardinage), délibérément dans des domaines différents
+  plutôt qu'une seule requête : une requête isolée risque de tomber par
+  hasard proche du vocabulaire du profil (constaté empiriquement, voir plus
+  bas — "météo à Paris" est tombée à 0.59 de distance, bien en dessous des
+  autres probes, par pure coïncidence lexicale).
+- `_compute_noise_baseline(collection)` : interroge la collection fraîchement
+  construite avec ces 5 probes, calcule la **médiane** (pas la moyenne) des
+  meilleures distances. Médiane choisie car robuste à UN probe aberrant sur
+  cinq échantillons (le cas du probe météo ci-dessus) — une moyenne aurait
+  été tirée vers le bas par cet unique outlier, sous-estimant le vrai
+  plancher de bruit.
+- Persistance dans `scoring/embeddings/chroma/noise_baseline.json` (fichier
+  JSON simple à côté de l'index, pas une collection ChromaDB dédiée — c'est
+  un unique scalaire, pas des données vectorisables, un fichier est plus
+  simple). Recalculée à CHAQUE appel de `build_index()`, donc à chaque
+  rebuild d'index (local, Docker, GitHub Actions — les trois chemins
+  appellent déjà `scoring.embeddings.build`, aucun câblage CI supplémentaire
+  nécessaire). Le fichier vit dans `chroma/`, déjà gitignoré : c'est un
+  artefact de build régénérable à l'identique depuis les fichiers source du
+  profil, pas une donnée à versionner.
+- `get_noise_threshold()` lit ce fichier au runtime et retourne
+  `median_distance × NOISE_THRESHOLD_SAFETY_MARGIN` (0.85). **Raisonnement
+  du facteur 0.85** : la baseline mesurée est le PLANCHER de bruit (distance
+  où atterrissent des requêtes non liées), pas la frontière entre signal et
+  bruit — l'utiliser telle quelle flaguerait comme "peut-être un match" tout
+  probe de bruit qui tombe un peu mieux que la moyenne. L'écart empirique
+  déjà observé en session 2 entre vrais matches (~0.33-0.65) et bruit
+  (~0.85) donne un ratio 0.75/0.85 ≈ 0.88, proche de 0.85 — ce facteur
+  reproduit donc approximativement l'ancien seuil fixe sur le profil/modèle
+  actuels, tout en restant une fraction relative valable si le profil ou le
+  modèle change à nouveau, plutôt qu'un nombre recalibré à la main à chaque
+  fois.
+- **Repli sur l'ancien seuil fixe (0.75)** si aucune baseline n'est
+  disponible : fichier absent (ancien index jamais reconstruit avec cette
+  fonctionnalité), JSON corrompu, ou clé manquante — capturé explicitement
+  (`FileNotFoundError`, `json.JSONDecodeError`, `KeyError`, `ValueError`),
+  jamais d'exception non gérée qui ferait planter le scoring pour une
+  raison aussi accessoire qu'un fichier de métadonnées manquant.
+- `scoring/agent.py` : `get_noise_threshold()` appelé UNE FOIS par
+  `score_offer()` (pas au niveau module, pas par requête RAG individuelle)
+  — reflète un rebuild d'index survenu en cours de vie du process sans
+  nécessiter de redémarrage, sans payer le coût d'une lecture disque par
+  atome recherché (jusqu'à 50+ appels RAG par offre).
+
+**Tests réels effectués (pas de simulation) :**
+
+1. **Baseline calculée sur le profil réel actuel (30 chunks)** :
+   médiane = **0.7881** (probes individuels : tarte aux pommes 0.8324,
+   météo 0.5927, football 0.7881, actualités 0.6575, jardinage 0.8256).
+   Seuil dynamique résultant : **0.6699** (0.7881 × 0.85).
+2. **Comparaison avec le seuil fixe de session 2 (0.75)** : le nouveau seuil
+   dynamique (0.6699) est **notablement plus strict**, pas juste une
+   variation d'arrondi. Explication : la baseline de session 2 avait été
+   estimée à l'œil sur un seul probe ("tarte aux pommes" ≈ 0.85) sur un
+   profil légèrement différent (31 chunks vs 30 aujourd'hui, contenu
+   modifié depuis) ; la médiane sur 5 probes variés révèle une distribution
+   de bruit plus large et surtout un cas (météo, 0.59) où le "bruit" tombe
+   dangereusement proche de la zone des vrais matches — un seul probe ne
+   pouvait pas capturer cette variance. Le nouveau seuil est donc plus
+   conservateur par construction, pas par accident.
+3. **Revalidation sur offre 24 (cas de référence ISO 13485, correctif
+   post-session 3)** : régénérée avec le nouveau seuil dynamique. Le gap
+   ISO 13485 (atome individuel à distance 0.7625) est **toujours
+   correctement flagué incertain** — au-dessus du nouveau seuil (0.6699)
+   comme de l'ancien (0.75). Un second flag incertain est apparu
+   ("tableaux de bord", atome à distance 0.7165) : analyse détaillée de la
+   trace RAG a confirmé que ce n'est **pas un faux positif** mais une
+   détection plus fine — cet atome isolé retrouve en meilleur match
+   `skills_notions_seulement` (le chunk du profil explicitement dédié aux
+   compétences à l'état de notions, pas maîtrisées), un match objectivement
+   faible que l'ancien seuil 0.75 était trop permissif pour capter. Sur les
+   55 requêtes RAG de l'offre 24, seules ces 2 atomes dépassent le nouveau
+   seuil — tout le reste (machine learning à 0.19, modélisation prédictive à
+   0.38, etc.) reste confortablement en dessous.
+4. **Vérification anti-faux-positif sur les compétences bien établies**
+   (`search_profile_with_scores` direct, hors pipeline complet) : "churn
+   model" (0.60), "Power BI" (0.34), "SQL avancé" (0.26), "Snowflake ETL"
+   (0.37), "recall 85%" (0.51) — toutes largement sous le nouveau seuil
+   0.6699, aucune ne bascule en incertain.
+5. **Régénération offres 7 et 15** (mêmes offres que les tests
+   post-session-3/4) pour vérifier l'absence de nouveaux faux positifs à
+   plus large échelle : offre 15 → 0 flag incertain (matchs propres) ;
+   offre 7 → 2 flags incertains (intégration ERP/MES, détection de dérives
+   / modèles de scoring), vérifiés individuellement via
+   `search_profile_with_scores` — ERP/MES n'apparaît nulle part dans le
+   profil (distance 0.64-0.71 sur les meilleurs chunks trouvés, aucun
+   rapport réel), donc un flag honnête, pas un faux positif.
+6. **Test de robustesse — profil élargi, recalcul automatique sans
+   intervention manuelle** : ajout temporaire d'un fichier
+   `_test_expansion.md` avec 5 chunks synthétiques (DevOps, NLP, finance
+   quantitative, mobile, big data — domaines choisis pour être distincts du
+   profil réel), rebuild de l'index. Résultat : `profile_chunk_count` passe
+   correctement de 30 à 35, médiane recalculée automatiquement de 0.7881 à
+   **0.7730**, seuil résultant de 0.6699 à **0.6571** — sans modifier une
+   seule ligne de code, uniquement en relançant `scoring.embeddings.build`.
+   Fichier de test supprimé et index reconstruit sur le profil réel (30
+   chunks) après validation.
+7. **Test du repli sur seuil fixe**, 3 scénarios de panne simulés
+   individuellement puis restaurés : fichier de baseline absent
+   (`FileNotFoundError`), JSON corrompu (`JSONDecodeError`), clé
+   `median_distance` manquante (`KeyError`) — **les 3 cas retournent
+   proprement 0.75** avec un warning loggé, jamais d'exception qui
+   remonterait jusqu'au scoring.
+
+**Avant/après :**
+| | Avant correctif | Après correctif |
+|---|---|---|
+| Source du seuil de bruit | `NOISE_THRESHOLD = 0.75`, constante en dur | `get_noise_threshold()`, lu depuis `noise_baseline.json`, recalculé à chaque build d'index |
+| Sensibilité à la taille du profil | Aucune — même seuil quel que soit le nombre de chunks | Recalculée automatiquement (vérifié : 30→35 chunks, seuil ajusté sans intervention) |
+| Sensibilité à un changement de modèle d'embedding | Aucune — seuil resterait figé à 0.75 même avec un modèle différent | Recalculée automatiquement au prochain build (le modèle fait partie de la baseline persistée) |
+| Comportement si baseline indisponible | N/A | Repli sur 0.75, jamais de crash (3 scénarios de panne testés) |
+| Seuil actuel (profil réel, 30 chunks) | 0.75 (fixe) | 0.6699 (dynamique) — plus strict, détection plus fine confirmée sur offre 24 |
+| Offres déjà scorées (67 en base) | Scorées avec 0.75 | Inchangées (décision : pas de backfill systématique cette fois, seules 7/15/24 régénérées pour la validation demandée) — le nouveau seuil s'applique automatiquement à toute nouvelle offre via le prochain run GitHub Actions ou `/analyze` |

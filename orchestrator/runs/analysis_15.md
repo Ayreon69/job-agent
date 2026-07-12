@@ -1,87 +1,105 @@
 ## Résumé du matching
-**Adéquation globale : 78/100** – Candidature solide pour ce poste de **Business Analyst Data Gouvernance**, avec une expertise technique et métier alignée sur les attentes clés de l’offre. Le profil se distingue par :
-- **Une double compétence data et business** : Capacité à traduire des besoins métiers en solutions data concrètes, illustrée par :
-  - La création d’un **outil de tarification autonome** pour les équipes métier (réduction de la dépendance technique) *(source : recueil des besoins et cas d’usage métiers)*.
-  - Le développement d’un **modèle de churn en production**, avec justification métier des choix statistiques *(source : recueil des besoins et cas d’usage métiers)*.
-  - La **refonte du calcul des commissions** chez ECA Assurances (gain de temps : 10h → 35min, économie de licences) *(source : optimisation et adaptation des processus métiers)*.
 
-- **Une maîtrise des outils data du marché** :
-  - **SQL avancé, Python (pandas, scikit-learn), Power BI (DAX avancé), Snowflake** (architecture ETL proche Medallion) *(source : connaissance des outils du marché en data management)*.
-  - Certifications **DataCamp** (Associate Data Scientist/Analyst) couvrant Tableau, SQL, et data visualization *(source : cadrage et diagnostic de maturité data)*.
-  - Prototypage d’un **assistant interne** (API Mistral + Gradio) avec documentation technique des choix architecturaux *(source : rédaction de spécifications fonctionnelles et techniques)*.
+**Adéquation globale : 75/100**
+Le profil présente une forte adéquation avec les exigences techniques et fonctionnelles du poste de **Business Analyst Data Gouvernance**, notamment sur les axes suivants :
 
-- **Une approche transverse et décloisonnée** :
-  - Conception de **tableaux de bord Power BI adoptés par plusieurs départements**, alignés sur les KPIs métier *(source : décloisonnement des silos métiers)*.
-  - Structuration de **pipelines ETL sur Snowflake** pour fiabiliser la production de rapports à grande échelle, impliquant une collaboration entre data engineering et métiers *(source : coordination entre équipes techniques et métiers)*.
+- **Cadrage et diagnostic de maturité data** :
+  - Certifications DataCamp (*Associate Data Scientist*, *Associate Data Analyst*) couvrant SQL avancé, Python et outils de visualisation (source : certifications).
+  - Conception de tableaux de bord Power BI alignés sur les KPIs métier, adoptés à l’échelle de l’entreprise (source : expérience Power BI).
 
-- **Une pratique rigoureuse de la documentation** :
-  - Utilisation de **fichiers CLAUDE.md** pour structurer les projets et maintenir un contexte technique persistant *(source : gestion de la documentation fonctionnelle et technique)*.
-  - Documentation des choix architecturaux (ex : décision de ne pas utiliser RAG pour l’assistant interne) *(source : rédaction de spécifications fonctionnelles et techniques)*.
+- **Recueil des besoins et cas d’usage métiers** :
+  - Création d’un outil de tarification autonome pour les équipes métier, réduisant leur dépendance technique (source : réalisation).
+  - Développement d’un modèle de churn en production, justifié par une logique métier (priorisation du recall) (source : expérience en data science).
+
+- **Rédaction de spécifications fonctionnelles et techniques** :
+  - Prototypage d’un assistant interne basé sur l’API Mistral, avec documentation des choix architecturaux (ex : décision de ne pas utiliser de RAG) (source : projet technique).
+  - Utilisation quotidienne de fichiers *CLAUDE.md* pour structurer des projets techniques (source : pratique de documentation).
+
+- **Coordination entre équipes techniques et métiers** :
+  - Déploiement de tableaux de bord Power BI utilisés par tous les départements, démontrant une adoption transverse (source : expérience Power BI).
+  - Structuration de pipelines ETL sur Snowflake (architecture proche *Medallion*) pour fiabiliser les rapports à grande échelle (source : expérience Snowflake).
+
+- **Adaptation des processus métiers** :
+  - Refonte de la méthodologie de calcul des commissions (réduction du temps de traitement de 10h à 35min, élimination des coûts de licence) (source : réalisation).
+  - Automatisation d’outils pour les équipes métier, illustrant une capacité à simplifier des processus complexes (source : outil de tarification).
+
+- **Décloisonnement des silos métiers** :
+  - Collaboration transverse via des tableaux de bord Power BI et des pipelines ETL, impliquant des équipes data et métiers (source : expérience Snowflake/Power BI).
+
+- **Maîtrise des outils du marché** :
+  - Compétences techniques solides : SQL avancé, Python (pandas, scikit-learn), Power BI (DAX, Power Query), Snowflake (architecture ETL), automatisation (Playwright) (source : certifications et expérience).
+
+- **Socle data et gouvernance des données** :
+  - Certifications DataCamp en data science et analyse, avec une expérience pratique en structuration de pipelines et alignement des données sur les KPIs métier (source : certifications et réalisations).
 
 ---
 
 ## Gaps et incertitudes
-**Gaps confirmés** (compétences absentes dans le profil) :
-1. **Animation d’ateliers métiers et techniques** :
-   - Aucune expérience explicite d’animation d’ateliers structurés (ex : ateliers de cadrage, sessions de co-construction avec les métiers ou les équipes techniques). Les compétences en automatisation (Playwright) ou en agentic coding ne couvrent pas ce besoin.
-   - *Impact* : Compétence clé pour un Business Analyst Data Gouvernance, notamment pour le recueil des besoins et la validation des cas d’usage. À développer via des formations ou des mises en situation.
 
-2. **Méthodologies de gouvernance formelle des données** :
-   - Expérience limitée à la **gouvernance technique** (ex : architecture Snowflake proche Medallion, documentation des pipelines).
-   - Absence de pratique concrète en **gouvernance formelle** (ex : participation à des comités de gouvernance, rédaction de chartes ou politiques de données, gestion des référentiels).
-   - *Impact* : Le poste requiert une connaissance des frameworks de gouvernance (ex : DCAM, DAMA), même si l’expérience terrain peut être progressive.
+**Gaps confirmés (compétences absentes)** :
+- **Animation d’ateliers métiers et techniques** :
+  Aucune expérience explicite d’animation ou de facilitation d’ateliers (métiers ou techniques) n’est mentionnée dans le profil. Les compétences se limitent à la coordination et à la documentation, sans preuve de leadership en animation collective.
 
-**Flags incertains** (aucun dans ce cas) :
-- Aucune zone d’ombre identifiée : tous les éléments de l’offre ont pu être rapprochés de réalisations ou compétences du profil.
+- **Mise à jour de la documentation data** :
+  Le profil ne mentionne pas d’expérience en maintenance ou mise à jour de documentation data formelle (ex : dictionnaires de données, métadonnées). La documentation se restreint à des fichiers *CLAUDE.md* pour des projets techniques ponctuels.
+
+- **Gouvernance formelle des données** :
+  Expérience en gouvernance *technique* (architecture Snowflake, pipelines ETL) mais pas en gouvernance *formelle* (comités, chartes, politiques de gestion des données). Le profil indique des "notions seulement" dans ce domaine.
+
+**Flags incertains** :
+*Aucun* – Tous les écarts identifiés sont des gaps confirmés, sans zone d’ombre résiduelle.
 
 ---
 
-## Questions d'entretien probables
-**1. Sur la coordination transverse et la gouvernance** :
-- *"Pouvez-vous décrire un projet où vous avez dû aligner des équipes techniques et métiers sur des enjeux data ? Quels outils ou méthodes avez-vous utilisés pour faciliter cette collaboration ?"* *(Cible : coordination entre équipes techniques et métiers, décloisonnement des silos métiers)*.
-- *"Comment abordez-vous la documentation des processus data pour qu’elle soit utile à la fois aux équipes techniques et aux métiers ?"* *(Cible : gestion de la documentation fonctionnelle et technique)*.
+## Questions d’entretien probables
 
-**2. Sur l’optimisation des processus** :
-- *"Vous avez refondu le calcul des commissions chez ECA Assurances. Quelles étapes avez-vous suivies pour identifier les goulots d’étranglement, et comment avez-vous mesuré l’impact de votre solution ?"* *(Cible : optimisation et adaptation des processus métiers)*.
-- *"Comment priorisez-vous les cas d’usage data en fonction des besoins métiers et des contraintes techniques ?"* *(Cible : recueil des besoins et cas d’usage métiers)*.
+1. **Cadrage et diagnostic data** :
+   - *"Pouvez-vous décrire une situation où vous avez évalué la maturité data d’une entreprise ? Quels critères avez-vous utilisés, et quelles recommandations en avez-vous tirées ?"* (Source : certifications DataCamp + expérience Power BI).
+   - *"Comment alignez-vous vos tableaux de bord Power BI sur les KPIs métier ? Donnez un exemple concret où cet alignement a généré de la valeur."* (Source : expérience Power BI).
 
-**3. Sur les outils et la maturité data** :
-- *"Quels critères utilisez-vous pour choisir entre Power BI et Tableau pour un projet de reporting ?"* *(Cible : connaissance des outils du marché en data management)*.
-- *"Comment évaluez-vous la maturité data d’une organisation, et quelles actions proposez-vous pour la faire progresser ?"* *(Cible : cadrage et diagnostic de maturité data)*.
+2. **Recueil des besoins et coordination** :
+   - *"Comment avez-vous identifié les besoins des équipes métier pour votre outil de tarification autonome ? Quels défis avez-vous rencontrés dans ce transfert d’autonomie ?"* (Source : outil de tarification).
+   - *"Votre modèle de churn priorisait le recall. Comment avez-vous justifié ce choix auprès des métiers, et quels impacts a-t-il eus ?"* (Source : modèle de churn).
 
-**4. Sur les gaps identifiés** :
-- *"Comment comptez-vous vous former à l’animation d’ateliers métiers, une compétence clé pour ce poste ?"* *(Cible : animation d’ateliers métiers et techniques – gap confirmé)*.
-- *"Avez-vous déjà été exposé à des frameworks de gouvernance des données (ex : DAMA, DCAM) ? Si oui, dans quel contexte ?"* *(Cible : méthodologies de gouvernance des données – gap confirmé)*.
+3. **Documentation et spécifications** :
+   - *"Vos fichiers *CLAUDE.md* semblent structurer vos projets techniques. Comment adaptez-vous cette approche pour des spécifications fonctionnelles destinées à des non-techniciens ?"* (Source : pratique de documentation).
+   - *"Pourquoi avoir choisi de ne pas utiliser de RAG dans votre assistant basé sur Mistral ? Quels étaient les risques et les alternatives ?"* (Source : projet technique).
 
-**5. Questions comportementales** :
-- *"Décrivez une situation où un projet data a rencontré des résistances de la part des métiers. Comment l’avez-vous géré ?"* *(Cible : coordination transverse, gestion des silos)*.
-- *"Comment gérez-vous les demandes contradictoires entre les équipes techniques et métiers ?"* *(Cible : recueil des besoins, spécifications fonctionnelles)*.
+4. **Gouvernance et décloisonnement** :
+   - *"Vos pipelines ETL sur Snowflake ont impliqué plusieurs équipes. Comment avez-vous géré les conflits de priorités ou les résistances au changement ?"* (Source : expérience Snowflake).
+   - *"Quelles actions concrètes avez-vous menées pour briser les silos entre les départements via vos tableaux de bord Power BI ?"* (Source : expérience Power BI).
+
+5. **Gaps à combler** :
+   - *"Comment comptez-vous développer vos compétences en animation d’ateliers métiers, un volet clé de ce poste ?"* (Gap : animation d’ateliers).
+   - *"Quelle méthodologie proposez-vous pour maintenir à jour la documentation data d’une entreprise, au-delà de vos fichiers *CLAUDE.md* ?"* (Gap : documentation data).
+   - *"Avez-vous déjà participé à la définition d’une charte ou d’une politique de gouvernance data ? Si non, comment aborderiez-vous ce sujet ?"* (Gap : gouvernance formelle).
 
 ---
 
 ## Angle de candidature
-**Accroche** :
-*"Business Analyst Data avec une expertise hybride en solutions techniques et en traduction des enjeux métiers, je me spécialise dans la conception d’outils data alignés sur les KPIs business et dans l’optimisation de processus critiques. Mon approche combine une maîtrise des outils du marché (SQL, Power BI, Snowflake) avec une pratique rigoureuse de la documentation et de la coordination transverse – comme en témoignent mes réalisations chez ECA Assurances ou dans le développement d’outils autonomes pour les métiers. Je souhaite mettre cette double compétence au service d’une équipe Data Gouvernance pour structurer des initiatives data à impact, tout en développant mes compétences en animation d’ateliers et en gouvernance formelle."*
 
-**Points clés à mettre en avant** :
-1. **Impact business mesurable** :
-   - Mettre l’accent sur les **gains concrets** apportés aux métiers (ex : réduction du temps de calcul des commissions, autonomisation des équipes via des outils data).
-   - Exemple : *"Chez ECA Assurances, j’ai réduit de 90% le temps de calcul des commissions (10h → 35min) en refondant le processus, tout en éliminant des coûts de licence. Cette expérience m’a appris à lier optimisation technique et valeur métier."*
+**Positionnement clé** :
+*"Business Analyst Data orienté résultats, avec une double expertise technique (SQL, Python, Snowflake) et métier (alignement des données sur les KPIs, outils autonomes pour les équipes). Mon profil combine une rigueur analytique – illustrée par des certifications DataCamp et des pipelines ETL robustes – et une capacité à traduire des enjeux complexes en solutions adoptables par tous les départements. Mon expérience en refonte de processus (ex : commissions, tarification) et en décloisonnement via Power BI/Snowflake correspond aux attentes du poste, avec une marge de progression sur les volets gouvernance formelle et animation d’ateliers que je souhaite développer."*
 
-2. **Approche méthodique et documentée** :
-   - Insister sur la **structuration des projets** (fichiers CLAUDE.md, documentation des choix architecturaux) et la **collaboration transverse** (tableaux de bord Power BI multi-départements, pipelines ETL sur Snowflake).
-   - Exemple : *"Pour le prototypage de l’assistant interne, j’ai documenté chaque choix technique (ex : non-utilisation de RAG) dans un CLAUDE.md, afin de faciliter la reprise du projet par d’autres équipes. Cette pratique reflète ma conviction que la data doit être accessible et maintenable par tous."*
+**Points différenciants à mettre en avant** :
+1. **Autonomie des métiers** :
+   - Mettre l’accent sur l’outil de tarification autonome et la refonte des commissions, qui démontrent une capacité à *désintermédier* les équipes métiers tout en garantissant la fiabilité des données (source : réalisations).
+   - Insister sur l’impact quantifiable (ex : gain de temps, réduction des coûts).
 
-3. **Adaptabilité et apprentissage continu** :
-   - Reconnaître les **gaps** (animation d’ateliers, gouvernance formelle) comme des **axes de progression**, en citant des actions concrètes pour les combler (ex : formations, participation à des comités de gouvernance en interne).
-   - Exemple : *"Si mon expérience en gouvernance formelle est encore limitée, je me forme activement aux frameworks comme DAMA via des ressources en ligne, et je compte m’appuyer sur les bonnes pratiques de votre équipe pour monter en compétences rapidement."*
+2. **Documentation contextuelle** :
+   - Valoriser la pratique des fichiers *CLAUDE.md* comme une approche *agile* de la documentation, adaptable aux besoins des équipes techniques *et* métiers. Souligner que cette méthode pourrait être étendue à des supports plus formels (ex : dictionnaires de données) avec une montée en maturité (source : pratique de documentation).
 
-4. **Alignement avec les enjeux de l’offre** :
-   - Lier systématiquement les réalisations du profil aux **attentes du poste** :
-     - *"Votre recherche d’un Business Analyst capable de décloisonner les silos métiers résonne avec mon expérience en conception de tableaux de bord Power BI adoptés par plusieurs départements."*
-     - *"La dimension 'gouvernance' de ce poste correspond à mon approche de la data comme un levier stratégique, où la qualité des processus et la documentation sont aussi importantes que les outils."*
+3. **Gouvernance technique comme socle** :
+   - Positionner l’expérience Snowflake (architecture *Medallion*) et Power BI comme des *fondations* pour une gouvernance data élargie. Exemple : *"Mes pipelines ETL structurés sur Snowflake ont permis de fiabiliser les rapports à grande échelle – une base essentielle pour ensuite formaliser des règles de gouvernance partagées entre les départements."* (source : expérience Snowflake).
 
-**Ton** :
-- **Concret et orienté solutions** : Éviter les généralités, privilégier les exemples chiffrés et les méthodes éprouvées.
-- **Humilité sur les gaps** : Les présenter comme des opportunités d’apprentissage, sans minimiser leur importance.
-- **Enthousiasme pour la data gouvernance** : Montrer une compréhension des enjeux du poste (ex : équilibre entre technique et métier, importance de la documentation pour la pérennité des projets).
+4. **Approche "data as a product"** :
+   - Framer les tableaux de bord Power BI et l’outil de tarification comme des *produits data* conçus pour l’adoption utilisateur, avec des boucles de feedback intégrées. Cela rejoint l’esprit de la gouvernance data, centrée sur l’usage plutôt que sur la technique pure (source : expérience Power BI).
+
+**Stratégie pour les gaps** :
+- **Animation d’ateliers** :
+  Proposer une approche progressive : *"Je compte m’appuyer sur mon expérience en coordination transverse (ex : déploiement de Power BI) pour structurer des ateliers ciblés, en commençant par des formats courts et orientés solutions, avant d’élargir à des sessions stratégiques."* (source : expérience Power BI).
+- **Gouvernance formelle** :
+  Lier ce gap à une volonté d’apprentissage : *"Mon expérience en gouvernance technique (Snowflake, pipelines) me donne une légitimité pour contribuer à des chartes ou politiques. Je souhaite compléter cette expertise par des formations ciblées sur les frameworks de gouvernance (ex : DCAM, DAMA)."* (source : expérience Snowflake).
+
+**Message final** :
+*"Ce poste représente une opportunité idéale pour consolider mon expertise en data management tout en développant les volets gouvernance et animation, au service d’une vision transverse des données. Mon profil hybride – à la fois technique et orienté métier – me permet d’être opérationnel rapidement sur les missions clés, tout en m’inscrivant dans une dynamique d’apprentissage sur les aspects plus formels de la gouvernance."*
