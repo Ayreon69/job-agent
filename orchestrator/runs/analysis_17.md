@@ -1,70 +1,96 @@
 ## Résumé du matching
-Cette candidature présente un **alignement solide (75/100)** avec le poste d’**Analyste Modélisation Base de Données**, grâce à une expertise technique confirmée et des réalisations concrètes en architecture de données, optimisation et collaboration métier.
+Cette candidature présente un **matching solide (65/100)** pour le poste d’**Analyste Modélisation Base de Données**, avec des atouts techniques et méthodologiques alignés sur les exigences clés de l’offre. Voici les points forts identifiés :
 
-**Points forts clés** :
 - **Modélisation et conception de bases de données** :
-  - Maîtrise avancée de **SQL** (requêtes complexes, optimisation) et expérience en **architecture Snowflake** (organisation en couches *staging/core/reporting*, approche *Medallion-like*), avec certifications DataCamp à l’appui (*source : certifications DataCamp*).
-  - Conception de schémas relationnels alignés sur les besoins métiers, comme en témoigne la structuration de pipelines ETL (*source : expérience Snowflake*).
+  Maîtrise avancée de **SQL** (requêtes complexes, optimisation, agrégations) et expérience en architecture de données sur **Snowflake** avec une organisation en couches inspirée du modèle *Medallion* (source : certifications DataCamp et projets techniques).
+  *Exemple concret* : Conception de pipelines ETL structurés en *staging/core/reporting* pour des cas d’usage métier (ex : calcul des commissions).
 
-- **Administration et optimisation PostgreSQL** :
-  - Expérience pratique en gestion de bases relationnelles, incluant l’optimisation de requêtes et la maintenance (*source : maîtrise avancée SQL et certifications DataCamp*).
+- **Administration et optimisation de bases de données** :
+  Expertise en **PostgreSQL** et **Snowflake**, avec une approche orientée performance (source : certifications DataCamp et expérience en optimisation de requêtes).
+  *Exemple* : Gestion de bases de données critiques pour des tableaux de bord Power BI alignés sur des KPIs sensibles (sinistralité, churn).
 
-- **Migration et intégration de données (ETL/ELT)** :
-  - Réalisation de **pipelines ETL automatisés** sur Snowflake, avec transformations en **Python (pandas)** et SQL, garantissant la cohérence des données entre couches (*source : organisation en couches staging/core/reporting*).
-  - Automatisation de flux de données pour des cas d’usage variés (ex : calcul de commissions, prospection B2B) (*source : automatisation de bout en bout*).
+- **Automatisation et scripts** :
+  Développement de **pipelines de données automatisés** via **Playwright, smtplib, Brevo, et pandas**, avec des réalisations tangibles comme la refonte du calcul des commissions (source : projets techniques).
+  *Exemple* : Scripts Python pour extraire, transformer et charger des données métier, réduisant les tâches manuelles.
 
-- **Automatisation et scripting** :
-  - Développement de scripts **Python** (pandas, smtplib, Playwright) et SQL pour automatiser des processus métiers (scraping, envoi d’emails, pipelines) (*source : automatisation de la prospection B2B*).
-  - Prototypage d’outils internes avec documentation technique (*source : fichiers CLAUDE.md*).
+- **Documentation et cartographie des flux** :
+  Expérience en **structuration de flux ETL** et en documentation implicite des architectures (source : projets Snowflake et Power BI).
+  *Exemple* : Organisation des données en couches logiques pour faciliter la traçabilité et la maintenance.
 
-- **Collaboration métier et qualité des données** :
-  - Création de **tableaux de bord Power BI** alignés sur les KPIs métier, adoptés à grande échelle (*source : adoption large des dashboards*).
-  - Vulgarisation de résultats techniques pour des équipes non-techniques et développement d’outils transférant de l’autonomie (ex : outil de tarification) (*source : outil de tarification pour les équipes métier*).
-  - Expérience en **modélisation ML en production** (prédiction de churn) et justification de choix statistiques en fonction des risques (*source : recall vs précision*).
+- **Qualité et intégrité des données** :
+  Focus sur la **cohérence des données** via des modèles ML en production (ex : prédiction de churn) et des tableaux de bord Power BI validés par les métiers (source : projets assurance).
+  *Exemple* : Alignement des données sur des KPIs métier pour garantir leur fiabilité.
 
-- **Analyse des risques techniques** :
-  - Formation en **Data Analytics et Risk Management** (Master ISFA) et modélisation de scénarios métier (ex : outil de tarification) (*source : justification des choix statistiques*).
+- **Accompagnement technique** :
+  Capacité à **vulgariser des concepts techniques** pour des équipes non-techniques et à créer des outils transférant de l’autonomie (ex : outil de tarification pour les métiers) (source : expérience en formation et support).
+
+---
 
 ## Gaps et incertitudes
-**Gaps confirmés** :
-- **Sécurité des bases de données** : Aucune mention de pratiques de sécurisation (droits d’accès, prévention des injections SQL), malgré une maîtrise avancée de SQL (*gap constaté*).
-- **Cloud et CI/CD** : Notions limitées en **AWS/Azure** et **CI/CD**, sans déploiement en production documenté (*gap constaté*).
+Malgré ces atouts, des **gaps critiques** et des **incertitudes** limitent le matching parfait :
 
-**Flags incertains** :
-- **Architecture SCADA/Lynx** : Aucun match fiable trouvé dans le profil pour ces technologies spécifiques. Leur absence n’est pas confirmée, mais aucune expérience concrète n’est identifiable (*flag incertain*).
+### Gaps confirmés (compétences absentes) :
+- **Systèmes SCADA et Lynx** :
+  Aucune expérience avec les **systèmes SCADA** (supervision industrielle) ou l’application **Lynx**, essentiels pour ce poste. Le profil se limite aux architectures data classiques (Snowflake, Power BI, assurance).
+  *Impact* : Risque de courbe d’apprentissage longue pour les intégrations industrielles.
+
+- **Sécurité des bases de données** :
+  Aucune mention de **bonnes pratiques de sécurisation** (droits d’accès, prévention des injections SQL), malgré une maîtrise avancée de SQL.
+  *Impact* : Vulnérabilité potentielle des bases de données en environnement sensible.
+
+- **Architectures industrielles** :
+  Absence d’expérience avec les **données industrielles** (SCADA, supervision), le profil étant centré sur des environnements data "classiques" (assurance, reporting).
+  *Impact* : Difficulté à appréhender les spécificités des flux temps réel ou des protocoles industriels.
+
+### Flags incertains (absence de preuve fiable) :
+- **Migration/Intégration SCADA-Lynx** :
+  Aucun élément dans le profil ne permet de confirmer ou d’infirmer une expérience en **migration de données entre SCADA et Lynx**. Ce point reste un *flag incertain* (pas une absence confirmée, mais pas de match RAG trouvé).
+
+---
 
 ## Questions d'entretien probables
-1. **Modélisation et architecture** :
-   - *"Pouvez-vous décrire un projet où vous avez conçu une base de données relationnelle pour répondre à un besoin métier spécifique ? Quels choix architecturaux avez-vous faits et pourquoi ?"* (*source : organisation en couches Snowflake*).
-   - *"Comment avez-vous optimisé des requêtes SQL complexes dans un environnement PostgreSQL ? Quels outils ou méthodes avez-vous utilisés ?"* (*source : maîtrise avancée SQL*).
+Pour évaluer la capacité du candidat à combler les gaps, les recruteurs pourraient aborder :
 
-2. **ETL et automatisation** :
-   - *"Quelle approche avez-vous adoptée pour structurer un pipeline ETL sur Snowflake ? Comment avez-vous géré les transformations et la qualité des données ?"* (*source : couches staging/core/reporting*).
-   - *"Pouvez-vous partager un exemple d’automatisation que vous avez développée en Python/SQL pour résoudre un problème métier ?"* (*source : automatisation de la prospection B2B*).
+1. **Compétences techniques manquantes** :
+   - *"Pouvez-vous décrire une expérience où vous avez dû sécuriser une base de données contre les injections SQL ou gérer des droits d’accès granulaires ?"* (Gap : sécurité).
+   - *"Comment aborderiez-vous la migration de données entre un système SCADA et une application comme Lynx, sans expérience préalable ?"* (Gap : SCADA/Lynx).
 
-3. **Collaboration et qualité des données** :
-   - *"Comment avez-vous aligné vos tableaux de bord Power BI avec les attentes des équipes métier ? Comment avez-vous mesuré leur adoption ?"* (*source : adoption large des dashboards*).
-   - *"Comment justifiez-vous vos choix statistiques (ex : recall vs précision) dans un modèle de prédiction de churn ?"* (*source : modélisation ML en production*).
+2. **Adaptation aux architectures industrielles** :
+   - *"Quelles différences voyez-vous entre la modélisation de données pour des tableaux de bord métiers (ex : Power BI) et pour des systèmes industriels temps réel ?"* (Gap : architectures industrielles).
+   - *"Comment garantiriez-vous la qualité des données dans un environnement où les flux sont hétérogènes (SCADA, bases relationnelles, etc.) ?"* (Gap : intégrité des données industrielles).
 
-4. **Gestion des risques** :
-   - *"Comment évaluez-vous les risques techniques lors d’une migration de données ? Pouvez-vous donner un exemple concret ?"* (*source : formation Risk Management*).
+3. **Automatisation et optimisation** :
+   - *"Quels outils ou méthodes utilisez-vous pour optimiser des requêtes SQL sur de gros volumes de données ?"* (Match : SQL avancé).
+   - *"Pouvez-vous partager un exemple où vos scripts d’automatisation ont résolu un problème métier critique ?"* (Match : pipelines Python).
 
-5. **Gaps et apprentissage** :
-   - *"Comment comptez-vous combler vos lacunes en sécurité des bases de données (ex : prévention des injections SQL) ?"* (*gap : sécurité*).
-   - *"Avez-vous déjà travaillé avec des systèmes SCADA ou Lynx ? Si non, comment vous formeriez-vous sur ces technologies ?"* (*flag incertain : SCADA/Lynx*).
+4. **Accompagnement et documentation** :
+   - *"Comment formez-vous des équipes non-techniques à utiliser des outils data que vous avez conçus ?"* (Match : vulgarisation).
+   - *"Quelle méthodologie suivez-vous pour documenter une architecture de données complexe ?"* (Match : cartographie).
+
+---
 
 ## Angle de candidature
 **Positionnement** :
-Candidat **expérimenté en modélisation et optimisation de bases de données**, avec une approche **métier et collaborative** démontrée par des réalisations tangibles (tableaux de bord Power BI, outils de tarification, pipelines ETL). La maîtrise de **Snowflake, PostgreSQL et Python** s’aligne parfaitement avec les besoins techniques de l’offre, tandis que la formation en **Risk Management** apporte une dimension analytique complémentaire.
+Candidature à ancrer sur **l’expertise en modélisation et gestion de données** (SQL, Snowflake, ETL), avec une **approche méthodique et orientée résultats**. Mettre en avant :
+- La **rigueur technique** (certifications DataCamp, projets structurés en couches Medallion).
+- La **capacité à livrer des solutions alignées sur les besoins métiers** (ex : calcul des commissions, churn).
+- L’**autonomie dans l’automatisation** (scripts Python, pipelines) et la **documentation implicite** des flux.
 
-**Argument clé** :
-*"Mon profil combine une expertise technique en architecture de données (Snowflake, PostgreSQL) avec une capacité à traduire des besoins métiers en solutions concrètes. Par exemple, j’ai conçu des pipelines ETL sur Snowflake organisés en couches pour garantir la qualité des données, tout en développant des outils comme des tableaux de bord Power BI adoptés à grande échelle. Mon approche allie rigueur technique et collaboration avec les équipes non-techniques, comme en témoigne mon outil de tarification qui a transféré de l’autonomie aux équipes métier."*
+**Stratégie pour combler les gaps** :
+1. **SCADA/Lynx** :
+   - Souligner la **rapidité d’apprentissage** sur de nouveaux outils (ex : adoption de Snowflake, Power BI).
+   - Proposer une **veille proactive** sur les systèmes industriels (ex : tutoriels SCADA, documentation Lynx) pour montrer une démarche d’auto-formation.
 
-**Réponse aux gaps** :
-- **Sécurité** : Mettre en avant une **volonté de monter en compétences** sur les bonnes pratiques (ex : formations ciblées sur les injections SQL, droits d’accès).
-- **SCADA/Lynx** : Souligner une **expérience en apprentissage rapide** de nouvelles technologies (ex : passage à Snowflake, automatisation Python) et proposer une **veille proactive** sur ces outils.
+2. **Sécurité des données** :
+   - Mentionner une **sensibilisation aux enjeux de sécurité** (ex : gestion des droits dans les projets passés, même si non formalisée).
+   - S’engager à **suivre une formation courte** sur la sécurité SQL (ex : OWASP, bonnes pratiques PostgreSQL).
 
-**Ton** :
-**Confiant et orienté solutions**, en insistant sur :
-- La **pertinence des réalisations** pour les enjeux de l’offre (ex : qualité des données, collaboration métier).
-- La **capacité à apprendre** et à s’adapter, sans minimiser les gaps mais en les présentant comme des opportunités de croissance.
+3. **Architectures industrielles** :
+   - Insister sur la **transférabilité des compétences** : modélisation de données complexes (assurance) → modélisation de flux industriels.
+   - Proposer une **approche par étapes** : audit des flux existants → identification des points de friction → solutions adaptées.
+
+**Message clé** :
+*"Mon profil combine une expertise technique éprouvée en modélisation et gestion de données (SQL, Snowflake, ETL) avec une capacité à livrer des solutions impactantes pour les métiers. Bien que mon expérience se concentre sur des environnements data classiques, ma méthodologie rigoureuse et mon agilité technique me permettent de m’adapter rapidement à des architectures industrielles comme SCADA ou Lynx. Je suis particulièrement motivé(e) par les défis liés à la qualité et à l’intégration des données, et prêt(e) à compléter mes compétences pour répondre aux enjeux spécifiques de ce poste."*
+
+**Exemple de phrase d’accroche** (pour une lettre ou un pitch) :
+*"Avec 3,5 ans d’expérience en modélisation de données et en automatisation de pipelines (Snowflake, Python), j’ai conçu des architectures alignées sur des KPIs métiers sensibles, comme le calcul des commissions ou la prédiction de churn. Mon approche structurée (couches Medallion, documentation implicite) et ma capacité à vulgariser des concepts techniques pour les équipes non-techniques seraient des atouts pour accompagner vos projets d’intégration de données industrielles."*

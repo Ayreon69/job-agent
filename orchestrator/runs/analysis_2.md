@@ -1,102 +1,75 @@
 ## Résumé du matching
+Cette candidature présente un **alignement technique et fonctionnel très solide** avec l’offre de Data Analyst, avec un score de **85/100**. Les points forts se concentrent sur trois axes majeurs :
 
-Cette candidature présente une adéquation très forte avec l’offre de **Data Analyst**, avec un score de **85/100**. Les points forts majeurs incluent :
+1. **Expertise analytique et décisionnelle**
+   - Développement d’un **modèle de churn en production** (recall de 85%, priorisé sur la précision) pour un acteur de l’assurance, démontrant une capacité à concevoir des solutions data alignées sur des enjeux métier critiques (*source : réalisation modèle de churn*).
+   - Création de **tableaux de bord Power BI adoptés par l’ensemble des départements**, avec une approche centrée sur la traduction des données en outils actionnables pour des audiences non techniques (*source : dashboards Power BI alignés sur KPIs métier*).
 
-- **Analyse et exploitation des données pour la prise de décision** :
-  - Développement d’un **modèle de churn en production** avec justification métier, démontrant une capacité à transformer des données en insights actionnables (*source : réalisation "Développement d'un modèle de churn en production"*).
-  - Conception de **tableaux de bord Power BI adoptés par l’entreprise**, alignés sur les KPIs métier et utilisés par des équipes non techniques (*source : "conception de tableaux de bord Power BI adoptés par l'entreprise"*).
-  - Certifications en **Data Analyst/Data Scientist** couvrant Python, SQL et outils de visualisation, validant une expertise technique solide.
+2. **Maîtrise des outils et pipelines data**
+   - **SQL avancé** : requêtes complexes, optimisation, et réponse aux demandes ad hoc des équipes opérationnelles (*source : expérience professionnelle répétée*).
+   - **Power BI/DAX** : conception de rapports sur des indicateurs sensibles (commissions, sinistralité) avec Power Query, et automatisation de pipelines (*source : outils de tarification autonomes pour les métiers*).
+   - **Python** : utilisation professionnelle de pandas, numpy, et scikit-learn pour des modèles en production (churn) et l’automatisation de traitements (*source : modèle de churn + pipelines ETL*).
+   - **Collecte et traitement multi-sources** : expérience avec Snowflake (architecture proche Medallion), scraping (Playwright), et structuration de pipelines ETL (*source : refonte des commissions + fiabilisation des rapports*).
 
-- **Requêtage et modélisation SQL** :
-  - Maîtrise professionnelle de **SQL avancé** (optimisation, agrégations) pour des demandes analytiques *ad hoc*, avec des requêtes complexes déployées en production (*source : "Requêtes SQL avancées pour des demandes analytiques ad hoc"*).
-  - Certifications couvrant **SQL avancé**, renforçant la crédibilité technique.
+3. **Collaboration métier et amélioration continue**
+   - **Vulgarisation technique** : création d’outils autonomes pour les équipes métier (ex. tarification) et alignement des dashboards sur les KPIs définis par la direction (*source : outils de tarification + dashboards Power BI*).
+   - **Optimisation des processus** : automatisation du calcul des commissions (réduction du temps de traitement de **10h à 35min**, élimination de coûts de licence) et fiabilisation des rapports via Snowflake (*source : refonte des commissions + pipelines ETL*).
 
-- **Création de dashboards et rapports avec Power BI** :
-  - Expérience approfondie dans la **conception de dashboards Power BI**, incluant l’utilisation de **DAX avancé** et **Power Query** pour des rapports décisionnels (*source : "maîtrise de DAX avancé et Power Query"*).
-  - Adoption large par les départements métiers, prouvant une capacité à vulgariser des concepts techniques (*source : "adoption large par les départements non-techniques"*).
-
-- **Analyse avancée avec Python** :
-  - Maîtrise professionnelle de **Python** (pandas, numpy, scikit-learn) pour l’automatisation de pipelines de données et l’analyse prédictive (*source : "automatisation de pipelines de données avec Python"*).
-  - Développement de **modèles de churn** et d’outils de tarification autonomes, illustrant une application concrète des compétences en data science (*source : "Développement d'un modèle de churn en production"*).
-
-- **Interaction avec les équipes métiers** :
-  - Collaboration étroite avec les équipes non techniques pour **prioriser les besoins analytiques** et aligner les livrables sur les objectifs business (*source : "vulgarisation des résultats techniques"*).
-  - Création d’**outils de tarification autonomes** pour les équipes métier, réduisant leur dépendance aux équipes data (*source : "création d'outils de tarification autonomes"*).
-
-- **Expérience sectorielle pertinente** :
-  - Expérience professionnelle dans le **secteur assurance**, avec des réalisations comme le **modèle de churn** et des **outils de tarification**, directement transférables au poste (*source : "expérience professionnelle dans le secteur assurance"*).
-  - Structuration de **pipelines ETL sur Snowflake** pour des rapports à grande échelle, démontrant une expertise en gestion de données complexes (*source : "structuration de pipelines ETL sur Snowflake"*).
-
-- **Amélioration continue des processus** :
-  - Refonte de la **méthodologie de calcul des commissions**, générant des gains de temps et une réduction des coûts (*source : "refonte de la méthodologie de calcul des commissions"*).
-  - Automatisation de processus métier (scraping, emailing), prouvant une approche proactive de l’optimisation (*source : "automatisation de processus métier"*).
+L’expérience dans le **secteur assurance** (modèle de churn, outils de tarification) est un atout supplémentaire pour des projets similaires.
 
 ---
 
 ## Gaps et incertitudes
+- **Gap connu** :
+  - **Excel avancé** : absence d’expérience professionnelle concrète en modélisation, analyse ou automatisation avancée avec Excel, malgré des certifications DataCamp couvrant ces compétences.
 
-### Gaps confirmés
-- **Excel avancé** :
-  Aucune expérience professionnelle concrète n’est mentionnée dans l’utilisation d’**Excel pour la modélisation, l’analyse ou l’automatisation** (ex : macros VBA, tableaux croisés dynamiques avancés, Power Pivot). Bien que le profil couvre des outils comme Python et Power BI, ce gap pourrait être un point de vigilance si l’entreprise utilise Excel comme outil principal pour certaines analyses (*source : absence de réalisation ou certification liée à Excel avancé*).
-
-### Flags incertains
-*Aucun flag incertain identifié* : toutes les compétences clés de l’offre ont été appariées à des réalisations ou certifications du profil, sans zone d’ombre nécessitant une clarification.
+- **Flags incertains** :
+  *(Aucun flag incertain identifié : les compétences clés de l’offre sont toutes couvertes par des réalisations professionnelles documentées.)*
 
 ---
 
 ## Questions d'entretien probables
+1. **Technique** :
+   - *"Pouvez-vous détailler la méthodologie utilisée pour prioriser le recall sur la précision dans votre modèle de churn ? Quels compromis avez-vous faits ?"* (*source : modèle de churn en production*).
+   - *"Comment avez-vous structuré vos pipelines ETL sur Snowflake pour fiabiliser les rapports ? Quels défis avez-vous rencontrés ?"* (*source : pipelines ETL Snowflake*).
+   - *"Quelles optimisations avez-vous apportées à vos requêtes SQL pour répondre aux demandes ad hoc des équipes opérationnelles ?"* (*source : SQL avancé*).
 
-1. **Approche analytique et impact métier** :
-   - *"Pouvez-vous décrire un projet où vos analyses ont directement influencé une décision stratégique ? Quels étaient les KPIs suivis, et quel a été l’impact mesurable ?"*
-     → *Attendu* : Mettre en avant le **modèle de churn** ou les **tableaux de bord Power BI adoptés**, en détaillant les métriques (ex : réduction du taux de churn, gain de temps pour les équipes métier).
+2. **Collaboration métier** :
+   - *"Comment avez-vous vulgarisé les résultats techniques de vos dashboards Power BI pour des audiences non techniques ?"* (*source : dashboards adoptés par les départements*).
+   - *"Quelle approche avez-vous adoptée pour aligner vos outils de tarification avec les besoins des équipes métier ?"* (*source : outils de tarification autonomes*).
 
-2. **Maîtrise technique (SQL/Python/Power BI)** :
-   - *"Comment optimiseriez-vous une requête SQL lente sur un jeu de données volumineux ? Pouvez-vous donner un exemple concret ?"*
-     → *Attendu* : Citer des techniques d’optimisation (index, jointures, sous-requêtes) appliquées dans des projets passés (*source : "Requêtes SQL avancées pour des demandes analytiques ad hoc"*).
-   - *"Quels outils utilisez-vous pour automatiser la préparation des données dans Power BI ? Comment gérez-vous les données manquantes ou incohérentes ?"*
-     → *Attendu* : Décrire l’utilisation de **Power Query** et des transformations appliquées dans des dashboards existants (*source : "maîtrise professionnelle de Power BI incluant Power Query"*).
-
-3. **Collaboration avec les métiers** :
-   - *"Comment priorisez-vous les demandes des équipes métiers lorsque leurs besoins dépassent vos capacités ? Avez-vous un exemple où vous avez dû dire 'non' ?"*
-     → *Attendu* : Mentionner la **création d’outils autonomes** (ex : tarification) pour réduire la dépendance aux équipes data, ou des méthodes de priorisation (ex : matrice impact/effort) (*source : "création d'outils de tarification autonomes"*).
+3. **Amélioration continue** :
+   - *"Quelles étapes avez-vous suivies pour automatiser le calcul des commissions et réduire le temps de traitement ?"* (*source : refonte des commissions*).
+   - *"Comment mesurez-vous l’impact de vos solutions data sur les processus métier ?"* (*source : fiabilisation des rapports*).
 
 4. **Secteur assurance** :
-   - *"Quelles spécificités du secteur assurance avez-vous rencontrées dans vos analyses ? Comment les avez-vous prises en compte ?"*
-     → *Attendu* : Évoquer le **modèle de churn** ou les **outils de tarification**, en soulignant les contraintes réglementaires ou les particularités des données clients (*source : "expérience professionnelle dans le secteur assurance"*).
-
-5. **Amélioration des processus** :
-   - *"Pouvez-vous partager un exemple où vous avez identifié une inefficacité dans un processus data et comment vous l’avez résolu ?"*
-     → *Attendu* : Décrire la **refonte du calcul des commissions** ou l’**automatisation de pipelines ETL**, en quantifiant les gains (temps, coûts) (*source : "refonte de la méthodologie de calcul des commissions"*).
-
-6. **Gestion des gaps (Excel)** :
-   - *"Comment gérez-vous les analyses dans Excel lorsque c’est l’outil principal d’une équipe ? Avez-vous des exemples de modélisation ou d’automatisation ?"*
-     → *Attendu* : Reconnaître le gap tout en proposant des solutions alternatives (ex : exporter des données depuis Power BI/Python vers Excel, ou se former rapidement si nécessaire).
+   - *"Quels indicateurs spécifiques au secteur assurance avez-vous intégrés dans vos dashboards Power BI ?"* (*source : dashboards sinistralité/commissions*).
+   - *"Comment votre modèle de churn a-t-il été adapté aux particularités du marché de l’assurance ?"* (*source : modèle de churn*).
 
 ---
 
 ## Angle de candidature
-
 **Positionnement** :
-Candidat **Data Analyst expérimenté**, alliant une **expertise technique solide** (SQL, Python, Power BI) et une **expérience sectorielle en assurance**, avec une approche centrée sur l’**impact métier**. Le profil se distingue par sa capacité à **traduire des données complexes en outils actionnables** pour les équipes non techniques, tout en optimisant les processus data en continu.
+Candidature comme **Data Analyst opérationnel**, mettant en avant une **double expertise technique et métier** :
+- **Technique** : maîtrise des outils (SQL, Power BI, Python, Snowflake) pour transformer des données brutes en insights actionnables.
+- **Métier** : expérience concrète dans l’assurance (churn, tarification, commissions), avec une capacité à collaborer avec les équipes pour prioriser les besoins et améliorer les processus.
 
-**Accroche pour la lettre de motivation/entretien** :
-*"Mon parcours en data analyse s’articule autour d’un fil conducteur : **transformer les données en leviers concrets pour les métiers**. Dans le secteur assurance, j’ai conçu un **modèle de churn en production** qui a permis d’identifier des segments clients à risque, tout en développant des **tableaux de bord Power BI** adoptés par les équipes commerciales pour piloter leur activité. Mon approche combine une **maîtrise technique** (SQL avancé, Python, DAX) et une **collaboration étroite avec les métiers** pour aligner les livrables sur leurs besoins opérationnels. Par exemple, j’ai créé des **outils de tarification autonomes** pour réduire leur dépendance aux équipes data, tout en automatisant des pipelines ETL pour gagner en efficacité. Votre offre de Data Analyst résonne particulièrement avec mon expérience, notamment sur la **priorisation des besoins métiers** et l’**amélioration continue des processus de reporting**."*
+**Accroche** :
+*"Data Analyst avec une expérience éprouvée dans la conception de solutions data alignées sur les enjeux métier, notamment dans le secteur assurance. Mon approche combine une expertise technique (SQL, Power BI, Python) avec une forte orientation résultats : j’ai développé des modèles de churn en production, automatisé des pipelines critiques (réduction de 90% du temps de traitement pour les commissions), et créé des dashboards adoptés par des audiences non techniques. Mon objectif : traduire les données en leviers concrets pour la prise de décision."*
 
-**Points à souligner pour se différencier** :
-1. **Impact quantifiable** :
-   - Mettre en avant les **gains mesurables** (ex : réduction du churn, gain de temps grâce à l’automatisation) pour montrer une approche ROIste.
-   - Exemple : *"La refonte du calcul des commissions a permis de réduire les erreurs de 30 % et de diviser par deux le temps de traitement."*
+**Points différenciants** :
+1. **Impact mesurable** :
+   - Automatisation des commissions (gain de temps de **10h à 35min**, économie de licences) et fiabilisation des rapports via Snowflake (*source : refonte des commissions*).
+   - Modèle de churn avec un **recall de 85%**, adapté aux priorités métier (*source : modèle de churn*).
 
-2. **Autonomie des métiers** :
-   - Insister sur la **création d’outils autonomes** (ex : tarification) pour prouver une capacité à **désengorger les équipes data** et à **responsabiliser les utilisateurs finaux**.
+2. **Collaboration transverse** :
+   - Création d’outils autonomes pour les équipes métier (ex. tarification) et vulgarisation des résultats techniques (*source : outils de tarification + dashboards Power BI*).
 
 3. **Secteur assurance** :
-   - Valoriser l’**expérience sectorielle** (modèle de churn, outils de tarification) pour rassurer sur la compréhension des enjeux spécifiques (réglementation, données clients sensibles).
+   - Expérience directe sur des cas d’usage sensibles (sinistralité, commissions) et connaissance des KPIs sectoriels (*source : dashboards sinistralité/commissions*).
 
-4. **Adaptabilité technique** :
-   - Bien que le gap sur **Excel avancé** soit identifié, proposer une **montée en compétences rapide** si nécessaire, en s’appuyant sur la maîtrise d’outils similaires (Power BI, Python).
-
-**Ton à adopter** :
-- **Concret et orienté solutions** : Éviter les généralités, privilégier des exemples précis avec des **chiffres** et des **résultats**.
-- **Collaboratif** : Montrer une écoute active des besoins métiers et une capacité à **vulgariser** les concepts techniques.
-- **Proactif** : Mettre en avant les initiatives d’**amélioration des processus** (automatisation, refonte de méthodologies) pour prouver une approche innovante.
+**Structure de la lettre/entretien** :
+- **Paragraphe 1** : Accroche sur l’alignement technique et métier (ex. : *"Votre recherche d’un Data Analyst capable de transformer des données en outils décisionnels résonne avec mon parcours..."*).
+- **Paragraphe 2** : Mise en avant de **2-3 réalisations clés** (ex. : modèle de churn + automatisation des commissions) avec des **chiffres d’impact**.
+- **Paragraphe 3** : Insistance sur la **collaboration avec les métiers** (ex. : *"J’ai conçu des dashboards Power BI en étroite collaboration avec les équipes opérationnelles pour m’assurer qu’ils répondent à leurs besoins..."*).
+- **Paragraphe 4** : Ouverture sur la **valeur ajoutée** pour l’entreprise (ex. : *"Mon expérience dans l’assurance et ma maîtrise des outils data me permettraient de contribuer rapidement à vos projets de [mentionner un enjeu de l’offre, ex. : optimisation des processus de reporting]..."*).

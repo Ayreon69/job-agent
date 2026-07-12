@@ -1,70 +1,58 @@
 ## Résumé du matching
-Le profil présente une adéquation forte (85/100) avec le poste de **CNC Data Analyst**, grâce à des compétences techniques et métiers bien alignées sur les exigences clés de l'offre :
+Le profil présente une adéquation solide (78/100) avec le poste de **Cnc Data Analyst**, grâce à des réalisations concrètes alignées sur les attentes clés de l’offre :
 
-- **Analyse de données et reporting** : Conception de tableaux de bord Power BI alignés sur les KPIs métier, adoptés par plusieurs départements (*source : réalisation Power BI + certifications DataCamp*). Maîtrise des outils de visualisation (Power BI, Tableau) et des langages SQL/Python pour le reporting décisionnel.
-- **Optimisation des processus** : Automatisation du calcul des commissions (gain de temps : 10h → 35min, suppression de coûts de licence) et développement d’outils de tarification autonomes pour les équipes métier (*source : réalisations chiffrées*).
-- **Collaboration IT et Master Data** : Structuration de pipelines ETL sur Snowflake (architecture Medallion) et requêtes SQL avancées pour des analyses ad hoc (*source : expérience Snowflake et SQL*).
-- **Secteur réglementé** : Expérience dans la santé (outils de tarification pour produits santé individuelle) et l’assurance (modèle de churn en production), avec une sensibilité aux données sensibles (*source : réalisations secteur santé/assurance*).
+- **Expertise en reporting et tableaux de bord** :
+  - Conception de tableaux de bord Power BI (DAX avancé, Power Query) adoptés par plusieurs départements, avec des indicateurs sensibles (commissions, sinistralité) *(source : réalisation sur indicateurs financiers)*.
+  - Certifications DataCamp (Associate Data Analyst) et maîtrise de Power BI, SQL et Python pour l’automatisation des rapports.
 
-Les certifications DataCamp en Power BI, Tableau, SQL et Python renforcent la crédibilité technique, tandis que l’impact opérationnel des réalisations (automatisation, outils métiers) démontre une approche orientée résultats.
+- **Analyse opérationnelle et optimisation** :
+  - Développement d’un modèle de *churn prediction* en production (recall de 85%) et automatisation du calcul des commissions (réduction du temps de traitement de 10h à 35min) *(source : outils de tarification et commissions)*.
+  - Refonte de pipelines ETL sur Snowflake (architecture proche Medallion) pour fiabiliser la production de rapports *(source : structuration de pipelines)*.
 
----
+- **Collaboration transverse et amélioration des outils** :
+  - Création d’outils de tarification autonomes pour les équipes métier, réduisant leur dépendance technique *(source : outils de tarification)*.
+  - Prototypage d’un assistant interne basé sur l’API Mistral (interface Gradio) pour répondre aux questions sur les règles de commission *(source : assistant interne)*.
+
+- **Alignement avec les KPIs business** :
+  - Structuration de rapports alignés sur les besoins métiers (ex : coût moyen, commissions) et automatisation de processus via pandas et Brevo *(source : automatisation des commissions et outreach email)*.
 
 ## Gaps et incertitudes
 **Gaps confirmés** (compétences absentes dans le profil) :
-- **Salesforce** : Aucune expérience professionnelle en gestion, administration ou formation sur Salesforce (*source : absence de mention dans les réalisations*).
-- **Notifications clients et conformité** : Pas d’expérience directe en gestion de notifications clients ou application de procédures réglementées spécifiques (ex : BD) (*source : gap constaté malgré l’expérience en assurance*).
-- **Communication client** : Expérience limitée à la vulgarisation technique, sans gestion de réunions clients, feedback structuré ou méthodologies *Voice of the Customer* (*source : absence de mention dans les réalisations*).
-- **Suite Microsoft Office** : Maîtrise non documentée d’Excel avancé (formules complexes, macros), PowerPoint ou Word (*source : focus exclusif sur outils techniques*).
+- **Salesforce** : Aucune expérience professionnelle en gestion ou administration du CRM, malgré une utilisation ponctuelle pour de la prospection B2B automatisée *(source : absence de mention dans les réalisations)*.
+- **Gestion des notifications clients et conformité** : Aucune expérience identifiée dans un secteur régulé (ex : pharmaceutique), ni en préparation de packages de notification ou respect de procédures formelles *(source : absence de réalisations liées)*.
+- **Animation de réunions clients et Voice of the Customer** : Pas d’expérience directe en collecte structurée de retours clients ou en gestion de réunions dédiées *(source : focus sur des outils internes et automatisation)*.
 
 **Flags incertains** :
-*Aucun* – Les gaps identifiés sont des absences confirmées, sans zone d’ombre résiduelle.
-
----
+*Aucun flag identifié* – les gaps listés ci-dessus sont des absences confirmées, sans zone d’ombre résiduelle.
 
 ## Questions d'entretien probables
-1. **Salesforce et CRM** :
-   - *"Comment compenseriez-vous votre manque d’expérience sur Salesforce pour répondre aux besoins de gestion des données clients ?"* (Attendu : proposition de formation accélérée ou transfert de compétences depuis d’autres outils CRM).
-   - *"Avez-vous déjà travaillé avec des outils similaires à Salesforce (ex : HubSpot, Dynamics) ? Si oui, comment adapteriez-vous cette expérience ?"*
+1. **Technique** :
+   - *"Pouvez-vous détailler la méthodologie utilisée pour votre modèle de churn (recall de 85%) ? Quels algorithmes ou features ont été déterminants ?"* *(source : modèle de churn en production)*.
+   - *"Comment avez-vous structuré vos pipelines ETL sur Snowflake pour garantir la fiabilité des données ? Quels défis avez-vous rencontrés ?"* *(source : architecture Medallion)*.
 
-2. **Conformité et notifications** :
-   - *"Dans un contexte réglementé comme le nôtre, comment structureriez-vous un processus de notification client pour garantir la conformité ?"* (Attendu : méthodologie rigoureuse, documentation, collaboration avec les équipes juridiques).
-   - *"Pouvez-vous partager un exemple où vous avez dû appliquer des règles métiers strictes dans vos analyses ?"* (Attendu : référence aux outils de tarification santé ou modèle de churn).
+2. **Collaboration et impact métier** :
+   - *"Comment avez-vous convaincu des équipes non-techniques d’adopter vos tableaux de bord Power BI ? Quels indicateurs ont été les plus difficiles à standardiser ?"* *(source : adoption des tableaux de bord)*.
+   - *"Quelle approche avez-vous suivie pour automatiser le calcul des commissions ? Comment avez-vous mesuré le gain de temps (10h → 35min) ?"* *(source : automatisation des commissions)*.
 
-3. **Collaboration métier/IT** :
-   - *"Décrivez un projet où vous avez dû traduire des besoins métiers en solutions techniques. Quels défis avez-vous rencontrés ?"* (Attendu : outil de tarification autonome ou assistant Mistral pour les commissions).
-   - *"Comment gérez-vous les demandes ad hoc des équipes métier tout en maintenant la fiabilité des données ?"* (Attendu : pipelines ETL, requêtes SQL optimisées).
+3. **Gaps et adaptation** :
+   - *"Le poste implique une gestion de Salesforce pour suivre les notifications clients. Comment comptez-vous monter en compétence rapidement sur ce CRM ?"* *(source : gap Salesforce)*.
+   - *"Dans un secteur régulé comme le pharmaceutique, comment aborderiez-vous la conformité des notifications clients, même sans expérience préalable ?"* *(source : gap conformité)*.
 
-4. **Optimisation des processus** :
-   - *"Quelle méthodologie utilisez-vous pour identifier les goulots d’étranglement dans un processus métier ?"* (Attendu : analyse des temps de traitement, automatisation ciblée).
-   - *"Comment mesurez-vous l’impact de vos optimisations ?"* (Attendu : indicateurs quantitatifs comme le gain de temps ou la réduction des coûts).
-
-5. **Visualisation et reporting** :
-   - *"Comment adaptez-vous vos tableaux de bord Power BI à des audiences non techniques ?"* (Attendu : vulgarisation, choix des KPIs, design intuitif).
-   - *"Quels outils utilisez-vous pour automatiser la mise à jour des rapports ?"* (Attendu : Power Query, scripts Python, pipelines ETL).
-
----
+4. **Projets futurs** :
+   - *"Quels outils ou méthodes proposeriez-vous pour améliorer la collecte de la Voice of the Customer dans notre contexte ?"* *(source : gap Voice of the Customer)*.
+   - *"Comment prioriseriez-vous les demandes d’amélioration des outils digitaux entre les équipes IT, métier et conformité ?"* *(source : collaboration transverse)*.
 
 ## Angle de candidature
-**Message clé** : *"Data Analyst opérationnel avec une expertise prouvée en analyse décisionnelle et optimisation des processus, idéal pour renforcer l’efficacité des outils CNC tout en garantissant la fiabilité des données."*
+**Positionnement** :
+Candidat **Data Analyst opérationnel**, spécialisé dans la **transformation des données en outils décisionnels** pour les équipes métier. Votre valeur ajoutée réside dans :
+- **L’alignement technique et business** : Capacité à traduire des besoins métiers complexes (ex : commissions, tarification) en solutions automatisées et scalables *(ex : réduction de 10h à 35min pour le calcul des commissions)*.
+- **L’impact mesurable** : Expérience en déploiement de modèles prédictifs (churn) et en refonte de processus (ETL, reporting) avec des gains quantifiables *(ex : recall de 85%, adoption des tableaux de bord)*.
+- **La collaboration transverse** : Expérience en interface avec des équipes IT, Master Data et commerciales, avec une approche centrée sur l’autonomie des utilisateurs *(ex : outils de tarification autonomes, assistant interne LLM)*.
 
-**Structure de l’angle** :
-1. **Alignement technique** :
-   - Mettre en avant la **maîtrise des outils clés** (Power BI, SQL, Python) et les **certifications DataCamp** pour rassurer sur la capacité à produire des rapports fiables et actionnables.
-   - Insister sur l’**expérience en secteur réglementé** (santé, assurance) pour montrer une sensibilité aux enjeux de conformité, même si le gap sur les notifications clients est reconnu.
+**Message clé** :
+*"Mon expertise en Power BI, Snowflake et SQL, couplée à une expérience en secteur régulé (assurance), me permet de concevoir des solutions data qui allient rigueur technique et pertinence métier. Mon objectif : vous accompagner dans l’optimisation de vos processus de reporting et d’analyse, tout en m’adaptant rapidement aux spécificités de votre secteur (pharmaceutique) et de vos outils (Salesforce)."*
 
-2. **Impact métier** :
-   - Valoriser les **réalisations chiffrées** (automatisation des commissions, outils de tarification) pour illustrer une approche orientée résultats et une compréhension des enjeux métiers.
-   - Souligner la **collaboration avec les équipes IT** (pipelines ETL, Snowflake) pour démontrer une capacité à travailler en transverse.
-
-3. **Stratégie de compensation des gaps** :
-   - **Salesforce** : Proposer une **montée en compétences rapide** via des formations certifiantes (ex : Trailhead) et un transfert de compétences depuis d’autres outils CRM ou bases de données.
-   - **Communication client** : Mettre en avant l’**expérience en vulgarisation technique** (ex : formation des équipes métier à l’outil de tarification) comme base pour développer des compétences en gestion de feedback.
-   - **Conformité** : S’appuyer sur l’**expérience en modélisation de scénarios tarifaires** (santé/assurance) pour montrer une capacité à appliquer des règles métiers strictes.
-
-4. **Proposition de valeur unique** :
-   - **Double casquette** : Combinaison rare d’une **expertise technique** (Power BI, SQL) et d’une **compréhension des processus métiers** (optimisation, outils autonomes), idéale pour un rôle CNC à l’interface entre IT et opérationnel.
-   - **Approche proactive** : Expérience en **prototypage d’outils innovants** (ex : assistant Mistral pour les commissions) pour montrer une capacité à anticiper les besoins futurs.
-
-**Exemple d’accroche pour la lettre de motivation** :
-*"Fort de 5 ans d’expérience en analyse de données et optimisation des processus, j’ai conçu des outils décisionnels adoptés par des équipes métiers (ex : tableaux de bord Power BI pour le suivi des KPIs) et automatisé des tâches chronophages (réduction de 90% du temps de calcul des commissions). Mon expertise en SQL avancé et en collaboration avec les équipes IT (pipelines ETL sur Snowflake) me permet de garantir la fiabilité des données, tandis que mon expérience dans les secteurs réglementés (santé, assurance) renforce ma sensibilité aux enjeux de conformité. Bien que mon parcours n’inclue pas encore Salesforce, ma capacité à monter rapidement en compétences sur de nouveaux outils (ex : certifications DataCamp) et mon approche orientée solutions métiers me positionnent comme un candidat opérationnel pour ce rôle de CNC Data Analyst."*
+**Points à souligner en entretien** :
+- **Adaptabilité** : Mettre en avant des exemples de montée en compétence rapide sur de nouveaux outils (ex : passage à Snowflake, certification DataCamp).
+- **Conformité implicite** : Insister sur l’expérience en secteur régulé (assurance) pour rassurer sur la capacité à intégrer des contraintes procédurales, même si le domaine diffère.
+- **Autonomie** : Valoriser les projets où vous avez réduit la dépendance technique des équipes (ex : outils de tarification autonomes).

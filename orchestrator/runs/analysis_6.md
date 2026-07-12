@@ -1,74 +1,76 @@
 ## Résumé du matching
-Cette candidature présente un **matching élevé (85/100)** avec le poste de Data Analyst, porté par une expertise technique et métier alignée sur les attentes de l’offre. Voici les points forts structurants :
+Ce profil présente une adéquation forte (80/100) avec le poste de **Data Analyst H/F**, grâce à des réalisations concrètes et alignées sur les attentes de l’offre :
 
-- **Collecte et structuration des données** :
-  - Architecture de pipelines ETL sur Snowflake inspirée du modèle *Medallion* (staging → core → reporting), garantissant une gouvernance technique et une fiabilité des données (*source : structuration des pipelines ETL*).
-  - Certifications DataCamp en SQL avancé et Python pour le traitement des données, validant une maîtrise des outils clés.
+- **Structuration et gouvernance des données** :
+  - Conception de pipelines ETL sur Snowflake avec une architecture en couches (staging → core → reporting), inspirée du modèle Medallion (*source : structuration des pipelines ETL*).
+  - Certification DataCamp en SQL avancé et Python pour le traitement des données, garantissant une maîtrise technique des outils.
 
-- **Analyse et reporting** :
-  - Conception de **tableaux de bord Power BI** adoptés par l’ensemble des départements, avec une approche centrée sur les KPIs métier (*source : alignement des dashboards sur les KPIs*).
-  - Réalisation d’**analyses prédictives** (modèle de churn avec un recall de 85%) et d’outils de tarification autonomes pour les équipes métier (*source : modèle de churn et outil de tarification*).
-  - Automatisation de rapports et vulgarisation des résultats pour des audiences non techniques (*source : automatisation des rapports*).
+- **Analyse et reporting décisionnel** :
+  - Déploiement de tableaux de bord Power BI adoptés par l’ensemble des départements, avec un alignement sur les KPIs métier (*source : conception de tableaux de bord Power BI*).
+  - Réalisation d’analyses ad hoc pour des équipes opérationnelles et la direction, démontrant une capacité à traduire des besoins métiers en insights actionnables.
 
-- **Outils BI et datawarehouse** :
-  - Maîtrise de **Power BI** (DAX avancé, Power Query) et de **Snowflake** pour des architectures ETL scalables (*source : conception d’outils décisionnels*).
-  - Expérience en **SQL avancé** (optimisation de requêtes, gestion de bases de données) et en structuration de pipelines pour des rapports à grande échelle (*source : requêtes SQL avancées*).
+- **Modélisation prédictive et automatisation** :
+  - Développement d’un modèle de machine learning en production pour la prédiction de churn (recall à 85%), avec une justification métier des choix statistiques (*source : modèle de churn*).
+  - Automatisation du calcul des commissions (réduction du temps de traitement de 10h à 35 min) et élimination des coûts de licence logicielle (*source : automatisation des commissions*).
 
-- **Automatisation et optimisation** :
-  - Réduction du temps de traitement des commissions de **10h à 35 minutes** via l’automatisation (*source : automatisation du calcul des commissions*).
-  - Utilisation de **Playwright** pour du scraping avancé et de **pandas** pour des pipelines de données (*source : refonte de processus métier*).
+- **Accompagnement des utilisateurs et culture data** :
+  - Vulgarisation des résultats techniques pour des audiences non-techniques, via des tableaux de bord Power BI ou un prototype d’assistant interne basé sur l’API Mistral (*source : prototypage d’un assistant interne*).
+  - Formation en Risk Management (Master Économétrie et Statistiques, ISFA), renforçant la crédibilité sur les enjeux de gouvernance et d’analyse financière.
 
-- **Culture data et accompagnement** :
-  - Conception d’outils décisionnels adoptés par des utilisateurs non techniques, avec une approche pédagogique (*source : vulgarisation des résultats*).
-  - Participation à des projets de **transformation digitale** (fiabilisation des données, adoption d’outils BI) (*source : gestion de projets data*).
-
----
+- **Outils clés** :
+  - Maîtrise de **Power BI** (DAX avancé, Power Query), **Snowflake** (architecture ETL), et **SQL avancé** (optimisation de requêtes, agrégations).
 
 ## Gaps et incertitudes
-**Gaps confirmés** (compétences absentes dans le profil) :
-- **Gouvernance formelle des données** : Expérience limitée à la gouvernance technique (architecture, pipelines), sans pratique de comités ou chartes formelles.
-- **ERP métiers spécifiques** : Maîtrise de Snowflake et SQL, mais pas d’expérience mentionnée avec des ERP comme SAP ou Oracle.
-- **Cloud AWS/Azure en production** : Notions théoriques uniquement, sans déploiement en conditions réelles.
+- **Gouvernance formelle des données** :
+  L’expérience se limite à la gouvernance *technique* (architecture, pipelines) et n’inclut pas de participation à des comités de gouvernance ou à la rédaction de chartes (*gap confirmé*).
 
-**Flags incertains** :
-*Aucun* – Tous les éléments clés de l’offre ont été couverts par des matches fiables.
+- **Veille technologique en analytique financière** :
+  Aucune mention d’une veille ciblée sur les outils ou méthodes spécifiques à l’analytique financière (*gap confirmé*).
 
----
+- **ERP spécifiques** :
+  Expérience avérée avec Snowflake, mais pas de référence explicite à d’autres ERP ou outils métiers financiers (*gap confirmé*).
+
+*Note* : Aucun flag incertain n’a été identifié (toutes les compétences non couvertes sont des absences confirmées).
 
 ## Questions d'entretien probables
 1. **Architecture data** :
-   - *"Pouvez-vous détailler votre approche pour structurer un pipeline ETL sur Snowflake, notamment les choix d’architecture (ex : modèle Medallion) ?"* (*source : structuration des pipelines ETL*).
-   - *"Comment avez-vous fiabilisé les données dans vos précédents projets ?"* (*source : gouvernance technique des données*).
+   - *"Pouvez-vous détailler votre approche pour concevoir une architecture ETL en couches sur Snowflake ? Quels étaient les défis techniques et les gains obtenus ?"* (*lié à la structuration des pipelines ETL*).
 
-2. **Analyse prédictive** :
-   - *"Quelle méthodologie avez-vous suivie pour développer votre modèle de churn (recall de 85%) ? Comment avez-vous justifié sa pertinence métier ?"* (*source : modèle de churn*).
-   - *"Comment avez-vous vulgarisé les résultats de vos analyses pour des équipes non techniques ?"* (*source : vulgarisation des résultats*).
+2. **Analyse métier** :
+   - *"Comment avez-vous aligné vos tableaux de bord Power BI sur les KPIs de la direction ? Pouvez-vous partager un exemple où vos insights ont influencé une décision stratégique ?"* (*lié aux tableaux de bord adoptés par les départements*).
 
-3. **Outils BI** :
-   - *"Quels défis avez-vous rencontrés lors de la conception de tableaux de bord Power BI pour des indicateurs sensibles (ex : commissions) ?"* (*source : dashboards Power BI sur KPIs sensibles*).
-   - *"Comment optimisez-vous les requêtes SQL pour des rapports à grande échelle ?"* (*source : requêtes SQL avancées*).
+3. **Modélisation prédictive** :
+   - *"Pour votre modèle de churn (recall 85%), comment avez-vous arbitré entre recall et précision ? Quels critères métiers ont guidé ce choix ?"* (*lié au modèle de machine learning en production*).
 
 4. **Automatisation** :
-   - *"Quels outils avez-vous utilisés pour automatiser le calcul des commissions (réduction de 10h à 35 min) ?"* (*source : automatisation des commissions*).
-   - *"Comment gérez-vous les dépendances entre processus lors de la refonte de flux métier ?"* (*source : refonte de processus critiques*).
+   - *"Quelles technologies avez-vous utilisées pour automatiser le calcul des commissions ? Comment avez-vous mesuré l’impact de cette automatisation ?"* (*lié à la réduction du temps de traitement*).
 
-5. **Collaboration** :
-   - *"Comment alignez-vous vos outils décisionnels avec les besoins des équipes métier ?"* (*source : adoption des dashboards par les départements*).
-   - *"Avez-vous déjà formé des utilisateurs à l’utilisation d’outils data ? Si oui, quelle approche pédagogique ?"* (*source : accompagnement des utilisateurs*).
+5. **Gouvernance et accompagnement** :
+   - *"Comment avez-vous formé des utilisateurs non-techniques à l’utilisation de vos outils data ? Avez-vous rencontré des résistances, et comment les avez-vous surmontées ?"* (*lié à la vulgarisation des résultats techniques*).
 
----
+6. **Gaps identifiés** :
+   - *"Votre expérience en gouvernance des données semble technique. Comment envisagez-vous de monter en compétences sur les aspects formels (comités, chartes) ?"*
+   - *"Quels outils ou méthodes spécifiques à l’analytique financière suivez-vous actuellement dans le cadre de votre veille ?"*
 
 ## Angle de candidature
 **Positionnement** :
-Candidat **Data Analyst expérimenté**, alliant une **double expertise technique et métier** pour transformer des données brutes en leviers décisionnels. Votre profil se distingue par :
-- Une **approche architecturale** des données (pipelines ETL, Snowflake, modèle Medallion), garantissant des fondations solides pour l’analyse.
-- Une **capacité à industrialiser** des solutions (automatisation des commissions, outils de tarification) tout en les rendant accessibles aux équipes non techniques.
-- Une **culture data orientée résultats**, avec des réalisations concrètes en analyse prédictive (churn) et en reporting aligné sur les KPIs.
+Candidat **Data Analyst sénior** (3,5 ans d’expérience) avec une expertise reconnue en **structuration de données, reporting décisionnel et automatisation**, idéal pour un rôle où la rigueur technique et l’impact métier sont prioritaires. La localisation en Rhône-Alpes et la maîtrise des outils clés (Power BI, Snowflake, SQL) renforcent l’adéquation avec les besoins locaux.
 
-**Accroche pour l’entreprise** :
-*"Votre recherche d’un Data Analyst capable de structurer des données fiables et de les traduire en insights actionnables résonne avec mon parcours. Chez [Ancien Employeur], j’ai conçu des pipelines ETL scalables sur Snowflake et développé des tableaux de bord Power BI adoptés par l’ensemble des départements, réduisant les temps de traitement de 90% (ex : commissions). Mon approche combine rigueur technique (SQL avancé, DAX) et sens métier, comme en témoigne mon modèle de churn déployé en production. Je souhaite mettre cette expertise au service de [Entreprise], pour renforcer votre capacité à prendre des décisions data-driven, tout en accompagnant vos équipes dans l’adoption des outils."*
+**Accroche** :
+*"Mon approche combine une expertise technique en architecture data (Snowflake, ETL en couches) et une capacité à traduire des données complexes en leviers opérationnels pour les équipes. Par exemple, j’ai conçu des tableaux de bord Power BI adoptés par l’ensemble des départements, tout en automatisant des processus métiers critiques (comme le calcul des commissions, passé de 10h à 35 min). Mon objectif : renforcer la fiabilité et l’accessibilité des données pour soutenir la prise de décision."*
 
-**Points à souligner en entretien** :
-- **Impact mesurable** : Mettre en avant les gains quantifiables (ex : réduction des temps de traitement, recall du modèle de churn).
-- **Alignement métier** : Insister sur la collaboration avec les équipes (vulgarisation, adoption des dashboards).
-- **Vision long terme** : Évoquer l’importance de la gouvernance technique et de l’architecture data pour pérenniser les solutions.
+**Points différenciants** :
+1. **Impact chiffré** :
+   - Automatisation des commissions (*gain de temps : -90%*) et élimination de coûts de licence (*source : automatisation des processus*).
+   - Modèle de churn en production avec un recall de 85%, justifié par des critères métiers (*source : modèle de machine learning*).
+
+2. **Double compétence technique et métier** :
+   - Capacité à dialoguer avec les équipes techniques (architecture ETL) *et* les opérationnels (vulgarisation via Power BI ou l’assistant Mistral).
+   - Formation en Risk Management (ISFA) pour aborder les enjeux financiers avec rigueur.
+
+3. **Culture data proactive** :
+   - Prototypage d’outils innovants (assistant interne basé sur Mistral) et accompagnement des utilisateurs pour favoriser l’adoption.
+
+**Réponse aux gaps** :
+- *Gouvernance formelle* : Mettre en avant la gouvernance *technique* (fiabilisation des pipelines, documentation) et exprimer une volonté de monter en compétences sur les aspects organisationnels (ex : participation à des ateliers sur les chartes data).
+- *Veille analytique financière* : Souligner une veille active sur les bonnes pratiques data (certifications DataCamp) et une ouverture à se former sur les outils spécifiques au secteur (ex : outils de scoring financier).

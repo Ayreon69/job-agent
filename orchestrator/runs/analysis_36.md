@@ -1,103 +1,59 @@
 ## Résumé du matching
+Cette candidature présente une adéquation solide (75/100) avec le poste de **Data Scientist**, portée par une expérience concrète en **machine learning appliqué** et une **maîtrise des enjeux métiers**. Voici les points forts clés, étayés par des réalisations tangibles :
 
-Cette candidature présente un **matching solide (75/100)** pour le poste de **Data Scientist**, avec des **réalisations concrètes et alignées** sur les attentes clés de l'offre :
+- **Modélisation prédictive et optimisation métier** :
+  Développement d’un modèle de *churn* chez ECA Assurances avec un *recall de 85%*, justifié par des choix statistiques alignés sur les priorités business (match : "Machine Learning et Deep Learning"). Le modèle est en production depuis le mémoire de fin d’études, démontrant une capacité à livrer des solutions opérationnelles (match : "Gestion du cycle de vie des projets data/IA").
 
-- **Expertise en Machine Learning et Deep Learning** :
-  - Construction et mise en production d’un **modèle de churn** avec **scikit-learn**, atteignant un **recall de 85%** (source : réalisation "modèle de churn en production").
-  - Justification des **choix métiers** derrière les métriques (recall vs précision), démontrant une approche pragmatique et orientée impact (source : même réalisation).
+- **Analyse de données et outils décisionnels** :
+  Création de **tableaux de bord Power BI** adoptés par les équipes métier, avec une certification DataCamp à l’appui (match : "Analyse et interprétation des données"). Expérience en modélisation de scénarios tarifaires et en requêtes SQL ad hoc pour répondre à des besoins ponctuels (match : "Vulgarisation et présentation des résultats").
 
-- **Analyse et interprétation des données** :
-  - Développement de **tableaux de bord Power BI** adoptés à l’échelle de l’entreprise, alignés sur les **KPIs métier** (source : "conception de tableaux de bord Power BI").
-  - Vulgarisation des résultats techniques pour des **audiences non-techniques** via des requêtes SQL ad hoc (source : même réalisation).
-  - **Certifications DataCamp** en data science et analyse, renforçant la crédibilité technique.
+- **Collaboration transverse et cadrage des besoins** :
+  Conception d’un **outil de tarification autonome** pour les équipes métier, illustrant une capacité à traduire des enjeux business en solutions techniques (match : "Recueil et cadrage des besoins métiers"). Automatisation de processus (ex : commissions) avec un impact mesurable (match : "Gestion du cycle de vie des projets data/IA").
 
-- **Optimisation et validation de modèles** :
-  - Priorisation du **recall sur la précision** pour le modèle de churn, avec une **justification statistique** basée sur les coûts métier (source : "optimisation d'un modèle de churn").
-
-- **Recueil et cadrage des besoins métiers** :
-  - Création d’**outils de tarification autonomes** pour les équipes métier (source : "création d'outils de tarification autonomes").
-  - Développement d’un **modèle de churn aligné sur les besoins de fidélisation**, illustrant une capacité à traduire des enjeux business en solutions data (source : "modèle de churn en production").
-
-- **Bonnes pratiques de développement et gestion des données** :
-  - Maîtrise de **SQL avancé**, **Python** (pandas, numpy, scikit-learn), et **Snowflake** (architecture ETL proche du modèle Medallion) (source : "structuration de pipelines de données fiabilisés").
-  - Structuration de **pipelines ETL** robustes, garantissant la fiabilité des données (source : même réalisation).
-
-- **Conception de solutions data/IA** :
-  - Prototypage d’un **assistant interne basé sur l’API Mistral**, montrant une curiosité pour les **nouvelles technologies** (source : "prototypage d'un assistant interne").
-  - Expérience en **mise en production** de modèles, un critère clé pour les postes opérationnels (source : "modèle de churn en production").
-
----
+- **Stack technique moderne** :
+  Maîtrise de **Python (scikit-learn, pandas), SQL avancé, et Snowflake** pour des pipelines ETL structurés (architecture proche Medallion). Utilisation quotidienne de GitHub et d’outils comme Playwright pour des projets collaboratifs (match : "Bonnes pratiques de développement et gestion des données").
 
 ## Gaps et incertitudes
+- **Gaps confirmés** :
+  - **Computer Vision** : Compétence à l’état de notions théoriques, sans application professionnelle ou projet concret (gap identifié).
+  - **Deep Learning avancé** : Expérience limitée au machine learning classique (scikit-learn), sans preuve de maîtrise de frameworks comme TensorFlow ou PyTorch (gap identifié).
+  - **Déplacements professionnels** : Aucune mention d’expérience passée en déplacements, bien que cela ne soit pas un frein pour des missions locales.
 
-### Gaps confirmés (compétences absentes ou limitées) :
-1. **Computer Vision** :
-   - Compétence à un **stade de notions théoriques uniquement**, sans expérience pratique en conditions réelles (source : gap identifié dans le profil).
-
-2. **Feuille de route et gestion de projets data/IA** :
-   - Expérience limitée à la **structuration de pipelines ETL** et à l’**autonomie sur des projets de recherche appliquée**, sans mention de **gestion formelle de feuilles de route** ou de méthodologies projet (ex : Agile, Scrum) (source : gap identifié dans le profil).
-
-3. **Déplacements ponctuels** :
-   - Aucune mention d’expérience ou d’ouverture aux déplacements dans le profil, alors que l’offre les prévoit (source : gap identifié dans le profil).
-
-### Flags incertains :
-*Aucun flag incertain identifié* : les compétences et expériences non couvertes par le matching sont des **absences confirmées** (gaps), et non des zones d’incertitude.
-
----
+- **Flags incertains** :
+  Aucun flag incertain détecté (tous les écarts sont des gaps confirmés).
 
 ## Questions d'entretien probables
+1. **Modélisation prédictive** :
+   - *"Comment avez-vous justifié le choix d’optimiser le recall à 85% pour votre modèle de churn, et quels compromis cela a-t-il impliqués ?"* (Source : réalisation chez ECA Assurances).
+   - *"Quelles métriques avez-vous utilisées pour valider votre modèle en production, et comment avez-vous mesuré son impact métier ?"*
 
-1. **Approche métier et impact** :
-   - *"Pouvez-vous détailler la justification derrière le choix du recall (85%) plutôt que de la précision pour votre modèle de churn ? Comment avez-vous aligné ce choix avec les enjeux business de l’entreprise ?"* (Source : "optimisation d'un modèle de churn").
-   - *"Comment avez-vous mesuré l’adoption et l’impact des tableaux de bord Power BI que vous avez conçus ?"* (Source : "conception de tableaux de bord Power BI").
+2. **Collaboration métier** :
+   - *"Pouvez-vous décrire un cas où vous avez dû vulgariser un résultat technique pour une équipe non-data ? Quels outils ou méthodes avez-vous utilisés ?"* (Source : outils Power BI et requêtes SQL ad hoc).
+   - *"Comment avez-vous recueilli les besoins pour votre outil de tarification, et quels défis avez-vous rencontrés pour le rendre autonome ?"*
 
-2. **Technique et bonnes pratiques** :
-   - *"Quelles étaient les principales difficultés rencontrées lors de la mise en production de votre modèle de churn, et comment les avez-vous surmontées ?"* (Source : "modèle de churn en production").
-   - *"Pouvez-vous décrire l’architecture ETL que vous avez mise en place sur Snowflake ? Quels étaient les défis liés à la fiabilisation des pipelines ?"* (Source : "structuration de pipelines de données fiabilisés").
+3. **Stack technique** :
+   - *"Quelle architecture avez-vous mise en place sur Snowflake pour vos pipelines ETL, et quels avantages cela a-t-il apportés ?"* (Source : expérience en structuration de données).
+   - *"Comment gérez-vous les versions de code et la collaboration sur GitHub pour des projets data ?"*
 
-3. **Gestion de projet et collaboration** :
-   - *"Comment avez-vous cadré les besoins métiers pour le développement de vos outils de tarification autonomes ? Avez-vous rencontré des résistances de la part des équipes utilisatrices ?"* (Source : "création d'outils de tarification autonomes").
-   - *"Avez-vous déjà travaillé avec des méthodologies Agile ou Scrum pour des projets data ? Si non, comment organisez-vous votre travail en autonomie ?"* (Source : gap "feuille de route et gestion de projets data/IA").
-
-4. **Adaptation et apprentissage** :
-   - *"Votre profil montre une expérience limitée en computer vision. Comment comptez-vous monter en compétences sur ce sujet si le poste le requiert ?"* (Source : gap "computer vision").
-   - *"L’offre mentionne des déplacements ponctuels. Comment envisagez-vous cette dimension dans le cadre de vos missions ?"* (Source : gap "déplacements ponctuels").
-
-5. **Vulgarisation et communication** :
-   - *"Pouvez-vous donner un exemple concret où vous avez dû expliquer un résultat technique complexe à une audience non-technique ? Quelles techniques avez-vous utilisées pour vous assurer de leur compréhension ?"* (Source : "vulgarisation des résultats techniques").
-
----
+4. **Gaps et apprentissage** :
+   - *"Quelles sont vos expériences avec le deep learning, et comment comptez-vous monter en compétences sur TensorFlow/PyTorch si nécessaire ?"* (Gap identifié).
+   - *"Avez-vous déjà travaillé sur des projets nécessitant des déplacements ponctuels ? Comment vous adapteriez-vous à cette contrainte ?"* (Gap identifié).
 
 ## Angle de candidature
-
 **Positionnement** :
-Cette candidature se positionne comme celle d’un **Data Scientist opérationnel et orienté impact**, avec une **double expertise technique et métier**. Le profil met en avant des **réalisations tangibles** (modèles en production, outils adoptés par les équipes) et une **capacité à traduire des enjeux business en solutions data**, un atout clé pour un poste où la collaboration avec les métiers est essentielle.
+Candidature idéale pour un poste de **Data Scientist orienté "data classique"**, où l’accent est mis sur l’**application métier** et la **collaboration transverse**. Le profil combine une **double expertise** :
+- **Technique** : Maîtrise des outils (Python, SQL, Power BI, Snowflake) et des bonnes pratiques (ETL, GitHub).
+- **Business** : Expérience prouvée en **traduction des besoins métiers** en solutions data (modèles prédictifs, outils décisionnels) et en **vulgarisation** pour des audiences non-techniques.
 
-**Points différenciants à souligner** :
-1. **Approche pragmatique du machine learning** :
-   - Insister sur la **priorisation du recall** pour le modèle de churn, avec une **justification métier solide** (ex : coût élevé de la perte d’un client vs coût d’une fausse alerte). Cela montre une **compréhension fine des enjeux business**, au-delà de la performance technique pure.
-   - Mettre en avant la **mise en production réussie** du modèle, un critère souvent théorique dans les profils juniors ou académiques.
+**Arguments différenciants** :
+1. **Impact mesurable** :
+   Mettre en avant les **réalisations concrètes** avec des KPIs (ex : recall de 85% pour le churn, adoption des tableaux de bord Power BI) pour démontrer une capacité à livrer des résultats tangibles.
 
-2. **Autonomie et polyvalence** :
-   - Souligner la **création d’outils autonomes pour les équipes métier** (tarification, churn), illustrant une capacité à **concevoir des solutions end-to-end** sans dépendre d’autres équipes.
-   - Mentionner le **prototypage de l’assistant interne avec l’API Mistral**, montrant une **curiosité pour les innovations** et une capacité à explorer de nouvelles technologies.
+2. **Autonomie et end-to-end** :
+   Insister sur la **gestion complète de projets data**, de la conception (cadrage des besoins) à la production (modèle de churn en exploitation depuis 2 ans), en passant par la validation métier.
 
-3. **Excellence technique et bonnes pratiques** :
-   - Valoriser la **maîtrise de Snowflake et des architectures ETL** (modèle Medallion), un atout pour des environnements data matures.
-   - Insister sur la **fiabilisation des pipelines de données**, un point critique pour les entreprises soucieuses de la qualité de leurs données.
+3. **Adéquation avec les attentes locales** :
+   Souligner l’**alignement géographique** comme un atout stratégique pour le poste, avec une expérience terrain en Rhône-Alpes (ECA Assurances) et une **connaissance des enjeux métiers régionaux** (assurance, tarification).
 
-**Stratégie pour adresser les gaps** :
-1. **Computer Vision** :
-   - Reconnaître le gap comme une **opportunité de montée en compétences**, en citant des projets personnels ou des formations en cours (ex : MOOC, Kaggle) si applicable. Exemple :
-     *"Bien que mon expérience en computer vision soit aujourd’hui limitée à des notions théoriques, je me forme activement sur ce sujet via [formation/outil], et je serais ravi(e) de contribuer à des projets concrets dans ce domaine."*
-
-2. **Gestion de projets data/IA** :
-   - Mettre en avant les **méthodes informelles** utilisées pour organiser son travail (ex : priorisation des tâches, collaboration avec les métiers), et exprimer une **ouverture à adopter des frameworks formels** (Agile, Scrum). Exemple :
-     *"Dans mes projets précédents, j’ai structuré mon travail en autonomie en priorisant les livrables selon leur impact métier. Je suis très intéressé(e) par les méthodologies Agile pour renforcer cette approche, et je serais ravi(e) de m’y former."*
-
-3. **Déplacements ponctuels** :
-   - Aborder le sujet avec **proactivité**, en soulignant une **disponibilité pour des déplacements occasionnels** si cela fait partie des attentes du poste. Exemple :
-     *"Je suis tout à fait ouvert(e) à des déplacements ponctuels pour rencontrer les équipes ou participer à des ateliers, dans la mesure où cela contribue à la réussite des projets."*
-
-**Message clé à faire passer** :
-*"Mon profil allie une expertise technique solide en machine learning et analyse de données, avec une capacité éprouvée à livrer des solutions impactantes pour les métiers. Mon expérience en mise en production, en collaboration avec les équipes non-techniques, et en structuration de pipelines data fait de moi un candidat opérationnel, prêt à contribuer dès mon arrivée. Je suis particulièrement motivé(e) par les défis où la data sert directement la stratégie business, et je serais ravi(e) d’échanger sur la façon dont mes réalisations pourraient s’aligner avec vos enjeux."*
+**Message clé pour l’employeur** :
+*"Mon profil allie rigueur technique et sens métier, avec une expérience éprouvée en machine learning appliqué et en outils décisionnels. Je cherche à rejoindre une équipe où je pourrai mettre cette double compétence au service de projets data concrets, avec un ancrage local fort."*

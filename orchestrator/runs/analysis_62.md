@@ -1,98 +1,98 @@
 ## Résumé du matching
-Le candidat présente un profil solide en **data science appliquée**, avec des compétences clés alignées sur les attentes de l’offre pour un poste de **Chercheur - Data Scientist** :
 
-- **Modélisation mathématique et algorithmique** :
-  Formation académique en mathématiques appliquées et statistiques (Master Économétrie et Statistiques, Licence de Mathématiques), renforcée par une expérience professionnelle en développement de modèles prédictifs (ex. modèle de churn avec scikit-learn, justifié par des métriques métier) *(source : formation et expérience en modélisation de churn)*.
+Cette candidature présente un alignement partiel mais significatif avec le poste de **Chercheur - Data Scientist**, notamment sur les axes suivants :
 
-- **Développement de prototypes en Python** :
-  Maîtrise avancée de Python (pandas, numpy, scipy, scikit-learn) et expérience concrète en prototypage, comme le développement d’un assistant interne utilisant l’API Mistral et Gradio *(source : projet d’assistant interne)*.
+- **Recherche en apprentissage automatique et intelligence artificielle** :
+  Développement d’un modèle de *churn prediction* en production (scikit-learn), avec justification des compromis métiers (recall vs précision) et intégration dans un pipeline opérationnel. *Source : Expérience en modélisation prédictive appliquée (assurance).*
+  Prototypage d’un assistant interne via l’API Mistral et Gradio, démontrant une capacité à concevoir des solutions IA adaptées à des cas d’usage concrets. *Source : Développement d’un prototype Python pour automatisation interne.*
 
-- **Gestion de données complexes et bruitées** :
-  Expérience en traitement de données sensibles (sinistralité, commissions) et modélisation de scénarios tarifaires pour des produits santé, avec une approche adaptée aux contraintes métier *(source : modèle de churn en production et pipelines ETL sur Snowflake)*.
+- **Gestion de données bruitées et hétérogènes** :
+  Traitement de données variées (pandas, Snowflake) et automatisation de pipelines (Playwright), avec une expérience avérée sur des jeux de données complexes (ex : tarification santé individuelle). *Source : Outil de tarification et bot d’automatisation pour devis santé.*
+  Conception de tableaux de bord Power BI pour des indicateurs sensibles, illustrant une maîtrise de la structuration et de la visualisation de données métier. *Source : Expérience en analyse de données cliniques et optimisation de processus.*
 
-- **Traçabilité et qualité des recherches** :
-  Déploiement de modèles en production avec justification des choix statistiques et alignement sur les KPIs métier, ainsi que la conception de tableaux de bord Power BI adoptés à l’échelle de l’entreprise *(source : modèles en production et tableaux de bord Power BI)*.
+- **Analyse et traitement de données cliniques** :
+  Modélisation de scénarios tarifaires pour des produits santé, appliquant des méthodes statistiques à des données complexes (ex : hypothèses de risque en assurance). *Source : Création d’un outil de tarification pour produits santé individuelle.*
+  Développement d’un modèle de *churn* en assurance, avec une approche centrée sur l’interprétation des résultats pour les métiers. *Source : Expérience en modélisation prédictive (assurance).*
 
-- **Optimisation d’algorithmes** :
-  Réduction significative du temps de traitement des commissions (de 10h à 35min) et structuration de pipelines ETL sur Snowflake pour fiabiliser la production de rapports *(source : optimisation des processus métier)*.
+- **Optimisation et simulation à grande échelle** :
+  Automatisation de processus via Playwright (scraping de formulaires de devis santé), réduisant le temps de traitement des commissions de **10h à 35min**. *Source : Bot d’automatisation pour simulations complexes.*
+  Expérience en prototypage rapide (Python) et en transfert d’autonomie aux équipes métier (ex : outil de tarification). *Source : Développement de prototypes et outils internes.*
 
 ---
 
 ## Gaps et incertitudes
-### Gaps confirmés (compétences absentes) :
-- **Simulation clinique à grande échelle et tests de sécurité** :
-  Aucune expérience identifiée en simulation clinique ou tests de sécurité pour des dispositifs médicaux. L’expérience se limite à des simulations de comportement humain pour du scraping (Playwright).
 
-- **Collaboration avec les équipes d’ingénierie et transfert technologique** :
-  Expérience en structuration de pipelines ETL et collaboration avec des équipes métier, mais **aucun élément concret** de transfert technologique vers des équipes d’ingénierie C++ ou de développement embarqué/cloud.
+### Gaps confirmés (compétences absentes)
+- **Modélisation mathématique appliquée à la physiologie** :
+  Aucune expérience identifiée en modélisation de systèmes physiologiques (ex : contrôle glycémique), malgré une formation en mathématiques appliquées et statistiques. *Gap critique pour un poste axé sur la recherche médicale.*
 
-- **Conformité aux normes réglementaires (IEC 62304, ISO 13485)** :
-  Aucune expérience identifiée en conformité aux normes spécifiques des dispositifs médicaux. L’expérience se limite à la gouvernance technique des données (architecture Snowflake).
+- **Collaboration avec des équipes d’ingénierie (C++/embarqué)** :
+  Expérience limitée en transfert technologique vers des environnements techniques spécialisés (ex : code embarqué ou cloud). Les collaborations passées se concentrent sur des transferts vers des équipes métier (ex : outil de tarification). *Source : Absence de projets impliquant des ingénieurs C++ ou des architectures embarquées.*
 
-- **Rédaction de documentation technique pour soumissions réglementaires (CE/FDA)** :
-  Aucune expérience en rédaction de documentation pour des soumissions réglementaires. L’expérience se limite à la structuration de projets via des fichiers CLAUDE.md pour des outils internes.
+- **Conformité aux normes médicales (IEC 62304, ISO 13485)** :
+  Aucune exposition aux réglementations spécifiques aux dispositifs médicaux (IEC 62304 pour le cycle de vie logiciel, ISO 13485 pour la qualité). *Gap majeur pour un poste dans le domaine santé.*
 
-- **Physiologie du diabète et contrôle glycémique** :
-  Aucune expérience identifiée dans ce domaine. L’expérience en santé se limite à la modélisation de produits d’assurance individuelle (tarification), sans lien avec la physiologie.
+- **Documentation technique pour soumissions réglementaires** :
+  Expérience en documentation limitée à des fichiers internes (ex : CLAUDE.md) et non à des livrables pour des soumissions CE/FDA. *Source : Absence de projets nécessitant une documentation conforme aux exigences réglementaires.*
 
-### Flags incertains (absence de preuve fiable, pas une absence confirmée) :
-- **Collaboration avec les équipes d’ingénierie et transfert technologique** :
-  Le profil ne fournit pas d’exemples clairs de collaboration avec des équipes techniques (C++, embarqué/cloud), bien que des compétences en structuration de pipelines ETL soient présentes.
+### Flags incertains (absence de preuve fiable)
+- **Modélisation physiologique** :
+  Aucun match RAG trouvé pour confirmer ou infirmer une expérience en modélisation mathématique appliquée à la physiologie (ex : contrôle glycémique). *À clarifier en entretien.*
 
-- **Conformité aux normes et réglementations des dispositifs médicaux** :
-  Aucune mention de normes comme IEC 62304 ou ISO 13485 dans le profil, mais cela ne signifie pas nécessairement une absence totale de familiarité.
+- **Transfert technologique vers l’ingénierie** :
+  Incertitude sur la capacité à collaborer avec des équipes techniques (C++/embarqué) ou à transférer des prototypes vers des environnements de production spécialisés. *Source : Profil orienté data science et métiers, sans preuve de collaboration avec des ingénieurs systèmes.*
 
-- **Physiologie du diabète et contrôle glycémique** :
-  Aucun élément dans le profil ne permet de confirmer ou d’infirmer une connaissance de ce domaine, au-delà de l’absence d’expérience directe.
+- **Normes médicales** :
+  Aucune mention dans le profil de conformité aux normes IEC 62304 ou ISO 13485, mais l’absence de preuve ne confirme pas nécessairement une méconnaissance. *À explorer en entretien.*
 
 ---
 
-## Questions d'entretien probables
-1. **Modélisation et prototypage** :
-   - *"Pouvez-vous décrire un modèle prédictif que vous avez développé, en expliquant vos choix algorithmiques et leur justification métier ?"* *(source : modèle de churn en production)*.
-   - *"Comment avez-vous structuré le développement de votre assistant interne basé sur Mistral/Gradio, et quels défis techniques avez-vous rencontrés ?"* *(source : projet d’assistant interne)*.
+## Questions d’entretien probables
 
-2. **Gestion de données complexes** :
-   - *"Comment avez-vous abordé le traitement de données bruitées ou sensibles dans vos projets précédents ?"* *(source : modélisation de scénarios tarifaires santé)*.
-   - *"Quelles métriques avez-vous utilisées pour évaluer la performance de votre modèle de churn, et pourquoi ?"* *(source : modèle de churn en production)*.
+1. **Modélisation physiologique** :
+   *"Pouvez-vous décrire une expérience où vous avez appliqué des modèles mathématiques à des systèmes biologiques ou physiologiques ? Si non, comment aborderiez-vous la modélisation du contrôle glycémique pour un dispositif médical ?"*
+   *Objectif : Évaluer la capacité à transposer des compétences en modélisation vers un domaine nouveau.*
 
-3. **Optimisation et traçabilité** :
-   - *"Quelles techniques avez-vous employées pour réduire le temps de traitement des commissions de 10h à 35min ?"* *(source : optimisation des processus métier)*.
-   - *"Comment assurez-vous la traçabilité de vos recherches et la reproductibilité de vos modèles en production ?"* *(source : modèles en production et tableaux de bord Power BI)*.
+2. **Collaboration avec l’ingénierie** :
+   *"Comment avez-vous travaillé avec des équipes techniques (ex : développeurs C++ ou ingénieurs embarqués) dans vos projets passés ? Quels défis avez-vous rencontrés lors du transfert de prototypes vers des environnements de production ?"*
+   *Objectif : Identifier des expériences de collaboration interdisciplinaire et de transfert technologique.*
 
-4. **Gaps et adaptation** :
-   - *"Comment comptez-vous vous familiariser avec les normes réglementaires des dispositifs médicaux (IEC 62304, ISO 13485) ?"* *(gap : conformité réglementaire)*.
-   - *"Avez-vous déjà collaboré avec des équipes d’ingénierie pour transférer des modèles vers des environnements embarqués ou cloud ? Si non, comment envisagez-vous cette collaboration ?"* *(gap : transfert technologique)*.
-   - *"Comment aborderiez-vous la modélisation de scénarios cliniques pour des dispositifs médicaux, en l’absence d’expérience directe en physiologie ?"* *(gap : simulation clinique et physiologie)*.
+3. **Conformité réglementaire** :
+   *"Avez-vous déjà contribué à la rédaction de documentation technique pour des soumissions réglementaires (ex : CE, FDA) ? Si non, comment vous formeriez-vous aux normes IEC 62304 ou ISO 13485 ?"*
+   *Objectif : Mesurer la familiarité avec les exigences réglementaires et la capacité à s’adapter.*
 
-5. **Alignement métier** :
-   - *"Comment justifiez-vous l’adéquation de votre expérience en assurance santé avec les enjeux de la data science pour des dispositifs médicaux ?"* *(source : modélisation de produits santé individuelle)*.
+4. **Gestion de données cliniques** :
+   *"Votre expérience en tarification santé et churn prediction implique des données sensibles. Comment avez-vous assuré la robustesse et l’interprétabilité de vos modèles dans ces contextes ?"*
+   *Objectif : Approfondir les méthodes de validation et d’explicabilité pour des données médicales.*
+
+5. **Prototypage et innovation** :
+   *"Votre prototype d’assistant interne (Mistral/Gradio) a-t-il été déployé en production ? Quels enseignements en avez-vous tirés pour le passage à l’échelle ?"*
+   *Objectif : Évaluer la capacité à industrialiser des solutions innovantes.*
 
 ---
 
 ## Angle de candidature
+
 **Positionnement** :
-Le candidat se présente comme un **data scientist appliqué**, avec une expertise reconnue en **modélisation mathématique, développement de prototypes Python et analyse de données complexes**, adaptée aux enjeux métiers. Son profil met en avant une **approche structurée et traçable**, essentielle pour un poste de chercheur où la rigueur scientifique et l’alignement avec les objectifs opérationnels sont critiques.
+Candidature axée sur **l’expertise en data science appliquée aux données complexes et aux cas d’usage métiers**, avec une forte valeur ajoutée sur :
+- La **modélisation prédictive** (churn, tarification) et son ancrage dans des enjeux business (ex : recall vs précision).
+- Le **prototypage rapide** (Python, Gradio, Mistral) et l’optimisation de processus (automatisation via Playwright).
+- La **gestion de données hétérogènes** (pandas, Snowflake) et leur restitution via des outils métier (Power BI).
 
-**Points à valoriser** :
-- **Expérience en santé** :
-  Bien que l’expérience en assurance santé ne couvre pas la physiologie du diabète, elle démontre une **compréhension des enjeux métiers du secteur santé** (tarification, gestion des risques) et une capacité à modéliser des scénarios complexes *(source : modélisation de scénarios tarifaires santé)*. Insister sur cette **transférabilité des compétences** en analyse de données sensibles et en modélisation prédictive.
+**Stratégie de réponse aux gaps** :
+1. **Modélisation physiologique** :
+   Mettre en avant la **formation en mathématiques appliquées** et l’expérience en modélisation statistique (ex : tarification santé), en soulignant une **capacité à apprendre rapidement** des domaines techniques nouveaux. Proposer une approche progressive : *ex : "Je commencerais par une revue de la littérature sur les modèles de contrôle glycémique, puis collaborerais avec des experts cliniques pour affiner les hypothèses."*
 
-- **Prototypage et optimisation** :
-  Mettre en avant la **capacité à développer des prototypes fonctionnels** (assistant interne avec Mistral/Gradio) et à optimiser des processus (réduction du temps de traitement des commissions), en soulignant l’**approche pragmatique et orientée résultats** *(sources : projet d’assistant interne et optimisation des processus métier)*.
+2. **Collaboration avec l’ingénierie** :
+   Insister sur les **transferts d’autonomie réussis** vers les équipes métier (ex : outil de tarification) et sur la **maîtrise des bonnes pratiques logicielles** (Python, tests unitaires). Proposer des **ateliers de co-développement** avec les ingénieurs pour faciliter le transfert technologique.
 
-- **Traçabilité et collaboration** :
-  Insister sur l’**expérience en déploiement de modèles en production** avec justification des choix statistiques, ainsi que sur la **collaboration avec des équipes métier** pour aligner les solutions techniques sur les KPIs *(sources : modèles en production et tableaux de bord Power BI)*. Cela répond à l’exigence de traçabilité des recherches et de gestion de la qualité.
+3. **Conformité réglementaire** :
+   Reconnaître le gap tout en montrant une **proactivité** : *ex : "Je m’engage à suivre une formation certifiante sur les normes IEC 62304/ISO 13485 dès ma prise de poste, et à m’appuyer sur les experts internes pour valider les livrables."* Souligner l’expérience en **documentation technique** (CLAUDE.md) comme base pour monter en compétence.
 
-**Stratégie pour combler les gaps** :
-- **Normes réglementaires** :
-  Proposer une **veille active** sur les normes IEC 62304 et ISO 13485, et souligner la **capacité à s’approprier rapidement des cadres réglementaires** (ex. expérience en gouvernance technique des données sur Snowflake) *(source : architecture Snowflake)*.
+**Accroche** :
+*"Mon profil combine une expertise en data science appliquée (modélisation prédictive, prototypage Python) et une expérience concrète de résolution de problèmes métiers complexes (tarification santé, automatisation). Bien que nouveau dans le domaine de la modélisation physiologique, je mise sur ma capacité à transposer des méthodes statistiques éprouvées vers de nouveaux défis, avec une approche rigoureuse et collaborative. Mon objectif : contribuer à des projets de recherche ambitieux, tout en m’intégrant rapidement aux enjeux techniques et réglementaires du secteur médical."*
 
-- **Transfert technologique** :
-  Mettre en avant l’**expérience en structuration de pipelines ETL** et la collaboration avec des équipes techniques (même si non C++/embarqué), pour démontrer une **aptitude à travailler en interface avec l’ingénierie** *(source : pipelines ETL sur Snowflake)*.
-
-- **Simulation clinique** :
-  Proposer une **approche progressive**, en s’appuyant sur l’expérience en modélisation de scénarios complexes (ex. tarification santé) pour aborder la simulation clinique, et en soulignant la **rigueur méthodologique** acquise en mathématiques appliquées *(source : modélisation de scénarios tarifaires)*.
-
-**Message clé** :
-*"Mon profil allie une expertise technique en data science (modélisation, Python, optimisation) et une approche métier rigoureuse, adaptée aux enjeux de la recherche appliquée. Bien que mon expérience en dispositifs médicaux soit limitée, ma capacité à modéliser des scénarios complexes et à collaborer avec des équipes techniques me permet d’envisager une montée en compétence rapide sur les aspects réglementaires et cliniques, tout en apportant dès aujourd’hui des méthodes éprouvées en traçabilité et en alignement métier."*
+**Points différenciants** :
+- **Impact mesurable** : Réduction du temps de traitement des commissions (10h → 35min) via l’automatisation.
+- **Double compétence** : Data science *et* compréhension des enjeux métiers (assurance, santé).
+- **Culture du prototypage** : Expérience en développement d’outils internes (Mistral/Gradio) pour des cas d’usage concrets.

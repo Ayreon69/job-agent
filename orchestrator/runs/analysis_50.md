@@ -1,67 +1,53 @@
 ## Résumé du matching
-Cette candidature présente une adéquation solide (78/100) avec le poste de **Senior Data Analytics**, portée par une expertise technique alignée sur les attentes clés de l'offre :
+Cette candidature présente un alignement solide (78/100) avec le poste de **Senior Data Analytics**, notamment grâce à :
 
-- **Modélisation et architecture data** :
-  - Structuration de pipelines ETL sur Snowflake avec une architecture en couches (*staging → core → reporting*), proche du pattern Medallion, et conception de KPIs métier sensibles (commissions, sinistralité) documentés et testés via dbt (*source : expérience Snowflake + Power BI*).
-  - Maîtrise de SQL avancé et Python pour des analyses ad hoc, avec une approche pragmatique de la modélisation (*source : projets Power BI et prototypage Mistral*).
-
-- **Intégration IA et agents** :
-  - Prototypage d’un assistant interne basé sur l’API Mistral pour répondre aux questions sur les règles de commission, avec une interface Gradio et une documentation des choix techniques (ex : rejet du RAG au profit d’un contexte complet) (*source : POC Mistral*).
-  - Utilisation quotidienne d’outils agentiques (Claude Code, serveurs MCP) et automatisation avancée (Playwright, scraping) pour des cas d’usage eCom et Marketing (*source : projets B2B et développement assisté*).
-
-- **Collaboration transverse** :
-  - Implication implicite avec les équipes Data Engineering (pipelines Snowflake) et Data Science (modèle de churn en production avec scikit-learn), avec une sensibilité aux enjeux de *feature engineering* et *model readiness* (*source : projets Snowflake et churn*).
-
-- **Impact métier** :
-  - Tableaux de bord Power BI adoptés à l’échelle de l’entreprise pour des indicateurs financiers critiques (sinistralité, commissions) (*source : expérience Power BI*).
-  - Stack de prospection B2B automatisée (scraping, emailing, analyse commerciale) pour une marque de vêtements, démontrant une compréhension des enjeux eCom (*source : projet B2B*).
-
-- **Veille et application pragmatique** :
-  - Application des tendances IA (API Mistral, Claude Code) et ML (modèle de churn) avec une approche orientée résultats, sans sur-ingénierie (*source : POC Mistral et projet churn*).
-
----
+- **Expertise en KPIs métiers** : Conception de tableaux de bord Power BI couvrant Sales, Marketing, Finance et Supply Chain, avec une approche orientée résultats (ex : automatisation du calcul des commissions, modélisation de scénarios tarifaires) *(source : réalisation Power BI alignée sur les KPIs métiers)*.
+- **Gouvernance et qualité des données** : Structuration de pipelines ETL sur Snowflake (architecture en couches staging/core/reporting) et certifications DataCamp en SQL avancé/Python, garantissant une production de rapports fiable *(source : pipelines Snowflake et certifications)*.
+- **Collaboration technique** : Expérience en architecture data (approche Medallion) et travail avec des Data Engineers/Scientists sur des projets concrets (ex : modèle de churn en production) *(source : collaboration technique et architecture Snowflake)*.
+- **Innovation IA appliquée** : Prototypage d’un assistant interne LLM (Mistral API + Gradio) avec une réflexion architecturale documentée (choix contexte complet vs RAG), et utilisation d’outils agentiques (Claude Code, MCP) pour l’automatisation *(source : prototype LLM et documentation CLAUDE.md)*.
+- **Intégration pragmatique de l’IA** : Évaluation critique des outils (ex : choix de ne pas utiliser RAG) et intégration de pipelines NLP (Whisper) dans des workflows data *(source : prototype LLM et pipelines NLP)*.
 
 ## Gaps et incertitudes
 **Gaps confirmés** :
-- **Gouvernance formelle des données** : Expérience limitée à la gouvernance technique (architecture Snowflake) sans mention de *data contracts*, observabilité avancée, ou comités de gouvernance (*gap constaté*).
-- **MLOps** : Aucune expérience avec Azure ML, monitoring de modèles en production, ou standards de déploiement. Le modèle de churn en production ne couvre pas le cycle de vie complet (*gap constaté*).
-- **Mentorat et standards** : Pas d’expérience en code reviews, mentorat, ou amélioration des bonnes pratiques de modélisation au sein d’une équipe (*gap constaté*).
+- **dbt (Data Build Tool)** : Aucune expérience professionnelle ou projet personnel identifié avec dbt, malgré une expertise en structuration de pipelines ETL sur Snowflake *(gap constaté)*.
+- **MLOps sur Azure ML** : Expérience limitée aux notions de cloud (AWS/Azure) et CI/CD (GitHub Actions), sans déploiement en production ou gestion de cycle de vie de modèles sur Azure ML *(gap constaté)*.
+- **Mentorat technique** : Aucune mention d’encadrement formel (revue de code, mentorat) pour des Analytics Engineers, bien que la vulgarisation pour des non-techniciens soit maîtrisée *(gap constaté)*.
 
 **Flags incertains** :
-*Aucun flag incertain identifié* – les gaps listés ci-dessus sont des absences confirmées, non des incertitudes de matching.
-
----
+*Aucun flag incertain identifié* – les gaps listés ci-dessus sont des absences confirmées, non des zones d’incertitude.
 
 ## Questions d'entretien probables
-1. **Architecture data** :
-   - *"Comment avez-vous structuré vos pipelines ETL sur Snowflake pour garantir la fiabilité des KPIs métier ?"* (Attendu : détails sur les couches *staging/core/reporting*, tests dbt, et gestion des dépendances).
-   - *"Quels compromis avez-vous faits dans votre POC Mistral pour éviter le RAG ?"* (Attendu : justification technique et limites identifiées).
+1. **Architecture data et KPIs** :
+   - *"Pouvez-vous détailler un cas où vos tableaux de bord Power BI ont directement influencé une décision métier ?"* *(lié à l’automatisation des commissions et modélisation tarifaire)*.
+   - *"Comment avez-vous structuré vos pipelines Snowflake pour garantir la qualité des données ?"* *(approche staging/core/reporting)*.
 
-2. **Collaboration et IA** :
-   - *"Comment avez-vous collaboré avec les équipes Data Science pour préparer les données du modèle de churn ?"* (Attendu : *feature engineering*, validation des données, et intégration dans le pipeline).
-   - *"Quels outils IA utilisez-vous au quotidien, et comment évaluez-vous leur maturité pour un usage en production ?"* (Attendu : exemples concrets avec Claude Code/Mistral, critères d’évaluation).
+2. **IA et agents** :
+   - *"Quels compromis avez-vous évalués pour votre prototype LLM (contexte complet vs RAG), et pourquoi ce choix ?"* *(documentation CLAUDE.md)*.
+   - *"Comment priorisez-vous l’intégration d’outils IA dans une stack data existante ?"* *(expérience Whisper/pandas)*.
 
-3. **Impact métier** :
-   - *"Comment avez-vous mesuré l’adoption de vos tableaux de bord Power BI par les équipes métier ?"* (Attendu : métriques d’usage, feedbacks, et itérations).
-   - *"Quels défis avez-vous rencontrés dans l’automatisation de la prospection B2B, et comment les avez-vous résolus ?"* (Attendu : gestion des données, scraping, et analyse commerciale).
+3. **Collaboration technique** :
+   - *"Comment avez-vous travaillé avec les Data Scientists sur le modèle de churn ? Quels défis avez-vous rencontrés ?"* *(collaboration technique)*.
+   - *"Comment documentez-vous vos décisions architecturales pour les équipes ?"* *(notes CLAUDE.md et honnêteté sur les limites)*.
 
 4. **Gaps techniques** :
-   - *"Comment aborderiez-vous la mise en place de *data contracts* dans une architecture existante comme la vôtre ?"* (Attendu : stratégie progressive, outils, et collaboration avec les équipes).
-   - *"Quelles étapes ajouteriez-vous au cycle de vie de votre modèle de churn pour le rendre compatible avec les standards MLOps ?"* (Attendu : monitoring, versioning, et déploiement).
-
----
+   - *"Comment comptez-vous monter en compétences sur dbt, et quelles alternatives avez-vous utilisées jusqu’ici ?"* *(gap dbt)*.
+   - *"Quelle est votre expérience avec les outils MLOps, et comment aborderiez-vous un déploiement sur Azure ML ?"* *(gap MLOps)*.
 
 ## Angle de candidature
 **Positionnement** :
-Candidature idéale pour un rôle senior alliant **modélisation data avancée** et **prototypage IA**, avec une double casquette technique et métier. Le profil se distingue par :
-- Une **expertise opérationnelle** en structuration de données (Snowflake, dbt, Power BI) et en automatisation (Playwright, scraping), directement applicable aux enjeux de l’offre.
-- Une **approche pragmatique de l’IA**, illustrée par le POC Mistral et l’utilisation quotidienne d’outils agentiques, alignée sur les attentes en matière d’agents et de raisonnement automatisé.
-- Une **sensibilité métier** forte, avec des réalisations concrètes en finance (commissions, sinistralité) et eCom (prospection B2B), garantissant une intégration rapide dans les équipes.
+Candidat **Senior Data Analytics orienté IA appliquée**, avec une double casquette :
+- **Expertise métier** : 5 ans d’expérience en modélisation de KPIs (Sales, Finance, Supply Chain) et automatisation de processus critiques (ex : commissions), prouvant une capacité à traduire des besoins métiers en solutions data.
+- **Innovation technique** : Prototypage d’agents LLM et intégration d’outils IA (Whisper, Claude) dans des workflows data, avec une approche pragmatique (évaluation des outils, documentation des choix).
 
-**Message clé** :
-*"Mon expérience en architecture data et prototypage IA répond aux besoins critiques du poste : fiabiliser les pipelines, concevoir des agents opérationnels, et aligner les solutions techniques sur les KPIs métier. Mes réalisations en modélisation (Snowflake, dbt) et en automatisation (Mistral, Playwright) démontrent ma capacité à livrer des solutions impactantes, tout en collaborant avec les équipes Data Engineering et Data Science. Je propose d’apporter cette expertise pour accélérer la roadmap IA de [Entreprise], avec une approche orientée résultats et une veille technologique appliquée."*
+**Valeur ajoutée pour l’entreprise** :
+- **Fiabilité des données** : Expérience en structuration de pipelines (Snowflake) et gouvernance, réduisant les risques d’erreurs dans les rapports métiers.
+- **Accélération de l’IA** : Capacité à prototyper et évaluer des solutions LLM/RAG, avec une réflexion architecturale documentée (ex : compromis contexte vs retrieval).
+- **Pont entre métiers et technique** : Vulgarisation pour les non-techniciens et collaboration avec les Data Scientists/Engineers, facilitant l’adoption des outils data.
 
-**Points de différenciation** :
-- **Documentation technique** : Le POC Mistral inclut une justification des choix architecturaux (ex : rejet du RAG), montrant une capacité à formaliser des décisions complexes.
-- **Autonomie sur l’IA** : Utilisation quotidienne de Claude Code et serveurs MCP pour des projets agentiques, sans dépendre d’une équipe dédiée.
-- **Impact mesurable** : Adoption des tableaux de bord Power BI à l’échelle de l’entreprise, avec des KPIs sensibles (sinistralité) validés par les métiers.
+**Réponse aux gaps** :
+- **dbt** : Mettre en avant l’expérience en structuration de pipelines (Snowflake) et la rapidité d’apprentissage (certifications DataCamp), avec une volonté de se former sur dbt via des projets internes.
+- **MLOps** : Souligner l’expérience en CI/CD (GitHub Actions) et cloud (AWS/Azure) comme base pour monter en compétences sur Azure ML, avec une approche progressive (ex : monitoring avant déploiement).
+- **Mentorat** : Insister sur la vulgarisation technique et la documentation (CLAUDE.md) comme prérequis pour encadrer des équipes, avec une ouverture à des revues de code collaboratives.
+
+**Ton** :
+Professionnel et concret, axé sur **l’impact métier** (ex : "mes tableaux de bord ont permis de réduire de X% les erreurs de calcul des commissions") et **l’innovation pragmatique** (ex : "mon prototype LLM a démontré que le contexte complet était plus efficace que le RAG pour notre cas d’usage"). Éviter le jargon pur, privilégier des exemples concrets.

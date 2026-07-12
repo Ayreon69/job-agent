@@ -56,6 +56,29 @@
     },
     {
       "step": "requirement_atom",
+      "query": "[Programmation et développement en Python pour la data science] développement data science",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.3946,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4817,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5186,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3946, match retenu"
+    },
+    {
+      "step": "requirement_atom",
       "query": "[Frameworks de machine learning et deep learning (TensorFlow, PyTorch, scikit-learn, etc.)] TensorFlow",
       "n_results": 3,
       "results": [
@@ -171,26 +194,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Préparation, exploration et analyse de données] exploration des données",
+      "query": "[Préparation, exploration et analyse de données] exploration de données",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.5436,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5704,
+          "distance": 0.5606,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.5724,
+          "distance": 0.5703,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.573,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5436, match retenu"
+      "conclusion": "best_distance=0.5606, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -332,26 +355,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Restitution et visualisation des résultats pour les métiers] visualisation des données",
+      "query": "[Restitution et visualisation des résultats pour les métiers] visualisation de données",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.6051,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6191,
           "source_file": "skills.md"
         },
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6057,
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6205,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.6123,
+          "distance": 0.6351,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6051, match retenu"
+      "conclusion": "best_distance=0.6191, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -401,145 +424,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Cadrement des besoins métiers et traduction en cas d'usage data] traduction des problématiques métiers",
+      "query": "[Cadrement des besoins métiers et traduction en cas d'usage data] traduction en cas d'usage data",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_langues",
-          "distance": 0.5003,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5152,
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5805,
           "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5164,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5003, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Cadrement des besoins métiers et traduction en cas d'usage data] cas d'usage data",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5051,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.507,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5312,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5051, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Déploiement et gestion de modèles de langage (LLM) et agents IA] déploiement de LLM",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.4649,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5531,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "skills::skills_nlp_audio",
-          "distance": 0.557,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4649, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Déploiement et gestion de modèles de langage (LLM) et agents IA] création de prompts",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5024,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5301,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.5352,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5024, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Déploiement et gestion de modèles de langage (LLM) et agents IA] agents IA",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5296,
-          "source_file": "geography_rules.md"
         },
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.6128,
+          "distance": 0.6087,
           "source_file": "achievements.md"
         },
         {
-          "id": "constraints::current_employment",
-          "distance": 0.6175,
-          "source_file": "constraints.md"
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6231,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5296, match retenu"
+      "conclusion": "best_distance=0.5805, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Déploiement et gestion de modèles de langage (LLM) et agents IA] assistants IA",
+      "query": "[Cadrement des besoins métiers et traduction en cas d'usage data] analyse métiers",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5135,
+          "id": "achievements::churn_model",
+          "distance": 0.4207,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5922,
-          "source_file": "skills.md"
+          "id": "achievements::pricing_tool",
+          "distance": 0.4559,
+          "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5949,
-          "source_file": "skills.md"
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4889,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.5135, match retenu"
+      "conclusion": "best_distance=0.4207, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Déploiement et gestion de modèles de langage (LLM) et agents IA] IA générative",
+      "query": "[IA générative, création de prompts et déploiement de LLM] IA générative",
       "n_results": 3,
       "results": [
         {
@@ -562,7 +493,99 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Environnement technique cloud (Google Cloud Platform - GCP)] GCP",
+      "query": "[IA générative, création de prompts et déploiement de LLM] création de prompts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5024,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5301,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5352,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5024, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[IA générative, création de prompts et déploiement de LLM] déploiement de LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5531,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.557,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4649, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[IA générative, création de prompts et déploiement de LLM] agents IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5296,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6175,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[IA générative, création de prompts et déploiement de LLM] assistants IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5135,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5922,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5949,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5135, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Mise en place et gestion d'environnements techniques cloud (GCP)] GCP",
       "n_results": 3,
       "results": [
         {
@@ -585,76 +608,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Environnement technique cloud (Google Cloud Platform - GCP)] Google Cloud Platform",
+      "query": "[Mise en place et gestion d'environnements techniques cloud (GCP)] environnement technique cloud",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.6686,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.6973,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7552,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6686, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Environnement technique cloud (Google Cloud Platform - GCP)] environnement cloud",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6021,
+          "distance": 0.5225,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.649,
+          "distance": 0.5915,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.6737,
+          "distance": 0.6209,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6021, match retenu"
+      "conclusion": "best_distance=0.5225, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Industrialisation et MCO (Maintien en Condition Opérationnelle) des solutions data/IA] industrialisation des cas d'usage",
+      "query": "[Mise en place et gestion d'environnements techniques cloud (GCP)] infrastructure cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5368,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5553,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6624,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5368, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Industrialisation et MCO des solutions data/IA] industrialisation",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.4457,
+          "distance": 0.6392,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5093,
+          "distance": 0.6867,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5593,
-          "source_file": "achievements.md"
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6996,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.4457, match retenu"
+      "conclusion": "best_distance=0.6392, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Industrialisation et MCO (Maintien en Condition Opérationnelle) des solutions data/IA] MCO",
+      "query": "[Industrialisation et MCO des solutions data/IA] MCO",
       "n_results": 3,
       "results": [
         {
@@ -677,7 +700,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Industrialisation et MCO (Maintien en Condition Opérationnelle) des solutions data/IA] suivi de performance",
+      "query": "[Industrialisation et MCO des solutions data/IA] suivi de performance",
       "n_results": 3,
       "results": [
         {
@@ -700,30 +723,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Industrialisation et MCO (Maintien en Condition Opérationnelle) des solutions data/IA] ajustements des modèles",
+      "query": "[Industrialisation et MCO des solutions data/IA] ajustement de modèles",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.477,
+          "distance": 0.4588,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.497,
+          "distance": 0.4896,
           "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5601,
-          "source_file": "geography_rules.md"
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5267,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4770, match retenu"
+      "conclusion": "best_distance=0.4588, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Industrialisation et MCO (Maintien en Condition Opérationnelle) des solutions data/IA] amélioration continue",
+      "query": "[Industrialisation et MCO des solutions data/IA] amélioration continue",
       "n_results": 3,
       "results": [
         {

@@ -33,7 +33,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Développement et fine-tuning de modèles de machine learning et d'IA open source] fine-tuning de modèles",
+      "query": "[développement et fine-tuning de modèles de machine learning et d'IA open source] fine-tuning de modèles",
       "n_results": 3,
       "results": [
         {
@@ -56,7 +56,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Développement et fine-tuning de modèles de machine learning et d'IA open source] modèles open source",
+      "query": "[développement et fine-tuning de modèles de machine learning et d'IA open source] modèles open source",
       "n_results": 3,
       "results": [
         {
@@ -79,7 +79,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Développement et fine-tuning de modèles de machine learning et d'IA open source] machine learning",
+      "query": "[développement et fine-tuning de modèles de machine learning et d'IA open source] machine learning",
       "n_results": 3,
       "results": [
         {
@@ -102,7 +102,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Développement et fine-tuning de modèles de machine learning et d'IA open source] IA",
+      "query": "[développement et fine-tuning de modèles de machine learning et d'IA open source] IA",
       "n_results": 3,
       "results": [
         {
@@ -125,7 +125,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et développement de systèmes de machine learning] conception de systèmes de machine learning",
+      "query": "[développement et fine-tuning de modèles de machine learning et d'IA open source] développement de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4623,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5203,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5363,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4623, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[conception et développement de systèmes de machine learning] conception de systèmes de machine learning",
       "n_results": 3,
       "results": [
         {
@@ -148,7 +171,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et développement de systèmes de machine learning] développement de systèmes de machine learning",
+      "query": "[conception et développement de systèmes de machine learning] développement de systèmes de machine learning",
       "n_results": 3,
       "results": [
         {
@@ -171,7 +194,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse et interprétation de données complexes] analyse de données",
+      "query": "[analyse et interprétation de données complexes] analyse de données",
       "n_results": 3,
       "results": [
         {
@@ -194,7 +217,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse et interprétation de données complexes] interprétation de données",
+      "query": "[analyse et interprétation de données complexes] interprétation de données",
       "n_results": 3,
       "results": [
         {
@@ -217,7 +240,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse et interprétation de données complexes] données complexes",
+      "query": "[analyse et interprétation de données complexes] données complexes",
       "n_results": 3,
       "results": [
         {
@@ -240,7 +263,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Optimisation et maintenance des performances des modèles] optimisation de modèles",
+      "query": "[optimisation des performances des modèles de machine learning] optimisation de modèles",
       "n_results": 3,
       "results": [
         {
@@ -263,7 +286,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Optimisation et maintenance des performances des modèles] maintenance de modèles",
+      "query": "[optimisation des performances des modèles de machine learning] performance des modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4634,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4815,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5233,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4634, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[optimisation des performances des modèles de machine learning] machine learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1937,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5103,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.1937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[maintenance de modèles de machine learning] maintenance de modèles",
       "n_results": 3,
       "results": [
         {
@@ -286,30 +355,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Optimisation et maintenance des performances des modèles] performances des modèles",
+      "query": "[maintenance de modèles de machine learning] machine learning",
       "n_results": 3,
       "results": [
         {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1937,
+          "source_file": "skills.md"
+        },
+        {
           "id": "achievements::churn_model",
-          "distance": 0.491,
+          "distance": 0.4336,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5104,
-          "source_file": "skills.md"
-        },
-        {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5431,
+          "distance": 0.5103,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4910, match retenu"
+      "conclusion": "best_distance=0.1937, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Collecte et préparation de données] collecte de données",
+      "query": "[collecte et préparation de données] collecte de données",
       "n_results": 3,
       "results": [
         {
@@ -332,7 +401,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collecte et préparation de données] préparation de données",
+      "query": "[collecte et préparation de données] préparation de données",
       "n_results": 3,
       "results": [
         {
@@ -355,7 +424,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collecte et préparation de données] data preprocessing",
+      "query": "[collecte et préparation de données] data preprocessing",
       "n_results": 3,
       "results": [
         {
@@ -378,30 +447,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Implémentation d'architectures de modèles d'IA] implémentation d'architectures de modèles",
+      "query": "[implémentation d'architectures de modèles d'IA] implémentation d'architectures",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::mistral_chatbot",
-          "distance": 0.4255,
+          "distance": 0.4478,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.4595,
+          "distance": 0.5134,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.5146,
+          "distance": 0.5239,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4255, match retenu"
+      "conclusion": "best_distance=0.4478, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Implémentation d'architectures de modèles d'IA] modèles d'IA",
+      "query": "[implémentation d'architectures de modèles d'IA] modèles d'IA",
       "n_results": 3,
       "results": [
         {
@@ -424,7 +493,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Implémentation d'architectures de modèles d'IA] conception d'architectures",
+      "query": "[implémentation d'architectures de modèles d'IA] conception d'architectures",
       "n_results": 3,
       "results": [
         {
@@ -447,7 +516,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Expérience avec des frameworks de machine learning (ex: TensorFlow, PyTorch)] TensorFlow",
+      "query": "[utilisation de frameworks de machine learning (TensorFlow, PyTorch, scikit-learn)] TensorFlow",
       "n_results": 3,
       "results": [
         {
@@ -470,7 +539,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Expérience avec des frameworks de machine learning (ex: TensorFlow, PyTorch)] PyTorch",
+      "query": "[utilisation de frameworks de machine learning (TensorFlow, PyTorch, scikit-learn)] PyTorch",
       "n_results": 3,
       "results": [
         {
@@ -493,7 +562,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Expérience avec des frameworks de machine learning (ex: TensorFlow, PyTorch)] frameworks de machine learning",
+      "query": "[utilisation de frameworks de machine learning (TensorFlow, PyTorch, scikit-learn)] scikit-learn",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5307,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5659,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6069,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5307, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[utilisation de frameworks de machine learning (TensorFlow, PyTorch, scikit-learn)] frameworks de machine learning",
       "n_results": 3,
       "results": [
         {
@@ -516,7 +608,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Programmation en Python pour le développement d'algorithmes d'IA] Python",
+      "query": "[programmation en Python pour l'IA et le machine learning] Python",
       "n_results": 3,
       "results": [
         {
@@ -539,141 +631,118 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Programmation en Python pour le développement d'algorithmes d'IA] développement d'algorithmes d'IA",
+      "query": "[programmation en Python pour l'IA et le machine learning] programmation pour l'IA",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4667,
+          "distance": 0.4285,
           "source_file": "skills.md"
         },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4408,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4772,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4285, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[programmation en Python pour l'IA et le machine learning] programmation pour le machine learning",
+      "n_results": 3,
+      "results": [
         {
           "id": "skills::skills_maitrisees_ml",
-          "distance": 0.4746,
+          "distance": 0.2529,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4522,
           "source_file": "skills.md"
         },
         {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.4973,
+          "distance": 0.4848,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4667, match retenu"
+      "conclusion": "best_distance=0.2529, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Connaissance des bonnes pratiques en MLOps] MLOps",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_nlp_audio",
-          "distance": 0.6473,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.653,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::whisper_nlp_pipeline",
-          "distance": 0.6802,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6473, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Connaissance des bonnes pratiques en MLOps] bonnes pratiques MLOps",
+      "query": "[déploiement de solutions d'IA robustes et scalables] déploiement de solutions d'IA",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.5179,
+          "distance": 0.4031,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5542,
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.462,
           "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5705,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5179, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Expérience dans des secteurs industriels ou énergétiques] secteur industriel",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5359,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5733,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5956,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5359, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Expérience dans des secteurs industriels ou énergétiques] secteur énergétique",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5971,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6038,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6218,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5971, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Expérience dans des secteurs industriels ou énergétiques] domaine appliqué",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5512,
-          "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.5514,
+          "distance": 0.4625,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4031, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[déploiement de solutions d'IA robustes et scalables] solutions robustes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6578,
           "source_file": "skills.md"
         },
         {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.556,
-          "source_file": "geography_rules.md"
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.668,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.675,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5512, match retenu"
+      "conclusion": "best_distance=0.6578, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[déploiement de solutions d'IA robustes et scalables] solutions scalables",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6794,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6864,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7247,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6794, match retenu"
     }
   ],
   "uncertain_flags": []

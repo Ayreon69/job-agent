@@ -33,99 +33,99 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration de systèmes d'entreprise (ERP, MES, MDM, solutions de Technology Transfer)] ERP",
+      "query": "[Intégration de systèmes (ERP, MES, MDM, solutions de Technology Transfer)] intégration ERP",
       "n_results": 3,
       "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6418,
-          "source_file": "achievements.md"
-        },
         {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.6446,
+          "distance": 0.5679,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.6702,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6418, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Intégration de systèmes d'entreprise (ERP, MES, MDM, solutions de Technology Transfer)] MES",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.7081,
+          "distance": 0.5773,
           "source_file": "achievements.md"
         },
         {
-          "id": "constraints::education",
-          "distance": 0.7291,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.7295,
-          "source_file": "geography_rules.md"
+          "id": "achievements::commission_automation",
+          "distance": 0.6006,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.7081, match retenu"
+      "conclusion": "best_distance=0.5679, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration de systèmes d'entreprise (ERP, MES, MDM, solutions de Technology Transfer)] MDM",
+      "query": "[Intégration de systèmes (ERP, MES, MDM, solutions de Technology Transfer)] intégration MES",
       "n_results": 3,
       "results": [
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.6853,
-          "source_file": "skills.md"
-        },
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.6921,
+          "distance": 0.577,
           "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.7075,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6853, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Intégration de systèmes d'entreprise (ERP, MES, MDM, solutions de Technology Transfer)] Technology Transfer",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6344,
-          "source_file": "skills.md"
         },
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.6429,
+          "distance": 0.6028,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6216,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5770, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de systèmes (ERP, MES, MDM, solutions de Technology Transfer)] intégration MDM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5961,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6181,
+          "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.652,
+          "distance": 0.6368,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6344, match retenu"
+      "conclusion": "best_distance=0.5961, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration de systèmes d'entreprise (ERP, MES, MDM, solutions de Technology Transfer)] intégration de systèmes",
+      "query": "[Intégration de systèmes (ERP, MES, MDM, solutions de Technology Transfer)] intégration solutions de Technology Transfer",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5884,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5939,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6023,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5884, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de systèmes (ERP, MES, MDM, solutions de Technology Transfer)] intégration de systèmes",
       "n_results": 3,
       "results": [
         {
@@ -148,210 +148,210 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration de systèmes d'entreprise (ERP, MES, MDM, solutions de Technology Transfer)] interfaces systèmes",
+      "query": "[Conception fonctionnelle d'interfaces et orchestration des flux de données] conception fonctionnelle d'interfaces",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::mistral_chatbot",
-          "distance": 0.5227,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6168,
+          "distance": 0.3856,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.6237,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5227, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion des flux de données et continuité des données (end-to-end data continuity)] flux de données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5213,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5342,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.5515,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5213, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion des flux de données et continuité des données (end-to-end data continuity)] continuité des données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.563,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.6066,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.6395,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5630, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion des flux de données et continuité des données (end-to-end data continuity)] data flow",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5592,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5914,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5944,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5592, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion des flux de données et continuité des données (end-to-end data continuity)] end-to-end data continuity",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::certifications",
-          "distance": 0.6439,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6725,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "constraints::current_employment",
-          "distance": 0.6852,
-          "source_file": "constraints.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6439, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Cartographie des processus métiers et alignement fonctionnel (process mapping)] cartographie des processus",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.577,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5879,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6035,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5770, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Cartographie des processus métiers et alignement fonctionnel (process mapping)] process mapping",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5264,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5619,
+          "distance": 0.5115,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.5635,
+          "distance": 0.561,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5264, match retenu"
+      "conclusion": "best_distance=0.3856, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Cartographie des processus métiers et alignement fonctionnel (process mapping)] alignement fonctionnel",
+      "query": "[Conception fonctionnelle d'interfaces et orchestration des flux de données] orchestration des flux de données",
       "n_results": 3,
       "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.456,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4693,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5436,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4560, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception fonctionnelle d'interfaces et orchestration des flux de données] déclenchement de transferts de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5803,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.582,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5951,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5803, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception fonctionnelle d'interfaces et orchestration des flux de données] Bill of Material transfer",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6976,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7011,
+          "source_file": "achievements.md"
+        },
         {
           "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6679,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7189,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.7192,
+          "distance": 0.7246,
           "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.6679, match retenu"
+      "conclusion": "best_distance=0.6976, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Cartographie des processus métiers et alignement fonctionnel (process mapping)] Technical Transfer process",
+      "query": "[Conception fonctionnelle d'interfaces et orchestration des flux de données] Technical Transfer approval",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::commission_automation",
-          "distance": 0.578,
+          "distance": 0.5952,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.596,
+          "distance": 0.6124,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6252,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5952, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cartographie des processus métiers et alignement des flux numériques] cartographie des processus métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4944,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5175,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5244,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4944, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cartographie des processus métiers et alignement des flux numériques] alignement des flux numériques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6202,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6316,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6533,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6202, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cartographie des processus métiers et alignement des flux numériques] processus end-to-end Technical Transfer",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5158,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5766,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5819,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5158, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cartographie des processus métiers et alignement des flux numériques] mapping processus industriels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.598,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5981,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.6026,
+          "distance": 0.6045,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5780, match retenu"
+      "conclusion": "best_distance=0.5980, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -378,76 +378,99 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gouvernance des données et Single Source of Truth (SSOT)] Single Source of Truth",
+      "query": "[Gouvernance des données et Single Source of Truth (SSOT)] Single Source of Truth (SSOT)",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::whisper_nlp_pipeline",
-          "distance": 0.7538,
+          "distance": 0.7491,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7616,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.7854,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_nlp_audio",
-          "distance": 0.7903,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "aucun match fiable -> flag_uncertain"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gouvernance des données et Single Source of Truth (SSOT)] SSOT",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6978,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.7084,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.7189,
+          "distance": 0.7693,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6978, match retenu"
+      "conclusion": "best_distance=0.7491, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Gouvernance des données et Single Source of Truth (SSOT)] data ownership",
+      "query": "[Gouvernance des données et Single Source of Truth (SSOT)] propriété des données",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6463,
-          "source_file": "achievements.md"
+          "id": "skills::certifications",
+          "distance": 0.5852,
+          "source_file": "skills.md"
         },
         {
           "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.6565,
+          "distance": 0.5883,
           "source_file": "geography_rules.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.6745,
+          "distance": 0.5991,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.6463, match retenu"
+      "conclusion": "best_distance=0.5852, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégrité des données GxP (Good x Practice)] intégrité des données GxP",
+      "query": "[Gouvernance des données et Single Source of Truth (SSOT)] cycle de vie des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5376,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5752,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6171,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5376, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance des données et Single Source of Truth (SSOT)] alignement sémantique des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5904,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6296,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6356,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5904, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégrité des données GxP et conformité réglementaire] intégrité des données GxP",
       "n_results": 3,
       "results": [
         {
@@ -470,49 +493,49 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégrité des données GxP (Good x Practice)] GxP data integrity",
+      "query": "[Intégrité des données GxP et conformité réglementaire] conformité réglementaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.496,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5406,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5535,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4960, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégrité des données GxP et conformité réglementaire] data integrity",
       "n_results": 3,
       "results": [
         {
           "id": "skills::certifications",
-          "distance": 0.6449,
+          "distance": 0.5766,
           "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6343,
+          "source_file": "achievements.md"
         },
         {
           "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.6975,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6984,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6449, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Intégrité des données GxP (Good x Practice)] conformité GxP",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "geography_rules::rule_uae_middle_east",
-          "distance": 0.6262,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "geography_rules::rule_lyon_no_mobility",
-          "distance": 0.717,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_other_mobility",
-          "distance": 0.7215,
+          "distance": 0.6475,
           "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.6262, match retenu"
+      "conclusion": "best_distance=0.5766, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -539,214 +562,122 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse des besoins métiers et traduction en spécifications fonctionnelles] spécifications fonctionnelles",
+      "query": "[Analyse des besoins métiers et traduction en spécifications fonctionnelles] traduction en spécifications fonctionnelles",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5205,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5335,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5337,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5205, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Analyse des besoins métiers et traduction en spécifications fonctionnelles] business requirements",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5705,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.5812,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "constraints::notice_period",
-          "distance": 0.603,
-          "source_file": "constraints.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5705, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Analyse des besoins métiers et traduction en spécifications fonctionnelles] functional specifications",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5559,
-          "source_file": "achievements.md"
+          "id": "skills::skills_langues",
+          "distance": 0.5084,
+          "source_file": "skills.md"
         },
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.5918,
+          "distance": 0.5534,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6009,
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5937,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5559, match retenu"
+      "conclusion": "best_distance=0.5084, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projets d'intégration et collaboration avec les parties prenantes (Business Process Owners, SMEs, Product Owners)] gestion de projets d'intégration",
+      "query": "[Analyse des besoins métiers et traduction en spécifications fonctionnelles] capture des exigences opérationnelles",
       "n_results": 3,
       "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5041,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.526,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5381,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5041, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion de projets d'intégration et collaboration avec les parties prenantes (Business Process Owners, SMEs, Product Owners)] collaboration parties prenantes",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6494,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6713,
-          "source_file": "achievements.md"
-        },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.6899,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6494, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion de projets d'intégration et collaboration avec les parties prenantes (Business Process Owners, SMEs, Product Owners)] Business Process Owners",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6018,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6131,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6456,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6018, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion de projets d'intégration et collaboration avec les parties prenantes (Business Process Owners, SMEs, Product Owners)] SMEs",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.5581,
+          "distance": 0.4752,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5698,
+          "distance": 0.4765,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6043,
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4891,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5581, match retenu"
+      "conclusion": "best_distance=0.4752, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projets d'intégration et collaboration avec les parties prenantes (Business Process Owners, SMEs, Product Owners)] Product Owners",
+      "query": "[Analyse des besoins métiers et traduction en spécifications fonctionnelles] business acumen",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6134,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6592,
-          "source_file": "achievements.md"
-        },
-        {
           "id": "achievements::churn_model",
-          "distance": 0.6753,
+          "distance": 0.4701,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5337,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5479,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.6134, match retenu"
+      "conclusion": "best_distance=0.4701, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse des écarts (gap analysis) et automatisation des processus manuels] gap analysis",
+      "query": "[Analyse des écarts (Gap Analysis) et automatisation des processus] Gap Analysis",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_gaps_specifiques_cern",
-          "distance": 0.5249,
+          "distance": 0.4986,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.6627,
+          "distance": 0.6858,
           "source_file": "achievements.md"
         },
         {
-          "id": "constraints::education",
-          "distance": 0.728,
-          "source_file": "constraints.md"
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.7146,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5249, match retenu"
+      "conclusion": "best_distance=0.4986, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse des écarts (gap analysis) et automatisation des processus manuels] automatisation des processus",
+      "query": "[Analyse des écarts (Gap Analysis) et automatisation des processus] identification des liens manquants",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7384,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7469,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7623,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7384, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des écarts (Gap Analysis) et automatisation des processus] automatisation des processus",
       "n_results": 3,
       "results": [
         {
@@ -769,53 +700,99 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse des écarts (gap analysis) et automatisation des processus manuels] broken links identification",
+      "query": "[Analyse des écarts (Gap Analysis) et automatisation des processus] réduction du travail manuel",
       "n_results": 3,
       "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4947,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5318,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5786,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4947, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support aux tests utilisateurs (UAT) et validation fonctionnelle] support UAT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6489,
+          "source_file": "achievements.md"
+        },
         {
           "id": "skills::certifications",
-          "distance": 0.8302,
+          "distance": 0.6574,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.8405,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6804,
           "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.8426,
-          "source_file": "skills.md"
         }
       ],
-      "conclusion": "aucun match fiable -> flag_uncertain"
+      "conclusion": "best_distance=0.6489, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Supervision des tests utilisateurs (UAT - User Acceptance Testing)] UAT",
+      "query": "[Support aux tests utilisateurs (UAT) et validation fonctionnelle] validation fonctionnelle",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.698,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5587,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5633,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.7189,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.7199,
+          "id": "achievements::churn_model",
+          "distance": 0.5734,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6980, match retenu"
+      "conclusion": "best_distance=0.5587, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Supervision des tests utilisateurs (UAT - User Acceptance Testing)] User Acceptance Testing",
+      "query": "[Support aux tests utilisateurs (UAT) et validation fonctionnelle] tests utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5979,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6051,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6222,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5979, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support aux tests utilisateurs (UAT) et validation fonctionnelle] User Acceptance Testing",
       "n_results": 3,
       "results": [
         {
@@ -838,76 +815,211 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Supervision des tests utilisateurs (UAT - User Acceptance Testing)] supervision des tests",
+      "query": "[Collaboration avec les parties prenantes (Business Process Owners, SMEs, Product Owners, équipes techniques)] collaboration avec Business Process Owners",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5616,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5541,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::commission_automation",
-          "distance": 0.593,
+          "id": "achievements::churn_model",
+          "distance": 0.5748,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5929,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5541, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les parties prenantes (Business Process Owners, SMEs, Product Owners, équipes techniques)] collaboration avec SMEs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5193,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.536,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5363,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5193, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les parties prenantes (Business Process Owners, SMEs, Product Owners, équipes techniques)] collaboration avec Product Owners",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5233,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5969,
+          "distance": 0.5704,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6065,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5616, match retenu"
+      "conclusion": "best_distance=0.5233, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Maîtrise de l'anglais professionnel (niveau opérationnel pour interactions internationales)] anglais professionnel",
+      "query": "[Collaboration avec les parties prenantes (Business Process Owners, SMEs, Product Owners, équipes techniques)] collaboration avec équipes techniques",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_langues",
-          "distance": 0.3648,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4986,
           "source_file": "skills.md"
         },
         {
-          "id": "skills::skills_nlp_audio",
-          "distance": 0.6207,
-          "source_file": "skills.md"
+          "id": "achievements::agentic_coding",
+          "distance": 0.5038,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5043,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4986, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les parties prenantes (Business Process Owners, SMEs, Product Owners, équipes techniques)] partenariats transverses",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6334,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6499,
+          "source_file": "achievements.md"
         },
         {
           "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6447,
+          "distance": 0.6568,
           "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.3648, match retenu"
+      "conclusion": "best_distance=0.6334, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Maîtrise de l'anglais professionnel (niveau opérationnel pour interactions internationales)] communication internationale",
+      "query": "[Gestion de projets data et leadership fonctionnel] gestion de projets data",
       "n_results": 3,
       "results": [
         {
-          "id": "geography_rules::rule_lyon_no_mobility",
-          "distance": 0.5809,
-          "source_file": "geography_rules.md"
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.449,
+          "source_file": "skills.md"
         },
         {
-          "id": "geography_rules::rule_switzerland_other_mobility",
-          "distance": 0.6161,
-          "source_file": "geography_rules.md"
+          "id": "achievements::agentic_coding",
+          "distance": 0.4517,
+          "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_uae_middle_east",
-          "distance": 0.6188,
-          "source_file": "geography_rules.md"
+          "id": "skills::certifications",
+          "distance": 0.4913,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5809, match retenu"
+      "conclusion": "best_distance=0.4490, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets data et leadership fonctionnel] leadership fonctionnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6194,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6785,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6844,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6194, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets data et leadership fonctionnel] expertise fonctionnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4184,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4568,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4586,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4184, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets data et leadership fonctionnel] pilotage de projets d'intégration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4919,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5073,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5211,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4919, match retenu"
     }
   ],
-  "uncertain_flags": [
-    "Gouvernance des données et Single Source of Truth (SSOT)",
-    "Analyse des écarts (gap analysis) et automatisation des processus manuels"
-  ]
+  "uncertain_flags": []
 }

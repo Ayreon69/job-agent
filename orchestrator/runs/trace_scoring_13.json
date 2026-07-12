@@ -240,68 +240,390 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Construction et suivi des KPI (indicateurs clés de performance)] KPI",
+      "query": "[Construction et suivi des KPI logistiques et transport] construction de KPI",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.6698,
+          "distance": 0.6413,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.7258,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6565,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.7576,
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6605,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6698, match retenu"
+      "conclusion": "best_distance=0.6413, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Construction et suivi des KPI (indicateurs clés de performance)] indicateurs clés de performance",
+      "query": "[Construction et suivi des KPI logistiques et transport] suivi de KPI",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.4667,
+          "distance": 0.5744,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.522,
+          "distance": 0.6518,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5735,
+          "id": "skills::certifications",
+          "distance": 0.686,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4667, match retenu"
+      "conclusion": "best_distance=0.5744, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Construction et suivi des KPI (indicateurs clés de performance)] suivi des KPI",
+      "query": "[Construction et suivi des KPI logistiques et transport] indicateurs clés de performance logistiques",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5465,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6104,
+          "distance": 0.5077,
           "source_file": "achievements.md"
         },
         {
           "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.6583,
+          "distance": 0.5259,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5287,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5077, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Construction et suivi des KPI logistiques et transport] indicateurs clés de performance transport",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5806,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.5864,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6061,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5806, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Identification des dérives de performance et coûts cachés] identification des dérives de performance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.455,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5552,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5634,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4550, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Identification des dérives de performance et coûts cachés] analyse des coûts cachés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5597,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6317,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5128, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Identification des dérives de performance et coûts cachés] opportunités d'optimisation logistique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5247,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.542,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5612,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5247, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi opérationnel des flux transport et coordination logistique] suivi des opérations de transport",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5233,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5458,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5554,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5233, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi opérationnel des flux transport et coordination logistique] coordination logistique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5277,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6207,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6302,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5277, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi opérationnel des flux transport et coordination logistique] gestion des flux transport",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4838,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5544,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5749,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4838, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi opérationnel des flux transport et coordination logistique] interface avec transporteurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5118,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5293,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5584,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5118, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi opérationnel des flux transport et coordination logistique] résolution des problématiques de flux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5803,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6451,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6838,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5803, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des anomalies et incidents logistiques] analyse des anomalies logistiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4981,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5429,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5727,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4981, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des anomalies et incidents logistiques] analyse des incidents logistiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4722,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5758,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5968,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4722, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des anomalies et incidents logistiques] résolution d'incidents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5636,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6526,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6977,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5636, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des schémas de transport et flux intersites] optimisation des schémas de transport",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.5567,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5655,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6078,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5567, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des schémas de transport et flux intersites] optimisation des flux intersites",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5465,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.6204,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.633,
           "source_file": "geography_rules.md"
         }
       ],
@@ -309,99 +631,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Construction et suivi des KPI (indicateurs clés de performance)] définition des KPI",
+      "query": "[Optimisation des schémas de transport et flux intersites] amélioration des flux logistiques",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6144,
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5463,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5494,
           "source_file": "achievements.md"
         },
         {
           "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.7239,
+          "distance": 0.5659,
           "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5463, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance de tableaux de bord sous Power BI] conception de tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.582,
+          "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.7338,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6098,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6177,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.6144, match retenu"
+      "conclusion": "best_distance=0.5820, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse des dérives de performance et coûts cachés] analyse des dérives de performance",
+      "query": "[Conception et maintenance de tableaux de bord sous Power BI] maintenance de tableaux de bord",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.4269,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5996,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6162,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5216,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5459,
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6285,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4269, match retenu"
+      "conclusion": "best_distance=0.5996, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse des dérives de performance et coûts cachés] identification des coûts cachés",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5537,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5893,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6449,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5537, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Analyse des dérives de performance et coûts cachés] optimisation des coûts logistiques",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.4843,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.4981,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.5739,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4843, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Tableaux de bord et reporting sous Power BI] Power BI",
+      "query": "[Conception et maintenance de tableaux de bord sous Power BI] Power BI",
       "n_results": 3,
       "results": [
         {
@@ -424,53 +723,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Tableaux de bord et reporting sous Power BI] tableaux de bord",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.7165,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7214,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.7329,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7165, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Tableaux de bord et reporting sous Power BI] reporting",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6099,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6373,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.6755,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6099, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Tableaux de bord et reporting sous Power BI] visualisation de données",
+      "query": "[Conception et maintenance de tableaux de bord sous Power BI] visualisation de données",
       "n_results": 3,
       "results": [
         {
@@ -562,260 +815,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion des anomalies et incidents logistiques] analyse des anomalies logistiques",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4981,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5429,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5727,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4981, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion des anomalies et incidents logistiques] résolution d'incidents logistiques",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5522,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6052,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.608,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5522, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion des anomalies et incidents logistiques] gestion des incidents",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4656,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.629,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.6376,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4656, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Coordination des acteurs de la chaîne logistique (transporteurs, sites opérationnels)] coordination logistique",
+      "query": "[Production de synthèses et recommandations opérationnelles] production de synthèses",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.5277,
+          "distance": 0.7077,
           "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.6207,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6302,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5277, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Coordination des acteurs de la chaîne logistique (transporteurs, sites opérationnels)] gestion des transporteurs",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5078,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5149,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5248,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5078, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Coordination des acteurs de la chaîne logistique (transporteurs, sites opérationnels)] interface avec les sites opérationnels",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.4691,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.4812,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5213,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4691, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Coordination des acteurs de la chaîne logistique (transporteurs, sites opérationnels)] collaboration Supply Chain",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.5607,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5804,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6119,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5607, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Optimisation des schémas de transport et flux intersites] optimisation des schémas de transport",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "geography_rules::rule_switzerland_other_mobility",
-          "distance": 0.5567,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5655,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_lyon_no_mobility",
-          "distance": 0.6078,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5567, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Optimisation des schémas de transport et flux intersites] gestion des flux intersites",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.4859,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_lyon_no_mobility",
-          "distance": 0.5916,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5998,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4859, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Optimisation des schémas de transport et flux intersites] planification logistique",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5366,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5436,
-          "source_file": "geography_rules.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.5563,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5366, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Communication et présentation des analyses aux équipes opérationnelles et management] synthèse des analyses",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5771,
+          "distance": 0.7092,
           "source_file": "achievements.md"
         },
         {
-          "id": "constraints::education",
-          "distance": 0.5916,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5929,
+          "id": "achievements::agentic_coding",
+          "distance": 0.718,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5771, match retenu"
+      "conclusion": "best_distance=0.7077, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Communication et présentation des analyses aux équipes opérationnelles et management] recommandations opérationnelles",
+      "query": "[Production de synthèses et recommandations opérationnelles] recommandations opérationnelles",
       "n_results": 3,
       "results": [
         {
@@ -838,30 +861,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Communication et présentation des analyses aux équipes opérationnelles et management] présentation des données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4885,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.506,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5112,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4885, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Communication et présentation des analyses aux équipes opérationnelles et management] communication des insights",
+      "query": "[Production de synthèses et recommandations opérationnelles] communication des insights",
       "n_results": 3,
       "results": [
         {

@@ -1,120 +1,78 @@
 ## Résumé du matching
+Le profil présente une adéquation solide (75/100) avec l’offre d’**Ingénieur IA**, grâce à une expérience concrète en **machine learning appliqué** et en **déploiement de solutions en production**. Voici les points forts structurants :
 
-**Adéquation globale : 75/100**
-Le profil du candidat correspond solidement aux attentes pour ce poste d’**Ingénieur IA**, avec une expérience concrète en développement de modèles de machine learning et une approche pragmatique alignée sur les besoins métier. Ses réalisations en production et sa maîtrise des outils data (Python, SQL, Power BI) en font un candidat pertinent pour des missions opérationnelles en IA appliquée.
+- **Développement et optimisation de modèles ML** :
+  - Conception d’un modèle de *churn prediction* en production (scikit-learn), avec justification métier des choix d’optimisation (recall à 85% priorisé sur la précision) → *[source : modèle de churn chez ECA Assurances]*.
+  - Autonomie sur des projets de recherche appliquée, alignés sur des logiques métiers (ex. : stratégies de fidélisation).
 
----
+- **Architecture et déploiement** :
+  - Mise en production d’un modèle de churn alimentant des décisions opérationnelles, illustrant une maîtrise des enjeux de **robustesse et scalabilité** → *[source : ECA Assurances]*.
+  - Structuration de pipelines ETL sur Snowflake (architecture proche de Medallion), avec SQL avancé et Python (pandas) pour la préparation de données → *[source : pipelines ETL en production]*.
 
-### **Points forts clés**
-1. **Développement et fine-tuning de modèles d’IA**
-   - Expérience avérée en **machine learning appliqué** avec un modèle de *churn* en production chez ECA Assurances, optimisé pour un *recall de 85%* (priorisé sur la précision pour limiter les faux négatifs) ([source](#)).
-   - Prototypage d’un **assistant interne basé sur l’API Mistral**, démontrant une première expérience avec des modèles d’IA open source en conditions réelles ([source](#)).
+- **Prototypage IA générative** :
+  - Développement d’un assistant interne via l’API Mistral (Gradio), démontrant une compréhension des compromis architecturaux (contexte complet vs retrieval) → *[source : prototypage assistant interne]*.
 
-2. **Conception de systèmes de machine learning**
-   - Développement d’un **outil de tarification autonome** pour les équipes métier, illustrant une capacité à concevoir des systèmes utilisables et alignés sur les besoins opérationnels ([source](#)).
-   - Modèle de *churn* déployé avec une **logique métier justifiant les choix statistiques** (équilibre recall/précision), montrant une compréhension des enjeux business ([source](#)).
-
-3. **Analyse et interprétation de données complexes**
-   - Conception de **tableaux de bord Power BI** adoptés à l’échelle de l’entreprise, avec un alignement sur les KPIs métier ([source](#)).
-   - Certifications **DataCamp** couvrant SQL avancé, Python et Power BI, renforçant ses compétences en data science ([source](#)).
-
-4. **Optimisation et maintenance des modèles**
-   - Modèle de *churn* maintenu en production avec un **recall stable de 85%**, optimisé pour le contexte assurance ([source](#)).
-   - Outil de tarification permettant des **ajustements autonomes** par les équipes métier, simplifiant la maintenance ([source](#)).
-
-5. **Collecte et préparation de données**
-   - Structuration de **pipelines ETL sur Snowflake** (architecture proche *Medallion*), avec une maîtrise de SQL avancé et Python (pandas) ([source](#)).
-   - Expérience en **nettoyage et transformation de données** pour des modèles en production ([source](#)).
-
-6. **Programmation Python pour l’IA**
-   - Maîtrise de **Python** (pandas, numpy, scikit-learn) avec des réalisations concrètes : modèles prédictifs et automatisation de pipelines ([source](#)).
-
----
+- **Analyse et interprétation** :
+  - Conception de tableaux de bord Power BI alignés sur les KPIs métiers, adoptés à l’échelle de l’entreprise → *[source : modèles de churn + dashboards]*.
 
 ## Gaps et incertitudes
+**Gaps confirmés** (compétences absentes dans le profil) :
+- **Frameworks avancés** : Aucune expérience pratique avec **TensorFlow** ou **PyTorch** (seulement scikit-learn).
+- **Fine-tuning de LLM** : Expérience limitée au prototypage via API (Mistral), sans fine-tuning de modèles open source (ex. : Llama, Mistral) en conditions réelles → *[source : assistant interne sans RAG]*.
+- **Déploiement cloud** : Notions en AWS/Azure, mais pas de déploiement en production.
+- **Outils DevOps** : Notions en CI/CD (GitHub Actions) et Docker/FastAPI, sans application professionnelle.
+- **Architectures RAG** : Notions en bases vectorielles (ChromaDB, Pinecone), mais pas d’implémentation complète en production.
 
-### **Gaps confirmés (compétences absentes)**
-1. **Frameworks avancés de machine learning**
-   - **Absence d’expérience avec TensorFlow ou PyTorch** : les modèles développés reposent exclusivement sur *scikit-learn* ([source](#)). Ce gap limite la capacité à travailler sur des architectures complexes (réseaux de neurones, deep learning).
-
-2. **MLOps et déploiement avancé**
-   - Expérience limitée en **MLOps** : notions de CI/CD et cloud (AWS/Azure), mais **pas de déploiement en production ni d’orchestration avancée** (ex : MLflow, Kubeflow) ([source](#)).
-
-3. **Expérience sectorielle**
-   - **Secteur exclusif à l’assurance** : aucun projet ou expérience dans les **secteurs industriels ou énergétiques**, pourtant mentionnés dans l’offre ([source](#)).
-
----
-
-### **Flags incertains (aucune absence confirmée, mais absence de preuve)**
-*Aucun flag incertain identifié* : les compétences clés du poste ont été vérifiées via les réalisations du candidat.
+**Flags incertains** :
+*Aucun* – Tous les écarts sont des absences confirmées, sans zone d’ombre résiduelle.
 
 ---
 
-## Questions d’entretien probables
+## Questions d'entretien probables
+1. **Optimisation de modèles** :
+   - *"Comment avez-vous justifié le choix du recall (85%) pour votre modèle de churn, et quels compromis avez-vous dû faire ?"* → *[source : modèle de churn]*.
+   - *"Quels indicateurs utilisez-vous pour évaluer la performance d’un modèle en production, au-delà des métriques techniques ?"*
 
-### **Technique**
-1. **Machine Learning appliqué**
-   - *"Pouvez-vous détailler la méthodologie utilisée pour optimiser le recall de votre modèle de churn à 85% ? Quels compromis avez-vous faits avec la précision, et pourquoi ?"* ([source](#)).
-   - *"Comment avez-vous structuré votre pipeline ETL sur Snowflake pour garantir la qualité des données en entrée de vos modèles ?"* ([source](#)).
+2. **Architecture et déploiement** :
+   - *"Décrivez une situation où un modèle en production a nécessité des ajustements. Quelles étapes avez-vous suivies ?"* → *[source : maintenance du modèle de churn]*.
+   - *"Comment structureriez-vous un pipeline ETL pour un projet d’IA générative, en garantissant la qualité des données ?"* → *[source : pipelines Snowflake]*.
 
-2. **Frameworks et architectures**
-   - *"Quelles sont les limites de scikit-learn pour des projets d’IA plus complexes ? Comment envisagez-vous de monter en compétences sur TensorFlow ou PyTorch ?"* (gap confirmé).
-   - *"Avez-vous déjà travaillé avec des architectures de type *transformers* ou des modèles pré-entraînés ? Si non, comment aborderiez-vous leur implémentation ?"* (gap confirmé).
+3. **IA générative** :
+   - *"Quels compromis avez-vous identifiés lors du prototypage de votre assistant interne avec Mistral (contexte complet vs retrieval) ?"* → *[source : assistant interne]*.
+   - *"Comment aborderiez-vous le fine-tuning d’un LLM open source pour un cas d’usage spécifique, en partant de zéro ?"*
 
-3. **MLOps et production**
-   - *"Quels outils ou bonnes pratiques de MLOps avez-vous mis en place pour maintenir votre modèle de churn en production ?"* (gap confirmé).
-   - *"Comment gérez-vous la dérive des modèles (*model drift*) dans un contexte métier comme l’assurance ?"* ([source](#)).
+4. **Collaboration métier** :
+   - *"Comment avez-vous aligné vos tableaux de bord Power BI sur les besoins des équipes métiers ?"* → *[source : dashboards adoptés]*.
+   - *"Quels défis avez-vous rencontrés pour convaincre les parties prenantes de l’utilité d’un modèle prédictif ?"*
 
----
-
-### **Métier et soft skills**
-1. **Alignement métier**
-   - *"Comment avez-vous convaincu les équipes métier d’adopter vos tableaux de bord Power BI ? Quels KPIs avez-vous priorisés ?"* ([source](#)).
-   - *"Votre outil de tarification autonome a-t-il réduit la dépendance aux équipes data ? Si oui, comment avez-vous mesuré son impact ?"* ([source](#)).
-
-2. **Adaptation sectorielle**
-   - *"Votre expérience est centrée sur l’assurance. Comment comptez-vous transposer vos compétences à un secteur comme l’industrie ou l’énergie ?"* (gap confirmé).
-   - *"Quelles spécificités des données industrielles (ex : séries temporelles, capteurs) vous semblent les plus critiques à maîtriser ?"* (gap confirmé).
-
-3. **Collaboration**
-   - *"Comment gérez-vous les désaccords avec les équipes métier sur les choix statistiques (ex : recall vs précision) ?"* ([source](#)).
-   - *"Avez-vous déjà formé des non-techniciens à l’utilisation d’outils data ? Si oui, quelle approche avez-vous adoptée ?"* ([source](#)).
+5. **Gaps techniques** :
+   - *"Quelles stratégies envisagez-vous pour monter en compétences sur TensorFlow/PyTorch ou le déploiement cloud ?"*
+   - *"Avez-vous déjà travaillé avec des architectures RAG ? Si non, comment les aborderiez-vous ?"*
 
 ---
 
 ## Angle de candidature
+**Accroche** :
+*"Ingénieur IA avec une expertise éprouvée en machine learning appliqué et en déploiement de solutions en production, je candidate pour ce poste avec l’ambition de concilier rigueur technique et impact métier. Mon expérience chez ECA Assurances – où j’ai conçu un modèle de churn en production et des tableaux de bord adoptés à l’échelle de l’entreprise – illustre ma capacité à transformer des données en leviers opérationnels. Votre focus sur les agents IA et les LLM résonne avec mes projets récents en prototypage d’assistants internes (API Mistral), et je souhaite approfondir ces compétences dans un environnement exigeant."*
 
-### **Message clé**
-*"Ingénieur IA avec une expérience éprouvée en développement de modèles en production et une approche résolument métier, je candidate pour ce poste avec la conviction que mon profil allie rigueur technique et pragmatisme opérationnel. Mon parcours chez ECA Assurances a démontré ma capacité à concevoir des solutions data alignées sur les enjeux business, comme en témoignent mon modèle de churn optimisé pour le recall et mon outil de tarification autonome adopté par les équipes. Ma maîtrise de Python, SQL et Power BI, couplée à une expérience concrète en pipelines ETL (Snowflake), me permet de m’intégrer rapidement à vos projets d’IA appliquée."*
+**Points clés à mettre en avant** :
+1. **Impact concret** :
+   - Mettre en avant le **modèle de churn en production** (recall 85%, stratégies de fidélisation) et les **dashboards Power BI** comme preuves d’alignement métier → *[sources : ECA Assurances]*.
+   - Souligner l’**autonomie** sur des projets de recherche appliquée (ex. : justification des choix techniques).
 
----
+2. **Transition vers l’IA générative** :
+   - Valoriser le **prototypage de l’assistant interne** (Mistral + Gradio) comme une première étape vers des architectures plus complexes (RAG, agents).
+   - Insister sur la **compréhension des compromis architecturaux** (contexte vs retrieval) pour montrer une réflexion stratégique.
 
-### **Éléments différenciants à mettre en avant**
-1. **Approche métier des modèles**
-   - Insister sur la **justification business des choix techniques** (ex : recall à 85% pour le churn, outil de tarification autonome) pour montrer une compréhension des enjeux opérationnels ([source](#)).
+3. **Adéquation avec les besoins du poste** :
+   - **Collecte et préparation de données** : Expérience en pipelines ETL (Snowflake, SQL avancé) et structuration de données (architecture Medallion).
+   - **Maintenance et scalabilité** : Modèle de churn en production depuis [X mois/années], avec des ajustements réguliers.
 
-2. **Expérience en production**
-   - Souligner la **maintenance en conditions réelles** (modèle de churn stable, pipelines ETL) pour rassurer sur la capacité à livrer des solutions pérennes ([source](#)).
+4. **Gestion des gaps** :
+   - **Proactivité** : Mentionner des initiatives personnelles ou formations en cours pour combler les lacunes (ex. : TensorFlow, déploiement cloud).
+   - **Transférabilité** : Lier les compétences existantes (scikit-learn, Python) aux frameworks manquants (ex. : "Mon expérience en optimisation de modèles avec scikit-learn me permet d’aborder PyTorch avec une logique similaire").
 
-3. **Polyvalence data**
-   - Mettre en avant la **maîtrise des outils data** (Python, SQL, Power BI) et les certifications DataCamp pour montrer une base solide en data science ([source](#)).
-
----
-
-### **Stratégie pour combler les gaps**
-1. **Frameworks avancés (TensorFlow/PyTorch)**
-   - Proposer un **plan de montée en compétences** : *"Je prévois de suivre une formation certifiante sur TensorFlow/PyTorch dans les 3 prochains mois, avec un focus sur les architectures adaptées à vos cas d’usage (ex : séries temporelles pour l’industrie)."*
-
-2. **MLOps**
-   - Mettre en avant les **notions existantes** (CI/CD, cloud) et proposer une approche progressive : *"Mon expérience en déploiement de modèles (churn) et en pipelines ETL me permet d’aborder les bonnes pratiques MLOps avec une courbe d’apprentissage maîtrisée."*
-
-3. **Secteur industriel**
-   - Transposer les **compétences transverses** : *"Mon expérience en analyse de données complexes (assurance) et en optimisation de modèles est directement applicable aux enjeux industriels, comme la maintenance prédictive ou l’optimisation énergétique."*
-
----
-
-### **Accroche pour la lettre de motivation**
-*"Votre recherche d’un Ingénieur IA capable de concilier expertise technique et impact métier résonne fortement avec mon parcours. Chez ECA Assurances, j’ai conçu des modèles prédictifs en production tout en développant des outils autonomes pour les équipes opérationnelles — une approche que je souhaite transposer à vos projets dans l’industrie. Ma maîtrise de Python, SQL et Power BI, couplée à une expérience concrète en pipelines ETL (Snowflake), me permet de m’intégrer rapidement à vos équipes pour contribuer à des solutions d’IA robustes et scalables."*
-
----
-*Ton : professionnel, orienté solutions, avec une emphase sur l’opérationnel et l’alignement métier.*
+**Ton** :
+- **Technique mais accessible** : Éviter le jargon excessif, expliquer les choix avec des exemples concrets (ex. : "Pour le churn, j’ai privilégié le recall car une fausse alerte coûte moins cher qu’un client perdu").
+- **Orienté résultats** : Toujours ancrer les compétences dans des réalisations mesurables (ex. : "modèle adopté par 3 services", "réduction de X% du taux de churn").
+- **Ouverture** : Montrer une curiosité pour les défis du poste (ex. : "Je souhaite approfondir les architectures RAG pour des cas d’usage plus complexes").

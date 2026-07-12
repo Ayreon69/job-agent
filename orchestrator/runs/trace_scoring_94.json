@@ -171,72 +171,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projet IT et pilotage de programmes] objectifs de qualité",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5357,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5587,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5657,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5357, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion de projet IT et pilotage de programmes] gestion des coûts",
+      "query": "[Gestion de projet IT et pilotage de programmes] objectifs qualité-coûts-délais",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.4265,
+          "distance": 0.43,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5048,
+          "distance": 0.5353,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::commission_automation",
-          "distance": 0.5102,
+          "distance": 0.5596,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4265, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion de projet IT et pilotage de programmes] respect des délais",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "constraints::notice_period",
-          "distance": 0.4313,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.4797,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6183,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4313, match retenu"
+      "conclusion": "best_distance=0.4300, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -309,26 +263,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projet IT et pilotage de programmes] reporting",
+      "query": "[Gestion de projet IT et pilotage de programmes] reporting projet",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.6099,
+          "distance": 0.5213,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6373,
+          "id": "achievements::agentic_coding",
+          "distance": 0.536,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::certifications",
-          "distance": 0.6755,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5785,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.6099, match retenu"
+      "conclusion": "best_distance=0.5213, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -516,7 +470,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[API Management et outils associés] API Management",
+      "query": "[Gestion et développement d'API] API Management",
       "n_results": 3,
       "results": [
         {
@@ -539,53 +493,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[API Management et outils associés] Kong",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.8214,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.8915,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.9007,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "aucun match fiable -> flag_uncertain"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[API Management et outils associés] Apigee",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.7293,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7296,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.7679,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7293, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[API Management et outils associés] génération de proxies",
+      "query": "[Gestion et développement d'API] génération de proxies",
       "n_results": 3,
       "results": [
         {
@@ -608,7 +516,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[API Management et outils associés] génération de spécifications API",
+      "query": "[Gestion et développement d'API] génération de spécifications API",
       "n_results": 3,
       "results": [
         {
@@ -631,7 +539,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[API Management et outils associés] génération de code",
+      "query": "[Gestion et développement d'API] génération de code",
       "n_results": 3,
       "results": [
         {
@@ -654,7 +562,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de développement et de collaboration] Git",
+      "query": "[Gestion et développement d'API] Kong",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.8214,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.8915,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.9007,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et développement d'API] Apigee",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7293,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7296,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7679,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7293, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de versioning et de collaboration] Git",
       "n_results": 3,
       "results": [
         {
@@ -677,53 +631,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de développement et de collaboration] Jenkins",
+      "query": "[Outils de versioning et de collaboration] GitHub",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_nlp_audio",
-          "distance": 0.7829,
+          "id": "achievements::agentic_coding",
+          "distance": 0.7137,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7194,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::whisper_nlp_pipeline",
-          "distance": 0.8135,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.8236,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "aucun match fiable -> flag_uncertain"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Outils de développement et de collaboration] XL Deploy",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.7053,
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7528,
           "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7099,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.712,
-          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.7053, match retenu"
+      "conclusion": "best_distance=0.7137, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de développement et de collaboration] Jira",
+      "query": "[Outils de versioning et de collaboration] Jira",
       "n_results": 3,
       "results": [
         {
@@ -746,7 +677,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de développement et de collaboration] Confluence",
+      "query": "[Outils de versioning et de collaboration] Confluence",
       "n_results": 3,
       "results": [
         {
@@ -769,7 +700,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de développement et de collaboration] Backstage",
+      "query": "[Outils de versioning et de collaboration] Backstage",
       "n_results": 3,
       "results": [
         {
@@ -789,6 +720,75 @@
         }
       ],
       "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils d'automatisation et de déploiement] Jenkins",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7829,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.8135,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.8236,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils d'automatisation et de déploiement] XL Deploy",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7053,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.712,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7053, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils d'automatisation et de déploiement] automatisation des tests",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4055,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4239,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4599,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4055, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -884,49 +884,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[IA générative et agents IA pour le développement] automatisation des tests",
+      "query": "[IA générative et agents IA pour le développement] intégration d'agents IA dans le cycle de développement",
       "n_results": 3,
       "results": [
         {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4559,
+          "source_file": "achievements.md"
+        },
+        {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4055,
+          "distance": 0.469,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::commission_automation",
-          "distance": 0.4239,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.4599,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4055, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[IA générative et agents IA pour le développement] intégration d'agents IA",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4882,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.5255,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5267,
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4723,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4882, match retenu"
+      "conclusion": "best_distance=0.4559, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -1022,7 +999,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Méthodologies Agile et gestion d'équipes techniques] méthodologies Agile",
+      "query": "[Méthodologies Agile et DevOps] méthodologies Agile",
       "n_results": 3,
       "results": [
         {
@@ -1045,53 +1022,31 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Méthodologies Agile et gestion d'équipes techniques] coordination d'équipes techniques",
+      "query": "[Méthodologies Agile et DevOps] transformation DevOps",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5661,
-          "source_file": "achievements.md"
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7293,
+          "source_file": "skills.md"
         },
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.5779,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6105,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5661, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Méthodologies Agile et gestion d'équipes techniques] communication entre équipes DevOps et métiers",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.495,
+          "distance": 0.7323,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.5251,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5328,
+          "distance": 0.7334,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4950, match retenu"
+      "conclusion": "best_distance=0.7293, match retenu"
     }
   ],
   "uncertain_flags": [
-    "API Management et outils associés",
-    "Outils de développement et de collaboration"
+    "Gestion et développement d'API",
+    "Outils de versioning et de collaboration",
+    "Outils d'automatisation et de déploiement"
   ]
 }

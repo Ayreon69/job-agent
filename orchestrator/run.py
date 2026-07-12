@@ -7,10 +7,12 @@ Usage:
         (batch mode: every offer with status='nouveau')
 
 Each processed offer produces, under --output-dir (default: orchestrator/runs/):
-    analysis_<id>.md          - the markdown analysis, only on success
+    analysis_<id>.md              - the markdown analysis, only on success
     trace_orchestrator_<id>.json  - the orchestrator's own decision trace
     trace_scoring_<id>.json       - session 3's decision trace
     trace_generation_<id>.json    - session 4's decision trace
+    structured_analysis_<id>.json - matches/gaps/uncertain_flags, machine-readable
+                                     (session 9 follow-up — see generation/analysis.py)
 """
 
 from __future__ import annotations
@@ -67,6 +69,8 @@ def write_outputs(output_dir: Path, offer_id: int, result) -> None:
         (output_dir / f"trace_scoring_{offer_id}.json").write_text(result.scoring_trace_json, encoding="utf-8")
     if result.generation_trace_json:
         (output_dir / f"trace_generation_{offer_id}.json").write_text(result.generation_trace_json, encoding="utf-8")
+    if result.structured_analysis_json:
+        (output_dir / f"structured_analysis_{offer_id}.json").write_text(result.structured_analysis_json, encoding="utf-8")
 
 
 def main() -> None:

@@ -23,6 +23,28 @@ Decision loop:
 
 Every step is recorded in a GenerationTrace, same auditability principle as
 the scoring agent's DecisionTrace.
+
+Structured output (session 9 follow-up): generate_analysis also returns a
+StructuredAnalysis (matches/gaps/uncertain_flags) alongside the markdown, so
+callers (the API, the dashboard) don't have to re-parse the free-text
+markdown to answer "how many gaps does this offer have". This is built
+directly from ScoringResult.matches/gaps/uncertain_flags in Python — NOT a
+second LLM call re-deriving these from the generated text. Two reasons:
+  1. Fidelity: the point of this structured output is to reflect exactly what
+     scoring (session 3) already decided. An LLM asked to "extract structure
+     from this markdown" would be re-interpreting a paraphrase of scoring's
+     own data, reintroducing exactly the divergence risk this change exists
+     to eliminate.
+  2. Cost/risk: a second LLM call would double latency and API cost for
+     information already sitting in memory as a typed dataclass, and adds a
+     second point of possible malformed-JSON failure for no benefit.
+_validate_items (already used by scoring/agent.py) is reused here as the
+schema guard on ScoringResult's own fields — scoring's LLM call already
+produced this data through call_llm_json, so it was already validated once
+at that point; re-validating on the way into StructuredAnalysis costs
+nothing and protects against a future caller constructing a ScoringResult by
+hand (as tests/test_generation.py's synthetic web_search case already does)
+without going through score_offer's validation path.
 """
 
 from __future__ import annotations
@@ -31,7 +53,7 @@ import json
 import logging
 from dataclasses import dataclass, field
 
-from scoring.agent import ZONE_TO_QUERY, ScoringResult
+from scoring.agent import ZONE_TO_QUERY, ScoringResult, _validate_items
 from scoring.embeddings.index import search_profile_with_scores
 from scoring.llm import call_llm
 
@@ -62,6 +84,37 @@ class GenerationTrace:
     def log(self, message: str) -> None:
         self.steps.append(message)
         logger.info("[offer %s] %s", self.offer_id, message)
+
+
+@dataclass
+class StructuredAnalysis:
+    """Machine-readable mirror of the matching/gaps/uncertain sections of the
+    generated markdown — built directly from ScoringResult, not re-derived
+    from the markdown text (see module docstring). Every item has at least a
+    label and a short justification, matching the shapes ScoringResult
+    already carries:
+      - matches: [{"skill": ..., "matched_chunk_summary": ...}]
+      - gaps:    [{"skill": ..., "note": ...}]
+      - uncertain_flags: [str]  (no per-item justification in ScoringResult —
+        these are requirement labels the scoring agent couldn't find a
+        reliable RAG match for, see DecisionTrace.flag_uncertain)
+    """
+    matches: list[dict]
+    gaps: list[dict]
+    uncertain_flags: list[str]
+
+
+def _build_structured_analysis(result: ScoringResult) -> StructuredAnalysis:
+    """Deterministic formatting of ScoringResult's own fields — see module
+    docstring for why this isn't a second LLM call. _validate_items is the
+    same schema guard scoring/agent.py already runs its own LLM output
+    through; reused here so a hand-built ScoringResult (e.g. a test fixture)
+    can't smuggle a malformed item into the API response either.
+    """
+    matches = _validate_items(result.matches, {"skill", "matched_chunk_summary"})
+    gaps = _validate_items(result.gaps, {"skill", "note"})
+    uncertain_flags = [f for f in result.uncertain_flags if isinstance(f, str) and f.strip()]
+    return StructuredAnalysis(matches=matches, gaps=gaps, uncertain_flags=uncertain_flags)
 
 
 def _fetch_tone_chunk(trace: GenerationTrace, zone: str) -> str | None:
@@ -149,10 +202,13 @@ et SANS l'envelopper dans un bloc de code (pas de \`\`\`markdown au début ni de
 
 
 def generate_analysis(result: ScoringResult, offer_title: str, offer_description: str,
-                       company_name: str | None = None) -> tuple[str, GenerationTrace]:
+                       company_name: str | None = None) -> tuple[str, StructuredAnalysis, GenerationTrace]:
     """Generate the structured markdown candidacy analysis from a ScoringResult.
 
-    Returns (markdown_text, trace).
+    Returns (markdown_text, structured_analysis, trace). structured_analysis
+    is a faithful, non-LLM reformatting of ScoringResult's own matches/gaps/
+    uncertain_flags (see module docstring) — kept alongside the markdown so
+    callers don't have to re-parse free text to answer "how many gaps".
     """
     trace = GenerationTrace(offer_id=result.offer_id)
 
@@ -200,7 +256,14 @@ def generate_analysis(result: ScoringResult, offer_title: str, offer_description
     markdown = _strip_code_fence(markdown)
     trace.log("analyse générée")
 
-    return markdown, trace
+    structured = _build_structured_analysis(result)
+    trace.log(
+        f"analyse structurée construite depuis ScoringResult (pas de second appel LLM): "
+        f"{len(structured.matches)} matches, {len(structured.gaps)} gaps, "
+        f"{len(structured.uncertain_flags)} uncertain_flags"
+    )
+
+    return markdown, structured, trace
 
 
 def _strip_code_fence(text: str) -> str:
@@ -216,6 +279,18 @@ def _strip_code_fence(text: str) -> str:
             lines = lines[1:]
         return "\n".join(lines).strip()
     return stripped
+
+
+def structured_analysis_to_json(structured: StructuredAnalysis) -> str:
+    return json.dumps(
+        {
+            "matches": structured.matches,
+            "gaps": structured.gaps,
+            "uncertain_flags": structured.uncertain_flags,
+        },
+        ensure_ascii=False,
+        indent=2,
+    )
 
 
 def trace_to_json(trace: GenerationTrace) -> str:

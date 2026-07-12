@@ -1,80 +1,85 @@
 ## Résumé du matching
-
-Ce profil présente une adéquation partielle mais pertinente avec le poste d’**Expert·e Digital et Data Analyst**, notamment sur les axes suivants :
+Cette candidature présente un **profil hybride Data Analyst/Expert Digital** avec une forte orientation technique et analytique, aligné sur plusieurs exigences clés de l’offre :
 
 - **Gestion de projets digitaux et roadmap** :
-  Expérience concrète en structuration de projets via des outils modernes (Claude Code, GitHub, Playwright, Firecrawl) et en gestion de pipelines ETL sur Snowflake. Réalisation clé : automatisation du calcul des commissions, réduisant le temps de traitement de 10h à 35 minutes (*source : refonte des commissions*).
-  Familiarité avec l’écosystème agentique (Context7, Vercel) et les APIs (Mistral), alignée sur des besoins techniques avancés.
+  Structuration de projets via des outils agentiques (Claude Code, MCP) et des fichiers CLAUDE.md, avec une stack technique incluant GitHub, Playwright, et Vercel (*source : utilisation quotidienne de ces outils*).
+  Prototypage d’un assistant interne (Gradio + API Mistral) et automatisation de pipelines B2B (scraping, outreach email via pandas/smtplib/Brevo), démontrant une capacité à concevoir des solutions digitales opérationnelles.
 
 - **Analyse de données marketing et reporting** :
-  Maîtrise de **Power BI** (DAX avancé) et de **Snowflake** pour des tableaux de bord décisionnels adoptés à l’échelle de l’entreprise (*source : adoption par des audiences non-techniques*).
-  Développement d’un modèle de **machine learning en production** pour prédire le churn (recall de 85%), avec impact métier mesurable (*source : modèle de churn*).
-  Certifications **DataCamp** en Data Analyst et Data Scientist (Power BI, SQL avancé, Python).
+  Conception de **tableaux de bord Power BI** adoptés par plusieurs départements, avec une maîtrise avancée de DAX et Power Query (*source : certifications DataCamp Associate Data Analyst/Scientist*).
+  Développement d’un **modèle de churn en production** (recall de 85%) et refonte du calcul des commissions, avec un impact mesurable sur les coûts et l’efficacité opérationnelle.
 
-- **Gestion des canaux digitaux** :
-  Automatisation de pipelines digitaux (scraping avec Playwright, outreach email via Brevo) et déploiement d’outils internes (ex : assistant basé sur l’API Mistral) (*source : prospection B2B et outils internes*).
-  Prototypage de chatbots (Gradio) et gestion de bout en bout de projets digitaux.
+- **Collaboration transverse et outils analytics** :
+  Création d’outils (tarification, reporting) utilisés par des équipes non techniques, prouvant une capacité à traduire des besoins métier en solutions data (*source : adoption des tableaux de bord Power BI*).
+  Maîtrise de **SQL avancé** et de Snowflake (architecture proche de Medallion), complétée par une veille active sur les outils agentiques (Claude, MCP).
 
-- **Outils de suivi et collaboration transverse** :
-  Création d’outils transférant de l’autonomie aux équipes métier (ex : outil de tarification santé) (*source : outil de tarification*).
-  Coordination technique pour des projets transverses (refonte des commissions, pipelines ETL).
+- **Automatisation et innovation digitale** :
+  Expérience en **automatisation de processus** (Playwright, Vercel) et en prototypage rapide (LLM via Mistral, interfaces Gradio), avec une approche orientée résultats (*source : pipelines de prospection B2B*).
 
 ---
 
 ## Gaps et incertitudes
-
-### Gaps confirmés (compétences absentes) :
+**Gaps confirmés** (compétences absentes dans le profil) :
 - **Billetterie digitale et administration de plateformes** :
-  Aucune expérience en gestion de systèmes de billetterie ou de contenus tarifaires (ex : plateformes comme celles citées dans l’offre). L’expérience se limite à des outils de prospection B2B et d’automatisation (*source : absence de mention dans le profil*).
-- **Stratégie digitale et offres multimodales** :
-  Le profil est technique (Power BI, Snowflake, automatisation) mais ne mentionne pas de participation à la définition de **stratégies digitales globales** ou au développement d’offres multimodales (ex : intégration de canaux physiques/digitaux).
-- **Veille technologique et innovation** :
-  Pas de mention explicite de **veille structurée** ou d’innovation digitale au-delà des outils maîtrisés (RAG, FastAPI, Docker en notions seulement).
-- **Relation avec partenaires externes** :
-  Expérience limitée aux collaborations **internes** (équipes métier/techniques). Aucune mention de gestion de prestataires externes (ex : Atixnet, Conduant).
+  Aucune expérience professionnelle en gestion de plateformes de billetterie, tarifs, ou contenus structurés (ex : CMS). L’automatisation de processus (scraping, outreach) ne couvre pas ce besoin spécifique.
+- **Écosystèmes de transport et mobilité** :
+  Le profil est centré sur la data et l’IA appliquée, sans exposition aux enjeux des transports ou de la mobilité.
+- **Gestion de campagnes marketing digitales** :
+  Expérience limitée à l’analyse de données marketing et à la prospection B2B automatisée. Aucune mention de gestion de campagnes multi-canaux (SEA, réseaux sociaux) ou de stratégie marketing globale.
+- **Maîtrise des CMS** :
+  Aucune expérience professionnelle avec des outils comme WordPress ou Drupal. Les compétences techniques (GitHub, Vercel) ne se substituent pas à la gestion de contenu éditorial.
 
-### Flags incertains :
-*Aucun* – Les gaps listés ci-dessus sont des absences confirmées, sans zone d’ombre résiduelle.
+**Flags incertains** :
+*Aucun* – Les gaps identifiés sont des absences confirmées, sans zone d’ombre résiduelle.
 
 ---
 
 ## Questions d'entretien probables
+1. **Adaptation aux gaps techniques** :
+   - *"Comment comptez-vous monter en compétence sur les outils de billetterie digitale ou les CMS, compte tenu de votre expérience en automatisation et data ?"*
+   - *"Quelle approche adopteriez-vous pour comprendre les spécificités du secteur des transports, absent de votre parcours ?"*
 
-1. **Projets digitaux et roadmap** :
-   - *"Pouvez-vous détailler un projet où vous avez utilisé des outils comme Claude Code ou MCP pour structurer une roadmap digitale ? Quels étaient les défis techniques et les résultats ?"* (*source : gestion de pipelines ETL sur Snowflake*).
-   - *"Comment gérez-vous la coordination entre équipes techniques et non-techniques dans un projet d’automatisation ?"* (*source : outil de tarification santé*).
+2. **Analyse data et reporting** :
+   - *"Pouvez-vous détailler la méthodologie utilisée pour votre modèle de churn (recall de 85%) et son intégration dans les processus métier ?"*
+   - *"Comment avez-vous convaincu des équipes non techniques d’adopter vos tableaux de bord Power BI ? Quels KPIs étaient prioritaires ?"*
 
-2. **Analyse de données et reporting** :
-   - *"Quelle méthodologie utilisez-vous pour concevoir des tableaux de bord Power BI adaptés à des utilisateurs non-techniques ?"* (*source : adoption par des audiences non-techniques*).
-   - *"Votre modèle de churn avait un recall de 85%. Comment avez-vous mesuré son impact métier et quelles limites avez-vous identifiées ?"* (*source : modèle de churn en production*).
+3. **Gestion de projets digitaux** :
+   - *"Votre utilisation de Claude Code et MCP suggère une approche agentique. Comment cette méthodologie pourrait-elle s’appliquer à un projet de refonte de plateforme digitale ?"*
+   - *"Quels défis avez-vous rencontrés lors du prototypage de l’assistant interne (Gradio + Mistral) et comment les avez-vous résolus ?"*
 
-3. **Gaps et adaptation** :
-   - *"L’offre mentionne la gestion de plateformes de billetterie. Comment comptez-vous monter en compétence sur ce volet ?"* (*gap : billetterie digitale*).
-   - *"Comment abordez-vous la veille technologique dans un domaine en évolution rapide comme le digital ?"* (*gap : veille structurée*).
+4. **Collaboration transverse** :
+   - *"Votre refonte du calcul des commissions a eu un impact mesurable. Comment avez-vous aligné les besoins des équipes métier avec les contraintes techniques ?"*
+   - *"Comment gérez-vous les réticences des utilisateurs face à de nouveaux outils data (ex : Power BI) ?"*
 
-4. **Collaboration et transversalité** :
-   - *"Pouvez-vous donner un exemple où vous avez dû convaincre une équipe métier d’adopter un outil que vous aviez développé ?"* (*source : outil de tarification santé*).
-   - *"Comment gérez-vous les dépendances avec des prestataires externes dans un projet digital ?"* (*gap : relation avec partenaires*).
+5. **Innovation et veille** :
+   - *"Quels outils ou tendances émergentes (ex : LLM, automatisation) recommanderiez-vous pour moderniser une plateforme de billetterie ?"*
+   - *"Comment structurez-vous votre veille technologique pour rester à jour sur les outils data et digitaux ?"*
 
 ---
 
 ## Angle de candidature
-
 **Positionnement** :
-Candidature axée sur une **double expertise data et digitale**, avec une forte valeur ajoutée sur :
-- La **fiabilisation des données** (Snowflake, Power BI, modèles ML) et leur traduction en outils décisionnels adoptés par les métiers.
-- L’**automatisation de processus** (pipelines ETL, scraping, outils internes) pour gagner en efficacité opérationnelle.
-- La **collaboration transverse**, avec des réalisations concrètes comme la refonte des commissions ou l’outil de tarification santé.
+Candidature à ancrer sur **l’expertise data et l’innovation digitale**, en mettant en avant la capacité à **traduire des enjeux métier en solutions techniques** (tableaux de bord, automatisation, LLM). Le profil correspond aux attentes sur les aspects analytiques et collaboratifs, mais nécessite un **cadrage clair sur la montée en compétence** sur les outils spécifiques (billetterie, CMS) et le secteur des transports.
 
-**Points de différenciation** :
-- **Approche "produit"** : Les outils développés (tableaux de bord, modèles ML) sont conçus pour être **utilisés en autonomie par les équipes métier**, réduisant les goulots d’étranglement (*source : adoption par des audiences non-techniques*).
-- **Impact mesurable** : Réduction de 10h à 35 minutes pour le calcul des commissions, recall de 85% pour le modèle de churn (*sources : refonte des commissions, modèle de churn*).
-- **Maîtrise des outils modernes** : Familiarité avec l’écosystème agentique (Claude Code, MCP) et les APIs (Mistral), alignée sur les besoins techniques de l’offre.
+**Messages clés** :
+1. **Data-driven decision making** :
+   - *"Mon expérience en analyse marketing et reporting (Power BI, SQL, modèles prédictifs) permet de fournir des insights actionnables pour optimiser les canaux digitaux, même dans un secteur nouveau comme les transports. Par exemple, mon modèle de churn a permis de réduire l’attrition de [X]% en ciblant les leviers clés."* (*source : recall de 85%*).
 
-**Stratégie pour combler les gaps** :
-- **Billetterie digitale** : Mettre en avant la capacité à **apprendre rapidement** des systèmes techniques complexes (ex : expérience avec Snowflake, APIs) et proposer une montée en compétence ciblée.
-- **Stratégie digitale** : Insister sur l’expérience en **alignement des outils data avec les KPIs métier** (ex : tableaux de bord Power BI) comme base pour contribuer à une vision stratégique.
-- **Partenariats externes** : Souligner la **coordination technique** réussie avec des équipes internes comme prélude à la gestion de prestataires.
+2. **Automatisation et prototypage** :
+   - *"Je m’appuie sur des outils comme Playwright, Vercel, ou les LLM (Mistral, Gradio) pour prototyper rapidement des solutions digitales. Cette approche agile pourrait accélérer la modernisation d’une plateforme de billetterie, par exemple en automatisant des processus manuels."* (*source : assistant interne et pipelines B2B*).
 
-**Message clé** :
-*"Mon profil combine une expertise data éprouvée (Power BI, Snowflake, ML) et une approche pragmatique des projets digitaux, avec un focus sur l’autonomie des équipes et l’impact opérationnel. Je souhaite mettre ces compétences au service d’une structure où la data et le digital sont des leviers concrets de performance, tout en m’investissant pour monter en compétence sur les spécificités du secteur (billetterie, partenariats)."*
+3. **Collaboration transverse** :
+   - *"J’ai l’habitude de travailler avec des équipes non techniques pour déployer des outils data (ex : tableaux de bord Power BI adoptés par plusieurs départements). Cette capacité à vulgariser et adapter les solutions sera utile pour accompagner les équipes opérationnelles."* (*source : refonte des commissions*).
+
+4. **Montée en compétence ciblée** :
+   - *"Bien que novice sur les CMS ou la billetterie, mon expérience en gestion de projets digitaux (roadmaps, outils agentiques) et ma maîtrise de SQL/Power BI me permettent d’appréhender rapidement les enjeux techniques. Je m’engage à me former sur les outils spécifiques du secteur."* (*à adapter avec des exemples concrets de formations envisagées*).
+
+**À éviter** :
+- Minimiser les gaps (ex : présenter l’automatisation comme une alternative à la billetterie).
+- Survendre l’expertise sectorielle (transports/mobilité) sans ancrage concret.
+
+**Recommandation** :
+Joindre une **note de cadrage** (1 page max) en annexe de la candidature, structurée ainsi :
+- **1. Points forts alignés** : Data, automatisation, collaboration.
+- **2. Plan de montée en compétence** : Formations envisagées (ex : certifications CMS, veille sur les outils de billetterie).
+- **3. Proposition de valeur** : *"Mon profil hybride data/digital permet de combiner analyse rigoureuse et innovation technique pour moderniser vos canaux, avec une approche pragmatique pour combler les lacunes sectorielles."*

@@ -355,26 +355,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[business intelligence et data visualization] BI (Business Intelligence)",
+      "query": "[business intelligence et data visualization] Power BI",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.3381,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5083,
+          "distance": 0.3422,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::b2b_outreach_automation",
-          "distance": 0.5122,
+          "distance": 0.6163,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6182,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.3381, match retenu"
+      "conclusion": "best_distance=0.3422, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -398,29 +398,6 @@
         }
       ],
       "conclusion": "best_distance=0.6283, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[business intelligence et data visualization] Power BI",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.3422,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.6163,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.6182,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3422, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -539,30 +516,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[méthodologie et bonnes pratiques analytiques] cohérence des livrables",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5932,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6338,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6384,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5932, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[études de marché et insights métiers] études de marché santé",
+      "query": "[méthodologie et bonnes pratiques analytiques] études de marché santé",
       "n_results": 3,
       "results": [
         {
@@ -585,30 +539,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[études de marché et insights métiers] enjeux métiers",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4246,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.4292,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.4333,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4246, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[études de marché et insights métiers] insights actionnables",
+      "query": "[traduction des données en insights actionnables] insights actionnables",
       "n_results": 3,
       "results": [
         {
@@ -631,7 +562,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[études de marché et insights métiers] recommandations stratégiques",
+      "query": "[traduction des données en insights actionnables] recommandations stratégiques",
       "n_results": 3,
       "results": [
         {
@@ -654,53 +585,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[collaboration et communication technique] collaboration avec équipes Insights",
+      "query": "[traduction des données en insights actionnables] traduction des analyses",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5167,
+          "id": "skills::skills_langues",
+          "distance": 0.5852,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6211,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5346,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5605,
+          "distance": 0.6213,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5167, match retenu"
+      "conclusion": "best_distance=0.5852, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[collaboration et communication technique] traduction de concepts techniques",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5505,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_langues",
-          "distance": 0.5621,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5739,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5505, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[collaboration et communication technique] communication des résultats",
+      "query": "[traduction des données en insights actionnables] communication des résultats",
       "n_results": 3,
       "results": [
         {
@@ -720,6 +628,98 @@
         }
       ],
       "conclusion": "best_distance=0.5486, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[collaboration avec les équipes métiers] collaboration métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5493,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5762,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5817,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5493, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[collaboration avec les équipes métiers] équipes Insights",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5025,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5192,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5339,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5025, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[collaboration avec les équipes métiers] enjeux métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4246,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4292,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4333,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4246, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[collaboration avec les équipes métiers] contextualisation des analyses",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5416,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5544,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5729,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5416, match retenu"
     },
     {
       "step": "requirement_atom",

@@ -240,7 +240,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Web Analytics et performance produit] Web Analytics",
+      "query": "[Web Analytics et performance des produits] Web Analytics",
       "n_results": 3,
       "results": [
         {
@@ -263,30 +263,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Web Analytics et performance produit] performance produit",
+      "query": "[Web Analytics et performance des produits] performance des produits",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5548,
+          "id": "achievements::churn_model",
+          "distance": 0.5247,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5645,
-          "source_file": "skills.md"
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5448,
+          "source_file": "achievements.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5723,
+          "id": "achievements::pricing_tool",
+          "distance": 0.5523,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5548, match retenu"
+      "conclusion": "best_distance=0.5247, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Web Analytics et performance produit] analyse technique",
+      "query": "[Web Analytics et performance des produits] analyse technique",
       "n_results": 3,
       "results": [
         {
@@ -309,49 +309,49 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Administration et optimisation d'outils d'analyse] administration d'outils",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5656,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5697,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5794,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5656, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Administration et optimisation d'outils d'analyse] optimisation d'outils",
+      "query": "[Administration et optimisation d'outils d'analyse] administration d'outils d'analyse",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.5104,
+          "distance": 0.4035,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5445,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4244,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::commission_automation",
-          "distance": 0.5464,
+          "id": "achievements::churn_model",
+          "distance": 0.4632,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5104, match retenu"
+      "conclusion": "best_distance=0.4035, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Administration et optimisation d'outils d'analyse] optimisation d'outils d'analyse",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4661,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.482,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5046,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4661, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -539,7 +539,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Connaissance des langages de programmation pour l'analyse (Python, R)] Python",
+      "query": "[Connaissance des langages de script (Python, R)] Python",
       "n_results": 3,
       "results": [
         {
@@ -562,7 +562,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Connaissance des langages de programmation pour l'analyse (Python, R)] R",
+      "query": "[Connaissance des langages de script (Python, R)] R",
       "n_results": 3,
       "results": [
         {
@@ -585,164 +585,118 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Connaissance des langages de programmation pour l'analyse (Python, R)] programmation pour l'analyse",
+      "query": "[Connaissance des langages de script (Python, R)] langages de script",
       "n_results": 3,
       "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.4578,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5042,
-          "source_file": "achievements.md"
-        },
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5196,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4578, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Compréhension des enjeux métiers et des KPIs] enjeux métiers",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4246,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.4292,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.4333,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4246, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Compréhension des enjeux métiers et des KPIs] KPIs",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6348,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6891,
+          "distance": 0.5317,
           "source_file": "skills.md"
         },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.7348,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6348, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Compréhension des enjeux métiers et des KPIs] indicateurs de performance",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4941,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5374,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.5745,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4941, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Capacité à travailler en équipe collaborative et dynamique] travail d'équipe",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6501,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.658,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6593,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6501, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Capacité à travailler en équipe collaborative et dynamique] collaboration",
-      "n_results": 3,
-      "results": [
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.6176,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6411,
+          "distance": 0.5368,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_intermediaires_llm",
-          "distance": 0.667,
+          "distance": 0.5771,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.6176, match retenu"
+      "conclusion": "best_distance=0.5317, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Capacité à travailler en équipe collaborative et dynamique] dynamique d'équipe",
+      "query": "[Compréhension des enjeux métiers et capacité à traduire des besoins en analyses] compréhension des enjeux métiers",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6117,
+          "id": "achievements::churn_model",
+          "distance": 0.3918,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.429,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4337,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3918, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compréhension des enjeux métiers et capacité à traduire des besoins en analyses] traduction des besoins en analyses",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4815,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.6235,
+          "distance": 0.4919,
           "source_file": "achievements.md"
         },
         {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.4983,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4815, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets data et collaboration avec les équipes métiers] gestion de projets data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.449,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4517,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4913,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4490, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets data et collaboration avec les équipes métiers] collaboration avec les équipes métiers",
+      "n_results": 3,
+      "results": [
+        {
           "id": "achievements::pricing_tool",
-          "distance": 0.6413,
+          "distance": 0.4902,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5212,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5238,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6117, match retenu"
+      "conclusion": "best_distance=0.4902, match retenu"
     }
   ],
   "uncertain_flags": []

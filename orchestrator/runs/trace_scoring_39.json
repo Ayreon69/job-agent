@@ -33,7 +33,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Maîtrise de Python ou R pour la data science] Python",
+      "query": "[Maîtrise des langages de programmation pour la data science (Python, R)] Python",
       "n_results": 3,
       "results": [
         {
@@ -56,7 +56,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Maîtrise de Python ou R pour la data science] R",
+      "query": "[Maîtrise des langages de programmation pour la data science (Python, R)] R",
       "n_results": 3,
       "results": [
         {
@@ -79,26 +79,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Maîtrise de Python ou R pour la data science] data science",
+      "query": "[Maîtrise des langages de programmation pour la data science (Python, R)] langages de programmation data science",
       "n_results": 3,
       "results": [
         {
           "id": "skills::certifications",
-          "distance": 0.4431,
+          "distance": 0.4421,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5645,
-          "source_file": "achievements.md"
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4541,
+          "source_file": "skills.md"
         },
         {
-          "id": "constraints::education",
-          "distance": 0.5688,
-          "source_file": "constraints.md"
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4599,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4431, match retenu"
+      "conclusion": "best_distance=0.4421, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -240,7 +240,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Bases de données et SQL] bases de données",
+      "query": "[Bases de données et requêtage SQL] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données et requêtage SQL] bases de données",
       "n_results": 3,
       "results": [
         {
@@ -263,26 +286,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Bases de données et SQL] SQL",
+      "query": "[Bases de données et requêtage SQL] requêtage",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.3241,
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5985,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6405,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5331,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.6353,
-          "source_file": "skills.md"
+          "id": "constraints::notice_period",
+          "distance": 0.6409,
+          "source_file": "constraints.md"
         }
       ],
-      "conclusion": "best_distance=0.3241, match retenu"
+      "conclusion": "best_distance=0.5985, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -309,26 +332,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Nettoyage et prétraitement des données] prétraitement de données",
+      "query": "[Nettoyage et prétraitement des données] prétraitement des données",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.4677,
+          "distance": 0.4485,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5265,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5105,
           "source_file": "skills.md"
         },
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5332,
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5145,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4677, match retenu"
+      "conclusion": "best_distance=0.4485, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -401,29 +424,6 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Déploiement de modèles en production] production",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6586,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.6649,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6841,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6586, match retenu"
-    },
-    {
-      "step": "requirement_atom",
       "query": "[Déploiement de modèles en production] MLOps",
       "n_results": 3,
       "results": [
@@ -444,6 +444,29 @@
         }
       ],
       "conclusion": "best_distance=0.6473, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement de modèles en production] production models",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5256,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5629,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5631,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5256, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -516,6 +539,29 @@
     },
     {
       "step": "requirement_atom",
+      "query": "[Technologies Big Data (Spark, Hadoop)] traitement distribué",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5047,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5275,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5732,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5047, match retenu"
+    },
+    {
+      "step": "requirement_atom",
       "query": "[Analyse exploratoire de données (EDA)] analyse exploratoire",
       "n_results": 3,
       "results": [
@@ -585,53 +631,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec des équipes pluridisciplinaires] collaboration",
+      "query": "[Collaboration avec des équipes pluridisciplinaires (produit, marketing, technique)] travail d'équipe",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6176,
+          "id": "achievements::churn_model",
+          "distance": 0.6501,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6411,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.658,
           "source_file": "achievements.md"
         },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.667,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6176, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Collaboration avec des équipes pluridisciplinaires] équipes pluridisciplinaires",
-      "n_results": 3,
-      "results": [
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.5727,
+          "distance": 0.6593,
           "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.62,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "constraints::partner_relocation",
-          "distance": 0.6232,
-          "source_file": "constraints.md"
         }
       ],
-      "conclusion": "best_distance=0.5727, match retenu"
+      "conclusion": "best_distance=0.6501, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec des équipes pluridisciplinaires] communication",
+      "query": "[Collaboration avec des équipes pluridisciplinaires (produit, marketing, technique)] collaboration pluridisciplinaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6009,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6208,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6377,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6009, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes pluridisciplinaires (produit, marketing, technique)] communication",
       "n_results": 3,
       "results": [
         {
@@ -654,95 +700,72 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Formation en Data Science, Informatique, Statistiques ou Mathématiques] Master Data Science",
+      "query": "[Veille technologique et amélioration continue des modèles] veille technologique",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::certifications",
-          "distance": 0.423,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.4702,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "constraints::education",
-          "distance": 0.5476,
-          "source_file": "constraints.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4230, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Formation en Data Science, Informatique, Statistiques ou Mathématiques] Master Informatique",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.4221,
-          "source_file": "skills.md"
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5358,
+          "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.5072,
+          "distance": 0.5649,
           "source_file": "skills.md"
         },
         {
-          "id": "skills::certifications",
-          "distance": 0.5177,
-          "source_file": "skills.md"
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5861,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4221, match retenu"
+      "conclusion": "best_distance=0.5358, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Formation en Data Science, Informatique, Statistiques ou Mathématiques] Master Statistiques",
+      "query": "[Veille technologique et amélioration continue des modèles] amélioration continue",
       "n_results": 3,
       "results": [
         {
-          "id": "constraints::education",
-          "distance": 0.4438,
-          "source_file": "constraints.md"
+          "id": "achievements::churn_model",
+          "distance": 0.5652,
+          "source_file": "achievements.md"
         },
         {
-          "id": "skills::certifications",
-          "distance": 0.5582,
-          "source_file": "skills.md"
+          "id": "achievements::commission_automation",
+          "distance": 0.6346,
+          "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6124,
-          "source_file": "skills.md"
+          "id": "achievements::pricing_tool",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4438, match retenu"
+      "conclusion": "best_distance=0.5652, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Formation en Data Science, Informatique, Statistiques ou Mathématiques] Master Mathématiques",
+      "query": "[Veille technologique et amélioration continue des modèles] optimisation de modèles",
       "n_results": 3,
       "results": [
         {
-          "id": "constraints::education",
-          "distance": 0.5595,
-          "source_file": "constraints.md"
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_langues",
-          "distance": 0.7157,
-          "source_file": "skills.md"
+          "id": "achievements::pricing_tool",
+          "distance": 0.506,
+          "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.745,
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.512,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5595, match retenu"
+      "conclusion": "best_distance=0.4776, match retenu"
     }
   ],
   "uncertain_flags": [

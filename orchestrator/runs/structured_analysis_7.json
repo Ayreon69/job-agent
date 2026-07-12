@@ -1,0 +1,49 @@
+{
+  "matches": [
+    {
+      "skill": "Modélisation et analyse de données avec SQL et outils analytiques",
+      "matched_chunk_summary": "Maîtrise avancée de SQL (requêtes complexes, optimisation), Python (pandas, numpy, scikit-learn), et outils analytiques comme Snowflake. Expérience en vulgarisation des résultats pour des audiences non-techniques, alignée avec les besoins de l'offre."
+    },
+    {
+      "skill": "Développement et gestion de pipelines de données avec dbt et Snowflake",
+      "matched_chunk_summary": "Structuration de pipelines ETL sur Snowflake avec une architecture en couches (staging, core, reporting), proche d'une architecture Medallion. Expérience en fiabilisation et gouvernance des données, bien que dbt ne soit pas explicitement mentionné."
+    },
+    {
+      "skill": "Programmation en Python pour l'analyse et la transformation de données",
+      "matched_chunk_summary": "Maîtrise professionnelle de Python (pandas, numpy, scipy, scikit-learn) pour l'analyse et la transformation de données, avec des projets concrets en production."
+    },
+    {
+      "skill": "Visualisation de données et création de dashboards pour différents publics",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI (DAX avancé) adoptés par des départements non-techniques, alignés sur des KPIs métier. Certifications DataCamp couvrant Power BI et Tableau."
+    },
+    {
+      "skill": "Détection d'anomalies et dérives dans les données opérationnelles",
+      "matched_chunk_summary": "Développement d'un modèle de machine learning en production pour prédire le churn (recall de 85%), démontrant une capacité à identifier des signaux métier critiques et à justifier des choix statistiques."
+    },
+    {
+      "skill": "Intégration et traitement de données issues de systèmes ERP et MES",
+      "matched_chunk_summary": "Expérience en structuration de pipelines ETL sur Snowflake et en automatisation de processus métier (ex: calcul des commissions), bien que les systèmes ERP/MES spécifiques (SAP, MES) ne soient pas explicitement mentionnés."
+    },
+    {
+      "skill": "Collaboration avec les équipes data engineering et métiers",
+      "matched_chunk_summary": "Collaboration étroite avec des équipes métier pour concevoir des outils décisionnels (ex: dashboards Power BI, outil de tarification autonome) et aligner les solutions data sur les besoins opérationnels."
+    },
+    {
+      "skill": "Gestion de projets data et alignement avec les besoins opérationnels",
+      "matched_chunk_summary": "Expérience en structuration de pipelines ETL, automatisation de processus critiques (ex: commissions), et prototypage de solutions data (ex: assistant interne basé sur Mistral). Priorité donnée à l'impact opérationnel."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Conception et suivi de KPIs et indicateurs de performance",
+      "note": "Aucune mention explicite de suivi longitudinal ou de méthodologie formelle de conception de KPIs (ex: cadrage, benchmarking, ajustements itératifs). L'expérience se limite à la création de dashboards alignés sur des KPIs existants."
+    },
+    {
+      "skill": "dbt",
+      "note": "Aucune expérience professionnelle ou certification mentionnée avec dbt, bien que les pipelines ETL sur Snowflake soient proches d'une architecture compatible."
+    }
+  ],
+  "uncertain_flags": [
+    "Conception et suivi de KPIs et indicateurs de performance"
+  ]
+}

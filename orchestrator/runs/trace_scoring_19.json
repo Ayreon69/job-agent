@@ -769,30 +769,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Interconnexion de données multi-sources] intégration de données multi-sources",
+      "query": "[Interconnexion de données multi-sources] intégration multi-sources",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::certifications",
-          "distance": 0.5279,
+          "id": "achievements::agentic_coding",
+          "distance": 0.5184,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5497,
           "source_file": "skills.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5716,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5722,
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5652,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5279, match retenu"
+      "conclusion": "best_distance=0.5184, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Participation à des projets d'évolution du système d'information (ERP, BI)] projets SI",
+      "query": "[Interconnexion de données multi-sources] plateformes d'interconnexion",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5223,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5805,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5907,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5223, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Projets d'évolution du système d'information (ERP, BI)] projets SI",
       "n_results": 3,
       "results": [
         {
@@ -815,7 +838,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Participation à des projets d'évolution du système d'information (ERP, BI)] évolution du système d'information",
+      "query": "[Projets d'évolution du système d'information (ERP, BI)] évolution du système d'information",
       "n_results": 3,
       "results": [
         {
@@ -838,7 +861,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Participation à des projets d'évolution du système d'information (ERP, BI)] ERP",
+      "query": "[Projets d'évolution du système d'information (ERP, BI)] ERP",
       "n_results": 3,
       "results": [
         {
@@ -861,7 +884,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Participation à des projets d'évolution du système d'information (ERP, BI)] transformation data",
+      "query": "[Projets d'évolution du système d'information (ERP, BI)] transformation data",
       "n_results": 3,
       "results": [
         {
@@ -881,7 +904,216 @@
         }
       ],
       "conclusion": "best_distance=0.6466, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Travail en mode hybride et collaboration avec des équipes pluridisciplinaires] travail hybride",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6148,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6442,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6475,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6148, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Travail en mode hybride et collaboration avec des équipes pluridisciplinaires] collaboration pluridisciplinaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6009,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6208,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6377,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6009, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Travail en mode hybride et collaboration avec des équipes pluridisciplinaires] équipes métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5424,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.548,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5582,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5424, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Travail en mode hybride et collaboration avec des équipes pluridisciplinaires] finance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6257,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6975,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7423,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6257, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Travail en mode hybride et collaboration avec des équipes pluridisciplinaires] stock",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7513,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7657,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7711,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Travail en mode hybride et collaboration avec des équipes pluridisciplinaires] commerce",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.634,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6754,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6857,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6340, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets structurants et déplacements ponctuels] gestion de projets",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4843,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5434,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.55,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4843, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets structurants et déplacements ponctuels] projets structurants",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4999,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.52,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5484,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4999, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets structurants et déplacements ponctuels] déplacements ponctuels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.4897,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.5586,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.5896,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4897, match retenu"
     }
   ],
-  "uncertain_flags": []
+  "uncertain_flags": [
+    "Travail en mode hybride et collaboration avec des équipes pluridisciplinaires"
+  ]
 }

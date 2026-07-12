@@ -1,0 +1,49 @@
+{
+  "matches": [
+    {
+      "skill": "Méthodologies de cadrage et conseil en IA",
+      "matched_chunk_summary": "Développement d'outils métier (tarification, churn prediction) alignés sur les besoins opérationnels. Vulgarisation de résultats techniques pour des audiences non-techniques. Automatisation de processus critiques (réduction de 10h à 35min pour le calcul des commissions)."
+    },
+    {
+      "skill": "Fiabilité et amélioration continue des agents IA",
+      "matched_chunk_summary": "Structuration de pipelines ETL sur Snowflake pour fiabiliser la production de rapports. Prototypage d'un assistant interne avec choix architecturaux délibérés (ex: contexte complet vs RAG). Automatisation de processus avec taux d'erreur quasi nul (ex: calcul des commissions)."
+    },
+    {
+      "skill": "Conduite du changement et formation",
+      "matched_chunk_summary": "Création d'outils transférant de l'autonomie aux équipes métier (ex: outil de tarification). Déploiement de tableaux de bord Power BI adoptés par des départements non-techniques. Vulgarisation de résultats techniques pour des audiences opérationnelles."
+    },
+    {
+      "skill": "Collaboration et partage d'expertise en équipe",
+      "matched_chunk_summary": "Développement d'outils métier adoptés à l'échelle de l'entreprise (ex: tableaux de bord Power BI). Expérience en mentorat implicite via la mise en production de solutions techniques (ex: modèle de churn)."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Développement et orchestration d'agents IA avec Microsoft Copilot Studio",
+      "note": "Aucune expérience directe avec Microsoft Copilot Studio ou Power Platform. L'expérience agentique repose sur des outils tiers (Claude Code, MCP, Gradio) et non sur l'écosystème Microsoft."
+    },
+    {
+      "skill": "Intégration des agents IA avec Microsoft 365 et systèmes métiers",
+      "note": "Aucune expérience directe avec SharePoint, Teams, Dataverse ou les connecteurs Microsoft 365. L'intégration actuelle se limite à des APIs tierces (Mistral) et des outils internes (Power BI, SQL)."
+    },
+    {
+      "skill": "Gouvernance, sécurité et conformité des solutions IA",
+      "note": "Aucune expérience en gouvernance formelle des données (comités, chartes) ou en conformité spécifique aux solutions IA (ex: responsible AI). L'expérience se limite à la gouvernance technique (architecture Snowflake)."
+    },
+    {
+      "skill": "Réponse aux appels d'offres et cadrage de projets IA",
+      "note": "Aucune expérience identifiée en réponse à des appels d'offres ou en cadrage formel de projets IA pour des clients externes. L'expérience se limite à des projets internes ou des prototypes."
+    },
+    {
+      "skill": "Déploiement et industrialisation des solutions IA",
+      "note": "Aucune expérience avec les outils d'industrialisation spécifiques à Microsoft (ALM, environnements Power Platform). L'expérience se limite à des déploiements internes (modèle de churn) ou des prototypes (assistant Mistral)."
+    },
+    {
+      "skill": "Veille technologique et expertise Microsoft IA",
+      "note": "Aucune veille active identifiée sur l'écosystème Microsoft IA (Copilot Studio, Azure AI Foundry). L'expertise se concentre sur des outils tiers (Claude, Mistral) et des technologies data classiques (Power BI, Snowflake)."
+    }
+  ],
+  "uncertain_flags": [
+    "Intégration des agents IA avec Microsoft 365 et systèmes métiers"
+  ]
+}

@@ -79,26 +79,49 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse et exploitation de données bancaires] données bancaires",
+      "query": "[Analyse et exploitation de données bancaires] domaine bancaire",
       "n_results": 3,
       "results": [
         {
           "id": "constraints::education",
-          "distance": 0.568,
+          "distance": 0.6065,
           "source_file": "constraints.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.625,
+          "distance": 0.6095,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.677,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6065, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et exploitation de données bancaires] connaissance fonctionnelle bancaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5043,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.6328,
+          "distance": 0.6122,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6234,
+          "source_file": "constraints.md"
         }
       ],
-      "conclusion": "best_distance=0.5680, match retenu"
+      "conclusion": "best_distance=0.5043, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -148,72 +171,49 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[SQL et bases de données (Teradata)] bases de données",
+      "query": "[SQL et bases de données (Teradata)] requêtage",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5296,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.5451,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.5505,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5296, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Business Intelligence et tableaux de bord (MicroStrategy)] Business Intelligence",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4158,
-          "source_file": "achievements.md"
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5985,
+          "source_file": "geography_rules.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.4312,
+          "distance": 0.6405,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6409,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5985, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[SQL et bases de données (Teradata)] manipulation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4995,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5495,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.5184,
+          "distance": 0.5735,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4158, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Business Intelligence et tableaux de bord (MicroStrategy)] tableaux de bord",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.7165,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7214,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.7329,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7165, match retenu"
+      "conclusion": "best_distance=0.4995, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -263,7 +263,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gouvernance des données et conformité (Data Management, Data Privacy)] gouvernance des données",
+      "query": "[Business Intelligence et tableaux de bord (MicroStrategy)] tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7165,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7214,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7329,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7165, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Business Intelligence et tableaux de bord (MicroStrategy)] visualisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6191,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6351,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6191, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Business Intelligence et tableaux de bord (MicroStrategy)] indicateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5135,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.588,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6264,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5135, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance et gestion des données (Data Management, Data Privacy)] gouvernance des données",
       "n_results": 3,
       "results": [
         {
@@ -286,7 +355,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gouvernance des données et conformité (Data Management, Data Privacy)] Data Management",
+      "query": "[Gouvernance et gestion des données (Data Management, Data Privacy)] Data Management",
       "n_results": 3,
       "results": [
         {
@@ -309,7 +378,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gouvernance des données et conformité (Data Management, Data Privacy)] Data Privacy",
+      "query": "[Gouvernance et gestion des données (Data Management, Data Privacy)] Data Privacy",
       "n_results": 3,
       "results": [
         {
@@ -332,76 +401,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gouvernance des données et conformité (Data Management, Data Privacy)] conformité",
+      "query": "[Gouvernance et gestion des données (Data Management, Data Privacy)] RGPD",
       "n_results": 3,
       "results": [
         {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6268,
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6895,
           "source_file": "geography_rules.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.6574,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.7312,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6268, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Collaboration avec les Business Analysts et ateliers d'affinage] Business Analyst",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5254,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.536,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "constraints::current_employment",
-          "distance": 0.5481,
-          "source_file": "constraints.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5254, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Collaboration avec les Business Analysts et ateliers d'affinage] ateliers d'affinage",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.554,
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6907,
           "source_file": "skills.md"
         },
         {
           "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5881,
+          "distance": 0.7125,
           "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5927,
-          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5540, match retenu"
+      "conclusion": "best_distance=0.6895, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec les Business Analysts et ateliers d'affinage] collaboration métier",
+      "query": "[Gouvernance et gestion des données (Data Management, Data Privacy)] qualité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4455,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4573,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4983,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4455, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les métiers et ateliers d'affinage] collaboration métier",
       "n_results": 3,
       "results": [
         {
@@ -424,76 +470,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Pipelines de données et intégration d'indicateurs] pipelines de données",
+      "query": "[Collaboration avec les métiers et ateliers d'affinage] ateliers d'affinage",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.4099,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.5343,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.554,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::whisper_nlp_pipeline",
-          "distance": 0.5435,
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5881,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5927,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4099, match retenu"
+      "conclusion": "best_distance=0.5540, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Pipelines de données et intégration d'indicateurs] intégration d'indicateurs",
+      "query": "[Collaboration avec les métiers et ateliers d'affinage] Business Analyst",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.4733,
+          "distance": 0.5254,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5731,
+          "distance": 0.536,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5815,
-          "source_file": "achievements.md"
+          "id": "constraints::current_employment",
+          "distance": 0.5481,
+          "source_file": "constraints.md"
         }
       ],
-      "conclusion": "best_distance=0.4733, match retenu"
+      "conclusion": "best_distance=0.5254, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Pipelines de données et intégration d'indicateurs] automatisation",
+      "query": "[Collaboration avec les métiers et ateliers d'affinage] expression des besoins",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.3734,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.402,
+          "id": "achievements::pricing_tool",
+          "distance": 0.5002,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.4765,
+          "id": "achievements::churn_model",
+          "distance": 0.5195,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5224,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.3734, match retenu"
+      "conclusion": "best_distance=0.5002, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Tracking digital (Tag Commander, Piano Analytics, Cosmo Survey)] tracking digital",
+      "query": "[Tracking et analytics digitaux (Tag Commander, Piano Analytics, Cosmo Survey)] tracking digital",
       "n_results": 3,
       "results": [
         {
@@ -516,7 +562,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Tracking digital (Tag Commander, Piano Analytics, Cosmo Survey)] Tag Commander",
+      "query": "[Tracking et analytics digitaux (Tag Commander, Piano Analytics, Cosmo Survey)] Tag Commander",
       "n_results": 3,
       "results": [
         {
@@ -539,7 +585,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Tracking digital (Tag Commander, Piano Analytics, Cosmo Survey)] Piano Analytics",
+      "query": "[Tracking et analytics digitaux (Tag Commander, Piano Analytics, Cosmo Survey)] Piano Analytics",
       "n_results": 3,
       "results": [
         {
@@ -562,7 +608,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Tracking digital (Tag Commander, Piano Analytics, Cosmo Survey)] Cosmo Survey",
+      "query": "[Tracking et analytics digitaux (Tag Commander, Piano Analytics, Cosmo Survey)] Cosmo Survey",
       "n_results": 3,
       "results": [
         {
@@ -585,118 +631,210 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse marketing et optimisation des parcours digitaux] analyse marketing",
+      "query": "[Tracking et analytics digitaux (Tag Commander, Piano Analytics, Cosmo Survey)] analytics marketing",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5409,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5487,
-          "source_file": "achievements.md"
-        },
-        {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5794,
+          "distance": 0.5205,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5374,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5716,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5409, match retenu"
+      "conclusion": "best_distance=0.5205, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse marketing et optimisation des parcours digitaux] optimisation des parcours digitaux",
+      "query": "[Pilotage des parcours digitaux et recommandations marketing] pilotage parcours digitaux",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::commission_automation",
-          "distance": 0.5112,
-          "source_file": "achievements.md"
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.525,
+          "source_file": "skills.md"
         },
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5181,
+          "distance": 0.5261,
           "source_file": "skills.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5858,
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.562,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5112, match retenu"
+      "conclusion": "best_distance=0.5250, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse marketing et optimisation des parcours digitaux] recommandations d'optimisation",
+      "query": "[Pilotage des parcours digitaux et recommandations marketing] dashboards digitaux",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::commission_automation",
-          "distance": 0.4944,
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5644,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5927,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5983,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5644, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pilotage des parcours digitaux et recommandations marketing] recommandations marketing",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5472,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5527,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.5116,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5207,
+          "distance": 0.5705,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4944, match retenu"
+      "conclusion": "best_distance=0.5472, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Connaissance fonctionnelle du secteur bancaire] secteur bancaire",
+      "query": "[Pilotage des parcours digitaux et recommandations marketing] optimisation parcours utilisateur",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.6211,
+          "id": "achievements::commission_automation",
+          "distance": 0.5216,
           "source_file": "achievements.md"
         },
         {
-          "id": "constraints::education",
-          "distance": 0.6358,
-          "source_file": "constraints.md"
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5789,
+          "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.6982,
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5932,
           "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.6211, match retenu"
+      "conclusion": "best_distance=0.5216, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Connaissance fonctionnelle du secteur bancaire] connaissance métier bancaire",
+      "query": "[Intégration de données dans des pipelines normés] pipelines de données",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5465,
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4099,
           "source_file": "achievements.md"
         },
         {
-          "id": "constraints::current_employment",
-          "distance": 0.598,
-          "source_file": "constraints.md"
+          "id": "skills::certifications",
+          "distance": 0.5343,
+          "source_file": "skills.md"
         },
         {
-          "id": "constraints::education",
-          "distance": 0.6171,
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5435,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4099, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de données dans des pipelines normés] intégration de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5271,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5429,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5546,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5271, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de données dans des pipelines normés] ETL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5149,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6996,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.7092,
           "source_file": "constraints.md"
         }
       ],
-      "conclusion": "best_distance=0.5465, match retenu"
+      "conclusion": "best_distance=0.5149, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de données dans des pipelines normés] automatisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3734,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4765,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3734, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -743,6 +881,98 @@
         }
       ],
       "conclusion": "best_distance=0.4607, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration continue des pratiques Data] Chapitre Data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5582,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6132,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.643,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5582, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Présentation des résultats aux équipes métiers] présentation des résultats",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5964,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.619,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6446,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5964, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Présentation des résultats aux équipes métiers] communication métier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5711,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.575,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6072,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5711, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Présentation des résultats aux équipes métiers] restitution des analyses",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4447,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5574,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5895,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4447, match retenu"
     }
   ],
   "uncertain_flags": []

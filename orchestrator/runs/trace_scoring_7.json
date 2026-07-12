@@ -33,7 +33,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Modélisation et analyse de données avec SQL et outils avancés] SQL",
+      "query": "[Modélisation et analyse de données avec SQL et outils analytiques] SQL",
       "n_results": 3,
       "results": [
         {
@@ -56,7 +56,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Modélisation et analyse de données avec SQL et outils avancés] modélisation analytique",
+      "query": "[Modélisation et analyse de données avec SQL et outils analytiques] modélisation analytique",
       "n_results": 3,
       "results": [
         {
@@ -79,7 +79,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Modélisation et analyse de données avec SQL et outils avancés] modélisation de données",
+      "query": "[Modélisation et analyse de données avec SQL et outils analytiques] modélisation de données",
       "n_results": 3,
       "results": [
         {
@@ -194,7 +194,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Programmation et automatisation avec Python] Python",
+      "query": "[Programmation en Python pour l'analyse et la transformation de données] Python",
       "n_results": 3,
       "results": [
         {
@@ -217,7 +217,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Visualisation de données et création de dashboards] data viz",
+      "query": "[Visualisation de données et création de dashboards pour différents publics] data viz",
       "n_results": 3,
       "results": [
         {
@@ -240,7 +240,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Visualisation de données et création de dashboards] dashboards",
+      "query": "[Visualisation de données et création de dashboards pour différents publics] dashboards",
       "n_results": 3,
       "results": [
         {
@@ -263,7 +263,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Visualisation de données et création de dashboards] visualisation de données",
+      "query": "[Visualisation de données et création de dashboards pour différents publics] visualisation de données",
       "n_results": 3,
       "results": [
         {
@@ -286,99 +286,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration et gestion de données issues de systèmes ERP et MES] SAP",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.7205,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7264,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.7453,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7205, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Intégration et gestion de données issues de systèmes ERP et MES] MES",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.7081,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "constraints::education",
-          "distance": 0.7291,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.7295,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7081, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Intégration et gestion de données issues de systèmes ERP et MES] intégration de données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::certifications",
-          "distance": 0.5271,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5429,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5546,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5271, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Intégration et gestion de données issues de systèmes ERP et MES] systèmes ERP",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6008,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6099,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.6109,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6008, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Définition et suivi de KPIs de performance opérationnelle] KPIs",
+      "query": "[Conception et suivi de KPIs et indicateurs de performance] KPIs",
       "n_results": 3,
       "results": [
         {
@@ -401,30 +309,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Définition et suivi de KPIs de performance opérationnelle] performance opérationnelle",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5381,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.56,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.567,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5381, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Définition et suivi de KPIs de performance opérationnelle] indicateurs de performance",
+      "query": "[Conception et suivi de KPIs et indicateurs de performance] indicateurs de performance",
       "n_results": 3,
       "results": [
         {
@@ -447,30 +332,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Création et optimisation de modèles de scoring] modèles de scoring",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5637,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "constraints::education",
-          "distance": 0.565,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_ml",
-          "distance": 0.5882,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5637, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Création et optimisation de modèles de scoring] scoring",
+      "query": "[Conception et suivi de KPIs et indicateurs de performance] scoring",
       "n_results": 3,
       "results": [
         {
@@ -493,7 +355,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Détection et analyse de dérives dans les processus industriels] détection de dérives",
+      "query": "[Détection d'anomalies et dérives dans les données opérationnelles] détection de dérives",
       "n_results": 3,
       "results": [
         {
@@ -516,53 +378,122 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Détection et analyse de dérives dans les processus industriels] analyse de dérives",
+      "query": "[Détection d'anomalies et dérives dans les données opérationnelles] détection d'anomalies",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.4485,
+          "distance": 0.6102,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5628,
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6216,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6326,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6102, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et traitement de données issues de systèmes ERP et MES] SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7264,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7453,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7205, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et traitement de données issues de systèmes ERP et MES] MES",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7081,
           "source_file": "achievements.md"
         },
         {
           "id": "constraints::education",
-          "distance": 0.5915,
+          "distance": 0.7291,
           "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7295,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.4485, match retenu"
+      "conclusion": "best_distance=0.7081, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Détection et analyse de dérives dans les processus industriels] processus industriels",
+      "query": "[Intégration et traitement de données issues de systèmes ERP et MES] intégration de données",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5798,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5863,
-          "source_file": "achievements.md"
+          "id": "skills::certifications",
+          "distance": 0.5271,
+          "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.6151,
+          "distance": 0.5429,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5546,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5798, match retenu"
+      "conclusion": "best_distance=0.5271, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec les équipes data engineering et métier] collaboration data engineering",
+      "query": "[Intégration et traitement de données issues de systèmes ERP et MES] systèmes ERP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6008,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6109,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6008, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes data engineering et métiers] collaboration data engineering",
       "n_results": 3,
       "results": [
         {
@@ -585,7 +516,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec les équipes data engineering et métier] règles métier",
+      "query": "[Collaboration avec les équipes data engineering et métiers] règles métier",
       "n_results": 3,
       "results": [
         {
@@ -608,7 +539,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec les équipes data engineering et métier] logiques de contrôle",
+      "query": "[Collaboration avec les équipes data engineering et métiers] logiques de contrôle",
       "n_results": 3,
       "results": [
         {
@@ -631,75 +562,52 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Connaissance des enjeux de la data opérationnelle en milieu industriel] data opérationnelle",
+      "query": "[Gestion de projets data et alignement avec les besoins opérationnels] gestion de projets data",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.4983,
+          "distance": 0.449,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5152,
+          "id": "achievements::agentic_coding",
+          "distance": 0.4517,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5198,
+          "id": "skills::certifications",
+          "distance": 0.4913,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4983, match retenu"
+      "conclusion": "best_distance=0.4490, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Connaissance des enjeux de la data opérationnelle en milieu industriel] milieu industriel",
+      "query": "[Gestion de projets data et alignement avec les besoins opérationnels] alignement opérationnel",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.5906,
+          "distance": 0.6579,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5998,
-          "source_file": "achievements.md"
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.663,
+          "source_file": "geography_rules.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.6045,
-          "source_file": "achievements.md"
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6673,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.5906, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Connaissance des enjeux de la data opérationnelle en milieu industriel] optimisation de production",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.5437,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5547,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5877,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5437, match retenu"
+      "conclusion": "best_distance=0.6579, match retenu"
     }
   ],
   "uncertain_flags": [
-    "Création et optimisation de modèles de scoring"
+    "Conception et suivi de KPIs et indicateurs de performance"
   ]
 }

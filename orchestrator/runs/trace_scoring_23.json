@@ -332,95 +332,72 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec les équipes techniques (Data Engineers, Data Scientists)] collaboration technique",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5656,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5954,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.6121,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5656, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Collaboration avec les équipes techniques (Data Engineers, Data Scientists)] Data Engineers",
+      "query": "[Collaboration avec les équipes Data Engineering et Data Science] collaboration Data Engineering",
       "n_results": 3,
       "results": [
         {
           "id": "skills::certifications",
-          "distance": 0.4175,
+          "distance": 0.5009,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.4475,
+          "distance": 0.5399,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5443,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5009, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes Data Engineering et Data Science] collaboration Data Science",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4853,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5804,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5908,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4853, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes Data Engineering et Data Science] travail d'équipe technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5269,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.539,
+          "source_file": "skills.md"
         },
         {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.4482,
+          "distance": 0.5499,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4175, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Collaboration avec les équipes techniques (Data Engineers, Data Scientists)] Data Scientists",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::certifications",
-          "distance": 0.4245,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5475,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "constraints::education",
-          "distance": 0.549,
-          "source_file": "constraints.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4245, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Collaboration avec les équipes techniques (Data Engineers, Data Scientists)] travail d'équipe",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6501,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.658,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6593,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6501, match retenu"
+      "conclusion": "best_distance=0.5269, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -516,30 +493,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Modélisation des données et conception de flux de données] data pipelines",
+      "query": "[Modélisation des données et conception de flux de données] ELT",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.4101,
+          "distance": 0.622,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::whisper_nlp_pipeline",
-          "distance": 0.5579,
+          "id": "achievements::churn_model",
+          "distance": 0.686,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::certifications",
-          "distance": 0.5723,
-          "source_file": "skills.md"
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6896,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.4101, match retenu"
+      "conclusion": "best_distance=0.6220, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Accompagnement des utilisateurs finaux et adoption des outils BI] accompagnement utilisateurs",
+      "query": "[Accompagnement des utilisateurs finaux sur les outils BI et reportings] accompagnement utilisateurs",
       "n_results": 3,
       "results": [
         {
@@ -562,30 +539,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Accompagnement des utilisateurs finaux et adoption des outils BI] adoption des outils",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.4364,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.4685,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.4688,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4364, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Accompagnement des utilisateurs finaux et adoption des outils BI] formation utilisateurs",
+      "query": "[Accompagnement des utilisateurs finaux sur les outils BI et reportings] formation utilisateurs",
       "n_results": 3,
       "results": [
         {
@@ -608,7 +562,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Accompagnement des utilisateurs finaux et adoption des outils BI] support utilisateurs",
+      "query": "[Accompagnement des utilisateurs finaux sur les outils BI et reportings] adoption des outils BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.2997,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4515,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4926,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2997, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Accompagnement des utilisateurs finaux sur les outils BI et reportings] support utilisateurs",
       "n_results": 3,
       "results": [
         {
@@ -628,29 +605,6 @@
         }
       ],
       "conclusion": "best_distance=0.5309, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Accompagnement des utilisateurs finaux et adoption des outils BI] outils BI",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4016,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.5034,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5343,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4016, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -838,233 +792,210 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projets data et transformation digitale] gestion de projet",
+      "query": "[Gestion de projets data et transformation digitale] projets data & analytics",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4445,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.4782,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.481,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4445, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en communication et traduction des besoins métiers en solutions techniques] communication",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.4704,
+          "distance": 0.6237,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5231,
-          "source_file": "achievements.md"
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6465,
+          "source_file": "skills.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5262,
-          "source_file": "achievements.md"
+          "id": "skills::skills_langues",
+          "distance": 0.6632,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4704, match retenu"
+      "conclusion": "best_distance=0.6237, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projets data et transformation digitale] méthodologies Agile",
+      "query": "[Compétences en communication et traduction des besoins métiers en solutions techniques] traduction besoins métiers",
       "n_results": 3,
       "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4907,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.4908,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5094,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4907, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en communication et traduction des besoins métiers en solutions techniques] bridge métiers-techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6133,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6162,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6429,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6133, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en communication et traduction des besoins métiers en solutions techniques] relation client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5012,
+          "source_file": "achievements.md"
+        },
         {
           "id": "achievements::mistral_chatbot",
-          "distance": 0.5414,
+          "distance": 0.5604,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5432,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.566,
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5842,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5414, match retenu"
+      "conclusion": "best_distance=0.5012, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projets data et transformation digitale] méthodologies Scrum",
+      "query": "[Expérience en Business Analysis et Data Analysis] Business Analysis",
       "n_results": 3,
       "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5853,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6035,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6178,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5853, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Compétences en SQL pour l'interrogation et la manipulation de bases de données] SQL",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.3241,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5331,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.6353,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3241, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Compétences en SQL pour l'interrogation et la manipulation de bases de données] interrogation de bases de données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.4498,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5304,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.546,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4498, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Compétences en SQL pour l'interrogation et la manipulation de bases de données] manipulation de données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4995,
-          "source_file": "skills.md"
-        },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5495,
+          "distance": 0.4888,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5735,
-          "source_file": "skills.md"
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.491,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5465,
+          "source_file": "constraints.md"
         }
       ],
-      "conclusion": "best_distance=0.4995, match retenu"
+      "conclusion": "best_distance=0.4888, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Compétences en SQL pour l'interrogation et la manipulation de bases de données] requêtes SQL",
+      "query": "[Expérience en Business Analysis et Data Analysis] Data Analysis",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.3098,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5934,
+          "id": "skills::certifications",
+          "distance": 0.4714,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.6618,
+          "id": "constraints::education",
+          "distance": 0.5151,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5251,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.3098, match retenu"
+      "conclusion": "best_distance=0.4714, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Capacité à traduire les besoins business en solutions data] traduction besoins business",
+      "query": "[Expérience en Business Analysis et Data Analysis] analyse métier",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.5406,
+          "id": "achievements::churn_model",
+          "distance": 0.4016,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.5756,
+          "distance": 0.4636,
           "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_langues",
-          "distance": 0.5916,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5406, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Capacité à traduire les besoins business en solutions data] solutions data",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::certifications",
-          "distance": 0.5956,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6049,
-          "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.633,
+          "distance": 0.4878,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5956, match retenu"
+      "conclusion": "best_distance=0.4016, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Capacité à traduire les besoins business en solutions data] alignement business-data",
+      "query": "[Expérience en Business Analysis et Data Analysis] analyse data",
       "n_results": 3,
       "results": [
         {
+          "id": "achievements::churn_model",
+          "distance": 0.5121,
+          "source_file": "achievements.md"
+        },
+        {
           "id": "skills::certifications",
-          "distance": 0.561,
+          "distance": 0.5232,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6213,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.654,
-          "source_file": "achievements.md"
+          "id": "constraints::education",
+          "distance": 0.533,
+          "source_file": "constraints.md"
         }
       ],
-      "conclusion": "best_distance=0.5610, match retenu"
+      "conclusion": "best_distance=0.5121, match retenu"
     }
   ],
   "uncertain_flags": []

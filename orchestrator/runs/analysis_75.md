@@ -1,67 +1,85 @@
 ## Résumé du matching
-Ce profil présente une adéquation solide (78/100) avec le poste de **Senior Data Analyst - Deals M&A** à Lyon, grâce à des compétences techniques et analytiques alignées sur les besoins clés de l’offre.
+**Adéquation technique solide (80/100)** pour ce poste de **Senior Data Analyst - Deals M&A** à Lyon, avec une couverture robuste des compétences clés et une localisation géographique prioritaire.
 
-**Points forts majeurs :**
-- **Expertise en analyse de données transactionnelles et rentabilité** : Expérience en modélisation de tarification (produits santé) et analyse de KPIs métier (commissions, sinistralité) (*source : expérience professionnelle en assurance*), ainsi qu’un modèle de churn en production justifiant des choix statistiques (*source : projet ML en production*).
-- **Maîtrise d’Excel avancé** : Certifications DataCamp (2025) couvrant les formules complexes, tableaux croisés dynamiques et macros, complétées par une utilisation opérationnelle en contexte professionnel (*source : certifications + expérience en automatisation*).
-- **Modélisation statistique et prédictive** : Développement d’un modèle de machine learning (churn) avec une approche métier (recall vs précision), soutenu par une formation en économétrie (ISFA) (*source : projet ML + formation académique*).
-- **Intégration de données externes** : Architecture ETL sur Snowflake (organisation en couches) et scraping de données (Playwright) pour des projets B2B (*source : expérience en pipelines Snowflake + scraping*).
-- **Communication et vulgarisation** : Adoption large de tableaux de bord Power BI par des équipes non techniques, démontrant une capacité à traduire des enjeux complexes (*source : expérience en collaboration métier*).
-
-**Atouts complémentaires :**
-- **Anglais professionnel courant** (B2 confirmé) pour les échanges techniques et internationaux.
-- **Résolution de problèmes complexes** : Expérience en création d’outils autonomes (tarification) et en architecture de pipelines (*source : projets ETL et modélisation*).
+### Points forts alignés sur l'offre
+- **Excel avancé** : Maîtrise des formules complexes, tableaux croisés dynamiques et macros, validée par des certifications DataCamp (2025). *Source : Certifications DataCamp couvrant Excel avancé.*
+- **Data visualisation (Power BI/Tableau)** :
+  - Expertise en **Power BI** (DAX avancé, Power Query) avec déploiement de tableaux de bord décisionnels adoptés à l'échelle de l'entreprise. *Source : Réalisation de dashboards Power BI intégrés aux processus métier.*
+  - Certification DataCamp sur **Tableau**, complétant la polyvalence en visualisation. *Source : Certifications DataCamp.*
+- **Analyse de données transactionnelles** :
+  - Expérience en modélisation de **KPIs métier** (sinistralité, coût moyen) et outils de tarification en assurance, alignés sur des axes de rentabilité. *Source : Modèles prédictifs et outils de tarification développés en contexte professionnel.*
+  - Formation en **économétrie et risk management**, renforçant la capacité à analyser des données financières complexes. *Source : Formation académique et appliquée.*
+- **Analyses prédictives et modélisation statistique** :
+  - Déploiement d'un **modèle de machine learning en production** (churn, recall 85%) avec justification métier des choix statistiques. *Source : Projet de modélisation prédictive avec impact business mesurable.*
+  - Maîtrise de **scikit-learn** et des statistiques appliquées. *Source : Formation en économétrie et expérience pratique.*
+- **Intégration de données externes** :
+  - Structuration de **pipelines ETL sur Snowflake** (architecture proche Medallion) et scraping de données externes (Playwright) pour des cas d'usage B2B. *Source : Projets d'intégration de données externes en environnement professionnel.*
+- **Résolution de problèmes complexes** :
+  - Création d'**outils autonomes de tarification** pour les équipes métier, intégrant une logique métier robuste (coût des erreurs). *Source : Développement d'outils décisionnels avec impact opérationnel.*
+- **Communication et storytelling** :
+  - Vulgarisation systématique des résultats techniques pour des audiences non-techniques, avec adoption large des dashboards Power BI. *Source : Conception de tableaux de bord utilisés par plusieurs départements.*
+- **Anglais professionnel** : Niveau courant (B2) à l'écrit et à l'oral, validé en contexte professionnel. *Source : Expérience en environnement international.*
 
 ---
 
 ## Gaps et incertitudes
-**Gaps confirmés (compétences absentes) :**
-- **Finance d’entreprise et évaluation M&A** : Aucune expérience directe en due diligence, valorisation ou modélisation financière spécifique aux deals (*gap constaté*).
-- **Formation d’équipes aux méthodologies data** : Expérience limitée à la création d’outils autonomes pour les métiers, sans mention de formation structurée (*gap constaté*).
-- **Outils spécifiques** : Absence de maîtrise d’**Alteryx** et de **Power Pivot** (bien que Power BI soit partiellement couvert) (*gap constaté*).
+### Gaps confirmés (compétences absentes)
+- **Finance d'entreprise et évaluation M&A** :
+  - Expérience en analyse financière (tarification, churn) et formation en risk management, mais **aucun élément concret** sur l'évaluation M&A ou les transactions financières spécifiques. *Gap identifié : absence de projets ou formations liés aux deals M&A.*
+- **Outils de modélisation (Power Pivot, Alteryx)** :
+  - Maîtrise partielle de **Power Query** (via Power BI), mais **aucune trace de Power Pivot ou Alteryx** dans le profil. *Gap confirmé : outils non mentionnés dans les réalisations ou certifications.*
 
-**Flags incertains (absence de preuve fiable, pas une absence confirmée) :**
-- **Power Query, Tableau** : Aucun match RAG fiable trouvé dans le profil pour ces outils, bien que Power BI soit partiellement maîtrisé (*incertitude à clarifier en entretien*).
+### Flags incertains (absence de preuve fiable, pas une absence confirmée)
+- **Power Query avancé** :
+  - Utilisation de Power Query dans le cadre de Power BI, mais **pas de preuve d'une maîtrise approfondie** (ex : transformations complexes, optimisation de requêtes). *Flag incertain : niveau d'expertise non documenté.*
 
 ---
 
 ## Questions d'entretien probables
-1. **Évaluation M&A** :
-   - *"Comment adapteriez-vous vos compétences en modélisation statistique (ex. churn) à des analyses de valorisation ou de due diligence dans un contexte M&A ?"* (lié au gap en finance d’entreprise).
-   - *"Avez-vous déjà travaillé sur des modèles financiers intégrant des données externes (ex. marchés, benchmarks) ? Si non, comment aborderiez-vous ce type de projet ?"* (lié à l’intégration de données externes).
+1. **Compétences techniques** :
+   - *"Pouvez-vous décrire un projet où vous avez utilisé Power BI pour résoudre un problème métier complexe ? Quels indicateurs avez-vous mis en avant ?"* *Source : Réalisation de dashboards décisionnels.*
+   - *"Comment avez-vous structuré votre pipeline ETL sur Snowflake pour intégrer des données externes ? Quels défis avez-vous rencontrés ?"* *Source : Projet d'intégration de données externes.*
+   - *"Quelle méthodologie avez-vous suivie pour développer votre modèle de churn (recall 85%) ? Comment avez-vous justifié vos choix statistiques auprès des métiers ?"* *Source : Modèle de machine learning en production.*
 
-2. **Outils techniques** :
-   - *"Quels outils utilisez-vous pour manipuler et modéliser des données en amont de Power BI ?"* (pour évaluer Power Query/Pivot, flag incertain).
-   - *"Comment gérez-vous les limitations d’Excel pour des analyses complexes, et quels outils complémentaires utilisez-vous ?"* (pour creuser Alteryx, gap confirmé).
+2. **Adaptation au contexte M&A** :
+   - *"Votre expérience en analyse financière se concentre sur la tarification et le churn. Comment envisagez-vous de transposer ces compétences à l'évaluation de deals M&A ?"* *Gap : finance d'entreprise/M&A.*
+   - *"Quels outils utiliseriez-vous pour analyser la rentabilité d'une transaction M&A ? Avez-vous déjà travaillé avec des données de marché ou des benchmarks ?"* *Gap : évaluation M&A.*
 
-3. **Collaboration et formation** :
-   - *"Comment accompagneriez-vous une équipe métier pour qu’elle utilise efficacement vos outils data (ex. tableaux de bord) sans dépendre de vous ?"* (lié au gap en formation d’équipes).
-   - *"Pouvez-vous partager un exemple où vous avez dû expliquer un modèle statistique à un public non technique ?"* (pour évaluer la communication).
+3. **Soft skills et communication** :
+   - *"Comment avez-vous convaincu des équipes non-techniques d'adopter vos tableaux de bord Power BI ? Quels retours avez-vous reçus ?"* *Source : Storytelling et adoption des dashboards.*
+   - *"Décrivez une situation où vous avez dû expliquer un résultat technique complexe à un décideur. Comment avez-vous adapté votre discours ?"* *Source : Vulgarisation pour audiences non-techniques.*
 
-4. **Projets clés** :
-   - *"Décrivez un projet où vous avez dû structurer un pipeline de données pour une analyse métier. Quels défis avez-vous rencontrés ?"* (lié à Snowflake/ETL).
-   - *"Comment avez-vous justifié les choix statistiques de votre modèle de churn (ex. recall vs précision) aux parties prenantes ?"* (lié à la modélisation prédictive).
+4. **Résolution de problèmes** :
+   - *"Pouvez-vous partager un exemple où vous avez identifié un problème métier grâce à l'analyse de données ? Quelles actions ont été mises en place suite à vos recommandations ?"* *Source : Outils de tarification autonomes et modèles prédictifs.*
 
 ---
 
 ## Angle de candidature
-**Positionnement clé** :
-Candidat **Senior Data Analyst** avec une expertise en **analyse de rentabilité et modélisation statistique**, idéalement positionné pour des rôles nécessitant une **traduction des données en décisions business**. La localisation lyonnaise et l’expérience en assurance (tarification, KPIs) offrent un socle pertinent pour aborder les enjeux M&A, notamment via :
-- **L’analyse de données transactionnelles** : Expérience en modélisation de coûts (sinistralité, commissions) et en outils prédictifs (*source : projet churn*), transférable à l’évaluation de deals.
-- **L’intégration de données externes** : Architecture ETL sur Snowflake et scraping (*source : pipelines + Playwright*), utile pour croiser des données marché ou financières.
-- **La communication métier** : Vulgarisation des résultats techniques et adoption d’outils par les équipes (*source : Power BI*), essentielle pour collaborer avec les équipes M&A.
+**Positionnement** : Candidat **Senior Data Analyst** avec une expertise éprouvée en **analyse de données transactionnelles, modélisation prédictive et visualisation**, cherchant à appliquer ces compétences dans un environnement **M&A** à Lyon. Le profil combine **rigueur technique** (Excel, Power BI, Python/SQL) et **sens métier** (tarification, KPIs financiers), avec une forte capacité à **traduire des données en décisions business**.
 
-**Stratégie de réponse aux gaps** :
-1. **Finance M&A** :
-   - Mettre en avant la **modélisation de tarification** (produits santé) comme expérience proche de la valorisation (*source : expérience assurance*), et souligner la capacité à monter rapidement en compétence sur les spécificités M&A (ex. multiples, DCF).
-   - Proposer une **approche méthodologique** pour aborder les analyses de deals (ex. structuration des données, identification des KPIs clés).
+### Messages clés à mettre en avant
+1. **Expertise en analyse de données financières** :
+   - Mettre l'accent sur les **projets de tarification et modélisation de KPIs** (sinistralité, coût moyen) pour démontrer une compréhension des enjeux de rentabilité. *Source : Outils de tarification en assurance.*
+   - Souligner la **formation en économétrie et risk management** comme base pour aborder l'évaluation M&A. *Source : Formation académique.*
 
-2. **Outils manquants** :
-   - Pour **Alteryx/Power Pivot** : Insister sur la **maîtrise d’Excel avancé** et de Power BI (*source : certifications + expérience*), et exprimer une **ouverture à se former** sur les outils complémentaires.
-   - Pour **Power Query/Tableau** : Clarifier en entretien l’étendue de l’expérience Power BI (ex. utilisation de Power Query en interne).
+2. **Impact business des réalisations** :
+   - Insister sur les **modèles prédictifs déployés en production** (churn, recall 85%) et leur **justification métier**, montrant une capacité à aligner la data science sur les objectifs business. *Source : Modèle de machine learning avec impact mesurable.*
+   - Valoriser les **tableaux de bord Power BI adoptés à grande échelle**, prouvant une capacité à **créer des outils utiles pour les décideurs**. *Source : Dashboards décisionnels.*
 
-3. **Formation d’équipes** :
-   - Mettre en avant la **création d’outils autonomes** pour les métiers (*source : outils de tarification*), et proposer des **bonnes pratiques** pour documenter et former (ex. tutoriels, ateliers).
+3. **Adaptabilité et apprentissage rapide** :
+   - Reconnaître le **gap en évaluation M&A** tout en mettant en avant :
+     - L'expérience en **analyse financière** (tarification, churn) comme fondement pour monter en compétence sur les deals. *Source : Projets en assurance.*
+     - La **maîtrise de Snowflake et des pipelines ETL** pour intégrer rapidement des données transactionnelles complexes. *Source : Architecture ETL proche Medallion.*
+   - Proposer une **approche proactive** : *"Je suis convaincu que mon expertise en modélisation statistique et en analyse de rentabilité peut être rapidement adaptée aux spécificités des deals M&A, avec une formation ciblée sur les outils et méthodologies du secteur."*
 
-**Message différenciant** :
-*"Mon profil combine une expertise technique en data (modélisation, ETL) et une sensibilité métier (rentabilité, KPIs), avec une capacité à rendre les analyses actionnables pour des équipes non techniques. Mon expérience en assurance m’a appris à croiser des données complexes pour éclairer des décisions stratégiques – une approche que je souhaite transposer aux enjeux M&A, en m’appuyant sur ma rigueur analytique et ma formation en économétrie pour monter en compétence sur les spécificités du secteur."*
+4. **Localisation et ancrage lyonnais** :
+   - Présenter la candidature comme un **choix professionnel réfléchi**, avec une **expérience locale pertinente** (si applicable) ou une **connaissance du tissu économique lyonnais** (ex : secteurs clés comme la tech, la finance, ou les services).
+
+### Structure recommandée pour la lettre de motivation
+1. **Accroche** : *"Votre recherche d'un Senior Data Analyst pour accompagner les deals M&A à Lyon a retenu toute mon attention. Mon parcours en analyse de données transactionnelles et modélisation prédictive, couplé à une expertise en visualisation décisionnelle, correspond aux enjeux que vous décrivez."*
+2. **Alignement compétences/offre** :
+   - Détailler **2-3 réalisations clés** (ex : modèle de churn, dashboards Power BI) avec leur impact métier.
+   - Lier ces réalisations aux besoins du poste (ex : *"Mon expérience en tarification et analyse de KPIs financiers me permet d'aborder sereinement les enjeux de rentabilité des transactions M&A."*).
+3. **Réponse aux gaps** :
+   - Aborder le gap en M&A avec transparence : *"Si mon expérience en évaluation M&A est à développer, ma formation en économétrie et mon expertise en modélisation statistique constituent une base solide pour monter en compétence rapidement sur les méthodologies spécifiques à votre secteur."*
+4. **Conclusion** : *"Je serais ravi d'échanger avec vous sur la manière dont mon profil pourrait contribuer à vos projets de deals M&A. Disponible pour un entretien à votre convenance, je reste à votre disposition pour toute information complémentaire."*

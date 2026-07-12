@@ -102,29 +102,6 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Retrieval-Augmented Generation (RAG) et architectures associées] Retrieval-Augmented Generation",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_ml",
-          "distance": 0.5598,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5608,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5776,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5598, match retenu"
-    },
-    {
-      "step": "requirement_atom",
       "query": "[Retrieval-Augmented Generation (RAG) et architectures associées] RAG",
       "n_results": 3,
       "results": [
@@ -145,6 +122,29 @@
         }
       ],
       "conclusion": "best_distance=0.7099, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Retrieval-Augmented Generation (RAG) et architectures associées] Retrieval-Augmented Generation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5598,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5608,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5776,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5598, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -355,145 +355,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Traitement Automatique du Langage Naturel (NLP)] manipulation de données textuelles",
+      "query": "[Conception et analyse d'architectures techniques pour l'IA] conception d'architectures techniques",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4124,
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4774,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5306,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5532,
           "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.4895,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5647,
-          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4124, match retenu"
+      "conclusion": "best_distance=0.4774, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Méthodologies Agile et Scrum] Agile",
+      "query": "[Conception et analyse d'architectures techniques pour l'IA] analyse de faisabilité",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6952,
-          "source_file": "skills.md"
+          "id": "achievements::churn_model",
+          "distance": 0.3834,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4558,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4919,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3834, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et analyse d'architectures techniques pour l'IA] IA générative",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5299,
+          "source_file": "achievements.md"
         },
         {
           "id": "achievements::mistral_chatbot",
-          "distance": 0.6968,
+          "distance": 0.5461,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.7011,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6952, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Méthodologies Agile et Scrum] Scrum",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.7148,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.7431,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7551,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7148, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Méthodologies Agile et Scrum] Daily",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.8025,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "constraints::notice_period",
-          "distance": 0.8151,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.8167,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "aucun match fiable -> flag_uncertain"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Méthodologies Agile et Scrum] Sprint Planning",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6708,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6716,
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5694,
           "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6852,
-          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6708, match retenu"
+      "conclusion": "best_distance=0.5299, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Méthodologies Agile et Scrum] Rétrospectives",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6371,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6828,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.7417,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6371, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Intégration et déploiement DevOps] DevOps",
+      "query": "[Intégration et déploiement de solutions IA en environnement DevOps/Agile] DevOps",
       "n_results": 3,
       "results": [
         {
@@ -516,7 +447,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration et déploiement DevOps] intégration continue",
+      "query": "[Intégration et déploiement de solutions IA en environnement DevOps/Agile] intégration continue",
       "n_results": 3,
       "results": [
         {
@@ -539,7 +470,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration et déploiement DevOps] déploiement",
+      "query": "[Intégration et déploiement de solutions IA en environnement DevOps/Agile] déploiement",
       "n_results": 3,
       "results": [
         {
@@ -562,118 +493,118 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration et déploiement DevOps] production",
+      "query": "[Intégration et déploiement de solutions IA en environnement DevOps/Agile] méthodologies Agile",
       "n_results": 3,
       "results": [
         {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5414,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5432,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.566,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5414, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et déploiement de solutions IA en environnement DevOps/Agile] Scrum",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7148,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7431,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7551,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7148, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Industrialisation de modèles et scripts robustes] industrialisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6392,
+          "source_file": "achievements.md"
+        },
+        {
           "id": "achievements::churn_model",
-          "distance": 0.6586,
+          "distance": 0.6867,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6996,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6392, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Industrialisation de modèles et scripts robustes] scripts robustes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6684,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.6649,
+          "distance": 0.6737,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6841,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6586, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Conception d'architectures techniques pour l'IA] conception d'architectures",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5112,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5604,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5977,
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7094,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5112, match retenu"
+      "conclusion": "best_distance=0.6684, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception d'architectures techniques pour l'IA] architectures techniques",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5186,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5238,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5491,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5186, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Conception d'architectures techniques pour l'IA] études de faisabilité",
+      "query": "[Industrialisation de modèles et scripts robustes] maintenabilité",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.4099,
+          "distance": 0.4978,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.4521,
+          "distance": 0.585,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4995,
-          "source_file": "achievements.md"
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6144,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.4099, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Conception d'architectures techniques pour l'IA] solutions IA",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.6065,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6483,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6486,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6065, match retenu"
+      "conclusion": "best_distance=0.4978, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -723,30 +654,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Rédaction de documentation technique et fonctionnelle] rédaction technique",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4455,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.4643,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.515,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4455, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Formation et transmission de connaissances techniques] formation",
+      "query": "[Animation de formations et transmission de connaissances] formation",
       "n_results": 3,
       "results": [
         {
@@ -769,30 +677,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Formation et transmission de connaissances techniques] transmission de connaissances",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.567,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5716,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5999,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5670, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Formation et transmission de connaissances techniques] pédagogie",
+      "query": "[Animation de formations et transmission de connaissances] pédagogie",
       "n_results": 3,
       "results": [
         {
@@ -815,75 +700,119 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse et résolution de problèmes complexes] analyse de problèmes",
+      "query": "[Animation de formations et transmission de connaissances] transmission de connaissances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.567,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5716,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5999,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5670, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration en équipe Agile et communication avec les parties prenantes] travail d'équipe",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.4954,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5796,
+          "distance": 0.6501,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.6382,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4954, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Analyse et résolution de problèmes complexes] résolution de problèmes",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5942,
+          "distance": 0.658,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.6289,
+          "distance": 0.6593,
           "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6688,
-          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.5942, match retenu"
+      "conclusion": "best_distance=0.6501, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse et résolution de problèmes complexes] problématiques complexes",
+      "query": "[Collaboration en équipe Agile et communication avec les parties prenantes] communication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6237,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6465,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6632,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6237, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration en équipe Agile et communication avec les parties prenantes] collaboration Agile",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.525,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5365,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5598,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5250, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration en équipe Agile et communication avec les parties prenantes] support technique",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.6162,
+          "distance": 0.608,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6479,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6152,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6903,
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6393,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6162, match retenu"
+      "conclusion": "best_distance=0.6080, match retenu"
     }
   ],
-  "uncertain_flags": [
-    "Méthodologies Agile et Scrum"
-  ]
+  "uncertain_flags": []
 }

@@ -148,7 +148,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse de données et détection de tendances] analyse de données",
+      "query": "[Analyse de données et détection de tendances/modèles] analyse de données",
       "n_results": 3,
       "results": [
         {
@@ -171,7 +171,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse de données et détection de tendances] détection de tendances",
+      "query": "[Analyse de données et détection de tendances/modèles] détection de tendances",
       "n_results": 3,
       "results": [
         {
@@ -194,7 +194,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse de données et détection de tendances] modélisation de données",
+      "query": "[Analyse de données et détection de tendances/modèles] modélisation de données",
       "n_results": 3,
       "results": [
         {
@@ -217,7 +217,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse de données et détection de tendances] détection d'anomalies",
+      "query": "[Analyse de données et détection de tendances/modèles] détection d'anomalies",
       "n_results": 3,
       "results": [
         {
@@ -240,7 +240,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse de données et détection de tendances] recommandations métiers",
+      "query": "[Analyse de données et détection de tendances/modèles] recommandations métiers",
       "n_results": 3,
       "results": [
         {
@@ -447,26 +447,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec les équipes métiers et explication des écarts] besoins fonctionnels",
+      "query": "[Collaboration avec les équipes métiers et explication des écarts] compréhension des besoins fonctionnels",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.5065,
+          "distance": 0.4661,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5177,
           "source_file": "achievements.md"
         },
         {
           "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.5268,
+          "distance": 0.5369,
           "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5684,
-          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5065, match retenu"
+      "conclusion": "best_distance=0.4661, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -493,26 +493,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec les équipes métiers et explication des écarts] exploitation des données",
+      "query": "[Collaboration avec les équipes métiers et explication des écarts] accompagnement à l'exploitation des données",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5219,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4606,
           "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4608,
+          "source_file": "achievements.md"
         },
         {
           "id": "skills::certifications",
-          "distance": 0.5328,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5351,
+          "distance": 0.4614,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5219, match retenu"
+      "conclusion": "best_distance=0.4606, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -700,118 +700,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de bases de données SQL et outils Microsoft] Microsoft SQL Server",
+      "query": "[Gestion de bases de données SQL et outils Microsoft] Microsoft",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.3498,
+          "distance": 0.6172,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.5575,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.6776,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3498, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Participation à des projets d'évolution du système d'information (ERP, BI)] projets SI",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5578,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5788,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6179,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5578, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Participation à des projets d'évolution du système d'information (ERP, BI)] évolution du système d'information",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5037,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5562,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5779,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5037, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Participation à des projets d'évolution du système d'information (ERP, BI)] ERP",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6418,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6446,
+          "distance": 0.6867,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.6702,
+          "distance": 0.7404,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6418, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Participation à des projets d'évolution du système d'information (ERP, BI)] transformation data",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::certifications",
-          "distance": 0.6466,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6745,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6876,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6466, match retenu"
+      "conclusion": "best_distance=0.6172, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -838,49 +746,95 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Interconnexion de données multi-sources] sources multiples",
+      "query": "[Interconnexion de données multi-sources] intégration de données multi-sources",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6894,
+          "id": "skills::certifications",
+          "distance": 0.5279,
           "source_file": "skills.md"
         },
         {
-          "id": "skills::certifications",
-          "distance": 0.7088,
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5716,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.7105,
+          "distance": 0.5722,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6894, match retenu"
+      "conclusion": "best_distance=0.5279, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Interconnexion de données multi-sources] plateformes d'interconnexion",
+      "query": "[Participation à des projets d'évolution du système d'information (ERP, BI)] projets d'évolution SI",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.5223,
+          "distance": 0.5741,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5805,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5907,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.589,
           "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6183,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5223, match retenu"
+      "conclusion": "best_distance=0.5741, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Participation à des projets d'évolution du système d'information (ERP, BI)] ERP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6418,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6446,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6702,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6418, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Participation à des projets d'évolution du système d'information (ERP, BI)] transformation des usages data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5145,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5236,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5263,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5145, match retenu"
     }
   ],
   "uncertain_flags": []

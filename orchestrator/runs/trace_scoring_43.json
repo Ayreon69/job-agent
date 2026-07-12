@@ -286,49 +286,49 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Traitement Big Data avec PySpark] optimisation de traitements",
+      "query": "[Traitement Big Data avec PySpark] traitement distribué",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.4635,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.5076,
+          "distance": 0.5047,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5314,
+          "distance": 0.5275,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5732,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4635, match retenu"
+      "conclusion": "best_distance=0.5047, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Traitement Big Data avec PySpark] Spark",
+      "query": "[Traitement Big Data avec PySpark] optimisation de requêtes Spark",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_gaps_specifiques_cern",
-          "distance": 0.7311,
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5973,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7911,
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6062,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.804,
-          "source_file": "achievements.md"
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6308,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.7311, match retenu"
+      "conclusion": "best_distance=0.5973, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -378,6 +378,29 @@
     },
     {
       "step": "requirement_atom",
+      "query": "[Collecte, transformation et fiabilisation des données] nettoyage de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5502,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5634,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5857,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5502, match retenu"
+    },
+    {
+      "step": "requirement_atom",
       "query": "[Collecte, transformation et fiabilisation des données] fiabilisation des données",
       "n_results": 3,
       "results": [
@@ -424,29 +447,6 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collecte, transformation et fiabilisation des données] sources de données multiples",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::certifications",
-          "distance": 0.5458,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5569,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5768,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5458, match retenu"
-    },
-    {
-      "step": "requirement_atom",
       "query": "[Conception de tableaux de bord et indicateurs métiers] tableaux de bord",
       "n_results": 3,
       "results": [
@@ -467,29 +467,6 @@
         }
       ],
       "conclusion": "best_distance=0.7165, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Conception de tableaux de bord et indicateurs métiers] indicateurs métiers",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4349,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.4607,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4627,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4349, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -516,6 +493,52 @@
     },
     {
       "step": "requirement_atom",
+      "query": "[Conception de tableaux de bord et indicateurs métiers] indicateurs métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4349,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4607,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4627,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4349, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de tableaux de bord et indicateurs métiers] KPI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6698,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7258,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7576,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6698, match retenu"
+    },
+    {
+      "step": "requirement_atom",
       "query": "[Conception de tableaux de bord et indicateurs métiers] reporting",
       "n_results": 3,
       "results": [
@@ -539,7 +562,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse de données avancée et identification de tendances] analyse de données",
+      "query": "[Analyses de données avancées et identification de tendances] analyse de données",
       "n_results": 3,
       "results": [
         {
@@ -562,53 +585,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse de données avancée et identification de tendances] data science",
+      "query": "[Analyses de données avancées et identification de tendances] data mining",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::certifications",
-          "distance": 0.4431,
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5536,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5645,
-          "source_file": "achievements.md"
+          "id": "skills::certifications",
+          "distance": 0.571,
+          "source_file": "skills.md"
         },
         {
-          "id": "constraints::education",
-          "distance": 0.5688,
-          "source_file": "constraints.md"
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5924,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4431, match retenu"
+      "conclusion": "best_distance=0.5536, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse de données avancée et identification de tendances] modélisation statistique",
+      "query": "[Analyses de données avancées et identification de tendances] statistiques",
       "n_results": 3,
       "results": [
         {
           "id": "constraints::education",
-          "distance": 0.4909,
+          "distance": 0.5258,
           "source_file": "constraints.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5276,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6218,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5802,
-          "source_file": "achievements.md"
+          "id": "skills::certifications",
+          "distance": 0.6402,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4909, match retenu"
+      "conclusion": "best_distance=0.5258, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse de données avancée et identification de tendances] identification de tendances",
+      "query": "[Analyses de données avancées et identification de tendances] machine learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1937,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5103,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.1937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyses de données avancées et identification de tendances] identification de tendances",
       "n_results": 3,
       "results": [
         {
@@ -631,26 +677,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse de données avancée et identification de tendances] machine learning",
+      "query": "[Analyses de données avancées et identification de tendances] modélisation prédictive",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_ml",
-          "distance": 0.1937,
-          "source_file": "skills.md"
-        },
-        {
           "id": "achievements::churn_model",
-          "distance": 0.4336,
+          "distance": 0.3784,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5103,
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4552,
           "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5943,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.1937, match retenu"
+      "conclusion": "best_distance=0.3784, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -769,49 +815,49 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec équipes métiers et techniques] collaboration technique",
+      "query": "[Collaboration avec équipes métiers et techniques] communication technique",
       "n_results": 3,
       "results": [
         {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5955,
+          "source_file": "skills.md"
+        },
+        {
           "id": "achievements::agentic_coding",
-          "distance": 0.5656,
+          "distance": 0.6105,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5954,
+          "distance": 0.624,
           "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.6121,
-          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5656, match retenu"
+      "conclusion": "best_distance=0.5955, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec équipes métiers et techniques] communication inter-équipes",
+      "query": "[Collaboration avec équipes métiers et techniques] travail d'équipe",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6188,
+          "id": "achievements::churn_model",
+          "distance": 0.6501,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.6409,
+          "distance": 0.658,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.658,
+          "id": "achievements::pricing_tool",
+          "distance": 0.6593,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6188, match retenu"
+      "conclusion": "best_distance=0.6501, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -907,26 +953,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Maintien en conditions opérationnelles des solutions data] stabilité des solutions",
+      "query": "[Maintien en conditions opérationnelles des solutions data] résolution d'incidents",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.5741,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6805,
+          "distance": 0.5636,
           "source_file": "achievements.md"
         },
         {
           "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6886,
+          "distance": 0.6526,
           "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6977,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5741, match retenu"
+      "conclusion": "best_distance=0.5636, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -953,6 +999,52 @@
     },
     {
       "step": "requirement_atom",
+      "query": "[Amélioration continue des architectures Data] optimisation d'architecture",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5563,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6113,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6157,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5563, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration continue des architectures Data] scalabilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6755,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.677,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6638, match retenu"
+    },
+    {
+      "step": "requirement_atom",
       "query": "[Amélioration continue des architectures Data] amélioration continue",
       "n_results": 3,
       "results": [
@@ -973,52 +1065,6 @@
         }
       ],
       "conclusion": "best_distance=0.5652, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Amélioration continue des architectures Data] optimisation d'architectures",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5662,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.6046,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6129,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5662, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Amélioration continue des architectures Data] processus data",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4894,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5178,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5255,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4894, match retenu"
     }
   ],
   "uncertain_flags": []

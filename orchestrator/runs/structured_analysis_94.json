@@ -1,0 +1,43 @@
+{
+  "matches": [
+    {
+      "skill": "Gestion de projet IT et pilotage de programmes",
+      "matched_chunk_summary": "Utilisation quotidienne de Claude Code et serveurs MCP (GitHub, Playwright, Firecrawl, Context7, Vercel) pour structurer des projets de développement assisté par agent, avec des fichiers CLAUDE.md pour un contexte persistant. Expérience en gestion de pipelines ETL sur Snowflake (architecture proche Medallion) et automatisation de processus métier critiques (réduction de 10h à 35min pour le calcul des commissions)."
+    },
+    {
+      "skill": "IA générative et agents IA pour le développement",
+      "matched_chunk_summary": "Utilisation quotidienne de Claude Code et serveurs MCP (GitHub, Playwright, Firecrawl, Context7, Vercel) pour des projets de développement assisté par agent. Prototypage d'un assistant interne basé sur l'API Mistral (appel direct, interface Gradio) et agentic coding avec compréhension des compromis architecturaux (ex: contexte complet vs RAG)."
+    },
+    {
+      "skill": "Automatisation des processus DevOps et CI/CD",
+      "matched_chunk_summary": "Automatisation de processus métier (calcul des commissions, scraping avec Playwright) et utilisation de pandas pour des pipelines de traitement de données. Expérience en structuration de pipelines ETL sur Snowflake, bien que les outils CI/CD avancés (GitHub Actions, Jenkins) soient en cours d'apprentissage."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Gestion et développement d'API",
+      "note": "Expérience limitée au prototypage d'API LLM (Mistral/Gradio) et à l'usage d'API existantes. Aucun déploiement en production d'APIs (FastAPI, Kong/Apigee) ou gestion d'API Management (spécifications, proxies, monitoring)."
+    },
+    {
+      "skill": "Outils de versioning et de collaboration",
+      "note": "Utilisation basique de GitHub (via MCP) pour le versioning, mais pas de maîtrise avancée des workflows Git, ni d'expérience avec Jira, Confluence ou Backstage pour la collaboration projet."
+    },
+    {
+      "skill": "Outils d'automatisation et de déploiement",
+      "note": "Notions de Docker, GitHub Actions et CI/CD, mais aucune expérience pratique en déploiement cloud (AWS/GCP) ou outils comme Jenkins, XL Deploy, Dynatrace. Automatisation limitée à des scripts Python (pandas, Playwright)."
+    },
+    {
+      "skill": "Cloud et monitoring",
+      "note": "Expérience limitée à Snowflake (architecture ETL) et notions de cloud AWS/Azure. Aucun déploiement en production ou monitoring avancé (ex: Dynatrace)."
+    },
+    {
+      "skill": "Méthodologies Agile et DevOps",
+      "note": "Notions de CI/CD et DevOps, mais pas de pratique formalisée des méthodologies Agile (Scrum/Kanban) ou d'outils comme Jira pour le suivi de projet. Expérience en coordination technique, mais pas en pilotage de sprints ou ateliers Agile."
+    }
+  ],
+  "uncertain_flags": [
+    "Gestion et développement d'API",
+    "Outils de versioning et de collaboration",
+    "Outils d'automatisation et de déploiement"
+  ]
+}

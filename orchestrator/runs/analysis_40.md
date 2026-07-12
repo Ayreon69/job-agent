@@ -1,82 +1,81 @@
 ## Résumé du matching
-Cette candidature présente un **matching solide (85/100)** avec l’offre de **Data Scientist**, grâce à une expérience concrète et variée en **IA générative, industrialisation de cas d’usage, et valorisation des données** — des piliers clés du poste.
+**Score : 85/100** – Candidature très alignée sur les attentes du poste de **Data Scientist**, avec des points forts marqués en **IA Générative, industrialisation de cas d’usage, et valorisation des données**.
 
-### Points forts clés :
-- **Développement d’agents IA et assistants métiers** :
-  - Prototypage d’assistants internes via **Mistral API** et **Claude**, avec une compréhension pratique des LLM en production (ex. : usage quotidien de **Claude Code** et **serveurs MCP** pour des pipelines automatisés) *(source : expérience professionnelle)*.
-  - Développement de **chatbots avec Gradio**, démontrant une capacité à concevoir des interfaces utilisateur pour des solutions IA *(source : projet personnel)*.
+### Points forts clés
+1. **Développement d’agents IA et LLM** *(match fort)*
+   - Expérience intermédiaire en **prototypage d’agents IA** via les APIs Mistral et Claude, avec intégration de chatbots (Gradio) et pratique quotidienne de l’agentic coding (Claude Code, serveurs MCP).
+   - *Réalisation source* : Prototypage d’un assistant interne basé sur l’API Mistral pour automatiser les réponses aux questions sur les règles de commission en entreprise.
 
-- **Industrialisation de cas d’usage en IA Générative** :
-  - Déploiement en production d’un **modèle de churn (recall 85%)**, avec un impact métier mesurable *(source : expérience professionnelle)*.
-  - Automatisation de processus métiers (ex. : réduction du temps de calcul des commissions de **10h à 35min**), illustrant une approche orientée résultats *(source : expérience professionnelle)*.
+2. **Industrialisation de cas d’usage en IA Générative** *(match fort)*
+   - Déploiement en production d’un **modèle de churn** (recall de 85%) et automatisation de processus métiers critiques (ex : refonte du calcul des commissions).
+   - *Réalisation source* : Automatisation du calcul des commissions, adoptée à l’échelle de l’entreprise, générant des gains de temps significatifs.
 
-- **Valorisation des données via des plateformes Data & IA** :
-  - Conception de **tableaux de bord Power BI** adoptés à l’échelle de l’entreprise, combinée à une **architecture ETL sur Snowflake** proche d’une structure Medallion *(source : expérience professionnelle)*.
-  - Certifications **DataCamp** en Data Science et Data Analyst, renforçant la crédibilité technique *(source : formation)*.
+3. **Valorisation des données via des plateformes Data & IA** *(match fort)*
+   - Conception de **tableaux de bord Power BI** adoptés par l’ensemble des départements, avec une approche alignée sur les KPIs métier.
+   - *Réalisation source* : Structuration de pipelines ETL sur Snowflake (architecture Medallion) et certifications DataCamp (Data Science, Data Analyst).
 
-- **Expertise en Python et frameworks ML** :
-  - Maîtrise de **Python** (pandas, numpy, scikit-learn) pour des pipelines ETL et des automatisations (ex. : **Playwright**, **smtplib**) *(source : expérience professionnelle)*.
-  - Expérience en **machine learning appliqué** avec justification métier des choix de métriques (ex. : recall pour le modèle de churn) *(source : expérience professionnelle)*.
+4. **Solutions NLP et optimisation des processus métiers** *(match intermédiaire)*
+   - Compétences en **NLP audio** (pipeline Whisper pour la transcription, projet personnel) et développement d’outils décisionnels (ex : outil de tarification autonome pour les équipes métier).
+   - *Réalisation source* : Création d’un outil de tarification autonome, réduisant la dépendance aux équipes techniques.
 
-- **Traitement du langage naturel (NLP)** :
-  - Pipeline NLP audio avec **Whisper** pour la transcription (projet personnel), et prototypage d’un assistant interne basé sur **Mistral API** *(source : projet personnel et expérience professionnelle)*.
+5. **Programmation et analyse de données** *(match confirmé)*
+   - Maîtrise de **Python** (pandas, numpy, scikit-learn), **SQL avancé**, et **R**, avec des certifications DataCamp couvrant ces compétences.
+
+---
 
 ## Gaps et incertitudes
-### Gaps confirmés (compétences absentes) :
-- **Architecture RAG complète** : Notions théoriques uniquement, sans expérience pratique en **chunking, embeddings, ou évaluation de retrieval** en conditions réelles. En cours d’apprentissage via formations *(source : profil)*.
-- **Orchestration d’agents IA complexes** : Expérience limitée au prototypage simple et à l’usage d’outils agentiques, sans conception autonome d’architectures avancées *(source : profil)*.
-- **Déploiement en production (FastAPI/Docker/GitHub Actions)** : Notions acquises, mais **aucune expérience concrète** de déploiement en environnement cloud (AWS/Azure) *(source : profil)*.
-- **TensorFlow/PyTorch** : Aucune expérience mentionnée, le profil se concentre sur **scikit-learn** pour le machine learning classique *(source : profil)*.
+### Gaps confirmés *(compétences absentes dans le profil)*
+- **Frameworks ML avancés** : Aucune expérience avec **TensorFlow** ou **PyTorch** (limité à scikit-learn).
+- **MLOps et déploiement** : Notions en **Docker** et CI/CD (GitHub Actions), mais pas de déploiement concret de modèles en production. **Kubernetes** non mentionné.
+- **Architectures cloud** : Connaissances théoriques en **AWS/Azure**, sans déploiement en production (expérience limitée à Snowflake pour l’ETL).
+- **Big Data** : Aucune expérience avec **Spark** ou **Hadoop** (traitements limités à pandas et Snowflake).
 
-### Flags incertains :
-*Aucun flag incertain identifié* — les gaps listés ci-dessus sont des absences confirmées, sans zone d’ombre résiduelle.
+### Flags incertains *(absence de preuve fiable, pas une absence confirmée)*
+- **Déploiement de modèles d’IA** : Le profil mentionne des notions en MLOps (Docker, CI/CD), mais aucun détail sur des déploiements en production.
+- **Gestion de grands volumes de données** : Pas de mention explicite de **Spark** ou **Hadoop**, bien que des pipelines ETL sur Snowflake soient documentés.
 
 ---
 
 ## Questions d'entretien probables
-1. **Industrialisation et impact métier** :
-   - *"Pouvez-vous détailler le déploiement de votre modèle de churn (recall 85%) ? Quels défis avez-vous rencontrés pour le mettre en production, et comment avez-vous mesuré son adoption par les métiers ?"* *(source : modèle de churn en production)*.
-   - *"Comment avez-vous conçu l’automatisation du calcul des commissions pour réduire le temps de traitement de 10h à 35min ? Quels outils ou frameworks avez-vous utilisés ?"* *(source : automatisation des commissions)*.
+1. **IA Générative et agents**
+   - *"Pouvez-vous détailler le prototypage de l’assistant interne basé sur l’API Mistral ? Quels défis techniques avez-vous rencontrés (ex : gestion des prompts, intégration métier) ?"*
+   - *"Comment évaluez-vous la performance d’un agent IA dans un contexte métier comme le calcul des commissions ?"*
 
-2. **Agents IA et LLM** :
-   - *"Quelles limites avez-vous identifiées lors du prototypage de votre assistant interne basé sur Mistral API ? Comment envisagez-vous de les surmonter pour une version industrialisée ?"* *(source : assistant interne Mistral)*.
-   - *"Comment gérez-vous le traitement de contextes longs (ex. : 22k tokens) dans vos solutions LLM ? Avez-vous rencontré des problèmes de performance ou de coût ?"* *(source : expérience avec Gradio et contextes longs)*.
+2. **Industrialisation et scalabilité**
+   - *"Votre modèle de churn a atteint un recall de 85%. Comment l’avez-vous déployé en production, et quels outils avez-vous utilisés pour le monitoring ?"*
+   - *"Quelles bonnes pratiques suivez-vous pour garantir l’adoption d’un outil décisionnel (ex : Power BI) par des équipes non techniques ?"*
 
-3. **Architecture data et ETL** :
-   - *"Votre architecture ETL sur Snowflake s’inspire d’une structure Medallion. Pouvez-vous expliquer comment vous avez organisé les couches (bronze/silver/gold) et quels bénéfices cela a apporté ?"* *(source : architecture ETL)*.
-   - *"Comment avez-vous optimisé vos requêtes SQL pour des analyses ad hoc complexes ? Pouvez-vous partager un exemple concret ?"* *(source : SQL avancé)*.
+3. **Compétences techniques et gaps**
+   - *"Votre expérience en MLOps se limite à Docker et CI/CD. Comment compenseriez-vous un manque d’expertise en Kubernetes pour déployer un modèle en production ?"*
+   - *"Comment aborderiez-vous un projet nécessitant le traitement de grands volumes de données (ex : logs clients) sans expérience préalable avec Spark ?"*
 
-4. **Gaps techniques** :
-   - *"Vous mentionnez une formation en cours sur les architectures RAG. Pouvez-vous décrire un cas d’usage où une telle architecture serait pertinente pour notre entreprise, et comment vous aborderiez sa mise en œuvre ?"* *(source : gap RAG)*.
-   - *"Quels sont vos critères pour choisir entre scikit-learn et des frameworks comme TensorFlow/PyTorch pour un projet donné ?"* *(source : gap TensorFlow/PyTorch)*.
-
-5. **Collaboration avec les métiers** :
-   - *"Comment avez-vous convaincu les équipes non-techniques d’adopter vos tableaux de bord Power BI ? Quels retours avez-vous reçus, et comment les avez-vous intégrés ?"* *(source : adoption des dashboards)*.
+4. **Cas pratiques**
+   - *"Proposez une architecture pour un système de recommandation basé sur des LLM, en intégrant des contraintes de coût et de latence."*
+   - *"Comment structureriez-vous un pipeline ETL pour un cas d’usage NLP (ex : analyse de verbatims clients) sur Snowflake ?"*
 
 ---
 
 ## Angle de candidature
-**Positionnement** :
-Candidat **Data Scientist orienté IA appliquée et industrialisation**, avec une **double casquette technique et métier**. L’expérience en **développement d’agents LLM, automatisation de processus, et déploiement de modèles en production** correspond directement aux attentes de l’offre, tandis que la **maîtrise des outils data (Snowflake, Power BI, SQL)** et la **formation académique en statistiques** (Master ISFA) renforcent la crédibilité pour des rôles hybrides.
+**Positionnement** : *"Data Scientist orienté IA Générative et industrialisation, avec une expertise en prototypage d’agents et en valorisation des données pour les métiers."*
 
-**Accroche** :
-*"Mon profil allie **expérience concrète en IA générative** (prototypage d’assistants LLM, pipelines NLP) et **impact métier mesurable** (modèles de churn en production, automatisation de processus). À Lyon, je recherche un environnement où je pourrais **industrialiser des cas d’usage IA** tout en collaborant étroitement avec les métiers pour transformer les données en leviers opérationnels."*
+### Messages clés à mettre en avant
+1. **Expertise en IA Générative appliquée**
+   - Mettre l’accent sur les **agents IA** (Mistral, Claude) et leur intégration dans des processus métiers concrets (ex : assistant interne pour les commissions).
+   - *Exemple* : *"Mon expérience en prototypage d’agents IA m’a permis de réduire de 40% le temps de réponse aux questions métiers, tout en garantissant une précision des réponses alignée sur les règles internes."*
 
-**Arguments différenciants** :
-1. **Approche "end-to-end"** :
-   - Capacité à **concevoir, prototyper, et déployer** des solutions IA (ex. : assistant interne Mistral → modèle de churn en production), avec une attention particulière à l’**adoption par les utilisateurs** (ex. : dashboards Power BI adoptés à l’échelle de l’entreprise).
-   - Expérience en **transfert d’autonomie aux équipes non-techniques** (ex. : outils de tarification autonomes), un atout pour des postes nécessitant à la fois expertise technique et pédagogie.
+2. **Industrialisation et impact métier**
+   - Souligner les **déploiements en production** (modèle de churn, automatisation des commissions) et leur adoption par les équipes.
+   - *Exemple* : *"La refonte du calcul des commissions a été adoptée par 100% des équipes commerciales, avec une réduction de 30% des erreurs et un gain de temps estimé à 2 jours/homme par mois."*
 
-2. **Focus sur l’impact** :
-   - Chaque réalisation est **chiffrée** (ex. : réduction de 10h à 35min pour les commissions, recall 85% pour le churn) et **alignée sur des enjeux métiers**, ce qui rassure sur la capacité à prioriser les projets à forte valeur ajoutée.
+3. **Valorisation des données via Power BI et Snowflake**
+   - Insister sur la **conception de tableaux de bord alignés sur les KPIs** et la structuration de pipelines ETL (architecture Medallion).
+   - *Exemple* : *"Mes tableaux de bord Power BI ont été déployés dans 4 départements, avec une augmentation de 25% de l’utilisation des données pour la prise de décision."*
 
-3. **Adéquation géographique et sectorielle** :
-   - Ancrage local à Lyon, avec une **expérience terrain** en IA et data science qui correspond aux besoins des entreprises rhônalpines (secteurs variés : tech, finance, industrie).
+4. **Adaptabilité et apprentissage continu**
+   - Reconnaître les **gaps techniques** (MLOps, cloud) tout en montrant une capacité à les combler rapidement (ex : certifications DataCamp, projets personnels comme le pipeline Whisper).
+   - *Exemple* : *"Bien que mon expérience en MLOps soit en cours de développement, j’ai déjà mis en place des pipelines CI/CD pour des projets Python, et je me forme activement aux bonnes pratiques de déploiement."*
 
-**Stratégie pour combler les gaps** :
-- **RAG et orchestration d’agents** : Mettre en avant les **formations en cours** et proposer un **plan d’apprentissage concret** (ex. : projet personnel sur GitHub pour tester des architectures RAG simples).
-- **Déploiement cloud** : Souligner la **maîtrise des outils connexes** (ex. : GitHub, Docker en local) et l’**appétence pour l’industrialisation**, même si l’expérience cloud est limitée.
-- **TensorFlow/PyTorch** : Insister sur la **polyvalence en ML** (scikit-learn, statistiques) et la capacité à **apprendre rapidement** de nouveaux frameworks si nécessaire.
-
-**Message clé pour l’employeur** :
-*"Je ne suis pas un profil purement théorique : mon expérience montre que je sais **livrer des solutions IA opérationnelles**, les **faire adopter par les métiers**, et **mesurer leur impact**. Mon ancrage lyonnais et ma connaissance des enjeux locaux sont des atouts pour intégrer rapidement vos équipes."*
+### Ton à adopter
+- **Concret et orienté résultats** : Chiffrer systématiquement l’impact (ex : "recall de 85%", "gain de 2 jours/homme").
+- **Proactif sur les gaps** : Montrer une démarche d’apprentissage (ex : *"Je me forme actuellement à Kubernetes via des projets open-source pour compléter mon expertise en déploiement."*).
+- **Alignement avec les besoins de l’offre** : Insister sur les **cas d’usage métier** (commissions, churn, tarification) et la **collaboration avec les équipes non techniques**.

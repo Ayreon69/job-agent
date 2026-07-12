@@ -1,0 +1,47 @@
+{
+  "matches": [
+    {
+      "skill": "Conception et développement de solutions IA pour la relation client",
+      "matched_chunk_summary": "Prototypage d'un assistant interne basé sur l'API Mistral pour répondre aux questions sur les règles de commission, avec une architecture simple (appel API direct, contexte complet, interface Gradio). Expérience concrète avec les APIs de LLM en production interne et compréhension des compromis architecturaux (ex: choix délibéré de ne pas utiliser RAG)."
+    },
+    {
+      "skill": "Prototypage et réalisation de POC/démonstrateurs IA",
+      "matched_chunk_summary": "Prototypage d'un assistant interne via Mistral API et Gradio, avec démonstration de faisabilité technique et choix architecturaux justifiés. Expérience en développement de modèles de machine learning (churn prediction) mis en production, validant la capacité à transformer des POC en solutions opérationnelles."
+    },
+    {
+      "skill": "Analyse et formalisation des besoins métiers",
+      "matched_chunk_summary": "Création d'un outil de tarification pour les produits santé individuelle, permettant aux équipes métier d'ajuster les tarifs en autonomie. Développement d'un modèle de churn aligné sur les priorités métier (recall à 85% pour minimiser les coûts des faux négatifs)."
+    },
+    {
+      "skill": "Collaboration avec les équipes métiers et techniques",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI adoptés par l'ensemble des départements, démontrant la capacité à collaborer avec des audiences non techniques. Structuration de pipelines ETL sur Snowflake pour fiabiliser la production de rapports à grande échelle."
+    },
+    {
+      "skill": "Veille technologique et évaluation de solutions IA",
+      "matched_chunk_summary": "Utilisation quotidienne de Claude Code et serveurs MCP (GitHub, Playwright, Firecrawl) pour des projets d'agentic coding, avec structuration de contextes persistants via CLAUDE.md. Familiarité avec les écosystèmes IA modernes et évaluation de compromis techniques (ex: RAG vs contexte complet)."
+    },
+    {
+      "skill": "Gestion de projet et accompagnement au changement",
+      "matched_chunk_summary": "Déploiement d'un modèle de churn en production, alimentant des stratégies de fidélisation ciblées. Création d'outils (tarification, tableaux de bord) transférant de l'autonomie aux équipes métier, avec adoption à l'échelle de l'entreprise."
+    },
+    {
+      "skill": "Rédaction de documentation technique et fonctionnelle",
+      "matched_chunk_summary": "Structuration de projets via des fichiers CLAUDE.md pour documenter le contexte persistant des sessions d'agent. Expérience en architecture de données (pipelines ETL Snowflake) nécessitant une documentation technique rigoureuse."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Intégration et déploiement de solutions IA",
+      "note": "Expérience limitée aux prototypes (ex: assistant Mistral/Gradio) et déploiement de modèles ML en production (churn). Absence de maîtrise des outils de déploiement avancés (FastAPI, Docker, CI/CD, cloud AWS/Azure) ou d'industrialisation à grande échelle."
+    },
+    {
+      "skill": "Méthodologies de déploiement à grande échelle",
+      "note": "Expérience en déploiement de modèles ML (churn) et outils métier (tarification, Power BI), mais pas de preuve de méthodologies pour des solutions IA complexes ou des plateformes télécoms. Notions seulement en CI/CD et cloud."
+    },
+    {
+      "skill": "Connaissance des plateformes télécoms et solutions de relation client",
+      "note": "Aucune expérience identifiée dans les plateformes télécoms ou solutions de relation client (ex: transcription vocale, self-service vocal, routage intelligent). Expérience limitée aux cas d'usage assurance et projets personnels (NLP audio via Whisper)."
+    }
+  ],
+  "uncertain_flags": []
+}

@@ -79,30 +79,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Développement Python pour l'IA générative] développement Python",
+      "query": "[Développement Python pour l'IA générative] développement d'outils Gen AI",
       "n_results": 3,
       "results": [
         {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5147,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5203,
+          "source_file": "skills.md"
+        },
+        {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.5905,
+          "distance": 0.5293,
           "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.624,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6355,
-          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5905, match retenu"
+      "conclusion": "best_distance=0.5147, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Déploiement et intégration Cloud (AWS/Azure)] AWS",
+      "query": "[Déploiement et intégration Cloud (AWS/Azure) et On-Premise] AWS",
       "n_results": 3,
       "results": [
         {
@@ -125,7 +125,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Déploiement et intégration Cloud (AWS/Azure)] Azure",
+      "query": "[Déploiement et intégration Cloud (AWS/Azure) et On-Premise] Azure",
       "n_results": 3,
       "results": [
         {
@@ -148,53 +148,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Déploiement et intégration Cloud (AWS/Azure)] déploiement Cloud",
+      "query": "[Déploiement et intégration Cloud (AWS/Azure) et On-Premise] Cloud",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.5212,
+          "distance": 0.6405,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.6016,
+          "distance": 0.6918,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::mistral_chatbot",
-          "distance": 0.633,
+          "distance": 0.7486,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5212, match retenu"
+      "conclusion": "best_distance=0.6405, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Déploiement et intégration Cloud (AWS/Azure)] intégration Cloud",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5489,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5999,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.6284,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5489, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Infrastructures On-Premise] On-Premise",
+      "query": "[Déploiement et intégration Cloud (AWS/Azure) et On-Premise] On-Premise",
       "n_results": 3,
       "results": [
         {
@@ -217,26 +194,187 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Infrastructures On-Premise] infrastructures locales",
+      "query": "[Déploiement et intégration Cloud (AWS/Azure) et On-Premise] déploiement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5399,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5434,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5587,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5399, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et intégration Cloud (AWS/Azure) et On-Premise] intégration",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.5238,
+          "distance": 0.5946,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5795,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6294,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6426,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5946, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation et orchestration des flux] automatisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3734,
           "source_file": "skills.md"
         },
         {
+          "id": "achievements::commission_automation",
+          "distance": 0.402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4765,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3734, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation et orchestration des flux] orchestration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7062,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7569,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7735,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7062, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation et orchestration des flux] flux de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5213,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5342,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5515,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5213, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation et orchestration des flux] stabilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6207,
+          "source_file": "achievements.md"
+        },
+        {
           "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.606,
+          "distance": 0.6913,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7076,
           "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.5238, match retenu"
+      "conclusion": "best_distance=0.6207, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation et orchestration des flux] disponibilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5509,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5512,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.571,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5509, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation et orchestration des flux] monitoring",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5692,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6048,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6286,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5692, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -332,145 +470,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[DevOps et CI/CD avec Gitlab et Docker] orchestration",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7062,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_nlp_audio",
-          "distance": 0.7569,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.7735,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7062, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Automatisation et orchestration des flux] automatisation",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.3734,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.402,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.4765,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3734, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Automatisation et orchestration des flux] orchestration",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7062,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_nlp_audio",
-          "distance": 0.7569,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.7735,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7062, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Automatisation et orchestration des flux] flux de données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5213,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5342,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.5515,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5213, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Monitoring et stabilité des applications en production] monitoring",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5692,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6048,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.6286,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5692, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Monitoring et stabilité des applications en production] stabilité",
+      "query": "[DevOps et CI/CD avec Gitlab et Docker] déploiement continu",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.6207,
+          "distance": 0.526,
           "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6913,
-          "source_file": "geography_rules.md"
+          "id": "achievements::pricing_tool",
+          "distance": 0.6035,
+          "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.7076,
-          "source_file": "geography_rules.md"
+          "id": "achievements::agentic_coding",
+          "distance": 0.604,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6207, match retenu"
+      "conclusion": "best_distance=0.5260, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Monitoring et stabilité des applications en production] production",
+      "query": "[Architectures scalables et industrialisation] architectures scalables",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5588,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5816,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6188,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5588, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architectures scalables et industrialisation] industrialisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6392,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6867,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6996,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6392, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architectures scalables et industrialisation] production",
       "n_results": 3,
       "results": [
         {
@@ -493,99 +562,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Monitoring et stabilité des applications en production] supervision",
+      "query": "[Gestion de projets IA en production] gestion de projets IA",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.6227,
+          "distance": 0.4407,
           "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6381,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.6479,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6227, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Conception d'applications scalables] scalabilité",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6638,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6755,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_other_mobility",
-          "distance": 0.677,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6638, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Conception d'applications scalables] conception d'applications",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.4029,
-          "source_file": "achievements.md"
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4427,
+          "source_file": "skills.md"
         },
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.4213,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.484,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4029, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Conception d'applications scalables] architecture scalable",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.4941,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5549,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6108,
+          "distance": 0.4516,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4941, match retenu"
+      "conclusion": "best_distance=0.4407, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Expérience en mise en production de cas d'usage IA générative] mise en production",
+      "query": "[Gestion de projets IA en production] mise en production",
       "n_results": 3,
       "results": [
         {
@@ -608,49 +608,302 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Expérience en mise en production de cas d'usage IA générative] cas d'usage IA générative",
+      "query": "[Gestion de projets IA en production] cas d'usage Gen AI",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.4363,
+          "distance": 0.5394,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_maitrisees_ml",
-          "distance": 0.491,
+          "distance": 0.6034,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::mistral_chatbot",
-          "distance": 0.5018,
+          "distance": 0.6392,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4363, match retenu"
+      "conclusion": "best_distance=0.5394, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Expérience en mise en production de cas d'usage IA générative] industrialisation",
+      "query": "[Environnements techniques modernes (Python, Cloud, Git)] Python",
       "n_results": 3,
       "results": [
         {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Environnements techniques modernes (Python, Cloud, Git)] Cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6405,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6918,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7486,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6405, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Environnements techniques modernes (Python, Cloud, Git)] Git",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.735,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7624,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7916,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7350, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Environnements techniques modernes (Python, Cloud, Git)] environnements techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.511,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5223,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5496,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5110, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de contraintes techniques sectorielles] contraintes techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5877,
+          "source_file": "skills.md"
+        },
+        {
           "id": "achievements::pricing_tool",
-          "distance": 0.6392,
+          "distance": 0.5945,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.6867,
+          "distance": 0.5969,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5877, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de contraintes techniques sectorielles] secteur télécommunications",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5656,
           "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_lyon_no_mobility",
-          "distance": 0.6996,
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5821,
           "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5897,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6392, match retenu"
+      "conclusion": "best_distance=0.5656, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Code propre et performant orienté usage] code propre",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5657,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6271,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6392,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5657, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Code propre et performant orienté usage] code performant",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4988,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5116,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5521,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4988, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Code propre et performant orienté usage] bonnes pratiques de développement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4905,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5557,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5639,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4905, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes techniques et métiers] collaboration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6176,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6411,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.667,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6176, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes techniques et métiers] équipes techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5425,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5498,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5638,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5425, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes techniques et métiers] équipes métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5424,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.548,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5582,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5424, match retenu"
     }
   ],
   "uncertain_flags": [

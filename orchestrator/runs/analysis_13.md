@@ -1,76 +1,71 @@
 ## Résumé du matching
-Cette candidature présente un **matching technique solide** sur les piliers analytiques de l’offre, avec des réalisations concrètes alignées sur les attentes en data engineering et reporting :
+Cette candidature présente une adéquation technique solide avec les exigences clés du poste de **Data Analyst Supply Chain**, malgré un contexte métier initial différent (assurance). Voici les points forts identifiés :
 
-- **Traitement et consolidation de données** :
-  Maîtrise des outils clés (SQL, Python/pandas, Snowflake) et expérience en architecture ETL (modèle Medallion), avec une réalisation phare : la structuration de pipelines pour fiabiliser des rapports à grande échelle (*source : expérience en production de rapports*).
-  Certification DataCamp couvrant SQL avancé et Python, renforçant la crédibilité technique.
+- **Analyse de données logistiques et Supply Chain** :
+  - Développement d’un **modèle de machine learning en production** pour prédire le churn (recall de 85%), démontrant une capacité à appliquer des méthodes statistiques et de ML à des problématiques métier complexes (*source : modèle de churn*).
+  - Conception de **tableaux de bord Power BI** alignés sur des KPIs métier (commissions, sinistralité, coût moyen), adoptés par l’ensemble des départements, prouvant une maîtrise des outils décisionnels et une approche orientée résultats (*source : tableaux de bord Power BI*).
 
-- **KPIs et tableaux de bord décisionnels** :
-  Conception de tableaux de bord Power BI (DAX avancé) adoptés par des départements entiers, avec un impact mesurable sur la prise de décision (*source : adoption des dashboards par des audiences non-techniques*).
-  Expérience en alignement des livrables avec les KPIs métier définis par la direction (*source : outils de tarification transférant de l’autonomie aux équipes métier*).
+- **Collecte, consolidation et traitement de données** :
+  - Structuration de **pipelines ETL sur Snowflake** (architecture proche du modèle Medallion) et maîtrise de **SQL avancé, Python (pandas), et Power BI** pour le traitement et la consolidation de données (*source : pipelines ETL Snowflake + certifications DataCamp*).
+  - Automatisation de processus métiers (ex : réduction du temps de calcul des commissions de 10h à 35min) via des outils comme **Playwright, smtplib, Brevo, et pandas** (*source : automatisation des commissions*).
 
-- **Automatisation et optimisation** :
-  Automatisation du calcul des commissions (réduction de 10h à 35min) et élimination de coûts de licence (*source : refonte méthodologique des commissions*).
-  Maîtrise d’outils d’automatisation (Playwright, smtplib, Brevo) et de pandas pour des analyses récurrentes.
+- **Construction et suivi des KPI logistiques** :
+  - Expérience avérée dans la **production d’outils décisionnels** pour des audiences non techniques, avec une approche centrée sur l’alignement des indicateurs avec les objectifs métier (*source : tableaux de bord Power BI adoptés par les départements*).
+  - Création d’un **outil de tarification pour les produits santé**, transférant de l’autonomie aux équipes opérationnelles et illustrant une capacité à traduire des analyses en recommandations actionnables (*source : outil de tarification*).
 
-- **Analyse de dérives et coûts cachés** :
-  Développement d’un modèle de churn avec justification métier des choix statistiques (recall vs précision) (*source : projet de détection de dérives*).
-  Méthodologie appliquée à des indicateurs sensibles (sinistralité, coût moyen), démontrant une capacité à identifier des leviers d’optimisation.
-
----
+- **Identification des dérives et coûts cachés** :
+  - Refonte de la **méthodologie de calcul des commissions** avec automatisation, éliminant des coûts de licence et réduisant les délais de traitement (*source : refonte des commissions*).
+  - Développement d’un **modèle de churn** justifié par une logique métier (coût des erreurs), montrant une approche analytique rigoureuse et orientée ROI (*source : modèle de churn*).
 
 ## Gaps et incertitudes
-**Gaps confirmés** (compétences absentes dans le profil) :
-- **Domaine logistique/Supply Chain** :
-  Aucune expérience directe en analyse de données logistiques ou Supply Chain. Les projets cités relèvent de l’assurance et d’un cas B2B externe (vêtements), sans lien avec les flux physiques, stocks, ou schémas de transport.
-- **Gestion d’anomalies logistiques** :
-  Expérience en détection de dérives (churn, commissions), mais pas dans un contexte d’incidents logistiques (retards, ruptures de stock, problèmes de livraison).
-- **Coordination opérationnelle** :
-  Aucune expérience en interface avec des acteurs logistiques (transporteurs, sites opérationnels). Les réalisations portent sur l’architecture de données et l’automatisation, pas sur la synchronisation d’équipes terrain.
-- **Optimisation des flux** :
-  Expérience en optimisation de processus (commissions, tarification), mais pas en optimisation de schémas de transport ou flux intersites.
+Les écarts identifiés concernent principalement des **compétences opérationnelles spécifiques à la Supply Chain**, absentes du profil actuel :
 
-**Flags incertains** :
-*Aucun* – Les gaps identifiés sont des absences confirmées, sans zone d’ombre résiduelle.
+- **Suivi opérationnel des flux transport et coordination logistique** :
+  - Aucune expérience directe en **suivi des flux transport** ou en **coordination logistique** (ex : gestion des livraisons, outils WMS/TMS). L’expérience se limite à l’architecture de données (Snowflake) et à des projets en assurance.
+  - *Gap confirmé* : absence d’exposition aux processus ou outils logistiques (ex : SAP TM, Oracle Transportation Management).
 
----
+- **Analyse des anomalies et incidents logistiques** :
+  - Expérience en analyse d’anomalies limitée au contexte assurance (ex : modèle de churn, calculs de commissions). Aucune expérience identifiée en **analyse d’incidents logistiques** (ex : retards de livraison, ruptures de stock).
+  - *Gap confirmé* : pas de cas d’usage démontrant une capacité à investiguer des dérives opérationnelles en Supply Chain.
+
+- **Optimisation des schémas de transport et flux intersites** :
+  - Aucune expérience en **optimisation de schémas de transport** ou de **flux intersites** (ex : réduction des coûts de transport, amélioration des délais). L’optimisation se limite à des processus métiers en assurance (automatisation, tarification).
+  - *Gap confirmé* : pas de projet démontrant une approche systémique de l’optimisation logistique.
+
+*Aucun flag incertain* : les gaps listés ci-dessus sont des absences confirmées, sans ambiguïté dans le profil.
 
 ## Questions d'entretien probables
-1. **Adaptation au domaine logistique** :
-   *"Comment transposeriez-vous votre expérience en analyse de dérives (ex : churn, commissions) à un contexte Supply Chain, où les indicateurs portent sur des flux physiques et des délais ?"*
-   → Attendu : Proposition de KPIs logistiques (taux de service, lead time, coûts de transport) et méthodologie pour les prioriser.
+1. **Adaptation au contexte Supply Chain** :
+   - *"Votre expérience en assurance diffère du secteur logistique. Comment comptez-vous transposer vos compétences en analyse de données à des problématiques comme les retards de livraison ou les ruptures de stock ?"* (Attendu : exemples concrets de méthodologie analytique appliquée à des KPIs opérationnels, même hors logistique).
+   - *"Quels outils ou méthodes utiliseriez-vous pour identifier des coûts cachés dans les flux transport ?"* (Attendu : approche structurée en 3 étapes : collecte des données, modélisation des coûts, recommandations).
 
-2. **Outils et données logistiques** :
-   *"Quels outils ou sources de données utiliseriez-vous pour analyser les performances d’un réseau de transport ? Avez-vous déjà travaillé avec des données de type WMS/TMS ?"*
-   → Attendu : Référence à des outils connus (SAP TM, Oracle WMS) ou à des proxys (ERP, bases de données de suivi de colis), même sans expérience directe.
+2. **Maîtrise technique et outils** :
+   - *"Décrivez un projet où vous avez conçu un pipeline ETL sur Snowflake. Quels défis avez-vous rencontrés et comment les avez-vous résolus ?"* (Attendu : détails sur l’architecture, les transformations, et la gestion des performances).
+   - *"Comment garantissez-vous que vos tableaux de bord Power BI sont adoptés par des utilisateurs non techniques ?"* (Attendu : exemples de collaboration avec les métiers, formation, ou itérations basées sur les retours).
 
-3. **Coordination multi-acteurs** :
-   *"Comment structureriez-vous un tableau de bord pour des équipes opérationnelles (logistique, production) et des transporteurs, sachant que leurs priorités diffèrent ?"*
-   → Attendu : Approche par persona (ex : vue "coûts" pour la finance, vue "délais" pour les sites) et mécanismes de collaboration (alertes partagées, commentaires intégrés).
+3. **Résolution de problèmes opérationnels** :
+   - *"Un fournisseur clé accuse des retards répétés. Quelles données analyseriez-vous pour quantifier l’impact et proposer des solutions ?"* (Attendu : identification des KPIs pertinents, sources de données, et méthodologie d’analyse).
+   - *"Comment prioriseriez-vous les anomalies logistiques à investiguer dans un contexte de ressources limitées ?"* (Attendu : critères de priorisation, outils de visualisation, et collaboration avec les équipes terrain).
 
-4. **Cas pratique** :
-   *"Un entrepôt signale des retards récurrents sur une ligne de production. Quelles données analyseriez-vous en priorité, et quelles hypothèses formuleriez-vous ?"*
-   → Attendu : Identification des données clés (historique des commandes, temps de traitement, goulots d’étranglement) et méthodologie (analyse de corrélation, benchmark inter-sites).
-
-5. **Automatisation logistique** :
-   *"Comment automatiseriez-vous le suivi des livraisons en temps réel pour un réseau de 50 sites ? Quels outils ou architectures proposeriez-vous ?"*
-   → Attendu : Référence à des solutions comme Kafka pour le streaming, ou à des outils low-code (Power Automate) pour des alertes simples.
-
----
+4. **Automatisation et scalabilité** :
+   - *"Quels outils utiliseriez-vous pour automatiser le reporting des KPIs logistiques, et pourquoi ?"* (Attendu : comparaison des outils, intégration avec les sources de données, et gestion des alertes).
+   - *"Comment mesureriez-vous le succès d’un projet d’automatisation en Supply Chain ?"* (Attendu : métriques quantitatives et qualitatives, ex : gain de temps, réduction des erreurs, adoption par les utilisateurs).
 
 ## Angle de candidature
 **Positionnement** :
-Candidature à ancrer sur **l’expertise analytique transférable** plutôt que sur le domaine logistique, en mettant en avant :
-- **La rigueur méthodologique** : Capacité à structurer des pipelines de données complexes (Snowflake, ETL) et à produire des outils décisionnels adoptés (*ex : dashboards Power BI utilisés par des non-techniciens*).
-- **L’impact business** : Réalisations chiffrées (gain de temps, réduction de coûts) et alignement avec les KPIs métier (*ex : refonte des commissions, modèle de churn*).
-- **L’agilité technique** : Maîtrise d’un stack moderne (Python, SQL avancé, Power BI) et certifications DataCamp, permettant une montée en compétence rapide sur les spécificités logistiques.
+Candidature axée sur une **expertise analytique transférable**, mettant en avant une capacité prouvée à :
+1. **Transformer des données en décisions opérationnelles** : via des outils comme Power BI et des modèles ML, avec une approche centrée sur l’impact métier (ex : réduction des coûts, amélioration des KPIs).
+2. **Automatiser et industrialiser des processus** : expérience concrète en pipelines ETL, scripts Python, et outils d’automatisation (ex : Playwright, Brevo), applicable à la Supply Chain pour gagner en efficacité.
+3. **Collaborer avec les métiers** : historique de conception d’outils adoptés par des équipes non techniques, essentiel pour un rôle à l’interface entre la data et les opérations logistiques.
 
-**Message clé** :
-*"Mon profil combine une expertise data éprouvée (automatisation, KPIs, détection de dérives) avec une approche orientée résultats, comme en témoignent mes réalisations en assurance et B2B. Si je n’ai pas encore travaillé sur des données logistiques, ma méthodologie pour transformer des données brutes en leviers d’optimisation est directement applicable à la Supply Chain. Par exemple, mon expérience en [citer une réalisation : ex : refonte des commissions] montre ma capacité à identifier des coûts cachés et à proposer des solutions scalables – une compétence critique pour analyser les flux intersites ou les schémas de transport."*
+**Stratégie de réponse aux gaps** :
+- **Minimiser l’impact des écarts opérationnels** en recentrant l’entretien sur :
+  - La **méthodologie analytique** (ex : "Mon approche pour identifier des dérives repose sur [X étapes], que j’appliquerais aux données logistiques").
+  - Les **compétences techniques** (SQL, Python, Power BI) comme leviers pour monter rapidement en compétence sur les spécificités Supply Chain.
+  - Les **réalisations transverses** (ex : modèle de churn = capacité à détecter des anomalies ; automatisation des commissions = gain de temps sur des processus répétitifs).
 
-**Points de vigilance à adresser** :
-- **Proactivité sur la formation** : Mentionner une veille active sur les enjeux logistiques (ex : lectures sur les KPIs Supply Chain, tutoriels sur les outils comme SAP IBP) pour rassurer sur la capacité à monter en compétence.
-- **Exemples concrets de transfert** : Préparer des analogies entre les projets passés et les besoins logistiques (ex : *"La détection de dérives dans les commissions est similaire à l’analyse des écarts de délais de livraison : dans les deux cas, il s’agit d’identifier des patterns anormaux et de proposer des correctifs"*).
+**Message clé pour l’employeur** :
+*"Mon profil combine une maîtrise technique des outils data (Snowflake, Power BI, Python) et une expérience avérée en analyse de données métier, avec des résultats tangibles : réduction des coûts, automatisation de processus, et outils décisionnels adoptés par les équipes. Bien que mon expérience directe en logistique soit limitée, ma méthodologie structurée et mon approche orientée résultats me permettent de m’adapter rapidement aux enjeux Supply Chain, comme je l’ai fait dans des contextes variés (assurance, santé). Je propose de mettre cette expertise au service de [Nom de l’Entreprise] pour optimiser les flux, identifier des leviers d’économie, et outiller les équipes opérationnelles avec des données actionnables."*
 
-**Ton** :
-Confiant sur les compétences techniques, humble sur le domaine logistique, mais résolument tourné vers l’apprentissage et l’adaptation. Éviter les formulations génériques ("je suis motivé") au profit de démonstrations concrètes ("voici comment j’ai résolu un problème similaire").
+**Exemple de phrase d’accroche pour la lettre de motivation** :
+*"Votre recherche d’un Data Analyst Supply Chain résonne avec mon parcours : j’ai conçu des modèles prédictifs pour anticiper des risques métier, automatisé des processus chronophages, et créé des tableaux de bord alignés sur les KPIs des équipes. Mon expertise en traitement de données (Snowflake, SQL, Python) et en outils décisionnels (Power BI) me permet de proposer une approche data-driven pour résoudre vos enjeux logistiques, même si mon expérience directe en Supply Chain est récente. Je suis convaincu que ma rigueur analytique et ma capacité à collaborer avec les métiers seraient un atout pour [Nom de l’Entreprise]."*

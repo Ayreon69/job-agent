@@ -263,26 +263,49 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse de données et reporting] tableaux de bord",
+      "query": "[Analyse de données et reporting] tableaux de bord financiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.561,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5995,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6315,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5610, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données et reporting] tableaux de bord opérationnels",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.7165,
+          "distance": 0.5492,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7214,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5513,
           "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.7329,
-          "source_file": "geography_rules.md"
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5928,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.7165, match retenu"
+      "conclusion": "best_distance=0.5492, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -470,30 +493,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Modélisation de scénarios et analyse prédictive] hypothèses basées sur les données",
+      "query": "[Modélisation de scénarios et analyse prédictive] hypothèses de scénarios",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.454,
+          "distance": 0.542,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5548,
+          "id": "achievements::pricing_tool",
+          "distance": 0.6452,
           "source_file": "achievements.md"
         },
         {
           "id": "constraints::education",
-          "distance": 0.5568,
+          "distance": 0.6588,
           "source_file": "constraints.md"
         }
       ],
-      "conclusion": "best_distance=0.4540, match retenu"
+      "conclusion": "best_distance=0.5420, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Maîtrise des ERP et bases de données] ERP",
+      "query": "[Modélisation de scénarios et analyse prédictive] pilotage de la performance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.486,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4997,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5445,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4860, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[ERP et bases de données] ERP",
       "n_results": 3,
       "results": [
         {
@@ -516,7 +562,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Maîtrise des ERP et bases de données] bases de données",
+      "query": "[ERP et bases de données] bases de données",
       "n_results": 3,
       "results": [
         {
@@ -539,7 +585,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Maîtrise des ERP et bases de données] outils métiers",
+      "query": "[ERP et bases de données] outils métiers",
       "n_results": 3,
       "results": [
         {
@@ -559,6 +605,29 @@
         }
       ],
       "conclusion": "best_distance=0.4050, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[ERP et bases de données] consolidation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5597,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.587,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6179,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5597, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -585,26 +654,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gouvernance des données financières et opérationnelles] règles de gouvernance",
+      "query": "[Gouvernance des données financières et opérationnelles] règles de gouvernance des données",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5566,
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5023,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5217,
           "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.5769,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "geography_rules::rule_uae_middle_east",
-          "distance": 0.6006,
-          "source_file": "geography_rules.md"
+          "id": "skills::certifications",
+          "distance": 0.5319,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5566, match retenu"
+      "conclusion": "best_distance=0.5023, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -631,72 +700,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Automatisation des processus et optimisation des flux] automatisation des processus",
+      "query": "[Gouvernance des données financières et opérationnelles] Direction Financière",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.3278,
-          "source_file": "skills.md"
+          "id": "constraints::education",
+          "distance": 0.5019,
+          "source_file": "constraints.md"
         },
         {
-          "id": "achievements::commission_automation",
-          "distance": 0.3329,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.4643,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3278, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Automatisation des processus et optimisation des flux] optimisation des flux d'information",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5255,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5315,
-          "source_file": "skills.md"
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6572,
+          "source_file": "geography_rules.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5377,
+          "distance": 0.6577,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5255, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Automatisation des processus et optimisation des flux] productivité",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "constraints::current_employment",
-          "distance": 0.6541,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6628,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "constraints::education",
-          "distance": 0.6675,
-          "source_file": "constraints.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6541, match retenu"
+      "conclusion": "best_distance=0.5019, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -746,26 +769,141 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Veille technologique et bonnes pratiques data] méthodes analytiques financières",
+      "query": "[Veille technologique et bonnes pratiques data] analytique financière",
       "n_results": 3,
       "results": [
         {
           "id": "constraints::education",
-          "distance": 0.4747,
+          "distance": 0.5041,
           "source_file": "constraints.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5125,
+          "distance": 0.5493,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.5761,
+          "distance": 0.6177,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4747, match retenu"
+      "conclusion": "best_distance=0.5041, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et bonnes pratiques data] outils data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.423,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4317,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4648,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4230, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et bonnes pratiques data] méthodes data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4494,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.496,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5038,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4494, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation des processus et flux d'information] automatisation des processus",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3278,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.3329,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4643,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3278, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation des processus et flux d'information] optimisation des flux d'information",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5255,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5315,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5377,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5255, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation des processus et flux d'information] productivité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6541,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6628,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6675,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6541, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -838,72 +976,141 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projets data et transformation digitale] gestion de projets data",
+      "query": "[Culture data et accompagnement des utilisateurs] formation utilisateurs",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.449,
+          "distance": 0.4595,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.4517,
-          "source_file": "achievements.md"
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5454,
+          "source_file": "skills.md"
         },
         {
-          "id": "skills::certifications",
-          "distance": 0.4913,
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5524,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4490, match retenu"
+      "conclusion": "best_distance=0.4595, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projets data et transformation digitale] transformation digitale",
+      "query": "[Gestion des risques et amélioration continue] gestion des risques",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.647,
-          "source_file": "skills.md"
+          "id": "achievements::churn_model",
+          "distance": 0.3578,
+          "source_file": "achievements.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6655,
+          "id": "achievements::pricing_tool",
+          "distance": 0.5037,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5119,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3578, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des risques et amélioration continue] identification des dysfonctionnements",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.594,
+          "source_file": "skills.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.7074,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6470, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion de projets data et transformation digitale] projets transverses",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5079,
+          "distance": 0.6002,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5195,
+          "id": "constraints::education",
+          "distance": 0.7115,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5940, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des risques et amélioration continue] axes d'amélioration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5094,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5338,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.5579,
+          "distance": 0.5465,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5079, match retenu"
+      "conclusion": "best_distance=0.5094, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des risques et amélioration continue] plans d'amélioration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4974,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5173,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5646,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4974, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des risques et amélioration continue] actions correctives",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6476,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7248,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.7448,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6476, match retenu"
     }
   ],
   "uncertain_flags": []

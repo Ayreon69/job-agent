@@ -1,70 +1,58 @@
 ## Résumé du matching
+Cette candidature présente une adéquation solide avec plusieurs exigences clés de l'offre, tout en révélant des axes de progression naturels pour un profil en transition vers le développement logiciel full-stack.
 
-**Points forts alignés avec l'offre :**
-- **Développement en TypeScript** : Bien que TypeScript ne soit pas explicitement cité dans les réalisations, le candidat utilise quotidiennement des outils modernes (GitHub, Playwright, Vercel) et des frameworks associés à des projets de développement assisté par agent, suggérant une maîtrise des paradigmes de développement proches de TypeScript (match : *Utilisation quotidienne de Claude Code et serveurs MCP*).
-- **Développement d'applications web** : Expérience concrète en prototypage d'interfaces (Gradio) et déploiement (Vercel), avec une approche orientée utilisateur et scalabilité (match : *Prototypage d'un assistant interne via Gradio*).
-- **Intégration de fonctionnalités IA** : Intégration réussie d'un LLM (Mistral) via une API, avec une réflexion sur les compromis architecturaux, démontrant une capacité à concevoir des solutions hybrides (match : *Prototypage d'un assistant interne basé sur l'API Mistral*).
-- **Gestion de données et scalabilité** : Structuration de pipelines ETL sur Snowflake (architecture proche de Medallion) et déploiement d'un modèle de ML en production pour prédire le churn, prouvant une expertise en robustesse et scalabilité (match : *Structuration de pipelines ETL sur Snowflake* et *Modèle de ML en production pour prédire la résiliation*).
+**Points forts alignés sur l'offre :**
+- **Maîtrise de TypeScript** : Pratique quotidienne dans des environnements modernes (GitHub, Playwright, Vercel) pour des projets d'automatisation et de développement assisté par agent (*source : utilisation de Claude Code et serveurs MCP*). L'expérience avec Playwright confirme une expertise en JavaScript/TypeScript pour des cas d'usage techniques (scraping, tests).
+- **Développement d'applications web** : Réalisation concrète avec le prototypage d'un assistant interne via l'API Mistral et Gradio, couplé à une utilisation régulière de Vercel pour des projets d'agents (*source : projets de développement assisté par agent*). Bien que centré sur les LLM, ce travail démontre une capacité à concevoir des interfaces web fonctionnelles.
+- **Intégration de fonctionnalités IA** : Expérience pratique avec les APIs de modèles de langage (Mistral) et le déploiement de modèles de machine learning en production (modèle de churn avec 85% de recall) (*source : prototypage assistant interne et modèle de prédiction*). Ces réalisations illustrent une approche pragmatique de l'IA, alignée sur les besoins métiers.
+- **Gestion de données et architecture** : Structuration de pipelines ETL sur Snowflake avec une architecture en couches (staging/core/reporting), proche des bonnes pratiques Medallion (*source : pipelines ETL Snowflake*). Cette expérience en fiabilisation des flux de données est transférable à des contextes de développement logiciel.
 
-**Adéquation globale** :
-Le profil correspond à 65 % aux attentes de l'offre, avec une forte valeur ajoutée sur les aspects **développement web moderne**, **intégration IA**, et **gestion de données**. Les compétences en TypeScript sont plausibles via l'écosystème utilisé, même si non explicitement documentées. La localisation en Rhône-Alpes et l'expérience en outils comme Vercel renforcent la pertinence pour un rôle local.
+**Atouts complémentaires :**
+- **Scalabilité et robustesse** : Déploiement d'un modèle de machine learning en production et adoption de tableaux de bord Power BI à l'échelle de l'entreprise (*source : modèle de churn et dashboards Power BI*), démontrant une attention aux enjeux de performance et d'adoption utilisateur.
 
 ---
 
 ## Gaps et incertitudes
-
 **Gaps confirmés (compétences absentes) :**
-- **Conception et implémentation d'APIs** : Expérience limitée à la consommation d'APIs (Mistral, Claude) et au prototypage via Gradio, sans preuve de conception ou implémentation d'APIs structurées (REST/GraphQL).
-- **Architecture cloud et déploiement AWS** : Notions théoriques en AWS/Azure, mais absence d'expérience concrète en déploiement en production ou en architecture cloud avancée.
-- **Pipelines CI/CD** : Gap identifié lors d'une candidature précédente (CERN), avec une compétence listée comme "en cours d'apprentissage", sans application professionnelle.
+- **Conception et optimisation d'APIs** : Aucune expérience identifiée dans la conception, l'optimisation ou la gestion d'APIs backend (REST/GraphQL), notamment dans des contextes événementiels ou de microservices. Les réalisations mentionnent uniquement l'usage d'APIs existantes (Mistral, Claude) ou des prototypes via Gradio (*source : absence de chunk pertinent*).
+- **Architecture et déploiement sur AWS** : Notions théoriques en cloud (AWS/Azure), mais aucun déploiement en production ou conception d'infrastructure n'est documenté (*source : profil mentionne des "notions" sans réalisation concrète*).
+- **Mise en place de pipelines CI/CD** : Compétence explicitement décrite comme "notions seulement", sans preuve de mise en œuvre en conditions réelles (*source : profil auto-déclaré*).
 
-**Flags incertains (absence de preuve RAG fiable) :**
-- **Conception d'APIs** : Aucun élément dans le profil ne permet de confirmer ou d'infirmer cette compétence. Le gap est donc à considérer comme une *incertitude* plutôt qu'une absence absolue.
+**Flags incertains (absence de preuve fiable) :**
+- **Conception d'APIs** : Aucun chunk ne permet de confirmer ou d'infirmer une expérience avancée dans ce domaine. L'incertitude persiste sur la capacité à concevoir des APIs robustes et scalables.
+- **Pipelines CI/CD** : Bien que le profil mentionne des "notions", l'absence de réalisation concrète laisse planer un doute sur la maîtrise opérationnelle de ces outils.
 
 ---
 
 ## Questions d'entretien probables
+**Sur les compétences techniques :**
+1. *"Pouvez-vous décrire un projet où vous avez utilisé TypeScript pour résoudre un problème complexe ? Quels outils (Playwright, Vercel, etc.) avez-vous mobilisés ?"* *(Évaluer la profondeur de l'expérience et l'adéquation avec les outils modernes.)*
+2. *"Comment avez-vous structuré vos pipelines ETL sur Snowflake ? Quels défis avez-vous rencontrés pour garantir la fiabilité des données ?"* *(Vérifier la transférabilité des compétences data vers le développement logiciel.)*
+3. *"Quelle est votre approche pour intégrer une API de LLM (comme Mistral) dans une application web ? Quels compromis avez-vous faits entre performance et coût ?"* *(Tester la compréhension des enjeux d'intégration d'IA.)*
 
-1. **TypeScript et écosystème moderne** :
-   - *"Pouvez-vous décrire un projet où vous avez utilisé des outils comme Playwright ou Vercel ? Comment ces outils s'intègrent-ils dans un workflow TypeScript ?"* (Évaluer la familiarité avec l'écosystème et la capacité à extrapoler depuis des outils proches).
-   - *"Comment gérez-vous les types complexes dans un projet full-stack ? Avez-vous déjà utilisé des patterns comme les utility types ou les generics ?"* (Tester la profondeur de la maîtrise de TypeScript).
+**Sur les gaps identifiés :**
+4. *"Comment aborderiez-vous la conception d'une API backend pour une application full-stack ? Quels frameworks ou bonnes pratiques utiliseriez-vous ?"* *(Évaluer la capacité à combler le gap sur les APIs.)*
+5. *"Avez-vous déjà déployé une application sur AWS ? Si non, comment vous formeriez-vous pour maîtriser ce volet ?"* *(Mesurer la proactivité face au gap cloud.)*
+6. *"Pouvez-vous partager une expérience où vous avez contribué à un pipeline CI/CD ? Quels outils et quelles étapes clés avez-vous mis en place ?"* *(Vérifier la maîtrise opérationnelle des pratiques DevOps.)*
 
-2. **Intégration IA et développement web** :
-   - *"Quels compromis architecturaux avez-vous identifiés lors de l'intégration de l'API Mistral dans votre assistant interne ? Comment les avez-vous résolus ?"* (Évaluer la réflexion sur la scalabilité et la robustesse).
-   - *"Comment Gradio s'intègre-t-il dans une stack technique moderne ? Quelles alternatives auriez-vous envisagées pour une application en production ?"* (Tester la capacité à comparer des solutions techniques).
-
-3. **Gestion de données et scalabilité** :
-   - *"Votre architecture ETL sur Snowflake suit une logique proche de Medallion. Pouvez-vous expliquer comment vous avez structuré les couches staging/core/reporting et quels bénéfices en avez-vous tirés ?"* (Évaluer la rigueur méthodologique).
-   - *"Comment avez-vous mesuré la performance de votre modèle de churn en production ? Quels indicateurs avez-vous suivis ?"* (Tester l'approche data-driven).
-
-4. **Gaps identifiés** :
-   - *"Quelle expérience avez-vous de la conception d'APIs REST ou GraphQL ? Si aucune, comment aborderiez-vous ce sujet pour un projet nécessitant une API scalable ?"* (Évaluer la capacité à combler le gap).
-   - *"Avez-vous déjà déployé une application sur AWS ? Si oui, quels services avez-vous utilisés et quels défis avez-vous rencontrés ?"* (Tester les notions théoriques vs. pratique).
-   - *"Comment envisagez-vous la mise en place d'un pipeline CI/CD pour un projet TypeScript ? Quels outils utiliseriez-vous et pourquoi ?"* (Évaluer la proactivité face au gap).
+**Sur la motivation et l'adéquation :**
+7. *"Pourquoi cette transition vers le développement full-stack ? Comment ce rôle s'inscrit-il dans votre parcours ?"* *(Comprendre la cohérence du projet professionnel.)*
+8. *"Quels aspects de notre stack technique (TypeScript, AWS, etc.) vous motivent le plus ? Comment comptez-vous monter en compétence sur les volets moins maîtrisés ?"* *(Évaluer l'alignement avec les besoins de l'équipe.)*
 
 ---
 
 ## Angle de candidature
+**Positionnement clé :**
+*"Développeur·euse TypeScript en transition vers le full-stack, avec une expertise éprouvée en intégration d'IA et en architecture de données, cherchant à consolider ses compétences backend et DevOps dans un environnement technique exigeant."*
 
-**Message clé** :
-*"Développeur full-stack orienté solutions modernes, avec une expertise en intégration de technologies émergentes (IA, data) et une approche pragmatique de la scalabilité. Mon expérience en prototypage rapide (Gradio, Vercel) et en structuration de pipelines data (Snowflake) me permet de contribuer immédiatement à des projets nécessitant à la fois robustesse et agilité. Bien que mon parcours mette l'accent sur l'IA appliquée et la data, je suis convaincu que mes compétences en développement web et en outils modernes (Playwright, GitHub) sont transférables à un rôle TypeScript, avec une courbe d'apprentissage minimale pour les aspects spécifiques comme les APIs ou le cloud."*
+**Arguments différenciants :**
+1. **TypeScript et écosystème moderne** : Une pratique quotidienne de TypeScript dans des contextes variés (automatisation avec Playwright, développement d'agents avec Vercel) offre une base solide pour contribuer rapidement sur les volets frontend et outils techniques. L'expérience avec des outils comme Firecrawl et Context7 démontre une familiarité avec les enjeux de scraping et de traitement de données, utiles pour des applications web complexes.
+2. **Intégration d'IA et pragmatisme métier** : Le prototypage d'un assistant interne (Mistral + Gradio) et le déploiement d'un modèle de churn en production (*source : recall de 85%*) illustrent une capacité à livrer des solutions IA opérationnelles, alignées sur les besoins business. Cette approche "produit" est un atout pour des équipes cherchant à concilier innovation et robustesse.
+3. **Architecture de données et scalabilité** : L'expérience en structuration de pipelines ETL sur Snowflake (*source : architecture en couches staging/core/reporting*) et en déploiement de dashboards Power BI à l'échelle de l'entreprise montre une sensibilité aux enjeux de fiabilité et d'adoption utilisateur, transférable aux applications full-stack.
 
-**Structure de la lettre/argumentaire** :
-1. **Accroche** :
-   - Mettre en avant un projet concret aligné avec l'offre (ex: *"Lors du prototypage de mon assistant interne basé sur Mistral, j'ai conçu une interface Gradio couplée à des outils comme Vercel pour garantir une expérience utilisateur fluide et scalable — une approche que je souhaite transposer à des applications TypeScript en production."*).
+**Stratégie pour adresser les gaps :**
+- **APIs et backend** : Mettre en avant la capacité à concevoir des solutions techniques robustes (ex : pipelines ETL, modèle de churn) comme preuve de la capacité à monter en compétence sur les APIs. Proposer un plan de formation ciblé (ex : cours sur les APIs REST/GraphQL, projets personnels sur AWS).
+- **CI/CD et cloud** : Souligner l'expérience en déploiement de modèles ML en production (*source : modèle de churn*) pour démontrer une compréhension des enjeux de livraison continue. Insister sur la volonté d'apprendre les outils DevOps via des projets concrets (ex : automatisation de tests avec Playwright).
 
-2. **Adéquation technique** :
-   - **TypeScript/écosystème** : Insister sur l'utilisation quotidienne d'outils modernes (GitHub, Playwright) et la familiarité avec les paradigmes de développement full-stack (ex: *"Mon travail avec des frameworks comme Playwright m'a permis de maîtriser des concepts clés du développement web moderne, proches de TypeScript, comme la gestion des états asynchrones ou les tests end-to-end."*).
-   - **IA et data** : Souligner la valeur ajoutée unique (ex: *"Mon expérience en intégration de LLM et en structuration de pipelines data apporte une perspective complémentaire à une équipe TypeScript, notamment pour des projets hybrides ou orientés analytics."*).
-
-3. **Gestion des gaps** :
-   - **APIs** : Proposer une approche proactive (ex: *"Je me forme actuellement à la conception d'APIs REST via des projets personnels, avec pour objectif de maîtriser les bonnes pratiques en matière de documentation et de versioning."*).
-   - **Cloud/CI-CD** : Mettre en avant des notions théoriques et une volonté d'apprentissage (ex: *"Bien que mon expérience en déploiement cloud soit limitée, j'ai étudié les services AWS comme Lambda ou S3, et je suis ouvert à des formations ciblées pour monter en compétence rapidement."*).
-
-4. **Valeur ajoutée locale** :
-   - Insister sur la stabilité géographique et l'ancrage en Rhône-Alpes (ex: *"Basé à Lyon, je recherche un rôle qui me permette de contribuer durablement à une équipe locale, avec une préférence pour des projets alliant innovation et impact concret."*).
-
-**Ton** :
-- **Confiant** sur les points forts (IA, data, prototypage), **humble et proactif** sur les gaps.
-- **Orienté solutions** : Montrer comment les compétences existantes compensent les lacunes (ex: *"Mon expérience en gestion de données m'a appris à concevoir des architectures modulaires, une compétence transférable à la structuration d'APIs scalables."*).
-- **Aligné avec l'offre** : Éviter de mentionner l'IA comme un objectif prioritaire, mais la présenter comme un atout différenciant pour des projets hybrides.
+**Message de clôture :**
+*"Mon parcours hybride, à la croisée de la data, de l'IA et du développement web, me permet d'apporter une perspective unique à votre équipe : celle d'un·e développeur·euse capable de concevoir des applications full-stack tout en intégrant des fonctionnalités innovantes (IA, traitement de données). Je suis particulièrement motivé·e à l'idée de consolider mes compétences backend et DevOps dans un environnement technique stimulant comme le vôtre, où mon expertise en TypeScript et en scalabilité pourra être mise à profit dès les premières semaines."*

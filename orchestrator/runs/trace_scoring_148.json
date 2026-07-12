@@ -33,7 +33,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[analyse de données AML (Anti-Money Laundering)] analyse de données",
+      "query": "[Analyse de données AML (Anti-Money Laundering)] analyse de données",
       "n_results": 3,
       "results": [
         {
@@ -56,7 +56,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[analyse de données AML (Anti-Money Laundering)] AML",
+      "query": "[Analyse de données AML (Anti-Money Laundering)] AML",
       "n_results": 3,
       "results": [
         {
@@ -79,7 +79,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[analyse de données AML (Anti-Money Laundering)] Anti-Money Laundering",
+      "query": "[Analyse de données AML (Anti-Money Laundering)] Anti-Money Laundering",
       "n_results": 3,
       "results": [
         {
@@ -102,7 +102,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[analyse de données AML (Anti-Money Laundering)] détection d'anomalies",
+      "query": "[Analyse de données AML (Anti-Money Laundering)] détection d'anomalies",
       "n_results": 3,
       "results": [
         {
@@ -125,7 +125,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[analyse de données AML (Anti-Money Laundering)] signaux faibles",
+      "query": "[Analyse de données AML (Anti-Money Laundering)] identification de tendances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5423,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6002,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6599,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5423, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données AML (Anti-Money Laundering)] signaux faibles",
       "n_results": 3,
       "results": [
         {
@@ -148,30 +171,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[analyse de données AML (Anti-Money Laundering)] tendances",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5876,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6323,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "constraints::education",
-          "distance": 0.64,
-          "source_file": "constraints.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5876, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[conception et production de tableaux de bord et indicateurs] tableaux de bord",
+      "query": "[Conception et développement de tableaux de bord et indicateurs] tableaux de bord",
       "n_results": 3,
       "results": [
         {
@@ -194,7 +194,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[conception et production de tableaux de bord et indicateurs] indicateurs",
+      "query": "[Conception et développement de tableaux de bord et indicateurs] indicateurs",
       "n_results": 3,
       "results": [
         {
@@ -217,7 +217,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[conception et production de tableaux de bord et indicateurs] reporting",
+      "query": "[Conception et développement de tableaux de bord et indicateurs] reporting",
       "n_results": 3,
       "results": [
         {
@@ -240,7 +240,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[conception et production de tableaux de bord et indicateurs] visualisation de données",
+      "query": "[Conception et développement de tableaux de bord et indicateurs] visualisation de données",
       "n_results": 3,
       "results": [
         {
@@ -263,30 +263,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[fiabilisation et contrôle qualité des données] qualité des données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::certifications",
-          "distance": 0.4455,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4573,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4983,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4455, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[fiabilisation et contrôle qualité des données] fiabilisation des données",
+      "query": "[Contrôle et qualité des données] fiabilisation des données",
       "n_results": 3,
       "results": [
         {
@@ -309,53 +286,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[fiabilisation et contrôle qualité des données] contrôle qualité",
+      "query": "[Contrôle et qualité des données] contrôle qualité des données",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5112,
-          "source_file": "achievements.md"
+          "id": "skills::certifications",
+          "distance": 0.4586,
+          "source_file": "skills.md"
         },
         {
-          "id": "achievements::commission_automation",
-          "distance": 0.5481,
+          "id": "achievements::churn_model",
+          "distance": 0.473,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5622,
+          "distance": 0.5022,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5112, match retenu"
+      "conclusion": "best_distance=0.4586, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[fiabilisation et contrôle qualité des données] data cleansing",
+      "query": "[Contrôle et qualité des données] data quality",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6205,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.6293,
-          "source_file": "skills.md"
-        },
-        {
           "id": "skills::certifications",
-          "distance": 0.6391,
+          "distance": 0.4688,
           "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5409,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5499,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.6205, match retenu"
+      "conclusion": "best_distance=0.4688, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[collaboration avec les équipes métiers et conformité] collaboration métier",
+      "query": "[Collaboration avec les équipes métiers et conformité] collaboration métier",
       "n_results": 3,
       "results": [
         {
@@ -378,7 +355,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[collaboration avec les équipes métiers et conformité] conformité",
+      "query": "[Collaboration avec les équipes métiers et conformité] conformité",
       "n_results": 3,
       "results": [
         {
@@ -401,53 +378,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[collaboration avec les équipes métiers et conformité] communication inter-équipes",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6188,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6409,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.658,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6188, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[amélioration continue des processus de traitement des données] amélioration continue",
+      "query": "[Collaboration avec les équipes métiers et conformité] aide à la décision",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.5652,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.6346,
+          "distance": 0.4629,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.6638,
+          "distance": 0.5247,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5572,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.5652, match retenu"
+      "conclusion": "best_distance=0.4629, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[amélioration continue des processus de traitement des données] optimisation des processus",
+      "query": "[Amélioration des processus de traitement des données] optimisation des processus",
       "n_results": 3,
       "results": [
         {
@@ -470,7 +424,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[amélioration continue des processus de traitement des données] traitement des données",
+      "query": "[Amélioration des processus de traitement des données] traitement des données",
       "n_results": 3,
       "results": [
         {
@@ -493,30 +447,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[documentation des analyses et règles de gestion] documentation",
+      "query": "[Amélioration des processus de traitement des données] exploitation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5219,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5328,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5351,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5219, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation des analyses et règles de gestion] documentation technique",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.5777,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5994,
+          "distance": 0.5417,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.6011,
+          "distance": 0.5538,
           "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5743,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5777, match retenu"
+      "conclusion": "best_distance=0.5417, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[documentation des analyses et règles de gestion] règles de gestion",
+      "query": "[Documentation des analyses et règles de gestion] règles de gestion",
       "n_results": 3,
       "results": [
         {
@@ -539,7 +516,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[documentation des analyses et règles de gestion] livrables",
+      "query": "[Documentation des analyses et règles de gestion] livrables",
       "n_results": 3,
       "results": [
         {
@@ -562,7 +539,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[maîtrise des outils d'analyse de données (SQL, Python, R)] SQL",
+      "query": "[Maîtrise des outils d'analyse de données (SQL, Python, R)] SQL",
       "n_results": 3,
       "results": [
         {
@@ -585,7 +562,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[maîtrise des outils d'analyse de données (SQL, Python, R)] Python",
+      "query": "[Maîtrise des outils d'analyse de données (SQL, Python, R)] Python",
       "n_results": 3,
       "results": [
         {
@@ -608,7 +585,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[maîtrise des outils d'analyse de données (SQL, Python, R)] R",
+      "query": "[Maîtrise des outils d'analyse de données (SQL, Python, R)] R",
       "n_results": 3,
       "results": [
         {
@@ -631,30 +608,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[maîtrise des outils d'analyse de données (SQL, Python, R)] outils d'analyse",
+      "query": "[Maîtrise des outils d'analyse de données (SQL, Python, R)] outils d'analyse de données",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.4488,
+          "distance": 0.4253,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4291,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.4815,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.507,
+          "distance": 0.4545,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4488, match retenu"
+      "conclusion": "best_distance=0.4253, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[connaissance des réglementations AML et conformité financière] réglementations AML",
+      "query": "[Connaissance des réglementations AML et conformité financière] réglementations AML",
       "n_results": 3,
       "results": [
         {
@@ -677,7 +654,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[connaissance des réglementations AML et conformité financière] conformité financière",
+      "query": "[Connaissance des réglementations AML et conformité financière] conformité financière",
       "n_results": 3,
       "results": [
         {
@@ -700,7 +677,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[connaissance des réglementations AML et conformité financière] lutte contre le blanchiment",
+      "query": "[Connaissance des réglementations AML et conformité financière] lutte contre le blanchiment",
       "n_results": 3,
       "results": [
         {
@@ -723,7 +700,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[utilisation d'outils de visualisation (Power BI, Tableau)] Power BI",
+      "query": "[Utilisation d'outils de visualisation (Power BI, Tableau)] Power BI",
       "n_results": 3,
       "results": [
         {
@@ -746,7 +723,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[utilisation d'outils de visualisation (Power BI, Tableau)] Tableau",
+      "query": "[Utilisation d'outils de visualisation (Power BI, Tableau)] Tableau",
       "n_results": 3,
       "results": [
         {
@@ -769,30 +746,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[utilisation d'outils de visualisation (Power BI, Tableau)] visualisation",
+      "query": "[Utilisation d'outils de visualisation (Power BI, Tableau)] outils de visualisation",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.6914,
+          "distance": 0.5715,
           "source_file": "skills.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.694,
+          "distance": 0.606,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::mistral_chatbot",
-          "distance": 0.7032,
+          "distance": 0.619,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6914, match retenu"
+      "conclusion": "best_distance=0.5715, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[gestion de projets data et méthodologies agiles] gestion de projets data",
+      "query": "[Gestion de projets data et méthodologies agiles] gestion de projets data",
       "n_results": 3,
       "results": [
         {
@@ -815,7 +792,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[gestion de projets data et méthodologies agiles] méthodologies agiles",
+      "query": "[Gestion de projets data et méthodologies agiles] méthodologies agiles",
       "n_results": 3,
       "results": [
         {
@@ -838,7 +815,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[gestion de projets data et méthodologies agiles] Scrum",
+      "query": "[Gestion de projets data et méthodologies agiles] Scrum",
       "n_results": 3,
       "results": [
         {
@@ -861,6 +838,6 @@
     }
   ],
   "uncertain_flags": [
-    "analyse de données AML (Anti-Money Laundering)"
+    "Analyse de données AML (Anti-Money Laundering)"
   ]
 }

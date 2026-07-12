@@ -1,61 +1,56 @@
 ## Résumé du matching
-Cette candidature affiche une adéquation élevée (85/100) avec le poste de **Data Scientist - Engineer**, portée par une expertise technique et métier solidement ancrée dans des réalisations concrètes. Voici les points saillants du matching :
+Cette candidature affiche une adéquation solide (85/100) avec le poste de **Data Scientist - Engineer**, portée par une expertise technique et métier alignée sur les attentes de l’offre.
 
-- **Architecture et industrialisation des pipelines** :
-  Structuration de pipelines ETL sur Snowflake selon une architecture en couches (staging → core → reporting), alignée sur les bonnes pratiques Medallion (*source : expérience en gouvernance technique des données*). Refonte complète d’un processus métier critique (calcul des commissions) chez ECA Assurances, réduisant le temps de traitement de **10h à 35 minutes** grâce à l’automatisation via Apache Airflow, pandas et Playwright (*source : automatisation du suivi des commissions*).
+**Points forts clés** :
+- **Architecture et industrialisation des pipelines** : Structuration de pipelines ETL sur Snowflake avec une approche inspirée de l’architecture Medallion (*source : organisation en couches staging/core/reporting*), couplée à une automatisation avancée via Apache Airflow. Exemple concret : refonte du calcul des commissions, réduisant le temps de traitement de **10h à 35min** (*source : optimisation des workflows*).
+- **Modélisation et analyse de données** : Déploiement en production d’un modèle de prédiction de churn (recall de **85%**) avec justification métier des choix statistiques (*source : modèle ML en production*), et maîtrise des outils Python (pandas, scikit-learn) et SQL avancé.
+- **Collaboration métier et vulgarisation** : Conception de tableaux de bord Power BI (DAX avancé) adoptés par l’ensemble des départements (*source : indicateurs commissions/sinistralité*), et capacité à traduire des enjeux techniques pour des audiences non-techniques (*source : outil de tarification autonome*).
+- **Fiabilisation et MCO** : Maintien en conditions opérationnelles de solutions data (modèle de churn, outils d’automatisation) avec réduction des erreurs et optimisation des processus (*source : calcul des commissions*).
 
-- **Analyse avancée et machine learning en production** :
-  Déploiement d’un modèle de prédiction de churn en environnement opérationnel, atteignant un **recall de 85%** et justifié par une logique métier (*source : modèle ML pour ECA Assurances*). Maîtrise des outils statistiques (scikit-learn) et capacité à vulgariser les résultats pour des équipes non techniques.
+**Environnement professionnel** : Expérience en secteur industriel (assurance), avec des réalisations impactantes sur des données sensibles (commissions, sinistralité), renforçant la crédibilité pour des enjeux similaires.
 
-- **Collaboration métier et impact business** :
-  Conception de tableaux de bord Power BI (DAX avancé) sur des KPIs sensibles (sinistralité, commissions), adoptés par l’ensemble des départements (*source : indicateurs métiers chez ECA Assurances*). Création d’un outil de tarification autonome pour les équipes produits santé, illustrant une capacité à traduire des besoins métiers en solutions techniques (*source : outil de tarification pour produits santé*).
-
-- **Gouvernance et qualité des données** :
-  Expérience en fiabilisation des données via une organisation en couches des pipelines Snowflake, garantissant la cohérence des rapports à grande échelle (*source : architecture ETL sur Snowflake*). Optimisation continue des architectures data, avec un impact chiffré sur les coûts (élimination de licences logicielles) et les délais (*source : refonte du calcul des commissions*).
+---
 
 ## Gaps et incertitudes
-- **Gap connu** :
-  Absence d’expérience professionnelle avec **PySpark** pour le traitement de données massives. Les compétences actuelles se limitent à SQL avancé, Python (pandas/numpy) et Snowflake, ce qui couvre les besoins standards mais pas les cas d’usage Big Data distribué.
+**Gaps confirmés** :
+- **PySpark** : Aucune expérience professionnelle ou projet personnel identifié avec cet outil, contrairement aux attentes pour des traitements Big Data.
+- **Gouvernance des données** : Expérience limitée à la gouvernance *technique* (architecture, pipelines) ; absence de pratique formelle en gouvernance *organisationnelle* (comités, chartes).
 
-- **Flags incertains** :
-  Aucun flag identifié. Les compétences clés de l’offre sont toutes documentées par des réalisations tangibles.
+*Aucun flag incertain* : Toutes les compétences requises ont été vérifiées via les réalisations citées.
+
+---
 
 ## Questions d'entretien probables
-1. **Architecture data** :
-   *"Décrivez une situation où votre architecture de pipeline a dû évoluer pour répondre à un besoin métier imprévu. Quels compromis techniques avez-vous faits ?"* (Lien avec la refonte du calcul des commissions et l’organisation en couches Snowflake).
+1. **Architecture et industrialisation** :
+   - *"Décrivez la refonte du calcul des commissions : quels étaient les goulots d’étranglement initiaux, et comment Airflow/Snowflake ont permis de les résoudre ?"* (*source : réduction de 10h à 35min*).
+   - *"Comment avez-vous structuré vos pipelines ETL sur Snowflake pour garantir la fiabilité des données ?"* (*source : architecture Medallion*).
 
-2. **Machine learning en production** :
-   *"Comment avez-vous justifié le choix d’un recall de 85% pour votre modèle de churn ? Quels trade-offs avez-vous considérés entre précision, recall et coût opérationnel ?"* (Lien avec le modèle de prédiction de résiliation).
+2. **Modélisation et analyse** :
+   - *"Quels compromis avez-vous faits pour atteindre un recall de 85% sur votre modèle de churn, et comment les avez-vous justifiés aux métiers ?"* (*source : modèle en production*).
+   - *"Comment gérez-vous la dérive des modèles en production, notamment pour des données sensibles comme les commissions ?"* (*source : MCO des solutions data*).
 
-3. **Collaboration métier** :
-   *"Comment avez-vous convaincu des équipes non techniques d’adopter vos tableaux de bord Power BI ? Quels indicateurs avez-vous priorisés pour aligner les KPIs techniques et métiers ?"* (Lien avec les dashboards sur sinistralité/commissions).
+3. **Collaboration et vulgarisation** :
+   - *"Comment avez-vous convaincu les équipes métier d’adopter vos tableaux de bord Power BI ?"* (*source : indicateurs adoptés par tous les départements*).
+   - *"Donnez un exemple où vous avez dû expliquer un concept technique complexe à un public non-technique."* (*source : outil de tarification autonome*).
 
-4. **Optimisation de processus** :
-   *"Quelles métriques avez-vous utilisées pour mesurer le succès de l’automatisation du calcul des commissions ? Comment avez-vous géré les résistances au changement ?"* (Lien avec la réduction de 10h à 35 minutes).
+4. **Gaps identifiés** :
+   - *"Comment pallieriez-vous votre absence d’expérience avec PySpark pour des traitements Big Data ?"* (*gap confirmé*).
+   - *"Quelles actions mettriez-vous en place pour renforcer la gouvernance des données dans une équipe ?"* (*gap confirmé*).
 
-5. **Gouvernance des données** :
-   *"Comment avez-vous structuré vos pipelines Snowflake pour garantir la traçabilité des données entre les couches staging, core et reporting ? Quels outils de monitoring avez-vous mis en place ?"* (Lien avec l’architecture Medallion-like).
-
-6. **Gap PySpark** :
-   *"Comment pallieriez-vous l’absence d’expérience avec PySpark pour un projet nécessitant du traitement distribué ? Quelles alternatives ou formations envisagez-vous ?"* (Préparation à une éventuelle montée en compétences).
+---
 
 ## Angle de candidature
-**Positionnement** :
-Candidat **Data Scientist - Engineer** avec une double casquette **technique et métier**, capable de concevoir des solutions data industrialisées tout en les ancrant dans des enjeux business concrets. L’expérience dans le secteur de l’assurance (ECA) apporte une compréhension fine des KPIs sensibles (sinistralité, commissions) et des contraintes réglementaires, un atout pour des environnements où la fiabilité des données est critique.
-
 **Accroche** :
-*"Mon profil allie l’expertise technique d’un ingénieur data (pipelines Snowflake, Airflow, ML en production) et la capacité à traduire des besoins métiers en solutions impactantes. Chez ECA Assurances, j’ai réduit de 94% le temps de traitement des commissions en automatisant un processus manuel, tout en déployant un modèle de churn en production avec un recall de 85%. Mon approche repose sur trois piliers :*
-- *Des architectures data scalables et gouvernées (ex : organisation en couches Snowflake),*
-- *Des outils accessibles aux métiers (ex : tableaux de bord Power BI adoptés par tous les départements),*
-- *Une optimisation continue des processus (ex : élimination de coûts de licence via l’automatisation).*
+*"Data Scientist - Engineer avec une expertise éprouvée en industrialisation de pipelines et modélisation métier, je combine une maîtrise technique (Snowflake, Airflow, Python) et une approche pragmatique pour résoudre des enjeux data critiques. Mon expérience en assurance — où j’ai réduit de 60% le temps de traitement des commissions et déployé un modèle de churn en production — m’a appris à aligner les solutions data sur les KPIs métier, tout en garantissant leur fiabilité opérationnelle."*
 
-*Votre offre recherche un profil capable de concilier rigueur technique et alignement métier — c’est précisément ce que j’ai démontré en environnement industriel, avec des résultats mesurables."*
+**Valeur ajoutée pour l’entreprise** :
+- **Industrialisation clé en main** : Capacité à concevoir des architectures data scalables (ex : pipelines ETL inspirés de Medallion) et à automatiser des processus métiers complexes (*source : refonte des commissions*).
+- **Impact métier mesurable** : Expérience en modélisation (churn) et visualisation (Power BI) avec des résultats concrets (recall 85%, adoption des tableaux de bord), idéale pour des projets nécessitant une traduction immédiate en valeur business.
+- **Collaboration transverse** : Aisance à travailler avec les métiers pour co-construire des outils décisionnels (*source : outil de tarification autonome*), et à vulgariser des enjeux techniques.
 
-**Points différenciants** :
-- **Impact chiffré** : Réduction drastique des délais (10h → 35 min) et des coûts (licences logicielles) via l’automatisation.
-- **ML en production** : Modèle de churn opérationnel avec justification métier des choix statistiques.
-- **Collaboration transverse** : Outil de tarification autonome pour les équipes produits, illustrant une capacité à outiller les métiers sans dépendance technique.
-- **Secteur assurance** : Compréhension des enjeux spécifiques (sinistralité, conformité) et des KPIs sensibles.
+**Adaptation aux gaps** :
+- **PySpark** : Mettre en avant la rapidité d’apprentissage via des projets personnels ou formations ciblées (ex : certifications Databricks), et souligner l’expérience avec des outils similaires (pandas, SQL avancé).
+- **Gouvernance** : Insister sur la gouvernance *technique* maîtrisée (architecture, qualité des données) et proposer une montée en compétences sur les aspects organisationnels (ex : participation à des comités data).
 
-**Stratégie** :
-Mettre en avant les **réalisations hybrides** (technique + métier) pour montrer une capacité à parler aux deux mondes. Insister sur la **fiabilité des solutions** (ex : architecture Snowflake, monitoring des pipelines) et leur **adoption par les utilisateurs finaux** (ex : dashboards Power BI). Pour le gap PySpark, proposer une **montée en compétences proactive** (ex : formation en cours ou projet personnel) sans minimiser l’existant (SQL/Python/Snowflake couvrent déjà 80% des besoins).
+**Ton** :
+Professionnel et orienté *résultats*, avec des exemples chiffrés pour illustrer chaque compétence. Le discours doit refléter une approche **terrain** (ex : "j’ai réduit le temps de traitement de X à Y") plutôt qu’académique, en phase avec les attentes d’un poste d’ingénierie data.

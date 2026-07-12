@@ -1,90 +1,81 @@
 ## Résumé du matching
+Le candidat présente un **matching solide (85/100)** avec l’offre de **Data Analyst**, grâce à des réalisations concrètes alignées sur les attentes clés du poste :
 
-Cette candidature présente une adéquation solide (85/100) avec le poste de **Data Analyst**, marquée par une expertise opérationnelle en **analyse métier, modélisation et visualisation data**. Les points forts se distinguent par :
+- **Analyse métier et traduction en exigences data** :
+  Création d’un *outil de tarification pour les produits santé individuelle* (source), démontrant une capacité à comprendre les besoins métiers et à les traduire en solutions techniques autonomes.
 
-- **Traduction des besoins métiers en solutions data** :
-  - Conception d’un **outil de tarification autonome** pour les produits santé individuelle, démontrant une capacité à modéliser des scénarios complexes et à répondre à des enjeux business concrets (*source : outil de tarification*).
-  - Déploiement d’un **modèle de churn en production** (recall de 85%), justifié par des choix statistiques alignés sur les objectifs de fidélisation (*source : modèle de churn*).
+- **Spécifications fonctionnelles des produits Data/IA** :
+  Structuration de projets via des fichiers *CLAUDE.md* et prototypage d’un *assistant interne basé sur l’API Mistral* (source), illustrant une maîtrise des spécifications fonctionnelles pour des solutions IA.
 
-- **Collaboration technique et architecture** :
-  - Prototypage d’un **assistant interne basé sur l’API Mistral**, avec des choix architecturaux réfléchis et une interface Gradio, illustrant une approche pragmatique des solutions IA (*source : assistant interne*).
-  - Structuration de **pipelines ETL sur Snowflake**, proche d’une architecture Medallion, témoignant d’une maîtrise des bonnes pratiques en ingénierie data (*source : pipelines ETL*).
+- **Validation, tests et déploiement** :
+  Déploiement en production d’un *modèle de ML pour prédire le churn (recall 85%)* (source), prouvant une expérience opérationnelle en validation et mise en œuvre de solutions data.
 
-- **Spécifications et déploiement de solutions** :
-  - Utilisation quotidienne d’**outils d’IA générative** (Claude Code, serveurs MCP) pour accélérer le développement, combinée à une expérience en **déploiement de modèles en production** (*sources : assistant interne, modèle de churn*).
-  - Rédaction de **spécifications fonctionnelles** et accompagnement au déploiement, avec une attention particulière à la validation des solutions (*source : modèle de churn*).
+- **Définition et documentation des KPIs** :
+  Conception de *tableaux de bord Power BI alignés sur les KPIs métier* (source), adoptés par plusieurs départements, confirmant une expertise en indicateurs de performance.
 
-- **Data visualisation et KPIs** :
-  - Conception de **tableaux de bord Power BI avancés** (DAX, Power Query), adoptés par l’ensemble des départements, avec une forte orientation sur l’alignement des KPIs avec les enjeux métier (*source : tableaux de bord Power BI*).
-  - Certifications **DataCamp en Power BI et Tableau**, renforçant la crédibilité sur les outils de visualisation (*source : certifications*).
+- **Collaboration transverse** :
+  Travail avec les équipes métiers et techniques pour le *développement de l’outil de tarification et des dashboards Power BI* (source), soulignant une capacité à fédérer autour de projets data.
 
-- **Modélisation et analyse** :
-  - Développement de **modèles de machine learning en production** (churn) et structuration de **schémas de données** sur Snowflake, couvrant l’ensemble du cycle de vie des données (*sources : modèle de churn, pipelines ETL*).
+- **Amélioration continue** :
+  *Refonte de la méthodologie de calcul des commissions* (réduction du temps de traitement de 10h à 35 min) et *automatisation de processus critiques* (source), avec un impact mesurable.
+
+- **Data Visualisation** :
+  Maîtrise avancée de *Power BI (DAX, Power Query)* et création de *tableaux de bord décisionnels* (source) déployés à l’échelle de l’entreprise.
+
+- **Modélisation de données** :
+  Développement d’un *modèle de ML en production* et structuration de *pipelines ETL sur Snowflake* (source), inspirés de l’architecture Medallion.
 
 ---
 
 ## Gaps et incertitudes
-
-### Gaps confirmés
+### Gaps confirmés (compétences absentes)
 - **Solutions GenAI avancées** :
-  L’expérience se limite à l’utilisation d’**APIs (Mistral, Claude)** et au prototypage simple (interface Gradio). Absence de réalisation autonome en **architecture RAG, orchestration d’agents complexes** ou déploiement de solutions GenAI à l’échelle (*source : assistant interne*).
-- **Gouvernance des données** :
-  Expérience technique solide (Snowflake, ETL), mais **pas de participation à des comités de gouvernance, chartes ou politiques de données** formalisées (*source : pipelines ETL*).
+  Expérience limitée aux *APIs Mistral/Claude* et au *prototypage d’un chatbot via Gradio* (source). **Absence de réalisation autonome en architecture RAG ou orchestration d’agents IA complexes**.
 
-### Flags incertains
-- **Solutions GenAI et intelligence artificielle générative** :
-  Aucun match RAG fiable n’a été identifié pour des compétences avancées (ex : fine-tuning, évaluation de modèles, intégration de solutions GenAI dans des workflows métier). Cela ne signifie pas une absence confirmée, mais une **incertitude sur la profondeur de l’expertise** dans ce domaine.
+- **Environnement international** :
+  Aucune expérience professionnelle mentionnée en *coordination ou communication dans un contexte international*.
+
+### Flags incertains (absence de preuve fiable)
+- **Solutions GenAI** :
+  Le profil évoque des usages de LLM (Mistral, Claude), mais **aucun élément ne confirme une expertise en RAG, agents IA, ou déploiement de solutions GenAI scalables**. Ce point nécessite une clarification en entretien.
 
 ---
 
 ## Questions d'entretien probables
+1. **Spécifications fonctionnelles et IA** :
+   *"Pouvez-vous détailler comment vous avez structuré les fichiers CLAUDE.md pour vos projets ? Quels défis avez-vous rencontrés dans la traduction des besoins métiers en spécifications techniques pour des solutions IA ?"* (Source : prototypage assistant interne Mistral).
 
-1. **Traduction des besoins métier** :
-   - *"Pouvez-vous décrire un cas où vous avez dû traduire un besoin métier complexe en exigences techniques ? Quels défis avez-vous rencontrés ?"* (*source : outil de tarification, modèle de churn*).
-   - *"Comment justifiez-vous les choix statistiques de votre modèle de churn (recall de 85%) auprès des équipes non techniques ?"* (*source : modèle de churn*).
+2. **Déploiement et validation** :
+   *"Votre modèle de churn a atteint un recall de 85%. Quelles métriques complémentaires avez-vous suivies pour valider son impact métier ? Comment avez-vous géré les feedbacks des équipes après le déploiement ?"* (Source : modèle ML en production).
 
-2. **Collaboration technique** :
-   - *"Quels compromis architecturaux avez-vous faits lors du prototypage de votre assistant interne basé sur Mistral ? Pourquoi ?"* (*source : assistant interne*).
-   - *"Comment avez-vous structuré vos pipelines ETL sur Snowflake pour garantir la scalabilité ?"* (*source : pipelines ETL*).
+3. **Collaboration transverse** :
+   *"Comment avez-vous convaincu les différents départements d’adopter vos tableaux de bord Power BI ? Quels ajustements avez-vous dû faire pour répondre à leurs besoins spécifiques ?"* (Source : dashboards adoptés à l’échelle de l’entreprise).
 
-3. **Data visualisation et KPIs** :
-   - *"Quelle méthodologie utilisez-vous pour aligner vos tableaux de bord Power BI avec les KPIs métier ?"* (*source : tableaux de bord Power BI*).
-   - *"Pouvez-vous partager un exemple où un tableau de bord a directement influencé une décision business ?"* (*source : tableaux de bord Power BI*).
+4. **Amélioration continue** :
+   *"Quelle méthodologie avez-vous suivie pour réduire le temps de calcul des commissions de 10h à 35 min ? Comment mesurez-vous l’efficacité de vos optimisations ?"* (Source : refonte méthodologie commissions).
 
-4. **GenAI et limites** :
-   - *"Quelles sont les limites des APIs comme Mistral ou Claude dans un contexte professionnel ? Comment les contournez-vous ?"* (*source : assistant interne*).
-   - *"Avez-vous déjà évalué la performance d’un modèle GenAI ? Si oui, avec quelles métriques ?"* (*flag incertain : solutions GenAI*).
+5. **GenAI et limites** :
+   *"Votre expérience avec les APIs Mistral/Claude est un atout. Pouvez-vous nous expliquer comment vous envisagez de monter en compétence sur des architectures RAG ou des agents IA pour des cas d’usage métier ?"* (Source : prototypage chatbot Gradio).
 
-5. **Déploiement et validation** :
-   - *"Comment validez-vous qu’un modèle en production (ex : churn) reste performant dans le temps ?"* (*source : modèle de churn*).
-   - *"Quels outils ou processus utilisez-vous pour documenter les spécifications fonctionnelles d’une solution data ?"* (*source : assistant interne*).
+6. **KPIs et alignement métier** :
+   *"Comment priorisez-vous les KPIs à inclure dans vos dashboards ? Avez-vous déjà dû arbitrer entre des indicateurs techniques et des attentes métiers divergentes ?"* (Source : tableaux de bord Power BI alignés sur les KPIs direction).
 
 ---
 
 ## Angle de candidature
+**Positionnement** :
+Le candidat se présente comme un **Data Analyst opérationnel**, alliant une **double expertise métier et technique** pour transformer des besoins concrets en solutions data impactantes. Son profil met en avant :
+- Une **approche pragmatique** : capacité à livrer des outils *utilisés en production* (modèle de churn, dashboards Power BI) avec des résultats mesurables.
+- Une **sensibilité IA** : expérience en prototypage de solutions LLM (Mistral, Claude) et structuration de projets data/IA, alignée sur l’orientation "produits Data et IA" de l’offre.
+- Une **culture de l’amélioration continue** : optimisation de processus (commissions, automatisations) et collaboration transverse pour maximiser l’adoption des outils.
 
-**Accroche** :
-*"Data Analyst avec une double expertise en **modélisation métier et solutions data opérationnelles**, je me spécialise dans la traduction des enjeux business en outils concrets — des tableaux de bord Power BI adoptés à l’échelle de l’entreprise aux modèles de churn déployés en production. Mon approche combine rigueur technique (SQL, Snowflake, ETL) et sens du dialogue avec les métiers, comme en témoigne mon outil de tarification autonome pour les produits santé ou mes pipelines structurés en architecture Medallion. Passionné par l’IA générative, j’ai prototypé un assistant interne basé sur Mistral, tout en mesurant les limites des APIs pour des cas d’usage critiques. Mon profil correspond à vos besoins en analyse, visualisation et collaboration technique, avec une appétence marquée pour les projets où la data sert directement la stratégie business."*
+**Message clé** :
+*"Mon parcours démontre une capacité à **comprendre les enjeux métiers**, les traduire en **solutions data actionnables**, et les déployer avec un **impact tangible** pour les équipes. Mon expérience en modélisation (ML, ETL) et en visualisation (Power BI) s’accompagne d’une curiosité pour les solutions IA, que je souhaite approfondir pour répondre aux défis data de [Nom de l’Entreprise]."*
 
-**Points à mettre en avant** :
-1. **Alignement métier** :
-   - Insister sur la **création d’outils autonomes pour les équipes** (tarification, churn) et l’adoption des tableaux de bord Power BI, prouvant une capacité à livrer des solutions **utilisables et impactantes** (*sources : outil de tarification, tableaux de bord*).
-   - Souligner la **justification métier des choix techniques** (ex : recall du modèle de churn) pour rassurer sur la capacité à dialoguer avec les non-techniciens.
-
-2. **Expertise technique** :
-   - Mettre en avant la **structuration de pipelines ETL sur Snowflake** et l’expérience en **déploiement de modèles**, pour montrer une maîtrise des **bonnes pratiques en ingénierie data** (*sources : pipelines ETL, modèle de churn*).
-   - Valoriser l’utilisation d’**outils GenAI en contexte professionnel** (Claude, Mistral), tout en reconnaissant les limites des APIs pour des solutions avancées (*source : assistant interne*).
-
-3. **Projets phares** :
-   - **Outil de tarification** : Exemple concret de **modélisation métier** et d’automatisation d’un processus critique.
-   - **Modèle de churn** : Illustration d’un **cycle complet** (analyse → modélisation → déploiement → impact business).
-   - **Tableaux de bord Power BI** : Preuve d’une **expertise en visualisation** et en alignement des KPIs avec les enjeux stratégiques.
-
-4. **Réponses aux gaps** :
-   - **GenAI** : Positionner l’expérience existante (prototypage, APIs) comme une **base solide pour monter en compétences** sur des architectures plus complexes (RAG, orchestration), en citant par exemple l’usage quotidien de Claude Code pour le développement.
-   - **Gouvernance** : Proposer une approche proactive, par exemple : *"Je m’intéresse aux frameworks de gouvernance comme le RGPD ou les chartes data, et serais ravi d’approfondir ces sujets dans le cadre de vos processus internes."*
-
-**Ton** :
-- **Concret et orienté résultats** : Privilégier les exemples chiffrés (recall de 85%, adoption des tableaux de bord) et les livrables tangibles.
-- **Humilité sur les limites** : Reconnaître les gaps (GenAI avancée, gouvernance) sans minimiser, mais en montrant une **volonté d’apprendre** et une capacité à s’adapter.
-- **Local** : Ancrer la candidature dans le **tissu économique rhônalpin**, en citant si possible des références locales (ex : secteurs santé, assurance) pour renforcer l’adéquation géographique.
+**Points à souligner en entretien** :
+- **Alignement avec l’offre** :
+  Insister sur les *spécifications fonctionnelles* (CLAUDE.md, Mistral) et le *déploiement de solutions* (modèle de churn, dashboards) pour montrer une adéquation avec les attentes du poste.
+- **Gestion des gaps** :
+  Pour les solutions GenAI, mettre en avant une *volonté d’apprentissage* et des *bases solides* (APIs, prototypage) pour rassurer sur la capacité à monter en compétence.
+- **Valeur ajoutée** :
+  Mettre en avant les *réalisations quantifiables* (réduction du temps de calcul, recall du modèle) et la *collaboration transverse* pour illustrer un profil à la fois technique et orienté résultats.

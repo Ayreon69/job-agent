@@ -1,0 +1,51 @@
+{
+  "matches": [
+    {
+      "skill": "Développement et déploiement d'architectures AI/ML scalables dans le cloud public (AWS, GCP, Azure)",
+      "matched_chunk_summary": "Expérience en structuration de pipelines ETL sur Snowflake avec une architecture en couches (staging vers core vers reporting), proche d'une architecture Medallion. Maîtrise de Snowflake et de l'architecture de données pour fiabiliser la production à grande échelle."
+    },
+    {
+      "skill": "Intégration de modèles AI/ML dans des applications existantes",
+      "matched_chunk_summary": "Développement d'un modèle de machine learning pour prédire la résiliation des clients (churn) en production chez ECA Assurances, avec un recall de 85%. Le modèle alimente des stratégies de fidélisation ciblées, démontrant une intégration réussie dans un processus métier."
+    },
+    {
+      "skill": "Solutions d'IA générative (LLM, RAG, vector DB)",
+      "matched_chunk_summary": "Prototypage d'un assistant interne basé sur l'API Mistral pour répondre aux questions sur les règles de commission, avec une interface Gradio. Utilisation quotidienne de Claude Code et de serveurs MCP pour des projets de développement assisté par agent. Expérience concrète avec les APIs de LLM en production interne."
+    },
+    {
+      "skill": "Développement Python et frameworks (FastAPI, Flask, LangChain, LlamaIndex)",
+      "matched_chunk_summary": "Maîtrise de Python (pandas, numpy, scipy, scikit-learn) avec une expérience professionnelle concrète et répétée. Prototypage de chatbots via Gradio et utilisation quotidienne de l'écosystème agentique moderne."
+    },
+    {
+      "skill": "Bases de données vectorielles (PostgreSQL pgvector, OpenSearch, Vertex AI Vector Search)",
+      "matched_chunk_summary": "Maîtrise avancée de SQL (requêtes avancées, agrégations, optimisation) et expérience avec des bases de données comme Snowflake. Notions en bases vectorielles (ChromaDB, Pinecone) en cours d'apprentissage."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "MLOps et industrialisation de modèles (MLflow, Kubeflow)",
+      "note": "Aucune expérience professionnelle ou projet concret mentionné avec MLflow ou Kubeflow. Expérience limitée à des pipelines ETL sur Snowflake et des projets personnels en NLP audio."
+    },
+    {
+      "skill": "Déploiement de modèles personnalisés ou managés (SageMaker, Bedrock, Vertex AI)",
+      "note": "Aucune expérience concrète avec les plateformes cloud AWS, GCP ou Azure pour le déploiement de modèles. Notions uniquement en cloud AWS/Azure, sans déploiement en production."
+    },
+    {
+      "skill": "Orchestration de pipelines (Airflow, MWAA, Step Functions, Cloud Composer, Cloud Workflows)",
+      "note": "Expérience limitée à la structuration de pipelines ETL sur Snowflake, sans utilisation d'outils d'orchestration comme Airflow ou Step Functions."
+    },
+    {
+      "skill": "CI/CD et Infrastructure as Code (GitLab, Terraform)",
+      "note": "Aucune expérience professionnelle avec GitLab ou Terraform. Notions en GitHub Actions et CI/CD en cours d'apprentissage, sans pratique en conditions réelles."
+    },
+    {
+      "skill": "Conteneurisation et déploiement (Docker, Kubernetes, ECS, EKS, Lambda, Cloud Run, GKS, Cloud Functions)",
+      "note": "Notions en Docker en cours d'apprentissage, sans expérience professionnelle ou projet concret en conteneurisation ou déploiement sur des plateformes comme Kubernetes ou ECS."
+    }
+  ],
+  "uncertain_flags": [
+    "Déploiement de modèles personnalisés ou managés (SageMaker, Bedrock, Vertex AI)",
+    "CI/CD et Infrastructure as Code (GitLab, Terraform)",
+    "Conteneurisation et déploiement (Docker, Kubernetes, ECS, EKS, Lambda, Cloud Run, GKS, Cloud Functions)"
+  ]
+}

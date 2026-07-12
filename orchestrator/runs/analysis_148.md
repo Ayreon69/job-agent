@@ -1,58 +1,70 @@
 ## Résumé du matching
-Cette candidature présente un **matching technique solide** (70/100) pour le poste de **Data Analyst AML**, avec des atouts clés alignés sur les exigences de l'offre :
+Le profil présente une adéquation solide (70/100) avec les attentes techniques et collaboratives du poste de **Data Analyst AML**, malgré un gap sectoriel notable. Voici les points forts identifiés :
 
-- **Maîtrise des outils d'analyse** : Expérience confirmée en **SQL** (requêtes avancées, optimisation), **Python** (pandas, numpy, scikit-learn pour des modèles ML en production) et **R** (certifications DataCamp). *Source : Expérience professionnelle et certifications citées.*
-- **Visualisation et reporting** : Conception de **tableaux de bord Power BI** adoptés par plusieurs départements, avec une expertise en **DAX avancé** et en adaptation aux audiences non-techniques. Maîtrise de **Tableau** (certification DataCamp). *Source : Réalisation de dashboards alignés sur les KPIs métier.*
-- **Fiabilisation des données** : Structuration de **pipelines ETL sur Snowflake** (architecture en couches) et automatisation de processus réduisant les erreurs (ex. : calcul des commissions). *Source : Refonte de processus métier avec gains de temps et précision.*
-- **Collaboration métier** : Création d'outils transférant de l'autonomie aux équipes (ex. : outil de tarification) et documentation des règles de gestion (fichiers CLAUDE.md). *Source : Projets alignés sur les besoins des métiers non-techniques.*
-- **Amélioration continue** : Développement de **modèles ML en production** pour optimiser des stratégies (ex. : fidélisation) et refonte de processus avec impact mesurable. *Source : Expérience en assurance et risk management.*
+- **Expertise technique en analyse de données** :
+  - Maîtrise confirmée de **SQL** (requêtes avancées, optimisation) et **Python** (pandas, numpy, scikit-learn) via des certifications DataCamp et des applications professionnelles répétées (*source : compétences listées*).
+  - Expérience en **modélisation statistique** et déploiement de modèles ML en production, avec justification des choix méthodologiques (*source : développement de modèles ML en production*).
 
----
+- **Visualisation et reporting décisionnel** :
+  - Conception de **tableaux de bord Power BI** (DAX avancé, Power Query) adoptés par plusieurs départements, alignés sur des KPIs métiers sensibles (commissions, sinistralité) (*source : réalisation citée*).
+  - Certification DataCamp couvrant **Power BI et Tableau**, avec des livrables ayant impacté la prise de décision (*source : création de tableaux de bord décisionnels*).
+
+- **Qualité et structuration des données** :
+  - Structuration de **pipelines ETL sur Snowflake** (architecture proche du modèle Medallion) et certification en qualité des données (*source : expérience Snowflake et certification DataCamp*).
+  - Automatisation de processus critiques, comme la refonte du calcul des commissions (réduction du temps de traitement de 10h à 35 min) (*source : réalisation citée*).
+
+- **Collaboration métier et documentation** :
+  - Transfert d’autonomie aux équipes non-techniques via des outils sur mesure (tarification, reporting) et alignement des livrables sur les besoins métiers (*source : collaboration avec audiences non-techniques*).
+  - Documentation proactive des analyses et règles de gestion, incluant un prototype d’assistant interne basé sur l’API Mistral (*source : prototypage d’outil de documentation*).
 
 ## Gaps et incertitudes
-### Gaps confirmés (compétences absentes)
-1. **Analyse de données AML** : Aucune expérience directe en **Anti-Money Laundering** ou conformité financière. Les compétences analytiques sont transférables, mais les **cas d'usage spécifiques** (détection de schémas frauduleux, règles LCB-FT) et les **réglementations** (directives européennes, FATF) ne sont pas abordés dans le profil.
-2. **Connaissance des réglementations AML** : Absence de formation ou d'expérience sur les **cadres légaux** (ex. : 4ème/5ème directives LCB-FT, obligations de vigilance). Le profil montre une spécialisation en **assurance et risk management**, mais pas en conformité financière.
-3. **Gestion de projet data** : Expérience limitée en **méthodologies agiles** (Scrum, Kanban) ou en gestion de projet formelle. Les réalisations citées sont techniques ou autonomes, sans référence à des frameworks collaboratifs.
+**Gaps confirmés** :
+- **Expérience AML** : Aucune exposition aux **processus de lutte contre le blanchiment** ou aux réglementations financières spécifiques (ex : LCB-FT, FATF). L’expérience en assurance et modélisation de churn ne couvre pas ce domaine (*source : absence de mention dans le profil*).
+- **Conformité financière** : Aucune connaissance des **réglementations AML** ou des cadres légaux associés (ex : 4ème directive européenne). La formation en Risk Management ne comble pas ce gap (*source : absence de mention*).
+- **Méthodologies agiles** : Aucune référence à **Scrum, Kanban** ou à une gestion formelle de projets data, bien que des projets techniques aient été structurés (*source : absence de mention*).
 
-### Flags incertains (absence de preuve fiable)
-- **Analyse AML** : Le système n'a pas identifié de **match RAG** pour une expérience en AML, mais cela ne confirme pas une absence totale (ex. : projets non documentés ou compétences transverses non explicitées).
-
----
+**Flags incertains** :
+- **Analyse AML** : Le système n’a pas identifié de preuve tangible d’expérience en analyse de données AML (*flag_uncertain*). Cela ne signifie pas une absence confirmée, mais une absence de signal clair dans les données disponibles.
 
 ## Questions d'entretien probables
-1. **Adaptation au contexte AML** :
-   - *"Comment aborderiez-vous la détection de schémas de blanchiment dans un jeu de données transactionnelles, sans expérience préalable en AML ?"* (Évaluer la transférabilité des compétences analytiques.)
-   - *"Quelles réglementations AML connaissez-vous, et comment les appliqueriez-vous dans un tableau de bord de monitoring ?"* (Tester la curiosité pour le domaine et la capacité à se former.)
+1. **Transition vers l’AML** :
+   - *"Comment comptez-vous vous former rapidement aux réglementations AML et aux typologies de fraude, compte tenu de votre expérience en assurance ?"*
+   - *"Quelles méthodes utiliseriez-vous pour détecter des schémas de blanchiment dans des flux de transactions, en partant de zéro ?"*
 
 2. **Compétences techniques** :
-   - *"Décrivez un projet où vous avez utilisé Python ou SQL pour résoudre un problème de qualité de données. Quels outils de fiabilisation avez-vous mis en place ?"* (Valider l'expérience en ETL et pipelines.)
-   - *"Comment avez-vous adapté un tableau de bord Power BI pour une équipe non-technique ? Quels défis avez-vous rencontrés ?"* (Évaluer la collaboration métier et la pédagogie.)
+   - *"Décrivez un projet où vous avez optimisé des requêtes SQL pour traiter de gros volumes de données. Quels étaient les gains ?"* (*source : refonte du calcul des commissions*).
+   - *"Comment avez-vous structuré vos pipelines ETL sur Snowflake pour garantir la qualité des données ?"* (*source : expérience Snowflake*).
 
-3. **Gestion de projet** :
-   - *"Comment prioriseriez-vous les demandes d'analyse entre les équipes conformité et les métiers, dans un contexte réglementaire strict ?"* (Tester l'organisation et la gestion des parties prenantes.)
-   - *"Avez-vous déjà travaillé avec des méthodologies agiles ? Si non, comment structureriez-vous un projet data en mode itératif ?"* (Évaluer la capacité à s'adapter à des frameworks collaboratifs.)
+3. **Collaboration et documentation** :
+   - *"Comment avez-vous convaincu des équipes non-techniques d’adopter vos tableaux de bord Power BI ?"* (*source : adoption par les départements*).
+   - *"Quels outils ou méthodes utilisez-vous pour documenter vos analyses et assurer leur reproductibilité ?"* (*source : fichiers CLAUDE.md et prototype Mistral*).
 
-4. **Résolution de problèmes** :
-   - *"Un modèle de détection d'anomalies génère trop de faux positifs. Comment investigueriez-vous ce problème ?"* (Valider la rigueur analytique et la connaissance des biais.)
-   - *"Comment documenteriez-vous une règle de gestion AML pour qu'elle soit compréhensible par un auditeur externe ?"* (Tester la clarté et la traçabilité.)
-
----
+4. **Gestion de projet** :
+   - *"Comment priorisez-vous les demandes métiers lorsque plusieurs départements sollicitent des analyses simultanément ?"*
+   - *"Avez-vous déjà travaillé avec des méthodologies agiles ? Si non, comment organisez-vous votre travail en équipe ?"*
 
 ## Angle de candidature
 **Positionnement** :
-Candidat **Data Analyst expérimenté** en assurance et risk management, avec une **double expertise technique** (SQL, Python, Power BI) et **métier** (collaboration avec les équipes, fiabilisation des données). Le profil mise sur :
-- **La transférabilité des compétences analytiques** : Expérience en détection d'anomalies (modèles ML en production) et en automatisation de processus critiques (ex. : calcul des commissions), directement applicables à la détection de fraudes AML.
-- **L'impact concret** : Réalisations mesurables (réduction d'erreurs, gains de temps) et adoption large des outils créés (dashboards Power BI utilisés par plusieurs départements).
-- **La rigueur méthodologique** : Structuration de pipelines ETL et documentation des règles de gestion (fichiers CLAUDE.md), essentielle pour la traçabilité réglementaire.
+Candidature axée sur **l’expertise technique transférable** et la **capacité à monter en compétence sur l’AML**, en s’appuyant sur :
+- Une **maîtrise éprouvée des outils data** (SQL, Python, Power BI) et des bonnes pratiques de qualité des données, essentielles pour analyser des flux financiers complexes.
+- Une **expérience en collaboration avec les métiers**, cruciale pour traduire les besoins réglementaires en indicateurs actionnables.
+- Une **démarche proactive de documentation et d’automatisation**, réduisant les risques d’erreurs dans des processus sensibles.
 
-**Stratégie de réponse aux gaps** :
-1. **AML** : Mettre en avant la **curiosité pour le domaine** et la capacité à monter en compétence rapidement (ex. : formations en ligne sur les réglementations LCB-FT, veille sur les cas d'usage AML). Souligner l'expérience en **détection d'anomalies** (modèles ML) et en **analyse de risques** (assurance), proches des enjeux AML.
-2. **Réglementations** : Proposer un **plan de formation autonome** (ex. : certification ACAMS ou modules DataCamp sur la conformité) et insister sur la **documentation rigoureuse** des analyses (expérience avec CLAUDE.md).
-3. **Gestion de projet** : Valoriser les **projets autonomes** comme des preuves de structuration (ex. : refonte du calcul des commissions) et exprimer une **ouverture aux méthodologies agiles** (ex. : participation à des rétrospectives si l'équipe en utilise).
+**Argument clé** :
+*"Mon profil combine une expertise technique solide en analyse de données et une expérience concrète en structuration de pipelines et reporting décisionnel. Bien que novice en AML, ma capacité à modéliser des risques (ex : churn en assurance) et à automatiser des processus critiques (ex : calcul des commissions) me permet d’envisager une transition rapide vers la détection de schémas frauduleux. Mon approche méthodique et ma collaboration étroite avec les équipes métiers garantissent une intégration efficace des contraintes réglementaires."*
 
-**Message clé** :
-*"Mon profil combine une expertise technique éprouvée (SQL, Python, Power BI) et une approche métier centrée sur la fiabilisation des données et la collaboration avec les équipes. Bien que nouveau dans le domaine AML, mon expérience en détection d'anomalies et en analyse de risques en assurance me permet d'aborder les enjeux de conformité avec rigueur. Je suis motivé pour me former aux spécificités réglementaires et contribuer rapidement à vos projets de monitoring."*
+**Points à mettre en avant** :
+1. **Transfert de compétences** :
+   - Mettre en parallèle la **modélisation de risques** (assurance) et l’analyse de **typologies de fraude** (AML), en insistant sur les similitudes méthodologiques (détection d’anomalies, segmentation).
+   - Souligner l’expérience en **qualité des données** (Snowflake, ETL), critique pour des analyses AML fiables.
 
-**Exemple de phrase d'accroche pour la lettre de motivation** :
-*"Votre recherche d'un Data Analyst AML résonne avec mon parcours en analyse de données et risk management, où j'ai conçu des outils fiables pour des enjeux critiques (ex. : réduction des erreurs de calcul de commissions via des pipelines ETL). Mon expertise en détection d'anomalies (modèles ML en production) et en visualisation (Power BI adopté par plusieurs départements) serait un atout pour vos projets de conformité, tandis que ma rigueur méthodologique (documentation CLAUDE.md) garantirait la traçabilité des analyses."*
+2. **Formation et veille** :
+   - Proposer un plan de formation autonome (ex : certifications ACAMS, veille sur les réglementations LCB-FT) pour combler le gap AML, en citant des ressources concrètes.
+   - Mentionner l’utilisation de **LLMs** (prototype Mistral) pour accélérer la documentation des règles, applicable à la veille réglementaire.
+
+3. **Valeur ajoutée immédiate** :
+   - Insister sur la **réduction des temps de traitement** (ex : commissions) et l’**automatisation de rapports**, des gains directement transposables à l’AML.
+   - Souligner l’expérience en **Power BI** pour créer des tableaux de bord de conformité, avec des exemples de KPIs métiers adaptables (ex : seuils de transactions suspectes).
+
+**Ton** :
+Professionnel et pragmatique, avec une **humilité constructive** sur le gap AML, compensée par une **confiance dans les compétences transférables** et une **volonté d’apprendre**. Éviter les formulations génériques ("passionné par les données") au profit de réalisations quantifiables.

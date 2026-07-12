@@ -240,7 +240,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Bonnes pratiques de développement logiciel (Git, revue de code, modularité)] Git",
+      "query": "[Programmation statistique (SAS, R, Python)] langages open-source",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.511,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5192,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5335,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5110, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bonnes pratiques de développement (Git, revue de code, modularité)] Git",
       "n_results": 3,
       "results": [
         {
@@ -263,7 +286,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Bonnes pratiques de développement logiciel (Git, revue de code, modularité)] version control",
+      "query": "[Bonnes pratiques de développement (Git, revue de code, modularité)] version control",
       "n_results": 3,
       "results": [
         {
@@ -286,7 +309,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Bonnes pratiques de développement logiciel (Git, revue de code, modularité)] code review",
+      "query": "[Bonnes pratiques de développement (Git, revue de code, modularité)] code review",
       "n_results": 3,
       "results": [
         {
@@ -309,7 +332,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Bonnes pratiques de développement logiciel (Git, revue de code, modularité)] modular programming",
+      "query": "[Bonnes pratiques de développement (Git, revue de code, modularité)] modular programming",
       "n_results": 3,
       "results": [
         {
@@ -332,7 +355,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Bonnes pratiques de développement logiciel (Git, revue de code, modularité)] reproducible research",
+      "query": "[Bonnes pratiques de développement (Git, revue de code, modularité)] reproducible research",
       "n_results": 3,
       "results": [
         {
@@ -355,7 +378,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Machine Learning et Intelligence Artificielle appliqués aux données cliniques] Machine Learning",
+      "query": "[Intelligence Artificielle et Machine Learning appliqués aux données cliniques] IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6344,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6449,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6451,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6344, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intelligence Artificielle et Machine Learning appliqués aux données cliniques] Machine Learning",
       "n_results": 3,
       "results": [
         {
@@ -378,30 +424,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Machine Learning et Intelligence Artificielle appliqués aux données cliniques] Intelligence Artificielle",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_ml",
-          "distance": 0.5456,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5602,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5642,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5456, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Machine Learning et Intelligence Artificielle appliqués aux données cliniques] AI/ML",
+      "query": "[Intelligence Artificielle et Machine Learning appliqués aux données cliniques] AI/ML",
       "n_results": 3,
       "results": [
         {
@@ -424,26 +447,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Machine Learning et Intelligence Artificielle appliqués aux données cliniques] outils IA",
+      "query": "[Intelligence Artificielle et Machine Learning appliqués aux données cliniques] outils IA pour la programmation statistique",
       "n_results": 3,
       "results": [
         {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4159,
+          "source_file": "skills.md"
+        },
+        {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.4206,
+          "distance": 0.4502,
           "source_file": "skills.md"
         },
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4275,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.4755,
+          "distance": 0.4541,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4206, match retenu"
+      "conclusion": "best_distance=0.4159, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -562,7 +585,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec des biostatisticiens et scientifiques] collaboration interdisciplinaire",
+      "query": "[Collaboration avec les biostatisticiens et scientifiques] collaboration interdisciplinaire",
       "n_results": 3,
       "results": [
         {
@@ -585,7 +608,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec des biostatisticiens et scientifiques] biostatisticiens",
+      "query": "[Collaboration avec les biostatisticiens et scientifiques] biostatisticiens",
       "n_results": 3,
       "results": [
         {
@@ -608,26 +631,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec des biostatisticiens et scientifiques] scientifiques",
+      "query": "[Collaboration avec les biostatisticiens et scientifiques] scientifiques cliniques",
       "n_results": 3,
       "results": [
         {
+          "id": "achievements::pricing_tool",
+          "distance": 0.663,
+          "source_file": "achievements.md"
+        },
+        {
           "id": "skills::skills_gaps_specifiques_cern",
-          "distance": 0.5988,
+          "distance": 0.6896,
           "source_file": "skills.md"
         },
         {
           "id": "skills::certifications",
-          "distance": 0.6955,
+          "distance": 0.7163,
           "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.697,
-          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5988, match retenu"
+      "conclusion": "best_distance=0.6630, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -723,72 +746,164 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Frameworks de recherche reproductible] reproducible research frameworks",
+      "query": "[Gestion de projets data et méthodologies agiles] gestion de projets data",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5061,
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.449,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4517,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5437,
+          "id": "skills::certifications",
+          "distance": 0.4913,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4490, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets data et méthodologies agiles] méthodologies agiles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5316,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.5472,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5061, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion et intégration de données scientifiques] data integration",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::certifications",
-          "distance": 0.5483,
+          "distance": 0.5354,
           "source_file": "skills.md"
         },
         {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.576,
+          "distance": 0.5375,
           "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5817,
-          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5483, match retenu"
+      "conclusion": "best_distance=0.5316, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion et intégration de données scientifiques] clinical science data",
+      "query": "[Connaissance des normes et réglementations des essais cliniques] normes essais cliniques",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::certifications",
-          "distance": 0.6528,
-          "source_file": "skills.md"
+          "id": "achievements::pricing_tool",
+          "distance": 0.5184,
+          "source_file": "achievements.md"
         },
         {
-          "id": "constraints::education",
-          "distance": 0.6901,
-          "source_file": "constraints.md"
+          "id": "achievements::churn_model",
+          "distance": 0.6363,
+          "source_file": "achievements.md"
         },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6782,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5184, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des normes et réglementations des essais cliniques] réglementations cliniques",
+      "n_results": 3,
+      "results": [
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.701,
+          "distance": 0.4565,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6787,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6909,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6528, match retenu"
+      "conclusion": "best_distance=0.4565, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et visualisation de données scientifiques] communication scientifique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6324,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6428,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6522,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6324, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et visualisation de données scientifiques] visualisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6191,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6351,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6191, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et visualisation de données scientifiques] data storytelling",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5699,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6014,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6185,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5699, match retenu"
     }
   ],
   "uncertain_flags": [

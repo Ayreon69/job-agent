@@ -1,61 +1,89 @@
 ## Résumé du matching
-Le profil présente une adéquation solide (78/100) avec le poste de **Solutions Engineer**, notamment grâce à une expertise pratique en **IA générative et architectures LLM** :
-- **Prototypage concret** : Développement d’un assistant interne basé sur l’API Mistral (appel direct, gestion de 22 000 tokens, interface Gradio) et utilisation des APIs Claude en contexte professionnel (*source : réalisation citée*).
-- **Écosystème agentique** : Maîtrise des workflows agentiques (Tool Calling, Agentic Workflows) via une utilisation quotidienne de Claude Code et de serveurs MCP (GitHub, Playwright, Firecrawl), avec structuration de projets via des fichiers `CLAUDE.md` (*source : expérience déclarée*).
-- **Pipelines de données** : Compréhension théorique et pratique des compromis RAG (contexte complet vs retrieval), couplée à une expérience avec des architectures proches de Medallion (Snowflake) (*source : compétences listées*).
+Le profil présente une adéquation solide (78/100) avec le poste de **Solutions Engineer**, axé sur les technologies d’IA générative et les architectures LLM. Voici les points forts clés, étayés par des réalisations concrètes :
 
-**Transfert de compétences et alignement métier** :
-- Conception de **tableaux de bord Power BI** adoptés par des équipes non-techniques, et création d’un outil de tarification autonomisant les métiers (*source : réalisations*).
-- **Animation d’ateliers** et collaboration avec des équipes techniques/métiers, en anglais (niveau B2, courant en contexte professionnel) (*source : expérience internationale*).
+- **Expertise en IA générative et LLM** :
+  - Prototypage d’un **assistant interne basé sur l’API Mistral** avec interface Gradio, démontrant une maîtrise pratique des LLM en production (*source : projet professionnel*).
+  - Expérience directe avec les **APIs Mistral et Claude**, et autonomie sur des projets de **recherche appliquée en machine learning** (ex. modèle de churn en production).
+
+- **Fondamentaux des pipelines RAG et ETL** :
+  - Compréhension théorique des compromis **RAG** (retrieval vs. contexte complet), bien que l’implémentation autonome reste à développer.
+  - Expérience en **structuration de pipelines ETL** sur Snowflake (architecture Medallion), pertinente pour les infrastructures sous-jacentes aux solutions RAG (*source : projet Snowflake*).
+
+- **Développement assisté par agents et workflows agentiques** :
+  - Utilisation quotidienne de **Claude Code** et de serveurs MCP (GitHub, Playwright, Vercel) pour des projets de **développement assisté par agent**, avec structuration via des fichiers **CLAUDE.md** (*source : projets professionnels*).
+  - Priorité affichée pour les rôles orientés **agents IA**, alignée avec les attentes du poste.
+
+- **Intégration d’APIs IA et autonomie technique** :
+  - **Appels API directs** (Mistral) et création d’interfaces utilisateur (Gradio) pour des solutions internes (*source : assistant interne*).
+  - Capacité à **transférer des compétences techniques** à des équipes non-techniques, via des outils adoptés en production (ex. tableaux de bord Power BI, outil de tarification aligné sur les KPIs métier).
+
+- **Écosystème TypeScript** :
+  - Familiarité avec les outils **GitHub, Playwright, et Vercel**, suggérant une aisance avec l’environnement TypeScript, bien que le langage ne soit pas explicitement cité comme maîtrisé.
 
 ---
 
 ## Gaps et incertitudes
-**Gaps confirmés** (compétences absentes ou limitées) :
-- **TypeScript** : Aucune expérience professionnelle ou projet concret identifié, malgré une familiarité avec des outils comme Playwright (JavaScript/TypeScript).
-- **Architecture logicielle et observabilité** : Expérience restreinte à des prototypes simples (ex : assistant interne avec Gradio), sans déploiement en production de solutions complexes ni monitoring avancé.
-- **DevOps/Cloud** : Notions en Docker, GitHub Actions, CI/CD et cloud (AWS/Azure), mais **aucune expérience de déploiement en production** de solutions IA. Compétences en cours d’acquisition.
-- **Prompt Engineering** : Aucune pratique dédiée à l’optimisation de prompts, bien que les compromis architecturaux (ex : RAG) soient compris.
+### Gaps confirmés (compétences absentes) :
+- **Architecture logicielle et observabilité** :
+  - Expérience limitée à des architectures simples (ex. assistant interne sans RAG). **Aucune mention d’outils d’observabilité** en production (ex. Prometheus, Grafana).
+  - Notions en **Docker et cloud** (AWS/Azure) en cours d’apprentissage, mais **pas de déploiement réel** en environnement professionnel.
 
-**Flags incertains** :
-*Aucun* – Les gaps listés ci-dessus sont des absences confirmées, sans zone d’ombre résiduelle.
+- **Pratiques DevOps pour l’IA** :
+  - Connaissances théoriques en **CI/CD (GitHub Actions)** et cloud, mais **pas d’expérience de déploiement de solutions IA** en production.
+  - Absence de mention de **bonnes pratiques DevOps** appliquées à des projets LLM ou agents.
+
+- **Prompt Engineering** :
+  - Aucune expérience explicite en **conception de prompts optimisés** pour des cas d’usage professionnels, bien que des projets LLM aient été réalisés.
+
+- **Animation d’ateliers et communication technique** :
+  - Anglais professionnel (B2) suffisant pour des réunions, mais **pas d’expérience en animation d’ateliers** ou en communication technique en contexte multiculturel.
+
+### Flags incertains (aucun match fiable trouvé) :
+*Aucun flag incertain identifié* – les gaps listés ci-dessus sont des absences confirmées, non des incertitudes.
 
 ---
 
-## Questions d'entretien probables
-1. **Prototypage LLM** :
-   *"Décrivez les défis techniques rencontrés lors du développement de votre assistant interne basé sur l’API Mistral (gestion des tokens, intégration Gradio). Comment avez-vous validé son utilité pour les utilisateurs finaux ?"* (*source : réalisation assistant interne*).
+## Questions d’entretien probables
+1. **Technique (LLM/Agents)** :
+   - *"Pouvez-vous détailler le prototypage de votre assistant interne basé sur Mistral ? Quels défis avez-vous rencontrés lors de l’intégration de l’API, et comment les avez-vous résolus ?"* (*source : projet assistant interne*).
+   - *"Comment structureriez-vous un pipeline RAG pour un cas d’usage métier spécifique ? Quels compromis feriez-vous entre retrieval et contexte complet ?"* (*source : compréhension théorique RAG + expérience Snowflake*).
 
-2. **Workflow agentique** :
-   *"Comment structurez-vous un projet utilisant des agents IA (ex : Claude Code) pour automatiser des tâches ? Quels outils (MCP, Firecrawl) privilégiez-vous et pourquoi ?"* (*source : expérience avec serveurs MCP et fichiers CLAUDE.md*).
+2. **Architecture et DevOps** :
+   - *"Quels outils d’observabilité utiliseriez-vous pour monitorer une solution LLM en production ? Avez-vous déjà mis en place des logs ou des métriques pour un projet IA ?"* (*gap : observabilité*).
+   - *"Comment déployeriez-vous une application basée sur des agents IA en utilisant Docker et GitHub Actions ? Quelles étapes clés ajouteriez-vous pour garantir la robustesse ?"* (*gap : DevOps*).
 
-3. **Alignement métier** :
-   *"Quelle méthodologie employez-vous pour traduire un besoin métier en solution technique (ex : outil de tarification) ? Comment mesurez-vous l’adoption par les équipes non-techniques ?"* (*source : outil de tarification et tableaux Power BI*).
+3. **Transfert de compétences** :
+   - *"Comment avez-vous conçu vos outils Power BI ou de tarification pour qu’ils soient adoptés par des équipes non-techniques ? Quels retours avez-vous reçus ?"* (*source : outils adoptés en production*).
+   - *"Comment expliqueriez-vous le fonctionnement d’un LLM à un client non-technique ? Donnez un exemple concret de métaphore ou d’analogie que vous utiliseriez."* (*gap : communication technique*).
 
-4. **Gaps techniques** :
-   *"Votre profil mentionne des notions en DevOps (Docker, CI/CD). Pouvez-vous détailler un cas où vous avez contribué à déployer une solution en production, même partiellement ?"* (*source : gap DevOps*).
-   *"Comment aborderiez-vous l’optimisation de prompts pour un cas d’usage spécifique, en l’absence d’expérience formelle en prompt engineering ?"* (*source : gap prompt engineering*).
-
-5. **RAG et architectures** :
-   *"Quels critères utilisez-vous pour choisir entre un contexte complet et une approche RAG ? Avez-vous déjà implémenté un pipeline RAG en autonomie ?"* (*source : compréhension théorique du RAG*).
+4. **Projets futurs** :
+   - *"Quels types de solutions basées sur des agents IA aimeriez-vous développer dans notre contexte ? Comment prioriseriez-vous les cas d’usage ?"* (*source : priorité affichée pour les rôles agents/LLM*).
+   - *"Comment aborderiez-vous l’optimisation des prompts pour un assistant client interne ? Quels critères utiliseriez-vous pour évaluer leur efficacité ?"* (*gap : prompt engineering*).
 
 ---
 
 ## Angle de candidature
-**Positionnement clé** : *"Solutions Engineer orienté IA générative, avec une double casquette technique et métier, capable de concevoir des prototypes fonctionnels et de les aligner sur des besoins concrets."*
+**Positionnement** :
+Candidature alignée sur un **profil de Solutions Engineer orienté IA générative et agents**, avec une **expérience concrète en prototypage de solutions LLM** et une **capacité à transférer des compétences techniques** aux métiers. Le poste représente une opportunité de **capitaliser sur une expertise émergente en workflows agentiques** tout en comblant des lacunes en architecture et DevOps dans un environnement structurant.
 
-**Points à mettre en avant** :
-1. **Expertise LLM/agents** :
-   - Insister sur l’**expérience pratique** (assistant interne Mistral, workflows agentiques avec Claude Code) pour démontrer une capacité à **passer de la théorie à la mise en œuvre**.
-   - Souligner la **compréhension des enjeux architecturaux** (RAG, gestion de tokens) comme atout pour dialoguer avec des équipes techniques.
+**Narratif clé** :
+1. **Expertise pratique en LLM et APIs IA** :
+   - Mettre en avant le **prototypage de l’assistant interne Mistral** comme preuve d’autonomie sur des projets IA en production, avec une **approche pragmatique** (intégration API, interface Gradio).
+   - Souligner l’expérience avec **Claude et Mistral** pour montrer une **familiarité avec les outils du marché**.
 
-2. **Pont entre tech et métier** :
-   - Mettre en avant les **réalisations transférant de l’autonomie aux métiers** (outil de tarification, tableaux Power BI) pour illustrer une approche **centrée utilisateur**.
-   - Valoriser l’**anglais professionnel** et l’expérience en animation d’ateliers comme leviers pour faciliter l’adoption des solutions.
+2. **Fondamentaux solides pour le RAG et les pipelines** :
+   - Insister sur la **compréhension des enjeux RAG** (retrieval vs. contexte) et l’expérience en **pipelines ETL** (Snowflake), pertinente pour les infrastructures sous-jacentes aux solutions IA.
+   - Positionner les **gaps en architecture** comme des **axes de progression** dans un rôle de Solutions Engineer, où l’accompagnement technique est central.
 
-3. **Stratégie sur les gaps** :
-   - **TypeScript/DevOps** : Présenter ces compétences comme des **axes de développement prioritaires**, en citant des ressources en cours d’apprentissage (ex : formations, projets personnels).
-   - **Prompt Engineering** : Proposer une approche **basée sur l’expérimentation** (ex : tests itératifs de prompts pour des cas d’usage internes) pour compenser l’absence d’expérience formelle.
+3. **Transfert de compétences et alignement métier** :
+   - Valoriser la **création d’outils adoptés par des équipes non-techniques** (Power BI, outil de tarification) pour démontrer une **capacité à traduire des solutions techniques en valeur métier**.
+   - Mettre en avant l’**anglais professionnel (B2)** comme atout pour des échanges techniques, tout en reconnaissant le besoin de renforcer l’animation d’ateliers.
 
-**Accroche pour la lettre de motivation** :
-*"Mon parcours allie une expertise technique en IA générative (prototypage d’assistants LLM, workflows agentiques) et une sensibilité métier, forgée par la conception de solutions adoptées par des équipes non-techniques. Votre recherche d’un Solutions Engineer capable de concilier innovation et pragmatisme résonne avec mon approche : transformer des concepts avancés en outils opérationnels, tout en accompagnant les utilisateurs vers l’autonomie. Je souhaite mettre cette double compétence au service de [Nom de l’Entreprise], pour contribuer à des projets où la technologie sert directement la performance métier."*
+4. **Motivation pour les agents IA** :
+   - Aligner la candidature sur la **priorité affichée pour les rôles agents/LLM**, en citant l’utilisation quotidienne de **Claude Code et serveurs MCP** comme preuve d’engagement dans ce domaine.
+   - Proposer une **vision proactive** : *"Je souhaite contribuer à des projets où les agents IA automatisent des workflows métiers, en m’appuyant sur mon expérience en prototypage et en intégration d’APIs."*
+
+**Ton** :
+- **Confiance sur les points forts** (LLM, APIs, transfert de compétences), avec une **humilité sur les gaps** (DevOps, observabilité) présentés comme des **opportunités d’apprentissage**.
+- **Approche collaborative** : insister sur la volonté de **travailler en équipe** pour déployer des solutions robustes, en s’appuyant sur les bonnes pratiques du poste.
+- **Ancrage local** : le choix du poste est présenté comme un **alignement naturel** entre expertise technique et opportunités professionnelles en Rhône-Alpes, sans référence externe.

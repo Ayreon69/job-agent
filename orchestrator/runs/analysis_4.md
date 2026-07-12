@@ -1,73 +1,55 @@
 ## Résumé du matching
-Cette candidature présente un **alignement technique et métier très fort** avec l’offre de Data Analyst, soutenu par des réalisations concrètes et une expertise validée par des certifications.
+Ce profil présente une **adéquation exceptionnelle** (90/100) avec le poste de Data Analyst, grâce à une combinaison rare de **compétences techniques avancées** et d’une **compréhension fine des enjeux métiers**. Voici les points saillants qui justifient ce score :
 
-**Points saillants :**
-- **Analyse statistique et modélisation** : Développement d’un modèle de *machine learning* en production pour prédire le *churn* (Python, scikit-learn), avec une justification métier des choix statistiques (ex : priorisation du *recall* pour limiter les pertes clients) *(source : modèle de churn en production)*.
-- **Business Intelligence et visualisation** : Conception de **tableaux de bord Power BI adoptés à l’échelle de l’entreprise**, avec maîtrise avancée de DAX et Power Query. Structuration de pipelines ETL sur Snowflake inspirés de l’architecture *Medallion* pour fiabiliser les rapports *(source : pipelines ETL Snowflake et tableaux de bord Power BI)*.
-- **SQL et extraction de données** : Maîtrise avancée de SQL (requêtes complexes, optimisation) et expérience professionnelle répétée, incluant l’automatisation de processus (ex : réduction du temps de calcul des commissions de 10h à 35min) *(source : optimisation ETL Snowflake)*.
-- **Alignement métier** : Création de rapports alignés sur les KPIs clés (commissions, sinistralité, coût moyen) pour des audiences non techniques, avec une capacité démontrée à vulgariser des insights techniques *(source : tableaux de bord Power BI pour KPIs métier)*.
-- **Automatisation et prototypage** : Développement d’outils internes (ex : assistant LLM pour les règles de commission) et optimisation de pipelines, illustrant une approche proactive de l’amélioration des processus *(source : prototypage d’outils internes)*.
+- **Expertise en analyse statistique et machine learning** :
+  Développement d’un **modèle de churn en production** (Python, scikit-learn) avec justification métier des choix statistiques (recall vs précision), démontrant une capacité à lier data science et impact opérationnel. *Source : Réalisation "modèle de machine learning pour prédire la résiliation des clients"*.
+  Maîtrise de **Python (pandas, numpy)** et **SQL avancé**, renforcée par des certifications DataCamp en data science.
 
-**Atouts différenciants :**
-- **Expérience transverse** : Collaboration avec des équipes non techniques pour des livrables décisionnels (ex : tarification autonome pour les équipes santé), combinée à une autonomie sur des projets complexes (churn, ETL).
-- **Certifications** : DataCamp en *data science*, analyse, SQL avancé et visualisation, renforçant la crédibilité technique.
+- **Leadership en Business Intelligence et visualisation** :
+  Conception de **tableaux de bord Power BI adoptés par l’ensemble des départements**, avec alignement sur les KPIs métier (ex : commissions, sinistralité). Utilisation de **DAX avancé** et structuration de pipelines ETL sur Snowflake (architecture Medallion-like) pour fiabiliser la production de rapports. *Source : "Conception de tableaux de bord Power BI" et "pipelines ETL sur Snowflake"*.
+  Expérience en **vulgarisation technique** pour des audiences non-data, avec des outils utilisés à grande échelle.
 
----
+- **Autonomie et collaboration métier** :
+  Création d’un **outil de tarification autonome** pour les équipes métier, illustrant une capacité à traduire des besoins opérationnels en solutions data. *Source : "outil de tarification autonome aligné sur les besoins métier"*.
+  Gestion de projets data en collaboration avec les équipes métier, avec une approche orientée résultats (ex : impact sur les stratégies de fidélisation via le modèle de churn).
+
+- **Optimisation et administration d’outils data** :
+  Maîtrise de **Snowflake** pour l’architecture ETL et optimisation de requêtes SQL, avec une expérience concrète en fiabilisation de pipelines de données. *Source : "optimisation des requêtes SQL" et "fiabilisation de pipelines ETL"*.
 
 ## Gaps et incertitudes
-**Gap confirmé :**
-- **Tableau** : Certification DataCamp obtenue, mais **aucune expérience professionnelle concrète** mentionnée dans le profil. L’offre ne précise pas si Tableau est un prérequis, mais sa maîtrise pourrait être un avantage compétitif.
+- **Gap connu** :
+  **Tableau** : Bien que le candidat dispose d’une certification DataCamp sur l’outil, son profil ne mentionne **aucune expérience professionnelle** avec Tableau. Ce gap est mineur au regard de la maîtrise de Power BI (outil souvent interchangeable dans les offres), mais pourrait être abordé en entretien.
 
-**Flags incertains :**
-*Aucun* – Tous les éléments clés de l’offre ont été couverts par des matches fiables dans le profil.
-
----
+- **Flags incertains** :
+  *Aucun flag identifié*. Les compétences clés de l’offre (SQL, Power BI, Python, analyse métier) sont toutes couvertes par des réalisations concrètes et documentées.
 
 ## Questions d'entretien probables
-1. **Technique (SQL/Power BI)** :
-   - *"Vous avez optimisé un pipeline ETL sur Snowflake pour réduire le temps de calcul des commissions de 10h à 35min. Quelles techniques avez-vous utilisées pour y parvenir ?"* *(source : optimisation ETL Snowflake)*
-   - *"Comment avez-vous structuré vos tableaux de bord Power BI pour qu’ils soient adoptés par des équipes non techniques ? Quels défis avez-vous rencontrés ?"* *(source : tableaux de bord Power BI pour KPIs métier)*
+1. **Approche métier des modèles data** :
+   *"Vous avez développé un modèle de churn en production. Pouvez-vous détailler comment vous avez arbitré entre recall et précision, et quels indicateurs métier ont guidé ce choix ?"* *Source : "justification métier des choix statistiques (recall vs précision)"*.
 
-2. **Analyse métier** :
-   - *"Votre modèle de churn priorisait le recall. Pouvez-vous expliquer ce choix en termes d’impact métier ?"* *(source : modèle de churn en production)*
-   - *"Comment alignez-vous vos analyses avec les KPIs d’une équipe produit ou commerciale ? Avez-vous un exemple concret ?"* *(source : alignement KPIs métier)*
+2. **Collaboration avec les équipes non-techniques** :
+   *"Vos tableaux de bord Power BI sont utilisés par des départements variés. Comment adaptez-vous votre communication pour des audiences non-data, et quels retours avez-vous reçus sur leur adoption ?"* *Source : "vulgarisation des résultats techniques" et "tableaux de bord adoptés par l'ensemble des départements"*.
 
-3. **Collaboration** :
-   - *"Vous avez travaillé sur un outil de tarification autonome pour les équipes santé. Comment avez-vous géré les feedbacks des utilisateurs non techniques ?"* *(source : tarification autonome pour équipes santé)*
-   - *"Comment gérez-vous les divergences entre les besoins métiers et les contraintes techniques dans la conception de rapports ?"*
+3. **Optimisation de pipelines data** :
+   *"Vous mentionnez une architecture ETL proche de Medallion sur Snowflake. Quels défis avez-vous rencontrés pour fiabiliser ces pipelines à grande échelle, et comment les avez-vous résolus ?"* *Source : "pipelines ETL sur Snowflake (architecture proche Medallion)"*.
 
-4. **Projets transverses** :
-   - *"Quelles étapes avez-vous suivies pour déployer votre modèle de churn en production ? Quels acteurs avez-vous impliqués ?"* *(source : modèle de churn en production)*
-   - *"Comment mesurez-vous l’impact de vos tableaux de bord sur la prise de décision ?"* *(source : adoption des tableaux de bord Power BI)*
+4. **Gestion de projet et autonomie** :
+   *"Votre outil de tarification autonome a été développé pour les équipes métier. Comment avez-vous identifié leurs besoins, et quels processus avez-vous mis en place pour garantir son adoption ?"* *Source : "outil de tarification autonome aligné sur les besoins métier"*.
 
-5. **Adaptabilité** :
-   - *"Votre expérience récente est orientée IA/agents. Qu’est-ce qui vous motive à postuler pour un rôle de Data Analyst plus classique ?"*
-   - *"Comment envisagez-vous la transition entre des projets de modélisation avancée (ex : ML) et des analyses plus opérationnelles ?"*
-
----
+5. **Gap Tableau** :
+   *"Votre profil montre une certification Tableau mais pas d’expérience professionnelle. Comment envisagez-vous de monter en compétence sur cet outil si le poste le requiert ?"* *Source : gap identifié*.
 
 ## Angle de candidature
-**Accroche** :
-*"Data Analyst avec une expertise technique solide en SQL, Power BI et analyse statistique, je combine une approche data-driven avec une sensibilité métier éprouvée. Mon parcours démontre ma capacité à transformer des données complexes en outils décisionnels adoptés par des équipes non techniques – comme en témoignent mes tableaux de bord Power BI alignés sur les KPIs clés (commissions, sinistralité) et mon modèle de churn déployé en production. Je recherche un environnement où je pourrai mettre cette double compétence au service de l’optimisation des processus et de la performance opérationnelle."*
+**Positionnement** :
+Candidature idéale pour un poste de Data Analyst où **l’impact métier prime sur la technique pure**. Le profil se distingue par :
+- Une **double casquette** : expertise data (SQL, Python, Power BI) **et** capacité à traduire des enjeux business en analyses actionnables (ex : modèle de churn, outil de tarification).
+- Une **approche pragmatique** de la data, avec des réalisations concrètes en production (pipelines ETL, tableaux de bord adoptés) et une sensibilité aux KPIs opérationnels (commissions, sinistralité).
+- Une **autonomie prouvée** sur des projets data complexes, avec une collaboration fluide avec les métiers.
 
-**Structure du pitch** :
-1. **Expertise technique** :
-   - Mettre en avant la **maîtrise de Power BI** (DAX avancé, Power Query) et **SQL** (optimisation, requêtes complexes), avec des exemples concrets d’impact (ex : réduction du temps de calcul des commissions).
-   - Souligner la **certification DataCamp** en visualisation et analyse pour renforcer la crédibilité.
+**Accroche personnalisée** (à adapter dans la lettre/entretien) :
+*"Mon expérience en tant que Data Analyst s’articule autour d’un fil rouge : **transformer la donnée en levier opérationnel**. Que ce soit via un modèle de churn en production qui a permis d’ajuster les stratégies de fidélisation, ou des tableaux de bord Power BI adoptés par l’ensemble des départements, j’ai toujours veillé à aligner mes analyses sur les KPIs métier. Votre offre recherche un profil capable de concilier expertise technique (SQL, Power BI, Python) et compréhension des enjeux business – une combinaison que j’ai mise en pratique au quotidien, avec une approche orientée résultats. Par exemple, [développer un point clé comme l’outil de tarification ou les pipelines ETL sur Snowflake]."*
 
-2. **Alignement métier** :
-   - Insister sur la **compréhension des KPIs** (ex : sinistralité, coût moyen) et la capacité à **vulgariser des insights** pour des audiences variées (ex : adoption des tableaux de bord par des départements non techniques).
-   - Citer des projets transverses (ex : tarification autonome pour les équipes santé) pour illustrer l’**autonomie** et la **collaboration**.
-
-3. **Valeur ajoutée** :
-   - **Automatisation** : Exemple de l’optimisation des pipelines ETL sur Snowflake, montrant une approche proactive de l’amélioration des processus.
-   - **Modélisation** : Le modèle de churn en production, avec une justification métier des choix statistiques (ex : recall priorisé), pour démontrer une **vision stratégique** des données.
-
-4. **Adéquation avec l’offre** :
-   - Lier systématiquement les compétences du profil aux attentes de l’offre (ex : *"Votre recherche d’un profil capable de concevoir des rapports décisionnels rejoint mon expérience en Power BI, où j’ai structuré des tableaux de bord adoptés à l’échelle de l’entreprise"*).
-   - Éviter toute mention de Tableau (gap) pour ne pas attirer l’attention sur une faiblesse non critique.
-
-**Ton** :
-- **Concret et orienté résultats** : Privilégier les chiffres (ex : "réduction de 10h à 35min") et les livrables adoptés (ex : "tableaux de bord utilisés par l’ensemble des départements").
-- **Collaboratif** : Mettre en avant les interactions avec les équipes métiers pour montrer une approche **centrée utilisateur**.
-- **Local** : Ancrer la candidature dans le contexte rhônalpin comme un **choix professionnel assumé**, sans référence à des contraintes géographiques.
+**Points à souligner en entretien** :
+- **Impact quantifiable** : Mettre en avant les retombées des réalisations (ex : réduction du churn, adoption des tableaux de bord).
+- **Méthodologie** : Insister sur la **rigueur statistique** (choix des métriques, validation des modèles) et la **collaboration métier** (ateliers de cadrage, feedbacks).
+- **Adaptabilité** : Malgré l’absence d’expérience professionnelle avec Tableau, rappeler la certification et la maîtrise de Power BI (outils aux logiques similaires). Proposer une montée en compétence rapide si nécessaire.

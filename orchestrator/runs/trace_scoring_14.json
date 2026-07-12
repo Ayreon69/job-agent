@@ -125,29 +125,6 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse des besoins métiers et accompagnement des équipes] reporting aux sponsors",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5993,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6155,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.6179,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5993, match retenu"
-    },
-    {
-      "step": "requirement_atom",
       "query": "[Conception et développement de solutions BI et reporting] conception de dashboards",
       "n_results": 3,
       "results": [
@@ -194,26 +171,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et développement de solutions BI et reporting] modélisation BI",
+      "query": "[Conception et développement de solutions BI et reporting] modèles BI",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.54,
+          "distance": 0.4767,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::b2b_outreach_automation",
-          "distance": 0.6225,
+          "distance": 0.5878,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6304,
+          "id": "achievements::churn_model",
+          "distance": 0.6002,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5400, match retenu"
+      "conclusion": "best_distance=0.4767, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -260,29 +237,6 @@
         }
       ],
       "conclusion": "best_distance=0.5682, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Conception et développement de solutions BI et reporting] outils de reporting",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4843,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5065,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.5162,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4843, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -378,76 +332,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Pipelines ETL et gestion des données (ODI, Snowflake)] ETL",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5149,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.6996,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "constraints::current_employment",
-          "distance": 0.7092,
-          "source_file": "constraints.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5149, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Pipelines ETL et gestion des données (ODI, Snowflake)] ODI",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.7094,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.711,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.7724,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7094, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Pipelines ETL et gestion des données (ODI, Snowflake)] Snowflake",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5503,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_gaps_specifiques_cern",
-          "distance": 0.8609,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.8748,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5503, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Pipelines ETL et gestion des données (ODI, Snowflake)] pipelines de données",
+      "query": "[Pipelines de données et ETL (ODI, Snowflake)] pipelines de données",
       "n_results": 3,
       "results": [
         {
@@ -470,7 +355,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Pipelines ETL et gestion des données (ODI, Snowflake)] documentation des pipelines",
+      "query": "[Pipelines de données et ETL (ODI, Snowflake)] ETL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5149,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6996,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.7092,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5149, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines de données et ETL (ODI, Snowflake)] ODI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7094,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.711,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7724,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7094, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines de données et ETL (ODI, Snowflake)] Snowflake",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5503,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.8609,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.8748,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5503, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines de données et ETL (ODI, Snowflake)] documentation des pipelines",
       "n_results": 3,
       "results": [
         {
@@ -493,7 +447,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Pipelines ETL et gestion des données (ODI, Snowflake)] gestion de la dette technique",
+      "query": "[Pipelines de données et ETL (ODI, Snowflake)] gestion de la dette technique",
       "n_results": 3,
       "results": [
         {
@@ -516,7 +470,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de visualisation et analytics (SAC, outils de reporting)] SAC",
+      "query": "[Outils de reporting et visualisation (SAC, outils de reporting)] SAC",
       "n_results": 3,
       "results": [
         {
@@ -539,95 +493,49 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de visualisation et analytics (SAC, outils de reporting)] outils de visualisation",
+      "query": "[Outils de reporting et visualisation (SAC, outils de reporting)] outils de reporting",
       "n_results": 3,
       "results": [
         {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4843,
+          "source_file": "achievements.md"
+        },
+        {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5715,
+          "distance": 0.5065,
           "source_file": "skills.md"
         },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5162,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4843, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de reporting et visualisation (SAC, outils de reporting)] visualisation de données",
+      "n_results": 3,
+      "results": [
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.606,
+          "distance": 0.6191,
           "source_file": "skills.md"
         },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.619,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5715, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Outils de visualisation et analytics (SAC, outils de reporting)] analytics",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4986,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "constraints::education",
-          "distance": 0.4992,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5171,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4986, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Outils de visualisation et analytics (SAC, outils de reporting)] surveillance des workflows",
-      "n_results": 3,
-      "results": [
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5209,
+          "distance": 0.6205,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::commission_automation",
-          "distance": 0.5496,
-          "source_file": "achievements.md"
-        },
-        {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5803,
+          "distance": 0.6351,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5209, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Outils de visualisation et analytics (SAC, outils de reporting)] gestion des incidents",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4656,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.629,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.6376,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4656, match retenu"
+      "conclusion": "best_distance=0.6191, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -677,72 +585,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projets data et collaboration transverse] coordination avec les développeurs",
+      "query": "[Gestion de projets data et collaboration transverse] pilotage de projets",
       "n_results": 3,
       "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.3892,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.4765,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.4946,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3892, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion de projets data et collaboration transverse] prototypage",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5097,
-          "source_file": "achievements.md"
-        },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.5309,
+          "distance": 0.429,
           "source_file": "skills.md"
         },
         {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5616,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5097, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion de projets data et collaboration transverse] relation avec les fournisseurs externes",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.4361,
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4773,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.4935,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.5419,
+          "id": "achievements::agentic_coding",
+          "distance": 0.4873,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4361, match retenu"
+      "conclusion": "best_distance=0.4290, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -861,99 +723,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Exploration et adoption de l'IA (outils no-code/low-code, automatisation intelligente)] early adopter",
+      "query": "[Support et surveillance des workflows data] support des workflows data",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5809,
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.474,
           "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.6571,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6658,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5809, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Qualité et gouvernance des données] qualité des données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::certifications",
-          "distance": 0.4455,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4573,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4983,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4455, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Qualité et gouvernance des données] gouvernance des données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4729,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.4871,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.5233,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4729, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Qualité et gouvernance des données] support utilisateur",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5233,
-          "source_file": "achievements.md"
         },
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.537,
+          "distance": 0.4841,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5863,
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5061,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5233, match retenu"
+      "conclusion": "best_distance=0.4740, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Qualité et gouvernance des données] résolution d'anomalies",
+      "query": "[Support et surveillance des workflows data] surveillance des workflows",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5209,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5496,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5803,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5209, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support et surveillance des workflows data] gestion des incidents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4656,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.629,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6376,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4656, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support et surveillance des workflows data] résolution d'anomalies",
       "n_results": 3,
       "results": [
         {
@@ -976,7 +815,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Formation et adoption des outils data] formation utilisateurs",
+      "query": "[Formation et adoption des outils data par les métiers] formation utilisateurs",
       "n_results": 3,
       "results": [
         {
@@ -999,53 +838,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Formation et adoption des outils data] promotion de l'adoption data",
+      "query": "[Formation et adoption des outils data par les métiers] adoption des outils data",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5811,
+          "distance": 0.4108,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.6014,
-          "source_file": "achievements.md"
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4175,
+          "source_file": "skills.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6041,
-          "source_file": "achievements.md"
+          "id": "skills::certifications",
+          "distance": 0.4317,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5811, match retenu"
+      "conclusion": "best_distance=0.4108, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Formation et adoption des outils data] bonnes pratiques data",
+      "query": "[Formation et adoption des outils data par les métiers] promotion de la culture data",
       "n_results": 3,
       "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4051,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4528,
-          "source_file": "achievements.md"
-        },
         {
           "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.4842,
+          "distance": 0.5391,
           "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5468,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.56,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4051, match retenu"
+      "conclusion": "best_distance=0.5391, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Veille technologique et optimisation des solutions data] veille technologique",
+      "query": "[Veille technologique et bonnes pratiques data/IA] veille technologique",
       "n_results": 3,
       "results": [
         {
@@ -1068,49 +907,72 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Veille technologique et optimisation des solutions data] optimisation des solutions data",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5227,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5321,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.5404,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5227, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Veille technologique et optimisation des solutions data] bonnes pratiques de l'industrie",
+      "query": "[Veille technologique et bonnes pratiques data/IA] bonnes pratiques data",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.4305,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.456,
+          "distance": 0.4051,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5184,
+          "distance": 0.4528,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4842,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4051, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et bonnes pratiques data/IA] bonnes pratiques IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3874,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.3917,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4513,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3874, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et bonnes pratiques data/IA] optimisation des solutions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5255,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5531,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4305, match retenu"
+      "conclusion": "best_distance=0.5255, match retenu"
     }
   ],
   "uncertain_flags": []

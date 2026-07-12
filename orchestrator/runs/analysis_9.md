@@ -1,94 +1,61 @@
 ## Résumé du matching
+Le profil présente une adéquation solide (75/100) avec le poste de **Data Analyst Product Owner** en Rhône-Alpes, portée par des réalisations concrètes alignées sur les attentes clés de l'offre :
 
-Cette candidature présente un **alignement solide (70/100)** avec le poste de **Data Analyst Product Owner**, grâce à une expertise technique et produit avérée en data décisionnelle. Voici les points forts clés, directement issus des réalisations du profil :
+- **Expertise produit data décisionnel** :
+  - Conception de **tableaux de bord Power BI** adoptés à l'échelle de l'entreprise, couvrant des indicateurs sensibles (commissions, sinistralité, coût moyen) *(source : réalisation Power BI)*.
+  - Création d'un **outil de tarification autonome** pour les équipes métier, démontrant une capacité à traduire des besoins utilisateurs en solutions techniques et à transférer de l'autonomie *(source : outil de tarification santé individuelle)*.
+  - Développement d'un **modèle de churn en production**, justifié par une logique métier (priorisation du recall) et intégré dans les processus décisionnels *(source : modèle ML churn)*.
 
-- **Gestion de produits data décisionnels** :
-  - Conception d’un **outil de tarification autonome** pour les produits santé individuelle, transférant des compétences aux équipes métier (*source : outil de tarification*).
-  - Déploiement de **tableaux de bord Power BI** (DAX avancé) alignés sur les KPIs métier (commissions, sinistralité), adoptés par l’ensemble des départements (*source : tableaux de bord Power BI*).
-  - Structuration de **pipelines ETL sur Snowflake** selon une architecture proche de Medallion (staging → core → reporting), garantissant la fiabilité des rapports à grande échelle (*source : pipelines ETL Snowflake*).
+- **Maîtrise technique des pipelines data** :
+  - Structuration de **pipelines ETL sur Snowflake** avec une architecture en couches (staging, core, reporting), proche du modèle Medallion, pour fiabiliser la production de rapports à grande échelle *(source : expérience Snowflake)*.
+  - **Modélisation de données** et conception d'indicateurs alignés sur les KPIs métier, avec une approche orientée utilisateur final *(source : tableaux de bord Power BI)*.
 
-- **Pilotage de roadmap produit** :
-  - Approche architecturale démontrée via la **gouvernance technique des données** sur Snowflake, avec une vision produit pour la scalabilité (*source : architecture Snowflake*).
-  - Capacité à **mutualiser les besoins métiers** et à prioriser les développements (ex : modèle de churn avec recall à 85%, justifié par une logique métier) (*source : modèle de churn*).
+- **Documentation et collaboration** :
+  - Utilisation de **fichiers CLAUDE.md** pour structurer des projets et documenter les choix architecturaux (ex : décision de ne pas utiliser RAG pour un assistant interne), assurant une traçabilité technique et fonctionnelle *(source : documentation technico-fonctionnelle)*.
 
-- **Collaboration transverse** :
-  - Animation implicite de comités produits via la **conception d’outils adoptés par plusieurs départements** (ex : outil de tarification, tableaux de bord) (*source : adoption par les métiers*).
-  - Rédaction de **documentations technico-fonctionnelles** (ex : fichiers CLAUDE.md pour contextualiser les projets, documentation d’un assistant interne basé sur Mistral) (*source : documentation Mistral*).
-
-- **Maîtrise technique** :
-  - **Power BI** (DAX avancé), **Python** (pandas, scikit-learn), **SQL avancé**, et **Snowflake** pour l’ETL et l’architecture data (*source : tableaux de bord, modèle de churn, pipelines ETL*).
-
----
+- **Compétences techniques validées** :
+  - **SQL avancé** (requêtes complexes, optimisation, agrégations) et **Power BI** (DAX, Power Query), avec des certifications DataCamp à l'appui *(source : certifications et expérience professionnelle)*.
 
 ## Gaps et incertitudes
+- **Animation de comités produits et communication** :
+  *Gap connu* : Aucune expérience explicite en animation de **comités produits**, en communication formelle autour des évolutions (notes de version, roadmaps) ou en vulgarisation structurée vers des parties prenantes non techniques. Les réalisations citées se limitent à des livrables techniques (tableaux de bord, outils) sans mention de cadrage collaboratif.
 
-### Gaps confirmés (compétences absentes)
-1. **Connaissance des enjeux SDIS** :
-   - Aucune expérience ou référence aux **Services Départementaux d’Incendie et de Secours** dans le profil. Ce gap est critique pour un poste centré sur un produit dédié à ce secteur.
-   - *Impact* : Nécessité de monter rapidement en compétence sur les spécificités métier des SDIS (ex : indicateurs de performance, réglementation, processus opérationnels).
+- **Méthodologies Agile et gestion de projet** :
+  *Gap connu* : Absence de référence à des **méthodologies Agile** (Scrum, Kanban) ou à des outils de gestion de projet (Jira, Trello). Les projets semblent menés en autonomie ou avec des outils ad hoc (ex : fichiers CLAUDE.md), sans cadre itératif ou collaboratif formalisé.
 
-2. **Gouvernance formelle des données** :
-   - Expérience limitée à la **gouvernance technique** (architecture Snowflake, pipelines ETL).
-   - Absence de pratique en **gouvernance formelle** (comités de gouvernance, chartes de qualité, politiques de données).
-
-3. **Déploiement cloud en production** :
-   - Notions en **AWS/Azure**, mais pas d’expérience concrète de **déploiement en production** (ex : gestion de ressources cloud, scaling, monitoring).
-
-4. **Architecture RAG complète** :
-   - Notions en **chunking, embeddings, et évaluation de retrieval**, mais pas de mise en œuvre en conditions réelles (ex : projet avec intégration RAG en production).
-
-5. **Outils DevOps** :
-   - Notions en **FastAPI, Docker, GitHub Actions, et CI/CD**, mais pas d’expérience professionnelle (ex : pipelines de déploiement automatisés, gestion de conteneurs).
-
----
+- **Gouvernance formelle des données** :
+  *Gap connu* : Expérience limitée à la **gouvernance technique** (architecture ETL, Snowflake) et non à la gouvernance formelle (comités, chartes, politiques de qualité). Compétence listée comme "notions seulement" dans le profil.
 
 ## Questions d'entretien probables
+1. **Approche produit** :
+   - *"Comment prioriseriez-vous les demandes des équipes métier pour un outil de tarification, en l'absence de comité produit structuré ?"* *(lié au gap "animation de comités")*
+   - *"Pouvez-vous partager un exemple où vous avez dû convaincre une partie prenante non technique de la pertinence d'un indicateur ou d'une évolution produit ?"* *(lié à la communication produit)*.
 
-1. **Adéquation produit/SDIS** :
-   - *"Comment aborderiez-vous la découverte des besoins spécifiques des SDIS pour concevoir un produit data adapté ? Quels indicateurs prioriseriez-vous ?"* (Évalue la capacité à combler le gap métier).
-   - *"Avez-vous déjà travaillé sur des produits réglementés ou sensibles ? Comment avez-vous géré les contraintes de conformité ?"* (Teste l’adaptabilité à un secteur normé).
+2. **Méthodologies de travail** :
+   - *"Quels outils ou méthodes utilisez-vous pour suivre l'avancement de vos projets data ? Comment gérez-vous les dépendances entre équipes ?"* *(lié au gap Agile/gestion de projet)*.
+   - *"Comment documentez-vous les évolutions de vos pipelines ETL pour les équipes techniques et non techniques ?"* *(lié à la documentation et à la gouvernance)*.
 
-2. **Gouvernance et collaboration** :
-   - *"Comment structureriez-vous un comité de gouvernance des données pour un produit transverse comme celui-ci ? Quels acteurs impliqueriez-vous ?"* (Évalue la compréhension de la gouvernance formelle).
-   - *"Comment avez-vous convaincu des équipes non-techniques d’adopter vos tableaux de bord Power BI ? Quels freins avez-vous rencontrés ?"* (Teste les soft skills et la pédagogie).
+3. **Expertise technique** :
+   - *"Quels critères utilisez-vous pour valider la qualité d'un modèle de données dans Snowflake ? Comment gérez-vous les conflits de schéma ?"* *(lié à l'architecture ETL)*.
+   - *"Comment optimisez-vous une requête SQL complexe pour un rapport Power BI utilisé par 100+ utilisateurs ?"* *(lié à SQL et Power BI)*.
 
-3. **Technique et architecture** :
-   - *"Décrivez une architecture ETL que vous avez conçue. Comment avez-vous assuré sa scalabilité et sa maintenabilité ?"* (Approche Snowflake/Medallion).
-   - *"Comment évalueriez-vous la performance d’un modèle de churn en production ? Quels leviers actionneriez-vous pour l’améliorer ?"* (Logique métier vs. performance technique).
-   - *"Quels outils utiliseriez-vous pour déployer un pipeline data sur AWS/Azure en production ? Comment gérez-vous les coûts et la sécurité ?"* (Gap cloud).
-
-4. **Roadmap et priorisation** :
-   - *"Comment priorisez-vous les demandes métiers lorsque les ressources sont limitées ? Donnez un exemple concret."* (Expérience mutualisation des besoins).
-   - *"Comment alignez-vous une roadmap produit data avec les objectifs stratégiques d’une organisation comme un SDIS ?"* (Vision produit et alignement métier).
-
-5. **Innovation et RAG** :
-   - *"Avez-vous déjà intégré des composants RAG dans un projet ? Quels défis avez-vous identifiés ?"* (Gap RAG, évalue la curiosité technique).
-   - *"Comment documenteriez-vous les choix architecturaux d’un assistant interne basé sur Mistral pour des équipes non-techniques ?"* (Documentation et pédagogie).
-
----
+4. **Alignement métier** :
+   - *"Comment mesurez-vous l'impact d'un tableau de bord Power BI sur les décisions métier ?"* *(lié à l'adoption des outils)*.
+   - *"Comment gérez-vous les demandes contradictoires entre équipes (ex : marketing vs. actuariat) pour un même indicateur ?"* *(lié à la mutualisation des besoins)*.
 
 ## Angle de candidature
-
 **Positionnement** :
-Candidat **Data Analyst Product Owner** avec une **double casquette technique et produit**, capable de **traduire des enjeux métiers complexes en solutions data scalables**. Mon expérience en **conception d’outils décisionnels** (Power BI, Snowflake) et en **pilotage de roadmaps** (architecture Medallion, modèles prédictifs) me permet de m’intégrer rapidement à une équipe produit dédiée aux SDIS, malgré l’absence de connaissance initiale du secteur.
+Candidat **Data Analyst orienté produit**, avec une double casquette technique (SQL, Snowflake, Power BI) et fonctionnelle (compréhension des KPIs métier, autonomie utilisateurs). L'expérience en **conception d'outils décisionnels adoptés à grande échelle** (tarification, churn, tableaux de bord) et en **structuration de pipelines data fiables** (architecture Medallion sur Snowflake) correspond aux attentes du poste, tout en offrant une valeur ajoutée immédiate sur des enjeux concrets (réduction des silos, amélioration de la prise de décision).
 
-**Valeur ajoutée clé** :
-1. **Autonomisation des métiers** :
-   - Expérience prouvée dans la **création d’outils transférant de l’autonomie** aux équipes (ex : outil de tarification pour les produits santé, *source : outil de tarification*), réduisant les dépendances aux équipes data.
-   - Capacité à **aligner les tableaux de bord sur les KPIs métier** (commissions, sinistralité) et à en assurer l’adoption (*source : tableaux de bord Power BI*).
+**Points différenciants** :
+- **Approche utilisateur** : Expérience prouvée dans la création d'outils **autonomes** pour les équipes métier (ex : outil de tarification), réduisant la dépendance aux équipes techniques. Capacité à vulgariser des concepts data pour des audiences non techniques *(source : outil de tarification santé individuelle)*.
+- **Documentation proactive** : Utilisation de fichiers **CLAUDE.md** pour structurer les projets et capitaliser sur les choix architecturaux, assurant une traçabilité rare dans les profils purement techniques *(source : documentation technico-fonctionnelle)*.
+- **Impact mesurable** : Réalisation de **modèles en production** (churn) avec une justification métier claire, démontrant une capacité à lier data science et ROI opérationnel *(source : modèle ML churn)*.
 
-2. **Fiabilité et scalabilité** :
-   - Structuration de **pipelines ETL sur Snowflake** selon une architecture proche de Medallion, garantissant la **qualité et la traçabilité des données** à grande échelle (*source : pipelines ETL Snowflake*).
-   - Approche **documentée et reproductible** (ex : fichiers CLAUDE.md pour contextualiser les projets, documentation d’un assistant interne Mistral, *source : documentation Mistral*).
+**Stratégie de réponse aux gaps** :
+- **Animation produit** : Mettre en avant des **ateliers informels** ou des sessions de cadrage menés avec les équipes métier (ex : recueil des besoins pour l'outil de tarification) comme des prémices à une animation de comité. Souligner la volonté de monter en compétences sur les frameworks Agile via des formations ciblées.
+- **Gouvernance** : Insister sur la **gouvernance technique** mise en place (architecture Snowflake, documentation) comme base pour étendre la démarche à une gouvernance formelle, avec une approche progressive (ex : commencer par des chartes simples).
+- **Agile** : Présenter les fichiers **CLAUDE.md** comme un outil de suivi collaboratif, et proposer d'adopter des rituels Agile (ex : daily stand-ups) pour structurer les échanges avec les parties prenantes.
 
-3. **Collaboration transverse** :
-   - Expérience en **animation implicite de comités produits** via la conception d’outils adoptés par plusieurs départements (*source : adoption par les métiers*).
-   - Capacité à **traduire des besoins techniques en langage métier** (ex : justification métier d’un modèle de churn avec recall à 85%, *source : modèle de churn*).
-
-**Stratégie pour combler les gaps** :
-- **SDIS** : Engager une **immersion rapide** via des entretiens avec des acteurs clés du secteur (ex : pompiers, responsables opérationnels) et étudier les **rapports publics** (ex : statistiques de la DGSCGC) pour identifier les indicateurs critiques.
-- **Gouvernance formelle** : Proposer un **cadre de gouvernance léger** en s’appuyant sur les bonnes pratiques du profil (ex : documentation des pipelines, comités de revue des KPIs).
-- **Cloud/DevOps** : Mettre en avant la **capacité à monter en compétence** (ex : formations en cours sur AWS/Azure, projets personnels en CI/CD) et proposer un **plan de rattrapage** (ex : certification cloud dans les 3 mois).
-
-**Message différenciant** :
-*"Mon approche combine une **rigueur technique** (Snowflake, Power BI, ETL) et une **vision produit** centrée sur l’impact métier. Pour les SDIS, je m’engage à concevoir des solutions data qui **simplifient les prises de décision opérationnelles** (ex : tableaux de bord temps réel) tout en garantissant leur **fiabilité et leur évolutivité** (architecture Medallion, documentation). Mon expérience en autonomisation des métiers et en collaboration transverse sera un atout pour fédérer les parties prenantes autour du produit."*
+**Message clé** :
+*"Mon profil combine une expertise technique éprouvée (SQL, Snowflake, Power BI) avec une sensibilité produit forte, acquise en concevant des outils data adoptés par les équipes métier. Je cherche à renforcer cette dimension produit en intégrant une équipe où je pourrai contribuer à la fois à la fiabilisation des pipelines data et à l'animation des évolutions produit, tout en capitalisant sur mon expérience en documentation et en alignement métier."*

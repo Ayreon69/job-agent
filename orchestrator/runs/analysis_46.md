@@ -1,89 +1,50 @@
 ## Résumé du matching
-Le profil présente une adéquation partielle avec le poste de **ML Engineer**, marquée par des **points forts concrets** en développement et déploiement de modèles ML/IA générative, ainsi qu’une maîtrise technique solide sur certains outils clés. Voici les éléments les plus pertinents :
+Cette candidature présente un profil technique aligné sur plusieurs exigences clés du poste de **ML Engineer**, avec des réalisations concrètes en **IA appliquée** et **intégration de modèles en production** :
 
-- **Machine Learning appliqué** :
-  - Déploiement d’un **modèle de prédiction de churn en production** (recall 85%), démontrant une compréhension des enjeux métiers et statistiques (source : expérience avec scikit-learn).
-  - Prototypage d’un **assistant interne basé sur l’API Mistral** (interface Gradio), illustrant une capacité à évaluer les compromis architecturaux en IA générative (ex. : contexte vs. retrieval).
-
-- **IA Générative et LLM** :
-  - Expérience pratique avec les **APIs de LLM** (Mistral, Claude) et notions en **RAG** (en cours d’apprentissage avec ChromaDB/Pinecone).
-  - Compréhension des **bases vectorielles** (notions théoriques, sans pratique avancée sur pgvector ou OpenSearch).
-
-- **Développement Python et frameworks** :
-  - Maîtrise de **Python** (pandas, numpy, scikit-learn) en contexte professionnel, avec expérience en **pipelines de données** et automatisation.
-  - Notions en **LangChain/LlamaIndex** (en cours d’apprentissage), sans expertise avancée.
-
-- **Bases de données** :
-  - **SQL avancé** (requêtes complexes, optimisation) et expérience avec **Snowflake**, pertinentes pour la gestion de données structurées.
-
----
+- **Architectures scalables et pipelines data** : Expérience en structuration de pipelines ETL sur **Snowflake** (architecture en couches *staging → core → reporting*), démontrant une maîtrise des bonnes pratiques pour fiabiliser la production à grande échelle (*source : structuration de pipelines ETL sur Snowflake*).
+- **Intégration de modèles ML en production** : Déploiement d’un modèle de **prédiction de churn** chez ECA Assurances (recall de 85%), alimentant des stratégies de fidélisation ciblées (*source : modèle de churn en production*).
+- **IA générative et LLM** : Prototypage d’un assistant interne via l’**API Mistral** (interface Gradio) pour répondre aux questions sur les règles de commission, et utilisation quotidienne de **Claude Code** et de serveurs MCP pour du développement assisté par agent (*source : assistant interne Mistral + usage quotidien de Claude*).
+- **Python et frameworks modernes** : Maîtrise de **Python** (pandas, numpy, scikit-learn) et des écosystèmes **FastAPI/Flask** et **LangChain/LlamaIndex**, avec une expérience professionnelle répétée (*source : projets professionnels en Python*).
+- **Bases de données et SQL avancé** : Expertise en **SQL** (requêtes complexes, optimisation) et expérience avec **Snowflake**, complétée par des notions en bases vectorielles (*ChromaDB, Pinecone*) (*source : maîtrise de Snowflake et SQL avancé*).
 
 ## Gaps et incertitudes
-### Gaps confirmés (compétences absentes)
-Les lacunes suivantes sont **centrales** pour le poste et pourraient impacter la capacité à industrialiser des solutions ML/IA :
+**Gaps confirmés** (compétences absentes dans le profil) :
+- **MLOps et industrialisation** : Aucune expérience avec **MLflow** ou **Kubeflow**, outils centraux pour le suivi et le déploiement de modèles en production.
+- **Déploiement cloud** : Absence de pratique avec **SageMaker, Bedrock, ou Vertex AI** pour le déploiement de modèles personnalisés ou managés.
+- **Orchestration de pipelines** : Expérience limitée à **Snowflake** pour les pipelines ETL, sans utilisation d’outils comme **Airflow, Step Functions, ou Cloud Composer**.
+- **CI/CD et Infrastructure as Code** : Aucune expérience professionnelle avec **GitLab** ou **Terraform**, seulement des notions en **GitHub Actions**.
+- **Conteneurisation** : Notions en **Docker** en cours d’apprentissage, mais pas d’expérience avec **Kubernetes, ECS, ou Cloud Run** en conditions réelles.
 
-- **Cloud et architectures scalables** :
-  - Aucune expérience pratique avec **GCP** ou les plateformes AI/ML dédiées (SageMaker, Bedrock, Vertex AI).
-  - Notions limitées en **AWS/Azure**, sans déploiement en production.
-
-- **MLOps et industrialisation** :
-  - Absence d’expérience avec **MLflow** ou **Kubeflow**.
-  - Expérience limitée aux **pipelines ETL sur Snowflake**, sans industrialisation formelle de modèles.
-
-- **Intégration applicative** :
-  - Notions en **FastAPI** (en cours d’apprentissage), sans pratique concrète.
-  - Aucune mention de **Flask** ou d’intégration de modèles dans des applications web.
-
-- **Orchestration et workflows** :
-  - Aucune expérience avec **Airflow**, **Step Functions**, ou **Cloud Composer**.
-
-- **CI/CD et Infrastructure as Code** :
-  - Notions en **GitHub Actions** (en cours d’apprentissage), sans pratique.
-  - Aucune expérience avec **GitLab** ou **Terraform**.
-
-- **Conteneurisation et déploiement** :
-  - Notions en **Docker** (en cours d’apprentissage), sans pratique.
-  - Aucune expérience avec **Kubernetes** ou les services cloud (ECS, Lambda, Cloud Run).
-
-### Flags incertains (absence de preuve RAG)
-Les éléments suivants n’ont **pas été confirmés** dans le profil, mais leur absence n’est pas non plus attestée :
-- **CI/CD avancé** (GitLab, Terraform).
-- **Conteneurisation** (Docker, Kubernetes, services cloud comme ECS ou Cloud Run).
-
----
+**Flags incertains** (absence de preuve fiable dans le profil, mais pas une absence confirmée) :
+- Déploiement de modèles sur **SageMaker/Bedrock/Vertex AI**.
+- Pratique de **CI/CD avancée** (GitLab, Terraform) ou d’**Infrastructure as Code**.
+- Expérience en **conteneurisation** (Docker, Kubernetes) ou déploiement sur des plateformes cloud (ECS, Cloud Run).
 
 ## Questions d'entretien probables
-1. **ML/IA Générative** :
-   - *"Pouvez-vous détailler les compromis architecturaux que vous avez évalués lors du prototypage de votre assistant interne avec Mistral ?"* (Source : expérience API Mistral + Gradio).
-   - *"Comment avez-vous mesuré la performance de votre modèle de churn (recall 85%) ? Quels ajustements avez-vous apportés en fonction des feedbacks métiers ?"* (Source : modèle de prédiction de churn).
+1. **MLOps et industrialisation** :
+   - *"Comment gérez-vous le versioning et le suivi des modèles en production ? Avez-vous déjà utilisé MLflow ou Kubeflow ?"* (Gap confirmé : absence d’expérience).
+   - *"Quelles stratégies mettriez-vous en place pour monitorer les performances d’un modèle de churn en production, comme celui que vous avez développé chez ECA Assurances ?"* (Angle : expérience existante en intégration de modèles).
 
-2. **Industrialisation et MLOps** :
-   - *"Comment gérez-vous le versioning et le monitoring de vos modèles en production aujourd’hui ?"* (Gap : absence de MLflow/Kubeflow).
-   - *"Quels outils utiliseriez-vous pour orchestrer un pipeline de données incluant du training de modèle et du déploiement ?"* (Gap : orchestration).
+2. **Déploiement cloud et orchestration** :
+   - *"Pouvez-vous décrire un pipeline de déploiement de modèle que vous avez mis en place sur AWS/GCP, en utilisant des outils comme SageMaker ou Vertex AI ?"* (Gap confirmé : pas d’expérience cloud).
+   - *"Comment orchestreriez-vous un pipeline ETL complexe avec Airflow ou Step Functions, en partant de votre expérience sur Snowflake ?"* (Flag incertain : pas de preuve d’expérience avec ces outils).
 
-3. **Cloud et scalabilité** :
-   - *"Avez-vous déjà déployé un modèle ML sur une plateforme cloud (AWS/GCP/Azure) ? Si non, comment aborderiez-vous ce défi ?"* (Gap : cloud public).
-   - *"Quelles stratégies de scalabilité mettriez-vous en place pour un système RAG utilisant des bases vectorielles ?"* (Source : notions ChromaDB/Pinecone).
+3. **IA générative et LLM** :
+   - *"Quels défis avez-vous rencontrés lors du prototypage de votre assistant interne avec Mistral, et comment les avez-vous résolus ?"* (Angle : expérience concrète avec les LLM).
+   - *"Comment évaluez-vous la qualité des réponses d’un RAG, et quels outils utilisez-vous pour améliorer la précision ?"* (Flag incertain : notions en bases vectorielles, mais pas de projet abouti).
 
-4. **Intégration applicative** :
-   - *"Comment intégreriez-vous un modèle LLM dans une application web avec FastAPI ?"* (Gap : FastAPI en cours d’apprentissage).
-
-5. **Bases de données** :
-   - *"Quels sont les défis spécifiques à l’optimisation de requêtes SQL pour des données utilisées en ML ?"* (Source : SQL avancé + Snowflake).
-
----
+4. **Conteneurisation et DevOps** :
+   - *"Avez-vous déjà déployé une application ML en production avec Docker ou Kubernetes ? Si non, comment aborderiez-vous ce défi ?"* (Gap confirmé : notions en Docker, mais pas d’expérience professionnelle).
+   - *"Comment intègreriez-vous un pipeline CI/CD pour un projet ML, en utilisant GitLab ou Terraform ?"* (Gap confirmé : pas d’expérience avec ces outils).
 
 ## Angle de candidature
 **Positionnement** :
-Candidature axée sur **l’expertise métier en ML appliqué et l’agilité en IA générative**, avec une approche pragmatique pour combler les gaps techniques. Mettre en avant :
-- **La valeur immédiate** : Expérience en **déploiement de modèles en production** (churn) et en **prototypage rapide** (assistant Mistral), alignée sur les besoins de solutions opérationnelles.
-- **L’apprentissage proactif** : Notions en **RAG, LangChain, et bases vectorielles** (en cours d’approfondissement), montrant une capacité à monter en compétence sur les technologies émergentes.
-- **La rigueur méthodologique** : Maîtrise de **scikit-learn, SQL avancé, et pipelines de données**, transférable aux enjeux d’industrialisation.
+Mettez en avant votre **expérience opérationnelle en ML appliqué** et votre capacité à **intégrer des modèles en production**, en insistant sur des résultats tangibles (ex. : modèle de churn avec recall de 85%). Soulignez votre **maîtrise des architectures data scalables** (Snowflake, SQL avancé) et votre **familiarité avec les LLM et l’IA générative** (Mistral, Claude), qui sont des atouts différenciants pour des rôles orientés *applications business*.
 
 **Stratégie de réponse aux gaps** :
-- **Cloud/MLOps** : Proposer une **feuille de route concrète** pour se former (ex. : certifications GCP/AWS, projets personnels avec MLflow).
-- **Orchestration** : Souligner l’expérience en **structuration de pipelines ETL** (Snowflake) comme base pour adopter Airflow/Step Functions.
-- **Conteneurisation** : Mentionner les **notions en Docker** comme point de départ pour Kubernetes.
+- **MLOps/Cloud** : Reconnaissez le gap tout en proposant une **approche proactive** pour le combler (ex. : *"Je n’ai pas encore utilisé MLflow en production, mais j’ai étudié son fonctionnement et je suis en train de l’intégrer dans un projet personnel pour me familiariser avec le tracking d’expériences"*).
+- **Orchestration/DevOps** : Mettez en avant votre **expérience avec Snowflake** comme base pour comprendre les principes d’orchestration, et montrez votre volonté d’apprendre des outils comme Airflow (*"Mon expérience avec les pipelines ETL sur Snowflake m’a permis de maîtriser les concepts clés de l’orchestration, et je suis en train d’explorer Airflow pour étendre ces compétences"*).
+- **Conteneurisation** : Valorisez vos **notions en Docker** et votre compréhension des enjeux de déploiement, en proposant une montée en compétences rapide (*"Je connais les bases de Docker et je travaille actuellement sur un projet pour conteneuriser une application FastAPI, afin de me préparer aux défis de déploiement en production"*).
 
 **Message clé** :
-*"Mon profil combine une expertise éprouvée en ML appliqué (modèles en production, compréhension métier) et une curiosité technique pour les outils d’industrialisation. Je recherche un environnement où je pourrais capitaliser sur mon expérience tout en consolidant mes compétences en cloud et MLOps, avec un focus sur des solutions IA générative scalables."*
+*"Mon profil combine une expertise en ML appliqué (modèles en production, intégration business) et une agilité technique pour m’adapter aux outils modernes (LLM, architectures cloud). Bien que je n’aie pas encore d’expérience avec certains outils MLOps ou cloud, ma capacité à livrer des solutions fiables et scalables – comme mon modèle de churn chez ECA Assurances – démontre ma valeur pour des rôles où l’impact opérationnel prime sur la maîtrise exhaustive de toutes les technologies."*

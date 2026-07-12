@@ -33,7 +33,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio et Power Platform] Copilot Studio",
+      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio] Copilot Studio",
       "n_results": 3,
       "results": [
         {
@@ -56,76 +56,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio et Power Platform] Power Platform",
+      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio] agents IA",
       "n_results": 3,
       "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5257,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.6826,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6835,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5257, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio et Power Platform] développement d'agents IA",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4457,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.4773,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.4792,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4457, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio et Power Platform] orchestration d'agents IA",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5692,
-          "source_file": "skills.md"
-        },
         {
           "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5714,
+          "distance": 0.5296,
           "source_file": "geography_rules.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5806,
+          "id": "achievements::agentic_coding",
+          "distance": 0.6128,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6175,
+          "source_file": "constraints.md"
         }
       ],
-      "conclusion": "best_distance=0.5692, match retenu"
+      "conclusion": "best_distance=0.5296, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio et Power Platform] topics",
+      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio] topics",
       "n_results": 3,
       "results": [
         {
@@ -148,7 +102,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio et Power Platform] actions/tools",
+      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio] actions/tools",
       "n_results": 3,
       "results": [
         {
@@ -171,7 +125,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio et Power Platform] Power Automate",
+      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio] orchestration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7062,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7569,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7735,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7062, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio] Power Automate",
       "n_results": 3,
       "results": [
         {
@@ -194,53 +171,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio et Power Platform] gestion du contexte conversationnel",
+      "query": "[Développement et orchestration d'agents IA avec Microsoft Copilot Studio] contexte conversationnel",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.4677,
+          "distance": 0.538,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5522,
+          "id": "skills::skills_langues",
+          "distance": 0.585,
           "source_file": "skills.md"
         },
         {
           "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.5943,
+          "distance": 0.6187,
           "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.4677, match retenu"
+      "conclusion": "best_distance=0.5380, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration des agents IA avec les services et données Microsoft 365 et systèmes métiers] intégration Microsoft 365",
+      "query": "[Intégration des agents IA avec Microsoft 365 et systèmes métiers] Microsoft 365",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.6231,
+          "distance": 0.7081,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.6722,
+          "distance": 0.7597,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7006,
+          "id": "achievements::commission_automation",
+          "distance": 0.7735,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6231, match retenu"
+      "conclusion": "best_distance=0.7081, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration des agents IA avec les services et données Microsoft 365 et systèmes métiers] SharePoint",
+      "query": "[Intégration des agents IA avec Microsoft 365 et systèmes métiers] SharePoint",
       "n_results": 3,
       "results": [
         {
@@ -263,7 +240,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration des agents IA avec les services et données Microsoft 365 et systèmes métiers] Teams",
+      "query": "[Intégration des agents IA avec Microsoft 365 et systèmes métiers] Teams",
       "n_results": 3,
       "results": [
         {
@@ -286,7 +263,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration des agents IA avec les services et données Microsoft 365 et systèmes métiers] Dataverse",
+      "query": "[Intégration des agents IA avec Microsoft 365 et systèmes métiers] Dataverse",
       "n_results": 3,
       "results": [
         {
@@ -309,7 +286,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration des agents IA avec les services et données Microsoft 365 et systèmes métiers] connecteurs",
+      "query": "[Intégration des agents IA avec Microsoft 365 et systèmes métiers] connecteurs",
       "n_results": 3,
       "results": [
         {
@@ -332,7 +309,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration des agents IA avec les services et données Microsoft 365 et systèmes métiers] API",
+      "query": "[Intégration des agents IA avec Microsoft 365 et systèmes métiers] API",
       "n_results": 3,
       "results": [
         {
@@ -355,214 +332,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration des agents IA avec les services et données Microsoft 365 et systèmes métiers] systèmes métiers",
+      "query": "[Intégration des agents IA avec Microsoft 365 et systèmes métiers] intégration systèmes métiers",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.4868,
+          "distance": 0.5111,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.4945,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.4955,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4868, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Mécanismes de fiabilité et amélioration continue des agents IA] grounding",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.722,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.7589,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.7972,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7220, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Mécanismes de fiabilité et amélioration continue des agents IA] tests d'agents IA",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5334,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.5396,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5654,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5334, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Mécanismes de fiabilité et amélioration continue des agents IA] garde-fous",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "constraints::education",
-          "distance": 0.5592,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "geography_rules::rule_uae_middle_east",
-          "distance": 0.6487,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "geography_rules::rule_lyon_no_mobility",
-          "distance": 0.6504,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5592, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Mécanismes de fiabilité et amélioration continue des agents IA] supervision des conversations",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5865,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_nlp_audio",
-          "distance": 0.5898,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.6162,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5865, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Mécanismes de fiabilité et amélioration continue des agents IA] amélioration continue",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5652,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.6346,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6638,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5652, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Mécanismes de fiabilité et amélioration continue des agents IA] POC",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.7758,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.7813,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5275,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.7873,
+          "distance": 0.531,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "aucun match fiable -> flag_uncertain"
+      "conclusion": "best_distance=0.5111, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Mécanismes de fiabilité et amélioration continue des agents IA] itérations",
+      "query": "[Gouvernance, sécurité et conformité des solutions IA] gouvernance des données",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.6566,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4729,
           "source_file": "achievements.md"
         },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6815,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6912,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6566, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gouvernance, sécurité et conformité des solutions IA et Power Platform] gouvernance des agents IA",
-      "n_results": 3,
-      "results": [
         {
           "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.4694,
+          "distance": 0.4871,
           "source_file": "geography_rules.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5465,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5736,
-          "source_file": "achievements.md"
+          "id": "skills::certifications",
+          "distance": 0.5233,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4694, match retenu"
+      "conclusion": "best_distance=0.4729, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Gouvernance, sécurité et conformité des solutions IA et Power Platform] sécurité des agents IA",
+      "query": "[Gouvernance, sécurité et conformité des solutions IA] sécurité des agents IA",
       "n_results": 3,
       "results": [
         {
@@ -585,76 +401,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gouvernance, sécurité et conformité des solutions IA et Power Platform] conformité IA",
+      "query": "[Gouvernance, sécurité et conformité des solutions IA] conformité",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.4826,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_ml",
-          "distance": 0.5752,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5775,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4826, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gouvernance, sécurité et conformité des solutions IA et Power Platform] ALM (Application Lifecycle Management)",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5511,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5641,
-          "source_file": "achievements.md"
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6268,
+          "source_file": "geography_rules.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5674,
+          "distance": 0.6574,
           "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5511, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gouvernance, sécurité et conformité des solutions IA et Power Platform] environnements Power Platform",
-      "n_results": 3,
-      "results": [
+        },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5684,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5784,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6016,
+          "distance": 0.7312,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5684, match retenu"
+      "conclusion": "best_distance=0.6268, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Gouvernance, sécurité et conformité des solutions IA et Power Platform] responsible AI",
+      "query": "[Gouvernance, sécurité et conformité des solutions IA] responsible AI",
       "n_results": 3,
       "results": [
         {
@@ -677,191 +447,145 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Déploiement et industrialisation des solutions IA (ALM, tests, recette, documentation)] déploiement d'agents IA",
+      "query": "[Gouvernance, sécurité et conformité des solutions IA] ALM (Application Lifecycle Management)",
       "n_results": 3,
       "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4707,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4772,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.4858,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4707, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Déploiement et industrialisation des solutions IA (ALM, tests, recette, documentation)] ALM",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6994,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7419,
-          "source_file": "achievements.md"
-        },
         {
           "id": "skills::skills_intermediaires_llm",
-          "distance": 0.742,
+          "distance": 0.5511,
           "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6994, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Déploiement et industrialisation des solutions IA (ALM, tests, recette, documentation)] tests",
-      "n_results": 3,
-      "results": [
+        },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.7049,
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5641,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_gaps_specifiques_cern",
-          "distance": 0.7069,
+          "id": "achievements::churn_model",
+          "distance": 0.5674,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5511, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance, sécurité et conformité des solutions IA] environnements Power Platform",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5684,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5784,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6016,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5684, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies de cadrage et conseil en IA] cadrage fonctionnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5769,
           "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5967,
+          "source_file": "achievements.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.7362,
+          "distance": 0.5972,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.7049, match retenu"
+      "conclusion": "best_distance=0.5769, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Déploiement et industrialisation des solutions IA (ALM, tests, recette, documentation)] recette",
+      "query": "[Méthodologies de cadrage et conseil en IA] ateliers métiers et IT",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6864,
-          "source_file": "achievements.md"
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4951,
+          "source_file": "skills.md"
         },
         {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6908,
-          "source_file": "geography_rules.md"
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5543,
+          "source_file": "skills.md"
         },
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.6911,
+          "distance": 0.5545,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6864, match retenu"
+      "conclusion": "best_distance=0.4951, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Déploiement et industrialisation des solutions IA (ALM, tests, recette, documentation)] stabilisation des solutions",
+      "query": "[Méthodologies de cadrage et conseil en IA] définition de cas d'usage IA",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.5946,
+          "distance": 0.4925,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5374,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5766,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4925, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies de cadrage et conseil en IA] priorisation des cas d'usage",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4052,
+          "source_file": "geography_rules.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.6366,
+          "distance": 0.4195,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7113,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5946, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Déploiement et industrialisation des solutions IA (ALM, tests, recette, documentation)] documentation des solutions",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6007,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6106,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.6128,
+          "id": "achievements::churn_model",
+          "distance": 0.4613,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6007, match retenu"
+      "conclusion": "best_distance=0.4052, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Cadrage fonctionnel et technique des solutions IA Microsoft] cadrage fonctionnel IA",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4692,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.4834,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.49,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4692, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Cadrage fonctionnel et technique des solutions IA Microsoft] cadrage technique IA",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6099,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6249,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.6396,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6099, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Cadrage fonctionnel et technique des solutions IA Microsoft] feuille de route Microsoft",
+      "query": "[Méthodologies de cadrage et conseil en IA] feuille de route Microsoft",
       "n_results": 3,
       "results": [
         {
@@ -884,191 +608,352 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Cadrage fonctionnel et technique des solutions IA Microsoft] cas d'usage IA",
+      "query": "[Méthodologies de cadrage et conseil en IA] conseil en IA",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.4461,
+          "distance": 0.3794,
           "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5284,
-          "source_file": "geography_rules.md"
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4694,
+          "source_file": "skills.md"
         },
         {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5313,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4965,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4461, match retenu"
+      "conclusion": "best_distance=0.3794, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Cadrage fonctionnel et technique des solutions IA Microsoft] enjeux métiers IA",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.3756,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.4319,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.4671,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3756, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Animation d'ateliers métiers et techniques (besoins, démonstrations, formations)] animation d'ateliers",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.553,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.647,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6593,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5530, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Animation d'ateliers métiers et techniques (besoins, démonstrations, formations)] ateliers métiers",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "constraints::education",
-          "distance": 0.5404,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "skills::skills_langues",
-          "distance": 0.5721,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.6217,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5404, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Animation d'ateliers métiers et techniques (besoins, démonstrations, formations)] ateliers IT",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.633,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6341,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.6359,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6330, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Animation d'ateliers métiers et techniques (besoins, démonstrations, formations)] démonstrations IA",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5009,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5905,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5911,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5009, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Animation d'ateliers métiers et techniques (besoins, démonstrations, formations)] formations IA",
+      "query": "[Fiabilité et amélioration continue des agents IA] grounding",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.6222,
+          "distance": 0.722,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6969,
-          "source_file": "skills.md"
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7589,
+          "source_file": "geography_rules.md"
         },
         {
-          "id": "skills::skills_gaps_specifiques_cern",
-          "distance": 0.7179,
-          "source_file": "skills.md"
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7972,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6222, match retenu"
+      "conclusion": "best_distance=0.7220, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Animation d'ateliers métiers et techniques (besoins, démonstrations, formations)] hackathons",
+      "query": "[Fiabilité et amélioration continue des agents IA] tests des agents IA",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5462,
+          "id": "achievements::churn_model",
+          "distance": 0.5336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5579,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5775,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5336, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Fiabilité et amélioration continue des agents IA] garde-fous",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5592,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6487,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6504,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5592, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Fiabilité et amélioration continue des agents IA] supervision des conversations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5865,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5898,
           "source_file": "skills.md"
         },
         {
           "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5642,
+          "distance": 0.6162,
           "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5779,
-          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5462, match retenu"
+      "conclusion": "best_distance=0.5865, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Veille technologique sur l'écosystème Microsoft IA et Power Platform] veille technologique",
+      "query": "[Fiabilité et amélioration continue des agents IA] amélioration continue",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5652,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6346,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5652, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Fiabilité et amélioration continue des agents IA] POC (Proof of Concept)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6865,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6958,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7023,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6865, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Fiabilité et amélioration continue des agents IA] itérations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6566,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6815,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6912,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6566, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et industrialisation des solutions IA] déploiement des agents IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4685,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4833,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4862,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4685, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et industrialisation des solutions IA] environnements Power Platform",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5684,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5784,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6016,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5684, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et industrialisation des solutions IA] qualité des livraisons",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5246,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5817,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6177,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5246, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et industrialisation des solutions IA] tests",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7049,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7069,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7362,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7049, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et industrialisation des solutions IA] recette",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6864,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6908,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6911,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6864, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et industrialisation des solutions IA] stabilisation des solutions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5946,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6366,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7113,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5946, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et industrialisation des solutions IA] documentation des solutions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6007,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6106,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6128,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6007, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et expertise Microsoft IA] veille technologique",
       "n_results": 3,
       "results": [
         {
@@ -1091,7 +976,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Veille technologique sur l'écosystème Microsoft IA et Power Platform] Microsoft 365 Copilot",
+      "query": "[Veille technologique et expertise Microsoft IA] Microsoft 365 Copilot",
       "n_results": 3,
       "results": [
         {
@@ -1114,7 +999,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Veille technologique sur l'écosystème Microsoft IA et Power Platform] Azure AI Foundry",
+      "query": "[Veille technologique et expertise Microsoft IA] Azure AI Foundry",
       "n_results": 3,
       "results": [
         {
@@ -1137,7 +1022,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Veille technologique sur l'écosystème Microsoft IA et Power Platform] Power Platform",
+      "query": "[Veille technologique et expertise Microsoft IA] Power Platform",
       "n_results": 3,
       "results": [
         {
@@ -1160,7 +1045,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Veille technologique sur l'écosystème Microsoft IA et Power Platform] IA agentique",
+      "query": "[Veille technologique et expertise Microsoft IA] IA agentique",
       "n_results": 3,
       "results": [
         {
@@ -1183,7 +1068,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conduite du changement et accompagnement des utilisateurs finaux] conduite du changement",
+      "query": "[Veille technologique et expertise Microsoft IA] écosystème Microsoft",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.646,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6834,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6882,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6460, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conduite du changement et formation] conduite du changement",
       "n_results": 3,
       "results": [
         {
@@ -1206,30 +1114,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conduite du changement et accompagnement des utilisateurs finaux] appropriation des agents IA",
+      "query": "[Conduite du changement et formation] formations",
       "n_results": 3,
       "results": [
         {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5433,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "constraints::education",
-          "distance": 0.5959,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5972,
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7426,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7878,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5433, match retenu"
+      "conclusion": "best_distance=0.7000, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Conduite du changement et accompagnement des utilisateurs finaux] mentorat",
+      "query": "[Conduite du changement et formation] démonstrations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.615,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6746,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7003,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6150, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conduite du changement et formation] hackathons",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5462,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5642,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5779,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5462, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conduite du changement et formation] mentorat",
       "n_results": 3,
       "results": [
         {
@@ -1252,30 +1206,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conduite du changement et accompagnement des utilisateurs finaux] partage d'expertise",
+      "query": "[Conduite du changement et formation] appropriation des agents IA",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5462,
-          "source_file": "skills.md"
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5433,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5959,
+          "source_file": "constraints.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5544,
+          "distance": 0.5972,
           "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5781,
-          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5462, match retenu"
+      "conclusion": "best_distance=0.5433, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Réponse aux appels d'offres et contribution à l'expertise collective IA] réponse aux appels d'offres",
+      "query": "[Réponse aux appels d'offres et cadrage de projets IA] réponse aux appels d'offres",
       "n_results": 3,
       "results": [
         {
@@ -1298,99 +1252,144 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Réponse aux appels d'offres et contribution à l'expertise collective IA] expertise collective IA",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5081,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5085,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5411,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5081, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Réponse aux appels d'offres et contribution à l'expertise collective IA] retours d'expérience projets",
+      "query": "[Réponse aux appels d'offres et cadrage de projets IA] cadrage de projets IA",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.4721,
+          "distance": 0.3971,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5031,
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4291,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.5056,
+          "distance": 0.4534,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4721, match retenu"
+      "conclusion": "best_distance=0.3971, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Réponse aux appels d'offres et contribution à l'expertise collective IA] méthodes IA",
+      "query": "[Réponse aux appels d'offres et cadrage de projets IA] avant-vente",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6302,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6375,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.7225,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6302, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration et partage d'expertise en équipe] partage d'expertise",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.5152,
+          "distance": 0.5462,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5161,
+          "distance": 0.5544,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5174,
-          "source_file": "achievements.md"
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5781,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5152, match retenu"
+      "conclusion": "best_distance=0.5462, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Réponse aux appels d'offres et contribution à l'expertise collective IA] outils IA",
+      "query": "[Collaboration et partage d'expertise en équipe] retours d'expérience",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.4206,
-          "source_file": "skills.md"
+          "id": "achievements::churn_model",
+          "distance": 0.5126,
+          "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4275,
-          "source_file": "skills.md"
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6201,
+          "source_file": "geography_rules.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.4755,
+          "distance": 0.6539,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4206, match retenu"
+      "conclusion": "best_distance=0.5126, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration et partage d'expertise en équipe] amélioration des méthodes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4944,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5006,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5134,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4944, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration et partage d'expertise en équipe] contribution aux offres IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4607,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4799,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4927,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4607, match retenu"
     }
   ],
   "uncertain_flags": [
-    "Intégration des agents IA avec les services et données Microsoft 365 et systèmes métiers",
-    "Mécanismes de fiabilité et amélioration continue des agents IA"
+    "Intégration des agents IA avec Microsoft 365 et systèmes métiers"
   ]
 }

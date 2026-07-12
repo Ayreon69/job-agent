@@ -1,56 +1,77 @@
 ## Résumé du matching
-Cette candidature présente un alignement solide (72/100) avec le poste de **Data Scientist IA**, grâce à des compétences techniques directement applicables et des réalisations concrètes en intelligence artificielle et traitement des données.
+Cette candidature affiche un **matching technique solide (75/100)** pour le poste de **Data Scientist IA**, avec des **réalisations concrètes en production** alignées sur les attentes clés de l’offre :
 
-**Points forts clés** :
-- **Expertise en LLM et génération de texte** : Prototypage d’un assistant interne basé sur l’API Mistral avec gestion d’un contexte de 22 000 tokens, démontrant une maîtrise des compromis techniques (contexte complet vs. retrieval) et une première expérience en production interne (*source : projet assistant Mistral*).
-- **Architectures IA et RAG** : Compréhension théorique des architectures RAG (ChromaDB, Pinecone) et décision éclairée de ne pas les implémenter dans un prototype, illustrant une approche critique des solutions techniques (*source : assistant Mistral + Gradio*).
-- **Développement Python et ML** : Maîtrise professionnelle de Python (pandas, scikit-learn) et déploiement d’un modèle de churn en production avec un recall de 85%, validant des compétences en pipelines de données et modélisation (*source : modèle churn*).
-- **NLP et traitement audio** : Expérience intermédiaire en NLP via un pipeline Whisper pour la transcription audio (projet personnel) et conception d’un assistant interne pour répondre à des questions métier (*source : projet Whisper + assistant Mistral*).
-- **Conception technique** : Structuration de pipelines ETL sur Snowflake (inspirés de l’architecture Medallion) et déploiement de modèles ML, confirmant une capacité à concevoir des solutions scalables (*source : pipelines Snowflake + modèle churn*).
-- **Documentation et analyse** : Rédaction quotidienne de fichiers techniques (CLAUDE.md) pour structurer des projets et vulgarisation de résultats pour des équipes non-techniques (*source : fichiers CLAUDE.md + outils Power BI*).
+- **Prompt Engineering & Génération de texte** :
+  Prototypage d’un assistant interne via l’**API Mistral** (match : *"Prototypage d'un assistant interne basé sur l'API Mistral avec appel API direct et contexte complet"*), démontrant une maîtrise des compromis entre contexte complet et *retrieval*, ainsi qu’une première expérience opérationnelle avec les LLM en environnement professionnel.
+
+- **Architectures RAG et NLP** :
+  Compréhension pratique des **architectures RAG** (match : *"décision consciente de ne pas utiliser RAG pour un prototype interne"*), même si non implémentées, et expérience en **NLP** via un pipeline audio utilisant **Whisper** (match : *"Pipeline NLP audio avec Whisper pour la transcription"*) et le prototypage de l’assistant Mistral.
+
+- **Python & Industrialisation** :
+  Maîtrise professionnelle de **Python** (pandas, numpy, scikit-learn) pour le traitement de données et l’automatisation, avec une **expérience en production** de modèles ML (match : *"modèle de churn prediction en production"*). Automatisation de processus métier réduisant le temps de traitement de **10h à 35min** (match : *"réduction du temps de traitement de 10h à 35min"*).
+
+- **Conception d’architectures IA** :
+  Expérience en **design de pipelines ETL** sur **Snowflake** (inspirés du modèle Medallion) et choix architecturaux délibérés pour l’assistant Mistral (match : *"Architecture de pipelines ETL sur Snowflake"* et *"choix architecturaux délibérés"*).
+
+- **Collaboration Agile & Communication** :
+  Preuve d’une **collaboration efficace avec des parties prenantes non-techniques** via la conception de **tableaux de bord Power BI** adoptés par plusieurs départements (match : *"tableaux de bord Power BI adoptés par l'ensemble des départements"*).
+
+---
 
 ## Gaps et incertitudes
-**Gaps confirmés** :
-- **Méthodologies Agile/Scrum** : Aucune expérience explicite en Agile ou Scrum (Daily, Sprint Planning, Rétrospectives), malgré un travail d’équipe et une résolution de problèmes avérés.
-- **DevOps et déploiement** : Compétences en DevOps (Docker, CI/CD, cloud AWS/Azure) limitées à des notions théoriques, sans déploiement en production (*source : utilisation de serveurs MCP pour projets agentiques*).
-- **Transmission de connaissances** : Aucune expérience formelle en formation ou mentorat technique, bien que la capacité à vulgariser des concepts soit démontrée.
+### Gaps confirmés (compétences absentes) :
+- **DevOps/Cloud en production** :
+  Notions en **Docker, GitHub Actions, CI/CD** et **AWS/Azure**, mais **aucune expérience de déploiement en production** de solutions IA (ex. : intégration continue, monitoring, scaling). L’offre mentionne des attentes en environnement **DevOps/Agile** pour l’industrialisation.
 
-**Flags incertains** :
-- **Méthodologies Agile/Scrum** : Le profil ne mentionne pas explicitement ces méthodologies, mais cette absence n’est pas confirmée (pas de match RAG fiable).
+- **Documentation technique** :
+  **Aucune expérience explicite** de rédaction de documentation technique ou fonctionnelle (au-delà de fichiers `CLAUDE.md` pour structurer des projets).
+
+- **Transmission de connaissances** :
+  **Aucune mention** d’animation de formations ou de partage de connaissances en contexte professionnel (ex. : ateliers, mentoring).
+
+### Flags incertains (absence de preuve, pas une confirmation de gap) :
+*Aucun flag incertain identifié.*
+
+---
 
 ## Questions d'entretien probables
-1. **LLM et architectures** :
-   - *"Vous avez choisi de ne pas implémenter de RAG dans votre prototype Mistral. Pouvez-vous détailler les critères qui ont motivé cette décision, et comment vous évalueriez aujourd’hui cette approche ?"* (*source : assistant Mistral*).
-   - *"Comment gérez-vous les compromis entre taille de contexte et performance dans un système LLM en production ?"* (*source : contexte 22 000 tokens*).
+1. **Prompt Engineering & RAG** :
+   - *"Vous avez choisi de ne pas utiliser RAG pour votre prototype Mistral. Pouvez-vous détailler les critères qui ont motivé ce choix, et comment vous évalueriez aujourd’hui l’opportunité d’intégrer une architecture RAG pour ce type d’usage ?"* (Source : *"décision consciente de ne pas utiliser RAG"*).
+   - *"Quels défis avez-vous rencontrés lors de l’intégration de l’API Mistral en production interne, et comment les avez-vous résolus ?"* (Source : *"appel API direct et contexte complet"*).
 
-2. **Modélisation et ML** :
-   - *"Votre modèle de churn a un recall de 85%. Comment avez-vous justifié ce choix métrique auprès des équipes métier, et quels compromis avez-vous faits ?"* (*source : modèle churn*).
-   - *"Quelles techniques avez-vous utilisées pour optimiser les pipelines ETL sur Snowflake, et quels défis avez-vous rencontrés ?"* (*source : pipelines Snowflake*).
+2. **Industrialisation & Python** :
+   - *"Votre modèle de churn prediction a été déployé en production. Quels outils ou bonnes pratiques avez-vous mis en place pour assurer sa robustesse et sa maintenabilité ?"* (Source : *"modèle de machine learning en production"*).
+   - *"Comment avez-vous structuré votre pipeline ETL sur Snowflake pour garantir la scalabilité et la traçabilité des données ?"* (Source : *"Architecture de pipelines ETL sur Snowflake"*).
 
-3. **NLP et traitement audio** :
-   - *"Quelles limites avez-vous identifiées dans votre pipeline Whisper, et comment les avez-vous adressées ?"* (*source : projet Whisper*).
-   - *"Comment évaluez-vous la qualité des réponses générées par votre assistant interne basé sur Mistral ?"* (*source : assistant Mistral*).
+3. **Collaboration & Communication** :
+   - *"Comment avez-vous aligné vos tableaux de bord Power BI sur les KPIs métier, et quels retours avez-vous reçus des utilisateurs non-techniques ?"* (Source : *"tableaux de bord Power BI adoptés par l'ensemble des départements"*).
 
-4. **Collaboration et méthodologies** :
-   - *"Comment organisez-vous votre travail en équipe sur des projets techniques complexes, en l’absence de méthodologies Agile formalisées ?"* (*gap : Agile/Scrum*).
-   - *"Avez-vous déjà formé des collègues ou des équipes non-techniques à des concepts d’IA ? Si non, comment aborderiez-vous cette mission ?"* (*gap : transmission de connaissances*).
+4. **Gaps identifiés** :
+   - *"L’offre mentionne une attente en déploiement DevOps pour les solutions IA. Pouvez-vous partager une expérience où vous avez contribué à l’industrialisation d’un modèle ou d’un script, même en dehors d’un contexte IA ?"* (Gap : *"aucune expérience de déploiement en production"*).
+   - *"Comment documentez-vous habituellement vos projets techniques, et quels outils utilisez-vous pour faciliter la reprise par d’autres équipes ?"* (Gap : *"aucune expérience explicite de documentation"*).
 
-5. **DevOps et déploiement** :
-   - *"Quels outils ou pratiques utilisez-vous pour déployer vos modèles en production, et quelles améliorations envisageriez-vous ?"* (*gap : DevOps*).
+---
 
 ## Angle de candidature
-**Accroche** :
-*"Data Scientist avec une expertise opérationnelle en LLM et architectures IA, je combine une maîtrise technique des modèles génératifs (Mistral, RAG) et une expérience concrète en déploiement de solutions ML en production. Mon profil allie prototypage rapide (assistant interne Mistral) et rigueur analytique (modèle de churn avec recall 85%), avec une approche pragmatique des compromis techniques. Basé en Rhône-Alpes, je recherche un environnement où je pourrai contribuer à des projets d’IA appliquée, tout en approfondissant mes compétences en méthodologies collaboratives et DevOps."*
+**Positionnement** :
+Candidature **technique et opérationnelle**, mettant en avant une **double expertise en IA générative (Prompt Engineering, RAG) et en industrialisation de modèles**, avec des réalisations tangibles en **production** (churn prediction, automatisation, pipelines ETL). Le profil correspond aux attentes centrales de l’offre, tout en offrant une **approche pragmatique** des architectures IA (ex. : compromis contexte vs. retrieval).
 
-**Valeur ajoutée** :
-- **LLM et innovation** : Expérience directe avec les APIs de LLM (Mistral) et les défis de production (contexte étendu, évaluation des réponses), idéale pour des projets de génération de texte ou d’assistants intelligents.
-- **ML opérationnel** : Modèle de churn déployé en production et pipelines ETL sur Snowflake, démontrant une capacité à livrer des solutions métiers robustes.
-- **Polyvalence technique** : Compétences en NLP (Whisper), automatisation (Playwright), et outils décisionnels (Power BI), permettant d’adresser des problématiques variées (audio, données, visualisation).
+**Points différenciants** :
+1. **Expérience concrète avec les LLM** :
+   Le prototypage de l’assistant Mistral (match : *"prototype interne basé sur l'API Mistral"*) démontre une **capacité à opérer des choix techniques éclairés** (ex. : contexte complet vs. RAG) et à **intégrer des APIs de LLM en environnement professionnel**, un atout rare pour un profil junior/senior.
 
-**Adaptation à l’offre** :
-- Mettre en avant les **projets LLM et RAG** pour répondre à la dimension "IA générative" du poste, en insistant sur la réflexion critique (choix de ne pas utiliser RAG) et l’expérimentation.
-- Souligner la **maîtrise de Python et des pipelines de données** pour les aspects "traitement des données" et "modélisation".
-- Aborder les **gaps en Agile/DevOps** comme des opportunités d’apprentissage, en citant des exemples de collaboration informelle (ex : résolution de problèmes en équipe) pour montrer une adaptabilité aux méthodologies structurées.
+2. **Industrialisation prouvée** :
+   L’automatisation d’un processus métier réduisant le temps de traitement de **10h à 35min** (match : *"réduction du temps de traitement"*) et le déploiement d’un modèle de churn prediction en production soulignent une **approche orientée résultats**, critique pour un poste où l’IA doit délivrer de la valeur métier.
 
-**Ton** :
-Professionnel et technique, avec une emphase sur les **réalisations concrètes** (chiffres, outils, décisions) et une **ouverture aux défis collaboratifs**. Éviter les généralités sur l’IA pour se concentrer sur des cas d’usage précis (ex : assistant Mistral, modèle de churn).
+3. **Collaboration transverse** :
+   La conception de **tableaux de bord Power BI adoptés par plusieurs départements** (match : *"adoptés par l'ensemble des départements"*) prouve une **capacité à traduire des enjeux techniques en outils actionnables** pour des audiences non-techniques, un soft skill clé pour un Data Scientist IA.
+
+**Stratégie de réponse aux gaps** :
+- **DevOps/Cloud** :
+  Mettre en avant les **notions acquises** (Docker, GitHub Actions) et la **volonté d’apprendre** en contexte Agile, en s’appuyant sur l’expérience d’industrialisation existante (ex. : *"Mon expérience en déploiement de modèles de churn prediction m’a familiarisé avec les enjeux de robustesse et de maintenabilité, et je suis motivé pour approfondir les outils DevOps comme Kubernetes ou Terraform"*).
+
+- **Documentation** :
+  Souligner l’utilisation de **fichiers `CLAUDE.md`** pour structurer les projets et proposer une **approche proactive** (ex. : *"Je documente systématiquement mes choix techniques via des fichiers Markdown, et je suis ouvert à adopter des standards comme Sphinx ou Confluence pour formaliser la documentation"*).
+
+**Message clé pour l’employeur** :
+*"Mon profil allie une expertise technique en IA générative (Prompt Engineering, RAG) et une expérience éprouvée en industrialisation de modèles, avec des réalisations concrètes en production. Je sais concevoir des architectures adaptées aux contraintes métier (ex. : compromis contexte vs. retrieval) et collaborer avec des équipes non-techniques pour délivrer des solutions impactantes. Mon ancrage local et ma motivation pour ce poste en font un choix naturel pour contribuer à vos projets dès mon intégration."*

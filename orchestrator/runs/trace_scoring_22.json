@@ -79,26 +79,49 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse statistique et modélisation] statistiques",
+      "query": "[Analyse statistique et modélisation] méthodologies d'analyse",
       "n_results": 3,
       "results": [
         {
-          "id": "constraints::education",
-          "distance": 0.5258,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6218,
+          "id": "achievements::churn_model",
+          "distance": 0.4766,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::certifications",
-          "distance": 0.6402,
-          "source_file": "skills.md"
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5178,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5345,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5258, match retenu"
+      "conclusion": "best_distance=0.4766, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse statistique et modélisation] plan d'analyses",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4433,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.484,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5392,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4433, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -125,26 +148,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Traitement et analyse de données] nettoyage des données",
+      "query": "[Traitement et analyse de données] contrôle des données",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5663,
-          "source_file": "skills.md"
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5032,
+          "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5701,
+          "distance": 0.5249,
           "source_file": "skills.md"
         },
         {
           "id": "skills::certifications",
-          "distance": 0.6008,
+          "distance": 0.5337,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5663, match retenu"
+      "conclusion": "best_distance=0.5032, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -194,76 +217,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Maîtrise des outils de data analysis (R, Python, SAS, SQL)] R",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.7238,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.7262,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_lyon_no_mobility",
-          "distance": 0.7556,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7238, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Maîtrise des outils de data analysis (R, Python, SAS, SQL)] Python",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6692,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.7248,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.7262,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6692, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Maîtrise des outils de data analysis (R, Python, SAS, SQL)] SAS",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.7148,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.7271,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7602,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7148, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Maîtrise des outils de data analysis (R, Python, SAS, SQL)] SQL",
+      "query": "[Maîtrise des outils de data analyse (SQL, Python, R, SAS)] SQL",
       "n_results": 3,
       "results": [
         {
@@ -286,30 +240,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Rédaction de rapports et études techniques] rédaction de rapports",
+      "query": "[Maîtrise des outils de data analyse (SQL, Python, R, SAS)] Python",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5235,
-          "source_file": "achievements.md"
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5326,
-          "source_file": "achievements.md"
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5496,
-          "source_file": "achievements.md"
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5235, match retenu"
+      "conclusion": "best_distance=0.6692, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Rédaction de rapports et études techniques] rédaction d'études",
+      "query": "[Maîtrise des outils de data analyse (SQL, Python, R, SAS)] R",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7238,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7262,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.7556,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7238, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils de data analyse (SQL, Python, R, SAS)] SAS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7148,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7271,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7602,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7148, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de rapports et études] rédaction d'études",
       "n_results": 3,
       "results": [
         {
@@ -332,7 +332,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Rédaction de rapports et études techniques] notes de synthèse",
+      "query": "[Rédaction de rapports et études] rédaction de rapports",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5235,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5326,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5496,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5235, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de rapports et études] notes de synthèse",
       "n_results": 3,
       "results": [
         {
@@ -355,76 +378,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Rédaction de rapports et études techniques] documentation technique",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5417,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5538,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5743,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5417, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Présentation et communication des résultats] présentation orale",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_nlp_audio",
-          "distance": 0.6094,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_langues",
-          "distance": 0.6486,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::whisper_nlp_pipeline",
-          "distance": 0.652,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6094, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Présentation et communication des résultats] communication des résultats",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5486,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.563,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6179,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5486, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Présentation et communication des résultats] supports de présentation",
+      "query": "[Rédaction de rapports et études] supports de présentation",
       "n_results": 3,
       "results": [
         {
@@ -447,72 +401,118 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Problématisation et méthodologie d'analyse] problématisation",
+      "query": "[Communication et présentation des résultats] présentation orale",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5667,
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6094,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6486,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.652,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6094, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et présentation des résultats] communication des résultats",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5486,
           "source_file": "achievements.md"
         },
         {
+          "id": "achievements::churn_model",
+          "distance": 0.563,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6179,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5486, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et présentation des résultats] adaptation au public",
+      "n_results": 3,
+      "results": [
+        {
           "id": "achievements::pricing_tool",
-          "distance": 0.5976,
+          "distance": 0.5699,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5942,
           "source_file": "achievements.md"
         },
         {
           "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6314,
+          "distance": 0.6083,
           "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.5667, match retenu"
+      "conclusion": "best_distance=0.5699, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Problématisation et méthodologie d'analyse] méthodologie d'analyse",
+      "query": "[Gestion de projet et travail collaboratif] travail en équipe",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.4687,
+          "distance": 0.6223,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6245,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5129,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5308,
+          "distance": 0.6359,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4687, match retenu"
+      "conclusion": "best_distance=0.6223, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Problématisation et méthodologie d'analyse] plan d'analyses",
+      "query": "[Gestion de projet et travail collaboratif] collaboration interdisciplinaire",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.4433,
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6146,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.484,
+          "distance": 0.6305,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5392,
+          "id": "achievements::agentic_coding",
+          "distance": 0.6483,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4433, match retenu"
+      "conclusion": "best_distance=0.6146, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -539,49 +539,95 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projet et travail collaboratif] travail d'équipe",
+      "query": "[Problématisation et conception de travaux] compréhension des besoins",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4615,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4734,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5208,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4615, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Problématisation et conception de travaux] identification de problématiques",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.6501,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.658,
+          "distance": 0.5204,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.6593,
+          "distance": 0.6408,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6592,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.6501, match retenu"
+      "conclusion": "best_distance=0.5204, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projet et travail collaboratif] collaboration interdisciplinaire",
+      "query": "[Problématisation et conception de travaux] conception de travaux",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6146,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6305,
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4756,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.6483,
+          "distance": 0.5175,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5303,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.6146, match retenu"
+      "conclusion": "best_distance=0.4756, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Problématisation et conception de travaux] force de proposition",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5333,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5454,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5616,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5333, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -654,6 +700,52 @@
     },
     {
       "step": "requirement_atom",
+      "query": "[Gestion des relations avec les partenaires] communication avec les demandeurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5295,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5512,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.5587,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5295, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des relations avec les partenaires] suivi des partenaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5461,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6002,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6361,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5461, match retenu"
+    },
+    {
+      "step": "requirement_atom",
       "query": "[Connaissance du secteur santé et médico-social] système de santé",
       "n_results": 3,
       "results": [
@@ -720,75 +812,6 @@
         }
       ],
       "conclusion": "best_distance=0.5288, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion des relations avec les partenaires et parties prenantes] communication avec les partenaires",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.5857,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5998,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6327,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5857, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion des relations avec les partenaires et parties prenantes] suivi des demandeurs",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5039,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.5649,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.5669,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5039, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion des relations avec les partenaires et parties prenantes] relation client interne",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.4798,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.4979,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_intermediaires_llm",
-          "distance": 0.5555,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4798, match retenu"
     }
   ],
   "uncertain_flags": []

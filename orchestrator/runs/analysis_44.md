@@ -1,98 +1,76 @@
 ## Résumé du matching
+**Adéquation forte avec les missions clés de l'offre** :
+- **Conception et déploiement de solutions d'IA** : Expérience concrète en prototypage d'un assistant interne basé sur l'API Mistral (architecture simple avec Gradio, choix délibéré de ne pas utiliser de RAG) *(source : prototypage assistant interne)* et déploiement d'un modèle de prédiction de churn en production avec un recall de 85% *(source : déploiement modèle churn)*.
+- **Architecture de systèmes d'IA** : Structuration de pipelines ETL sur Snowflake inspirée d'une architecture Medallion et réflexion sur les compromis architecturaux (contexte complet vs RAG) lors du prototypage de l'assistant interne *(source : prototypage assistant interne)*.
+- **Optimisation de processus métier** : Réduction du temps de traitement des commissions de 10h à 35min via une refonte méthodologique *(source : refonte calcul commissions)* et impact direct du modèle de churn sur les stratégies de fidélisation *(source : déploiement modèle churn)*.
+- **Support technique et réponse aux appels d'offres** : Maîtrise des APIs Mistral/Claude, prototypage de chatbots avec Gradio, et utilisation d'outils agentiques (Claude Code, MCP) *(source : prototypage assistant interne)*. Conception de tableaux de bord Power BI adoptés par des équipes non-techniques *(source : tableaux de bord Power BI)*.
+- **Conseil technique et évaluation de faisabilité** : Justification métier des choix statistiques (recall vs précision) pour le modèle de churn *(source : déploiement modèle churn)* et alignement des solutions (SQL, Python, Power BI) sur les KPIs métier.
+- **Collaboration pluridisciplinaire** : Création d'outils autonomes pour les équipes métier (tarification, ETL Snowflake) *(source : outil tarification autonome)* et adoption transverse des tableaux de bord Power BI *(source : tableaux de bord Power BI)*.
+- **Robustesse et scalabilité** : Déploiement en production du modèle de churn avec justification des choix techniques *(source : déploiement modèle churn)* et réflexion sur les compromis architecturaux pour l'assistant interne *(source : prototypage assistant interne)*.
 
-Ce profil présente une adéquation solide (75/100) avec le poste d'**Ingénieur IA**, grâce à des réalisations concrètes et alignées sur les attentes clés de l'offre :
-
-- **Conception et déploiement de solutions d'IA** :
-  - Prototypage d'un assistant interne basé sur l'API Mistral, déployé en conditions réelles avec une architecture adaptée (appel API direct, interface Gradio). *Source : "Prototypage d'un assistant interne basé sur l'API Mistral avec une architecture simple (appel API direct, interface Gradio) et déploiement en conditions réelles."*
-  - Expérience pratique avec les APIs de LLM en production, démontrant une compréhension des compromis techniques (ex. : contexte complet vs retrieval).
-
-- **Architecture de systèmes d'IA** :
-  - Structuration de pipelines ETL sur Snowflake (organisation en couches proche du modèle Medallion) et fiabilisation de rapports à grande échelle. *Source : "Structuration de pipelines ETL sur Snowflake (organisation en couches proche Medallion)."*
-  - Conception d'une architecture simple pour un assistant interne, adaptée aux contraintes de volume. *Source : "Prototypage d'un assistant interne avec une architecture délibérément simple (sans RAG)."*
-
-- **Optimisation de processus métiers par l'IA** :
-  - Refonte de la méthodologie de calcul des commissions chez ECA Assurances, réduisant le temps de traitement de **10 heures à 35 minutes** avec un impact financier mesurable. *Source : "Refonte de la méthodologie de calcul des commissions [...] réduisant le temps de traitement de 10 heures à 35 minutes."*
-  - Développement d'un **modèle de churn en production** (recall de 85%), intégré dans des stratégies de fidélisation ciblées. *Source : "Développement d'un modèle de churn en production (recall 85%) alimentant des stratégies de fidélisation ciblées."*
-
-- **Support technique et conseil client** :
-  - Conception de tableaux de bord Power BI adoptés par des audiences non-techniques, alignés sur les KPIs métier. *Source : "Conception de tableaux de bord Power BI adoptés par des audiences non-techniques."*
-  - Justification métier des choix techniques (ex. : recall vs précision pour le modèle de churn). *Source : "Développement d'un modèle de churn en production avec justification métier des choix statistiques."*
-
-- **Collaboration pluridisciplinaire** :
-  - Création d'outils de tarification autonomes pour les équipes métier et structuration de pipelines ETL pour fiabiliser la production de rapports. *Source : "Création d'outils de tarification autonomes pour les équipes métier" et "Structuration de pipelines ETL sur Snowflake."*
-
-- **Robustesse et scalabilité** :
-  - Déploiement d'un modèle de churn en production avec une logique métier derrière les métriques. *Source : "Déploiement d'un modèle de churn en production avec recall de 85%, démontrant une capacité à justifier des choix techniques par une logique métier."*
+**Outils et frameworks** :
+- **Langages** : Python (pandas, scikit-learn), SQL.
+- **LLMs et APIs** : Mistral, Claude, Gradio.
+- **Data** : Snowflake, Power BI.
+- **Automatisation** : Outils agentiques (Claude Code, MCP).
 
 ---
 
 ## Gaps et incertitudes
+**Gaps confirmés** :
+- **Veille technologique en IA** : Aucune expérience formalisée de veille, bien que des compétences en prototypage LLM et automatisation (Playwright, scraping) soient présentes.
+- **Gestion de projets IA** : Expérience limitée à des projets techniques autonomes (churn, assistant interne), sans mention de gestion formelle de projets multi-équipes ou de méthodologies (Agile, Scrum).
+- **Déploiement cloud (AWS/Azure)** : Notions uniquement, sans expérience pratique en production.
+- **Architecture RAG complète** : Notions de bases vectorielles (ChromaDB, Pinecone) et évaluation de retrieval, mais pas d'implémentation autonome en production.
+- **FastAPI, Docker, CI/CD** : Compétences en cours d'apprentissage, sans application en conditions réelles.
 
-### Gaps confirmés (compétences absentes) :
-- **Architectures RAG complètes** : Notions théoriques uniquement (ChromaDB, Pinecone), sans expérience pratique en conditions réelles. *Source : "Compétence listée comme 'notions seulement' (ChromaDB, Pinecone, évaluation de retrieval)."*
-- **Déploiement cloud (AWS/Azure)** : Notions sans expérience en production. *Source : "Notions uniquement, sans expérience de déploiement en environnement professionnel."*
-- **Outils DevOps** : FastAPI, Docker, GitHub Actions et CI/CD en cours de formation, non maîtrisés en conditions réelles. *Source : "Compétences en cours de formation, non maîtrisées en conditions réelles."*
-- **Gouvernance formelle des données** : Expérience limitée à la gouvernance technique, sans implication dans des processus formels (comités, chartes). *Source : "Expérience limitée à la gouvernance technique, sans implication dans des processus formels de gouvernance."*
-- **Veille technologique structurée** : Aucune mention d'une veille proactive ou formalisée. *Source : "Aucune mention d'une veille technologique proactive ou formalisée."*
-
-### Flags incertains :
+**Flags incertains** :
 *Aucun flag incertain identifié.*
 
 ---
 
 ## Questions d'entretien probables
+1. **Architecture et choix techniques** :
+   - *"Pourquoi avoir choisi une architecture sans RAG pour votre assistant interne basé sur Mistral ? Quels compromis avez-vous évalués ?"* *(source : prototypage assistant interne)*
+   - *"Comment avez-vous justifié le choix du recall (85%) pour votre modèle de churn en production ? Quels KPIs métier ont guidé cette décision ?"* *(source : déploiement modèle churn)*
 
-1. **Architecture et déploiement** :
-   - *"Vous avez déployé un assistant interne basé sur l'API Mistral sans RAG. Quels compromis techniques avez-vous évalués pour justifier ce choix ? Comment auriez-vous adapté l'architecture si le volume de données avait été 10 fois supérieur ?"*
-   - *"Votre expérience en RAG se limite à des notions théoriques. Comment aborderiez-vous la conception d'une architecture RAG complète pour un cas d'usage client, en tenant compte des contraintes de latence et de coût ?"*
+2. **Collaboration et impact métier** :
+   - *"Comment avez-vous accompagné les équipes non-techniques dans l'adoption de vos tableaux de bord Power BI ? Quels retours avez-vous reçus ?"* *(source : tableaux de bord Power BI)*
+   - *"Pouvez-vous décrire un cas où votre outil de tarification autonome a modifié les processus métier ?"* *(source : outil tarification autonome)*
 
-2. **Optimisation métier** :
-   - *"Votre modèle de churn affiche un recall de 85%. Comment avez-vous justifié ce choix de métrique auprès des équipes métier, et quels compromis avez-vous faits sur la précision ?"*
-   - *"La refonte du calcul des commissions a réduit le temps de traitement de 10h à 35 minutes. Quelles étapes clés ont permis cette optimisation, et quels risques avez-vous identifiés lors du déploiement ?"*
+3. **Optimisation et scalabilité** :
+   - *"Quelles étapes avez-vous suivies pour réduire le temps de traitement des commissions de 10h à 35min ? Quels goulots d'étranglement avez-vous identifiés ?"* *(source : refonte calcul commissions)*
+   - *"Comment envisagez-vous l'évolution de votre modèle de churn pour gérer une augmentation du volume de données ?"* *(source : déploiement modèle churn)*
 
-3. **Collaboration et gouvernance** :
-   - *"Vous avez conçu des tableaux de bord Power BI pour des audiences non-techniques. Comment avez-vous validé leur adoption et leur alignement avec les KPIs métier ?"*
-   - *"Votre expérience en gouvernance des données semble technique. Comment aborderiez-vous la mise en place d'un comité de gouvernance formel avec des parties prenantes non-techniques ?"*
+4. **Gaps et apprentissages** :
+   - *"Quelles méthodes utilisez-vous pour rester à jour sur les avancées en IA, en l'absence de veille formalisée ?"* *(gap : veille technologique)*
+   - *"Avez-vous déjà travaillé sur un projet IA impliquant plusieurs équipes ? Si non, comment aborderiez-vous la gestion d'un tel projet ?"* *(gap : gestion de projets IA)*
+   - *"Quels défis anticipez-vous pour déployer une architecture RAG complète en production ?"* *(gap : architecture RAG)*
 
-4. **Cloud et DevOps** :
-   - *"Vos compétences en cloud et DevOps sont en cours de formation. Comment prioriseriez-vous l'apprentissage de ces outils pour un projet nécessitant un déploiement scalable sur AWS ?"*
-   - *"Avez-vous déjà travaillé avec des pipelines CI/CD ? Si non, comment structureriez-vous un pipeline pour un modèle de machine learning en production ?"*
-
-5. **Veille technologique** :
-   - *"Comment organisez-vous votre veille technologique en IA, et quelles sources utilisez-vous pour rester à jour sur les avancées récentes (ex. : modèles open-source, frameworks) ?"*
+5. **Outils et frameworks** :
+   - *"Quels outils agentiques (ex : Claude Code, MCP) avez-vous utilisés, et pour quels cas d'usage ?"* *(source : prototypage assistant interne)*
+   - *"Comment Snowflake a-t-il été intégré dans vos pipelines ETL ? Quels avantages en avez-vous tirés ?"* *(source : pipelines ETL Snowflake)*
 
 ---
 
 ## Angle de candidature
-
 **Positionnement** :
-Candidat **Ingénieur IA orienté solutions métier**, avec une expertise prouvée en **conception, déploiement et optimisation de solutions d'IA appliquées aux processus critiques** (churn, commissions, tarification). Mon profil combine :
-- Une **approche pragmatique** : déploiement d'outils en production (modèle de churn, assistant interne) avec une logique métier derrière les choix techniques.
-- Une **double compétence** : maîtrise des outils data (Python, SQL, Snowflake, Power BI) et capacité à collaborer avec des équipes pluridisciplinaires (ex. : outils de tarification autonomes pour les métiers).
-- Une **culture de l'impact** : réduction de 90% du temps de traitement pour le calcul des commissions, ou intégration d'un modèle de churn dans des stratégies de fidélisation.
+Candidat **ingénieur IA orienté solutions métier**, avec une double expertise en **prototypage rapide de solutions LLM** (APIs Mistral/Claude, Gradio) et en **déploiement de modèles en production** (churn, optimisation de processus). Votre profil se distingue par :
+- Une **approche pragmatique** : Capacité à évaluer les compromis techniques (ex : contexte complet vs RAG) et à aligner les solutions sur les KPIs métier (recall de 85% pour le churn, réduction des temps de traitement).
+- Une **collaboration transverse** : Expérience avérée dans la conception d'outils adoptés par des équipes non-techniques (Power BI, outil de tarification) et la structuration de pipelines data (Snowflake).
+- Une **séniorité technique** : Maîtrise des outils clés (Python, SQL, Power BI) et des frameworks LLM, avec une réflexion sur la robustesse et la scalabilité des solutions.
 
-**Points différenciants** :
-1. **Expérience terrain en production** :
-   - Déploiement d'un modèle de churn avec recall de 85%, justifié par des besoins métier (ex. : priorité à la détection des clients à risque).
-   - Prototypage d'un assistant interne basé sur Mistral, déployé en conditions réelles avec une architecture adaptée aux contraintes de volume.
+**Accroche pour la lettre/entretien** :
+*"Mon expérience en prototypage d'assistants internes (Mistral, Gradio) et en déploiement de modèles de churn en production m'a appris à concilier innovation technique et impact métier. Par exemple, en réduisant le temps de traitement des commissions de 10h à 35min, j'ai pu démontrer que l'IA n'est pas qu'une question de modèles, mais de processus optimisés et d'adoption par les équipes. Votre recherche d'un ingénieur IA capable de conseiller les métiers et de déployer des solutions scalables résonne avec ma pratique : transformer des prototypes en outils opérationnels, tout en évaluant en amont leur faisabilité technique et leur valeur business."*
 
-2. **Optimisation de processus métiers** :
-   - Refonte du calcul des commissions chez ECA Assurances, avec un gain de temps significatif (10h → 35 min) et une élimination des coûts de licence.
-   - Conception de tableaux de bord Power BI adoptés à l'échelle de l'entreprise, alignés sur les KPIs métier.
+**Points à mettre en avant** :
+1. **Prototypage LLM** : Insister sur la **réflexion architecturale** (choix de ne pas utiliser RAG) et l'utilisation d'outils agentiques (Claude Code, MCP) pour accélérer le développement.
+2. **Impact métier** : Souligner les **résultats concrets** (réduction des temps de traitement, recall du modèle de churn) et l'adoption des outils par les équipes (Power BI, outil de tarification).
+3. **Collaboration** : Mettre en avant la **création d'outils autonomes** pour les métiers et la structuration de pipelines data (Snowflake) comme preuves de votre capacité à travailler avec des profils non-techniques.
+4. **Gestion des gaps** : Pour les compétences manquantes (RAG, cloud), proposer une **approche proactive** :
+   - *"Je me forme actuellement à FastAPI et Docker pour renforcer mes compétences en déploiement, et j'envisage de tester une architecture RAG complète sur un cas d'usage interne pour valider sa scalabilité."*
 
-3. **Architecture data scalable** :
-   - Structuration de pipelines ETL sur Snowflake (modèle Medallion) pour fiabiliser la production de rapports à grande échelle.
-
-**Réponse aux gaps** :
-- **RAG/Cloud/DevOps** : En cours de montée en compétences sur ces sujets, avec une approche structurée (ex. : formation ciblée sur FastAPI/Docker pour compléter mon expertise en déploiement).
-- **Gouvernance formelle** : Expérience en gouvernance technique (ex. : pipelines ETL), que je souhaite étendre aux processus formels (comités, chartes).
-
-**Alignement avec l'offre** :
-Mon profil correspond aux attentes d'un poste d'Ingénieur IA axé sur :
-- La **conception de solutions d'IA** (ex. : assistant interne, modèle de churn).
-- L'**optimisation de processus métiers** (ex. : commissions, fidélisation).
-- La **collaboration pluridisciplinaire** (ex. : outils pour les équipes métier, tableaux de bord Power BI).
-- La **robustesse des déploiements** (ex. : modèle de churn en production, pipelines ETL fiabilisés).
-
-*Exemple de phrase d'accroche pour la lettre de motivation* :
-*"Chez ECA Assurances, j'ai réduit de 90% le temps de traitement des commissions en refondant la méthodologie de calcul, tout en éliminant les coûts de licence. Cette expérience illustre ma capacité à concevoir des solutions d'IA pragmatiques, alignées sur les enjeux métier et déployées en production. Je souhaite mettre cette approche au service de [Nom de l'Entreprise] pour développer des outils d'IA robustes et scalables, au service de vos processus critiques."*
+**Ton** :
+- **Confiant mais humble** : Mettre en avant vos réalisations sans sur-vendre vos compétences (ex : reconnaître les limites sur RAG ou le cloud).
+- **Orienté solutions** : Montrer que vous comprenez les enjeux métier autant que les défis techniques.
+- **Local** : Ancrer votre candidature dans le contexte rhônalpin comme un choix professionnel assumé, avec une connaissance des acteurs locaux si possible (ex : écosystème data/IA de Lyon).

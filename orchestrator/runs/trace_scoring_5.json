@@ -33,49 +33,49 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et maintenance d'entrepôts de données décisionnels] conception entrepôts de données",
+      "query": "[Conception et maintenance d'entrepôts de données décisionnels] conception d'entrepôts de données",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.4027,
+          "distance": 0.4018,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::mistral_chatbot",
-          "distance": 0.4284,
+          "distance": 0.4328,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.4484,
+          "distance": 0.438,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4027, match retenu"
+      "conclusion": "best_distance=0.4018, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et maintenance d'entrepôts de données décisionnels] maintenance entrepôts de données",
+      "query": "[Conception et maintenance d'entrepôts de données décisionnels] maintenance d'entrepôts de données",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.4935,
+          "distance": 0.497,
           "source_file": "skills.md"
         },
         {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.5327,
+          "distance": 0.5318,
           "source_file": "skills.md"
         },
         {
-          "id": "skills::certifications",
-          "distance": 0.5504,
-          "source_file": "skills.md"
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5464,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.4935, match retenu"
+      "conclusion": "best_distance=0.4970, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -102,26 +102,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et maintenance d'entrepôts de données décisionnels] optimisation entrepôts de données",
+      "query": "[Conception et maintenance d'entrepôts de données décisionnels] optimisation décisionnelle",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.4895,
-          "source_file": "skills.md"
+          "id": "achievements::churn_model",
+          "distance": 0.4589,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4731,
+          "source_file": "achievements.md"
         },
         {
           "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5234,
+          "distance": 0.5451,
           "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.5498,
-          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4895, match retenu"
+      "conclusion": "best_distance=0.4589, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -332,26 +332,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et maintenance d'indicateurs et tableaux de bord] conception indicateurs",
+      "query": "[Conception et maintenance d'indicateurs et tableaux de bord] indicateurs métier",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.4666,
-          "source_file": "achievements.md"
-        },
-        {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.4985,
+          "distance": 0.4266,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5473,
+          "id": "achievements::churn_model",
+          "distance": 0.4556,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4796,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.4666, match retenu"
+      "conclusion": "best_distance=0.4266, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -378,26 +378,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et maintenance d'indicateurs et tableaux de bord] maintenance indicateurs",
+      "query": "[Conception et maintenance d'indicateurs et tableaux de bord] visualisation de données",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.558,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5807,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::certifications",
+          "id": "skills::skills_notions_seulement",
           "distance": 0.6191,
           "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6351,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5580, match retenu"
+      "conclusion": "best_distance=0.6191, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -424,30 +424,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et maintenance d'indicateurs et tableaux de bord] reporting décisionnel",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4944,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5167,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5191,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4944, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Versioning et maintenance d'applications décisionnelles] versioning",
+      "query": "[Gestion de version et maintenance de produits décisionnels] versioning",
       "n_results": 3,
       "results": [
         {
@@ -470,72 +447,72 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Versioning et maintenance d'applications décisionnelles] maintenance applicative",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5299,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5762,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::commission_automation",
-          "distance": 0.5993,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5299, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Versioning et maintenance d'applications décisionnelles] gestion de version",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5001,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5009,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5412,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5001, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Versioning et maintenance d'applications décisionnelles] produit décisionnel",
+      "query": "[Gestion de version et maintenance de produits décisionnels] maintenance produit",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.3797,
+          "distance": 0.565,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.3939,
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5805,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5957,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5650, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de version et maintenance de produits décisionnels] applications décisionnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.433,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.4161,
+          "distance": 0.4374,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4412,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4330, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de version et maintenance de produits décisionnels] gestion de cycle de vie produit",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.451,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5287,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.542,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.3797, match retenu"
+      "conclusion": "best_distance=0.4510, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -585,26 +562,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Rédaction de documentations technico-fonctionnelles] rédaction de documentation",
+      "query": "[Rédaction de documentations technico-fonctionnelles] rédaction de spécifications",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.4664,
+          "distance": 0.4756,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5115,
-          "source_file": "skills.md"
+          "id": "achievements::pricing_tool",
+          "distance": 0.4821,
+          "source_file": "achievements.md"
         },
         {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5286,
-          "source_file": "achievements.md"
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.4982,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.4664, match retenu"
+      "conclusion": "best_distance=0.4756, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -654,26 +631,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Support technique et fonctionnel] assistance technique",
+      "query": "[Support technique et fonctionnel] assistance utilisateur",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5646,
-          "source_file": "skills.md"
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4853,
+          "source_file": "achievements.md"
         },
         {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5686,
+          "id": "achievements::agentic_coding",
+          "distance": 0.5093,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_intermediaires_llm",
-          "distance": 0.579,
+          "distance": 0.5151,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5646, match retenu"
+      "conclusion": "best_distance=0.4853, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -700,26 +677,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec les Product Owners (PO) et équipes techniques] travail en équipe",
+      "query": "[Collaboration avec les Product Owners (PO) et équipes techniques] travail d'équipe",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.6223,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6245,
+          "distance": 0.6501,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.6359,
+          "distance": 0.658,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6593,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6223, match retenu"
+      "conclusion": "best_distance=0.6501, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -746,53 +723,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec les Product Owners (PO) et équipes techniques] agilité",
+      "query": "[Collaboration avec les Product Owners (PO) et équipes techniques] alignement métier",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5955,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6736,
-          "source_file": "skills.md"
-        },
-        {
           "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.688,
+          "distance": 0.5919,
           "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6002,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6163,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5955, match retenu"
+      "conclusion": "best_distance=0.5919, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils et processus internes (amélioration continue)] amélioration des processus",
+      "query": "[Amélioration des outils et processus internes] optimisation des processus",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::commission_automation",
-          "distance": 0.4003,
+          "distance": 0.3833,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.4602,
+          "distance": 0.5157,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5018,
-          "source_file": "skills.md"
+          "id": "achievements::pricing_tool",
+          "distance": 0.5163,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4003, match retenu"
+      "conclusion": "best_distance=0.3833, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils et processus internes (amélioration continue)] outils internes",
+      "query": "[Amélioration des outils et processus internes] amélioration continue",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5652,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6346,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5652, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration des outils et processus internes] outils internes",
       "n_results": 3,
       "results": [
         {
@@ -815,26 +815,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils et processus internes (amélioration continue)] optimisation des outils",
+      "query": "[Amélioration des outils et processus internes] best practices",
       "n_results": 3,
       "results": [
         {
+          "id": "achievements::churn_model",
+          "distance": 0.5681,
+          "source_file": "achievements.md"
+        },
+        {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.4686,
+          "distance": 0.5703,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.5165,
+          "distance": 0.5893,
           "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5205,
-          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4686, match retenu"
+      "conclusion": "best_distance=0.5681, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -884,26 +884,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[SQL et bases de données relationnelles] requêtage SQL",
+      "query": "[SQL et bases de données relationnelles] requêtage",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.3276,
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5985,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6405,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5929,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.6862,
-          "source_file": "achievements.md"
+          "id": "constraints::notice_period",
+          "distance": 0.6409,
+          "source_file": "constraints.md"
         }
       ],
-      "conclusion": "best_distance=0.3276, match retenu"
+      "conclusion": "best_distance=0.5985, match retenu"
     }
   ],
   "uncertain_flags": []

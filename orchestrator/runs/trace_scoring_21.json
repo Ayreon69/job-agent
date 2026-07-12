@@ -424,7 +424,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeu] tests A/B",
+      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeux] tests A/B",
       "n_results": 3,
       "results": [
         {
@@ -447,7 +447,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeu] conception de tests",
+      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeux] conception de tests",
       "n_results": 3,
       "results": [
         {
@@ -470,7 +470,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeu] interprétation de tests",
+      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeux] interprétation de tests",
       "n_results": 3,
       "results": [
         {
@@ -493,53 +493,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeu] fonctionnalités de jeu",
+      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeux] fonctionnalités de jeux",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.6029,
+          "distance": 0.6083,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.6282,
+          "distance": 0.6518,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_intermediaires_llm",
-          "distance": 0.6545,
+          "distance": 0.6692,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.6029, match retenu"
+      "conclusion": "best_distance=0.6083, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeu] mises à jour de jeu",
+      "query": "[Conception et interprétation des tests A/B pour les fonctionnalités et mises à jour de jeux] mises à jour de jeux",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.6109,
+          "distance": 0.6449,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.6683,
+          "distance": 0.7011,
           "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6811,
-          "source_file": "geography_rules.md"
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7139,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.6109, match retenu"
+      "conclusion": "best_distance=0.6449, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse des feedbacks joueurs] NLP",
+      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse de feedbacks joueurs à grande échelle] NLP",
       "n_results": 3,
       "results": [
         {
@@ -562,7 +562,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse des feedbacks joueurs] pipelines NLP",
+      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse de feedbacks joueurs à grande échelle] pipelines NLP",
       "n_results": 3,
       "results": [
         {
@@ -585,7 +585,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse des feedbacks joueurs] collecte de feedbacks",
+      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse de feedbacks joueurs à grande échelle] collecte de feedbacks",
       "n_results": 3,
       "results": [
         {
@@ -608,7 +608,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse des feedbacks joueurs] traitement de feedbacks",
+      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse de feedbacks joueurs à grande échelle] traitement de feedbacks",
       "n_results": 3,
       "results": [
         {
@@ -631,7 +631,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse des feedbacks joueurs] analyse de feedbacks",
+      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse de feedbacks joueurs à grande échelle] analyse de feedbacks",
       "n_results": 3,
       "results": [
         {
@@ -654,7 +654,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Modélisation de l'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs] analyse de sentiment",
+      "query": "[Pipelines NLP pour la collecte, le traitement et l'analyse de feedbacks joueurs à grande échelle] grande échelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6526,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6892,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6956,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6526, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation d'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs] analyse de sentiment",
       "n_results": 3,
       "results": [
         {
@@ -677,30 +700,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Modélisation de l'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs] modélisation de sentiment",
+      "query": "[Modélisation d'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs] modélisation",
       "n_results": 3,
       "results": [
         {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5605,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6301,
+          "source_file": "achievements.md"
+        },
+        {
           "id": "achievements::churn_model",
-          "distance": 0.639,
+          "distance": 0.6433,
           "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.7309,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.7401,
-          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.6390, match retenu"
+      "conclusion": "best_distance=0.5605, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Modélisation de l'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs] suivi des tendances",
+      "query": "[Modélisation d'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs] suivi des tendances",
       "n_results": 3,
       "results": [
         {
@@ -723,7 +746,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Modélisation de l'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs] satisfaction des joueurs",
+      "query": "[Modélisation d'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs] satisfaction des joueurs",
       "n_results": 3,
       "results": [
         {
@@ -746,7 +769,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Utilisation de LLMs et GenAI pour la synthèse et la classification des feedbacks] LLMs",
+      "query": "[Utilisation de LLMs et GenAI pour la synthèse et la classification de feedbacks] LLMs",
       "n_results": 3,
       "results": [
         {
@@ -769,7 +792,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Utilisation de LLMs et GenAI pour la synthèse et la classification des feedbacks] GenAI",
+      "query": "[Utilisation de LLMs et GenAI pour la synthèse et la classification de feedbacks] GenAI",
       "n_results": 3,
       "results": [
         {
@@ -792,7 +815,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Utilisation de LLMs et GenAI pour la synthèse et la classification des feedbacks] synthèse de feedbacks",
+      "query": "[Utilisation de LLMs et GenAI pour la synthèse et la classification de feedbacks] synthèse de feedbacks",
       "n_results": 3,
       "results": [
         {
@@ -815,7 +838,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Utilisation de LLMs et GenAI pour la synthèse et la classification des feedbacks] classification de feedbacks",
+      "query": "[Utilisation de LLMs et GenAI pour la synthèse et la classification de feedbacks] classification de feedbacks",
       "n_results": 3,
       "results": [
         {
@@ -838,7 +861,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Utilisation de Snowflake et Microsoft Fabric pour l'analyse de données et le développement de modèles] Snowflake",
+      "query": "[Gestion et analyse de données avec Snowflake et Microsoft Fabric] Snowflake",
       "n_results": 3,
       "results": [
         {
@@ -861,7 +884,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Utilisation de Snowflake et Microsoft Fabric pour l'analyse de données et le développement de modèles] Microsoft Fabric",
+      "query": "[Gestion et analyse de données avec Snowflake et Microsoft Fabric] Microsoft Fabric",
       "n_results": 3,
       "results": [
         {
@@ -884,7 +907,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Utilisation de Snowflake et Microsoft Fabric pour l'analyse de données et le développement de modèles] analyse de données",
+      "query": "[Gestion et analyse de données avec Snowflake et Microsoft Fabric] gestion de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4477,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4543,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4649,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4477, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et analyse de données avec Snowflake et Microsoft Fabric] analyse de données",
       "n_results": 3,
       "results": [
         {
@@ -907,30 +953,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Utilisation de Snowflake et Microsoft Fabric pour l'analyse de données et le développement de modèles] développement de modèles",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.4623,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5203,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5363,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4623, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Création de tableaux de bord automatisés et rapports avec Power BI et Microsoft Fabric] Power BI",
+      "query": "[Création de tableaux de bord et rapports automatisés avec Power BI et Microsoft Fabric] Power BI",
       "n_results": 3,
       "results": [
         {
@@ -953,7 +976,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Création de tableaux de bord automatisés et rapports avec Power BI et Microsoft Fabric] tableaux de bord automatisés",
+      "query": "[Création de tableaux de bord et rapports automatisés avec Power BI et Microsoft Fabric] tableaux de bord automatisés",
       "n_results": 3,
       "results": [
         {
@@ -976,30 +999,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Création de tableaux de bord automatisés et rapports avec Power BI et Microsoft Fabric] rapports",
+      "query": "[Création de tableaux de bord et rapports automatisés avec Power BI et Microsoft Fabric] rapports automatisés",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5934,
-          "source_file": "achievements.md"
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.375,
+          "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.5985,
+          "distance": 0.4656,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.6177,
+          "id": "achievements::commission_automation",
+          "distance": 0.4696,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5934, match retenu"
+      "conclusion": "best_distance=0.3750, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Création de tableaux de bord automatisés et rapports avec Power BI et Microsoft Fabric] visualisation de données",
+      "query": "[Création de tableaux de bord et rapports automatisés avec Power BI et Microsoft Fabric] visualisation de données",
       "n_results": 3,
       "results": [
         {
@@ -1019,10 +1042,33 @@
         }
       ],
       "conclusion": "best_distance=0.6191, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création de tableaux de bord et rapports automatisés avec Power BI et Microsoft Fabric] Microsoft Fabric",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7118,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7209,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7291,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7118, match retenu"
     }
   ],
   "uncertain_flags": [
-    "Modélisation de l'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs",
-    "Utilisation de LLMs et GenAI pour la synthèse et la classification des feedbacks"
+    "Modélisation d'analyse de sentiment pour le suivi des tendances de satisfaction des joueurs",
+    "Utilisation de LLMs et GenAI pour la synthèse et la classification de feedbacks"
   ]
 }

@@ -33,7 +33,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Python pour la data science (pandas, numpy, scikit-learn, matplotlib, etc.)] Python",
+      "query": "[Python pour la data science (pandas, numpy, scikit-learn, matplotlib)] Python",
       "n_results": 3,
       "results": [
         {
@@ -56,7 +56,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Python pour la data science (pandas, numpy, scikit-learn, matplotlib, etc.)] pandas",
+      "query": "[Python pour la data science (pandas, numpy, scikit-learn, matplotlib)] pandas",
       "n_results": 3,
       "results": [
         {
@@ -79,7 +79,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Python pour la data science (pandas, numpy, scikit-learn, matplotlib, etc.)] numpy",
+      "query": "[Python pour la data science (pandas, numpy, scikit-learn, matplotlib)] numpy",
       "n_results": 3,
       "results": [
         {
@@ -102,7 +102,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Python pour la data science (pandas, numpy, scikit-learn, matplotlib, etc.)] scikit-learn",
+      "query": "[Python pour la data science (pandas, numpy, scikit-learn, matplotlib)] scikit-learn",
       "n_results": 3,
       "results": [
         {
@@ -125,7 +125,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Python pour la data science (pandas, numpy, scikit-learn, matplotlib, etc.)] matplotlib",
+      "query": "[Python pour la data science (pandas, numpy, scikit-learn, matplotlib)] matplotlib",
       "n_results": 3,
       "results": [
         {
@@ -493,6 +493,52 @@
     },
     {
       "step": "requirement_atom",
+      "query": "[Analyse et traitement de données à grande volumétrie] traitement de données volumineuses",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4468,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4822,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5192,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4468, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et traitement de données à grande volumétrie] analyse de données massives",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5479,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5643,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5794,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5479, match retenu"
+    },
+    {
+      "step": "requirement_atom",
       "query": "[Collecte et formalisation des besoins métiers] recueil des besoins métiers",
       "n_results": 3,
       "results": [
@@ -516,95 +562,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collecte et formalisation des besoins métiers] formalisation des besoins métiers",
+      "query": "[Collecte et formalisation des besoins métiers] formalisation des besoins",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.3944,
+          "distance": 0.4342,
           "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.4248,
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.4913,
           "source_file": "geography_rules.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.4764,
-          "source_file": "achievements.md"
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5331,
+          "source_file": "geography_rules.md"
         }
       ],
-      "conclusion": "best_distance=0.3944, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Analyse et traitement de données volumineuses (IoT, systèmes distribués)] traitement de données volumineuses",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.4468,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4822,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5192,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4468, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Analyse et traitement de données volumineuses (IoT, systèmes distribués)] IoT",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6089,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6337,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6477,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6089, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Analyse et traitement de données volumineuses (IoT, systèmes distribués)] systèmes distribués",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.559,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6202,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6416,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5590, match retenu"
+      "conclusion": "best_distance=0.4342, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -654,95 +631,49 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Autonomie, rigueur et organisation en gestion de projets data] autonomie",
+      "query": "[Analyse et synthèse de données complexes] esprit d'analyse",
       "n_results": 3,
       "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5739,
+          "source_file": "achievements.md"
+        },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.5714,
+          "distance": 0.6306,
           "source_file": "achievements.md"
         },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.634,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.6424,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5714, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Autonomie, rigueur et organisation en gestion de projets data] rigueur",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "constraints::education",
-          "distance": 0.6892,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.6965,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.7063,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6892, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Autonomie, rigueur et organisation en gestion de projets data] organisation",
-      "n_results": 3,
-      "results": [
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.6156,
+          "distance": 0.6586,
           "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5739, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et synthèse de données complexes] synthèse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4831,
+          "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.6183,
+          "distance": 0.5281,
           "source_file": "achievements.md"
         },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.6591,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6156, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Autonomie, rigueur et organisation en gestion de projets data] gestion de projets data",
-      "n_results": 3,
-      "results": [
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.449,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.4517,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.4913,
+          "distance": 0.5306,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4490, match retenu"
+      "conclusion": "best_distance=0.4831, match retenu"
     }
   ],
   "uncertain_flags": [

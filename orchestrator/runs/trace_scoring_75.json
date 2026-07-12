@@ -33,7 +33,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Maîtrise d'Excel avancé (formules complexes, tableaux croisés dynamiques, macros)] Excel",
+      "query": "[Excel avancé (formules complexes, tableaux croisés dynamiques, macros)] Excel",
       "n_results": 3,
       "results": [
         {
@@ -56,7 +56,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Maîtrise d'Excel avancé (formules complexes, tableaux croisés dynamiques, macros)] formules complexes Excel",
+      "query": "[Excel avancé (formules complexes, tableaux croisés dynamiques, macros)] formules complexes Excel",
       "n_results": 3,
       "results": [
         {
@@ -79,7 +79,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Maîtrise d'Excel avancé (formules complexes, tableaux croisés dynamiques, macros)] tableaux croisés dynamiques",
+      "query": "[Excel avancé (formules complexes, tableaux croisés dynamiques, macros)] tableaux croisés dynamiques",
       "n_results": 3,
       "results": [
         {
@@ -102,7 +102,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Maîtrise d'Excel avancé (formules complexes, tableaux croisés dynamiques, macros)] macros Excel",
+      "query": "[Excel avancé (formules complexes, tableaux croisés dynamiques, macros)] macros Excel",
       "n_results": 3,
       "results": [
         {
@@ -125,7 +125,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de manipulation, modélisation et visualisation de données (Power Query, Power Pivot, Power BI, Tableau, Alteryx)] Power Query",
+      "query": "[Outils de manipulation et de modélisation de données (Power Query, Power Pivot, Alteryx)] Power Query",
       "n_results": 3,
       "results": [
         {
@@ -148,7 +148,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de manipulation, modélisation et visualisation de données (Power Query, Power Pivot, Power BI, Tableau, Alteryx)] Power Pivot",
+      "query": "[Outils de manipulation et de modélisation de données (Power Query, Power Pivot, Alteryx)] Power Pivot",
       "n_results": 3,
       "results": [
         {
@@ -171,53 +171,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de manipulation, modélisation et visualisation de données (Power Query, Power Pivot, Power BI, Tableau, Alteryx)] Power BI",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.3422,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::b2b_outreach_automation",
-          "distance": 0.6163,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.6182,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3422, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Outils de manipulation, modélisation et visualisation de données (Power Query, Power Pivot, Power BI, Tableau, Alteryx)] Tableau",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6788,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6989,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.7164,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6788, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Outils de manipulation, modélisation et visualisation de données (Power Query, Power Pivot, Power BI, Tableau, Alteryx)] Alteryx",
+      "query": "[Outils de manipulation et de modélisation de données (Power Query, Power Pivot, Alteryx)] Alteryx",
       "n_results": 3,
       "results": [
         {
@@ -240,30 +194,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de manipulation, modélisation et visualisation de données (Power Query, Power Pivot, Power BI, Tableau, Alteryx)] visualisation de données",
+      "query": "[Outils de manipulation et de modélisation de données (Power Query, Power Pivot, Alteryx)] manipulation de données",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6191,
-          "source_file": "skills.md"
-        },
-        {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.6205,
+          "distance": 0.4995,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.6351,
+          "id": "achievements::churn_model",
+          "distance": 0.5495,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5735,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.6191, match retenu"
+      "conclusion": "best_distance=0.4995, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de manipulation, modélisation et visualisation de données (Power Query, Power Pivot, Power BI, Tableau, Alteryx)] modélisation de données",
+      "query": "[Outils de manipulation et de modélisation de données (Power Query, Power Pivot, Alteryx)] modélisation de données",
       "n_results": 3,
       "results": [
         {
@@ -286,26 +240,72 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de manipulation, modélisation et visualisation de données (Power Query, Power Pivot, Power BI, Tableau, Alteryx)] manipulation de données",
+      "query": "[Outils de data visualisation (Power BI, Tableau)] Power BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.3422,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6163,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6182,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3422, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de data visualisation (Power BI, Tableau)] Tableau",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6788,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6989,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7164,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6788, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de data visualisation (Power BI, Tableau)] data visualisation",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4995,
+          "distance": 0.6213,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5495,
-          "source_file": "achievements.md"
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6315,
+          "source_file": "skills.md"
         },
         {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5735,
+          "id": "skills::certifications",
+          "distance": 0.643,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.4995, match retenu"
+      "conclusion": "best_distance=0.6213, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -332,49 +332,49 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse de données transactionnelles et axes de rentabilité] analyse de rentabilité",
+      "query": "[Analyse de données transactionnelles et axes de rentabilité] axes de rentabilité",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::churn_model",
-          "distance": 0.4319,
+          "id": "achievements::pricing_tool",
+          "distance": 0.4845,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.4621,
+          "id": "achievements::churn_model",
+          "distance": 0.5047,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.4924,
+          "distance": 0.5252,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4319, match retenu"
+      "conclusion": "best_distance=0.4845, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse de données transactionnelles et axes de rentabilité] performance financière",
+      "query": "[Analyse de données transactionnelles et axes de rentabilité] analyse financière",
       "n_results": 3,
       "results": [
         {
           "id": "constraints::education",
-          "distance": 0.5578,
+          "distance": 0.525,
           "source_file": "constraints.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5872,
+          "distance": 0.5569,
           "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.6642,
-          "source_file": "geography_rules.md"
+          "id": "achievements::pricing_tool",
+          "distance": 0.6149,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5578, match retenu"
+      "conclusion": "best_distance=0.5250, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -493,26 +493,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Intégration et exploitation de données externes] enrichissement de données",
+      "query": "[Intégration et exploitation de données externes] data enrichment",
       "n_results": 3,
       "results": [
         {
           "id": "skills::certifications",
-          "distance": 0.5011,
+          "distance": 0.5121,
           "source_file": "skills.md"
         },
         {
           "id": "skills::skills_maitrisees_data",
-          "distance": 0.5023,
+          "distance": 0.5198,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::churn_model",
-          "distance": 0.5446,
-          "source_file": "achievements.md"
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5777,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5011, match retenu"
+      "conclusion": "best_distance=0.5121, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -608,53 +608,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Capacités analytiques et résolution de problèmes complexes] analyse complexe",
+      "query": "[Résolution de problèmes complexes et pensée analytique] résolution de problèmes complexes",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.5955,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6307,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "constraints::education",
-          "distance": 0.6309,
-          "source_file": "constraints.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5955, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Capacités analytiques et résolution de problèmes complexes] résolution de problèmes",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5942,
+          "distance": 0.6053,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::pricing_tool",
-          "distance": 0.6289,
+          "distance": 0.634,
           "source_file": "achievements.md"
         },
         {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6688,
-          "source_file": "geography_rules.md"
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6783,
+          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5942, match retenu"
+      "conclusion": "best_distance=0.6053, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Capacités analytiques et résolution de problèmes complexes] pensée analytique",
+      "query": "[Résolution de problèmes complexes et pensée analytique] pensée analytique",
       "n_results": 3,
       "results": [
         {
@@ -677,53 +654,53 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Communication et qualités relationnelles] communication",
+      "query": "[Résolution de problèmes complexes et pensée analytique] analyse critique",
       "n_results": 3,
       "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6237,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_nlp_audio",
-          "distance": 0.6465,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_langues",
-          "distance": 0.6632,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6237, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Communication et qualités relationnelles] qualités relationnelles",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6093,
-          "source_file": "geography_rules.md"
-        },
         {
           "id": "achievements::churn_model",
-          "distance": 0.6509,
+          "distance": 0.5527,
           "source_file": "achievements.md"
         },
         {
-          "id": "skills::skills_langues",
-          "distance": 0.6949,
-          "source_file": "skills.md"
+          "id": "achievements::pricing_tool",
+          "distance": 0.5863,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6266,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.6093, match retenu"
+      "conclusion": "best_distance=0.5527, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Communication et qualités relationnelles] présentation de données",
+      "query": "[Communication et présentation de données (storytelling)] communication de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5433,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5473,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.56,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5433, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et présentation de données (storytelling)] présentation de données",
       "n_results": 3,
       "results": [
         {
@@ -746,30 +723,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Communication et qualités relationnelles] storytelling avec données",
+      "query": "[Communication et présentation de données (storytelling)] data storytelling",
       "n_results": 3,
       "results": [
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5608,
+          "distance": 0.5699,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.6207,
+          "distance": 0.6014,
           "source_file": "achievements.md"
         },
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6421,
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6185,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5608, match retenu"
+      "conclusion": "best_distance=0.5699, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Anglais professionnel courant] anglais professionnel",
+      "query": "[Anglais professionnel (niveau courant)] anglais professionnel",
       "n_results": 3,
       "results": [
         {
@@ -792,7 +769,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Anglais professionnel courant] anglais courant",
+      "query": "[Anglais professionnel (niveau courant)] anglais courant",
       "n_results": 3,
       "results": [
         {
@@ -812,78 +789,9 @@
         }
       ],
       "conclusion": "best_distance=0.4219, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Formation et accompagnement d'équipes aux méthodologies data] formation d'équipes",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6491,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6494,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6673,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6491, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Formation et accompagnement d'équipes aux méthodologies data] accompagnement méthodologique",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4446,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.4663,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.4902,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4446, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Formation et accompagnement d'équipes aux méthodologies data] transfert de compétences data",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.4233,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.4465,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.463,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4233, match retenu"
     }
   ],
   "uncertain_flags": [
-    "Outils de manipulation, modélisation et visualisation de données (Power Query, Power Pivot, Power BI, Tableau, Alteryx)"
+    "Outils de manipulation et de modélisation de données (Power Query, Power Pivot, Alteryx)"
   ]
 }

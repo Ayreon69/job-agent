@@ -79,29 +79,6 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse et exploitation des données pour la prise de décision] valorisation des données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4353,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.4442,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.4923,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4353, match retenu"
-    },
-    {
-      "step": "requirement_atom",
       "query": "[Analyse et exploitation des données pour la prise de décision] prise de décision data-driven",
       "n_results": 3,
       "results": [
@@ -240,49 +217,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Création de dashboards et rapports avec Power BI] rapports",
+      "query": "[Création de dashboards et rapports avec Power BI] rapports data",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.5934,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5985,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6177,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5934, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Création de dashboards et rapports avec Power BI] visualisation de données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6191,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.6205,
+          "id": "skills::certifications",
+          "distance": 0.4855,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::power_bi_dashboards",
-          "distance": 0.6351,
+          "distance": 0.5262,
           "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5746,
+          "source_file": "constraints.md"
         }
       ],
-      "conclusion": "best_distance=0.6191, match retenu"
+      "conclusion": "best_distance=0.4855, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -378,49 +332,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Exploitation avancée d'Excel (modélisation, analyse, automatisation)] tableaux croisés dynamiques",
+      "query": "[Exploitation avancée d'Excel (modélisation, analyse, automatisation)] macros Excel",
       "n_results": 3,
       "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.7161,
-          "source_file": "achievements.md"
-        },
         {
           "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.7272,
+          "distance": 0.7179,
           "source_file": "skills.md"
         },
         {
-          "id": "skills::skills_gaps_specifiques_cern",
-          "distance": 0.7412,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7161, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Exploitation avancée d'Excel (modélisation, analyse, automatisation)] formules Excel",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::certifications",
-          "distance": 0.6898,
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7223,
           "source_file": "skills.md"
         },
         {
           "id": "constraints::education",
-          "distance": 0.6901,
+          "distance": 0.7484,
           "source_file": "constraints.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.7291,
-          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.6898, match retenu"
+      "conclusion": "best_distance=0.7179, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -493,29 +424,6 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Préparation des données avec Power Query] nettoyage de données",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5502,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.5634,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.5857,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5502, match retenu"
-    },
-    {
-      "step": "requirement_atom",
       "query": "[Analyse avancée avec Python] Python",
       "n_results": 3,
       "results": [
@@ -562,53 +470,30 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse avancée avec Python] Pandas",
+      "query": "[Analyse avancée avec Python] data analysis",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.7105,
+          "id": "skills::certifications",
+          "distance": 0.4736,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.7907,
+          "id": "constraints::education",
+          "distance": 0.518,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5268,
           "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.8208,
-          "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.7105, match retenu"
+      "conclusion": "best_distance=0.4736, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Analyse avancée avec Python] NumPy",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_nlp_audio",
-          "distance": 0.7295,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.7308,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.7461,
-          "source_file": "geography_rules.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7295, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Collecte et traitement de données issues de sources variées] collecte de données",
+      "query": "[Collecte et traitement des données depuis différentes sources] collecte de données",
       "n_results": 3,
       "results": [
         {
@@ -631,7 +516,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collecte et traitement de données issues de sources variées] traitement de données",
+      "query": "[Collecte et traitement des données depuis différentes sources] traitement de données",
       "n_results": 3,
       "results": [
         {
@@ -654,7 +539,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collecte et traitement de données issues de sources variées] intégration de données",
+      "query": "[Collecte et traitement des données depuis différentes sources] intégration de données",
       "n_results": 3,
       "results": [
         {
@@ -677,49 +562,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collecte et traitement de données issues de sources variées] sources de données multiples",
+      "query": "[Interaction avec les équipes métiers pour la priorisation des besoins] collaboration métiers",
       "n_results": 3,
       "results": [
-        {
-          "id": "skills::certifications",
-          "distance": 0.5458,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5569,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5768,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5458, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Interaction avec les équipes métiers pour la priorisation des besoins] communication métiers",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_langues",
-          "distance": 0.565,
-          "source_file": "skills.md"
-        },
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.5742,
+          "distance": 0.5493,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_intermediaires_llm",
-          "distance": 0.6051,
+          "distance": 0.5762,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5817,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5650, match retenu"
+      "conclusion": "best_distance=0.5493, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -766,29 +628,6 @@
         }
       ],
       "conclusion": "best_distance=0.4335, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Interaction avec les équipes métiers pour la priorisation des besoins] collaboration pluridisciplinaire",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.6009,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.6208,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6377,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6009, match retenu"
     },
     {
       "step": "requirement_atom",

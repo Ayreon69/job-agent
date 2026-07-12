@@ -148,29 +148,6 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Frameworks et bibliothèques Python pour l'IA (TensorFlow, PyTorch, scikit-learn)] Python",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6692,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.7248,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.7262,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6692, match retenu"
-    },
-    {
-      "step": "requirement_atom",
       "query": "[Frameworks et bibliothèques Python pour l'IA (TensorFlow, PyTorch, scikit-learn)] TensorFlow",
       "n_results": 3,
       "results": [
@@ -240,30 +217,145 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projets IA (définition des objectifs, livraison, respect des délais et standards de qualité)] gestion de projet IA",
+      "query": "[Frameworks et bibliothèques Python pour l'IA (TensorFlow, PyTorch, scikit-learn)] Python pour l'IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4665,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4734,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5594,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4665, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Langages de programmation (Python, SQL, JavaScript, PHP)] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Langages de programmation (Python, SQL, JavaScript, PHP)] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Langages de programmation (Python, SQL, JavaScript, PHP)] JavaScript",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7439,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7509,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7902,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7439, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Langages de programmation (Python, SQL, JavaScript, PHP)] PHP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.817,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.8234,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.8337,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets IA (définition des objectifs, respect des délais, standards de qualité)] gestion de projets IA",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::churn_model",
-          "distance": 0.4166,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.4255,
+          "distance": 0.4407,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.4347,
+          "distance": 0.4427,
           "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4516,
+          "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4166, match retenu"
+      "conclusion": "best_distance=0.4407, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projets IA (définition des objectifs, livraison, respect des délais et standards de qualité)] définition des objectifs",
+      "query": "[Gestion de projets IA (définition des objectifs, respect des délais, standards de qualité)] définition des objectifs",
       "n_results": 3,
       "results": [
         {
@@ -286,30 +378,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projets IA (définition des objectifs, livraison, respect des délais et standards de qualité)] livraison de projet",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.4602,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.4863,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.5035,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4602, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Gestion de projets IA (définition des objectifs, livraison, respect des délais et standards de qualité)] respect des délais",
+      "query": "[Gestion de projets IA (définition des objectifs, respect des délais, standards de qualité)] respect des délais",
       "n_results": 3,
       "results": [
         {
@@ -332,7 +401,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Gestion de projets IA (définition des objectifs, livraison, respect des délais et standards de qualité)] standards de qualité",
+      "query": "[Gestion de projets IA (définition des objectifs, respect des délais, standards de qualité)] standards de qualité",
       "n_results": 3,
       "results": [
         {
@@ -444,305 +513,6 @@
         }
       ],
       "conclusion": "best_distance=0.5542, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Veille technologique en IA et proposition d'innovations] veille technologique IA",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.4785,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.4906,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.4971,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4785, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Veille technologique en IA et proposition d'innovations] proposition d'innovations",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5142,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6222,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.6306,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5142, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Collaboration avec équipes techniques et métiers (transfert de compétences, solutions sur-mesure)] collaboration équipes techniques",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5507,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5536,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5613,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5507, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Collaboration avec équipes techniques et métiers (transfert de compétences, solutions sur-mesure)] collaboration équipes métiers",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5684,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5763,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5866,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5684, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Collaboration avec équipes techniques et métiers (transfert de compétences, solutions sur-mesure)] transfert de compétences",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5324,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5374,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5491,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5324, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Collaboration avec équipes techniques et métiers (transfert de compétences, solutions sur-mesure)] solutions sur-mesure",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5784,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_gaps_specifiques_cern",
-          "distance": 0.6061,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.6385,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5784, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Formation et accompagnement des équipes internes sur les bonnes pratiques IA] formation équipes internes",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.5921,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.6181,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.6207,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5921, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Formation et accompagnement des équipes internes sur les bonnes pratiques IA] accompagnement équipes internes",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5581,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.5643,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5793,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5581, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Formation et accompagnement des équipes internes sur les bonnes pratiques IA] bonnes pratiques IA",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.3874,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_ml",
-          "distance": 0.3917,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.4513,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3874, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Langages de programmation (Python, SQL, JavaScript, PHP)] Python",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.6692,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.7248,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.7262,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.6692, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Langages de programmation (Python, SQL, JavaScript, PHP)] SQL",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.3241,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_data",
-          "distance": 0.5331,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "skills::certifications",
-          "distance": 0.6353,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.3241, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Langages de programmation (Python, SQL, JavaScript, PHP)] JavaScript",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.7439,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.7509,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_maitrisees_automatisation",
-          "distance": 0.7902,
-          "source_file": "skills.md"
-        }
-      ],
-      "conclusion": "best_distance=0.7439, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Langages de programmation (Python, SQL, JavaScript, PHP)] PHP",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::mistral_chatbot",
-          "distance": 0.817,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.8234,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::sql_adhoc_analysis",
-          "distance": 0.8337,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "aucun match fiable -> flag_uncertain"
     },
     {
       "step": "requirement_atom",
@@ -861,7 +631,76 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de gestion de version et de projet (Git, GitLab, Jupyter)] Git",
+      "query": "[Bases de données (MySQL, MongoDB, Elasticsearch)] MySQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5282,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6928,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7518,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5282, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données (MySQL, MongoDB, Elasticsearch)] MongoDB",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7181,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7392,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7464,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.7181, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données (MySQL, MongoDB, Elasticsearch)] Elasticsearch",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6538,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6765,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6964,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6538, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de gestion de version et collaboration (Git, GitLab)] Git",
       "n_results": 3,
       "results": [
         {
@@ -884,7 +723,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de gestion de version et de projet (Git, GitLab, Jupyter)] GitLab",
+      "query": "[Outils de gestion de version et collaboration (Git, GitLab)] GitLab",
       "n_results": 3,
       "results": [
         {
@@ -907,30 +746,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de gestion de version et de projet (Git, GitLab, Jupyter)] Jupyter",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::playwright_scraping_insurance",
-          "distance": 0.7693,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_switzerland_mobility",
-          "distance": 0.7753,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::snowflake_etl",
-          "distance": 0.8219,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "aucun match fiable -> flag_uncertain"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Outils de gestion de version et de projet (Git, GitLab, Jupyter)] gestion de version",
+      "query": "[Outils de gestion de version et collaboration (Git, GitLab)] gestion de version",
       "n_results": 3,
       "results": [
         {
@@ -953,31 +769,146 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Outils de gestion de version et de projet (Git, GitLab, Jupyter)] gestion de projet",
+      "query": "[Outils et plateformes IA/ML (Jupyter, API OpenAI, modèles LLM, VLLM)] Jupyter",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.4704,
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7693,
           "source_file": "achievements.md"
         },
         {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7753,
+          "source_file": "geography_rules.md"
+        },
+        {
           "id": "achievements::snowflake_etl",
-          "distance": 0.5231,
+          "distance": 0.8219,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils et plateformes IA/ML (Jupyter, API OpenAI, modèles LLM, VLLM)] API OpenAI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4901,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5884,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.612,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4901, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils et plateformes IA/ML (Jupyter, API OpenAI, modèles LLM, VLLM)] modèles LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5227,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5702,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5847,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5227, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils et plateformes IA/ML (Jupyter, API OpenAI, modèles LLM, VLLM)] VLLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5815,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6544,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6565,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5815, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et innovation en IA] veille technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5358,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5861,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5358, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et innovation en IA] innovation en IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5306,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5557,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::churn_model",
-          "distance": 0.5262,
+          "distance": 0.5656,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4704, match retenu"
+      "conclusion": "best_distance=0.5306, match retenu"
     }
   ],
   "uncertain_flags": [
     "Langages de programmation (Python, SQL, JavaScript, PHP)",
     "Conteneurisation et orchestration (Docker, Kubernetes)",
-    "Outils de gestion de version et de projet (Git, GitLab, Jupyter)"
+    "Outils et plateformes IA/ML (Jupyter, API OpenAI, modèles LLM, VLLM)"
   ]
 }

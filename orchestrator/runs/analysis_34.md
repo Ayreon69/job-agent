@@ -1,95 +1,99 @@
 ## Résumé du matching
 
-Cette candidature présente un **matching solide (75/100)** pour le poste de **Data Scientist - IA**, avec des atouts clés alignés sur les exigences de l'offre :
+Cette candidature présente un **alignement solide (75/100)** avec l’offre pour un poste de **Data Scientist - IA**, grâce à des compétences techniques et une expérience concrète en **machine learning appliqué** et **industrialisation de modèles**. Voici les points forts clés :
 
-- **Expertise en machine learning appliqué** :
-  - Développement d’un **modèle de churn en production** (recall de 85%) chez ECA Assurances, avec justification des choix métriques (recall vs précision) et impact métier démontré (*source : réalisation "modèle churn"*).
-  - Maîtrise de **scikit-learn** et des bibliothèques Python (pandas, numpy, scipy) pour la modélisation prédictive (*source : "machine learning appliqué"*).
+- **Machine Learning et Deep Learning** :
+  Maîtrise de **scikit-learn** et construction de modèles prédictifs en production, avec une justification métier des choix statistiques (ex : recall vs précision). Réalisation notable : déploiement d’un modèle de **churn** chez ECA Assurances (recall de 85%) *(source : expérience professionnelle)*.
+  Expérience en **autonomie sur des projets de recherche appliquée**, avec une capacité à transformer un PoC (issu d’un mémoire de fin d’études) en solution industrialisée.
 
-- **Industrialisation et valorisation des données** :
-  - **Mise en production** d’un modèle de churn, illustrant une capacité à passer du prototypage à l’industrialisation (*source : "modèle churn en production"*).
-  - Conception de **tableaux de bord décisionnels** (Power BI, DAX avancé) adoptés par des équipes non techniques, et maîtrise de **Snowflake** pour l’architecture ETL (*source : "traitement de données complexes"*).
+- **Industrialisation et développement IA** :
+  Développement et mise en production d’un **modèle de churn**, démontrant une expertise en **passage à l’échelle** et en collaboration avec les équipes métier.
+  Prototypage d’un **assistant interne** via l’API Mistral et Gradio, avec des choix architecturaux réfléchis (ex : décision de ne pas utiliser RAG) *(source : projet R&D)*.
 
-- **Analyse de données industrielles et innovation** :
-  - Expérience en **data mining** et modélisation de scénarios métiers (outil de tarification), avec une approche critique des choix technologiques (*source : "analyse de données industrielles"*).
-  - Prototypage d’un **assistant interne** basé sur l’API Mistral, avec réflexion sur les architectures (contexte complet vs RAG) (*source : "expérimentation en IA"*).
+- **Traitement et valorisation de données** :
+  Maîtrise avancée de **SQL**, **Python** (pandas, numpy, scipy), **Power BI** (DAX), et **Snowflake** pour des architectures ETL. Conception de **tableaux de bord décisionnels** adoptés par des équipes non techniques *(source : expérience professionnelle)*.
+  Expérience en **data mining** pour des cas d’usage industriels (assurance), avec une approche orientée résultats métier.
 
-- **Collaboration et autonomie** :
-  - Expérience en **développement assisté par agent** (Claude Code, MCP) et structuration de projets techniques, montrant une adaptation aux outils collaboratifs modernes (*source : "collaboration avec les équipes logicielles"*).
-  - Autonomie prouvée dans des projets comme l’outil de tarification, avec transfert de compétences aux utilisateurs finaux (*source : "autonomie et regard critique"*).
+- **Collaboration et innovation** :
+  Développement de solutions techniques (modèle churn, outil de tarification) **adoptées par des équipes métier**, avec une utilisation quotidienne d’outils collaboratifs (GitHub, Playwright) *(source : projets professionnels)*.
+  Structuration de **pipelines ETL** inspirés de l’architecture Medallion (Snowflake) et création d’outils innovants (ex : tarification autonome) *(source : expérience R&D)*.
 
-- **Compétences techniques transverses** :
-  - **SQL avancé**, **Python** (pandas, numpy, scipy), et **automatisation** (Playwright, Gradio) pour le prototypage rapide (*source : "programmation en Python pour l'IA"*).
+- **Autonomie et regard critique** :
+  Capacité à justifier des **choix technologiques** (ex : non-utilisation de RAG pour un prototype LLM) et à développer des solutions en autonomie, avec un transfert d’autonomie vers les équipes métier *(source : projets professionnels et R&D)*.
 
 ---
 
 ## Gaps et incertitudes
 
-### Gaps confirmés (compétences absentes)
-1. **Deep Learning avancé** :
-   - Expérience limitée au **machine learning classique** (scikit-learn). Aucun framework comme **TensorFlow** ou **PyTorch** n’est mentionné dans le profil (*source : "Deep Learning avancé"*).
-   - Risque pour des projets nécessitant des architectures neuronales complexes (ex : NLP, computer vision).
+### Gaps confirmés (compétences absentes) :
+- **Deep Learning avancé** :
+  Expérience limitée aux **modèles classiques** (scikit-learn). **Aucune mention** de frameworks comme **TensorFlow** ou **PyTorch** pour du Deep Learning (réseaux de neurones, NLP avancé, etc.).
+- **Industrialisation avancée** :
+  Notions en **CI/CD**, **Docker**, et **cloud** (AWS/Azure), mais **pas de déploiement en production** à grande échelle. L’expérience se concentre sur des PoC et des modèles en production à échelle réduite.
+- **Données industrielles complexes** :
+  Expérience principalement axée sur des **données assurance** (churn, tarification). **Pas de traitement de données industrielles spécifiques** (ex : capteurs, séries temporelles complexes, IoT).
 
-2. **Industrialisation avancée** :
-   - **CI/CD, Docker, cloud (AWS/Azure)** : Notions présentes, mais **pas d’expérience concrète en déploiement en production** (*source : "industrialisation avancée"*).
-   - Limite pour des environnements exigeant une orchestration robuste (ex : pipelines MLOps).
-
-3. **Gestion de projets R&D en IA** :
-   - Expérience en **autonomie** sur des projets, mais **pas de mention de cadres formels** (ex : gouvernance des données, méthodologies R&D) (*source : "gestion de projets R&D"*).
-
-### Flags incertains
-*Aucun flag incertain identifié* : Les gaps listés ci-dessus sont des **absences confirmées**, et non des zones d’ombre dans le profil.
+### Flags incertains (aucun match RAG fiable) :
+*Aucun flag incertain identifié* : les gaps listés ci-dessus sont des **absences confirmées** dans le profil, et non des incertitudes liées à un manque de données.
 
 ---
 
 ## Questions d'entretien probables
 
-1. **Industrialisation et scalabilité** :
-   - *"Pouvez-vous détailler le processus de mise en production de votre modèle de churn ? Quels outils avez-vous utilisés pour le monitoring et la maintenance ?"* (*lié au gap "industrialisation avancée"*).
-   - *"Comment gérez-vous les dépendances et la reproductibilité des modèles en production ?"* (pour évaluer les connaissances en Docker/environnements isolés).
+1. **Machine Learning appliqué** :
+   - *"Pouvez-vous détailler le modèle de churn que vous avez déployé chez ECA Assurances ? Quels étaient les trade-offs entre recall et précision, et comment les avez-vous justifiés auprès des métiers ?"* *(source : réalisation en production)*
+   - *"Comment avez-vous structuré le pipeline ETL pour ce projet ? Quels outils (Snowflake, Python) avez-vous utilisés pour garantir la scalabilité ?"* *(source : architecture ETL)*
 
-2. **Deep Learning et innovation** :
-   - *"Quels frameworks de deep learning avez-vous utilisés, et pour quels cas d’usage ?"* (pour cerner l’étendue de l’expérience au-delà de scikit-learn).
-   - *"Comment aborderiez-vous un projet nécessitant du NLP ou du computer vision, compte tenu de votre expérience actuelle ?"* (pour tester la capacité à monter en compétences).
+2. **Industrialisation et collaboration** :
+   - *"Quels défis avez-vous rencontrés lors du passage à l’échelle de votre modèle de churn ? Comment avez-vous assuré son adoption par les équipes métier ?"* *(source : déploiement en production)*
+   - *"Vous avez mentionné ne pas utiliser RAG pour votre prototype LLM. Pouvez-vous expliquer ce choix et les alternatives que vous avez explorées ?"* *(source : projet R&D)*
 
-3. **Collaboration et gouvernance** :
-   - *"Comment structurez-vous la collaboration entre data scientists et équipes logicielles pour un projet IA ?"* (*lié à "collaboration avec les équipes logicielles"*).
-   - *"Avez-vous déjà travaillé dans un cadre R&D avec des contraintes de gouvernance des données ? Si non, comment les intégreriez-vous ?"* (*lié au gap "gestion de projets R&D"*).
+3. **Deep Learning et innovation** :
+   - *"Votre expérience en Deep Learning semble limitée à scikit-learn. Comment envisagez-vous de monter en compétences sur des frameworks comme TensorFlow ou PyTorch pour des cas d’usage plus complexes ?"* *(gap : Deep Learning avancé)*
+   - *"Avez-vous déjà travaillé sur des données industrielles (ex : séries temporelles, capteurs) ? Si non, comment adapteriez-vous vos méthodes actuelles à ce type de données ?"* *(gap : données industrielles)*
 
-4. **Choix techniques et métriques** :
-   - *"Pourquoi avoir privilégié le recall à la précision pour votre modèle de churn ? Comment avez-vous communiqué ce choix aux métiers ?"* (*lié à "autonomie et regard critique"*).
-   - *"Quels critères utilisez-vous pour évaluer la performance d’un modèle en phase de prototypage vs en production ?"*
+4. **Autonomie et choix technologiques** :
+   - *"Comment priorisez-vous les choix technologiques pour un projet IA ? Pouvez-vous donner un exemple où vous avez dû arbitrer entre plusieurs solutions ?"* *(source : regard critique sur les outils)*
+   - *"Vous avez développé un outil de tarification autonome. Comment avez-vous mesuré son impact et quels retours avez-vous reçus des utilisateurs finaux ?"* *(source : innovation métier)*
 
-5. **Projets futurs** :
-   - *"Quels outils ou méthodes aimeriez-vous maîtriser pour renforcer votre impact en tant que Data Scientist ?"* (pour évaluer la curiosité et l’alignement avec les besoins de l’entreprise).
-   - *"Comment priorisez-vous les projets IA en fonction des ressources disponibles et des attentes métiers ?"*
+5. **Visualisation et communication** :
+   - *"Quels principes suivez-vous pour concevoir des tableaux de bord Power BI accessibles à des équipes non techniques ? Pouvez-vous partager un exemple concret ?"* *(source : visualisation avec DAX)*
 
 ---
 
 ## Angle de candidature
 
 **Positionnement** :
-Candidature idéale pour un poste de **Data Scientist orienté "appliqué et industrialisation"**, où l’accent est mis sur :
-- La **transformation de données en solutions métiers** (modèles prédictifs, tableaux de bord).
-- La **collaboration avec les équipes techniques et non techniques** (autonomie, pédagogie).
-- L’**innovation pragmatique** (prototypage rapide, outils internes comme l’assistant Mistral).
+Cette candidature se présente comme celle d’un **Data Scientist orienté R&D et industrialisation**, avec une **double expertise** :
+- **Technique** : maîtrise des outils Python (scikit-learn, pandas), SQL avancé, et architectures ETL (Snowflake), couplée à une expérience en **déploiement de modèles en production**.
+- **Métier** : capacité à **traduire des enjeux business en solutions IA** (ex : churn, tarification) et à **collaborer avec des équipes non techniques** pour assurer l’adoption des outils.
+
+**Accroche** :
+*"Data Scientist avec une expérience concrète en **machine learning appliqué** et en **industrialisation de modèles**, je combine une expertise technique (Python, SQL, Snowflake) avec une approche orientée résultats métier. Mon parcours chez ECA Assurances, où j’ai déployé un modèle de churn en production avec un recall de 85%, illustre ma capacité à transformer des PoC en solutions scalables et adoptées par les équipes. Passionné par l’innovation, j’ai également prototypé un assistant interne via l’API Mistral et structuré des pipelines ETL inspirés de l’architecture Medallion. Mon profil allie **autonomie technique**, **regard critique sur les choix technologiques**, et **collaboration transverse** – des atouts pour contribuer à vos projets IA tout en renforçant l’impact métier de vos données."*
+
+**Points différenciants à mettre en avant** :
+1. **Expérience en production** :
+   Mettre l’accent sur le **modèle de churn déployé** (recall de 85%) et les **leçons tirées** du passage à l’échelle (ex : gestion des biais, monitoring post-déploiement).
+2. **Innovation et R&D** :
+   Souligner le **prototypage de l’assistant interne** (API Mistral) et les **choix architecturaux** (ex : non-utilisation de RAG), qui démontrent une **réflexion stratégique** sur les outils IA.
+3. **Collaboration métier** :
+   Insister sur la **conception de tableaux de bord Power BI** adoptés par des équipes non techniques et sur l’**outil de tarification autonome**, qui illustrent une **capacité à rendre les données actionnables**.
+4. **Autonomie et adaptabilité** :
+   Montrer comment les **projets menés en autonomie** (ex : mémoire de fin d’études transformé en solution industrielle) reflètent une **capacité à apprendre rapidement** et à **s’approprier de nouveaux défis**.
+
+**Stratégie pour combler les gaps** :
+- **Deep Learning avancé** :
+  Proposer une **veille active** sur les frameworks comme TensorFlow/PyTorch et mentionner une **disposition à se former** sur des cas d’usage spécifiques (ex : NLP, vision par ordinateur).
+- **Industrialisation** :
+  Mettre en avant les **notions en CI/CD et Docker** comme base pour monter en compétences sur des **déploiements cloud à grande échelle**, et souligner l’expérience en **collaboration avec des équipes DevOps** (si applicable).
+- **Données industrielles** :
+  Insister sur la **transférabilité des compétences** (ex : traitement de séries temporelles en assurance) et sur une **approche méthodique** pour s’adapter à de nouveaux types de données.
+
+**Alignement avec l’offre** :
+L’offre recherche un profil **hybride** (R&D + industrialisation) avec une **forte autonomie**. La candidature répond à ces attentes via :
+- Une **expérience en production** (modèle churn) et en **prototypage** (assistant LLM).
+- Une **maîtrise des outils** (Python, SQL, Snowflake) et une **approche critique** des choix technologiques.
+- Une **orientation métier** (visualisation, collaboration) qui complète l’expertise technique.
 
 **Message clé** :
-*"Mon profil combine une expertise technique éprouvée en machine learning et en valorisation des données avec une approche métier et collaborative. Chez ECA Assurances, j’ai conçu un modèle de churn en production avec un impact mesurable (recall de 85%), tout en développant des outils décisionnels adoptés par les équipes. Mon expérience en prototypage (ex : assistant interne basé sur Mistral) et en automatisation montre ma capacité à innover tout en répondant à des besoins concrets. Je recherche un environnement où je pourrai contribuer à des projets IA industrialisés, en m’appuyant sur mes compétences en Python, SQL, et Power BI, tout en continuant à monter en compétences sur les frameworks avancés."*
-
-**Points à mettre en avant en entretien** :
-1. **Impact métier** :
-   - Insister sur les **résultats concrets** (ex : adoption des tableaux de bord, recall du modèle churn) et la **justification des choix techniques** (recall vs précision).
-   - Exemple : *"Mon modèle de churn a permis de réduire les coûts de rétention de X% en ciblant les clients à risque avec une précision optimisée pour le métier."*
-
-2. **Autonomie et collaboration** :
-   - Souligner la **structuration de projets** (ex : outil de tarification) et la **transmission de compétences** aux utilisateurs finaux.
-   - Exemple : *"J’ai formé les équipes métiers à utiliser l’outil de tarification, ce qui a réduit leur dépendance aux data scientists pour les ajustements."*
-
-3. **Adaptabilité** :
-   - Montrer une **curiosité pour les frameworks avancés** (ex : TensorFlow) et une **volonté de monter en compétences** sur les aspects industrialisation (CI/CD, cloud).
-   - Exemple : *"Je me forme actuellement à [outil pertinent] pour compléter mon expertise en [gap identifié]."*
-
-**À éviter** :
-- Minimiser les gaps : les aborder avec transparence en mettant l’accent sur la **capacité à apprendre rapidement** (ex : projets personnels en deep learning, formations en cours).
-- Se positionner comme un expert R&D : privilégier un discours axé sur **l’application métier et l’industrialisation**, en phase avec l’expérience actuelle.
+*"Mon profil allie **rigueur technique** et **impact métier**, avec une expérience éprouvée en **déploiement de modèles IA** et en **innovation**. Je suis particulièrement motivé(e) par l’opportunité de contribuer à vos projets tout en approfondissant mes compétences en Deep Learning et en industrialisation avancée."*

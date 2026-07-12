@@ -194,7 +194,7 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Pilotage de projets IA en collaboration avec des équipes techniques] pilotage de projets IA",
+      "query": "[Pilotage de projets IA en collaboration avec les équipes techniques] pilotage de projets IA",
       "n_results": 3,
       "results": [
         {
@@ -217,49 +217,72 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Pilotage de projets IA en collaboration avec des équipes techniques] collaboration avec équipes techniques",
+      "query": "[Pilotage de projets IA en collaboration avec les équipes techniques] collaboration technique",
       "n_results": 3,
       "results": [
         {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.4986,
+          "id": "achievements::agentic_coding",
+          "distance": 0.5656,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5954,
           "source_file": "skills.md"
         },
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5038,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
-          "distance": 0.5043,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4986, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Définition de critères de succès et mise en production] définition de critères de succès",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::churn_model",
-          "distance": 0.5584,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "geography_rules::rule_role_priority_current",
-          "distance": 0.5966,
-          "source_file": "geography_rules.md"
-        },
-        {
-          "id": "achievements::power_bi_dashboards",
+          "id": "achievements::mistral_chatbot",
           "distance": 0.6121,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5584, match retenu"
+      "conclusion": "best_distance=0.5656, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pilotage de projets IA en collaboration avec les équipes techniques] gestion de projet IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4166,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4255,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4347,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4166, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Définition de critères de succès et mise en production] critères de succès",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5324,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5885,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6027,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5324, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -286,26 +309,26 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Définition de critères de succès et mise en production] suivi de projets",
+      "query": "[Définition de critères de succès et mise en production] déploiement technique",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::agentic_coding",
-          "distance": 0.4158,
-          "source_file": "achievements.md"
-        },
-        {
           "id": "skills::skills_notions_seulement",
-          "distance": 0.4883,
+          "distance": 0.4449,
           "source_file": "skills.md"
         },
         {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.481,
+          "source_file": "achievements.md"
+        },
+        {
           "id": "achievements::snowflake_etl",
-          "distance": 0.5162,
+          "distance": 0.4864,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.4158, match retenu"
+      "conclusion": "best_distance=0.4449, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -352,6 +375,29 @@
         }
       ],
       "conclusion": "best_distance=0.4903, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transfert de compétences et autonomisation des équipes] formation technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6132,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.647,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7372,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6132, match retenu"
     },
     {
       "step": "requirement_atom",
@@ -493,95 +539,118 @@
     },
     {
       "step": "requirement_atom",
-      "query": "[Collaboration avec les équipes Produit et Développement] collaboration avec équipes Produit",
+      "query": "[Collaboration avec les équipes Produit et Développement] collaboration Produit",
       "n_results": 3,
       "results": [
         {
           "id": "achievements::agentic_coding",
-          "distance": 0.5127,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5506,
+          "distance": 0.5652,
           "source_file": "achievements.md"
         },
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.5723,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.5127, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Collaboration avec les équipes Produit et Développement] collaboration avec équipes Développement",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.499,
-          "source_file": "achievements.md"
-        },
-        {
-          "id": "skills::skills_notions_seulement",
-          "distance": 0.507,
-          "source_file": "skills.md"
-        },
-        {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5362,
-          "source_file": "achievements.md"
-        }
-      ],
-      "conclusion": "best_distance=0.4990, match retenu"
-    },
-    {
-      "step": "requirement_atom",
-      "query": "[Facilitation entre enjeux métiers et équipes techniques] facilitation métiers-techniques",
-      "n_results": 3,
-      "results": [
-        {
-          "id": "constraints::education",
-          "distance": 0.5667,
-          "source_file": "constraints.md"
-        },
-        {
-          "id": "achievements::agentic_coding",
-          "distance": 0.5847,
+          "distance": 0.6223,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::skills_intermediaires_llm",
-          "distance": 0.6027,
+          "distance": 0.628,
           "source_file": "skills.md"
         }
       ],
-      "conclusion": "best_distance=0.5667, match retenu"
+      "conclusion": "best_distance=0.5652, match retenu"
     },
     {
       "step": "requirement_atom",
-      "query": "[Facilitation entre enjeux métiers et équipes techniques] alignement métiers-techniques",
+      "query": "[Collaboration avec les équipes Produit et Développement] collaboration Développement",
       "n_results": 3,
       "results": [
         {
-          "id": "achievements::pricing_tool",
-          "distance": 0.5593,
+          "id": "achievements::agentic_coding",
+          "distance": 0.5402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5636,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5657,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5402, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes Produit et Développement] alignement métier-technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5968,
           "source_file": "achievements.md"
         },
         {
           "id": "skills::certifications",
-          "distance": 0.5625,
+          "distance": 0.6098,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6452,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5968, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et innovation en IA] veille technologique IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4785,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4906,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4971,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4785, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et innovation en IA] innovation IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5889,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5985,
           "source_file": "skills.md"
         },
         {
           "id": "achievements::snowflake_etl",
-          "distance": 0.5694,
+          "distance": 0.622,
           "source_file": "achievements.md"
         }
       ],
-      "conclusion": "best_distance=0.5593, match retenu"
+      "conclusion": "best_distance=0.5889, match retenu"
     }
   ],
   "uncertain_flags": []
