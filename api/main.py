@@ -11,6 +11,29 @@ Run locally:
 MISTRAL_API_KEY is loaded exactly as scoring/llm.py already does (via
 python-dotenv + os.environ) — importing scoring.llm triggers that load_dotenv()
 call, so this module doesn't duplicate the .env loading logic.
+
+API_MODE (Render deployment follow-up): "full" (default, unchanged behavior —
+local dev, docker-compose, GitHub Actions batch don't set this var) or
+"readonly". Render's free/Starter tiers cap at 512MB RAM; a real measurement
+of the "full" container at rest was ~749MB (sentence-transformers + torch
+loaded via the session-6 embedding singleton) — over budget on either tier.
+"readonly" trades away POST /analyze (scoring is Render's job never anyway;
+GitHub Actions already owns the batch pipeline, see session 8) to stay under
+that budget: GET /health, /offers, /offers/{id} only need SQLite +
+already-generated structured_analysis_<id>.json/markdown files on disk, none
+of which need the embedding model or ChromaDB.
+
+The memory saving comes from WHERE the import of scoring.embeddings.index
+(and therefore chromadb + sentence-transformers + torch) happens, not just
+from skipping construction of the singleton: torch's own C extension gets
+loaded into the process the moment its Python module is imported, before any
+class is ever instantiated. orchestrator.agent (imported by /analyze)
+imports scoring.agent at module top level, which imports
+scoring.embeddings.index — so importing orchestrator.agent unconditionally
+at the top of this file would load torch into every readonly-mode process
+too, defeating the point. The import is therefore deferred to inside the
+/analyze handler itself (see analyze() below), executed only if API_MODE
+allows it.
 """
 
 from __future__ import annotations
@@ -34,18 +57,27 @@ from api.schemas import (
     OfferDetailResponse,
     OfferSummary,
 )
-from orchestrator.agent import process_offer
-from orchestrator.run import write_outputs, DEFAULT_OUTPUT_DIR
-from scoring.embeddings.index import get_client, get_embedding_function, is_initialized
 from storage.db import connect, init_db
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
+VALID_API_MODES = ("full", "readonly")
+API_MODE = os.environ.get("API_MODE", "full").strip().lower()
+if API_MODE not in VALID_API_MODES:
+    logger.warning("API_MODE=%r inconnu, repli sur 'full' (valeurs valides: %s)", API_MODE, VALID_API_MODES)
+    API_MODE = "full"
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
+
+    if API_MODE == "readonly":
+        logger.info("API_MODE=readonly — modèle d'embeddings/ChromaDB non chargés (POST /analyze désactivé)")
+        yield
+        return
+
     # Load the embedding model + ChromaDB client eagerly at startup rather
     # than lazily on the first /analyze request (session 6 follow-up): the
     # first construction of SentenceTransformerEmbeddingFunction pays ~12s of
@@ -53,6 +85,8 @@ async def lifespan(app: FastAPI):
     # current), even though chromadb caches the actual model weights
     # process-wide afterwards. Paying that cost here means the FIRST real
     # request is as fast as every subsequent one, not ~12s slower.
+    from scoring.embeddings.index import get_client, get_embedding_function
+
     t0 = time.monotonic()
     get_embedding_function()
     get_client()
@@ -70,7 +104,15 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-RUNS_DIR = DEFAULT_OUTPUT_DIR
+# Same path orchestrator/run.py's own DEFAULT_OUTPUT_DIR resolves to
+# (orchestrator/runs/, relative to that module's location) — computed here
+# directly rather than imported from orchestrator.run, because that module
+# imports orchestrator.agent at its own top level, which imports
+# scoring.agent -> scoring.embeddings.index -> chromadb/torch. Every
+# readonly-safe endpoint (health, offers, offers/{id}) needs this path, so
+# it can't depend on an import chain that pulls in the very weight
+# API_MODE=readonly exists to avoid.
+RUNS_DIR = Path(__file__).parent.parent / "orchestrator" / "runs"
 STATIC_DIR = Path(__file__).parent / "static"
 
 # Dashboard (session 9): a static HTML/JS page consuming GET /offers and
@@ -173,20 +215,34 @@ def health(response: Response) -> HealthResponse:
       - embeddings_loaded: reads the session-6 singleton state via
         is_initialized() WITHOUT constructing it — if the lifespan startup
         hook failed to load the model, this reports that failure instead of
-        lazily loading the model just to make the check pass.
+        lazily loading the model just to make the check pass. In
+        API_MODE=readonly (Render deployment follow-up), the embedding
+        model is never loaded BY DESIGN (that's the whole memory saving —
+        see module docstring), so this check is skipped entirely rather
+        than reported as a false "degraded": is_initialized() itself isn't
+        even called, since merely importing scoring.embeddings.index would
+        pull chromadb/torch into a process that's specifically trying not
+        to carry that weight.
       - database_accessible: SQLite connection opens and answers a trivial
         query — not a full read/write test, just reachability.
 
-    HTTP status: 200 when every check passes, 503 (Service Unavailable) if
-    any fails. Decision: a monitoring/orchestration layer (e.g. Docker's own
-    HEALTHCHECK, or a future load balancer) needs the STATUS CODE to act
-    automatically — a 200 with "degraded" buried in the JSON body would be
-    silently ignored by anything that only checks for a 2xx response, which
-    defeats the point of catching this at the container level rather than
-    at the first failed /analyze.
+    HTTP status: 200 when every applicable check passes, 503 (Service
+    Unavailable) if any fails. Decision: a monitoring/orchestration layer
+    (e.g. Docker's own HEALTHCHECK, Render's health check poller, or a
+    future load balancer) needs the STATUS CODE to act automatically — a
+    200 with "degraded" buried in the JSON body would be silently ignored
+    by anything that only checks for a 2xx response, which defeats the
+    point of catching this at the container level rather than at the first
+    failed /analyze.
     """
     mistral_key_present = bool(os.environ.get("MISTRAL_API_KEY", "").strip())
-    embeddings_loaded = is_initialized()
+
+    if API_MODE == "readonly":
+        embeddings_loaded = None
+    else:
+        from scoring.embeddings.index import is_initialized
+
+        embeddings_loaded = is_initialized()
 
     try:
         with connect() as conn:
@@ -200,7 +256,12 @@ def health(response: Response) -> HealthResponse:
         embeddings_loaded=embeddings_loaded,
         database_accessible=database_accessible,
     )
-    all_ok = mistral_key_present and embeddings_loaded and database_accessible
+    # embeddings_loaded=None (readonly mode) is deliberately excluded from
+    # the all_ok computation — it's "not applicable", not "failed".
+    required_checks = [mistral_key_present, database_accessible]
+    if embeddings_loaded is not None:
+        required_checks.append(embeddings_loaded)
+    all_ok = all(required_checks)
     response.status_code = 200 if all_ok else 503
 
     return HealthResponse(status="ok" if all_ok else "degraded", checks=checks)
@@ -278,7 +339,31 @@ def analyze(request: AnalyzeRequest) -> AnalyzeResponse:
     Only accepts an offer_id already present in the database (from a prior
     scraper run) — scraping an arbitrary URL on the fly is left as a future
     iteration (see ROADMAP.md).
+
+    Disabled in API_MODE=readonly (Render deployment follow-up): 503 Service
+    Unavailable rather than attempting to run and crashing on an unloaded
+    embedding model / OOM under Render's 512MB tiers. 503 chosen over 409:
+    this isn't a state conflict on the resource (an offer_id, a request body)
+    — it's a permanent characteristic of THIS deployment (scoring/generation
+    is GitHub Actions' job, see session 8; this deployment only serves
+    already-computed results), which is exactly what 503 communicates for an
+    endpoint that legitimately isn't available here, as opposed to 409's
+    "you conflicted with existing state" semantics.
     """
+    if API_MODE == "readonly":
+        raise HTTPException(
+            status_code=503,
+            detail=(
+                "Scoring désactivé sur ce déploiement (API_MODE=readonly) — le pipeline "
+                "scoring/génération est géré par GitHub Actions (voir ROADMAP.md session 8), "
+                "pas par ce déploiement en lecture seule. Consultez GET /offers et "
+                "GET /offers/{id} pour les résultats déjà calculés."
+            ),
+        )
+
+    from orchestrator.agent import process_offer
+    from orchestrator.run import write_outputs
+
     offer = _load_offer_row(request.offer_id)
     result = process_offer(offer)
     write_outputs(RUNS_DIR, request.offer_id, result)

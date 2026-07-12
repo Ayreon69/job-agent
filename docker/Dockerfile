@@ -79,10 +79,25 @@ RUN chmod +x /app/docker/entrypoint.sh
 # a missing collection) — the entrypoint builds the index once if it's not
 # there yet, see docker/entrypoint.sh.
 
+# Render deployment follow-up: Render sets $PORT at runtime (default 10000,
+# see ROADMAP.md) and requires the container to bind that exact port on
+# 0.0.0.0 — a hardcoded --port 8000 would make Render's own port-detection
+# fail the deploy. $PORT defaults to 8000 here so local `docker run`/
+# `docker-compose up` (no PORT set) behaves exactly as before this change.
+ENV PORT=8000
 EXPOSE 8000
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
-    CMD curl -f http://localhost:8000/health || exit 1
+    CMD curl -f "http://localhost:${PORT}/health" || exit 1
 
 ENTRYPOINT ["/app/docker/entrypoint.sh"]
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Shell form (not exec-form CMD array) so $PORT expands at container start —
+# an exec-form CMD ["uvicorn", ..., "--port", "$PORT"] would pass the
+# literal string "$PORT" to uvicorn unexpanded, since exec form never goes
+# through a shell. `exec` here makes the shell Docker spawns for this
+# shell-form CMD replace itself with the uvicorn process (PID stays 1's
+# child, not wrapped under a lingering /bin/sh) — without it, Render's
+# SIGTERM on deploy/restart would hit the shell instead of uvicorn, uvicorn
+# would never see the signal, and Render would have to wait out the full
+# force-kill timeout on every deploy instead of shutting down cleanly.
+CMD exec uvicorn api.main:app --host 0.0.0.0 --port "${PORT}"

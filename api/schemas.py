@@ -10,7 +10,7 @@ from pydantic import BaseModel, Field
 
 class HealthChecks(BaseModel):
     mistral_key_present: bool = Field(description="MISTRAL_API_KEY is set and non-empty in the environment — presence only, not validity (a real Mistral call would be needed to verify the key actually works, which /health deliberately avoids)")
-    embeddings_loaded: bool = Field(description="The sentence-transformers model + ChromaDB client singletons (session 6) were constructed successfully at startup")
+    embeddings_loaded: bool | None = Field(description="The sentence-transformers model + ChromaDB client singletons (session 6) were constructed successfully at startup, or null if API_MODE=readonly (Render deployment follow-up) — the check doesn't apply since this deployment mode never loads them by design")
     database_accessible: bool = Field(description="The SQLite connection can be opened and responds to a trivial query")
 
 
