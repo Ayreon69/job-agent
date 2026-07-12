@@ -1123,3 +1123,216 @@ qu'en relançant un rebuild complet inutile. Point de vigilance à garder pour
 les prochaines sessions Docker : `docker build -t X` et `docker compose
 build` gèrent des tags d'image séparés par défaut, ils ne se synchronisent
 pas automatiquement.
+
+## Session 8 (2026-07-12) : GitHub Actions pour le scraping/scoring quotidien
+
+**Objectif :** automatiser l'exécution de ce qui existe déjà (scraper session
+1, orchestrateur session 5) via un workflow GitHub Actions programmé, sans
+nouvelle logique métier. Jamais de soumission automatique de candidature
+(CLAUDE.md).
+
+**Décision — exécution Python directe plutôt que Docker en CI :** le
+Dockerfile de la session 7 reste l'artefact de déploiement pour l'API, mais
+ce workflow n'exécute pas l'API — il lance deux scripts batch
+(`scraper.run`, `orchestrator.run`). Un runner GitHub hébergé donne déjà un
+environnement Python 3.11 propre par job ; construire ou puller l'image
+(~6.6GB) n'aurait rien apporté de spécifique à Docker ici (pas de
+préoccupation d'isolation host sur un runner jetable) et aurait seulement
+ajouté du temps de build/transfert. Même jeu de dépendances verrouillées que
+Docker (`docker/requirements-lock.txt` + torch CPU via l'index PyTorch dédié)
+pour éviter de re-découvrir en CI le conflit opentelemetry résolu en session
+3.
+
+**Persistance entre les runs — décision et pourquoi :** un run GitHub Actions
+repart d'un checkout propre à chaque fois (pas de volume comme en Docker
+local). Comparé à trois options :
+- **Commit automatique dans le repo (choisi)** : le workflow commit
+  `storage/jobs.db` + `orchestrator/runs/` (bot `job-agent-bot`, message
+  `[skip ci]`) à la fin de chaque run réussi. Simple, versionné, inspectable
+  via `git log`/`git diff` comme n'importe quel autre changement, aucun
+  risque d'éviction. Volumes actuels (DB 144K, runs 1.4M, croissance lente)
+  restent négligeables pour un repo git.
+- **`actions/cache`** : écarté — pas conçu pour être une source de vérité
+  (éviction LRU sous pression, limite 10GB/repo, pas versionné), détournerait
+  un outil d'accélération de build de son usage normal.
+- **Artifact entre runs** : écarté — pas de restauration automatique (il
+  faudrait interroger l'API GitHub pour retrouver le dernier artifact),
+  rétention 90 jours par défaut, plomberie ajoutée pour un gain nul face à
+  l'option commit.
+
+`scoring/embeddings/chroma/` (l'index vectoriel) n'est PAS persisté de cette
+façon : il est reconstruit à chaque run depuis les fichiers source déjà
+versionnés `scoring/profile/*.md` (quelques secondes, évite de committer un
+binaire régénérable à l'identique). `.gitignore` explicitement mis à jour
+(`!storage/jobs.db`) pour cette exception délibérée — les autres `*.db`
+locaux restent ignorés.
+
+**Secret :** `MISTRAL_API_KEY` chargé via `secrets.MISTRAL_API_KEY` (GitHub
+Secrets, configuré via `gh secret set`), jamais en clair dans le workflow.
+
+**Sécurité — limite explicite respectée :** aucune étape du workflow
+n'envoie, ne publie, ni ne soumet quoi que ce soit à l'extérieur — uniquement
+scraper, scorer, générer, committer les résultats pour consultation
+ultérieure via l'API ou les fichiers générés. `permissions: contents: write`
+est le seul droit élevé accordé, strictement nécessaire pour le commit de
+persistance.
+
+**Déclenchement :** `schedule` (cron quotidien `0 6 * * *`, ~08:00
+Europe/Paris — volume actuel de quelques dizaines d'offres/jour au plus)
++ `workflow_dispatch` pour déclenchement manuel/test. `concurrency` avec
+`cancel-in-progress: false` pour éviter que deux runs concurrents écrivent
+`jobs.db` en même temps (mise en file plutôt qu'annulation).
+
+**Tests réels effectués (deux runs `workflow_dispatch` consécutifs, pas de
+simulation) :**
+
+1. **Premier run** (`29186309321`, 48m52s) : scraping réel (Hellowork,
+   requêtes/région par défaut), 36 offres au statut `nouveau` trouvées
+   (30 nouvelles scrapées + 6 déjà en base non traitées), orchestrateur batch
+   exécuté avec succès sur les 36 — **`analyse: 36, a_valider_geographie: 0,
+   echec: 0`**. Commit bot réel poussé (`aebe25c..5c6fa41`) avec les 4
+   fichiers de sortie (analyse + 3 traces) pour chacune des 36 offres plus la
+   DB mise à jour.
+2. **Deuxième run** (`29200908630`, 10m17s), déclenché après le premier sans
+   modification manuelle entre les deux : le scraper a retrouvé
+   majoritairement des doublons (ignorés par `UNIQUE(source, source_id)` /
+   `upsert_job`), et **une seule offre neuve** (offer 148) est apparue au
+   statut `nouveau` — les 66 offres déjà `analyse` n'ont **pas** été
+   retraitées (`Traitement de 1 offre(s)...` dans les logs, `Total: 1`).
+   Commit bot réel (`5c6fa41..0a4a14d`) ne contenant que les 4 fichiers de la
+   nouvelle offre 148.
+3. **Vérification a posteriori** : `git show origin/master:orchestrator/runs/analysis_37.md`
+   confirme que l'analyse produite lors du premier run reste lisible et
+   intacte après le second commit — aucune perte, aucune régénération
+   inutile.
+
+**Problèmes spécifiques à l'environnement CI rencontrés :** aucun bloquant.
+Seule note : `Node.js 20 is deprecated` (annotation GitHub sur
+`actions/checkout@v4`/`actions/setup-python@v5`, forcés sur Node 24 par le
+runner) — avertissement d'infrastructure GitHub, sans action requise côté
+projet. Le premier run a pris ~49 minutes (36 offres × ~2s de délai +
+plusieurs appels Mistral par offre pour l'extraction RAG atomique), à garder
+en tête si le volume quotidien augmente significativement par rapport au
+timeout de 60 minutes fixé dans le workflow.
+
+**Fichiers :** `.github/workflows/scrape-and-score.yml`, `.gitignore` (ajout
+de l'exception `storage/jobs.db`).
+
+## Session 9 (2026-07-12) : dashboard web pour consulter les offres scorées
+
+**Objectif :** interface de consultation en lecture seule au-dessus de l'API
+existante (session 6) — aucune nouvelle logique métier, uniquement un
+affichage de ce que l'API retourne déjà.
+
+**Stack — HTML/JS simple plutôt que React :** pas de valeur ajoutée réelle
+d'un framework ici — une table triable/filtrable et un panneau de détail sur
+clic sont un besoin trop simple pour justifier un build toolchain (webpack/
+vite), une dépendance npm, ou l'overhead conceptuel d'un framework de
+composants pour un usage personnel mono-page. Servi par `StaticFiles` de
+FastAPI (`api/static/`, monté sur `/static`, `index.html` servi à `/`) plutôt
+qu'un serveur frontend séparé — un seul process à faire tourner.
+
+**Extension API nécessaire (pas de nouvelle décision métier, juste de
+l'exposition) :** aucun champ structuré `gaps`/`matches` n'est persisté nulle
+part — `ScoringResult.gaps` ne survit que dans le markdown généré par le LLM
+(`trace_scoring_<id>.json` ne contient que `uncertain_flags`, pas `gaps`, voir
+`scoring/agent.py` `ScoringResult`). `api/main.py` ajoute donc un parsing
+positionnel du markdown (`_parse_gaps_and_uncertain`, `_parse_matching_summary`) :
+- Le titre de section top-level `## Gaps et incertitudes` est fixé par le
+  prompt de génération (testé dans `tests/test_generation.py`) — utilisé comme
+  ancre fiable.
+- Le sous-titre juste en-dessous ("Gaps confirmés", niveau `###` ou `**gras**`)
+  varie librement selon la sortie LLM (constaté sur les 30+ analyses réelles :
+  `### Gaps confirmés (compétences absentes)`, `### **Gaps confirmés**`,
+  `**Gaps confirmés (...) :**`...) — le parsing ne matche donc PAS un texte de
+  sous-titre fixe, il repère les items de liste (`- **Label**` ou `N. **Label**`)
+  et bascule vers le bucket "incertain" au premier repère contenant "incertain".
+- Testé sur les **~40 fichiers markdown réels** déjà générés (sessions 3-8) :
+  100% parsés sans exception, comptes de gaps cohérents avec une relecture
+  manuelle (offre 24 : 4 gaps + 1 incertain — ISO 13485, cohérent avec le
+  correctif post-session 3 ; offre 7 : 4 gaps + 1 incertain avec un style de
+  liste numérotée `1.`/`2.`, correctement géré).
+- Nouveaux champs exposés : `OfferSummary.gaps_count`/`uncertain_count` (liste
+  `/offers`), `OfferDetailResponse.score`/`geography_zone`/`matching_summary`/
+  `gaps`/`uncertain_flags` (détail `/offers/{id}`) — tous `None`/liste vide si
+  l'offre n'a pas encore d'analyse, jamais d'exception.
+
+**Interface livrée :**
+- Table triable (clic sur un en-tête, bascule asc/desc), triée par score
+  décroissant par défaut (les offres sans score triées en dernier, quelle que
+  soit la direction — un score manquant n'est pas "pire", juste pas encore
+  comparable).
+- Filtres zone géographique (6 valeurs réelles de `check_geography_rules` :
+  `suisse_romande`, `rhone_alpes`, `uae_gcc`, `suisse_autre`, `autre_france`,
+  `inconnu`) et statut, peuplés dynamiquement depuis les valeurs réellement
+  présentes dans `/offers` (pas de liste figée qui pourrait diverger du
+  backend). Badge vert pour toute zone classifiée avec confiance, ambre
+  uniquement pour `inconnu` (le seul cas marqué `a_valider_geographie` par
+  l'orchestrateur, donc le seul nécessitant réellement une vérification
+  humaine — pas une question de "priorité" au sens CLAUDE.md).
+- Panneau de détail sous la table au clic : score, résumé court du matching
+  (première puce de la section, pas les 6+ puces complètes), gaps confirmés et
+  flags incertains sous forme de listes courtes avec compteurs, lien vers
+  `GET /offers/{id}` (JSON brut incluant le markdown complet) — pas de rendu
+  markdown élaboré dans cette première version comme demandé, seul le `**gras**`
+  est converti en `<strong>` côté client (bug visuel constaté et corrigé lors
+  des tests, voir plus bas).
+- Rendu null-safe : score/zone absents affichés `—`, jamais d'exception JS.
+
+**Tests réels effectués (Playwright headless contre le serveur FastAPI local,
+pas de mock, 14 vérifications automatisées + captures d'écran) :**
+
+1. Chargement de `/` avec les 67 offres réelles de la base (30 scrapées
+   session 1 + 36 traitées + 1 nouvelle du run CI de la session 8) : la table
+   affiche bien les lignes réelles, tri par score décroissant confirmé
+   (première ligne avec un score numérique non vide), **aucune erreur console
+   JS**.
+2. Filtre zone testé avec une vraie valeur (`autre_france`) : réduit
+   effectivement le nombre de lignes visibles (67 → 3, vérifié).
+3. Filtre statut testé avec une offre de test insérée au statut `nouveau`
+   (créée proprement via `storage.db.upsert_job`, pas via le CLI `sqlite3`
+   qui a d'abord introduit un bug d'encodage UTF-8 corrompant le titre —
+   détecté par un crash `sqlite3.OperationalError: Could not decode to UTF-8`
+   sur `GET /offers`, corrigé en réinsérant via Python) : le filtre isole
+   correctement cette unique offre.
+4. **Clic sur l'offre `nouveau` (non scorée)** : le panneau de détail
+   s'affiche sans erreur JS, avec le message "cette offre n'a pas encore été
+   traitée" plutôt qu'un score/zone vides mal gérés — exactement le
+   comportement demandé.
+5. Clic sur une offre `analyse` réelle : panneau affiche score, résumé du
+   matching, gaps/incertitudes avec compteurs, lien vers l'analyse complète —
+   confirmé par capture d'écran.
+6. Bascule du tri (clic sur l'en-tête Score) : la classe CSS de direction de
+   tri change bien (`sorted-desc` → `sorted-asc`).
+7. `GET /offers/99999` (déjà couvert par la session 6, revérifié ici) : 404
+   propre, pas de 500.
+
+**Bug trouvé et corrigé pendant les tests :** le résumé du matching (première
+puce de "Résumé du matching") est affiché tel quel côté client — le markdown
+`**gras**` généré par le LLM apparaissait donc littéralement avec ses
+astérisques dans l'interface (visible sur la première capture d'écran). Corrigé
+avec `escapeAndBold()` côté JS (conversion `**texte**` → `<strong>`, pas un
+rendu markdown complet, juste ce cas précis) — reconfirmé par une seconde
+capture d'écran après correction, tous les 14 tests automatisés toujours au
+vert après le changement.
+
+**Offre de test nettoyée** de la base après les tests (comme pour les
+sessions précédentes).
+
+**Fichiers :** `api/static/index.html`, `api/static/dashboard.css`,
+`api/static/dashboard.js`, `api/main.py` (mount `StaticFiles` + route `/` +
+`_parse_gaps_and_uncertain`/`_parse_matching_summary`), `api/schemas.py`
+(champs `gaps_count`/`uncertain_count`/`score`/`geography_zone`/
+`matching_summary`/`gaps`/`uncertain_flags` ajoutés).
+
+**Limites connues à traiter plus tard :**
+- Le parsing du markdown pour les compteurs de gaps est un pis-aller —
+  fonctionne à 100% sur les analyses réelles actuelles mais reste sensible à
+  un changement de structure du prompt de génération (session 4). Une
+  alternative plus robuste serait de faire produire ces compteurs sous forme
+  structurée par `generation/analysis.py` directement plutôt que de les
+  re-dériver du texte a posteriori — non fait cette session pour rester dans
+  le périmètre "pas de nouvelle logique métier".
+- Pas de rendu markdown complet pour le lien "analyse complète" (ouvre le
+  JSON brut de `GET /offers/{id}`, qui inclut le markdown en texte) — accepté
+  explicitement comme suffisant pour cette première version.

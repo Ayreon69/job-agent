@@ -27,6 +27,8 @@ class OfferSummary(BaseModel):
     status: str
     score: int | None = Field(default=None, description="Score 0-100, null if not yet analyzed")
     geography_zone: str | None = Field(default=None, description="Zone from check_geography_rules, null if not yet analyzed")
+    gaps_count: int | None = Field(default=None, description="Number of confirmed gaps listed in the analysis markdown, null if not yet analyzed")
+    uncertain_count: int | None = Field(default=None, description="Number of uncertain flags listed in the analysis markdown, null if not yet analyzed")
 
 
 class OfferDetailResponse(BaseModel):
@@ -36,6 +38,11 @@ class OfferDetailResponse(BaseModel):
     company: str | None
     url: str
     status: str
+    score: int | None = Field(default=None, description="Score 0-100, null if not yet analyzed")
+    geography_zone: str | None = Field(default=None, description="Zone from check_geography_rules, null if not yet analyzed")
+    matching_summary: str | None = Field(default=None, description="First bullet of the analysis's matching summary, null if not yet analyzed")
+    gaps: list[str] = Field(default_factory=list, description="Short labels of confirmed gaps, parsed from the analysis markdown (empty if none or not yet analyzed)")
+    uncertain_flags: list[str] = Field(default_factory=list, description="Short labels of uncertain flags, parsed from the analysis markdown (empty if none or not yet analyzed)")
     analysis_markdown: str | None = Field(default=None, description="Null if the offer hasn't been analyzed yet")
     orchestrator_trace: dict | None = Field(default=None, description="Orchestrator's own decision trace (session 5)")
     scoring_trace: dict | None = Field(default=None, description="Scoring agent's RAG decision trace (session 3)")

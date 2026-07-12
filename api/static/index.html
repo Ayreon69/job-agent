@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>job-agent — Dashboard</title>
+<link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+  <header>
+    <h1>job-agent — offres scorées</h1>
+    <p class="subtitle">Vue d'ensemble en lecture seule. Aucune candidature n'est jamais soumise automatiquement.</p>
+  </header>
+
+  <section class="filters">
+    <label>
+      Zone géographique
+      <select id="filter-zone">
+        <option value="">Toutes</option>
+      </select>
+    </label>
+    <label>
+      Statut
+      <select id="filter-status">
+        <option value="">Tous</option>
+      </select>
+    </label>
+    <span id="offer-count" class="offer-count"></span>
+  </section>
+
+  <section id="error-banner" class="error-banner" hidden></section>
+
+  <table id="offers-table">
+    <thead>
+      <tr>
+        <th data-sort="title">Titre</th>
+        <th data-sort="company">Entreprise</th>
+        <th data-sort="geography_zone">Zone</th>
+        <th data-sort="score" class="sortable sorted-desc">Score</th>
+        <th data-sort="status">Statut</th>
+        <th>Flags</th>
+      </tr>
+    </thead>
+    <tbody id="offers-body">
+      <tr><td colspan="6" class="loading">Chargement…</td></tr>
+    </tbody>
+  </table>
+
+  <section id="detail-panel" class="detail-panel" hidden></section>
+
+  <script src="/static/dashboard.js"></script>
+</body>
+</html>
