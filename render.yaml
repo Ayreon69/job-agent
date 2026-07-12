@@ -1,0 +1,52 @@
+# Render Blueprint — deploys the job-agent API/dashboard in read-only mode.
+#
+# Session 10 (Render deployment): the "full" mode (scoring/generation via
+# POST /analyze, session 6) needs ~750MB-900MB RAM at rest once the
+# sentence-transformers/torch embedding model is loaded — measured directly
+# via `docker stats` (see ROADMAP.md). That's over budget on Render's
+# free AND $7/mo Starter tiers, which both cap at 512MB. Render is used here
+# purely to serve the dashboard + GET /offers, /offers/{id} against data
+# already produced by the GitHub Actions batch pipeline (session 8) — actual
+# scoring never needs to happen on Render, so API_MODE=readonly (correctif
+# post-session 9) skips loading the embedding model entirely, measured at
+# ~58MB RAM at rest, comfortably inside the free tier.
+#
+# See docker/Dockerfile and docker/entrypoint.sh for what API_MODE=readonly
+# changes at the container level (no ChromaDB index build, no
+# sentence-transformers/torch import).
+services:
+  - type: web
+    name: job-agent-api
+    runtime: docker
+    dockerfilePath: ./docker/Dockerfile
+    dockerContext: .
+    plan: free
+    region: frankfurt
+      # Closest Render region to the target job market (Lyon/Suisse
+      # romande/France) — lower latency for the one human user of this
+      # dashboard; no functional requirement, adjust freely.
+    healthCheckPath: /health
+      # Render polls this before routing traffic to a new deploy (zero-
+      # downtime deploys) — /health already returns 200/503 correctly in
+      # readonly mode (embeddings_loaded is excluded from the pass/fail
+      # computation there, see api/main.py), no endpoint changes needed.
+    autoDeployTrigger: commit
+      # Redeploys on every push to the connected branch — including the
+      # GitHub Actions bot's own commits (session 8: storage/jobs.db +
+      # orchestrator/runs/ pushed back after each scrape/score run), so a
+      # fresh scrape shows up on the live dashboard without any manual step.
+    envVars:
+      - key: API_MODE
+        value: readonly
+      - key: MISTRAL_API_KEY
+        sync: false
+        # sync: false means Render prompts for this value in the dashboard
+        # instead of expecting it in this committed file — the key must
+        # never be committed to the repo (see .env / .env.example already
+        # enforcing this locally). Technically unused by any endpoint in
+        # readonly mode (POST /analyze is disabled, and nothing else calls
+        # Mistral), but scoring.llm's module-level load_dotenv()/getenv
+        # check still runs at import time in the health-check code path for
+        # mistral_key_present — kept set so that check reports true rather
+        # than a misleading "key missing" on a deployment that simply never
+        # needs to use it.

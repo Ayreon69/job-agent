@@ -1680,3 +1680,210 @@ après avoir cliqué).
 | Scroll nécessaire pour voir le détail (offre en haut de liste) | Oui, jusqu'en bas de la page | Non, visible immédiatement |
 | Comportement au clic sur une 2e offre | Contenu du panneau remplacé, toujours en bas | Ancienne ligne de détail fermée, nouvelle ouverte à sa propre position |
 | Lien vers l'offre originale | Absent du dashboard | Visible en première ligne du panneau, cliquable, nouvel onglet — testé avec navigation réelle |
+
+## Session 10 (2026-07-13) : préparation du déploiement Render + correctif API_MODE=readonly
+
+**Objectif initial :** déployer l'API/dashboard sur Render avec redéploiement
+automatique déclenché par les commits du bot GitHub Actions (session 8).
+
+**Deux bugs réels trouvés en préparant le déploiement (pas des suppositions
+— vérifiés par un vrai `docker build` avec un Dockerfile de diagnostic) :**
+
+1. `.dockerignore` excluait `storage/jobs.db` (règle `*.db`/`storage/*.db`
+   héritée de la session 7, jamais mise à jour après la session 8 qui a
+   pourtant ajouté l'exception correspondante dans `.gitignore`). Un
+   `docker build` réel confirmait `JOBS_DB_MISSING` dans l'image — un
+   déploiement Render serait parti d'une base vide malgré les 67 offres
+   déjà versionnées dans le repo.
+2. `.dockerignore` excluait aussi `orchestrator/runs/` (339 fichiers
+   analyses + traces, versionnés depuis la session 8) — même symptôme :
+   dashboard avec scores/statuts corrects mais tous les panneaux de détail
+   vides sur un déploiement frais.
+
+**Corrigé** dans `.dockerignore` : exception `!storage/jobs.db` (miroir
+exact de `.gitignore`), suppression de la ligne excluant
+`orchestrator/runs/`. Revérifié par un second `docker build` de diagnostic :
+`JOBS_DB_PRESENT`, 339 fichiers dans `orchestrator/runs/` présents.
+
+**Adaptations du Dockerfile pour Render :**
+- Render fixe `$PORT` à l'exécution (10000 par défaut) et exige que le
+  conteneur écoute EXACTEMENT ce port sur `0.0.0.0` — le `CMD` figé sur
+  `--port 8000` aurait fait échouer la détection de port par Render. Changé
+  en `ENV PORT=8000` (valeur par défaut pour `docker run`/`docker-compose`
+  sans variable positionnée, comportement local inchangé) + `CMD exec
+  uvicorn ... --port "${PORT}"` (forme shell, pas la forme exec-array —
+  nécessaire pour que `${PORT}` soit interpolé au démarrage). Le `exec`
+  explicite fait remplacer le shell par le process uvicorn lui-même plutôt
+  que de le garder comme enfant : sans ça, un `SIGTERM` de Render (à chaque
+  redéploiement) n'atteindrait jamais uvicorn, qui ne s'arrêterait proprement
+  qu'après le timeout de force-kill. Vérifié directement via `docker top` :
+  uvicorn tourne bien comme PID direct de l'entrypoint, pas sous un
+  `/bin/sh -c` intermédiaire.
+- `HEALTHCHECK` du Dockerfile mis à jour pour utiliser `${PORT}` aussi (reste
+  utile pour `docker-compose` local ; Render ignore l'instruction Docker
+  `HEALTHCHECK` et fait son propre polling HTTP contre `healthCheckPath`,
+  voir `render.yaml`).
+- Render ne lit pas `docker-compose.yml` ni le `HEALTHCHECK` du Dockerfile —
+  la configuration Render se fait via `render.yaml` (Blueprint) ou
+  directement dans le dashboard Render.
+
+**Problème découvert en testant le déploiement Render (bloquant, signalé
+avant de continuer) :** mesure réelle via `docker stats` sur le conteneur
+"full" (comportement identique à avant cette session) : **~749MB-921MB RAM
+au repos** (sentence-transformers + torch chargés par le singleton de
+session 6). Les tiers Free ET Starter (7$/mo) de Render plafonnent tous les
+deux à 512MB — insuffisant sur les deux. Seul le tier Standard (25$/mo,
+2GB) tiendrait "full" tel quel. Décision (validée avec l'utilisateur) :
+ne pas payer plus cher, mais séparer les deux usages réels de l'API selon
+l'environnement — Render n'a jamais besoin de faire tourner le RAG, ce
+travail est déjà fait par GitHub Actions (session 8).
+
+**Correctif — API_MODE=readonly|full :**
+- `api/main.py` : `API_MODE = os.environ.get("API_MODE", "full")`, avec
+  repli sur `"full"` si la valeur est inconnue (jamais de crash pour une
+  variable mal orthographiée — comportement local/Docker-compose/CI
+  inchangé, ces environnements ne positionnent jamais cette variable).
+- **La vraie source d'économie mémoire n'est pas le blocage de l'endpoint en
+  façade, mais l'endroit où l'import a lieu.** `orchestrator.agent` importe
+  `scoring.agent` au niveau module, qui importe
+  `scoring.embeddings.index` (chromadb + sentence-transformers + torch) —
+  donc un simple `from orchestrator.agent import process_offer` en haut de
+  `api/main.py`, même jamais appelé, charge torch en mémoire dès l'import du
+  module. Les imports de `orchestrator.agent`/`orchestrator.run` sont donc
+  déplacés à l'intérieur du handler `/analyze` lui-même (import différé),
+  exécutés seulement si `API_MODE != "readonly"`. Même chose pour
+  `get_embedding_function`/`get_client` (déplacés dans `lifespan`, appelés
+  seulement hors readonly) et `is_initialized` (déplacé dans le handler
+  `/health`, appelé seulement hors readonly).
+- **Vérifié directement via `sys.modules`** (pas une simple lecture de
+  code) : `import api.main` avec `API_MODE=readonly` positionné →
+  `'torch' in sys.modules`, `'chromadb' in sys.modules`,
+  `'sentence_transformers' in sys.modules` tous `False`. En mode `full`
+  (défaut), toujours `False` à l'import du module (le chargement reste
+  différé dans `lifespan`, comportement de la session 6 inchangé) puis
+  `True` une fois le serveur démarré.
+- `GET /health` : `embeddings_loaded` devient `bool | None` — `null` en mode
+  readonly plutôt qu'un faux `False` qui ferait passer le check en
+  `"degraded"` (503) alors que le modèle n'est jamais censé être chargé dans
+  ce mode. Le calcul de `all_ok` exclut explicitement ce check quand il vaut
+  `None` (pas applicable, pas un échec). `is_initialized()` n'est même pas
+  importé en mode readonly, pour ne pas tirer chromadb/torch en mémoire rien
+  que pour répondre à un ping de santé.
+- `POST /analyze` : renvoie **503 Service Unavailable** en mode readonly,
+  avec un message explicite ("Scoring désactivé sur ce déploiement... géré
+  par GitHub Actions... consultez GET /offers..."). **503 choisi plutôt que
+  409** : ce n'est pas un conflit d'état sur la ressource (l'`offer_id`, le
+  corps de requête) comme le suggérerait 409 — c'est une caractéristique
+  permanente de CE déploiement (le scoring est le travail de GitHub Actions,
+  pas de ce déploiement en lecture seule), ce que 503 communique
+  correctement pour un endpoint légitimement indisponible ici.
+- `docker/entrypoint.sh` : en `API_MODE=readonly`, l'étape de construction
+  de l'index ChromaDB est sautée entièrement (jamais interrogée dans ce
+  mode, la construire consommerait CPU/temps/RAM pour rien).
+
+**Tests réels effectués (pas de simulation) :**
+
+1. **Import direct, mode readonly** : `torch`/`chromadb`/
+   `sentence_transformers` absents de `sys.modules` après `import api.main`
+   avec `API_MODE=readonly` — preuve directe que l'économie mémoire vient
+   bien de l'endroit où l'import a lieu, pas juste d'un blocage de façade.
+2. **Serveur local readonly, 4 endpoints testés** : `GET /health` → `200
+   {"embeddings_loaded": null, ...}` ; `GET /offers` → 67 offres réelles ;
+   `GET /offers/24` → détail réel (score, matches, gaps) ; `GET
+   /offers/99999` → 404 ; `POST /analyze` → **503** avec le message attendu.
+   Logs serveur vérifiés sans traceback.
+3. **Serveur local mode full (non-régression)** : `GET /health` →
+   `embeddings_loaded: true` ; `POST /analyze` sur une offre réelle (148) →
+   pipeline complet exécuté (vrai appel Mistral, vrai RAG), `200` avec
+   analyse complète — comportement identique à avant cette session.
+4. **Conteneur Docker réel, mode readonly** : temps de démarrage mesuré
+   (container start → `/health` répond) : **~1.7s** (contre ~29.8s en mode
+   full, mesuré dans la même session avant ce correctif — voir plus bas).
+   Mémoire au repos mesurée via `docker stats` : **~58MB** (contre
+   ~749-921MB en mode full). Logs de l'entrypoint confirmant le skip de
+   construction d'index. `GET /offers` → 67 offres, `POST /analyze` → 503 —
+   comportement identique au test local, cette fois dans les conditions
+   réelles du déploiement (image buildée, pas de volume persistant).
+5. **Conteneur Docker réel, mode full (non-régression post-changement
+   d'imports différés)** : `embeddings_loaded: true`, index reconstruit
+   normalement au démarrage — aucune régression introduite par le
+   déplacement des imports.
+
+**Mesures de démarrage/latence (toutes réelles, container Docker, pas de
+volume persistant — simule l'environnement Render où le filesystem repart de
+zéro à chaque déploiement) :**
+
+| | Mode `full` | Mode `readonly` |
+|---|---|---|
+| Temps de démarrage (container start → `/health` répond) | ~29.8s | **~1.7s** |
+| Détail du temps de démarrage | ~15.4s construction index + ~14s chargement modèle (lifespan) — les deux étapes rechargent indépendamment le modèle car ce sont deux process séparés (`python -m scoring.embeddings.build` en sous-process de l'entrypoint, puis le process uvicorn lui-même), le singleton de session 6 ne peut pas partager d'état entre les deux | Aucune des deux étapes ne s'exécute |
+| RAM au repos | ~749-921MB (mesuré à deux moments différents, cohérent avec le même ordre de grandeur) | **~58MB** |
+| Tient dans le tier Free Render (512MB) ? | Non | **Oui, large marge** |
+| Tient dans le tier Starter Render (512MB, 7$/mo) ? | Non | **Oui, large marge** |
+
+**Limite non résolue, notée pour référence :** en mode `full`, la
+construction de l'index (`scoring.embeddings.build`, sous-process de
+l'entrypoint) et le chargement du singleton d'embeddings par `lifespan`
+(process uvicorn) chargent chacun leur propre instance du modèle
+sentence-transformers, doublant le coût des ~12-14s de vérification de
+cache HuggingFace Hub. Une optimisation possible serait de partager l'état
+entre les deux (ex: construire l'index directement dans le process uvicorn
+au lieu d'un sous-process séparé) — non traité cette session, hors périmètre
+du correctif readonly qui ne modifie pas le chemin `full`.
+
+## Procédure de déploiement Render
+
+**1. Créer le compte / connecter le repo**
+- Créer un compte sur render.com (ou se connecter avec le compte GitHub).
+- "New +" → "Blueprint" → sélectionner le repo `Ayreon69/job-agent` (le
+  dépôt privé créé en session 8) → Render détecte automatiquement
+  `render.yaml` à la racine.
+
+**2. Variables d'environnement**
+- `API_MODE=readonly` est déjà fixé dans `render.yaml` (`envVars`), pas
+  besoin de le ressaisir.
+- `MISTRAL_API_KEY` : marqué `sync: false` dans `render.yaml` — Render
+  demande sa valeur dans le dashboard au moment de la création du service
+  (onglet "Environment"), jamais committée dans le repo. Techniquement non
+  utilisée par aucun endpoint en mode readonly (POST /analyze est
+  désactivé), mais la renseigner évite que `GET /health` rapporte
+  `mistral_key_present: false` de façon trompeuse sur un déploiement qui n'en
+  a simplement jamais besoin.
+
+**3. Activer le déploiement automatique**
+- Déjà configuré dans `render.yaml` via `autoDeployTrigger: commit` — se
+  déclenche sur chaque push vers la branche connectée, y compris les commits
+  du bot `job-agent-bot` (workflow GitHub Actions de la session 8) qui
+  pousse `storage/jobs.db` + `orchestrator/runs/` après chaque scrape. Une
+  nouvelle offre scrapée un matin apparaît donc sur le dashboard en ligne
+  sans étape manuelle.
+- Vérifiable/modifiable après coup dans le dashboard Render : Service →
+  Settings → Build & Deploy → "Auto-Deploy".
+
+**4. Health check**
+- `healthCheckPath: /health` déjà configuré dans `render.yaml` — Render
+  interroge cet endpoint avant de router le trafic vers un nouveau déploiement
+  (déploiement sans interruption). `/health` répond déjà `200`/`503` de
+  façon cohérente en mode readonly (voir plus haut), aucun changement
+  nécessaire côté endpoint pour ce point.
+
+**5. Limite connue à surveiller après le premier déploiement réel**
+- Le tier `free` de Render **met le service en veille après 15 minutes
+  d'inactivité** et le redémarre à la prochaine requête (cold start Render,
+  généralement 30-50s selon la documentation Render — non mesuré ici, propre
+  à l'infrastructure Render et pas reproductible en local). Combiné au
+  démarrage applicatif mesuré ci-dessus (~1.7s en mode readonly), le premier
+  chargement du dashboard après une période d'inactivité prend donc
+  approximativement **30-50s (cold start Render) + ~2s (démarrage
+  applicatif) ≈ 30-52s** au total — à vérifier avec une mesure réelle une
+  fois le service effectivement déployé sur Render (cette session prépare et
+  teste tout le code/la configuration nécessaires, mais la création du
+  service Render lui-même et la mesure du cold start réel restent une étape
+  manuelle, hors de portée d'un agent sans accès au compte Render de
+  l'utilisateur).
+
+**Fichiers :** `render.yaml` (nouveau), `.dockerignore` (correctif
+`storage/jobs.db` + `orchestrator/runs/`), `docker/Dockerfile` ($PORT
+dynamique, exec signal handling), `docker/entrypoint.sh` (skip index en
+readonly), `api/main.py` (API_MODE, imports différés), `api/schemas.py`
+(`embeddings_loaded: bool | None`).

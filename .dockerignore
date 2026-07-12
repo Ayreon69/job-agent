@@ -7,10 +7,20 @@ __pycache__/
 .ruff_cache/
 .git/
 .env
+
+# storage/jobs.db and orchestrator/runs/ ARE versioned in git (session 8:
+# jobs.db is committed back by the GitHub Actions bot after every scrape run;
+# orchestrator/runs/ holds every analysis + trace produced so far) and MUST
+# be baked into the image so a fresh Render deploy (Render follow-up
+# correctif) starts with real data instead of an empty dashboard — a
+# container there is rebuilt from scratch on every deploy, no persistent
+# volume like docker-compose gives locally. Excluding *.db here previously
+# silently dropped jobs.db from the build context despite .gitignore's own
+# !storage/jobs.db exception already allowing it — verified with a real
+# `docker build` dry run that reproduced the bug before this fix.
 *.db
 *.sqlite3
-storage/*.db
+!storage/jobs.db
 scoring/embeddings/chroma/
-orchestrator/runs/
 .vscode/
 .idea/
