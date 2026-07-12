@@ -35,7 +35,7 @@ const STATUS_LABELS = {
 
 let allOffers = [];
 let currentSort = { key: "score", dir: "desc" };
-let selectedOfferId = null;
+let expandedOfferId = null; // accordion: at most one offer's detail row open at a time
 
 async function fetchOffers() {
   const res = await fetch("/offers");
@@ -139,6 +139,10 @@ function renderTable() {
   const tbody = document.getElementById("offers-body");
   document.getElementById("offer-count").textContent = `${sorted.length} offre(s)`;
 
+  // A filter/sort change can remove the currently-expanded offer from view
+  // (or reorder it) — the accordion row is rebuilt fresh below in its new
+  // position if the offer is still visible, so there's nothing stale to
+  // clean up here; just don't error if it's gone.
   if (sorted.length === 0) {
     tbody.innerHTML = '<tr><td colspan="6" class="empty">Aucune offre ne correspond aux filtres.</td></tr>';
     return;
@@ -148,7 +152,7 @@ function renderTable() {
   for (const offer of sorted) {
     const tr = document.createElement("tr");
     tr.dataset.offerId = offer.id;
-    if (offer.id === selectedOfferId) tr.classList.add("selected");
+    if (offer.id === expandedOfferId) tr.classList.add("selected");
     tr.innerHTML = `
       <td>${escapeHtml(offer.title)}</td>
       <td>${escapeHtml(offer.company || "—")}</td>
@@ -159,6 +163,21 @@ function renderTable() {
     `;
     tr.addEventListener("click", () => selectOffer(offer.id));
     tbody.appendChild(tr);
+
+    // Accordion (session 9 follow-up): the detail row is inserted directly
+    // after the offer's own row, in-place, rather than in a fixed panel at
+    // the bottom of the page — with 67 offers, a bottom panel meant
+    // scrolling all the way down after every click to see the result.
+    if (offer.id === expandedOfferId) {
+      const detailTr = document.createElement("tr");
+      detailTr.className = "detail-row";
+      detailTr.dataset.detailFor = offer.id;
+      const td = document.createElement("td");
+      td.colSpan = 6;
+      td.innerHTML = '<div class="detail-panel"><p class="loading">Chargement du détail…</p></div>';
+      detailTr.appendChild(td);
+      tbody.appendChild(detailTr);
+    }
   }
 }
 
@@ -172,27 +191,39 @@ function updateSortHeaders() {
 }
 
 async function selectOffer(offerId) {
-  selectedOfferId = offerId;
+  // Accordion toggle: clicking the already-open row closes it; clicking any
+  // other row closes whatever was open (if anything) and opens the new one
+  // at ITS position — never two detail rows open at once.
+  expandedOfferId = expandedOfferId === offerId ? null : offerId;
   renderTable();
 
-  const panel = document.getElementById("detail-panel");
-  panel.hidden = false;
-  panel.innerHTML = '<p class="loading">Chargement du détail…</p>';
+  if (expandedOfferId === null) return;
+
+  const detailTr = document.querySelector(`tr.detail-row[data-detail-for="${expandedOfferId}"]`);
+  if (!detailTr) return; // offer scrolled out of the current filter/sort view
+  const panel = detailTr.querySelector(".detail-panel");
 
   try {
-    const detail = await fetchOfferDetail(offerId);
-    renderDetail(detail);
+    const detail = await fetchOfferDetail(expandedOfferId);
+    // The user may have toggled again (or re-filtered) while the fetch was
+    // in flight — only render into the row if it's still the open one.
+    if (expandedOfferId !== detail.id) return;
+    renderDetail(panel, detail);
   } catch (err) {
     panel.innerHTML = `<p class="error-banner">Impossible de charger le détail de l'offre ${offerId} (${err.message}).</p>`;
   }
 }
 
-function renderDetail(detail) {
-  const panel = document.getElementById("detail-panel");
+function originalOfferLinkHtml(detail) {
+  if (!detail.url) return "";
+  return `<a class="original-offer-link" href="${escapeHtml(detail.url)}" target="_blank" rel="noopener">Voir l'offre originale ↗</a>`;
+}
 
+function renderDetail(panel, detail) {
   if (detail.status === "nouveau") {
     panel.innerHTML = `
       <h2>${escapeHtml(detail.title)}</h2>
+      ${originalOfferLinkHtml(detail)}
       <p class="detail-meta">${escapeHtml(detail.company || "—")} · ${zoneBadgeHtml(detail.geography_zone)} · ${STATUS_LABELS[detail.status]}</p>
       <p>Cette offre n'a pas encore été traitée par l'orchestrateur — aucune analyse disponible pour le moment.</p>
     `;
@@ -217,6 +248,7 @@ function renderDetail(detail) {
 
   panel.innerHTML = `
     <h2>${escapeHtml(detail.title)}</h2>
+    ${originalOfferLinkHtml(detail)}
     <p class="detail-meta">${escapeHtml(detail.company || "—")} · ${zoneBadgeHtml(detail.geography_zone)} · ${STATUS_LABELS[detail.status] || detail.status}</p>
     <dl>
       <dt>Score</dt>
