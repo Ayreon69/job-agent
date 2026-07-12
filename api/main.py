@@ -22,6 +22,8 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Response
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 import scoring.llm  # noqa: F401  (side effect: load_dotenv() for MISTRAL_API_KEY)
 from api.schemas import (
@@ -69,6 +71,22 @@ app = FastAPI(
 )
 
 RUNS_DIR = DEFAULT_OUTPUT_DIR
+STATIC_DIR = Path(__file__).parent / "static"
+
+# Dashboard (session 9): a static HTML/JS page consuming GET /offers and
+# GET /offers/{id} client-side — no server-side templating, no new backend
+# logic. Served by FastAPI's own StaticFiles rather than a separate
+# frontend server: for a single-user read-only dashboard, standing up a
+# second process (or a JS build toolchain) would add operational surface
+# without buying anything a `fetch()` against the API already running here
+# can't do plainly. Mounted at /static (not /) so it doesn't shadow the
+# /offers, /health, /analyze API routes below.
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+
+@app.get("/", include_in_schema=False)
+def dashboard() -> FileResponse:
+    return FileResponse(STATIC_DIR / "index.html")
 
 
 def _load_offer_row(offer_id: int) -> dict:
@@ -98,6 +116,90 @@ def _read_json_trace(offer_id: int, prefix: str) -> dict | None:
 def _read_markdown(offer_id: int) -> str | None:
     path = RUNS_DIR / f"analysis_{offer_id}.md"
     return path.read_text(encoding="utf-8") if path.exists() else None
+
+
+def _parse_gaps_and_uncertain(markdown: str) -> tuple[list[str], list[str]]:
+    """Extract short gap/uncertain-flag labels from the analysis markdown for
+    the dashboard's flag counts (session 9).
+
+    No structured field carries this in the traces (scoring's own trace JSON
+    only has `uncertain_flags`, and even that one doesn't record `gaps` —
+    both live only as prose inside the LLM-generated markdown, see
+    ScoringResult vs trace_scoring_<id>.json). Since the generation prompt
+    fixes the top-level heading ("## Gaps et incertitudes", enforced and
+    tested in tests/test_generation.py) but not the subheading wording or
+    bullet style beneath it — real examples vary between "### Gaps confirmés
+    (compétences absentes)", "### **Gaps confirmés**", "**Gaps confirmés
+    (...) :**", etc. — this parses by position (everything between the
+    top-level heading and the next one) and by list-item syntax ("- " or
+    "N. "), not by matching a fixed subheading string. A "confirmés"/
+    "incertains" keyword split tracks which half of the section each bullet
+    belongs to. Bold **Label** prefixes are extracted as the short label;
+    lines with no bold prefix are skipped (e.g. explanatory continuation
+    lines under a numbered item) to avoid double-counting one gap as two
+    bullets.
+    """
+    lines = markdown.splitlines()
+    section_start = next((i for i, l in enumerate(lines) if l.strip() == "## Gaps et incertitudes"), None)
+    if section_start is None:
+        return [], []
+
+    section_end = next(
+        (i for i in range(section_start + 1, len(lines)) if lines[i].strip().startswith("## ")),
+        len(lines),
+    )
+    section_lines = lines[section_start + 1 : section_end]
+
+    gaps: list[str] = []
+    uncertain: list[str] = []
+    current_bucket = gaps  # gaps come first in the fixed section order
+
+    import re
+
+    label_re = re.compile(r"^[-*]\s+\*\*(.+?)\*\*|^\d+\.\s+\*\*(.+?)\*\*")
+
+    for line in section_lines:
+        stripped = line.strip()
+        lower = stripped.lower()
+        if "incertain" in lower and ("flag" in lower or "###" in stripped or stripped.startswith("**")):
+            current_bucket = uncertain
+            continue
+        if lower.startswith(("*aucun", "aucun flag", "aucun gap")):
+            continue
+        match = label_re.match(stripped)
+        if match:
+            label = (match.group(1) or match.group(2)).strip()
+            current_bucket.append(label)
+
+    return gaps, uncertain
+
+
+def _parse_matching_summary(markdown: str) -> str | None:
+    """First bullet under "## Résumé du matching" as a short matching summary
+    (session 9 dashboard detail panel) — deliberately not the full section,
+    which can run to 6+ bullets of prose. Same positional approach as
+    _parse_gaps_and_uncertain: the top-level heading is fixed by the
+    generation prompt, but the subheading immediately below it varies
+    ("**Points forts alignés sur l'offre :**", "### Points forts majeurs",
+    "**Points forts clés** :", ...) so this skips straight to the first
+    real list item rather than matching a fixed subheading string.
+    """
+    lines = markdown.splitlines()
+    section_start = next((i for i, l in enumerate(lines) if l.strip() == "## Résumé du matching"), None)
+    if section_start is None:
+        return None
+
+    import re
+
+    item_re = re.compile(r"^[-*]\s+(.+)")
+    for line in lines[section_start + 1 :]:
+        stripped = line.strip()
+        if stripped.startswith("## "):
+            break
+        match = item_re.match(stripped)
+        if match:
+            return match.group(1).strip()
+    return None
 
 
 def _score_and_zone_from_trace(offer_id: int) -> tuple[int | None, str | None]:
@@ -188,10 +290,16 @@ def list_offers() -> list[OfferSummary]:
     for r in rows:
         offer_id = r[0]
         score, zone = _score_and_zone_from_trace(offer_id)
+        markdown = _read_markdown(offer_id)
+        gaps_count = uncertain_count = None
+        if markdown:
+            gaps, uncertain = _parse_gaps_and_uncertain(markdown)
+            gaps_count, uncertain_count = len(gaps), len(uncertain)
         summaries.append(
             OfferSummary(
                 id=offer_id, title=r[1], location=r[2], company=r[3],
                 status=r[4], score=score, geography_zone=zone,
+                gaps_count=gaps_count, uncertain_count=uncertain_count,
             )
         )
     return summaries
@@ -206,6 +314,9 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
     yet returns 200 with null analysis/traces (status='nouveau').
     """
     offer = _load_offer_row(offer_id)
+    score, zone = _score_and_zone_from_trace(offer_id)
+    markdown = _read_markdown(offer_id)
+    gaps, uncertain = _parse_gaps_and_uncertain(markdown) if markdown else ([], [])
     return OfferDetailResponse(
         id=offer["id"],
         title=offer["title"],
@@ -213,7 +324,12 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
         company=offer["company"],
         url=offer["url"],
         status=offer["status"],
-        analysis_markdown=_read_markdown(offer_id),
+        score=score,
+        geography_zone=zone,
+        matching_summary=_parse_matching_summary(markdown) if markdown else None,
+        gaps=gaps,
+        uncertain_flags=uncertain,
+        analysis_markdown=markdown,
         orchestrator_trace=_read_json_trace(offer_id, "trace_orchestrator"),
         scoring_trace=_read_json_trace(offer_id, "trace_scoring"),
         generation_trace=_read_json_trace(offer_id, "trace_generation"),
