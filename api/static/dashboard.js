@@ -118,6 +118,25 @@ function flagsHtml(offer) {
   return parts.join(" · ");
 }
 
+// published_at is stored as scraped, verbatim — its format varies by source
+// (Hellowork's own relative/absolute text vs jobup.ch's "DD mois AAAA"
+// French date, see scraper/jobup.py's module docstring) and was never
+// normalized to a single format at scrape time, so it's shown as-is rather
+// than reparsed here.
+function formatPublishedAt(publishedAt) {
+  return publishedAt ? escapeHtml(publishedAt) : "—";
+}
+
+// analyzed_at, unlike published_at, IS a real ISO 8601 UTC timestamp (see
+// api/main.py's _analyzed_at) — derived from the orchestrator trace file's
+// own mtime, so it can be formatted consistently.
+function formatAnalyzedAt(analyzedAt) {
+  if (!analyzedAt) return "—";
+  const date = new Date(analyzedAt);
+  if (Number.isNaN(date.getTime())) return escapeHtml(analyzedAt);
+  return date.toLocaleDateString("fr-FR", { year: "numeric", month: "short", day: "numeric" });
+}
+
 function escapeHtml(str) {
   const div = document.createElement("div");
   div.textContent = str;
@@ -144,7 +163,7 @@ function renderTable() {
   // position if the offer is still visible, so there's nothing stale to
   // clean up here; just don't error if it's gone.
   if (sorted.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="6" class="empty">Aucune offre ne correspond aux filtres.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="8" class="empty">Aucune offre ne correspond aux filtres.</td></tr>';
     return;
   }
 
@@ -160,6 +179,8 @@ function renderTable() {
       <td>${offer.score === null || offer.score === undefined ? "—" : offer.score}</td>
       <td>${STATUS_LABELS[offer.status] || offer.status}</td>
       <td class="flags">${flagsHtml(offer)}</td>
+      <td>${formatPublishedAt(offer.published_at)}</td>
+      <td>${formatAnalyzedAt(offer.analyzed_at)}</td>
     `;
     tr.addEventListener("click", () => selectOffer(offer.id));
     tbody.appendChild(tr);
@@ -173,7 +194,7 @@ function renderTable() {
       detailTr.className = "detail-row";
       detailTr.dataset.detailFor = offer.id;
       const td = document.createElement("td");
-      td.colSpan = 6;
+      td.colSpan = 8;
       td.innerHTML = '<div class="detail-panel"><p class="loading">Chargement du détail…</p></div>';
       detailTr.appendChild(td);
       tbody.appendChild(detailTr);
@@ -224,7 +245,7 @@ function renderDetail(panel, detail) {
     panel.innerHTML = `
       <h2>${escapeHtml(detail.title)}</h2>
       ${originalOfferLinkHtml(detail)}
-      <p class="detail-meta">${escapeHtml(detail.company || "—")} · ${zoneBadgeHtml(detail.geography_zone)} · ${STATUS_LABELS[detail.status]}</p>
+      <p class="detail-meta">${escapeHtml(detail.company || "—")} · ${zoneBadgeHtml(detail.geography_zone)} · ${STATUS_LABELS[detail.status]} · Publiée le ${formatPublishedAt(detail.published_at)}</p>
       <p>Cette offre n'a pas encore été traitée par l'orchestrateur — aucune analyse disponible pour le moment.</p>
     `;
     return;
@@ -249,7 +270,7 @@ function renderDetail(panel, detail) {
   panel.innerHTML = `
     <h2>${escapeHtml(detail.title)}</h2>
     ${originalOfferLinkHtml(detail)}
-    <p class="detail-meta">${escapeHtml(detail.company || "—")} · ${zoneBadgeHtml(detail.geography_zone)} · ${STATUS_LABELS[detail.status] || detail.status}</p>
+    <p class="detail-meta">${escapeHtml(detail.company || "—")} · ${zoneBadgeHtml(detail.geography_zone)} · ${STATUS_LABELS[detail.status] || detail.status} · Publiée le ${formatPublishedAt(detail.published_at)} · Analysée le ${formatAnalyzedAt(detail.analyzed_at)}</p>
     <dl>
       <dt>Score</dt>
       <dd>${detail.score === null || detail.score === undefined ? "—" : detail.score + " / 100"}</dd>

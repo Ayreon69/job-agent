@@ -2067,3 +2067,41 @@ régression) + 6 nouveaux cas ajoutés à `tests/test_geography.py`
 `.github/workflows/scrape-and-score.yml` (commentaire + timeout),
 `scoring/geography.py` (villes manquantes + repli cantonal),
 `tests/test_geography.py` (6 nouveaux cas).
+
+## Correctif dashboard : date de publication + date d'analyse (2026-07-13)
+
+**Demande :** afficher dans l'interface web la date de publication de
+l'offre ainsi que sa date d'analyse.
+
+- `jobs.published_at` était déjà scrapé et stocké depuis la session 1
+  (`storage/db.py`), mais jamais exposé par l'API ni affiché — simple oubli
+  de câblage, pas un problème de collecte. Ajouté tel quel à `OfferSummary`
+  et `OfferDetailResponse` (`api/schemas.py`), sans normalisation : le
+  format diffère selon la source (`DD/MM/YYYY` pour Hellowork, `DD mois
+  AAAA` pour jobup.ch, cf. session 11) et est affiché brut plutôt que
+  reparsé côté dashboard.
+- Aucun champ "date d'analyse" n'existait nulle part (ni SQLite, ni la
+  trace JSON de l'orchestrateur — `orchestrator/agent.py`'s
+  `OrchestratorTrace` n'a pas de timestamp). Plutôt que d'ajouter une
+  migration SQLite ou un nouveau champ à la trace pour une information
+  dérivable autrement, `analyzed_at` est calculé depuis la date de
+  modification de `trace_orchestrator_<id>.json` (`api/main.py::_analyzed_at`) :
+  ce fichier est écrit une seule fois, exactement au moment où l'analyse se
+  termine (`orchestrator/run.py::write_outputs`), et jamais réécrit ensuite
+  — son mtime est donc un horodatage fiable sans coût d'implémentation
+  supplémentaire. Retourne `null` si l'offre n'a pas encore été analysée.
+- Deux nouvelles colonnes triables dans le tableau (`api/static/index.html`,
+  `dashboard.js`) + affichage dans le panneau de détail accordéon, pour les
+  offres analysées et non analysées.
+
+**Test réel effectué :** serveur FastAPI lancé localement, `GET /offers`
+vérifié sur les 101 offres réelles en base — `published_at` correctement
+renvoyé pour les deux formats de source (ex: offre 2 Hellowork
+`"23/06/2026"`, offre 168 jobup.ch `"25 juin 2026"`), `analyzed_at`
+correctement `null` pour une offre `status='nouveau'` (offre 169) et un
+timestamp ISO 8601 réel pour une offre `status='analyse'`. Dashboard ouvert
+dans le navigateur pour confirmer le rendu visuel des deux colonnes et du
+tri.
+
+**Fichiers :** `api/schemas.py`, `api/main.py`, `api/static/index.html`,
+`api/static/dashboard.js`.

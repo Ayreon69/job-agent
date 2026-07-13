@@ -39,6 +39,8 @@ class OfferSummary(BaseModel):
     geography_zone: str | None = Field(default=None, description="Zone from check_geography_rules, null if not yet analyzed")
     gaps_count: int | None = Field(default=None, description="Number of confirmed gaps (ScoringResult.gaps via generation's StructuredAnalysis), null if not yet analyzed")
     uncertain_count: int | None = Field(default=None, description="Number of uncertain flags (ScoringResult.uncertain_flags), null if not yet analyzed")
+    published_at: str | None = Field(default=None, description="Publication date as scraped from the source offer (jobs.published_at), format varies by source and is not normalized")
+    analyzed_at: str | None = Field(default=None, description="When the orchestrator produced this offer's analysis, ISO 8601 UTC — derived from trace_orchestrator_<id>.json's mtime (session 5 output is never rewritten after creation), null if not yet analyzed")
 
 
 class OfferDetailResponse(BaseModel):
@@ -50,6 +52,8 @@ class OfferDetailResponse(BaseModel):
     status: str
     score: int | None = Field(default=None, description="Score 0-100, null if not yet analyzed")
     geography_zone: str | None = Field(default=None, description="Zone from check_geography_rules, null if not yet analyzed")
+    published_at: str | None = Field(default=None, description="Publication date as scraped from the source offer (jobs.published_at), format varies by source and is not normalized")
+    analyzed_at: str | None = Field(default=None, description="When the orchestrator produced this offer's analysis, ISO 8601 UTC — derived from trace_orchestrator_<id>.json's mtime, null if not yet analyzed")
     matches: list[MatchItem] = Field(default_factory=list, description="Matched skills with grounding, straight from ScoringResult.matches via generation's StructuredAnalysis (session 9 follow-up) — not re-parsed from the markdown")
     gaps: list[GapItem] = Field(default_factory=list, description="Confirmed gaps with a short note, straight from ScoringResult.gaps")
     uncertain_flags: list[str] = Field(default_factory=list, description="Requirement labels with no reliable RAG match, straight from ScoringResult.uncertain_flags")
