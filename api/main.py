@@ -134,7 +134,7 @@ def dashboard() -> FileResponse:
 def _load_offer_row(offer_id: int) -> dict:
     with connect() as conn:
         row = conn.execute(
-            "SELECT id, title, location, description, company, url, status "
+            "SELECT id, title, location, description, company, url, status, published_at "
             "FROM jobs WHERE id = ?",
             (offer_id,),
         ).fetchone()
@@ -142,8 +142,24 @@ def _load_offer_row(offer_id: int) -> dict:
         raise HTTPException(status_code=404, detail=f"Offre {offer_id} introuvable")
     return {
         "id": row[0], "title": row[1], "location": row[2], "description": row[3],
-        "company": row[4], "url": row[5], "status": row[6],
+        "company": row[4], "url": row[5], "status": row[6], "published_at": row[7],
     }
+
+
+def _analyzed_at(offer_id: int) -> str | None:
+    """The orchestrator's own trace JSON has no explicit timestamp field
+    (see orchestrator/agent.py's OrchestratorTrace) — reusing the trace
+    file's own mtime instead of adding a new persisted field, since
+    trace_orchestrator_<id>.json is written exactly once, at the moment the
+    analysis completes (orchestrator/run.py's write_outputs), and never
+    rewritten afterwards.
+    """
+    path = RUNS_DIR / f"trace_orchestrator_{offer_id}.json"
+    if not path.exists():
+        return None
+    import datetime
+
+    return datetime.datetime.fromtimestamp(path.stat().st_mtime, tz=datetime.timezone.utc).isoformat()
 
 
 def _read_json_trace(offer_id: int, prefix: str) -> dict | None:
@@ -274,7 +290,7 @@ def list_offers() -> list[OfferSummary]:
     """
     with connect() as conn:
         rows = conn.execute(
-            "SELECT id, title, location, company, status FROM jobs ORDER BY id"
+            "SELECT id, title, location, company, status, published_at FROM jobs ORDER BY id"
         ).fetchall()
 
     summaries = []
@@ -289,6 +305,7 @@ def list_offers() -> list[OfferSummary]:
                 id=offer_id, title=r[1], location=r[2], company=r[3],
                 status=r[4], score=score, geography_zone=zone,
                 gaps_count=gaps_count, uncertain_count=uncertain_count,
+                published_at=r[5], analyzed_at=_analyzed_at(offer_id),
             )
         )
     return summaries
@@ -314,6 +331,8 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
         status=offer["status"],
         score=score,
         geography_zone=zone,
+        published_at=offer["published_at"],
+        analyzed_at=_analyzed_at(offer_id),
         matches=structured["matches"] if structured else [],
         gaps=structured["gaps"] if structured else [],
         uncertain_flags=structured["uncertain_flags"] if structured else [],
