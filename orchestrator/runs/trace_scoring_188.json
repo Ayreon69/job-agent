@@ -1,0 +1,869 @@
+{
+  "offer_id": 188,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneve",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[droit du travail suisse] droit du travail suisse",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::nationality_visa",
+          "distance": 0.46,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.4827,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.4972,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4600, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[droit des assurances sociales] droit des assurances sociales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.613,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6453,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6973,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6130, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[droit du bail à loyer (rédaction, analyse et suivi des contrats)] droit du bail à loyer",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.7101,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.7253,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7389,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[droit du bail à loyer (rédaction, analyse et suivi des contrats)] rédaction de contrats",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5251,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5366,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5556,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5251, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[droit du bail à loyer (rédaction, analyse et suivi des contrats)] analyse de contrats",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5259,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5618,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5923,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5259, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[droit du bail à loyer (rédaction, analyse et suivi des contrats)] suivi de contrats",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5017,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.5259,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5373,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5017, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[droit commercial et droit des affaires (contrats de concession, contrats fournisseurs, partenariats)] droit commercial",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5298,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6191,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.678,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5298, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[droit commercial et droit des affaires (contrats de concession, contrats fournisseurs, partenariats)] droit des affaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6107,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6565,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.7032,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6107, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[droit commercial et droit des affaires (contrats de concession, contrats fournisseurs, partenariats)] contrats de concession",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.582,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6184,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6272,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5820, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[droit commercial et droit des affaires (contrats de concession, contrats fournisseurs, partenariats)] contrats fournisseurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5401,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5548,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5676,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5401, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[droit commercial et droit des affaires (contrats de concession, contrats fournisseurs, partenariats)] partenariats",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6568,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6733,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6839,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6568, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[protection de la propriété intellectuelle et gestion des marques] protection de la propriété intellectuelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.7237,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.731,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7414,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[protection de la propriété intellectuelle et gestion des marques] gestion des marques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5587,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5813,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5937,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5587, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[rédaction et mise à jour des conditions générales de vente et d'utilisation] rédaction de conditions générales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.4887,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5188,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5327,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4887, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[rédaction et mise à jour des conditions générales de vente et d'utilisation] mise à jour de conditions générales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5647,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.5924,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5969,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5647, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[rédaction et mise à jour des conditions générales de vente et d'utilisation] conditions générales de vente",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5617,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.595,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6015,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5617, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[rédaction et mise à jour des conditions générales de vente et d'utilisation] conditions générales d'utilisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5082,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5086,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5404,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5082, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion et optimisation du parc d'assurances (maladie, accident, véhicules)] gestion des assurances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.446,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4924,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5743,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4460, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion et optimisation du parc d'assurances (maladie, accident, véhicules)] optimisation des assurances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4136,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4448,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5363,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4136, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion et optimisation du parc d'assurances (maladie, accident, véhicules)] assurance maladie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.494,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5758,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7048,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4940, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion et optimisation du parc d'assurances (maladie, accident, véhicules)] assurance accident",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5875,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.744,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.752,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5875, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion et optimisation du parc d'assurances (maladie, accident, véhicules)] assurance véhicules",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5551,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6218,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6503,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5551, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion et optimisation du parc d'assurances (maladie, accident, véhicules)] traitement des sinistres",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5581,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5779,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6364,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5581, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion et optimisation du parc d'assurances (maladie, accident, véhicules)] suivi des contrats d'assurance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4446,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5175,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5885,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4446, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[rôle de Data Protection Officer (DPO) et conformité RGPD] Data Protection Officer",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5605,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.564,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6424,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5605, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[rôle de Data Protection Officer (DPO) et conformité RGPD] DPO",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7273,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7393,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7395,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[rôle de Data Protection Officer (DPO) et conformité RGPD] conformité RGPD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6364,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6378,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6634,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6364, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[rôle de Data Protection Officer (DPO) et conformité RGPD] protection des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6015,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6355,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6608,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6015, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[rôle de Data Protection Officer (DPO) et conformité RGPD] législation sur la protection des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.592,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6524,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6526,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5920, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[due diligence et structuration des investissements] due diligence",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5256,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5941,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6144,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5256, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[due diligence et structuration des investissements] structuration des investissements",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5544,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5615,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6388,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5544, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[due diligence et structuration des investissements] contrats d'achat et de vente d'actions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6325,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6709,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6744,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6325, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des litiges et règlement des différends (procédures judiciaires et arbitrales)] gestion des litiges",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.553,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5984,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6537,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5530, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des litiges et règlement des différends (procédures judiciaires et arbitrales)] règlement des différends",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6155,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6163,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6396,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6155, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des litiges et règlement des différends (procédures judiciaires et arbitrales)] procédures judiciaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7172,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.718,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7348,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des litiges et règlement des différends (procédures judiciaires et arbitrales)] procédures arbitrales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5571,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5724,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5878,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5571, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "droit du bail à loyer (rédaction, analyse et suivi des contrats)",
+    "protection de la propriété intellectuelle et gestion des marques",
+    "rôle de Data Protection Officer (DPO) et conformité RGPD",
+    "gestion des litiges et règlement des différends (procédures judiciaires et arbitrales)"
+  ]
+}
