@@ -127,13 +127,13 @@ function formatPublishedAt(publishedAt) {
   return publishedAt ? escapeHtml(publishedAt) : "—";
 }
 
-// analyzed_at, unlike published_at, IS a real ISO 8601 UTC timestamp (see
-// api/main.py's _analyzed_at) — derived from the orchestrator trace file's
-// own mtime, so it can be formatted consistently.
-function formatAnalyzedAt(analyzedAt) {
-  if (!analyzedAt) return "—";
-  const date = new Date(analyzedAt);
-  if (Number.isNaN(date.getTime())) return escapeHtml(analyzedAt);
+// first_seen_at, unlike published_at, IS a real SQLite datetime('now') UTC
+// string (jobs.scraped_at, set once at insert time — see api/schemas.py),
+// so it can be formatted consistently.
+function formatFirstSeenAt(firstSeenAt) {
+  if (!firstSeenAt) return "—";
+  const date = new Date(firstSeenAt.replace(" ", "T") + "Z");
+  if (Number.isNaN(date.getTime())) return escapeHtml(firstSeenAt);
   return date.toLocaleDateString("fr-FR", { year: "numeric", month: "short", day: "numeric" });
 }
 
@@ -180,7 +180,7 @@ function renderTable() {
       <td>${STATUS_LABELS[offer.status] || offer.status}</td>
       <td class="flags">${flagsHtml(offer)}</td>
       <td>${formatPublishedAt(offer.published_at)}</td>
-      <td>${formatAnalyzedAt(offer.analyzed_at)}</td>
+      <td>${formatFirstSeenAt(offer.first_seen_at)}</td>
     `;
     tr.addEventListener("click", () => selectOffer(offer.id));
     tbody.appendChild(tr);
@@ -245,7 +245,7 @@ function renderDetail(panel, detail) {
     panel.innerHTML = `
       <h2>${escapeHtml(detail.title)}</h2>
       ${originalOfferLinkHtml(detail)}
-      <p class="detail-meta">${escapeHtml(detail.company || "—")} · ${zoneBadgeHtml(detail.geography_zone)} · ${STATUS_LABELS[detail.status]} · Publiée le ${formatPublishedAt(detail.published_at)}</p>
+      <p class="detail-meta">${escapeHtml(detail.company || "—")} · ${zoneBadgeHtml(detail.geography_zone)} · ${STATUS_LABELS[detail.status]} · Publiée le ${formatPublishedAt(detail.published_at)} · Vue pour la première fois le ${formatFirstSeenAt(detail.first_seen_at)}</p>
       <p>Cette offre n'a pas encore été traitée par l'orchestrateur — aucune analyse disponible pour le moment.</p>
     `;
     return;
@@ -270,7 +270,7 @@ function renderDetail(panel, detail) {
   panel.innerHTML = `
     <h2>${escapeHtml(detail.title)}</h2>
     ${originalOfferLinkHtml(detail)}
-    <p class="detail-meta">${escapeHtml(detail.company || "—")} · ${zoneBadgeHtml(detail.geography_zone)} · ${STATUS_LABELS[detail.status] || detail.status} · Publiée le ${formatPublishedAt(detail.published_at)} · Analysée le ${formatAnalyzedAt(detail.analyzed_at)}</p>
+    <p class="detail-meta">${escapeHtml(detail.company || "—")} · ${zoneBadgeHtml(detail.geography_zone)} · ${STATUS_LABELS[detail.status] || detail.status} · Publiée le ${formatPublishedAt(detail.published_at)} · Vue pour la première fois le ${formatFirstSeenAt(detail.first_seen_at)}</p>
     <dl>
       <dt>Score</dt>
       <dd>${detail.score === null || detail.score === undefined ? "—" : detail.score + " / 100"}</dd>

@@ -40,7 +40,8 @@ class OfferSummary(BaseModel):
     gaps_count: int | None = Field(default=None, description="Number of confirmed gaps (ScoringResult.gaps via generation's StructuredAnalysis), null if not yet analyzed")
     uncertain_count: int | None = Field(default=None, description="Number of uncertain flags (ScoringResult.uncertain_flags), null if not yet analyzed")
     published_at: str | None = Field(default=None, description="Publication date as scraped from the source offer (jobs.published_at), format varies by source and is not normalized")
-    analyzed_at: str | None = Field(default=None, description="When the orchestrator produced this offer's analysis, ISO 8601 UTC — derived from trace_orchestrator_<id>.json's mtime (session 5 output is never rewritten after creation), null if not yet analyzed")
+    published_at_sortable: str | None = Field(default=None, description="published_at parsed into ISO 8601 (YYYY-MM-DD) so the dashboard can sort chronologically instead of lexicographically across sources' different date formats; null if published_at is missing or in an unrecognized format")
+    first_seen_at: str | None = Field(default=None, description="When this offer was first inserted into the database (jobs.scraped_at, SQLite 'datetime(\"now\")' UTC, set once at INSERT OR IGNORE time via storage/db.py's upsert_job and never updated afterwards) — i.e. the first time it appeared in this database and on the dashboard")
 
 
 class OfferDetailResponse(BaseModel):
@@ -53,7 +54,8 @@ class OfferDetailResponse(BaseModel):
     score: int | None = Field(default=None, description="Score 0-100, null if not yet analyzed")
     geography_zone: str | None = Field(default=None, description="Zone from check_geography_rules, null if not yet analyzed")
     published_at: str | None = Field(default=None, description="Publication date as scraped from the source offer (jobs.published_at), format varies by source and is not normalized")
-    analyzed_at: str | None = Field(default=None, description="When the orchestrator produced this offer's analysis, ISO 8601 UTC — derived from trace_orchestrator_<id>.json's mtime, null if not yet analyzed")
+    published_at_sortable: str | None = Field(default=None, description="published_at parsed into ISO 8601 (YYYY-MM-DD) so the dashboard can sort chronologically instead of lexicographically across sources' different date formats; null if published_at is missing or in an unrecognized format")
+    first_seen_at: str | None = Field(default=None, description="When this offer was first inserted into the database (jobs.scraped_at, SQLite 'datetime(\"now\")' UTC, set once at INSERT OR IGNORE time and never updated afterwards) — i.e. the first time it appeared in this database and on the dashboard")
     matches: list[MatchItem] = Field(default_factory=list, description="Matched skills with grounding, straight from ScoringResult.matches via generation's StructuredAnalysis (session 9 follow-up) — not re-parsed from the markdown")
     gaps: list[GapItem] = Field(default_factory=list, description="Confirmed gaps with a short note, straight from ScoringResult.gaps")
     uncertain_flags: list[str] = Field(default_factory=list, description="Requirement labels with no reliable RAG match, straight from ScoringResult.uncertain_flags")

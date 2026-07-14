@@ -2068,10 +2068,10 @@ régression) + 6 nouveaux cas ajoutés à `tests/test_geography.py`
 `scoring/geography.py` (villes manquantes + repli cantonal),
 `tests/test_geography.py` (6 nouveaux cas).
 
-## Correctif dashboard : date de publication + date d'analyse (2026-07-13)
+## Correctif dashboard : date de publication + date de première apparition en base (2026-07-13/14)
 
-**Demande :** afficher dans l'interface web la date de publication de
-l'offre ainsi que sa date d'analyse.
+**Demande initiale :** afficher dans l'interface web la date de publication
+de l'offre ainsi que sa date d'analyse.
 
 - `jobs.published_at` était déjà scrapé et stocké depuis la session 1
   (`storage/db.py`), mais jamais exposé par l'API ni affiché — simple oubli
@@ -2080,28 +2080,71 @@ l'offre ainsi que sa date d'analyse.
   format diffère selon la source (`DD/MM/YYYY` pour Hellowork, `DD mois
   AAAA` pour jobup.ch, cf. session 11) et est affiché brut plutôt que
   reparsé côté dashboard.
-- Aucun champ "date d'analyse" n'existait nulle part (ni SQLite, ni la
-  trace JSON de l'orchestrateur — `orchestrator/agent.py`'s
-  `OrchestratorTrace` n'a pas de timestamp). Plutôt que d'ajouter une
-  migration SQLite ou un nouveau champ à la trace pour une information
-  dérivable autrement, `analyzed_at` est calculé depuis la date de
-  modification de `trace_orchestrator_<id>.json` (`api/main.py::_analyzed_at`) :
-  ce fichier est écrit une seule fois, exactement au moment où l'analyse se
-  termine (`orchestrator/run.py::write_outputs`), et jamais réécrit ensuite
-  — son mtime est donc un horodatage fiable sans coût d'implémentation
-  supplémentaire. Retourne `null` si l'offre n'a pas encore été analysée.
+- Premier essai pour la deuxième date (`analyzed_at`) : dérivée de la date
+  de modification de `trace_orchestrator_<id>.json`, sur l'hypothèse que ce
+  fichier n'est écrit qu'une seule fois, au moment où l'analyse se termine.
+  **Faux en pratique** : signalé par l'utilisateur après déploiement — toutes
+  les offres affichaient la date du jour, quelle que soit leur ancienneté
+  réelle. Cause : le mtime d'un fichier suit tout ce qui touche le fichier
+  sur disque (checkout Git, redéploiement, resynchronisation du dépôt), pas
+  seulement sa création logique — une hypothèse invalidée par un test réel,
+  pas juste théorique.
+- **Corrigé** en remplaçant cette approche par ce que l'utilisateur voulait
+  réellement : la date de première apparition de l'offre en base
+  (`jobs.scraped_at`), déjà présente dans le schéma SQLite depuis la
+  session 1 (`DEFAULT (datetime('now'))`, posée une seule fois à l'insertion
+  via `INSERT OR IGNORE` dans `upsert_job` et jamais mise à jour ensuite —
+  contrairement au mtime d'un fichier, une colonne SQL non réécrite est un
+  horodatage fiable). Renommé `analyzed_at` → `first_seen_at` dans
+  `api/schemas.py`/`api/main.py` pour refléter ce que le champ représente
+  réellement : la première fois où l'offre existe en base et donc sur le
+  dashboard, pas le moment du scoring.
 - Deux nouvelles colonnes triables dans le tableau (`api/static/index.html`,
-  `dashboard.js`) + affichage dans le panneau de détail accordéon, pour les
-  offres analysées et non analysées.
+  `dashboard.js`) + affichage dans le panneau de détail accordéon.
 
-**Test réel effectué :** serveur FastAPI lancé localement, `GET /offers`
-vérifié sur les 101 offres réelles en base — `published_at` correctement
-renvoyé pour les deux formats de source (ex: offre 2 Hellowork
-`"23/06/2026"`, offre 168 jobup.ch `"25 juin 2026"`), `analyzed_at`
-correctement `null` pour une offre `status='nouveau'` (offre 169) et un
-timestamp ISO 8601 réel pour une offre `status='analyse'`. Dashboard ouvert
-dans le navigateur pour confirmer le rendu visuel des deux colonnes et du
-tri.
+**Test réel effectué :** serveur FastAPI relancé localement après le
+correctif, `GET /offers` vérifié sur les offres réelles en base —
+`first_seen_at` renvoie désormais des dates distinctes et cohérentes avec
+l'historique réel des scrapes (offre 1 : `2026-07-10`, offres 168/169 :
+`2026-07-12`), confirmant que le bug de date unique "aujourd'hui" est
+résolu. `published_at` toujours correct pour les deux formats de source.
+Dashboard ouvert dans le navigateur pour confirmer le rendu visuel.
 
 **Fichiers :** `api/schemas.py`, `api/main.py`, `api/static/index.html`,
 `api/static/dashboard.js`.
+
+### Correctif 2 : tri chronologique de "Publiée le" cassé
+
+**Signalé par l'utilisateur** immédiatement après le correctif ci-dessus :
+tri sur la colonne "Publiée le" incohérent, ex. "12 juillet" affiché avant
+"13 juin". Cause réelle : `jobs.published_at` est stocké tel quel, dans le
+format brut de la source au moment du scrape — `DD/MM/YYYY` pour Hellowork
+(`scraper/hellowork.py`) mais `DD mois AAAA` en toutes lettres françaises
+pour jobup.ch (`scraper/jobup.py`, session 11) — jamais normalisé à
+l'écriture. Le dashboard triait ces deux formats comme de simples chaînes,
+donc alphabétiquement sur le NOM du mois ("juillet" < "juin" alphabétiquement,
+sans rapport avec l'ordre chronologique réel) plutôt que sur la date.
+
+**Corrigé** sans migration SQLite ni changement au scraping : `api/main.py`
+ajoute `_parse_published_at()`, qui reconnaît les deux formats connus
+(regex `DD/MM/YYYY` + regex `DD mois AAAA` avec table de mois français) et
+les convertit en ISO 8601 (`YYYY-MM-DD`), directement comparable en tri de
+chaîne. Exposé comme un champ séparé, `published_at_sortable`
+(`api/schemas.py`), gardant `published_at` intact pour l'affichage (le
+libellé brut de la source reste visible tel quel) — le dashboard trie sur
+`published_at_sortable` (`data-sort` dans `index.html`) mais affiche
+toujours `published_at`. Une date dans un format non reconnu retombe à
+`null` (trie en dernier, comme les scores/zones non encore analysés)
+plutôt que de planter ou de deviner.
+
+**Test réel effectué :** `_parse_published_at` testé unitairement sur les
+deux formats réels + un cas `None` + un cas de texte non reconnu + une date
+invalide (`31/02/2026`, jour hors plage) — tous corrects. Puis vérifié sur
+les offres réelles en base via `GET /offers` : tri complet par
+`published_at_sortable` produit un ordre chronologique correct de bout en
+bout (16 mai → ... → 13 juillet 2026), confirmé dans le navigateur en
+cliquant sur l'en-tête de colonne.
+
+**Fichiers (en plus des précédents) :** `api/main.py` (nouvelle fonction
+`_parse_published_at`), `api/schemas.py` (champ `published_at_sortable`),
+`api/static/index.html` (`data-sort` mis à jour).

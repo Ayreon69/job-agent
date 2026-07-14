@@ -40,8 +40,10 @@ from __future__ import annotations
 
 import logging
 import os
+import re
 import time
 from contextlib import asynccontextmanager
+from datetime import date
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Response
@@ -131,10 +133,57 @@ def dashboard() -> FileResponse:
     return FileResponse(STATIC_DIR / "index.html")
 
 
+# published_at is stored verbatim, in whichever format the source site used
+# at scrape time (see scraper/hellowork.py and scraper/jobup.py) — NOT
+# normalized to one format at scrape time. Two formats exist in practice:
+# Hellowork's "DD/MM/YYYY" and jobup.ch's French "DD mois AAAA" (session
+# 11). Sorting the raw strings lexicographically mixes the two conventions
+# (e.g. "12 juillet" sorts before "13 juin" — alphabetical on the month
+# NAME, not the month number) — reported by the user after the first
+# published_at/first_seen_at dashboard rollout. Parsed here into a real
+# date, exposed as a separate ISO field the dashboard sorts on, while
+# published_at itself keeps being shown as-is (its exact source wording is
+# still useful to see, just not useful to sort by).
+_MOIS_FR = {
+    "janvier": 1, "février": 2, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
+    "juin": 6, "juillet": 7, "août": 8, "aout": 8, "septembre": 9,
+    "octobre": 10, "novembre": 11, "décembre": 12, "decembre": 12,
+}
+_PUBLISHED_AT_SLASH_RE = re.compile(r"^(\d{1,2})/(\d{1,2})/(\d{4})$")
+_PUBLISHED_AT_FR_RE = re.compile(r"^(\d{1,2})\s+([a-zéû]+)\s+(\d{4})$", re.IGNORECASE)
+
+
+def _parse_published_at(raw: str | None) -> str | None:
+    if not raw:
+        return None
+    raw = raw.strip()
+
+    slash_match = _PUBLISHED_AT_SLASH_RE.match(raw)
+    if slash_match:
+        day, month, year = (int(g) for g in slash_match.groups())
+        try:
+            return date(year, month, day).isoformat()
+        except ValueError:
+            return None
+
+    fr_match = _PUBLISHED_AT_FR_RE.match(raw)
+    if fr_match:
+        day_str, month_name, year_str = fr_match.groups()
+        month = _MOIS_FR.get(month_name.lower())
+        if month is None:
+            return None
+        try:
+            return date(int(year_str), month, int(day_str)).isoformat()
+        except ValueError:
+            return None
+
+    return None
+
+
 def _load_offer_row(offer_id: int) -> dict:
     with connect() as conn:
         row = conn.execute(
-            "SELECT id, title, location, description, company, url, status, published_at "
+            "SELECT id, title, location, description, company, url, status, published_at, scraped_at "
             "FROM jobs WHERE id = ?",
             (offer_id,),
         ).fetchone()
@@ -143,23 +192,8 @@ def _load_offer_row(offer_id: int) -> dict:
     return {
         "id": row[0], "title": row[1], "location": row[2], "description": row[3],
         "company": row[4], "url": row[5], "status": row[6], "published_at": row[7],
+        "scraped_at": row[8],
     }
-
-
-def _analyzed_at(offer_id: int) -> str | None:
-    """The orchestrator's own trace JSON has no explicit timestamp field
-    (see orchestrator/agent.py's OrchestratorTrace) — reusing the trace
-    file's own mtime instead of adding a new persisted field, since
-    trace_orchestrator_<id>.json is written exactly once, at the moment the
-    analysis completes (orchestrator/run.py's write_outputs), and never
-    rewritten afterwards.
-    """
-    path = RUNS_DIR / f"trace_orchestrator_{offer_id}.json"
-    if not path.exists():
-        return None
-    import datetime
-
-    return datetime.datetime.fromtimestamp(path.stat().st_mtime, tz=datetime.timezone.utc).isoformat()
 
 
 def _read_json_trace(offer_id: int, prefix: str) -> dict | None:
@@ -290,7 +324,7 @@ def list_offers() -> list[OfferSummary]:
     """
     with connect() as conn:
         rows = conn.execute(
-            "SELECT id, title, location, company, status, published_at FROM jobs ORDER BY id"
+            "SELECT id, title, location, company, status, published_at, scraped_at FROM jobs ORDER BY id"
         ).fetchall()
 
     summaries = []
@@ -305,7 +339,8 @@ def list_offers() -> list[OfferSummary]:
                 id=offer_id, title=r[1], location=r[2], company=r[3],
                 status=r[4], score=score, geography_zone=zone,
                 gaps_count=gaps_count, uncertain_count=uncertain_count,
-                published_at=r[5], analyzed_at=_analyzed_at(offer_id),
+                published_at=r[5], published_at_sortable=_parse_published_at(r[5]),
+                first_seen_at=r[6],
             )
         )
     return summaries
@@ -332,7 +367,8 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
         score=score,
         geography_zone=zone,
         published_at=offer["published_at"],
-        analyzed_at=_analyzed_at(offer_id),
+        published_at_sortable=_parse_published_at(offer["published_at"]),
+        first_seen_at=offer["scraped_at"],
         matches=structured["matches"] if structured else [],
         gaps=structured["gaps"] if structured else [],
         uncertain_flags=structured["uncertain_flags"] if structured else [],
