@@ -1,0 +1,1100 @@
+{
+  "offer_id": 465,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "grenoble",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[développement commercial et gestion de portefeuille clients] développement commercial",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5145,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5961,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.606,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5145, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[développement commercial et gestion de portefeuille clients] gestion de portefeuille clients",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5274,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5401,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5931,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5274, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[développement commercial et gestion de portefeuille clients] prospection",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6656,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6795,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7008,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6656, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[développement commercial et gestion de portefeuille clients] négociation commerciale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5432,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6627,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6689,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5432, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[management d'équipes techniques pluridisciplinaires] management d'équipes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6025,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6271,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6363,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6025, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[management d'équipes techniques pluridisciplinaires] recrutement de talents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5968,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6324,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6351,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5968, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[management d'équipes techniques pluridisciplinaires] gestion d'équipes pluridisciplinaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5494,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5722,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5919,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5494, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[management d'équipes techniques pluridisciplinaires] chef de projet cybersécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6408,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6652,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6745,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6408, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[management d'équipes techniques pluridisciplinaires] data analyst",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.3617,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4404,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4965,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3617, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[management d'équipes techniques pluridisciplinaires] data scientist",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4031,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5104,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5402,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4031, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[management d'équipes techniques pluridisciplinaires] test et validation logiciel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5401,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5589,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5745,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5401, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[management d'équipes techniques pluridisciplinaires] développeurs full stack",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5756,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5787,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5815,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5756, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[management d'équipes techniques pluridisciplinaires] devops",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7275,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7467,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7609,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[management d'équipes techniques pluridisciplinaires] product owner",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6834,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7209,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7271,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[compréhension des enjeux technologiques et sectoriels (télécommunication, retail, finance)] enjeux technologiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5158,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5177,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5465,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5158, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[compréhension des enjeux technologiques et sectoriels (télécommunication, retail, finance)] secteur télécommunication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5735,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5902,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5735, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[compréhension des enjeux technologiques et sectoriels (télécommunication, retail, finance)] secteur retail",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6455,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6492,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6877,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6455, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[compréhension des enjeux technologiques et sectoriels (télécommunication, retail, finance)] secteur finance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5884,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6294,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6707,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5884, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[compréhension des enjeux technologiques et sectoriels (télécommunication, retail, finance)] transformation digitale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.647,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6655,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7074,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6470, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[pilotage de projets techniques complexes] pilotage de projets",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.429,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4773,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4873,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4290, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[pilotage de projets techniques complexes] gestion de projets techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4467,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4659,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.483,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4467, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[pilotage de projets techniques complexes] déploiement de projets",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4648,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4903,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5171,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4648, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[pilotage de projets techniques complexes] complexité technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6017,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6075,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6149,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6017, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[relation client et écoute des besoins] relation client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5012,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5604,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5842,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5012, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[relation client et écoute des besoins] écoute des besoins",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5464,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5475,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5617,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5464, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[relation client et écoute des besoins] élaboration de services",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4678,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4814,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4851,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4678, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[relation client et écoute des besoins] satisfaction client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5937,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6209,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6441,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des métiers de la data et de l'IA (data analyst, data scientist)] data analyst",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.3617,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4404,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4965,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3617, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des métiers de la data et de l'IA (data analyst, data scientist)] data scientist",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4031,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5104,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5402,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4031, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des métiers de la data et de l'IA (data analyst, data scientist)] analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4916,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5031,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4776, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des métiers de la data et de l'IA (data analyst, data scientist)] modélisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4999,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5066,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5127,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4999, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des méthodologies de développement logiciel (full stack, devops)] développement full stack",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5636,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.601,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6041,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5636, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des méthodologies de développement logiciel (full stack, devops)] devops",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7275,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7467,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7609,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des méthodologies de développement logiciel (full stack, devops)] méthodologies agiles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5316,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5354,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5375,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5316, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des méthodologies de développement logiciel (full stack, devops)] CI/CD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7213,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7378,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.743,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de la cybersécurité dans les projets IT] cybersécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6884,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7108,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.724,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de la cybersécurité dans les projets IT] chef de projet cybersécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6408,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6652,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6745,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6408, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de la cybersécurité dans les projets IT] sécurité des systèmes d'information",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6009,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6608,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6616,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6009, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[test et validation logicielle] test logiciel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5551,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5726,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5913,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5551, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[test et validation logicielle] validation logicielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5047,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5829,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5888,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5047, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[test et validation logicielle] qualité logicielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4399,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4625,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4998,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4399, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[test et validation logicielle] QA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7292,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7386,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7622,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de produit et rôle de product owner] product owner",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6834,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7209,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7271,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de produit et rôle de product owner] gestion de produit",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4603,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4865,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.499,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4603, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de produit et rôle de product owner] backlog management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6758,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6847,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6914,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de produit et rôle de product owner] user stories",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6575,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.7062,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7084,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6575, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "management d'équipes techniques pluridisciplinaires",
+    "connaissance des méthodologies de développement logiciel (full stack, devops)",
+    "gestion de la cybersécurité dans les projets IT",
+    "test et validation logicielle",
+    "gestion de produit et rôle de product owner"
+  ]
+}
