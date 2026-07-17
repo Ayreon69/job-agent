@@ -1,0 +1,62 @@
+{
+  "matches": [
+    {
+      "skill": "SQL avancé",
+      "matched_chunk_summary": "Maîtrise de SQL (requêtes avancées, agrégations, optimisation) avec expérience professionnelle concrète. Réalisation de requêtes SQL avancées pour répondre aux demandes analytiques ad hoc des équipes opérationnelles et de la direction, incluant vulgarisation des résultats pour des audiences non-techniques."
+    },
+    {
+      "skill": "Python pour la data (pandas, numpy)",
+      "matched_chunk_summary": "Compétences maîtrisées en Python (pandas, numpy, scipy, scikit-learn) avec expérience professionnelle répétée. Utilisation de pandas pour le traitement de données en pipeline et automatisation."
+    },
+    {
+      "skill": "Conception et gestion de KPI",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI alignés sur les KPIs métier définis par la direction, adoptés par l'ensemble des départements. Expérience en structuration de pipelines ETL sur Snowflake pour fiabiliser la production de rapports à grande échelle."
+    },
+    {
+      "skill": "Gouvernance et traçabilité des données",
+      "matched_chunk_summary": "Structuration des pipelines ETL sur Snowflake selon une organisation en couches (staging vers core vers reporting), proche d'une architecture Medallion, pour fiabiliser et tracer la production de rapports. Expérience en architecture de données et gouvernance technique."
+    },
+    {
+      "skill": "Analyse ad hoc et extraction de données",
+      "matched_chunk_summary": "Requêtes SQL avancées pour répondre aux demandes analytiques ad hoc des équipes opérationnelles et de la direction. Développement de modèles de machine learning en production et création d'outils de tarification autonomes pour les équipes métier."
+    },
+    {
+      "skill": "Power BI (DAX avancé, Power Query)",
+      "matched_chunk_summary": "Maîtrise de Power BI avec expérience concrète en création de tableaux de bord décisionnels adoptés par l'ensemble des départements de l'entreprise. Utilisation de DAX avancé et Power Query."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "SQL avancé (jointures multiples, fonctions analytiques, optimisation de performance)",
+      "note": "Le profil mentionne des requêtes avancées et optimisation, mais aucun chunk ne confirme explicitement la maîtrise des jointures multiples ou des fonctions analytiques spécifiques comme des fenêtres ou des CTEs complexes."
+    },
+    {
+      "skill": "Tableau Desktop",
+      "note": "Aucune expérience professionnelle concrète avec Tableau Desktop n'est mentionnée dans le profil, malgré une certification DataCamp couvrant Tableau."
+    },
+    {
+      "skill": "Google Cloud Platform (GCP)",
+      "note": "Le profil indique uniquement des notions en cloud AWS/Azure, sans expérience en GCP ou déploiement en production."
+    },
+    {
+      "skill": "Business Objects",
+      "note": "Aucune expérience ou compétence en Business Objects n'est mentionnée dans le profil."
+    },
+    {
+      "skill": "Microsoft Office 365 (Excel, PowerPoint, etc.)",
+      "note": "Aucun chunk ne confirme une maîtrise avancée d'Excel ou PowerPoint au-delà de l'utilisation basique ou de Power BI."
+    },
+    {
+      "skill": "Coordination de projets transverses (métiers, DSI, prestataires)",
+      "note": "Le profil ne fournit aucune preuve d'expérience en coordination de projets impliquant des métiers, la DSI ou des prestataires externes. Les projets mentionnés sont principalement techniques ou internes."
+    }
+  ],
+  "uncertain_flags": [
+    "SQL avancé (requêtes complexes, jointures multiples, fonctions analytiques, optimisation de performance)",
+    "Tableau Desktop (création de dashboards décisionnels)",
+    "Python pour la data (pandas, numpy)",
+    "Google Cloud Platform (GCP)",
+    "Microsoft Office 365 (Excel, PowerPoint, etc.)",
+    "Coordination de projets transverses (métiers, DSI, prestataires)"
+  ]
+}
