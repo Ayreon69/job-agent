@@ -1,0 +1,50 @@
+{
+  "matches": [
+    {
+      "skill": "Analyse des besoins métiers et spécifications fonctionnelles",
+      "matched_chunk_summary": "Création d'un outil de tarification pour les produits santé individuelle, démontrant une compréhension des besoins métier et la capacité à transférer de l'autonomie aux utilisateurs finaux. Développement d'un modèle de churn en production avec une logique métier justifiant les choix statistiques."
+    },
+    {
+      "skill": "Définition et suivi des KPI",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI alignés sur les KPIs métier définis par la direction, adoptés par l'ensemble des départements. Expérience en machine learning appliqué avec des métriques justifiées par une logique métier (recall vs précision)."
+    },
+    {
+      "skill": "Modélisation et optimisation des données",
+      "matched_chunk_summary": "Développement d'un modèle de machine learning pour prédire la résiliation des clients (churn) en production avec un recall de 85%. Structuration de pipelines ETL sur Snowflake proche d'une architecture Medallion. Maîtrise de SQL, Python (pandas, scikit-learn) et Snowflake."
+    },
+    {
+      "skill": "Gouvernance, qualité et intégrité des données",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI sur des indicateurs sensibles, adoptés à l'échelle de l'entreprise. Structuration de pipelines ETL sur Snowflake avec une organisation en couches pour fiabiliser la production de rapports."
+    },
+    {
+      "skill": "Pilotage des évolutions du système d'information (SI)",
+      "matched_chunk_summary": "Structuration de pipelines ETL sur Snowflake pour fiabiliser la production de rapports. Déploiement d'un modèle de machine learning en production. Expérience en automatisation de processus métier critiques (réduction du temps de traitement des commissions)."
+    },
+    {
+      "skill": "Support et amélioration continue des solutions",
+      "matched_chunk_summary": "Prototypage d'un assistant interne basé sur l'API Mistral pour répondre aux questions sur les règles de commission. Refonte de la méthodologie de calcul des commissions avec un impact chiffré (réduction du temps de traitement et élimination des coûts de licence)."
+    },
+    {
+      "skill": "Coordination des parties prenantes",
+      "matched_chunk_summary": "Création d'un outil de tarification utilisé en autonomie par les équipes métier. Conception de tableaux de bord Power BI adoptés par l'ensemble des départements, démontrant une capacité à aligner les solutions avec les besoins des parties prenantes."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Conception et développement de tableaux de bord Power BI",
+      "note": "Le profil mentionne des certifications DataCamp couvrant Power BI et une expérience en conception de tableaux de bord, mais aucun chunk ne confirme explicitement une maîtrise avancée de DAX ou une expérience approfondie en développement de tableaux de bord complexes dans un environnement industriel."
+    },
+    {
+      "skill": "Architecture fonctionnelle et solutions Data/BI",
+      "note": "Le profil montre une expérience en structuration de pipelines ETL et en prototypage LLM, mais aucun chunk ne confirme une expérience en architecture fonctionnelle complète (ex: intégration avec Power Platform, Microsoft 365) ou en solutions Data/BI avancées au-delà de Power BI et Snowflake."
+    },
+    {
+      "skill": "Gestion de projets dans un environnement industriel",
+      "note": "Le profil mentionne une expérience en gestion de projets techniques (ETL, machine learning), mais aucun chunk ne confirme une expérience spécifique dans un environnement industriel exigeant comme le nucléaire, ni une coordination avancée de parties prenantes dans ce contexte."
+    }
+  ],
+  "uncertain_flags": [
+    "Conception et développement de tableaux de bord Power BI",
+    "Architecture fonctionnelle et solutions Data/BI"
+  ]
+}
