@@ -1,0 +1,591 @@
+{
+  "offer_id": 1012,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "01",
+    "match_method": "departement"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[création et maintenance de bases de données (ERP, CRM)] création de bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4671,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4717,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5211,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4671, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[création et maintenance de bases de données (ERP, CRM)] maintenance de bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4933,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5167,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5635,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4933, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[création et maintenance de bases de données (ERP, CRM)] ERP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6418,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6446,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6702,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6418, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[création et maintenance de bases de données (ERP, CRM)] CRM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6386,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.654,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6888,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6386, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[datavisualisation et création de tableaux de bord] datavisualisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6201,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6357,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6481,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6201, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[datavisualisation et création de tableaux de bord] tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7165,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7214,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7329,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[datavisualisation et création de tableaux de bord] visualisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6191,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6351,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6191, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[conception d'indicateurs de performance (KPI)] indicateurs de performance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4941,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5374,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5745,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4941, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[conception d'indicateurs de performance (KPI)] KPI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6698,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7258,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7576,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6698, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[conception d'indicateurs de performance (KPI)] conception de KPI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6091,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.674,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6771,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6091, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[modélisation prédictive] modèles prédictifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3951,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4361,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5737,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3951, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[modélisation prédictive] modélisation prédictive",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3784,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4552,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5943,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3784, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse de tendances et recommandations stratégiques] analyse de tendances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5025,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5472,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5694,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5025, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse de tendances et recommandations stratégiques] recommandations stratégiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4495,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4777,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5045,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4495, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse de tendances et recommandations stratégiques] analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4916,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5031,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4776, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation et accompagnement des utilisateurs aux outils d'analyse] formation utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4595,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5454,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5524,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4595, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation et accompagnement des utilisateurs aux outils d'analyse] accompagnement utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4497,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4601,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4829,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4497, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation et accompagnement des utilisateurs aux outils d'analyse] outils d'analyse",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4488,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4815,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.507,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4488, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[fiabilité, sécurité et conformité des données (RGPD)] fiabilité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4295,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4765,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5345,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4295, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[fiabilité, sécurité et conformité des données (RGPD)] sécurité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5853,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.605,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6081,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5853, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[fiabilité, sécurité et conformité des données (RGPD)] conformité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5018,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5359,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5799,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5018, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[fiabilité, sécurité et conformité des données (RGPD)] RGPD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6895,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6907,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7125,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[autonomie sur les outils d'analyse de données] autonomie outils d'analyse",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4272,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4301,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4437,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4272, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[autonomie sur les outils d'analyse de données] outils d'analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4253,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4291,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4545,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4253, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "datavisualisation et création de tableaux de bord",
+    "fiabilité, sécurité et conformité des données (RGPD)"
+  ]
+}

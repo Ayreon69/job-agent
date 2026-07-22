@@ -1,0 +1,1213 @@
+{
+  "offer_id": 1062,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "neuchatel",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) version 12.x - Modules Finance (GL, AR, AP, FA, Cash Management, Intercompany, AGIS)] Oracle E-Business Suite",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4993,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5365,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5511,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4993, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) version 12.x - Modules Finance (GL, AR, AP, FA, Cash Management, Intercompany, AGIS)] Oracle EBS 12.x",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.588,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6118,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.623,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5880, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) version 12.x - Modules Finance (GL, AR, AP, FA, Cash Management, Intercompany, AGIS)] General Ledger (GL)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7413,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7478,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7558,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) version 12.x - Modules Finance (GL, AR, AP, FA, Cash Management, Intercompany, AGIS)] Accounts Receivable (AR)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.7456,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7639,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.7647,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) version 12.x - Modules Finance (GL, AR, AP, FA, Cash Management, Intercompany, AGIS)] Accounts Payable (AP)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.7427,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7433,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.7512,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) version 12.x - Modules Finance (GL, AR, AP, FA, Cash Management, Intercompany, AGIS)] Fixed Assets (FA)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6617,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6813,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7077,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6617, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) version 12.x - Modules Finance (GL, AR, AP, FA, Cash Management, Intercompany, AGIS)] Cash Management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6703,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6799,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6964,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) version 12.x - Modules Finance (GL, AR, AP, FA, Cash Management, Intercompany, AGIS)] Intercompany",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6845,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6943,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7106,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) version 12.x - Modules Finance (GL, AR, AP, FA, Cash Management, Intercompany, AGIS)] Advanced Global Intercompany System (AGIS)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5756,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6025,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.636,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5756, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)] Oracle E-Business Suite",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4993,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5365,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5511,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4993, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)] Inventory Management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5926,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6448,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6785,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5926, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)] Cost Management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.496,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5273,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5631,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4960, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)] Bill of Materials (BOM)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.684,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7456,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7761,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)] Warehouse Management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6353,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6434,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6487,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6353, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)] Order Management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6391,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6718,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.702,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6391, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)] Global Trade Management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5583,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5912,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6146,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5583, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)] Configurator",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.516,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5548,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5679,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5160, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)] Advanced Pricing",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5845,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6701,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.688,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5845, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)] Service",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5083,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6259,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6372,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5083, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)] Depot Repair",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7211,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7604,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7702,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)] Supply Chain",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.581,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6141,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6422,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5810, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)] Purchasing",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.644,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6723,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.698,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6440, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Oracle Fusion ERP] Oracle Fusion ERP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5628,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6101,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6642,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5628, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modèle TCA (Trading Community Architecture) pour clients et fournisseurs] Oracle TCA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5196,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5662,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6203,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5196, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modèle TCA (Trading Community Architecture) pour clients et fournisseurs] Trading Community Architecture",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6011,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6298,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6367,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6011, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modèle TCA (Trading Community Architecture) pour clients et fournisseurs] modèle client-fournisseur",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4212,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4453,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4788,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4212, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse fonctionnelle et technique des processus métiers (Finance et Opérations)] analyse fonctionnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5443,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5569,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5916,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5443, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse fonctionnelle et technique des processus métiers (Finance et Opérations)] analyse technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5479,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5638,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5642,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5479, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse fonctionnelle et technique des processus métiers (Finance et Opérations)] processus métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4445,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4915,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5128,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4445, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse fonctionnelle et technique des processus métiers (Finance et Opérations)] Finance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6318,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7058,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7408,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6318, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse fonctionnelle et technique des processus métiers (Finance et Opérations)] Opérations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6068,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6258,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6423,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6068, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Configuration et personnalisation des modules Oracle EBS/Fusion] configuration Oracle EBS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5862,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6086,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6115,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5862, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Configuration et personnalisation des modules Oracle EBS/Fusion] configuration Oracle Fusion",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5418,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6159,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6306,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5418, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Configuration et personnalisation des modules Oracle EBS/Fusion] personnalisation ERP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.576,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6544,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6663,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5760, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets ERP (implémentation, upgrades, migrations)] gestion de projet ERP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5478,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5486,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5665,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5478, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets ERP (implémentation, upgrades, migrations)] implémentation Oracle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5345,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5898,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5976,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5345, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets ERP (implémentation, upgrades, migrations)] upgrade Oracle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4983,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5512,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6208,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4983, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets ERP (implémentation, upgrades, migrations)] migration Oracle EBS vers Fusion",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5761,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6289,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6551,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5761, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Tests logiciels (unitaires, intégration, UAT) et documentation des protocoles de test] tests unitaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7291,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7416,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7421,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Tests logiciels (unitaires, intégration, UAT) et documentation des protocoles de test] tests d'intégration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5952,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6254,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6388,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5952, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Tests logiciels (unitaires, intégration, UAT) et documentation des protocoles de test] User Acceptance Testing (UAT)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5777,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6461,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6711,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5777, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Tests logiciels (unitaires, intégration, UAT) et documentation des protocoles de test] cas de test",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6347,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6736,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7131,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6347, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Tests logiciels (unitaires, intégration, UAT) et documentation des protocoles de test] protocoles de test",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5942,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.596,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6047,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5942, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Tests logiciels (unitaires, intégration, UAT) et documentation des protocoles de test] documentation des tests",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5864,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6175,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6265,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5864, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de problèmes et support applicatif (production, bugs, escalade)] résolution de problèmes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5942,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6289,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6688,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5942, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de problèmes et support applicatif (production, bugs, escalade)] support applicatif",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5117,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5468,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5861,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5117, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de problèmes et support applicatif (production, bugs, escalade)] gestion des bugs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5668,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5871,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5882,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5668, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de problèmes et support applicatif (production, bugs, escalade)] escalade technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6617,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.669,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7336,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6617, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation des utilisateurs (techniques et non-techniques) sur les solutions Oracle] formation utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4595,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5454,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5524,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4595, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation des utilisateurs (techniques et non-techniques) sur les solutions Oracle] documentation utilisateur",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4386,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4714,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5099,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4386, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation des utilisateurs (techniques et non-techniques) sur les solutions Oracle] transfert de connaissances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5649,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5902,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5939,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5649, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Oracle E-Business Suite (EBS) version 12.x - Modules Finance (GL, AR, AP, FA, Cash Management, Intercompany, AGIS)",
+    "Oracle E-Business Suite (EBS) - Modules Opérations et Manufacturing (Inventory, Cost Management, BOM, Warehouse Management, Order Management, Global Trade Management, Configurator, Advanced Pricing, Service, Depot Repair, Supply Chain, Purchasing)",
+    "Tests logiciels (unitaires, intégration, UAT) et documentation des protocoles de test"
+  ]
+}

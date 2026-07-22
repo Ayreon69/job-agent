@@ -1,0 +1,42 @@
+{
+  "matches": [
+    {
+      "skill": "Conception et qualification de cas d'usage en IA Générative",
+      "matched_chunk_summary": "Développement d'un modèle de churn en production et prototypage d'un assistant interne LLM. Capacité à aligner des solutions techniques avec des besoins métier concrets."
+    },
+    {
+      "skill": "Accompagnement des utilisateurs et conduite du changement",
+      "matched_chunk_summary": "Création d'outils métier autonomes (tarification, tableaux de bord Power BI) adoptés par des audiences non-techniques. Prototypage d'un assistant interne pour les règles de commission."
+    },
+    {
+      "skill": "Gestion de projets et autonomie technique",
+      "matched_chunk_summary": "Prototypage d'un assistant LLM avec choix architecturaux délibérés. Structuration de pipelines ETL sur Snowflake et déploiement de modèles en production."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Développement d'agents IA et solutions basées sur les LLM/RAG",
+      "note": "Aucune expérience en architecture RAG complète (chunking, embeddings, évaluation de retrieval) ou orchestration d'agents complexe. Usage direct des APIs LLM sans implémentation RAG."
+    },
+    {
+      "skill": "MLOps et industrialisation des pipelines",
+      "note": "Aucune expérience avec Docker, FastAPI, GitHub Actions/CI/CD, ou déploiement en production sur des environnements cloud (AWS/Azure). Notions uniquement théoriques."
+    },
+    {
+      "skill": "Gouvernance et sécurisation des modèles d'IA",
+      "note": "Aucune expérience en gouvernance formelle des données (comités, chartes) ou sécurisation avancée des modèles. Expérience limitée à la gouvernance technique."
+    },
+    {
+      "skill": "Environnements techniques cloud et data (Azure, Databricks)",
+      "note": "Aucune expérience pratique avec Azure ou Databricks. Notions de cloud AWS/Azure sans déploiement en production."
+    },
+    {
+      "skill": "Langages et frameworks de Data Science/IA (Python, TensorFlow, PyTorch)",
+      "note": "Aucune expérience avec TensorFlow ou PyTorch. Expérience limitée aux bibliothèques Python classiques (scikit-learn, pandas)."
+    }
+  ],
+  "uncertain_flags": [
+    "Développement d'agents IA et solutions basées sur les LLM/RAG",
+    "Langages et frameworks de Data Science/IA (Python, TensorFlow, PyTorch)"
+  ]
+}

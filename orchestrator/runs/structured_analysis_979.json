@@ -1,0 +1,59 @@
+{
+  "matches": [
+    {
+      "skill": "Analyse des besoins métiers et conception de solutions data",
+      "matched_chunk_summary": "Création d'un outil de tarification pour les produits santé individuelle, permettant des ajustements autonomes par les équipes métier. Développement d'un modèle de churn en production avec recall de 85%, aligné sur une logique métier (coût des erreurs)."
+    },
+    {
+      "skill": "Gestion des pipelines de données (collecte, nettoyage, transformation)",
+      "matched_chunk_summary": "Structuration de pipelines ETL sur Snowflake avec une architecture en couches (staging/core/reporting), proche d'une architecture Medallion. Pipeline Whisper pour transcription audio (YouTube vers base recherchable)."
+    },
+    {
+      "skill": "Machine Learning et Deep Learning",
+      "matched_chunk_summary": "Modèle de churn en production (recall 85%) avec scikit-learn, justifié par une logique métier. Expérience répétée en machine learning appliqué (modèles prédictifs, optimisation de métriques)."
+    },
+    {
+      "skill": "Modèles de langage (LLM) et IA générative",
+      "matched_chunk_summary": "Prototypage d'un assistant interne via API Mistral (22k tokens, Gradio) en conditions réelles. Utilisation quotidienne de Claude Code et serveurs MCP (GitHub, Playwright, Firecrawl) pour du développement agentique. Expérience NLP audio (Whisper)."
+    },
+    {
+      "skill": "Déploiement et industrialisation d'algorithmes à grande échelle",
+      "matched_chunk_summary": "Modèle de churn en production chez ECA Assurances. Automatisation de processus métier (réduction de 10h à 35min pour le calcul des commissions). Architecture Snowflake pour fiabiliser les rapports à grande échelle."
+    },
+    {
+      "skill": "Veille technologique et documentation technique",
+      "matched_chunk_summary": "Utilisation quotidienne de Claude Code et fichiers CLAUDE.md pour structurer des projets. Documentation technique implicite via des outils Power BI adoptés par des audiences non-techniques."
+    },
+    {
+      "skill": "Python et bibliothèques associées (scikit-learn)",
+      "matched_chunk_summary": "Maîtrise de Python (pandas, numpy, scipy, scikit-learn) en contexte professionnel. Modèles prédictifs en production avec scikit-learn."
+    },
+    {
+      "skill": "Bases de données (SQL)",
+      "matched_chunk_summary": "SQL avancé (requêtes, agrégations, optimisation) en production. Maîtrise de Snowflake pour l'architecture ETL."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Python et bibliothèques associées (TensorFlow, PyTorch)",
+      "note": "Aucune expérience professionnelle ou projet concret avec TensorFlow ou PyTorch. Seule la maîtrise de scikit-learn est attestée."
+    },
+    {
+      "skill": "Gestion de projets data et collaboration avec les parties prenantes",
+      "note": "Expérience limitée en gouvernance formelle des données (comités, chartes). L'expérience réelle est technique et architecturale, pas organisationnelle."
+    },
+    {
+      "skill": "Cloud computing (AWS, GCP, Azure)",
+      "note": "Notions uniquement, sans déploiement en production. Expérience limitée à Snowflake (data warehousing, pas cloud computing généraliste)."
+    },
+    {
+      "skill": "Bases de données (NoSQL)",
+      "note": "Aucune expérience professionnelle ou projet concret avec des bases NoSQL."
+    }
+  ],
+  "uncertain_flags": [
+    "Python et bibliothèques associées (TensorFlow, PyTorch, scikit-learn)",
+    "Gestion de projets data et collaboration avec les parties prenantes",
+    "Cloud computing (AWS, GCP, Azure)"
+  ]
+}
