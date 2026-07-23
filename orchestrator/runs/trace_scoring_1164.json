@@ -1,0 +1,752 @@
+{
+  "offer_id": 1164,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneva",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse stratégique et gestion des ressources humaines] analyse stratégique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4973,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5009,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5566,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4973, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse stratégique et gestion des ressources humaines] gestion des ressources humaines",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5356,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5452,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5479,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5356, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse stratégique et gestion des ressources humaines] stratégie RH",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6144,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6207,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6265,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6144, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion du changement organisationnel] gestion du changement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4207,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4795,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5516,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4207, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion du changement organisationnel] transformation organisationnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6209,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.644,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6511,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6209, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion du changement organisationnel] cadres de gestion du changement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4442,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4778,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5158,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4442, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et gestion des relations clients] communication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6237,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6465,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6632,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6237, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et gestion des relations clients] gestion des relations clients",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5053,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5257,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5684,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5053, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication et gestion des relations clients] communications stratégiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5804,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6229,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6515,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5804, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analytique RH et données liées aux talents] analytique RH",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6371,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6509,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6775,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6371, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analytique RH et données liées aux talents] data RH",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6058,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6423,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6637,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6058, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analytique RH et données liées aux talents] gestion des talents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5267,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5421,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5648,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5267, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analytique RH et données liées aux talents] planification de la succession",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6069,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6609,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.668,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6069, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception organisationnelle et transformation RH] conception organisationnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.522,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5534,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5617,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5220, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception organisationnelle et transformation RH] transformation RH",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7249,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7562,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7585,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception organisationnelle et transformation RH] stratégie organisationnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5699,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5811,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5885,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5699, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Technologie RH et adoption des outils] technologie RH",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5956,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6483,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6712,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5956, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Technologie RH et adoption des outils] adoption des outils RH",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4878,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5378,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5455,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4878, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Technologie RH et adoption des outils] transformation digitale RH",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6635,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6937,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7043,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6635, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de la performance et rémunération] gestion de la performance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4582,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4698,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4984,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4582, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de la performance et rémunération] rémunération",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6048,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6139,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6324,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6048, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de la performance et rémunération] politiques de rémunération",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5182,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5602,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6346,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5182, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Recrutement et planification des effectifs] recrutement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.5852,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6011,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6017,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5852, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Recrutement et planification des effectifs] planification des effectifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.464,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4759,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5241,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4640, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Recrutement et planification des effectifs] acquisition de talents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6187,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6506,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6576,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6187, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformations culturelles et alignement stratégique] transformations culturelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6985,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.7002,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7097,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformations culturelles et alignement stratégique] alignement stratégique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5688,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6345,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6427,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5688, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformations culturelles et alignement stratégique] culture d'entreprise",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6126,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6141,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6509,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6126, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Consulting et conseil en capital humain] consulting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5496,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5681,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5713,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5496, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Consulting et conseil en capital humain] conseil en capital humain",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5119,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5531,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6289,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5119, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Consulting et conseil en capital humain] transformation business",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6498,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6702,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5776, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Conception organisationnelle et transformation RH",
+    "Transformations culturelles et alignement stratégique"
+  ]
+}

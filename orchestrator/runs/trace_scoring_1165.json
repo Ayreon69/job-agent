@@ -1,0 +1,174 @@
+{
+  "offer_id": 1165,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneva",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation en Administration des Affaires ou Finance] Master en Administration des Affaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.483,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5892,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6176,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4830, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation en Administration des Affaires ou Finance] Master en Finance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5341,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.649,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7183,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5341, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences interpersonnelles] compétences interpersonnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6003,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.602,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.606,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6003, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences analytiques] compétences d'analyse",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.3994,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4108,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4363,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3994, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Esprit entrepreneurial] esprit entrepreneurial",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.663,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6744,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7653,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6630, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Capacité à travailler sous pression] travail sous pression",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6171,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.691,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7003,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6171, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}

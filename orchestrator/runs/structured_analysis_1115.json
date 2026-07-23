@@ -1,0 +1,50 @@
+{
+  "matches": [
+    {
+      "skill": "Processus ETL/ELT (intégration, transformation et mise à disposition des données)",
+      "matched_chunk_summary": "Structuration des pipelines ETL sur Snowflake avec une organisation en couches (staging vers core vers reporting), proche d'une architecture Medallion. Expérience concrète en architecture de données et fiabilisation des rapports à grande échelle."
+    },
+    {
+      "skill": "Versioning et maintenance d'applications décisionnelles (contexte produit)",
+      "matched_chunk_summary": "Prototypage d'un assistant interne via Gradio et utilisation quotidienne de GitHub et outils MCP (Playwright, Firecrawl) pour des projets de développement assisté par agent. Structuration de projets avec fichiers CLAUDE.md pour un contexte persistant."
+    },
+    {
+      "skill": "Rédaction de documentations technico-fonctionnelles",
+      "matched_chunk_summary": "Utilisation de fichiers CLAUDE.md pour structurer des projets et donner du contexte persistant aux sessions d'agent. Expérience en prototypage d'outils internes avec documentation implicite des choix architecturaux."
+    },
+    {
+      "skill": "Support technique et fonctionnel",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI adoptés par des audiences non-techniques et développement d'un modèle de churn en production. Expérience en automatisation de processus métier critiques."
+    },
+    {
+      "skill": "Collaboration avec les Product Owners (PO) et équipes métiers",
+      "matched_chunk_summary": "Création d'outils de tarification autonomes pour les équipes métier et alignement des tableaux de bord Power BI avec les KPIs métier définis par la direction. Expérience en compréhension des besoins métier et transfert d'autonomie."
+    },
+    {
+      "skill": "Interaction avec les équipes R&D et techniques (chaîne d'intégration, produit décisionnel)",
+      "matched_chunk_summary": "Structuration de pipelines ETL sur Snowflake et conception de tableaux de bord Power BI alignés sur les KPIs métier. Expérience en architecture de données et collaboration avec des équipes techniques."
+    },
+    {
+      "skill": "Amélioration continue des outils et processus internes",
+      "matched_chunk_summary": "Refonte de la méthodologie de calcul des commissions (réduction du temps de traitement de 10h à 35min) et automatisation de processus métier critiques. Développement d'un modèle de churn en production avec impact mesurable."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Conception et maintenance d'entrepôts de données décisionnels",
+      "note": "Expérience limitée à des notions en cours d'apprentissage (bases vectorielles, cloud AWS/Azure) et à une architecture proche de Medallion sur Snowflake, sans implémentation certifiée ou maintenance d'entrepôts décisionnels complets."
+    },
+    {
+      "skill": "Gouvernance des données et conformité RGPD",
+      "note": "Aucune expérience concrète en gouvernance formelle des données (comités, chartes) ou conformité RGPD. L'expérience se limite à des aspects techniques et architecturaux, sans maîtrise des processus de gouvernance."
+    },
+    {
+      "skill": "Conception et maintenance d'indicateurs et tableaux de bord",
+      "note": "Expérience solide en Power BI, mais aucun élément ne confirme la maintenance à long terme d'indicateurs ou tableaux de bord dans un contexte produit versionné et évolutif."
+    }
+  ],
+  "uncertain_flags": [
+    "Gouvernance des données et conformité RGPD",
+    "Conception et maintenance d'indicateurs et tableaux de bord"
+  ]
+}
