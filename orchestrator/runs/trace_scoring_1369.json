@@ -1,0 +1,1032 @@
+{
+  "offer_id": 1369,
+  "geography_verdict": {
+    "zone": "autre_france",
+    "priority_rank": null,
+    "mobility_signal_allowed": false,
+    "matched_keyword": null,
+    "match_method": "aucun"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en France hors Rhône-Alpes, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3167,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3601,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.394,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3167, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de données selon l'architecture Médaillon (Bronze, Silver, Gold) sur Databricks] architecture Médaillon",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.695,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6965,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7139,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de données selon l'architecture Médaillon (Bronze, Silver, Gold) sur Databricks] Bronze",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.8451,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.8514,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.8583,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de données selon l'architecture Médaillon (Bronze, Silver, Gold) sur Databricks] Silver",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.8435,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.856,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.8567,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de données selon l'architecture Médaillon (Bronze, Silver, Gold) sur Databricks] Gold",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.8615,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.8747,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.8756,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de données selon l'architecture Médaillon (Bronze, Silver, Gold) sur Databricks] Databricks",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4977,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5107,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5467,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4977, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de données selon l'architecture Médaillon (Bronze, Silver, Gold) sur Databricks] modélisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4999,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5066,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5127,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4999, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec Data Engineers et Product Owners pour la mise en place de modèles Gold] Data Engineers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4175,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4475,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4482,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4175, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec Data Engineers et Product Owners pour la mise en place de modèles Gold] Product Owners",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6134,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6592,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6753,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6134, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec Data Engineers et Product Owners pour la mise en place de modèles Gold] modèles Gold",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.752,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7712,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7716,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec Data Engineers et Product Owners pour la mise en place de modèles Gold] collaboration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6176,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6411,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.667,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6176, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance de modèles sémantiques pour le reporting] modèles sémantiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5761,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.582,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5832,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5761, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance de modèles sémantiques pour le reporting] reporting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6373,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6755,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6099, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance de modèles sémantiques pour le reporting] conception de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5056,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5352,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5596,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5056, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et maintenance de modèles sémantiques pour le reporting] maintenance de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4904,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5496,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4904, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyses ad hoc avec SQL (PostgreSQL, Databricks)] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyses ad hoc avec SQL (PostgreSQL, Databricks)] PostgreSQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.526,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6356,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6804,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5260, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyses ad hoc avec SQL (PostgreSQL, Databricks)] Databricks",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4977,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5107,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5467,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4977, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyses ad hoc avec SQL (PostgreSQL, Databricks)] analyses ad hoc",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5574,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5719,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6163,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5574, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création et maintenance de dashboards interactifs sous Power BI et Tableau] Power BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.3422,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6163,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6182,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3422, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création et maintenance de dashboards interactifs sous Power BI et Tableau] Tableau",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6788,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6989,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7164,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création et maintenance de dashboards interactifs sous Power BI et Tableau] dashboards interactifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5309,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5507,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5571,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5309, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création et maintenance de dashboards interactifs sous Power BI et Tableau] maintenance de dashboards",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6089,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6293,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6307,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6089, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Principes UI/UX pour la conception de visualisations fluides et intuitives] UI/UX",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7065,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7683,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7782,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Principes UI/UX pour la conception de visualisations fluides et intuitives] visualisations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6853,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6892,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7151,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Principes UI/UX pour la conception de visualisations fluides et intuitives] conception ergonomique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6606,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6614,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6833,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6606, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et visualisation de données cartographiques (géolocalisation, spatialisation)] données cartographiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6358,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6421,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6438,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6358, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et visualisation de données cartographiques (géolocalisation, spatialisation)] géolocalisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.4803,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.4832,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.4881,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4803, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et visualisation de données cartographiques (géolocalisation, spatialisation)] spatialisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.475,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5119,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5259,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4750, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et visualisation de données cartographiques (géolocalisation, spatialisation)] visualisation de données géographiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.647,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6512,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6585,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6470, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance, sécurité et gestion de Power BI Service (publication, espaces de travail, actualisation)] Power BI Service",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.3745,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5211,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6113,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3745, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance, sécurité et gestion de Power BI Service (publication, espaces de travail, actualisation)] gouvernance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6673,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7228,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7243,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6673, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance, sécurité et gestion de Power BI Service (publication, espaces de travail, actualisation)] sécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5422,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6412,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.664,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5422, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance, sécurité et gestion de Power BI Service (publication, espaces de travail, actualisation)] publication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6721,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7132,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7271,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance, sécurité et gestion de Power BI Service (publication, espaces de travail, actualisation)] espaces de travail",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6197,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6347,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6447,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6197, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance, sécurité et gestion de Power BI Service (publication, espaces de travail, actualisation)] actualisation des jeux de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5842,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5981,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5987,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5842, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation de la big data sur Power BI Service (dataset volumineux, temps de rafraîchissement, limites DAX)] optimisation big data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5455,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5671,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5748,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5455, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation de la big data sur Power BI Service (dataset volumineux, temps de rafraîchissement, limites DAX)] Power BI Service",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.3745,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5211,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6113,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3745, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation de la big data sur Power BI Service (dataset volumineux, temps de rafraîchissement, limites DAX)] dataset volumineux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5453,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5504,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.596,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5453, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation de la big data sur Power BI Service (dataset volumineux, temps de rafraîchissement, limites DAX)] temps de rafraîchissement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.612,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.617,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6616,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6120, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation de la big data sur Power BI Service (dataset volumineux, temps de rafraîchissement, limites DAX)] limites DAX",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6934,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.7256,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7301,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compréhension des enjeux techniques et opérationnels du réseau électrique] réseau électrique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5984,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.61,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6552,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5984, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compréhension des enjeux techniques et opérationnels du réseau électrique] enjeux techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5119,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5198,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5425,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5119, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compréhension des enjeux techniques et opérationnels du réseau électrique] enjeux opérationnels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.472,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5069,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5244,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4720, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Modélisation de données selon l'architecture Médaillon (Bronze, Silver, Gold) sur Databricks",
+    "Collaboration avec Data Engineers et Product Owners pour la mise en place de modèles Gold",
+    "Création et maintenance de dashboards interactifs sous Power BI et Tableau",
+    "Principes UI/UX pour la conception de visualisations fluides et intuitives",
+    "Gouvernance, sécurité et gestion de Power BI Service (publication, espaces de travail, actualisation)",
+    "Optimisation de la big data sur Power BI Service (dataset volumineux, temps de rafraîchissement, limites DAX)"
+  ]
+}

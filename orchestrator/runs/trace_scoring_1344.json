@@ -1,0 +1,683 @@
+{
+  "offer_id": 1344,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et maintenance de rapports avec Dream Report] Dream Report",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6459,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.746,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7461,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6459, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et maintenance de rapports avec Dream Report] rapports de production",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5739,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5783,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.611,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5739, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et maintenance de rapports avec Dream Report] reporting industriel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5393,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5466,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.579,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5393, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Manipulation et interrogation de bases de données SQL] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Manipulation et interrogation de bases de données SQL] requêtes SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3098,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5934,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6618,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3098, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Manipulation et interrogation de bases de données SQL] création de tables",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6348,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6403,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6468,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6348, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Manipulation et interrogation de bases de données SQL] bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5296,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5451,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5505,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation des traitements de données avec PowerShell et Python] PowerShell",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6612,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6977,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7038,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6612, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation des traitements de données avec PowerShell et Python] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation des traitements de données avec PowerShell et Python] automatisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3734,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4765,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3734, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation des traitements de données avec PowerShell et Python] scripts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5161,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5831,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5995,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5161, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation des traitements de données avec PowerShell et Python] traitements de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4469,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4672,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.476,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4469, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Exploitation des données issues des automates industriels et systèmes SCADA] SCADA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7267,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7337,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7343,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Exploitation des données issues des automates industriels et systèmes SCADA] automates industriels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5306,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5636,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5646,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5306, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Exploitation des données issues des automates industriels et systèmes SCADA] données industrielles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4618,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5059,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5533,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4618, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et suivi des procédés industriels (temps de passage, températures, paramètres de fabrication)] analyse de procédés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4432,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5067,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5095,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4432, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et suivi des procédés industriels (temps de passage, températures, paramètres de fabrication)] suivi de production",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5161,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5852,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5951,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5161, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et suivi des procédés industriels (temps de passage, températures, paramètres de fabrication)] paramètres industriels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5271,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5273,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5496,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5271, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de scripts en LUA] LUA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7042,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7321,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.745,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de scripts en LUA] scripting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4751,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5661,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5699,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4751, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et évolution des structures de bases de données] conception de bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4267,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4409,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4954,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4267, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et évolution des structures de bases de données] évolution de bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4487,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4947,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5142,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4487, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédiger et maintenir la documentation technique] documentation technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5417,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5538,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5743,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5417, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédiger et maintenir la documentation technique] rédaction technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4455,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4643,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.515,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4455, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration continue des outils de reporting] amélioration continue",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5652,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6346,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5652, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration continue des outils de reporting] outils de reporting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4843,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5065,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5162,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4843, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité des données dans un environnement réglementé (pharmaceutique)] conformité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5018,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5359,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5799,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5018, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité des données dans un environnement réglementé (pharmaceutique)] réglementation pharmaceutique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4373,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.672,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6825,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4373, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Exploitation des données issues des automates industriels et systèmes SCADA",
+    "Développement de scripts en LUA"
+  ]
+}

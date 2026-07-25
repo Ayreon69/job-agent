@@ -1,0 +1,54 @@
+{
+  "matches": [
+    {
+      "skill": "Analyses ad hoc avec SQL (PostgreSQL, Databricks)",
+      "matched_chunk_summary": "Maîtrise avancée de SQL (requêtes avancées, agrégations, optimisation) avec expérience professionnelle concrète, incluant des demandes analytiques ad hoc pour des équipes opérationnelles et la direction."
+    },
+    {
+      "skill": "Conception et maintenance de modèles sémantiques pour le reporting",
+      "matched_chunk_summary": "Expérience en structuration de pipelines ETL sur Snowflake avec une organisation en couches proche de l'architecture Medallion, et développement de modèles de machine learning en production alignés sur des KPIs métier."
+    },
+    {
+      "skill": "Création et maintenance de dashboards interactifs sous Power BI",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI (DAX avancé) adoptés par l'ensemble des départements, alignés sur des indicateurs sensibles (commissions, sinistralité) et des KPIs métier."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Modélisation de données selon l'architecture Médaillon (Bronze, Silver, Gold) sur Databricks",
+      "note": "Expérience limitée à une organisation en couches proche de Medallion sur Snowflake, sans implémentation certifiée ou pratique sur Databricks."
+    },
+    {
+      "skill": "Collaboration avec Data Engineers et Product Owners pour la mise en place de modèles Gold",
+      "note": "Aucune mention explicite de collaboration avec des Data Engineers ou Product Owners pour des modèles Gold, malgré une expérience en architecture de données."
+    },
+    {
+      "skill": "Principes UI/UX pour la conception de visualisations fluides et intuitives",
+      "note": "Aucune expérience documentée en UI/UX pour la conception de visualisations, bien que les dashboards Power BI aient été adoptés par des audiences non-techniques."
+    },
+    {
+      "skill": "Intégration et visualisation de données cartographiques (géolocalisation, spatialisation)",
+      "note": "Aucune expérience identifiée en visualisation de données géographiques ou spatialisation."
+    },
+    {
+      "skill": "Gouvernance, sécurité et gestion de Power BI Service (publication, espaces de travail, actualisation)",
+      "note": "Expérience limitée à la conception de dashboards Power BI, sans mention de gestion de Power BI Service (gouvernance, sécurité, actualisation)."
+    },
+    {
+      "skill": "Optimisation de la big data sur Power BI Service (dataset volumineux, temps de rafraîchissement, limites DAX)",
+      "note": "Aucune expérience documentée en optimisation de datasets volumineux ou gestion des limites DAX sur Power BI Service."
+    },
+    {
+      "skill": "Compréhension des enjeux techniques et opérationnels du réseau électrique",
+      "note": "Aucune expérience ou connaissance identifiée dans le secteur de l'énergie ou du réseau électrique."
+    }
+  ],
+  "uncertain_flags": [
+    "Modélisation de données selon l'architecture Médaillon (Bronze, Silver, Gold) sur Databricks",
+    "Collaboration avec Data Engineers et Product Owners pour la mise en place de modèles Gold",
+    "Création et maintenance de dashboards interactifs sous Power BI et Tableau",
+    "Principes UI/UX pour la conception de visualisations fluides et intuitives",
+    "Gouvernance, sécurité et gestion de Power BI Service (publication, espaces de travail, actualisation)",
+    "Optimisation de la big data sur Power BI Service (dataset volumineux, temps de rafraîchissement, limites DAX)"
+  ]
+}
