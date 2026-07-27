@@ -1,0 +1,1124 @@
+{
+  "offer_id": 1560,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "69",
+    "match_method": "departement"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vision par ordinateur (microscopie, imagerie industrielle, empreintes digitales)] vision par ordinateur",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6648,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6722,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7034,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6648, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vision par ordinateur (microscopie, imagerie industrielle, empreintes digitales)] microscopie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7106,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.8423,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.8537,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vision par ordinateur (microscopie, imagerie industrielle, empreintes digitales)] imagerie industrielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6245,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6709,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.687,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6245, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vision par ordinateur (microscopie, imagerie industrielle, empreintes digitales)] empreintes digitales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6976,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7124,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7616,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vision par ordinateur (microscopie, imagerie industrielle, empreintes digitales)] computer vision",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7131,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.723,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7372,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traitement du langage naturel (NLP, OCR, analyse de rapports, génération de documents)] NLP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5013,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6103,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6117,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5013, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traitement du langage naturel (NLP, OCR, analyse de rapports, génération de documents)] OCR",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7451,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7614,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7701,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traitement du langage naturel (NLP, OCR, analyse de rapports, génération de documents)] analyse de rapports",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5134,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5135,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5627,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5134, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traitement du langage naturel (NLP, OCR, analyse de rapports, génération de documents)] génération de documents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5485,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5634,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6023,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5485, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traitement du langage naturel (NLP, OCR, analyse de rapports, génération de documents)] traitement du langage naturel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.4709,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5203,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5886,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4709, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de séries temporelles (surveillance d'instruments, détection d'anomalies, chromatographie)] séries temporelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6668,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.7019,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7101,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6668, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de séries temporelles (surveillance d'instruments, détection d'anomalies, chromatographie)] surveillance d'instruments",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6324,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6519,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6606,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6324, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de séries temporelles (surveillance d'instruments, détection d'anomalies, chromatographie)] détection d'anomalies",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6102,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6216,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6326,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6102, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de séries temporelles (surveillance d'instruments, détection d'anomalies, chromatographie)] chromatographie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.8234,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.8693,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.8748,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de séries temporelles (surveillance d'instruments, détection d'anomalies, chromatographie)] time series analysis",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6399,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6494,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6515,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6399, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data engineering et préparation des données (collecte, nettoyage, annotation)] data engineering",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4478,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4892,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4941,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4478, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data engineering et préparation des données (collecte, nettoyage, annotation)] préparation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4396,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4405,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.46,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4396, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data engineering et préparation des données (collecte, nettoyage, annotation)] collecte de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5234,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5288,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5491,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5234, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data engineering et préparation des données (collecte, nettoyage, annotation)] nettoyage de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5502,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5634,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5857,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5502, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data engineering et préparation des données (collecte, nettoyage, annotation)] annotation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5241,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5959,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5993,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data engineering et préparation des données (collecte, nettoyage, annotation)] data cleaning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5958,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6073,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6296,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5958, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data engineering et préparation des données (collecte, nettoyage, annotation)] data annotation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5612,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6427,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.645,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5612, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de données issues de LIMS et bases scientifiques] LIMS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7694,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7727,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7737,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de données issues de LIMS et bases scientifiques] bases scientifiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.5953,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6698,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6796,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5953, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de données issues de LIMS et bases scientifiques] intégration de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5271,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5429,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5546,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5271, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et industrialisation des modèles (API, CI/CD, monitoring, drift)] MLOps",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6473,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.653,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6802,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6473, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et industrialisation des modèles (API, CI/CD, monitoring, drift)] industrialisation des modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4574,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4908,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5463,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4574, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et industrialisation des modèles (API, CI/CD, monitoring, drift)] API",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4219,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5355,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5644,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4219, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et industrialisation des modèles (API, CI/CD, monitoring, drift)] CI/CD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7213,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7378,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.743,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et industrialisation des modèles (API, CI/CD, monitoring, drift)] monitoring",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5692,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6048,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6286,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et industrialisation des modèles (API, CI/CD, monitoring, drift)] model drift",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6459,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6459,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6565,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6459, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et industrialisation des modèles (API, CI/CD, monitoring, drift)] déploiement de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4625,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4722,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4901,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4625, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Packaging et déploiement de modèles en production] packaging de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6009,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.634,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6394,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6009, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Packaging et déploiement de modèles en production] déploiement de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4625,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4722,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4901,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4625, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Packaging et déploiement de modèles en production] production",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6586,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6841,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6586, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration continue et suivi des performances des modèles] amélioration continue",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5652,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6346,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5652, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration continue et suivi des performances des modèles] suivi des performances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6118,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6202,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6427,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6118, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration continue et suivi des performances des modèles] model monitoring",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5187,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5608,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5785,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5187, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation technique et transfert de savoir-faire] documentation technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5417,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5538,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5743,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5417, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation technique et transfert de savoir-faire] transfert de savoir-faire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4671,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5423,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5481,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4671, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation technique et transfert de savoir-faire] formation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6712,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.728,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7879,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation technique et transfert de savoir-faire] accompagnement métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4574,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4944,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5059,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4574, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissances en Santé, Sécurité et Environnement (SSE, MASE, EPI)] Santé Sécurité Environnement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6095,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6159,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6261,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6095, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissances en Santé, Sécurité et Environnement (SSE, MASE, EPI)] SSE",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6446,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6708,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6942,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6446, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissances en Santé, Sécurité et Environnement (SSE, MASE, EPI)] MASE",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6608,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6957,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6979,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6608, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissances en Santé, Sécurité et Environnement (SSE, MASE, EPI)] EPI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5838,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6719,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7109,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5838, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissances en Santé, Sécurité et Environnement (SSE, MASE, EPI)] consignes de sécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5421,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5846,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6354,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5421, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Vision par ordinateur (microscopie, imagerie industrielle, empreintes digitales)",
+    "Traitement du langage naturel (NLP, OCR, analyse de rapports, génération de documents)",
+    "Analyse de séries temporelles (surveillance d'instruments, détection d'anomalies, chromatographie)",
+    "Intégration de données issues de LIMS et bases scientifiques",
+    "MLOps et industrialisation des modèles (API, CI/CD, monitoring, drift)",
+    "Documentation technique et transfert de savoir-faire"
+  ]
+}
