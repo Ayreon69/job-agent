@@ -1,0 +1,56 @@
+{
+  "matches": [
+    {
+      "skill": "Modélisation de données et bases de données (SQL, NoSQL, Data Warehouse, Data Lake)",
+      "matched_chunk_summary": "Maîtrise de SQL avancé (requêtes, optimisation), Python (pandas, numpy, scikit-learn), et Snowflake pour l'architecture ETL. Expérience concrète en structuration de pipelines de données et modélisation pour des rapports à grande échelle."
+    },
+    {
+      "skill": "Machine Learning et Deep Learning (TensorFlow, PyTorch, scikit-learn)",
+      "matched_chunk_summary": "Développement d'un modèle de machine learning en production (churn, recall 85%) avec scikit-learn. Justification des choix métiers (recall vs précision) et autonomie sur des projets appliqués."
+    },
+    {
+      "skill": "Traitement du langage naturel (NLP) et modèles de langage (LLM, RAG)",
+      "matched_chunk_summary": "Prototypage d'un assistant interne avec l'API Mistral et Gradio. Utilisation quotidienne de LLM (Claude, Mistral) et outils agentiques (GitHub, Playwright, Firecrawl). Compréhension pratique des LLM en production, bien que sans RAG complexe."
+    },
+    {
+      "skill": "Langages de programmation (Python, Scala, Java, R)",
+      "matched_chunk_summary": "Maîtrise de Python (pandas, numpy, scipy, scikit-learn) et R avec expérience professionnelle répétée. SQL avancé pour les requêtes analytiques."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Conception et architecture de solutions data/IA",
+      "note": "Absence d'expérience avec les architectures RAG complètes (chunking, embeddings, évaluation de retrieval), bases vectorielles (ChromaDB, Pinecone), et déploiement en production sur cloud (AWS/Azure). Notions uniquement sur FastAPI, Docker, et CI/CD."
+    },
+    {
+      "skill": "Cloud computing (AWS, Azure, GCP) et déploiement de solutions",
+      "note": "Notions théoriques uniquement sur AWS/Azure, sans expérience de déploiement en production ou d'utilisation avancée des services cloud."
+    },
+    {
+      "skill": "Big Data et outils de traitement (Spark, Hadoop, Kafka)",
+      "note": "Aucune expérience mentionnée avec Spark, Hadoop, ou Kafka. Expérience limitée aux outils comme Snowflake et Power BI pour le traitement de données."
+    },
+    {
+      "skill": "DevOps et MLOps (CI/CD, Docker, Kubernetes, MLflow)",
+      "note": "Notions uniquement sur Docker, GitHub Actions, et CI/CD, sans expérience pratique en production ou avec Kubernetes/MLflow."
+    },
+    {
+      "skill": "Gouvernance des données et conformité (RGPD, normes sectorielles)",
+      "note": "Expérience technique et architecturale, mais aucune mention de gouvernance formelle (comités, chartes) ou de conformité RGPD/normes sectorielles."
+    },
+    {
+      "skill": "Gestion de projets data/IA et méthodologies agiles (Scrum, Kanban)",
+      "note": "Aucune mention d'expérience avec Scrum, Kanban, ou gestion formelle de projets data/IA. Expérience limitée au prototypage et à l'autonomie sur des projets techniques."
+    }
+  ],
+  "uncertain_flags": [
+    "Machine Learning et Deep Learning (TensorFlow, PyTorch, scikit-learn)",
+    "Traitement du langage naturel (NLP) et modèles de langage (LLM, RAG)",
+    "Cloud computing (AWS, Azure, GCP) et déploiement de solutions",
+    "Big Data et outils de traitement (Spark, Hadoop, Kafka)",
+    "DevOps et MLOps (CI/CD, Docker, Kubernetes, MLflow)",
+    "Langages de programmation (Python, Scala, Java, R)",
+    "Gouvernance des données et conformité (RGPD, normes sectorielles)",
+    "Gestion de projets data/IA et méthodologies agiles (Scrum, Kanban)"
+  ]
+}

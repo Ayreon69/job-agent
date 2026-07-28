@@ -1,0 +1,14 @@
+{
+  "offer_id": 1752,
+  "tone_chunk_used": "geography_rules::rule_switzerland_other_mobility",
+  "tone_rag_query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+  "tone_rag_distance": 0.2765,
+  "web_search_used": false,
+  "web_search_result": null,
+  "steps": [
+    "règle de ton récupérée: geography_rules::rule_switzerland_other_mobility (distance=0.2765) pour zone='suisse_romande'",
+    "contexte de l'offre jugé suffisant — pas de web_search",
+    "analyse générée",
+    "analyse structurée construite depuis ScoringResult (pas de second appel LLM): 5 matches, 6 gaps, 1 uncertain_flags"
+  ]
+}

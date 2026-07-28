@@ -1,0 +1,616 @@
+{
+  "offer_id": 1760,
+  "geography_verdict": {
+    "zone": "autre_france",
+    "priority_rank": null,
+    "mobility_signal_allowed": false,
+    "matched_keyword": null,
+    "match_method": "aucun"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en France hors Rhône-Alpes, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3167,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3601,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.394,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3167, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Diplôme en finance, comptabilité ou domaine similaire] finance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6257,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6975,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7423,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6257, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Diplôme en finance, comptabilité ou domaine similaire] comptabilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6263,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6995,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7082,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6263, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Diplôme en finance, comptabilité ou domaine similaire] économie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5724,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5768,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5782,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5724, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences analytiques avec attention aux détails et optimisation] compétences analytiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.405,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4556,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4591,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4050, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences analytiques avec attention aux détails et optimisation] attention aux détails",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5246,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5422,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6144,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5246, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences analytiques avec attention aux détails et optimisation] optimisation des processus",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.3833,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5157,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5163,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3833, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise d'Excel] Excel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.686,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6954,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7006,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience avec SAP (Group Reporting, S/4HANA, Analytics Cloud)] SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7264,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7453,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience avec SAP (Group Reporting, S/4HANA, Analytics Cloud)] SAP Group Reporting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6432,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6463,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6546,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6432, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience avec SAP (Group Reporting, S/4HANA, Analytics Cloud)] SAP S/4HANA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6703,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6829,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7197,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience avec SAP (Group Reporting, S/4HANA, Analytics Cloud)] SAP Analytics Cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5802,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6029,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.636,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5802, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance de Power BI] Power BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.3422,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6163,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6182,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3422, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Préparation des états financiers consolidés selon les IFRS] IFRS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7203,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7245,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7266,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Préparation des états financiers consolidés selon les IFRS] états financiers consolidés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.7096,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.724,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7246,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données financières pour identifier tendances et opportunités] analyse des données financières",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.4769,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5028,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5719,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4769, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données financières pour identifier tendances et opportunités] identification des tendances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.533,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5932,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6531,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5330, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données financières pour identifier tendances et opportunités] opportunités d'amélioration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4869,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5475,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6227,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4869, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de l'anglais et du français] anglais",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.4731,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7085,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7094,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4731, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de l'anglais et du français] français",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5094,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::nationality_visa",
+          "distance": 0.5368,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5813,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5094, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en analyse financière, consolidation ou audit] analyse financière",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.525,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5569,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6149,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5250, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en analyse financière, consolidation ou audit] consolidation financière",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6935,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7119,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7293,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en analyse financière, consolidation ou audit] audit",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6157,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6166,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6386,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6157, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration continue des processus financiers et méthodologies de reporting] amélioration continue",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5652,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6346,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5652, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration continue des processus financiers et méthodologies de reporting] processus financiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5874,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6234,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6473,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5874, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration continue des processus financiers et méthodologies de reporting] méthodologies de reporting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5298,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5453,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5801,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5298, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Maîtrise d'Excel",
+    "Expérience avec SAP (Group Reporting, S/4HANA, Analytics Cloud)",
+    "Préparation des états financiers consolidés selon les IFRS",
+    "Expérience en analyse financière, consolidation ou audit"
+  ]
+}

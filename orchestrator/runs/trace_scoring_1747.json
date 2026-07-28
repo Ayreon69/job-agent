@@ -1,0 +1,981 @@
+{
+  "offer_id": 1747,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneva",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Diplôme en intelligence artificielle, analytique ou ingénierie des données] intelligence artificielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4068,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4977,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4068, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Diplôme en intelligence artificielle, analytique ou ingénierie des données] analytique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5377,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.583,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6216,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5377, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Diplôme en intelligence artificielle, analytique ou ingénierie des données] data engineering",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4478,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4892,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4941,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4478, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Diplôme en intelligence artificielle, analytique ou ingénierie des données] diplôme en IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4433,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5035,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5391,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4433, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Diplôme en intelligence artificielle, analytique ou ingénierie des données] diplôme en analytique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.496,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.4979,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5471,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4960, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Diplôme en intelligence artificielle, analytique ou ingénierie des données] diplôme en ingénierie des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.3183,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.4152,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4286,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3183, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en communication et conseil] communication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6237,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6465,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6632,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6237, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en communication et conseil] conseil",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5194,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5261,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6049,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5194, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en communication et conseil] relation client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5012,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5604,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5842,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5012, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en communication et conseil] collaboration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6176,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6411,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.667,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6176, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience pratique en intelligence artificielle et solutions d'analytique] intelligence artificielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4068,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4977,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4068, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience pratique en intelligence artificielle et solutions d'analytique] solutions d'analytique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6377,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6393,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6496,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6377, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience pratique en intelligence artificielle et solutions d'analytique] expérience pratique en IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.3822,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3839,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4305,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3822, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience pratique en intelligence artificielle et solutions d'analytique] expérience en analytique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4782,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5851,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.5868,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4782, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et mise en œuvre de stratégies et solutions modernes d'IA et de données] conception de stratégies IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4418,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4868,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.491,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4418, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et mise en œuvre de stratégies et solutions modernes d'IA et de données] mise en œuvre de solutions IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4165,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4405,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4491,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4165, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et mise en œuvre de stratégies et solutions modernes d'IA et de données] stratégies de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4732,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4789,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4832,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4732, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et mise en œuvre de stratégies et solutions modernes d'IA et de données] solutions de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4797,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4997,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5004,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4797, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données et plateformes de données] gestion des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4495,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4645,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.468,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4495, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données et plateformes de données] plateformes de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4452,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.462,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4675,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4452, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données et plateformes de données] data management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.486,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5093,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5131,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4860, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cas d'usage en intelligence artificielle et données] cas d'usage IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4461,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5284,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5313,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4461, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cas d'usage en intelligence artificielle et données] cas d'usage données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4807,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4922,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5195,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4807, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cas d'usage en intelligence artificielle et données] use cases IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5907,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6304,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6435,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5907, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cas d'usage en intelligence artificielle et données] use cases données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5881,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6074,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6136,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5881, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Leadership d'opinion architectural, technique et organisationnel] leadership architectural",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6737,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7107,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7109,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Leadership d'opinion architectural, technique et organisationnel] leadership technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6471,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7013,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7231,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6471, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Leadership d'opinion architectural, technique et organisationnel] leadership organisationnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6398,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7045,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.74,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6398, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Leadership d'opinion architectural, technique et organisationnel] transformation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5333,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5419,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5509,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5333, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Leadership d'opinion architectural, technique et organisationnel] transformation IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6546,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6842,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6546, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation complexe de données et d'IA avec implications organisationnelles] transformation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5333,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5419,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5509,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5333, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation complexe de données et d'IA avec implications organisationnelles] transformation IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6546,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6842,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6546, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation complexe de données et d'IA avec implications organisationnelles] implications organisationnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5625,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5648,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.574,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5625, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation complexe de données et d'IA avec implications organisationnelles] gestion du changement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4207,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4795,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5516,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4207, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compréhension des problématiques métier et réflexion basée sur les données] problématiques métier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4492,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5143,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5467,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4492, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compréhension des problématiques métier et réflexion basée sur les données] réflexion basée sur les données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4287,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4691,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5135,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4287, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compréhension des problématiques métier et réflexion basée sur les données] data-driven decision making",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4293,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4532,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4622,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4293, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des domaines réglementaires, des coûts et des revenus] domaines réglementaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4406,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5236,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5263,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4406, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des domaines réglementaires, des coûts et des revenus] gestion des coûts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4265,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5048,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5102,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4265, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des domaines réglementaires, des coûts et des revenus] optimisation des revenus",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4454,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5212,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5674,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4454, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des domaines réglementaires, des coûts et des revenus] conformité réglementaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.496,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5406,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5535,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4960, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Leadership d'opinion architectural, technique et organisationnel"
+  ]
+}

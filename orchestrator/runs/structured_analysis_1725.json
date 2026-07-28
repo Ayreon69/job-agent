@@ -1,0 +1,49 @@
+{
+  "matches": [
+    {
+      "skill": "Conception et développement d'APIs",
+      "matched_chunk_summary": "Prototypage d'un assistant interne via API Mistral (appel API direct) et utilisation d'APIs Claude. Expérience limitée à des prototypes et usages directs, sans architecture RAG ou orchestration complexe."
+    },
+    {
+      "skill": "Architectures événementielles et microservices",
+      "matched_chunk_summary": "Structuration de pipelines ETL sur Snowflake en couches (staging vers core vers reporting), proche d'une architecture Medallion. Expérience en architecture de données, mais pas explicitement en architectures événementielles ou microservices."
+    },
+    {
+      "skill": "Intégration de fonctionnalités basées sur l'IA",
+      "matched_chunk_summary": "Prototypage d'un assistant interne basé sur l'API Mistral, avec compréhension des compromis architecturaux. Utilisation quotidienne de Claude Code et serveurs MCP pour du développement assisté par agent. Expérience concrète en LLM et écosystème agentique."
+    },
+    {
+      "skill": "Gestion et normalisation des flux de données",
+      "matched_chunk_summary": "Structuration de pipelines ETL sur Snowflake en couches, avec objectif de fiabilisation et gouvernance technique des données. Maîtrise de Snowflake et architecture proche Medallion."
+    },
+    {
+      "skill": "Assurance de la scalabilité et robustesse des solutions",
+      "matched_chunk_summary": "Développement d'un modèle de machine learning en production (churn) et structuration de pipelines ETL sur Snowflake pour fiabiliser des rapports à grande échelle. Expérience en scalabilité et robustesse dans un contexte data."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Développement backend avec Node.js et TypeScript",
+      "note": "Aucune expérience professionnelle concrète en Node.js ou TypeScript. Notions uniquement, sans pratique en conditions réelles."
+    },
+    {
+      "skill": "Déploiement et gestion d'infrastructure cloud AWS",
+      "note": "Notions de cloud AWS/Azure, mais pas de déploiement en production. Aucune expérience concrète en gestion d'infrastructure cloud."
+    },
+    {
+      "skill": "Mise en place de pipelines CI/CD",
+      "note": "Notions de GitHub Actions et CI/CD, mais pas de pratique en conditions réelles. Aucune expérience professionnelle en mise en place de pipelines CI/CD."
+    },
+    {
+      "skill": "Collaboration en équipe agile",
+      "note": "Aucune mention d'expérience en méthodologies agiles (Scrum, Kanban) ou collaboration en équipe agile dans le contexte fourni."
+    }
+  ],
+  "uncertain_flags": [
+    "Développement backend avec Node.js et TypeScript",
+    "Conception et développement d'APIs",
+    "Déploiement et gestion d'infrastructure cloud AWS",
+    "Mise en place de pipelines CI/CD",
+    "Collaboration en équipe agile"
+  ]
+}

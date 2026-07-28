@@ -1,0 +1,703 @@
+{
+  "offer_id": 1731,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneva",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en C# et technologies .NET] C#",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.655,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7703,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7949,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6550, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en C# et technologies .NET] .NET",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6266,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6767,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.689,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6266, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données de référence et qualité des données] gestion des données de référence",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4496,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4497,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.518,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4496, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données de référence et qualité des données] qualité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4455,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4573,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4983,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4455, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données de référence et qualité des données] données maîtresses",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5261,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5266,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5128, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Migration et harmonisation des systèmes et jeux de données] migration de systèmes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.6017,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6046,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6249,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6017, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Migration et harmonisation des systèmes et jeux de données] harmonisation des jeux de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6003,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6449,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6462,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6003, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Migration et harmonisation des systèmes et jeux de données] correspondances inter-applications",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4907,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.559,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5981,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4907, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Migration et harmonisation des systèmes et jeux de données] intégration des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5314,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5342,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5578,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5314, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Nettoyage, validation et préparation des données] nettoyage des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5663,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5701,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6008,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5663, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Nettoyage, validation et préparation des données] validation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4553,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5265,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5675,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4553, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Nettoyage, validation et préparation des données] préparation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4396,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4405,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.46,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4396, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cartographie et traçabilité des données] cartographie des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5817,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5977,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6365,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5817, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cartographie et traçabilité des données] traçabilité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5833,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5918,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5989,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5833, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cartographie et traçabilité des données] contrôles de non-régression",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5679,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5682,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6378,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5679, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Tests automatisés pour l'intégration et la migration] tests automatisés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4716,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4975,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5051,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4716, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Tests automatisés pour l'intégration et la migration] intégration des applications",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4198,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5135,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5176,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4198, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Tests automatisés pour l'intégration et la migration] migration des applications",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.5388,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5513,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5651,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5388, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de tickets de support et gestion des incidents] résolution de tickets",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6217,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6274,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6673,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6217, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de tickets de support et gestion des incidents] support utilisateur",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5233,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.537,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5863,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5233, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de tickets de support et gestion des incidents] gestion des incidents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4656,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.629,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6376,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4656, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Définition de règles de validation et contrôles de qualité des données] règles de validation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5415,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5598,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5769,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5415, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Définition de règles de validation et contrôles de qualité des données] contrôles de qualité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4381,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4778,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5169,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4381, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Surveillance des données et rapports d'exception] surveillance des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.566,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5808,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6085,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5660, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Surveillance des données et rapports d'exception] rapports d'exception",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6335,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6484,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6645,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6335, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Surveillance des données et rapports d'exception] outils de surveillance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5759,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5808,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5902,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5759, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes techniques et non techniques] collaboration technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5656,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5954,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6121,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5656, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes techniques et non techniques] communication inter-équipes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6188,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6409,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.658,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6188, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes techniques et non techniques] équipes non techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.589,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5926,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.624,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5890, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}
