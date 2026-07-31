@@ -1,0 +1,56 @@
+{
+  "matches": [
+    {
+      "skill": "Conception et développement de pipelines de données ETL/ELT",
+      "matched_chunk_summary": "Structuration des pipelines ETL sur Snowflake avec une organisation en couches (staging vers core vers reporting), inspirée d'une architecture Medallion. Expérience en fiabilisation et gouvernance technique des données, démontrant une maîtrise de Snowflake et une approche architecturale proche des bonnes pratiques."
+    },
+    {
+      "skill": "Programmation en Python, Scala ou Java",
+      "matched_chunk_summary": "Maîtrise professionnelle de Python (pandas, numpy, scipy, scikit-learn) et utilisation quotidienne pour des projets d'automatisation, de machine learning et de pipelines de données. Certifications DataCamp couvrant Python."
+    },
+    {
+      "skill": "Modélisation et optimisation de données (data modeling, data warehousing)",
+      "matched_chunk_summary": "Expérience en modélisation de données avec Snowflake (architecture ETL en couches) et en machine learning appliqué (modèle de churn en production avec recall de 85%). Refonte de processus métier (calcul des commissions) avec impact chiffré."
+    },
+    {
+      "skill": "Familiarité avec les outils de versioning (Git, GitHub, GitLab)",
+      "matched_chunk_summary": "Utilisation quotidienne de GitHub dans le cadre de projets de développement assisté par agent (Claude Code, MCP). Familiarité avancée avec l'écosystème GitHub pour la structuration et la gestion de projets."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Maîtrise des bases de données SQL et NoSQL (PostgreSQL, MongoDB, Cassandra)",
+      "note": "Aucune expérience professionnelle avec PostgreSQL, MongoDB ou Cassandra. L'expérience se limite à Snowflake et SQL avancé."
+    },
+    {
+      "skill": "Expérience avec les outils Big Data (Spark, Hadoop, Hive)",
+      "note": "Aucune expérience identifiée avec Spark, Hadoop ou Hive. L'expérience se concentre sur Snowflake et des outils plus légers."
+    },
+    {
+      "skill": "Utilisation de frameworks de workflow (Airflow, Luigi, Dagster)",
+      "note": "Aucune expérience avec Airflow, Luigi ou Dagster. Les pipelines ETL sont gérés directement sur Snowflake sans framework dédié."
+    },
+    {
+      "skill": "Connaissance des architectures cloud (AWS, GCP, Azure)",
+      "note": "Notions uniquement en cloud AWS/Azure, sans déploiement en production. Expérience limitée aux concepts de base."
+    },
+    {
+      "skill": "Connaissance des bonnes pratiques DevOps et CI/CD",
+      "note": "Notions en CI/CD (GitHub Actions) et Docker, mais pas d'expérience professionnelle en conditions réelles. Compétences en cours d'apprentissage."
+    },
+    {
+      "skill": "Expérience avec les outils de monitoring et logging (Prometheus, Grafana, ELK)",
+      "note": "Aucune expérience identifiée avec Prometheus, Grafana ou ELK. Le monitoring se limite à des tableaux de bord Power BI pour des indicateurs métier."
+    }
+  ],
+  "uncertain_flags": [
+    "Maîtrise des bases de données SQL et NoSQL (PostgreSQL, MongoDB, Cassandra)",
+    "Expérience avec les outils Big Data (Spark, Hadoop, Hive)",
+    "Programmation en Python, Scala ou Java",
+    "Utilisation de frameworks de workflow (Airflow, Luigi, Dagster)",
+    "Connaissance des architectures cloud (AWS, GCP, Azure)",
+    "Familiarité avec les outils de versioning (Git, GitHub, GitLab)",
+    "Connaissance des bonnes pratiques DevOps et CI/CD",
+    "Expérience avec les outils de monitoring et logging (Prometheus, Grafana, ELK)"
+  ]
+}
