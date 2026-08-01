@@ -1,0 +1,1031 @@
+{
+  "offer_id": 2146,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "grenoble",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de dashboards interactifs avec TIBCO Spotfire] TIBCO Spotfire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7838,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7886,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7907,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de dashboards interactifs avec TIBCO Spotfire] développement de dashboards",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4717,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4886,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5213,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4717, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de dashboards interactifs avec TIBCO Spotfire] tableaux de bord interactifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.579,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6415,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6642,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5790, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de dashboards interactifs avec TIBCO Spotfire] suivi de rendement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4424,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4988,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5073,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4424, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de dashboards interactifs avec TIBCO Spotfire] détection d'anomalies",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6102,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6216,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6326,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6102, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de dashboards interactifs avec TIBCO Spotfire] cartes de plaquettes/wafers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7148,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7263,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7271,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Scripting et automatisation dans TIBCO Spotfire (IronPython, R/TERR, Python)] IronPython",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7149,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7324,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7351,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Scripting et automatisation dans TIBCO Spotfire (IronPython, R/TERR, Python)] R",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7238,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7262,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.7556,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Scripting et automatisation dans TIBCO Spotfire (IronPython, R/TERR, Python)] TERR",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.67,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6765,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7093,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Scripting et automatisation dans TIBCO Spotfire (IronPython, R/TERR, Python)] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Scripting et automatisation dans TIBCO Spotfire (IronPython, R/TERR, Python)] scripting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4751,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5661,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5699,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4751, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Scripting et automatisation dans TIBCO Spotfire (IronPython, R/TERR, Python)] automatisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3734,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4765,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3734, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Scripting et automatisation dans TIBCO Spotfire (IronPython, R/TERR, Python)] analyses complexes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5975,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6091,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6461,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5975, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données de test électronique et de procédés de fabrication] analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4916,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5031,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4776, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données de test électronique et de procédés de fabrication] test électrique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6152,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6372,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6868,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6152, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données de test électronique et de procédés de fabrication] Wafer Acceptance Test (WAT)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7076,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7091,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7259,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données de test électronique et de procédés de fabrication] Final Test",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7569,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7651,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7848,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données de test électronique et de procédés de fabrication] paramétrie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7719,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7836,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7971,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données de test électronique et de procédés de fabrication] métrologie d'équipements",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5534,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6228,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6254,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5534, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données de test électronique et de procédés de fabrication] variabilité des procédés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4746,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5056,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5831,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4746, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données de test électronique et de procédés de fabrication] qualité des composants",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5717,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5789,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5864,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5717, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données de test électronique et de procédés de fabrication] rendement des composants",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5219,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5465,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5553,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5219, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et extraction de données avec SQL, Oracle et Hadoop/Data Lake] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et extraction de données avec SQL, Oracle et Hadoop/Data Lake] Oracle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5235,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5889,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5941,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5235, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et extraction de données avec SQL, Oracle et Hadoop/Data Lake] Hadoop",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.8272,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.8327,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.8533,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et extraction de données avec SQL, Oracle et Hadoop/Data Lake] Data Lake",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5924,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6095,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6147,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5924, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et extraction de données avec SQL, Oracle et Hadoop/Data Lake] modélisation de requêtes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4983,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5294,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5403,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4983, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et extraction de données avec SQL, Oracle et Hadoop/Data Lake] extraction de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5268,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5614,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5631,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5268, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et extraction de données avec SQL, Oracle et Hadoop/Data Lake] bases de données haut volume",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5095,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5639,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5763,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5095, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des flux de données en temps réel pour l'industrie] optimisation des flux de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.517,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5179,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.522,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5170, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des flux de données en temps réel pour l'industrie] performance d'affichage",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.645,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6513,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6833,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6450, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des flux de données en temps réel pour l'industrie] données en temps réel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5764,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.592,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6018,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5764, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des flux de données en temps réel pour l'industrie] usine",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6035,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6641,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7333,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6035, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les métiers (ingénieurs Produit, Process, Qualité) pour la définition de KPIs] collaboration métier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5526,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5837,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5526, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les métiers (ingénieurs Produit, Process, Qualité) pour la définition de KPIs] ingénieurs Produit",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5635,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.566,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6021,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5635, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les métiers (ingénieurs Produit, Process, Qualité) pour la définition de KPIs] ingénieurs Process",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5385,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5756,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5772,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5385, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les métiers (ingénieurs Produit, Process, Qualité) pour la définition de KPIs] ingénieurs Qualité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5498,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5584,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5777,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5498, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les métiers (ingénieurs Produit, Process, Qualité) pour la définition de KPIs] définition de KPIs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.61,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7013,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7118,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6100, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les métiers (ingénieurs Produit, Process, Qualité) pour la définition de KPIs] indicateurs clés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4861,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5673,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6358,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4861, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des processus de fabrication de semi-conducteurs (Wafer Fabs)] semi-conducteurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6567,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7646,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7791,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6567, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des processus de fabrication de semi-conducteurs (Wafer Fabs)] Wafer Fabs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7893,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.8116,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.8394,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des processus de fabrication de semi-conducteurs (Wafer Fabs)] fabrication de puces",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6603,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6639,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.677,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6603, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des processus de fabrication de semi-conducteurs (Wafer Fabs)] lignes de fabrication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.606,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6258,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6374,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6060, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Développement de dashboards interactifs avec TIBCO Spotfire",
+    "Scripting et automatisation dans TIBCO Spotfire (IronPython, R/TERR, Python)",
+    "Analyse de données de test électronique et de procédés de fabrication",
+    "Modélisation et extraction de données avec SQL, Oracle et Hadoop/Data Lake",
+    "Connaissance des processus de fabrication de semi-conducteurs (Wafer Fabs)"
+  ]
+}

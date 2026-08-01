@@ -1,0 +1,960 @@
+{
+  "offer_id": 2153,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils ETL et de data preparation (Alteryx, Power BI, Toad)] Alteryx",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7564,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7837,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.796,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils ETL et de data preparation (Alteryx, Power BI, Toad)] Power BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.3422,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6163,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6182,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3422, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils ETL et de data preparation (Alteryx, Power BI, Toad)] Toad",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.869,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.8692,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.8808,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils ETL et de data preparation (Alteryx, Power BI, Toad)] ETL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5149,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6996,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.7092,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5149, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils ETL et de data preparation (Alteryx, Power BI, Toad)] data preparation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4376,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4595,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4644,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4376, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience avec les solutions décisionnelles et les univers BI (Business Objects BI4, datamarts Mysys, Oracle)] Business Objects BI4",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4688,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4953,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6206,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4688, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience avec les solutions décisionnelles et les univers BI (Business Objects BI4, datamarts Mysys, Oracle)] datamarts Mysys",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.6057,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6487,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6656,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6057, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience avec les solutions décisionnelles et les univers BI (Business Objects BI4, datamarts Mysys, Oracle)] Oracle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5235,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5889,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5941,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5235, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience avec les solutions décisionnelles et les univers BI (Business Objects BI4, datamarts Mysys, Oracle)] solutions décisionnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4403,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4563,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5433,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4403, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience avec les solutions décisionnelles et les univers BI (Business Objects BI4, datamarts Mysys, Oracle)] univers BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.633,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7005,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7431,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6330, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et réécriture de requêtes SQL et règles de gestion] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et réécriture de requêtes SQL et règles de gestion] requêtes SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3098,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5934,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6618,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3098, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et réécriture de requêtes SQL et règles de gestion] règles de gestion",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5322,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5591,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5835,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5322, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et réécriture de requêtes SQL et règles de gestion] analyse de requêtes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4725,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5137,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5645,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4725, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Migration de rapports et tableaux de bord BI] migration de rapports",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5081,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.5321,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5586,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5081, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Migration de rapports et tableaux de bord BI] tableaux de bord BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.523,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6019,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6777,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5230, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Migration de rapports et tableaux de bord BI] transformation de rapports",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5308,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5513,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5589,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5308, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation technique et fonctionnelle des traitements data] documentation technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5417,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5538,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5743,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5417, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation technique et fonctionnelle des traitements data] documentation fonctionnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4463,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4766,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.517,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4463, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation technique et fonctionnelle des traitements data] traitements data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4639,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4657,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4884,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4639, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Accompagnement et formation des utilisateurs aux outils data (Alteryx, Power BI)] accompagnement utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4497,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4601,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4829,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4497, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Accompagnement et formation des utilisateurs aux outils data (Alteryx, Power BI)] formation utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4595,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5454,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5524,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4595, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Accompagnement et formation des utilisateurs aux outils data (Alteryx, Power BI)] Alteryx",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7564,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7837,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.796,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Accompagnement et formation des utilisateurs aux outils data (Alteryx, Power BI)] Power BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.3422,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6163,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6182,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3422, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en Python pour des cas d'usage data/IA (automatisation, analyse documentaire, conformité)] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en Python pour des cas d'usage data/IA (automatisation, analyse documentaire, conformité)] automatisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3734,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4765,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3734, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en Python pour des cas d'usage data/IA (automatisation, analyse documentaire, conformité)] analyse documentaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6267,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6611,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6678,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6267, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en Python pour des cas d'usage data/IA (automatisation, analyse documentaire, conformité)] contrôle de conformité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.531,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5434,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5767,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5310, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en Python pour des cas d'usage data/IA (automatisation, analyse documentaire, conformité)] développement data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4014,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4193,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4919,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4014, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des approches d'IA générative textuelle] IA générative",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5299,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5461,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5694,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5299, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des approches d'IA générative textuelle] IA textuelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4699,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4972,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4988,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4699, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des approches d'IA générative textuelle] NLP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5013,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6103,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6117,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5013, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projet et priorisation des tâches (inventaire, migration, validation)] gestion de projet",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4704,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5231,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5262,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4704, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projet et priorisation des tâches (inventaire, migration, validation)] priorisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.483,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5686,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5906,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4830, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projet et priorisation des tâches (inventaire, migration, validation)] inventaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.591,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6114,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6249,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5910, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projet et priorisation des tâches (inventaire, migration, validation)] validation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5846,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6461,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6511,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5846, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation Bac +5 en analyse de données, data science ou domaine équivalent] Bac +5",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7151,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7171,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7398,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation Bac +5 en analyse de données, data science ou domaine équivalent] analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4916,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5031,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4776, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation Bac +5 en analyse de données, data science ou domaine équivalent] data science",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4431,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5645,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5689,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4431, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation Bac +5 en analyse de données, data science ou domaine équivalent] formation data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5906,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6312,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6423,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5906, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Maîtrise des outils ETL et de data preparation (Alteryx, Power BI, Toad)",
+    "Accompagnement et formation des utilisateurs aux outils data (Alteryx, Power BI)",
+    "Formation Bac +5 en analyse de données, data science ou domaine équivalent"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "matches": [
+    {
+      "skill": "Machine Learning et Deep Learning (ML/DL)",
+      "matched_chunk_summary": "Expérience concrète en machine learning appliqué avec scikit-learn, construction de modèles prédictifs (churn) en production avec un recall de 85%, et justification des choix métiers (recall vs précision)."
+    },
+    {
+      "skill": "Collecte, préparation et nettoyage des données",
+      "matched_chunk_summary": "Maîtrise de SQL avancé, Python (pandas, numpy), Snowflake pour l'architecture ETL, et automatisation de pipelines de données avec Playwright et smtplib."
+    },
+    {
+      "skill": "Exploration et visualisation des données",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI adoptés à l'échelle de l'entreprise, requêtes SQL avancées pour des analyses ad hoc, et vulgarisation des résultats pour des audiences non techniques."
+    },
+    {
+      "skill": "Déploiement et industrialisation des modèles",
+      "matched_chunk_summary": "Modèle de prédiction de churn déployé en production chez ECA Assurances, alimentant des stratégies de fidélisation ciblées."
+    },
+    {
+      "skill": "Surveillance et maintenance des modèles",
+      "matched_chunk_summary": "Modèle de churn en production avec un recall de 85%, démontrant une capacité à maintenir et évaluer des modèles en conditions réelles."
+    },
+    {
+      "skill": "Compréhension des besoins métiers et communication",
+      "matched_chunk_summary": "Création d'outils métiers (tarification, tableaux de bord Power BI) adoptés par les équipes, et justification des choix techniques par une logique métier (ex: recall priorisé sur la précision)."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Intelligence Artificielle Générative (IA GEN) et LLMs",
+      "note": "Expérience limitée aux APIs Mistral/Claude en usage direct et prototypage de chatbots via Gradio, sans architecture RAG ou orchestration d'agents complexe construite en autonomie."
+    },
+    {
+      "skill": "Retrieval Augmented Generation (RAG)",
+      "note": "Notions seulement sur les bases vectorielles (ChromaDB, Pinecone) et architecture RAG, sans implémentation complète ou évaluation de retrieval en conditions réelles."
+    },
+    {
+      "skill": "Optimisation sous contrainte et Time Series",
+      "note": "Aucune expérience explicite en optimisation sous contrainte ou modélisation de séries temporelles, malgré des projets en tarification et churn."
+    },
+    {
+      "skill": "Validation et évaluation des modèles (cross-validation, overfitting)",
+      "note": "Aucune mention de techniques de validation croisée ou de gestion explicite de l'overfitting dans les projets décrits."
+    }
+  ],
+  "uncertain_flags": [
+    "Intelligence Artificielle Générative (IA GEN) et LLMs",
+    "Retrieval Augmented Generation (RAG)",
+    "Optimisation sous contrainte et Time Series",
+    "Validation et évaluation des modèles (cross-validation, overfitting)"
+  ]
+}

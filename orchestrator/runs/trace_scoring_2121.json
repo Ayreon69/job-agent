@@ -1,0 +1,799 @@
+{
+  "offer_id": 2121,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et recueil des besoins métiers (interviews, ateliers, questionnaires)] recueil des besoins métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.3902,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3937,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4435,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3902, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et recueil des besoins métiers (interviews, ateliers, questionnaires)] interviews",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6935,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.7052,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7537,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et recueil des besoins métiers (interviews, ateliers, questionnaires)] ateliers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6151,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6381,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6425,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6151, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et recueil des besoins métiers (interviews, ateliers, questionnaires)] questionnaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6797,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7077,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7108,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et recueil des besoins métiers (interviews, ateliers, questionnaires)] analyse des besoins",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4096,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4379,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5012,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4096, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formalisation et priorisation des exigences fonctionnelles] formalisation des exigences",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4847,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5183,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5259,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4847, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formalisation et priorisation des exigences fonctionnelles] priorisation des exigences",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4308,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4368,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.498,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4308, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formalisation et priorisation des exigences fonctionnelles] exigences fonctionnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4955,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5309,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5605,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4955, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de spécifications fonctionnelles pour les équipes techniques] spécifications fonctionnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5205,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5335,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5337,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5205, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de spécifications fonctionnelles pour les équipes techniques] traduction des besoins techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5002,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5011,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.506,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5002, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Élaboration et animation des plans de tests et recettes utilisateurs] plans de tests",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5355,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5653,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5797,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5355, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Élaboration et animation des plans de tests et recettes utilisateurs] recettes utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.63,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6585,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6622,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6300, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Élaboration et animation des plans de tests et recettes utilisateurs] validation des solutions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5909,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6418,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6438,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5909, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Élaboration et animation des plans de tests et recettes utilisateurs] tests utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5979,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6051,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6222,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5979, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi du delivery Agile (avancement, planification, respect des exigences)] suivi du delivery",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5329,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.5897,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5913,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5329, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi du delivery Agile (avancement, planification, respect des exigences)] méthodologie Agile",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5275,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5479,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5736,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5275, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi du delivery Agile (avancement, planification, respect des exigences)] planification Agile",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5053,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5453,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5821,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5053, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi du delivery Agile (avancement, planification, respect des exigences)] respect des exigences",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5207,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5536,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5596,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5207, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conduite du changement et transformation des processus par l'IA] conduite du changement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5032,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5427,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6376,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5032, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conduite du changement et transformation des processus par l'IA] transformation des processus",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5077,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5604,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5638,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5077, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conduite du changement et transformation des processus par l'IA] IA pour la transformation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4664,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.502,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.51,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4664, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique en IA et proposition d'évolutions] veille technologique IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4785,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4906,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4971,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4785, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique en IA et proposition d'évolutions] proposition d'évolutions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5912,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.618,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6397,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5912, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique en IA et proposition d'évolutions] innovation IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5889,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5985,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.622,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5889, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en IA (LLM, machine learning, agentique)] LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5624,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6051,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6565,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5624, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en IA (LLM, machine learning, agentique)] machine learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1937,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5103,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.1937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en IA (LLM, machine learning, agentique)] agentique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5503,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5937,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6035,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5503, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en IA (LLM, machine learning, agentique)] IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6344,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6449,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6451,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6344, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils de gestion de projet (JIRA)] JIRA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.8097,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.816,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.82,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils de gestion de projet (JIRA)] gestion de projet",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4704,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5231,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5262,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4704, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologie Agile Scrum] Agile",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6952,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6968,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7011,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologie Agile Scrum] Scrum",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7148,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7431,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7551,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologie Agile Scrum] méthodologie Agile",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5275,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5479,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5736,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5275, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Analyse et recueil des besoins métiers (interviews, ateliers, questionnaires)",
+    "Maîtrise des outils de gestion de projet (JIRA)",
+    "Méthodologie Agile Scrum"
+  ]
+}

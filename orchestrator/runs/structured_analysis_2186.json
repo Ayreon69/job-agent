@@ -1,0 +1,56 @@
+{
+  "matches": [
+    {
+      "skill": "Maîtrise de Python et des frameworks IA/ML",
+      "matched_chunk_summary": "Expérience professionnelle concrète en Python (pandas, numpy, scipy, scikit-learn) et en machine learning appliqué (modèles prédictifs, scikit-learn)."
+    },
+    {
+      "skill": "Applications alimentées par LLM (Large Language Models)",
+      "matched_chunk_summary": "Prototypage d'un assistant interne basé sur l'API Mistral avec Gradio, utilisation quotidienne de Claude Code et serveurs MCP pour le développement assisté par agent."
+    },
+    {
+      "skill": "Modèles NLP (Natural Language Processing)",
+      "matched_chunk_summary": "Pipeline Whisper pour la transcription audio (projet personnel), expérience intermédiaire en NLP audio."
+    },
+    {
+      "skill": "Systèmes multi-agents",
+      "matched_chunk_summary": "Utilisation quotidienne de Claude Code et serveurs MCP (GitHub, Playwright, Firecrawl, Context7, Vercel) pour des projets de développement assisté par agent."
+    },
+    {
+      "skill": "Intégration de services IA externes (fournisseurs LLM)",
+      "matched_chunk_summary": "Prototypage d'un assistant interne utilisant l'API Mistral, expérience directe avec les APIs de LLM en production interne."
+    },
+    {
+      "skill": "Cadres d'évaluation robustes (en ligne et hors ligne) et indicateurs de succès",
+      "matched_chunk_summary": "Développement d'un modèle de churn avec recall de 85% en production, conception de tableaux de bord Power BI alignés sur les KPIs métier."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Conception et développement de systèmes d'IA/ML de production",
+      "note": "Notions seulement en FastAPI, Docker, GitHub Actions, CI/CD, et cloud AWS/Azure (pas de déploiement en production). Architecture RAG et bases vectorielles en cours d'apprentissage."
+    },
+    {
+      "skill": "Pipelines RAG (Retrieval-Augmented Generation)",
+      "note": "Aucune expérience professionnelle en architecture RAG complète (chunking, embeddings, évaluation de retrieval)."
+    },
+    {
+      "skill": "Décisions architecturales pour l'IA (sélection des modèles, fine-tuning, orchestration)",
+      "note": "Pas d'expérience en fine-tuning ou orchestration complexe d'agents. Décisions architecturales limitées à des prototypes simples (ex: choix de ne pas utiliser RAG)."
+    },
+    {
+      "skill": "Optimisation des défis d'ingénierie (collecte de données, récupération, évaluation, inférence, latence, coûts)",
+      "note": "Pas d'expérience concrète en optimisation de latence, coûts ou inférence pour des systèmes IA en production. Expérience limitée à des pipelines ETL et automatisation."
+    },
+    {
+      "skill": "Encadrement d'ingénieurs juniors",
+      "note": "Aucune expérience mentionnée en encadrement ou mentorat d'ingénieurs juniors."
+    }
+  ],
+  "uncertain_flags": [
+    "Maîtrise de Python et des frameworks IA/ML",
+    "Pipelines RAG (Retrieval-Augmented Generation)",
+    "Décisions architecturales pour l'IA (sélection des modèles, fine-tuning, orchestration)",
+    "Optimisation des défis d'ingénierie (collecte de données, récupération, évaluation, inférence, latence, coûts)"
+  ]
+}
