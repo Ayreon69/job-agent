@@ -1,0 +1,54 @@
+{
+  "matches": [
+    {
+      "skill": "Conception et développement d'agents conversationnels basés sur les LLM",
+      "matched_chunk_summary": "Expérience quotidienne avec Claude Code et serveurs MCP (GitHub, Playwright, Firecrawl, Context7, Vercel) pour des projets de développement assisté par agent. Structuration de projets via des fichiers CLAUDE.md pour un contexte persistant. Prototypage d'un assistant interne basé sur l'API Mistral avec Gradio, démontrant une compréhension pratique des LLM en production."
+    },
+    {
+      "skill": "API et intégration de modèles (OpenAI, Mistral, Hugging Face)",
+      "matched_chunk_summary": "Utilisation directe des API Mistral et Claude pour des projets concrets, dont un assistant interne basé sur l'API Mistral avec une interface Gradio. Expérience pratique avec les APIs de LLM en conditions réelles d'entreprise."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Architecture RAG (Retrieval-Augmented Generation)",
+      "note": "Notions seulement en bases vectorielles (ChromaDB, Pinecone) et architecture RAG, sans expérience concrète en chunking, embeddings ou évaluation de retrieval. Aucun projet RAG implémenté."
+    },
+    {
+      "skill": "Fine-tuning et optimisation de modèles de langage",
+      "note": "Expérience en machine learning appliqué (modèles prédictifs avec scikit-learn), mais aucune mention de fine-tuning ou optimisation spécifique aux modèles de langage."
+    },
+    {
+      "skill": "Déploiement et scaling d'applications IA en production",
+      "note": "Expérience limitée au prototypage et à l'usage interne (ex: assistant basé sur Mistral). Notions seulement en Docker, FastAPI, CI/CD et cloud AWS/Azure, sans déploiement en production."
+    },
+    {
+      "skill": "Frameworks de développement IA (LangChain, LlamaIndex, Haystack)",
+      "note": "Aucune mention d'expérience avec LangChain, LlamaIndex ou Haystack. Utilisation d'outils comme Gradio et MCP, mais pas de frameworks d'orchestration d'agents."
+    },
+    {
+      "skill": "Gestion de bases de données vectorielles (Pinecone, Weaviate, Milvus)",
+      "note": "Notions seulement en bases vectorielles (ChromaDB, Pinecone), sans expérience pratique en gestion ou déploiement."
+    },
+    {
+      "skill": "Python pour le développement IA (PyTorch, TensorFlow, scikit-learn)",
+      "note": "Maîtrise de scikit-learn pour des modèles prédictifs, mais aucune expérience avec PyTorch ou TensorFlow."
+    },
+    {
+      "skill": "Gestion de projets IA et méthodologies Agile/Scrum",
+      "note": "Expérience en gestion de projets techniques (ex: modèle de churn en production), mais aucune mention de méthodologies Agile ou Scrum."
+    },
+    {
+      "skill": "Éthique et conformité en IA (RGPD, biais algorithmiques)",
+      "note": "Aucune mention d'expérience ou de connaissances en éthique, conformité RGPD ou gestion des biais algorithmiques."
+    }
+  ],
+  "uncertain_flags": [
+    "Architecture RAG (Retrieval-Augmented Generation)",
+    "Frameworks de développement IA (LangChain, LlamaIndex, Haystack)",
+    "Gestion de bases de données vectorielles (Pinecone, Weaviate, Milvus)",
+    "Python pour le développement IA (PyTorch, TensorFlow, scikit-learn)",
+    "Gestion de projets IA et méthodologies Agile/Scrum",
+    "Éthique et conformité en IA (RGPD, biais algorithmiques)"
+  ]
+}

@@ -1,0 +1,873 @@
+{
+  "offer_id": 2432,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneve",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[tests automatisés (Selenium, Cypress, JMeter)] Selenium",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7691,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.8264,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.854,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[tests automatisés (Selenium, Cypress, JMeter)] Cypress",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.7936,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.8358,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.8474,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[tests automatisés (Selenium, Cypress, JMeter)] JMeter",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6414,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6586,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6612,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6414, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[tests automatisés (Selenium, Cypress, JMeter)] tests automatisés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4716,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4975,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5051,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4716, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[méthodologies de test (ISTQB, Agile, Scrum)] ISTQB",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6815,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6908,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6968,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[méthodologies de test (ISTQB, Agile, Scrum)] Agile",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6952,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6968,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7011,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[méthodologies de test (ISTQB, Agile, Scrum)] Scrum",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7148,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7431,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7551,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[méthodologies de test (ISTQB, Agile, Scrum)] méthodologies de test",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6075,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6373,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6592,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6075, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[outils de gestion de bugs (JIRA, Bugzilla)] JIRA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.8097,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.816,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.82,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[outils de gestion de bugs (JIRA, Bugzilla)] Bugzilla",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6817,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6835,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7056,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[outils de gestion de bugs (JIRA, Bugzilla)] gestion de bugs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5749,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5981,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5995,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5749, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[bases de données et requêtage SQL] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[bases de données et requêtage SQL] bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5296,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5451,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5505,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[bases de données et requêtage SQL] requêtage SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3276,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5929,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6862,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3276, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des protocoles bancaires (EBICS, SWIFT, SEPA)] EBICS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6258,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6651,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6652,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6258, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des protocoles bancaires (EBICS, SWIFT, SEPA)] SWIFT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7793,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7837,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7863,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des protocoles bancaires (EBICS, SWIFT, SEPA)] SEPA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.7353,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7398,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7453,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des protocoles bancaires (EBICS, SWIFT, SEPA)] protocoles bancaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6081,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6913,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6081, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[sécurité des applications (OWASP, chiffrement)] OWASP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6544,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.7315,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6544, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[sécurité des applications (OWASP, chiffrement)] chiffrement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5789,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6008,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6012,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5789, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[sécurité des applications (OWASP, chiffrement)] sécurité des applications",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5955,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6296,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6432,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5955, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[intégration continue et déploiement (CI/CD, Jenkins, GitLab CI)] CI/CD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7213,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7378,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.743,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[intégration continue et déploiement (CI/CD, Jenkins, GitLab CI)] Jenkins",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7829,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.8135,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.8236,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[intégration continue et déploiement (CI/CD, Jenkins, GitLab CI)] GitLab CI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6679,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6811,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7039,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6679, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[intégration continue et déploiement (CI/CD, Jenkins, GitLab CI)] intégration continue",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6027,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6319,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6329,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6027, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[intégration continue et déploiement (CI/CD, Jenkins, GitLab CI)] déploiement continu",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.526,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6035,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.604,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5260, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[scripting (Python, Bash)] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[scripting (Python, Bash)] Bash",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.8013,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.8281,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.8441,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[scripting (Python, Bash)] scripting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4751,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5661,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5699,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4751, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[normes de qualité bancaire (ISO 20022, PSD2)] ISO 20022",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6913,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7315,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7467,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[normes de qualité bancaire (ISO 20022, PSD2)] PSD2",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7379,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7547,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7643,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[normes de qualité bancaire (ISO 20022, PSD2)] normes de qualité bancaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.601,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.645,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6662,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6010, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse des logs et monitoring (ELK Stack, Splunk)] ELK Stack",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6681,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7582,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.8252,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6681, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse des logs et monitoring (ELK Stack, Splunk)] Splunk",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6967,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7178,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7486,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse des logs et monitoring (ELK Stack, Splunk)] analyse des logs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5496,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.579,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6318,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5496, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse des logs et monitoring (ELK Stack, Splunk)] monitoring",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5692,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6048,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6286,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5692, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "tests automatisés (Selenium, Cypress, JMeter)",
+    "méthodologies de test (ISTQB, Agile, Scrum)",
+    "outils de gestion de bugs (JIRA, Bugzilla)",
+    "connaissance des protocoles bancaires (EBICS, SWIFT, SEPA)",
+    "intégration continue et déploiement (CI/CD, Jenkins, GitLab CI)",
+    "scripting (Python, Bash)",
+    "normes de qualité bancaire (ISO 20022, PSD2)",
+    "analyse des logs et monitoring (ELK Stack, Splunk)"
+  ]
+}

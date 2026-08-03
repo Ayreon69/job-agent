@@ -1,0 +1,75 @@
+{
+  "matches": [
+    {
+      "skill": "SQL avancé et Power BI",
+      "matched_chunk_summary": "Maîtrise de SQL (requêtes avancées, agrégations, optimisation) et Power BI (DAX avancé, Power Query), avec expérience concrète en conception de tableaux de bord décisionnels adoptés par des départements non-techniques."
+    },
+    {
+      "skill": "Architecture de données et ETL",
+      "matched_chunk_summary": "Structuration de pipelines ETL sur Snowflake avec une organisation en couches (staging vers core vers reporting), proche d'une architecture Medallion, pour fiabiliser la production de rapports."
+    },
+    {
+      "skill": "Reporting et collaboration avec les équipes internes",
+      "matched_chunk_summary": "Expérience en conception de tableaux de bord Power BI alignés sur les KPIs métier, adoptés par l'ensemble de l'entreprise, et en vulgarisation de résultats techniques pour des audiences non-techniques."
+    },
+    {
+      "skill": "Expérience client et support opérationnel",
+      "matched_chunk_summary": "Développement d'un modèle de machine learning pour prédire la résiliation des clients (churn) en production, avec un impact direct sur les stratégies de fidélisation ciblées."
+    },
+    {
+      "skill": "Python et machine learning appliqué",
+      "matched_chunk_summary": "Développement d'un modèle de churn en production chez ECA Assurances, avec justification métier des choix statistiques (recall priorisé à 85%)."
+    },
+    {
+      "skill": "Prototypage et usage d'APIs LLM",
+      "matched_chunk_summary": "Prototypage d'un assistant interne basé sur l'API Mistral pour répondre aux questions sur les règles de commission, avec interface Gradio et compréhension des compromis architecturaux."
+    },
+    {
+      "skill": "Agentic coding et écosystème moderne",
+      "matched_chunk_summary": "Utilisation quotidienne de Claude Code et serveurs MCP (GitHub, Playwright, Firecrawl) pour des projets de développement assisté par agent, avec structuration via fichiers CLAUDE.md."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Connaissance des réglementations bancaires et financières suisses et internationales (LBC, FATCA, CRS, QI, Politique Personne US)",
+      "note": "Aucune expérience concrète ou formation identifiée sur les réglementations bancaires spécifiques (LBC, FATCA, CRS, QI, Politique Personne US)."
+    },
+    {
+      "skill": "Gestion de la Diligence Raisonnable Client (CDD) et Connaissance Client (KYC)",
+      "note": "Aucune expérience directe en CDD ou KYC, malgré une expérience en analyse de données clients et modélisation de churn."
+    },
+    {
+      "skill": "Gestion des transactions et filtrage (KYT, Sanctions)",
+      "note": "Aucune expérience identifiée en filtrage de transactions (KYT) ou gestion de sanctions."
+    },
+    {
+      "skill": "Gestion des données clients et des systèmes bancaires (CDM)",
+      "note": "Aucune expérience spécifique sur les systèmes bancaires (CDM) ou gestion des données clients dans un contexte bancaire réglementé."
+    },
+    {
+      "skill": "Analyse et validation de documents bancaires et fiscaux",
+      "note": "Aucune expérience en analyse ou validation de documents bancaires/fiscaux, malgré une formation en risk management et économétrie."
+    },
+    {
+      "skill": "Gestion des revues périodiques et basées sur des événements (PEDR)",
+      "note": "Aucune expérience directe en gestion de revues périodiques ou basées sur des événements (PEDR) dans un contexte bancaire."
+    },
+    {
+      "skill": "Conformité réglementaire et contrôles internes (ISO, directives HSBC)",
+      "note": "Aucune expérience formelle en conformité réglementaire ou contrôles internes spécifiques (ISO, directives HSBC), malgré une expérience en gouvernance technique des données."
+    },
+    {
+      "skill": "Gestion des modifications de compte et blocage/déblocage d'activité",
+      "note": "Aucune expérience identifiée en gestion des modifications de compte ou blocage/déblocage d'activité dans un système bancaire."
+    }
+  ],
+  "uncertain_flags": [
+    "Connaissance des réglementations bancaires et financières suisses et internationales (LBC, FATCA, CRS, QI, Politique Personne US)",
+    "Gestion de la Diligence Raisonnable Client (CDD) et Connaissance Client (KYC)",
+    "Gestion des transactions et filtrage (KYT, Sanctions)",
+    "Gestion des données clients et des systèmes bancaires (CDM)",
+    "Analyse et validation de documents bancaires et fiscaux",
+    "Gestion des revues périodiques et basées sur des événements (PEDR)",
+    "Gestion des modifications de compte et blocage/déblocage d'activité"
+  ]
+}

@@ -1,0 +1,1212 @@
+{
+  "offer_id": 2403,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneve",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et maintenance de tableaux de bord interactifs avec des outils d'intelligence économique] développement de tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4911,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5393,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5464,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4911, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et maintenance de tableaux de bord interactifs avec des outils d'intelligence économique] maintenance de tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5996,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6162,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6285,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5996, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et maintenance de tableaux de bord interactifs avec des outils d'intelligence économique] tableaux de bord interactifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.579,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6415,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6642,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5790, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et maintenance de tableaux de bord interactifs avec des outils d'intelligence économique] outils d'intelligence économique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3812,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4327,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.481,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3812, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Préparation, transformation, validation et visualisation des données] préparation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4396,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4405,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.46,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4396, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Préparation, transformation, validation et visualisation des données] transformation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5333,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5419,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5509,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5333, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Préparation, transformation, validation et visualisation des données] validation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4553,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5265,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5675,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4553, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Préparation, transformation, validation et visualisation des données] visualisation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6051,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6057,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6123,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6051, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration de la qualité des données via contrôles structurés et gouvernance] qualité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4455,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4573,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4983,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4455, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration de la qualité des données via contrôles structurés et gouvernance] contrôles structurés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5429,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5478,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5615,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5429, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration de la qualité des données via contrôles structurés et gouvernance] vérifications de cohérence",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6151,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6647,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6725,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6151, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Amélioration de la qualité des données via contrôles structurés et gouvernance] gouvernance des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4729,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4871,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5233,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4729, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de technologies analytiques modernes et outils assistés par IA] technologies analytiques modernes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5182,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5257,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5349,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5182, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de technologies analytiques modernes et outils assistés par IA] outils assistés par IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3746,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4086,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4267,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3746, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de technologies analytiques modernes et outils assistés par IA] collecte de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5234,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5288,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5491,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5234, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de technologies analytiques modernes et outils assistés par IA] analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4916,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5031,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4776, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de technologies analytiques modernes et outils assistés par IA] reporting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6373,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6755,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6099, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation de technologies analytiques modernes et outils assistés par IA] gestion des connaissances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4575,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4947,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4959,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4575, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Études de marché et évaluation de la dynamique concurrentielle] études de marché",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4222,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4459,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5368,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4222, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Études de marché et évaluation de la dynamique concurrentielle] taille du marché",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5636,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5918,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6543,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5636, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Études de marché et évaluation de la dynamique concurrentielle] moteurs de croissance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.608,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6299,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6442,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6080, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Études de marché et évaluation de la dynamique concurrentielle] dynamique concurrentielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5313,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5894,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6663,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5313, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Études de marché et évaluation de la dynamique concurrentielle] tendances émergentes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6028,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6452,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6646,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6028, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Études de marché et évaluation de la dynamique concurrentielle] opportunités commerciales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5242,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5687,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5949,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5242, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation d'analyses complexes en informations exploitables] transformation d'analyses complexes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5667,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.6053,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6235,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5667, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation d'analyses complexes en informations exploitables] informations exploitables",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5686,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5724,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6067,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5686, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation d'analyses complexes en informations exploitables] présentations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6419,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6575,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6659,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6419, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation d'analyses complexes en informations exploitables] tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7165,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7214,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7329,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation d'analyses complexes en informations exploitables] rapports",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5934,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5985,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6177,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5934, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation d'analyses complexes en informations exploitables] surveillance de l'intelligence",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6024,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6501,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6986,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6024, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion d'un référentiel structuré de sources d'intelligence de marché] référentiel structuré",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5718,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5822,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5942,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5718, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion d'un référentiel structuré de sources d'intelligence de marché] sources d'intelligence de marché",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3783,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4151,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4845,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3783, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion d'un référentiel structuré de sources d'intelligence de marché] publications sectorielles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6502,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6522,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6543,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6502, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion d'un référentiel structuré de sources d'intelligence de marché] associations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7112,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7136,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7313,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion d'un référentiel structuré de sources d'intelligence de marché] bases de données commerciales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4381,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4885,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5361,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4381, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de marché basée sur les données et benchmarking concurrentiel] analyse de marché basée sur les données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4484,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4897,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.495,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4484, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de marché basée sur les données et benchmarking concurrentiel] benchmarking concurrentiel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6146,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6165,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6243,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6146, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de marché basée sur les données et benchmarking concurrentiel] initiatives stratégiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5114,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5265,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5597,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5114, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de marché basée sur les données et benchmarking concurrentiel] développement commercial",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5145,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5961,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.606,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5145, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de marché basée sur les données et benchmarking concurrentiel] évaluations d'investissement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5221,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.59,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6178,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5221, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de programmes d'enquêtes internationaux] gestion de programmes d'enquêtes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4878,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5144,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5305,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4878, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de programmes d'enquêtes internationaux] enquêtes internationales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5632,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6011,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.6146,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5632, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de programmes d'enquêtes internationaux] recherche auprès des employés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.458,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4944,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5024,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4580, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de programmes d'enquêtes internationaux] recherche auprès des clients",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3967,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4509,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4782,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3967, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de programmes d'enquêtes internationaux] recherche auprès des fournisseurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4062,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4324,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4736,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4062, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de programmes d'enquêtes internationaux] enquêtes ad hoc",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5559,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5855,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5879,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5559, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de questionnaires et méthodologies d'échantillonnage] conception de questionnaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.535,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5513,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5782,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5350, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de questionnaires et méthodologies d'échantillonnage] méthodologies d'échantillonnage",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5583,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6013,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6151,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5583, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de questionnaires et méthodologies d'échantillonnage] déploiement d'enquêtes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5216,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5612,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5834,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5216, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de questionnaires et méthodologies d'échantillonnage] suivi des réponses",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5877,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6512,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6839,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5877, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de questionnaires et méthodologies d'échantillonnage] analyse des résultats d'enquêtes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4329,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5251,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5376,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4329, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Transformation d'analyses complexes en informations exploitables",
+    "Gestion d'un référentiel structuré de sources d'intelligence de marché"
+  ]
+}

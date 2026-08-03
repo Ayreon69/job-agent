@@ -1,0 +1,826 @@
+{
+  "offer_id": 2434,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneva",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Administration et maintenance des systèmes SAP Basis] SAP Basis",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6569,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6788,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6807,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6569, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Administration et maintenance des systèmes SAP Basis] administration SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6059,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6253,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6517,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6059, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Administration et maintenance des systèmes SAP Basis] maintenance SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6399,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6503,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6555,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6399, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des performances et optimisation des systèmes SAP] optimisation SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5774,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6112,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6556,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5774, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des performances et optimisation des systèmes SAP] performance SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5689,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6182,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6281,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5689, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des performances et optimisation des systèmes SAP] tuning SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6196,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6957,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6196, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Installation, configuration et mise à jour des systèmes SAP] installation SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7748,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7873,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.795,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Installation, configuration et mise à jour des systèmes SAP] configuration SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6458,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6637,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6794,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6458, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Installation, configuration et mise à jour des systèmes SAP] mise à jour SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6761,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6898,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6936,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Installation, configuration et mise à jour des systèmes SAP] upgrade SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6798,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7024,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7185,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des transports et des corrections SAP (CTS, TMS)] CTS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7087,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.721,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7279,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des transports et des corrections SAP (CTS, TMS)] TMS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6743,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6943,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7205,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des transports et des corrections SAP (CTS, TMS)] transports SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5972,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6857,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7095,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5972, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des transports et des corrections SAP (CTS, TMS)] corrections SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6843,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.693,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7004,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité et gestion des utilisateurs SAP (autorisations, rôles)] sécurité SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.663,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6696,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6865,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6630, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité et gestion des utilisateurs SAP (autorisations, rôles)] gestion des utilisateurs SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5644,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5862,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6016,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5644, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité et gestion des utilisateurs SAP (autorisations, rôles)] autorisations SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6789,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7088,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7309,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité et gestion des utilisateurs SAP (autorisations, rôles)] rôles SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6771,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6891,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6959,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sauvegarde et restauration des systèmes SAP] sauvegarde SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7283,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.76,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7634,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sauvegarde et restauration des systèmes SAP] restauration SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7169,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7253,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sauvegarde et restauration des systèmes SAP] backup SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7146,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7366,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7429,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Monitoring et résolution des incidents SAP] monitoring SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6384,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6639,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6668,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6384, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Monitoring et résolution des incidents SAP] résolution d'incidents SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6523,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6643,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.712,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6523, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Monitoring et résolution des incidents SAP] troubleshooting SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7006,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7054,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7098,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration des systèmes SAP avec d'autres applications (middleware, APIs)] intégration SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6315,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6355,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6413,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6315, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration des systèmes SAP avec d'autres applications (middleware, APIs)] middleware SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6464,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6573,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6783,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6464, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration des systèmes SAP avec d'autres applications (middleware, APIs)] APIs SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5831,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6147,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6316,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5831, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des bases de données (Oracle, HANA, DB2) pour SAP] Oracle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5235,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5889,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5941,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5235, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des bases de données (Oracle, HANA, DB2) pour SAP] SAP HANA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7132,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7204,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7472,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des bases de données (Oracle, HANA, DB2) pour SAP] DB2",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5092,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6216,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6233,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5092, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des bases de données (Oracle, HANA, DB2) pour SAP] bases de données SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.592,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5999,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6234,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5920, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des architectures techniques SAP (NetWeaver, S/4HANA)] SAP NetWeaver",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5954,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6375,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6392,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5954, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des architectures techniques SAP (NetWeaver, S/4HANA)] S/4HANA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6728,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6852,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7151,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des architectures techniques SAP (NetWeaver, S/4HANA)] architecture SAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6212,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6213,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6435,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6212, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Installation, configuration et mise à jour des systèmes SAP",
+    "Gestion des transports et des corrections SAP (CTS, TMS)",
+    "Sécurité et gestion des utilisateurs SAP (autorisations, rôles)",
+    "Sauvegarde et restauration des systèmes SAP",
+    "Monitoring et résolution des incidents SAP",
+    "Connaissance des bases de données (Oracle, HANA, DB2) pour SAP",
+    "Connaissance des architectures techniques SAP (NetWeaver, S/4HANA)"
+  ]
+}

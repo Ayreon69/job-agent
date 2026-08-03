@@ -1,0 +1,15 @@
+{
+  "offer_id": 2425,
+  "tone_chunk_used": "geography_rules::rule_lyon_no_mobility",
+  "tone_rag_query": "règle de ton pour une offre en France hors Rhône-Alpes, mobilité",
+  "tone_rag_distance": 0.3167,
+  "web_search_used": true,
+  "web_search_result": null,
+  "steps": [
+    "règle de ton récupérée: geography_rules::rule_lyon_no_mobility (distance=0.3167) pour zone='autre_france'",
+    "offre jugée trop courte/générique, tentative de web_search('huumyk Sàrl')",
+    "web_search indisponible (aucun fournisseur configuré) — analyse basée uniquement sur l'offre",
+    "analyse générée",
+    "analyse structurée construite depuis ScoringResult (pas de second appel LLM): 0 matches, 4 gaps, 0 uncertain_flags"
+  ]
+}

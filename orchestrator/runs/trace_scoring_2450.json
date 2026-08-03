@@ -1,0 +1,800 @@
+{
+  "offer_id": 2450,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "renens",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets commerciaux complexes avec certification IPMA (niveau C ou supérieur)] gestion de projets commerciaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5175,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5264,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5504,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5175, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets commerciaux complexes avec certification IPMA (niveau C ou supérieur)] certification IPMA C",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5412,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.64,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6496,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5412, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets commerciaux complexes avec certification IPMA (niveau C ou supérieur)] certification IPMA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5356,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6371,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6373,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5356, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets commerciaux complexes avec certification IPMA (niveau C ou supérieur)] IPMA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7045,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7076,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7243,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[outils de gestion de projet et outils numériques] outils de gestion de projet",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.3736,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4367,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.464,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3736, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[outils de gestion de projet et outils numériques] outils numériques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4499,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5212,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5302,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4499, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[développement d'affaires et stratégies commerciales] développement d'affaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5811,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5825,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5842,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5811, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[développement d'affaires et stratégies commerciales] stratégies commerciales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4629,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5275,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5895,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4629, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Contract et Claim Management (négociations externes, revendications, Change-Orders, normes SIA 118)] Contract Management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5954,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6013,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.629,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5954, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Contract et Claim Management (négociations externes, revendications, Change-Orders, normes SIA 118)] Claim Management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5956,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6626,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6732,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5956, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Contract et Claim Management (négociations externes, revendications, Change-Orders, normes SIA 118)] négociations externes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5594,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5663,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6008,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5594, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Contract et Claim Management (négociations externes, revendications, Change-Orders, normes SIA 118)] revendications",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6322,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6549,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6685,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6322, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Contract et Claim Management (négociations externes, revendications, Change-Orders, normes SIA 118)] Change-Orders",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7343,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.7402,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7508,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Contract et Claim Management (négociations externes, revendications, Change-Orders, normes SIA 118)] normes SIA 118",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.6618,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6994,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6997,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6618, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Contract et Claim Management (négociations externes, revendications, Change-Orders, normes SIA 118)] SIA 118",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.7419,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7683,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7742,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse financière et gestion budgétaire (KST, KPIs, rapports financiers)] analyse financière",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.525,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5569,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6149,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5250, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse financière et gestion budgétaire (KST, KPIs, rapports financiers)] gestion budgétaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5063,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5524,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5853,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5063, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse financière et gestion budgétaire (KST, KPIs, rapports financiers)] KST",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7108,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7492,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7669,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse financière et gestion budgétaire (KST, KPIs, rapports financiers)] KPIs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6348,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6891,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7348,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6348, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse financière et gestion budgétaire (KST, KPIs, rapports financiers)] rapports financiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5614,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6184,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6679,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5614, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[conformité FRG et comptabilité] conformité FRG",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6526,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6803,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6926,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6526, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[conformité FRG et comptabilité] comptabilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6263,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6995,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7082,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6263, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[qualité des données dans les outils internes] qualité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4455,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4573,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4983,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4455, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[qualité des données dans les outils internes] outils internes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4922,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5163,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5184,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4922, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des risques et des opportunités (chances et risques)] gestion des risques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3578,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5037,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5119,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3578, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des risques et des opportunités (chances et risques)] gestion des opportunités",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4668,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5287,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5355,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4668, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des risques et des opportunités (chances et risques)] chances et risques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.485,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5972,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6377,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4850, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation et animation d'ateliers d'amélioration] formation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6712,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.728,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7879,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation et animation d'ateliers d'amélioration] animation d'ateliers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.553,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.647,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6593,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5530, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation et animation d'ateliers d'amélioration] amélioration continue",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5652,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6346,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5652, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[maîtrise des langues (français, anglais, allemand)] français",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5094,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::nationality_visa",
+          "distance": 0.5368,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5813,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5094, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[maîtrise des langues (français, anglais, allemand)] anglais",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.4731,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7085,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7094,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4731, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[maîtrise des langues (français, anglais, allemand)] allemand",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.416,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.654,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.6608,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4160, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "gestion de projets commerciaux complexes avec certification IPMA (niveau C ou supérieur)",
+    "Contract et Claim Management (négociations externes, revendications, Change-Orders, normes SIA 118)",
+    "analyse financière et gestion budgétaire (KST, KPIs, rapports financiers)",
+    "formation et animation d'ateliers d'amélioration"
+  ]
+}

@@ -1,0 +1,1301 @@
+{
+  "offer_id": 2451,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "lausanne",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion administrative et coordination] gestion administrative",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5697,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5774,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5845,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5697, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion administrative et coordination] coordination de réunions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6015,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.626,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6483,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6015, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion administrative et coordination] gestion des agendas",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5101,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5149,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5215,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5101, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion administrative et coordination] réservation de salles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6107,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6518,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6747,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6107, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion administrative et coordination] élaboration d'ordres du jour",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5245,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5895,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.597,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5245, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion administrative et coordination] suivi des échéances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.4072,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4456,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5643,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4072, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion administrative et coordination] gestion de la correspondance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5269,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5313,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5505,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5269, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion administrative et coordination] suivi des factures",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5591,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5975,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5998,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5591, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion administrative et coordination] relecture de documents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6488,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6778,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.7031,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6488, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion administrative et coordination] rédaction de courriers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5075,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6101,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5075, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion administrative et coordination] rédaction de documents administratifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5164,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5258,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5431,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5164, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion documentaire et digitalisation] organisation de la documentation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5305,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5524,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5561,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5305, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion documentaire et digitalisation] structuration de la documentation électronique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5302,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5412,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5573,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5302, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion documentaire et digitalisation] structuration de la documentation physique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5868,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6071,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6096,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5868, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion documentaire et digitalisation] systèmes de classement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6085,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6591,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.673,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6085, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion documentaire et digitalisation] digitalisation documentaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5992,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6688,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5992, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Coordination d'événements professionnels] gestion des inscriptions aux conférences",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6081,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6143,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6254,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6081, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Coordination d'événements professionnels] gestion des inscriptions aux formations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5219,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.523,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5245,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5219, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Coordination d'événements professionnels] gestion des inscriptions aux événements",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5611,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.567,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5678,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5611, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Coordination d'événements professionnels] suivi administratif des événements",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.535,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5359,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5419,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5350, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création et gestion de modèles de documents] création de modèles de documents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4288,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5259,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5311,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4288, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création et gestion de modèles de documents] harmonisation de modèles de documents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5943,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5966,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5975,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5943, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création et gestion de modèles de documents] mise à jour de modèles de documents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5171,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5261,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5337,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5171, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création et gestion de modèles de documents] supports de communication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5464,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5815,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6004,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5464, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support juridique et conformité réglementaire] préparation de documentation pour contrôles internes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4913,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5104,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5246,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4913, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support juridique et conformité réglementaire] préparation de documentation pour audits",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5419,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5701,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5756,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5419, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support juridique et conformité réglementaire] préparation de documentation pour revues réglementaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4406,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4978,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5177,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4406, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support juridique et conformité réglementaire] veille réglementaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4463,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5381,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5412,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4463, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support juridique et conformité réglementaire] veille juridique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6038,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6085,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6676,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6038, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support juridique et conformité réglementaire] préparation de synthèses réglementaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4609,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.544,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5913,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4609, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support juridique et conformité réglementaire] organisation de formations internes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5746,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6442,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6511,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5746, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support juridique et conformité réglementaire] gestion des déclarations annuelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.546,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5539,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5622,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5460, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support juridique et conformité réglementaire] gestion des attestations réglementaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4368,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4549,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4906,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4368, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support juridique et conformité réglementaire] suivi des listes de contrôle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4853,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5059,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5518,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4853, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support juridique et conformité réglementaire] mise à jour des registres internes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6063,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6155,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6179,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6063, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support juridique et conformité réglementaire] documentation de conformité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5288,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5783,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5881,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5288, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des procédures internes] élaboration de directives internes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4801,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5298,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5492,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4801, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des procédures internes] mise à jour de directives internes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5483,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5615,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.584,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5483, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des procédures internes] diffusion de directives internes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5164,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5475,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5813,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5164, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des procédures internes] mise à jour de procédures internes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4819,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5369,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.563,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4819, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Secrétariat et coordination de comités] gestion du secrétariat de comités",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.589,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6021,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6305,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5890, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Secrétariat et coordination de comités] coordination des documents de comités",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5513,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.598,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6092,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5513, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi des calendriers financiers et obligations réglementaires] suivi des calendriers financiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.5007,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5426,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5457,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5007, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi des calendriers financiers et obligations réglementaires] respect des échéances de clôtures",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.4935,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5322,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5534,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4935, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi des calendriers financiers et obligations réglementaires] respect des échéances d'audits",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4618,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.4962,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5587,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4618, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi des calendriers financiers et obligations réglementaires] respect des obligations fiscales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6055,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6563,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6817,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6055, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi des calendriers financiers et obligations réglementaires] reportings réglementaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5419,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5455,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5585,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5419, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi des calendriers financiers et obligations réglementaires] reporting de gestion",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4786,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5109,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5417,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4786, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Élaboration de tableaux de bord financiers] élaboration de tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5904,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6392,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6465,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5904, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Élaboration de tableaux de bord financiers] mise à jour de tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5999,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6148,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6271,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5999, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Élaboration de tableaux de bord financiers] consolidation d'indicateurs clés financiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5944,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6212,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6503,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5944, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Préparation de présentations financières et coordination avec auditeurs] préparation de présentations financières",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5759,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.5872,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5915,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5759, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Préparation de présentations financières et coordination avec auditeurs] coordination avec auditeurs externes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5137,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5861,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6274,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5137, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Préparation de présentations financières et coordination avec auditeurs] coordination avec partenaires bancaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6551,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6582,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6832,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6551, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Préparation de présentations financières et coordination avec auditeurs] support lors des audits annuels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5126,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5655,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.573,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5126, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}
