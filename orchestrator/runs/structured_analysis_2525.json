@@ -1,0 +1,50 @@
+{
+  "matches": [
+    {
+      "skill": "IA génératives et modèles de langage (GPT, Claude, Gemini, Mistral, Llama)",
+      "matched_chunk_summary": "Prototypage d'un assistant interne basé sur l'API Mistral pour répondre aux questions sur les règles de commission, avec appel API direct et interface Gradio. Utilisation quotidienne de Claude Code et serveurs MCP pour des projets de développement assisté par agent."
+    },
+    {
+      "skill": "Prompt engineering",
+      "matched_chunk_summary": "Prototypage d'un assistant interne via l'API Mistral avec gestion de contexte complet (22000 tokens). Utilisation quotidienne de fichiers CLAUDE.md pour structurer des sessions d'agent avec contexte persistant."
+    },
+    {
+      "skill": "Développement Python",
+      "matched_chunk_summary": "Maîtrise professionnelle de Python (pandas, numpy, scipy, scikit-learn) et automatisation avec Playwright, smtplib, Brevo. Certifications DataCamp couvrant Python avancé."
+    },
+    {
+      "skill": "Analyse de données et mesure de performance",
+      "matched_chunk_summary": "Développement d'un modèle de churn en production (recall 85%), conception de tableaux de bord Power BI adoptés par l'entreprise, et maîtrise de SQL, Snowflake, et outils ETL."
+    },
+    {
+      "skill": "Automatisation et optimisation des processus logistiques",
+      "matched_chunk_summary": "Automatisation de processus métier critiques (réduction de 10h à 35min pour le calcul des commissions) et développement de bots Playwright pour scraping et interaction avec formulaires."
+    },
+    {
+      "skill": "Prévisions et modélisation",
+      "matched_chunk_summary": "Modèle de churn en production avec justification métier des métriques, outil de tarification autonome pour les équipes métier, et formation en économétrie/statistiques appliquées."
+    },
+    {
+      "skill": "Gestion du changement et accompagnement des équipes",
+      "matched_chunk_summary": "Création d'outils transférant de l'autonomie aux équipes métier (tarification, tableaux de bord Power BI) et adoption large des solutions développées à l'échelle de l'entreprise."
+    },
+    {
+      "skill": "Communication et collaboration en environnement technique",
+      "matched_chunk_summary": "Conception d'outils décisionnels pour des audiences non-techniques, maîtrise de l'anglais professionnel (B2), et structuration de projets techniques avec documentation (fichiers CLAUDE.md)."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Agents IA et architectures avancées (RAG, Function Calling, orchestration)",
+      "note": "Expérience limitée aux APIs directes (Mistral/Claude) et prototypage simple. Pas d'implémentation autonome de RAG, Function Calling ou orchestration complexe d'agents."
+    },
+    {
+      "skill": "Sécurité des données et gouvernance de l'IA",
+      "note": "Aucune expérience formelle en gouvernance de l'IA (comités, chartes) ou en sécurité des données au-delà des bonnes pratiques techniques. Notions uniquement, pas de déploiement en production."
+    }
+  ],
+  "uncertain_flags": [
+    "IA génératives et modèles de langage (GPT, Claude, Gemini, Mistral, Llama)",
+    "Agents IA et architectures avancées (RAG, Function Calling, orchestration)"
+  ]
+}

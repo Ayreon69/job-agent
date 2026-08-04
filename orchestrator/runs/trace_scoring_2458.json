@@ -1,0 +1,798 @@
+{
+  "offer_id": 2458,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[modélisation et analyse de données pour les chaînes communicantes] modélisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4999,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5066,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5127,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4999, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[modélisation et analyse de données pour les chaînes communicantes] analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4916,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5031,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4776, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[modélisation et analyse de données pour les chaînes communicantes] comportement nominal",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5886,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.592,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.625,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5886, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[modélisation et analyse de données pour les chaînes communicantes] chaînes communicantes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5813,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5902,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5925,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5813, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[détection d'anomalies et supervision en temps réel] détection d'anomalies",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6102,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6216,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6326,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6102, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[détection d'anomalies et supervision en temps réel] supervision en temps réel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5123,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5359,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5456,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5123, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[détection d'anomalies et supervision en temps réel] outils de supervision",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5093,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5103,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5112,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5093, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[machine learning et data science] machine learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1937,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5103,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.1937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[machine learning et data science] data science",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4431,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5645,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5689,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4431, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[machine learning et data science] modèles prédictifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3951,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4361,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5737,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3951, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[encadrement et mentorat d'équipes data] encadrement d'équipes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6084,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6299,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6552,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6084, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[encadrement et mentorat d'équipes data] mentorat",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7021,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.712,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7171,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[encadrement et mentorat d'équipes data] revues de code",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4286,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5467,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4286, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[encadrement et mentorat d'équipes data] gestion de Data Scientists juniors",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.3911,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.4795,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5055,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3911, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[industrialisation de prototypes et intégration continue] industrialisation de prototypes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5596,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5715,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5818,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5596, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[industrialisation de prototypes et intégration continue] intégration continue",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6027,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6319,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6329,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6027, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[industrialisation de prototypes et intégration continue] déploiement de solutions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4955,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4992,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5656,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4955, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[veille technologique en data science et IA] veille technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5358,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5861,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5358, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[veille technologique en data science et IA] outils data science",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4131,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4772,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5057,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4131, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[veille technologique en data science et IA] méthodes IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5152,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5161,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5174,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5152, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[veille technologique en data science et IA] innovation technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5994,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6276,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6679,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5994, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[partage de connaissances et formation] partage de connaissances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6174,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.658,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6174, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[partage de connaissances et formation] formation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6712,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.728,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7879,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[partage de connaissances et formation] transfert de compétences",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5324,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5374,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5491,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5324, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[conception de solutions sécurisées pour le traitement de données] sécurité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5853,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.605,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6081,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5853, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[conception de solutions sécurisées pour le traitement de données] traitement de volumes de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5176,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5489,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5752,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5176, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[conception de solutions sécurisées pour le traitement de données] conception de solutions sécurisées",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5265,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5873,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5899,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5265, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[programmation et développement logiciel (Python, frameworks associés)] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[programmation et développement logiciel (Python, frameworks associés)] développement logiciel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4317,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4677,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5006,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4317, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[programmation et développement logiciel (Python, frameworks associés)] frameworks data science",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4463,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5122,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.526,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4463, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets data et orientations techniques] gestion de projets data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.449,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4517,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4913,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4490, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets data et orientations techniques] orientations techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6343,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.644,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6599,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6343, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets data et orientations techniques] stratégie data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4697,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4776,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4815,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4697, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "encadrement et mentorat d'équipes data",
+    "partage de connaissances et formation"
+  ]
+}

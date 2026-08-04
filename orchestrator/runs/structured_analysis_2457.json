@@ -1,0 +1,52 @@
+{
+  "matches": [
+    {
+      "skill": "Développement en Python pour la Data Science",
+      "matched_chunk_summary": "Maîtrise professionnelle de Python (pandas, numpy, scipy, scikit-learn) avec expérience concrète et répétée, incluant des certifications DataCamp (Associate Data Scientist/Analyst)."
+    },
+    {
+      "skill": "Machine Learning et modélisation prédictive",
+      "matched_chunk_summary": "Développement d'un modèle de churn en production (recall 85%) avec scikit-learn, justifiant des choix métiers (recall vs précision). Expérience en ML appliqué et autonomie sur des projets de recherche appliquée."
+    },
+    {
+      "skill": "Utilisation de Scikit-Learn pour le Machine Learning",
+      "matched_chunk_summary": "Maîtrise de scikit-learn via des projets concrets (modèle de churn en production) et certifications DataCamp couvrant Python et ML."
+    },
+    {
+      "skill": "Requêtage et gestion de bases de données SQL/PostgreSQL",
+      "matched_chunk_summary": "SQL avancé (requêtes complexes, optimisation) avec expérience professionnelle et certifications DataCamp. Expérience sur Snowflake (architecture ETL proche Medallion)."
+    },
+    {
+      "skill": "Analyse, préparation et exploitation des données",
+      "matched_chunk_summary": "Expérience complète en analyse de données (Power BI, SQL, Python) avec des réalisations concrètes (tableaux de bord décisionnels, modèle de churn en production). Maîtrise de pandas et outils ETL."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Manipulation et analyse de données avec Pandas",
+      "note": "Aucun chunk ne détaille explicitement des cas d'usage avancés de pandas (ex: groupby complexes, merge/join optimisés, feature engineering). La maîtrise est supposée via Python mais non documentée en profondeur."
+    },
+    {
+      "skill": "Développement d'API et interfaces de restitution (Dash, FastAPI)",
+      "note": "Gap partiel: expérience limitée à Gradio (prototypage) et notions de FastAPI/Docker (non pratiquées en production). Aucun déploiement d'API en conditions réelles."
+    },
+    {
+      "skill": "Connaissances des environnements Linux et conteneurisation",
+      "note": "Aucune expérience documentée avec Linux, Docker ou déploiement cloud (AWS/Azure). Notions uniquement, sans pratique professionnelle."
+    },
+    {
+      "skill": "Mise en œuvre de pratiques MLOps",
+      "note": "Expérience limitée à des pipelines NLP (Whisper) et prototypage LLM. Aucun chunk ne mentionne CI/CD, monitoring de modèles ou orchestration MLOps avancée."
+    },
+    {
+      "skill": "Modélisation de simulation et jumeaux numériques",
+      "note": "Aucune expérience documentée en simulation ou jumeaux numériques. La 'simulation de comportement humain' avec Playwright ne couvre pas ce domaine."
+    }
+  ],
+  "uncertain_flags": [
+    "Manipulation et analyse de données avec Pandas",
+    "Développement d'API et interfaces de restitution (Dash, FastAPI)",
+    "Connaissances des environnements Linux et conteneurisation",
+    "Modélisation de simulation et jumeaux numériques"
+  ]
+}

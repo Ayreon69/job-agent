@@ -1,0 +1,777 @@
+{
+  "offer_id": 2530,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneva",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[PhD en Chimie Computationnelle, Informatique ou domaine connexe] PhD en Chimie Computationnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5435,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.5623,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.637,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5435, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[PhD en Chimie Computationnelle, Informatique ou domaine connexe] PhD en Informatique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4785,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4827,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5299,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4785, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[PhD en Chimie Computationnelle, Informatique ou domaine connexe] domaine connexe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5897,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6078,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6141,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5897, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en analyse de données et méthodes AI/ML avancées] analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4916,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5031,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4776, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en analyse de données et méthodes AI/ML avancées] méthodes AI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4604,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4689,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4733,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4604, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en analyse de données et méthodes AI/ML avancées] méthodes ML",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5544,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5851,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5864,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5544, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en analyse de données et méthodes AI/ML avancées] machine learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1937,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5103,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.1937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en analyse de données et méthodes AI/ML avancées] intelligence artificielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4068,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4977,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4068, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en analyse de données et méthodes AI/ML avancées] modèles prédictifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3951,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4361,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5737,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3951, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation prédictive pour la découverte de médicaments] modélisation prédictive",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3784,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4552,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5943,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3784, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation prédictive pour la découverte de médicaments] découverte de médicaments",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.676,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7324,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7455,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation prédictive pour la découverte de médicaments] modélisation in vivo",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6538,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6686,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6709,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6538, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation prédictive pour la découverte de médicaments] recherche de hits",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7167,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7234,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7307,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en toxicologie et sécurité préclinique] toxicologie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.754,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7859,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.8035,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en toxicologie et sécurité préclinique] sécurité préclinique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5418,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5537,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6449,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5418, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et soutien de modèles IA/ML] déploiement de modèles IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4026,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4092,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4546,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4026, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et soutien de modèles IA/ML] déploiement de modèles ML",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4714,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4862,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5015,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4714, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et soutien de modèles IA/ML] soutien de modèles prédictifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3554,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4067,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5794,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3554, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des partenaires en IA et diligence raisonnable] collaboration en IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4937,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5039,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5168,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des partenaires en IA et diligence raisonnable] diligence raisonnable",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4606,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5138,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5537,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4606, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des partenaires en IA et diligence raisonnable] partenariats IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5155,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5438,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5469,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5155, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication orale et écrite excellente] communication orale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5743,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6263,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6532,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5743, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication orale et écrite excellente] communication écrite",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5936,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5999,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.601,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5936, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Communication orale et écrite excellente] présentation des résultats",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5964,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.619,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6446,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5964, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en R&D dans un environnement public-privé] R&D",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6347,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.641,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6451,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6347, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en R&D dans un environnement public-privé] environnement public-privé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6385,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6413,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6905,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6385, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en R&D dans un environnement public-privé] partenariat de développement de produits",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5123,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6001,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6054,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5123, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Initiatives dd4gh ou basées en Afrique] dd4gh",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7064,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7429,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7781,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Initiatives dd4gh ou basées en Afrique] initiatives basées en Afrique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6599,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7155,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7177,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6599, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des enjeux du paludisme et de la santé mondiale] paludisme",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5959,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6396,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6938,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5959, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des enjeux du paludisme et de la santé mondiale] santé mondiale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5786,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7271,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7326,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5786, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des enjeux du paludisme et de la santé mondiale] éradication du paludisme",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7995,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.877,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.8786,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    }
+  ],
+  "uncertain_flags": [
+    "Modélisation prédictive pour la découverte de médicaments",
+    "Compétences en toxicologie et sécurité préclinique",
+    "Initiatives dd4gh ou basées en Afrique",
+    "Connaissance des enjeux du paludisme et de la santé mondiale"
+  ]
+}
