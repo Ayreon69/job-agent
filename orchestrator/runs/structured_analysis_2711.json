@@ -1,0 +1,52 @@
+{
+  "matches": [
+    {
+      "skill": "Analyse et modélisation de cas d'usage Data",
+      "matched_chunk_summary": "Création d'un outil de tarification pour les produits santé individuelle, permettant des ajustements tarifaires en autonomie par les équipes métier. Développement d'un modèle de machine learning pour prédire la résiliation des clients (churn) en production, avec justification métier des choix statistiques."
+    },
+    {
+      "skill": "Conception et réalisation de tableaux de bord avec Power BI",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI sur des indicateurs sensibles (commissions, sinistralité, coût moyen), adoptés par l'ensemble des départements. Maîtrise de Power BI (DAX avancé, Power Query) et alignement avec les KPIs métier."
+    },
+    {
+      "skill": "Gouvernance et architecture Data",
+      "matched_chunk_summary": "Structuration des pipelines ETL sur Snowflake selon une organisation en couches (staging vers core vers reporting), proche d'une architecture Medallion. Maîtrise de Snowflake et fiabilisation de la production de rapports à grande échelle."
+    },
+    {
+      "skill": "Accompagnement et acculturation Data",
+      "matched_chunk_summary": "Requêtes SQL avancées pour répondre aux demandes analytiques ad hoc des équipes opérationnelles, avec vulgarisation des résultats pour des audiences non-techniques. Prototypage d'un assistant interne basé sur l'API Mistral pour répondre aux questions sur les règles de commission."
+    },
+    {
+      "skill": "Rédaction de livrables fonctionnels",
+      "matched_chunk_summary": "Création d'un outil de tarification transférant de l'autonomie aux équipes métier, avec logique de modélisation de scénarios. Développement d'un modèle de churn en production, justifiant les choix statistiques par une logique métier."
+    },
+    {
+      "skill": "Interface entre métiers et équipes techniques",
+      "matched_chunk_summary": "Requêtes SQL avancées pour répondre aux demandes des équipes opérationnelles et de la direction, avec vulgarisation des résultats. Conception de tableaux de bord Power BI alignés sur les KPIs métier et adoptés par l'ensemble des départements."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Maîtrise de Microsoft Fabric et ses services associés",
+      "note": "Aucune expérience professionnelle ou formation certifiante mentionnée sur Microsoft Fabric. Seules des certifications DataCamp couvrant Power BI, SQL avancé et Python sont présentes."
+    },
+    {
+      "skill": "Environnement Cloud sécurisé (BLEU)",
+      "note": "Notions uniquement sur les environnements cloud AWS/Azure, sans déploiement en production ou expérience spécifique sur un cloud sécurisé de type BLEU."
+    },
+    {
+      "skill": "Gestion de projets Agile et suivi via Jira",
+      "note": "Aucune mention d'expérience concrète avec Jira ou des méthodes Agile dans les chunks fournis."
+    },
+    {
+      "skill": "Pilotes et Proof of Concept (PoC) Data",
+      "note": "Expérience limitée à des prototypes (ex: assistant interne basé sur l'API Mistral), mais pas de mention de PoC Data structurés ou de pilotes en conditions réelles d'entreprise."
+    }
+  ],
+  "uncertain_flags": [
+    "Maîtrise de Microsoft Fabric et ses services associés",
+    "Conception et réalisation de tableaux de bord avec Power BI",
+    "Gestion de projets Agile et suivi via Jira",
+    "Pilotes et Proof of Concept (PoC) Data"
+  ]
+}

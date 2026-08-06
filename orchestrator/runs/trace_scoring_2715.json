@@ -1,0 +1,726 @@
+{
+  "offer_id": 2715,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "38",
+    "match_method": "departement"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et gestion de pipelines de données] pipelines de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5343,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5435,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4099, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et gestion de pipelines de données] ETL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5149,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6996,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.7092,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5149, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et gestion de pipelines de données] automatisation des pipelines",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4608,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5051,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.532,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4608, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et gestion de pipelines de données] optimisation des pipelines",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5207,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6215,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6414,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5207, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Administration et exploitation de bases de données] administration de bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4075,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4509,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5171,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4075, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Administration et exploitation de bases de données] gestion de bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3898,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4375,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5019,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3898, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Administration et exploitation de bases de données] disponibilité des bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4882,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4982,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5242,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4882, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Administration et exploitation de bases de données] sécurité des bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5768,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5982,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6021,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5768, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Solutions décisionnelles et dataviz] solutions décisionnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4403,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4563,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5433,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4403, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Solutions décisionnelles et dataviz] dataviz",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5493,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.573,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5754,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5493, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Solutions décisionnelles et dataviz] visualisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6191,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6351,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6191, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de structures de bases de données] modélisation de bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.439,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4476,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5083,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4390, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation de structures de bases de données] conception de schémas de bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.471,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4718,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.497,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4710, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de documentation technique et procédures d'exploitation] documentation technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5417,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5538,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5743,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5417, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de documentation technique et procédures d'exploitation] procédures d'exploitation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4858,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5256,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5463,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4858, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction de documentation technique et procédures d'exploitation] rédaction de procédures",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4887,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4951,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5198,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4887, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Installation et configuration d'infrastructures data] installation de solutions data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5687,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6147,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6327,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5687, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Installation et configuration d'infrastructures data] configuration d'infrastructures data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4808,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5146,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5581,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4808, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique en data et cloud] veille technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5358,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5861,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5358, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique en data et cloud] innovation data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.57,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5714,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5903,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5700, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique en data et cloud] technologies cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5356,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6475,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6564,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5356, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation des utilisateurs et support client] formation utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4595,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5454,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5524,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4595, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation des utilisateurs et support client] support client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5347,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5526,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6051,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5347, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation des utilisateurs et support client] transfert de connaissances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5649,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5902,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5939,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5649, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cahier des charges et études techniques] cahier des charges",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6125,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6264,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6385,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6125, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cahier des charges et études techniques] études techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5124,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5335,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5494,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5124, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cahier des charges et études techniques] spécifications fonctionnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5205,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5335,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5337,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5205, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Environnements cloud et hébergement] hébergement cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5686,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6732,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6883,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5686, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Environnements cloud et hébergement] infrastructure cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5368,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5553,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6624,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5368, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Environnements cloud et hébergement] solutions managées cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.516,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6115,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6145,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5160, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}
