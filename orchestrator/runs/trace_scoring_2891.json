@@ -1,0 +1,1100 @@
+{
+  "offer_id": 2891,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "69",
+    "match_method": "departement"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et amélioration d'outils d'audit IA pour la cybersécurité] développement d'outils d'audit IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4437,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4848,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4935,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4437, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et amélioration d'outils d'audit IA pour la cybersécurité] agents IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5296,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6175,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et amélioration d'outils d'audit IA pour la cybersécurité] automatisation des audits cybersécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4632,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5521,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5963,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4632, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et amélioration d'outils d'audit IA pour la cybersécurité] audit des implémentations dev/cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5244,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5773,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5864,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5244, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des vulnérabilités et réponse aux incidents de sécurité] gestion des vulnérabilités",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3858,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5722,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5832,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3858, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des vulnérabilités et réponse aux incidents de sécurité] évaluation de la gravité des vulnérabilités",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4413,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6454,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6752,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4413, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des vulnérabilités et réponse aux incidents de sécurité] évaluation de l'exploitabilité des vulnérabilités",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4058,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.597,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.606,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4058, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des vulnérabilités et réponse aux incidents de sécurité] coordination des correctifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6291,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6306,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.634,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6291, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des vulnérabilités et réponse aux incidents de sécurité] publication d'avis de sécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5134,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5381,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5803,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5134, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des vulnérabilités et réponse aux incidents de sécurité] réponse aux incidents de sécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5019,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.657,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6813,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5019, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des vulnérabilités et réponse aux incidents de sécurité] collaboration avec les équipes Cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4957,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.578,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5923,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4957, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité produit et cloud (conception, architecture et bonnes pratiques)] sécurité produit",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4745,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5825,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6042,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4745, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité produit et cloud (conception, architecture et bonnes pratiques)] sécurité cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6512,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6839,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6909,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6512, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité produit et cloud (conception, architecture et bonnes pratiques)] architecture sécurisée",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6648,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6872,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6909,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6648, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité produit et cloud (conception, architecture et bonnes pratiques)] bonnes pratiques de sécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5242,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6238,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6379,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5242, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité produit et cloud (conception, architecture et bonnes pratiques)] amélioration continue de la posture sécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5297,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.629,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6295,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5297, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et évaluation des vulnérabilités (Java, JS/TS, Apache, OSGi, cloud)] veille technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5358,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5861,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5358, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et évaluation des vulnérabilités (Java, JS/TS, Apache, OSGi, cloud)] évaluation des vulnérabilités",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4421,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6378,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6567,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4421, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et évaluation des vulnérabilités (Java, JS/TS, Apache, OSGi, cloud)] Java",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7165,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7559,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7624,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et évaluation des vulnérabilités (Java, JS/TS, Apache, OSGi, cloud)] JavaScript",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7439,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7509,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7902,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et évaluation des vulnérabilités (Java, JS/TS, Apache, OSGi, cloud)] TypeScript",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6717,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6955,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7019,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et évaluation des vulnérabilités (Java, JS/TS, Apache, OSGi, cloud)] Apache",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7779,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.819,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.8191,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et évaluation des vulnérabilités (Java, JS/TS, Apache, OSGi, cloud)] OSGi",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7673,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7767,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.8205,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et évaluation des vulnérabilités (Java, JS/TS, Apache, OSGi, cloud)] cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6519,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6775,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7519,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6519, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sensibilisation et formation aux bonnes pratiques de cybersécurité] sensibilisation à la cybersécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5951,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6881,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6888,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5951, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sensibilisation et formation aux bonnes pratiques de cybersécurité] formation des équipes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6075,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6218,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6259,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6075, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sensibilisation et formation aux bonnes pratiques de cybersécurité] bonnes pratiques de cybersécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6165,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6547,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.671,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6165, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Leadership et gestion d'équipe en cybersécurité] leadership en cybersécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6769,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6968,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6994,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Leadership et gestion d'équipe en cybersécurité] gestion d'équipe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5493,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5843,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5975,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5493, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Leadership et gestion d'équipe en cybersécurité] stratégie de sécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5242,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.595,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.666,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5242, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Leadership et gestion d'équipe en cybersécurité] pilotage opérationnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6201,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6357,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6441,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6201, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des frameworks et normes de cybersécurité (ISO 27001, NIST, OWASP)] ISO 27001",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6927,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7209,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7229,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des frameworks et normes de cybersécurité (ISO 27001, NIST, OWASP)] NIST",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7139,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7625,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7634,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des frameworks et normes de cybersécurité (ISO 27001, NIST, OWASP)] OWASP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6544,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.7315,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6544, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des frameworks et normes de cybersécurité (ISO 27001, NIST, OWASP)] normes de cybersécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6726,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6903,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7001,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience avec les outils de sécurité cloud (AWS, Azure, GCP)] AWS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6992,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7053,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7257,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience avec les outils de sécurité cloud (AWS, Azure, GCP)] Azure",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6237,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.672,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.688,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6237, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience avec les outils de sécurité cloud (AWS, Azure, GCP)] GCP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7223,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.7268,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7316,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience avec les outils de sécurité cloud (AWS, Azure, GCP)] outils de sécurité cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5969,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6272,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6292,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5969, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Scripting et automatisation (Python, Bash, etc.)] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Scripting et automatisation (Python, Bash, etc.)] Bash",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.8013,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.8281,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.8441,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Scripting et automatisation (Python, Bash, etc.)] scripting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4751,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5661,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5699,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4751, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Scripting et automatisation (Python, Bash, etc.)] automatisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3734,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4765,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3734, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des risques et conformité en cybersécurité] gestion des risques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3578,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5037,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5119,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3578, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des risques et conformité en cybersécurité] conformité en cybersécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6174,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6906,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6931,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6174, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des risques et conformité en cybersécurité] analyse des risques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.4987,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5253,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3776, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Veille technologique et évaluation des vulnérabilités (Java, JS/TS, Apache, OSGi, cloud)",
+    "Leadership et gestion d'équipe en cybersécurité",
+    "Connaissance des frameworks et normes de cybersécurité (ISO 27001, NIST, OWASP)",
+    "Expérience avec les outils de sécurité cloud (AWS, Azure, GCP)",
+    "Scripting et automatisation (Python, Bash, etc.)"
+  ]
+}
