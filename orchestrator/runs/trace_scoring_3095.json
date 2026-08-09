@@ -1,0 +1,752 @@
+{
+  "offer_id": 3095,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "lausanne",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[comptabilité de base et rapprochement bancaire] comptabilité de base",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.59,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6061,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6402,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5900, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[comptabilité de base et rapprochement bancaire] rapprochement bancaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6324,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6729,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7203,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6324, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[comptabilité de base et rapprochement bancaire] écritures manuelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4779,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5525,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5831,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4779, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[comptabilité de base et rapprochement bancaire] règles comptables de base",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6209,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6336,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6692,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6209, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des factures fournisseurs et clients] saisie de factures fournisseurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5199,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5403,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5728,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5199, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des factures fournisseurs et clients] saisie de factures clients",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5429,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5784,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5873,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5429, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des factures fournisseurs et clients] gestion des factures",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5522,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5564,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5808,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5522, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des débiteurs et recouvrement] gestion des débiteurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5465,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6473,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6544,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5465, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des débiteurs et recouvrement] recouvrement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5566,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.667,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.72,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5566, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des débiteurs et recouvrement] collaboration avec société de recouvrement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4599,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5232,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5777,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4599, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion du courrier physique et digital] gestion du courrier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5457,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5687,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6072,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5457, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion du courrier physique et digital] courrier physique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5588,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6251,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6312,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5588, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion du courrier physique et digital] courrier digital",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5804,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.632,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6818,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5804, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[service client et gestion des requêtes SAV] service client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4925,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5246,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5568,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4925, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[service client et gestion des requêtes SAV] réponse aux demandes clients",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.459,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.498,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5234,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4590, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[service client et gestion des requêtes SAV] suivi des dossiers SAV",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5766,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5817,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5933,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5766, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[service client et gestion des requêtes SAV] SAV",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7078,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7133,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7171,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[utilisation d'outils d'intelligence artificielle pour l'efficacité professionnelle] outils d'intelligence artificielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.3734,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4332,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4352,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3734, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[utilisation d'outils d'intelligence artificielle pour l'efficacité professionnelle] IA pour efficacité professionnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3993,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4215,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4339,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3993, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[maîtrise des outils informatiques] outils informatiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4092,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4246,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4501,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4092, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation ou expérience en administration/comptabilité (CFC, apprentissage)] CFC",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6861,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7018,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7517,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation ou expérience en administration/comptabilité (CFC, apprentissage)] apprentissage en administration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5236,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5601,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.578,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5236, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation ou expérience en administration/comptabilité (CFC, apprentissage)] apprentissage en comptabilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5895,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6283,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6365,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5895, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation ou expérience en administration/comptabilité (CFC, apprentissage)] expérience en administration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5084,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5756,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5767,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5084, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation ou expérience en administration/comptabilité (CFC, apprentissage)] expérience en comptabilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5639,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5935,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5946,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5639, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[communication écrite et relation client] communication écrite",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5936,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5999,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.601,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5936, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[communication écrite et relation client] relation client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5012,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5604,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5842,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5012, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[communication écrite et relation client] bon relationnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.628,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.675,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7159,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6280, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[langues (français, allemand, anglais)] français",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5094,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::nationality_visa",
+          "distance": 0.5368,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5813,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5094, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[langues (français, allemand, anglais)] allemand",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.416,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.654,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.6608,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4160, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[langues (français, allemand, anglais)] anglais",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.4731,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7085,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7094,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4731, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "service client et gestion des requêtes SAV",
+    "formation ou expérience en administration/comptabilité (CFC, apprentissage)"
+  ]
+}

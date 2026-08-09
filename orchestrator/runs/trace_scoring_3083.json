@@ -1,0 +1,1400 @@
+{
+  "offer_id": 3083,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneva",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et transformation de données avec dbt (data build tool)] dbt",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6137,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6225,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6247,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6137, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et transformation de données avec dbt (data build tool)] data build tool",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4571,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4721,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.478,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4571, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et transformation de données avec dbt (data build tool)] modélisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4999,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5066,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5127,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4999, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et transformation de données avec dbt (data build tool)] transformation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5458,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5518,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5588,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5458, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et transformation de données avec dbt (data build tool)] dbt models",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5749,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5811,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6046,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5749, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et transformation de données avec dbt (data build tool)] dbt tests",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5993,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.617,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6884,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5993, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et transformation de données avec dbt (data build tool)] dbt documentation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5519,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5604,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6025,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5519, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation et transformation de données avec dbt (data build tool)] dbt Cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5879,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6132,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6416,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5879, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et administration de Snowflake] Snowflake",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5503,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.8609,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.8748,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5503, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et administration de Snowflake] architecture Snowflake",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.3845,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7075,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.7255,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3845, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et administration de Snowflake] administration Snowflake",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4671,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7561,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7638,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4671, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et administration de Snowflake] Snowflake SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.548,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5883,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5976,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5480, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et administration de Snowflake] Snowflake warehouses",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4796,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.775,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7775,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4796, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et administration de Snowflake] Snowflake roles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5797,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.8243,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.8392,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5797, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et administration de Snowflake] Snowflake security",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5281,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7335,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7337,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5281, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et administration de Snowflake] Snowflake data sharing",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4851,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7307,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7427,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4851, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Langages SQL et optimisation de requêtes] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Langages SQL et optimisation de requêtes] optimisation de requêtes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5469,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.558,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5671,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5469, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Langages SQL et optimisation de requêtes] SQL avancé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.2562,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4696,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5622,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2562, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Langages SQL et optimisation de requêtes] requêtes complexes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5861,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6333,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6394,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5861, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et orchestration de pipelines de données (Airflow, Prefect, etc.)] Airflow",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6394,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7731,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7755,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6394, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et orchestration de pipelines de données (Airflow, Prefect, etc.)] Prefect",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7382,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7508,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.78,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et orchestration de pipelines de données (Airflow, Prefect, etc.)] orchestration de pipelines",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4366,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5827,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6089,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4366, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et orchestration de pipelines de données (Airflow, Prefect, etc.)] ETL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5149,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6996,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.7092,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5149, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et orchestration de pipelines de données (Airflow, Prefect, etc.)] ELT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.622,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.686,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6896,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6220, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et orchestration de pipelines de données (Airflow, Prefect, etc.)] intégration de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5271,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5429,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5546,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5271, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissances en cloud (AWS, GCP, Azure)] AWS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6992,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7053,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7257,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissances en cloud (AWS, GCP, Azure)] GCP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7223,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.7268,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7316,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissances en cloud (AWS, GCP, Azure)] Azure",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6237,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.672,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.688,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6237, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissances en cloud (AWS, GCP, Azure)] cloud computing",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5305,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6876,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6892,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5305, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissances en cloud (AWS, GCP, Azure)] stockage cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6617,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7152,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.7217,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6617, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissances en cloud (AWS, GCP, Azure)] services cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5721,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6024,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6913,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5721, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Warehousing et concepts associés] data warehousing",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5368,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5734,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5806,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5368, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Warehousing et concepts associés] data marts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6211,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6497,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7094,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6211, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Warehousing et concepts associés] OLAP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6502,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6863,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6919,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6502, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Warehousing et concepts associés] dimensional modeling",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6623,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7094,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7165,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6623, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Warehousing et concepts associés] star schema",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7074,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7177,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7693,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Warehousing et concepts associés] snowflake schema",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4725,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7737,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.8013,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4725, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bonnes pratiques en gestion de données et gouvernance] gouvernance des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4729,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4871,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5233,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4729, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bonnes pratiques en gestion de données et gouvernance] qualité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4455,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4573,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4983,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4455, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bonnes pratiques en gestion de données et gouvernance] data lineage",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.603,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6853,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6998,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6030, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bonnes pratiques en gestion de données et gouvernance] metadata management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6044,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6217,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6268,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6044, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bonnes pratiques en gestion de données et gouvernance] data catalog",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.6059,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6117,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6212,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6059, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Python pour le traitement et l'automatisation des données] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Python pour le traitement et l'automatisation des données] automatisation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.2934,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4398,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4401,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2934, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Python pour le traitement et l'automatisation des données] traitement de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4383,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4539,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4771,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4383, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Python pour le traitement et l'automatisation des données] Pandas",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7105,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7907,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.8208,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Python pour le traitement et l'automatisation des données] NumPy",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7295,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7308,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7461,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Visualisation de données (Tableau, Power BI, Looker, etc.)] Tableau",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6788,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6989,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7164,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Visualisation de données (Tableau, Power BI, Looker, etc.)] Power BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.3422,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6163,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6182,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3422, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Visualisation de données (Tableau, Power BI, Looker, etc.)] Looker",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7424,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7428,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7644,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Visualisation de données (Tableau, Power BI, Looker, etc.)] visualisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6191,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6351,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6191, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Visualisation de données (Tableau, Power BI, Looker, etc.)] dashboards",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.572,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6102,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6104,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5720, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Visualisation de données (Tableau, Power BI, Looker, etc.)] reporting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6373,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6755,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6099, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies Agile et gestion de projet] Agile",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6952,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6968,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7011,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies Agile et gestion de projet] Scrum",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7148,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7431,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7551,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies Agile et gestion de projet] Kanban",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7822,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.7846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.8148,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies Agile et gestion de projet] gestion de projet",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4704,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5231,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5262,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4704, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies Agile et gestion de projet] méthodologies Agile",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5414,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5432,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.566,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5414, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Intégration et orchestration de pipelines de données (Airflow, Prefect, etc.)",
+    "Connaissances en cloud (AWS, GCP, Azure)",
+    "Data Warehousing et concepts associés",
+    "Python pour le traitement et l'automatisation des données",
+    "Visualisation de données (Tableau, Power BI, Looker, etc.)",
+    "Méthodologies Agile et gestion de projet"
+  ]
+}

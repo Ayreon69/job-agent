@@ -1,0 +1,891 @@
+{
+  "offer_id": 3107,
+  "geography_verdict": {
+    "zone": "autre_france",
+    "priority_rank": null,
+    "mobility_signal_allowed": false,
+    "matched_keyword": null,
+    "match_method": "aucun"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en France hors Rhône-Alpes, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3167,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3601,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.394,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3167, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vente et développement commercial B2B] vente B2B",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4764,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.57,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7036,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4764, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vente et développement commercial B2B] développement commercial",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5145,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5961,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.606,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5145, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vente et développement commercial B2B] chasse commerciale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6146,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6237,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.636,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6146, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vente et développement commercial B2B] génération de leads",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5947,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6085,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6499,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5947, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vente et développement commercial B2B] conversion commerciale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5814,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5939,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6253,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5814, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vente et développement commercial B2B] réseautage B2B",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4117,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5847,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6426,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4117, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en cybersécurité (sécurité cloud, gouvernance, tests d'intrusion)] cybersécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6884,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7108,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.724,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en cybersécurité (sécurité cloud, gouvernance, tests d'intrusion)] sécurité cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6512,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6839,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6909,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6512, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en cybersécurité (sécurité cloud, gouvernance, tests d'intrusion)] gouvernance de la sécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.596,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6111,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6703,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5960, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en cybersécurité (sécurité cloud, gouvernance, tests d'intrusion)] tests d'intrusion",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6087,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.663,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6699,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6087, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en cybersécurité (sécurité cloud, gouvernance, tests d'intrusion)] gestion des identités",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5882,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5946,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6315,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5882, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en Data & AI (analytique avancée, machine learning, plateformes cloud)] Data & AI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4491,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4839,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5152,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4491, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en Data & AI (analytique avancée, machine learning, plateformes cloud)] analytique avancée",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5483,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5736,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.579,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5483, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en Data & AI (analytique avancée, machine learning, plateformes cloud)] machine learning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.1937,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5103,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.1937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en Data & AI (analytique avancée, machine learning, plateformes cloud)] plateformes cloud",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5188,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6346,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6527,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5188, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en Data & AI (analytique avancée, machine learning, plateformes cloud)] solutions d'intelligence artificielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.3916,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4457,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4783,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3916, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en Sustainability (technologies vertes, IT écoresponsable, économie circulaire)] Sustainability",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6812,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.711,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7327,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en Sustainability (technologies vertes, IT écoresponsable, économie circulaire)] technologies vertes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6735,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7119,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7205,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en Sustainability (technologies vertes, IT écoresponsable, économie circulaire)] IT écoresponsable",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5696,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5883,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6258,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5696, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en Sustainability (technologies vertes, IT écoresponsable, économie circulaire)] réduction de l'impact carbone",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6937,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.7263,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7442,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expertise en Sustainability (technologies vertes, IT écoresponsable, économie circulaire)] économie circulaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5461,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6003,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.656,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5461, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des consultants techniques] collaboration technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5656,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5954,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6121,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5656, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des consultants techniques] synergie commercial-technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6491,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6535,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6783,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6491, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des consultants techniques] expertise technique partagée",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4701,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4731,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4791,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4701, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création de propositions commerciales personnalisées] propositions commerciales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4418,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5302,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5422,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4418, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création de propositions commerciales personnalisées] personnalisation des offres",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5133,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5167,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5414,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5133, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Création de propositions commerciales personnalisées] réponse aux besoins clients",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4101,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4124,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4891,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4101, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Réseautage professionnel et engagement dans des événements] réseautage professionnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5317,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5527,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5574,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5317, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Réseautage professionnel et engagement dans des événements] participation à des événements",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6381,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6769,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6825,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6381, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Réseautage professionnel et engagement dans des événements] représentation en public",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6753,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7028,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7046,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Orientation client et relation avec les décideurs] orientation client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5085,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6341,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.652,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5085, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Orientation client et relation avec les décideurs] relation avec les décideurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5368,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.539,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5682,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5368, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Orientation client et relation avec les décideurs] création de relations solides",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6675,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.68,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7607,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6675, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance du marché suisse] marché suisse",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.4053,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.537,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5709,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4053, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance du marché suisse] réseau établi en Suisse",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3371,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.4238,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.5133,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3371, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des langues (français, anglais)] français natif",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5178,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::nationality_visa",
+          "distance": 0.5389,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5867,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5178, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des langues (français, anglais)] anglais professionnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.3648,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6207,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6447,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3648, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Expertise en cybersécurité (sécurité cloud, gouvernance, tests d'intrusion)",
+    "Expertise en Sustainability (technologies vertes, IT écoresponsable, économie circulaire)",
+    "Réseautage professionnel et engagement dans des événements"
+  ]
+}

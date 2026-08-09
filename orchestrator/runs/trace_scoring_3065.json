@@ -1,0 +1,683 @@
+{
+  "offer_id": 3065,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneve",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Enterprise Architecture dans le secteur bancaire] Enterprise Architecture",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5214,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5616,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5752,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5214, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Enterprise Architecture dans le secteur bancaire] secteur bancaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6211,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6358,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6982,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6211, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Governance et conformité réglementaire bancaire (FINMA, BCBS 239, RGPD)] Data Governance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5421,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5549,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5617,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5421, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Governance et conformité réglementaire bancaire (FINMA, BCBS 239, RGPD)] FINMA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7208,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7285,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7446,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Governance et conformité réglementaire bancaire (FINMA, BCBS 239, RGPD)] BCBS 239",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6543,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7049,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7438,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6543, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Governance et conformité réglementaire bancaire (FINMA, BCBS 239, RGPD)] RGPD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6895,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6907,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7125,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Governance et conformité réglementaire bancaire (FINMA, BCBS 239, RGPD)] conformité réglementaire bancaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5802,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6163,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6263,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5802, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Modelling (modèles de données de référence, Golden Sources)] Data Modelling",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4956,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5102,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5325,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4956, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Modelling (modèles de données de référence, Golden Sources)] modèles de données de référence",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4789,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4825,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5009,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4789, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Data Modelling (modèles de données de référence, Golden Sources)] Golden Sources",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.745,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7667,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.8038,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cartographie fonctionnelle du système d'information] cartographie fonctionnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6212,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6219,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6681,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6212, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cartographie fonctionnelle du système d'information] système d'information",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4728,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.535,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5646,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4728, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec Business Analysts et Solution Architects] Business Analysts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4861,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5038,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5538,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4861, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec Business Analysts et Solution Architects] Solution Architects",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4819,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5352,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5706,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4819, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec Business Analysts et Solution Architects] collaboration inter-équipes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.643,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6431,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6443,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6430, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Définition des standards d'architecture d'entreprise] standards d'architecture d'entreprise",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5006,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5262,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5419,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5006, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Définition des standards d'architecture d'entreprise] adoption des standards",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5147,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.579,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.598,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5147, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion du cycle de vie des données (de bout en bout)] cycle de vie des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5376,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5752,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6171,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5376, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion du cycle de vie des données (de bout en bout)] systèmes transactionnels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5823,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6375,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.65,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5823, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion du cycle de vie des données (de bout en bout)] plateformes analytiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4729,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4759,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5006,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4729, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bilinguisme français et anglais (communication professionnelle)] français",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5094,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::nationality_visa",
+          "distance": 0.5368,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5813,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5094, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bilinguisme français et anglais (communication professionnelle)] anglais",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.4731,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7085,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7094,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4731, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bilinguisme français et anglais (communication professionnelle)] communication professionnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5609,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6028,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6037,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5609, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des processus métiers et flux d'information] processus métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4445,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4915,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5128,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4445, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des processus métiers et flux d'information] flux d'information",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5634,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5637,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5948,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5634, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des processus métiers et flux d'information] analyse fonctionnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5443,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5569,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5916,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5443, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance des données critiques en environnement réglementé] gouvernance des données critiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4307,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.453,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4545,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4307, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance des données critiques en environnement réglementé] environnement réglementé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5138,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.547,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5567,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5138, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Data Governance et conformité réglementaire bancaire (FINMA, BCBS 239, RGPD)",
+    "Data Modelling (modèles de données de référence, Golden Sources)"
+  ]
+}

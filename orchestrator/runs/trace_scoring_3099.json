@@ -1,0 +1,799 @@
+{
+  "offer_id": 3099,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "lausanne",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement backend avec C# et .NET] C#",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.655,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7703,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7949,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6550, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement backend avec C# et .NET] .NET",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6266,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6767,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.689,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6266, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement backend avec C# et .NET] développement backend",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4712,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5027,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5288,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4712, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement frontend avec Vue.js] Vue.js",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7383,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7519,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.7585,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement frontend avec Vue.js] développement frontend",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5309,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.534,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.571,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5309, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement frontend avec Vue.js] framework frontend moderne",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4971,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5651,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5764,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4971, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données PostgreSQL et optimisation] PostgreSQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.526,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6356,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6804,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5260, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données PostgreSQL et optimisation] SGBD relationnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.678,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6819,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6883,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données PostgreSQL et optimisation] optimisation de bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4389,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4392,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5123,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4389, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données PostgreSQL et optimisation] schémas de base de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5303,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5376,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5445,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5303, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données PostgreSQL et optimisation] performances de bases de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4375,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4397,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5165,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4375, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bases de données PostgreSQL et optimisation] migrations de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5594,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.6131,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6181,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5594, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation d'agents IA et développement assisté par IA] agents IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5296,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6175,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation d'agents IA et développement assisté par IA] développement assisté par IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4584,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4663,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4686,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4584, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation d'agents IA et développement assisté par IA] génération de code par IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4825,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4991,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5006,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4825, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation d'agents IA et développement assisté par IA] tests automatisés par IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4316,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4317,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4455,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4316, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Utilisation d'agents IA et développement assisté par IA] migration legacy par IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5409,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5417,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.5548,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5409, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de développement et DevOps] Git",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.735,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7624,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7916,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de développement et DevOps] tests automatisés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4716,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4975,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5051,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4716, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de développement et DevOps] intégration continue",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6027,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6319,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6329,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6027, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de développement et DevOps] DevOps",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6656,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7017,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7084,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6656, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils de développement et DevOps] infrastructures",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4928,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.602,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.684,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4928, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture logicielle et conception] architecture logicielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4792,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4947,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.508,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4792, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture logicielle et conception] conception d'applications",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4029,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4213,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.484,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4029, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture logicielle et conception] choix d'architecture",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5601,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5718,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5941,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5601, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Qualité du code et bonnes pratiques] revues de code",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4286,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5205,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5467,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4286, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Qualité du code et bonnes pratiques] qualité du code",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5039,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5806,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5933,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5039, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Qualité du code et bonnes pratiques] bonnes pratiques de développement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4905,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5557,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5639,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4905, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes métier] traduction des besoins métier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4467,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.4783,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4895,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4467, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec les équipes métier] collaboration métier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5526,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5837,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5526, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience ERP et migration de systèmes legacy] ERP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6418,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6446,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6702,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6418, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience ERP et migration de systèmes legacy] migration de systèmes legacy",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6284,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6419,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.6566,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6284, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité applicative] sécurité applicative",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.538,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5837,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5999,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5380, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Développement frontend avec Vue.js",
+    "Bases de données PostgreSQL et optimisation",
+    "Outils de développement et DevOps"
+  ]
+}

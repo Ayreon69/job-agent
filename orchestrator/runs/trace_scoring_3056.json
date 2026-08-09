@@ -1,0 +1,891 @@
+{
+  "offer_id": 3056,
+  "geography_verdict": {
+    "zone": "autre_france",
+    "priority_rank": null,
+    "mobility_signal_allowed": false,
+    "matched_keyword": null,
+    "match_method": "aucun"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en France hors Rhône-Alpes, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3167,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3601,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.394,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3167, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des modèles de langage (LLM) et outils associés (GPT, Claude, Mistral, Llama, Gemini)] LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5624,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6051,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6565,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5624, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des modèles de langage (LLM) et outils associés (GPT, Claude, Mistral, Llama, Gemini)] GPT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7174,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.721,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.7284,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des modèles de langage (LLM) et outils associés (GPT, Claude, Mistral, Llama, Gemini)] Claude",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6929,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "constraints::nationality_visa",
+          "distance": 0.7008,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7145,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des modèles de langage (LLM) et outils associés (GPT, Claude, Mistral, Llama, Gemini)] Mistral",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7007,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7088,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des modèles de langage (LLM) et outils associés (GPT, Claude, Mistral, Llama, Gemini)] Llama",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7252,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7347,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.7549,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des modèles de langage (LLM) et outils associés (GPT, Claude, Mistral, Llama, Gemini)] Gemini",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7637,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.8237,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.833,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des modèles de langage (LLM) et outils associés (GPT, Claude, Mistral, Llama, Gemini)] modèles de langage",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.4808,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5425,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5958,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4808, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Prompt engineering avancé] prompt engineering",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5259,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5865,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5259, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et orchestration d'agents IA (RAG, function calling, orchestration multi-agents)] agents IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5296,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6175,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et orchestration d'agents IA (RAG, function calling, orchestration multi-agents)] RAG",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7246,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7449,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et orchestration d'agents IA (RAG, function calling, orchestration multi-agents)] function calling",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6975,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.701,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7286,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et orchestration d'agents IA (RAG, function calling, orchestration multi-agents)] orchestration multi-agents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6383,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6389,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6443,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6383, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et orchestration d'agents IA (RAG, function calling, orchestration multi-agents)] IA agentique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5046,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.517,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5201,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5046, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en Python pour scripts, API et automatisation] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en Python pour scripts, API et automatisation] scripts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5161,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5831,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5995,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5161, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en Python pour scripts, API et automatisation] API",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4219,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5355,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5644,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4219, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement en Python pour scripts, API et automatisation] automatisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3734,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4765,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3734, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité des données et conformité (RGPD, gouvernance IA)] RGPD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6895,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6907,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7125,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité des données et conformité (RGPD, gouvernance IA)] sécurité des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5853,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.605,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6081,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5853, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité des données et conformité (RGPD, gouvernance IA)] gouvernance IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5978,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5998,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5999,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5978, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité des données et conformité (RGPD, gouvernance IA)] confidentialité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6672,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6901,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6989,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6672, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données et génération de gains de productivité mesurables] analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4916,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5031,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4776, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données et génération de gains de productivité mesurables] gains de productivité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6485,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.655,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6735,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6485, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse de données et génération de gains de productivité mesurables] mesure de performance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5008,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5245,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5608,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5008, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation numérique et conduite du changement] transformation numérique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6202,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6368,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6568,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6202, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation numérique et conduite du changement] conduite du changement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5032,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5427,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6376,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5032, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Transformation numérique et conduite du changement] adoption technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5464,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5496,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5514,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5464, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et curiosité pour les innovations en IA] veille technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5358,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5861,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5358, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et curiosité pour les innovations en IA] innovation IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5889,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5985,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.622,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5889, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Veille technologique et curiosité pour les innovations en IA] évolution technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6191,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6389,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6414,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6191, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets et animation de communautés (IA, cas d'usage)] gestion de projets",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4843,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5434,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.55,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4843, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets et animation de communautés (IA, cas d'usage)] animation de communauté",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5846,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6245,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6486,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5846, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets et animation de communautés (IA, cas d'usage)] cas d'usage IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4461,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5284,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5313,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4461, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Éthique et responsabilité en IA (biais, transparence, responsabilité)] éthique IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5722,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6261,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6431,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5722, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Éthique et responsabilité en IA (biais, transparence, responsabilité)] biais algorithmiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4858,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4936,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5315,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4858, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Éthique et responsabilité en IA (biais, transparence, responsabilité)] transparence IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5797,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5971,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6197,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5797, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Éthique et responsabilité en IA (biais, transparence, responsabilité)] responsabilité IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4572,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4995,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5017,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4572, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Maîtrise des modèles de langage (LLM) et outils associés (GPT, Claude, Mistral, Llama, Gemini)",
+    "Conception et orchestration d'agents IA (RAG, function calling, orchestration multi-agents)",
+    "Sécurité des données et conformité (RGPD, gouvernance IA)"
+  ]
+}

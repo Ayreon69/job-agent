@@ -1,0 +1,798 @@
+{
+  "offer_id": 3096,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "lausanne",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[coaching individuel et accompagnement personnalisé (CV, LinkedIn, présentation professionnelle)] coaching individuel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6102,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.656,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.6757,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6102, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[coaching individuel et accompagnement personnalisé (CV, LinkedIn, présentation professionnelle)] accompagnement personnalisé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5104,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5414,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5454,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5104, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[coaching individuel et accompagnement personnalisé (CV, LinkedIn, présentation professionnelle)] optimisation CV",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5117,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5565,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5607,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5117, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[coaching individuel et accompagnement personnalisé (CV, LinkedIn, présentation professionnelle)] optimisation LinkedIn",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6445,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6532,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6661,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6445, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[coaching individuel et accompagnement personnalisé (CV, LinkedIn, présentation professionnelle)] présentation professionnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.562,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6017,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6105,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5620, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[facilitation de groupes et animation d'ateliers (présentiel et distanciel)] facilitation de groupes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6444,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6492,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6496,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6444, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[facilitation de groupes et animation d'ateliers (présentiel et distanciel)] animation d'ateliers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.553,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.647,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6593,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5530, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[facilitation de groupes et animation d'ateliers (présentiel et distanciel)] animation en présentiel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5756,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6653,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7195,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5756, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[facilitation de groupes et animation d'ateliers (présentiel et distanciel)] animation en distanciel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5751,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7095,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7168,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5751, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[facilitation de groupes et animation d'ateliers (présentiel et distanciel)] modération de coaching par les pairs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5912,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6981,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7137,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5912, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[stratégie de repositionnement professionnel (analyse de profil, ciblage du marché)] stratégie de repositionnement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4182,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5132,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5786,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4182, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[stratégie de repositionnement professionnel (analyse de profil, ciblage du marché)] analyse de profil professionnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4708,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4872,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5183,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4708, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[stratégie de repositionnement professionnel (analyse de profil, ciblage du marché)] ciblage du marché de l'emploi",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4901,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5173,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5323,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4901, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[suivi et reporting (indicateurs de réintégration, documentation des parcours, rapports pour le canton)] suivi des indicateurs de réintégration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4732,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.518,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5754,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4732, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[suivi et reporting (indicateurs de réintégration, documentation des parcours, rapports pour le canton)] documentation des parcours professionnels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5375,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5389,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5454,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5375, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[suivi et reporting (indicateurs de réintégration, documentation des parcours, rapports pour le canton)] rédaction de rapports",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5235,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5326,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5496,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5235, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[suivi et reporting (indicateurs de réintégration, documentation des parcours, rapports pour le canton)] reporting pour le canton",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.4768,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.4771,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5202,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4768, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[expérience en reconversion professionnelle ou accompagnement de profils en rupture de parcours] reconversion professionnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5286,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6002,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6017,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5286, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[expérience en reconversion professionnelle ou accompagnement de profils en rupture de parcours] accompagnement de profils en rupture de parcours",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.481,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4854,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5547,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4810, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[appétence pour l'IA et les outils numériques] intelligence artificielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4068,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4977,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4068, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[appétence pour l'IA et les outils numériques] outils numériques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4499,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5212,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5302,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4499, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[appétence pour l'IA et les outils numériques] utilisation d'outils d'IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3858,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.398,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4422,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3858, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[agilité, autonomie et esprit d'équipe] agilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5955,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6736,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.688,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5955, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[agilité, autonomie et esprit d'équipe] autonomie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5714,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.634,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6424,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5714, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[agilité, autonomie et esprit d'équipe] esprit d'équipe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7233,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7283,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.74,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[certification ICF (International Coaching Federation)] certification ICF",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5437,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6645,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6748,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5437, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[certification ICF (International Coaching Federation)] International Coaching Federation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.668,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.67,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7566,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6680, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation supérieure (HES, université ou équivalent)] formation supérieure",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5365,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5703,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5865,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5365, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation supérieure (HES, université ou équivalent)] HES",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7277,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7763,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7804,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation supérieure (HES, université ou équivalent)] université",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.685,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6975,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7201,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[formation supérieure (HES, université ou équivalent)] diplôme équivalent",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5421,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5736,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6199,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5421, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance du marché de l'emploi romand] marché de l'emploi romand",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.4915,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.5883,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5913,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4915, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance du marché de l'emploi romand] connaissance du marché de l'emploi suisse",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.442,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::nationality_visa",
+          "distance": 0.4657,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.4766,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4420, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "agilité, autonomie et esprit d'équipe",
+    "formation supérieure (HES, université ou équivalent)"
+  ]
+}

@@ -1,0 +1,1005 @@
+{
+  "offer_id": 3113,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "neuchatel",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance des données et politique des données (administration publique, normes nationales et internationales)] gouvernance des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4729,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4871,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5233,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4729, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance des données et politique des données (administration publique, normes nationales et internationales)] politique des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4348,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5308,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5377,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4348, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance des données et politique des données (administration publique, normes nationales et internationales)] administration publique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6693,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6803,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6857,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6693, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance des données et politique des données (administration publique, normes nationales et internationales)] normes nationales de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.475,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5085,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5275,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4750, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance des données et politique des données (administration publique, normes nationales et internationales)] normes internationales de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4975,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.523,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5389,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4975, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gouvernance des données et politique des données (administration publique, normes nationales et internationales)] gestion des parties prenantes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4987,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5033,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5364,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4987, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion stratégique des infrastructures de données (registres, plateformes de métadonnées, services d'accès aux données)] infrastructures de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.476,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4807,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5483,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4760, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion stratégique des infrastructures de données (registres, plateformes de métadonnées, services d'accès aux données)] registres de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5534,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5677,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6295,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5534, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion stratégique des infrastructures de données (registres, plateformes de métadonnées, services d'accès aux données)] plateformes de métadonnées",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4977,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4989,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5071,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4977, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion stratégique des infrastructures de données (registres, plateformes de métadonnées, services d'accès aux données)] services d'accès aux données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4643,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4709,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4758,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4643, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion stratégique des infrastructures de données (registres, plateformes de métadonnées, services d'accès aux données)] développement stratégique des infrastructures",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5383,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6086,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6265,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5383, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Science des données et intelligence artificielle (application dans la production statistique)] science des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4722,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5171,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5211,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4722, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Science des données et intelligence artificielle (application dans la production statistique)] intelligence artificielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4068,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.4977,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4068, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Science des données et intelligence artificielle (application dans la production statistique)] production statistique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5425,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5841,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6148,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5425, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Science des données et intelligence artificielle (application dans la production statistique)] transformation par la data",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5377,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5501,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5807,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5377, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets complexes de transformation (niveau direction générale)] gestion de projets complexes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4804,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5191,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5306,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4804, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets complexes de transformation (niveau direction générale)] transformation organisationnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6209,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.644,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6511,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6209, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets complexes de transformation (niveau direction générale)] conduite au niveau direction générale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5093,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5223,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5389,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5093, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Numérisation de l'administration (processus, structures et cadre légal)] numérisation de l'administration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.578,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5942,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5971,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5780, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Numérisation de l'administration (processus, structures et cadre légal)] processus administratifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5218,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5854,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.586,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5218, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Numérisation de l'administration (processus, structures et cadre légal)] structures administratives",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5871,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5972,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.62,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5871, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Numérisation de l'administration (processus, structures et cadre légal)] cadre légal de l'administration fédérale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6397,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6576,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6577,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6397, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Représentation et négociation (instances nationales et internationales, espaces de données)] représentation institutionnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5833,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5956,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6032,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5833, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Représentation et négociation (instances nationales et internationales, espaces de données)] négociation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6238,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.641,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6805,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6238, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Représentation et négociation (instances nationales et internationales, espaces de données)] instances nationales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5398,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5528,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6052,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5398, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Représentation et négociation (instances nationales et internationales, espaces de données)] instances internationales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5167,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5283,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.6072,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5167, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Représentation et négociation (instances nationales et internationales, espaces de données)] espaces de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.594,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.609,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6382,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5940, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Représentation et négociation (instances nationales et internationales, espaces de données)] utilisation secondaire des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4371,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5244,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5279,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4371, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Stratégie et développement organisationnel (membre du conseil de direction)] stratégie organisationnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5699,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5811,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5885,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5699, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Stratégie et développement organisationnel (membre du conseil de direction)] développement organisationnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5694,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5699,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5717,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5694, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Stratégie et développement organisationnel (membre du conseil de direction)] membre du conseil de direction",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6689,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6875,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7079,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6689, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion d'équipes et leadership (plus de 140 collaborateurs, 4 subordonnés directs)] gestion d'équipes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5781,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6046,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6088,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5781, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion d'équipes et leadership (plus de 140 collaborateurs, 4 subordonnés directs)] leadership",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6835,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.748,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7733,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion d'équipes et leadership (plus de 140 collaborateurs, 4 subordonnés directs)] management hiérarchique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5847,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6021,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6299,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5847, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Multilinguisme (langues officielles suisses et anglais C1 minimum)] français",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5094,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::nationality_visa",
+          "distance": 0.5368,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5813,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5094, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Multilinguisme (langues officielles suisses et anglais C1 minimum)] allemand",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.416,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.654,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.6608,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4160, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Multilinguisme (langues officielles suisses et anglais C1 minimum)] italien",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.6804,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6869,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6975,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Multilinguisme (langues officielles suisses et anglais C1 minimum)] anglais C1",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5309,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7122,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7258,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5309, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation académique en sciences des données, sciences naturelles ou sociales (doctorat apprécié)] diplôme universitaire en sciences naturelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.6159,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6237,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6413,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6159, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation académique en sciences des données, sciences naturelles ou sociales (doctorat apprécié)] diplôme universitaire en sciences sociales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5937,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.63,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.686,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5937, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation académique en sciences des données, sciences naturelles ou sociales (doctorat apprécié)] formation en sciences des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.3707,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4224,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4428,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3707, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation académique en sciences des données, sciences naturelles ou sociales (doctorat apprécié)] doctorat",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6432,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6537,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6901,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6432, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Gestion d'équipes et leadership (plus de 140 collaborateurs, 4 subordonnés directs)",
+    "Multilinguisme (langues officielles suisses et anglais C1 minimum)"
+  ]
+}

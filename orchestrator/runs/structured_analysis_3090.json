@@ -1,0 +1,53 @@
+{
+  "matches": [
+    {
+      "skill": "Développement logiciel en Python",
+      "matched_chunk_summary": "Maîtrise professionnelle de Python avec des bibliothèques comme pandas, numpy, scipy et scikit-learn, ainsi que des certifications DataCamp en Python avancé. Expérience en automatisation et traitement de données en pipeline."
+    },
+    {
+      "skill": "Conception et implémentation d'algorithmes d'apprentissage automatique",
+      "matched_chunk_summary": "Développement d'un modèle de machine learning en production pour prédire le churn (recall de 85%), avec scikit-learn et justification métier des choix statistiques. Expérience en machine learning appliqué et autonomie sur des projets de recherche appliquée."
+    },
+    {
+      "skill": "Traitement du langage naturel (NLP)",
+      "matched_chunk_summary": "Expérience intermédiaire en NLP audio via un pipeline Whisper pour la transcription (projet personnel). Prototypage d'un assistant interne basé sur l'API Mistral pour répondre aux questions sur les règles de commission."
+    },
+    {
+      "skill": "Modélisation et entraînement de modèles de langage (LLM)",
+      "matched_chunk_summary": "Utilisation directe des APIs Mistral et Claude pour du prototypage de chatbots (Gradio). Expérience quotidienne avec l'agentic coding (Claude Code, MCP) et compréhension pratique des LLM en production."
+    },
+    {
+      "skill": "Gestion de bases de données (SQL, NoSQL)",
+      "matched_chunk_summary": "Maîtrise avancée de SQL (requêtes complexes, optimisation) et expérience avec Snowflake (architecture ETL proche Medallion). Certifications DataCamp en SQL avancé."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Frameworks de deep learning (TensorFlow, PyTorch, Keras)",
+      "note": "Aucune expérience professionnelle ou projet concret avec ces frameworks. Expérience limitée à scikit-learn pour le machine learning classique."
+    },
+    {
+      "skill": "Architectures RAG (Retrieval-Augmented Generation)",
+      "note": "Notions théoriques uniquement, sans implémentation concrète. Pas d'expérience en chunking, embeddings ou évaluation de retrieval."
+    },
+    {
+      "skill": "Optimisation de modèles pour l'inférence",
+      "note": "Aucune mention d'optimisation spécifique pour l'inférence dans les projets réalisés. Expérience limitée au déploiement basique de modèles en production."
+    },
+    {
+      "skill": "Déploiement de modèles en production (Docker, Kubernetes)",
+      "note": "Notions de Docker et Kubernetes en cours d'apprentissage, sans déploiement réel en production. Expérience limitée à des outils comme Vercel pour des prototypes."
+    },
+    {
+      "skill": "Bonnes pratiques de développement logiciel (tests unitaires, CI/CD)",
+      "note": "Notions de CI/CD (GitHub Actions) en cours de formation, sans mise en pratique professionnelle. Aucune mention de tests unitaires dans les projets."
+    }
+  ],
+  "uncertain_flags": [
+    "Frameworks de deep learning (TensorFlow, PyTorch, Keras)",
+    "Architectures RAG (Retrieval-Augmented Generation)",
+    "Optimisation de modèles pour l'inférence",
+    "Déploiement de modèles en production (Docker, Kubernetes)",
+    "Bonnes pratiques de développement logiciel (tests unitaires, CI/CD)"
+  ]
+}

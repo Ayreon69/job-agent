@@ -1,0 +1,50 @@
+{
+  "matches": [
+    {
+      "skill": "Enterprise Architecture dans le secteur bancaire",
+      "matched_chunk_summary": "Structuration des pipelines ETL sur Snowflake selon une organisation en couches (staging vers core vers reporting), proche d'une architecture Medallion. Expérience en architecture de données, fiabilisation et gouvernance technique des données, maîtrise de Snowflake."
+    },
+    {
+      "skill": "Cartographie fonctionnelle du système d'information",
+      "matched_chunk_summary": "Structuration des pipelines ETL sur Snowflake en couches (staging vers core vers reporting), alignée sur une logique de cartographie des flux de données. Conception de tableaux de bord Power BI adoptés à l'échelle de l'entreprise, démontrant une compréhension des besoins métiers et des flux d'information."
+    },
+    {
+      "skill": "Collaboration avec Business Analysts et Solution Architects",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI alignés sur les KPIs métiers définis par la direction, adoptés par des audiences non-techniques. Création d'un outil de tarification autonome pour les équipes métier, démontrant une collaboration efficace avec les utilisateurs finaux."
+    },
+    {
+      "skill": "Analyse des processus métiers et flux d'information",
+      "matched_chunk_summary": "Développement d'un modèle de churn en production avec justification métier des choix statistiques. Refonte de la méthodologie de calcul des commissions et automatisation du suivi, réduisant le temps de traitement de 10h à 35 minutes. Création d'un outil de tarification autonome pour les équipes métier."
+    },
+    {
+      "skill": "Gestion du cycle de vie des données (de bout en bout)",
+      "matched_chunk_summary": "Développement d'un modèle de machine learning en production (churn) avec intégration dans des stratégies de fidélisation. Structuration de pipelines ETL sur Snowflake (staging vers core vers reporting) pour fiabiliser la production de rapports à grande échelle."
+    },
+    {
+      "skill": "Bilinguisme français et anglais (communication professionnelle)",
+      "matched_chunk_summary": "Français langue native. Anglais niveau B2, courant à l'écrit et à l'oral en contexte professionnel."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Data Governance et conformité réglementaire bancaire (FINMA, BCBS 239, RGPD)",
+      "note": "Expérience limitée à la gouvernance technique des données (ex: architecture Snowflake proche Medallion). Aucun élément fiable sur la maîtrise des cadres réglementaires bancaires (FINMA, BCBS 239) ou de la gouvernance formelle (comités, chartes)."
+    },
+    {
+      "skill": "Data Modelling (modèles de données de référence, Golden Sources)",
+      "note": "Expérience en modélisation de données pour des pipelines ETL et des tableaux de bord, mais aucun élément concret sur la conception de modèles de données de référence ou l'identification de 'Golden Sources' dans un contexte bancaire."
+    },
+    {
+      "skill": "Définition des standards d'architecture d'entreprise",
+      "note": "Expérience en architecture de données (Snowflake, pipelines ETL) et prototypage LLM, mais aucun élément sur la définition de standards d'architecture d'entreprise ou leur adoption à grande échelle."
+    },
+    {
+      "skill": "Gouvernance des données critiques en environnement réglementé",
+      "note": "Expérience en gestion de données sensibles (tableaux de bord Power BI, modèle de churn), mais aucun élément sur la gouvernance des données critiques dans un environnement bancaire réglementé (ex: conformité FINMA, BCBS 239)."
+    }
+  ],
+  "uncertain_flags": [
+    "Data Governance et conformité réglementaire bancaire (FINMA, BCBS 239, RGPD)",
+    "Data Modelling (modèles de données de référence, Golden Sources)"
+  ]
+}
