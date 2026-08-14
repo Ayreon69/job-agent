@@ -1,0 +1,1008 @@
+{
+  "offer_id": 3705,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "neuchatel",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en fabrication de produits médicamenteux stériles/parentéraux (préparation, remplissage et finition)] fabrication de produits médicamenteux stériles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6321,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7737,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.778,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6321, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en fabrication de produits médicamenteux stériles/parentéraux (préparation, remplissage et finition)] fabrication de produits parentéraux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5698,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6764,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6835,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5698, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en fabrication de produits médicamenteux stériles/parentéraux (préparation, remplissage et finition)] préparation de produits médicamenteux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5148,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6341,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6704,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5148, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en fabrication de produits médicamenteux stériles/parentéraux (préparation, remplissage et finition)] remplissage et finition stériles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7277,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7502,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.7882,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en fabrication de produits médicamenteux stériles/parentéraux (préparation, remplissage et finition)] flacons",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.707,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.725,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7468,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en fabrication de produits médicamenteux stériles/parentéraux (préparation, remplissage et finition)] seringues préremplies",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6281,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.663,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7116,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6281, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en fabrication de produits médicamenteux stériles/parentéraux (préparation, remplissage et finition)] cartouches",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7559,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7621,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7634,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des écarts et investigations (analyse des causes profondes, CAPA, évaluation d'impact produit)] écarts de fabrication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5459,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5465,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.5541,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5459, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des écarts et investigations (analyse des causes profondes, CAPA, évaluation d'impact produit)] investigations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7007,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7134,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7205,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des écarts et investigations (analyse des causes profondes, CAPA, évaluation d'impact produit)] analyse des causes profondes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5946,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7127,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7183,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5946, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des écarts et investigations (analyse des causes profondes, CAPA, évaluation d'impact produit)] CAPA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7135,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7313,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7317,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des écarts et investigations (analyse des causes profondes, CAPA, évaluation d'impact produit)] évaluation de l'impact produit",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6096,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6287,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6535,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6096, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vérification continue des procédés (CPV) et analyse de tendance des procédés] vérification continue des procédés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5299,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5429,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6079,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5299, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vérification continue des procédés (CPV) et analyse de tendance des procédés] CPV",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.6616,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6983,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7002,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6616, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vérification continue des procédés (CPV) et analyse de tendance des procédés] analyse de tendance des procédés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3898,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4896,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5152,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3898, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vérification continue des procédés (CPV) et analyse de tendance des procédés] capacité des procédés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3897,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4701,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4721,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3897, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évaluation des changements de fabrication et de procédé (impact technique et produit)] évaluation des changements de fabrication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4626,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4734,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5484,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4626, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évaluation des changements de fabrication et de procédé (impact technique et produit)] évaluation des changements de procédé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4042,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4267,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.478,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4042, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évaluation des changements de fabrication et de procédé (impact technique et produit)] impact technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7942,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7979,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.834,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évaluation des changements de fabrication et de procédé (impact technique et produit)] impact produit",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6509,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6931,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7238,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6509, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évaluation des changements de fabrication et de procédé (impact technique et produit)] contrôle des changements",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.505,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5372,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5913,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5050, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bonnes pratiques de fabrication (BPF) et traitement aseptique] BPF",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6672,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6848,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.737,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6672, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bonnes pratiques de fabrication (BPF) et traitement aseptique] bonnes pratiques de fabrication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5501,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5532,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5931,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5501, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Bonnes pratiques de fabrication (BPF) et traitement aseptique] traitement aseptique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6641,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7122,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7426,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6641, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité aux exigences réglementaires mondiales (biopharmacie)] exigences réglementaires mondiales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4311,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.466,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.4842,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4311, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité aux exigences réglementaires mondiales (biopharmacie)] conformité réglementaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.496,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5406,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5535,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4960, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité aux exigences réglementaires mondiales (biopharmacie)] biopharmacie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6643,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7195,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7496,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6643, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils d'évaluation des risques (pFMEA, Ishikawa)] pFMEA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.689,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6978,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7123,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils d'évaluation des risques (pFMEA, Ishikawa)] Ishikawa",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.7919,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.8264,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.8429,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils d'évaluation des risques (pFMEA, Ishikawa)] évaluation des risques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3987,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5207,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5354,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3987, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils d'évaluation des risques (pFMEA, Ishikawa)] outils d'évaluation des risques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3932,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4833,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5042,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3932, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils statistiques pour l'analyse des procédés (Minitab, JMP)] Minitab",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6666,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6687,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6734,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6666, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils statistiques pour l'analyse des procédés (Minitab, JMP)] JMP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6432,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6632,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6915,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6432, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils statistiques pour l'analyse des procédés (Minitab, JMP)] outils statistiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.4754,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5078,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5239,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4754, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Outils statistiques pour l'analyse des procédés (Minitab, JMP)] analyse des procédés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4268,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4875,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5021,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4268, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes transversales et partenaires externes (CMO)] collaboration transversale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5753,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5966,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6226,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5753, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes transversales et partenaires externes (CMO)] partenaires externes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6075,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6193,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.6225,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6075, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes transversales et partenaires externes (CMO)] CMO",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7082,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7383,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.747,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des équipes transversales et partenaires externes (CMO)] équipes pluridisciplinaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5727,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.62,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.6232,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5727, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation technique et revue des données de fabrication] documentation technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5417,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5538,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5743,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5417, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation technique et revue des données de fabrication] revue des données de fabrication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4102,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4418,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4576,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4102, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation technique et revue des données de fabrication] gestion de la documentation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5016,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5036,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5407,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5016, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Expérience en fabrication de produits médicamenteux stériles/parentéraux (préparation, remplissage et finition)",
+    "Gestion des écarts et investigations (analyse des causes profondes, CAPA, évaluation d'impact produit)",
+    "Évaluation des changements de fabrication et de procédé (impact technique et produit)",
+    "Outils d'évaluation des risques (pFMEA, Ishikawa)",
+    "Collaboration avec des équipes transversales et partenaires externes (CMO)"
+  ]
+}

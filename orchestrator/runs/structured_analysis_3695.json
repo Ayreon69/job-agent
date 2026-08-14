@@ -1,0 +1,49 @@
+{
+  "matches": [
+    {
+      "skill": "Intégration de fonctionnalités basées sur l'IA",
+      "matched_chunk_summary": "Prototypage d'un assistant interne basé sur l'API Mistral avec interface Gradio, démontrant une expérience concrète avec les APIs de LLM en production interne. Utilisation quotidienne de Claude Code et serveurs MCP pour des projets de développement assisté par agent."
+    },
+    {
+      "skill": "Gestion et normalisation des flux de données",
+      "matched_chunk_summary": "Structuration des pipelines ETL sur Snowflake selon une organisation en couches (staging vers core vers reporting), proche d'une architecture Medallion, démontrant une maîtrise de l'architecture de données et de Snowflake."
+    },
+    {
+      "skill": "Assurance de la scalabilité et robustesse des solutions",
+      "matched_chunk_summary": "Développement d'un modèle de machine learning en production pour prédire la résiliation des clients, avec un impact métier mesurable. Structuration de pipelines ETL sur Snowflake pour fiabiliser la production de rapports à grande échelle."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Développement backend avec Node.js et TypeScript",
+      "note": "Aucune expérience professionnelle ou projet concret mentionné avec Node.js ou TypeScript. Compétences listées comme notions uniquement."
+    },
+    {
+      "skill": "Architectures événementielles et microservices",
+      "note": "Aucune expérience directe avec des architectures événementielles ou microservices. Expérience limitée à des architectures de données inspirées de Medallion sur Snowflake."
+    },
+    {
+      "skill": "Déploiement et gestion d'infrastructures cloud AWS",
+      "note": "Notions uniquement en cloud AWS/Azure, sans déploiement en production ou gestion d'infrastructure."
+    },
+    {
+      "skill": "Conception et développement d'APIs",
+      "note": "Expérience limitée au prototypage d'un assistant interne via Gradio et APIs Mistral/Claude, sans développement d'APIs backend structurées (ex: FastAPI non maîtrisé)."
+    },
+    {
+      "skill": "Mise en place de pipelines CI/CD",
+      "note": "Aucune expérience concrète mentionnée avec GitHub Actions ou CI/CD. Compétence listée comme notion uniquement."
+    },
+    {
+      "skill": "Collaboration en équipe agile et méthodes de développement",
+      "note": "Aucune mention d'expérience en méthodes agiles (Scrum, Kanban) ou collaboration en équipe de développement."
+    }
+  ],
+  "uncertain_flags": [
+    "Développement backend avec Node.js et TypeScript",
+    "Conception et développement d'APIs",
+    "Déploiement et gestion d'infrastructures cloud AWS",
+    "Mise en place de pipelines CI/CD",
+    "Collaboration en équipe agile et méthodes de développement"
+  ]
+}
