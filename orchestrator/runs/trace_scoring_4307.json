@@ -1,0 +1,918 @@
+{
+  "offer_id": 4307,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneve",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Administration et configuration de Microsoft 365 (M365)] Microsoft 365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7081,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7597,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7735,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Administration et configuration de Microsoft 365 (M365)] M365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7263,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7364,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7414,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Administration et configuration de Microsoft 365 (M365)] administration Microsoft 365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6185,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6318,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7084,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6185, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Administration et configuration de Microsoft 365 (M365)] configuration Microsoft 365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6858,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7174,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7628,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et déploiement d'Azure Active Directory (Azure AD)] Azure Active Directory",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7205,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7491,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7712,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et déploiement d'Azure Active Directory (Azure AD)] Azure AD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6545,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6838,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6987,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6545, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et déploiement d'Azure Active Directory (Azure AD)] gestion Azure AD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5603,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6562,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6573,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5603, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion et déploiement d'Azure Active Directory (Azure AD)] déploiement Azure AD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6396,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6548,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6549,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6396, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité et conformité Microsoft 365 (Microsoft Defender, Purview, Compliance Manager)] Microsoft Defender",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7446,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7488,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.8025,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité et conformité Microsoft 365 (Microsoft Defender, Purview, Compliance Manager)] Microsoft Purview",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5848,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5935,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.658,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5848, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité et conformité Microsoft 365 (Microsoft Defender, Purview, Compliance Manager)] Compliance Manager",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5799,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5824,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5842,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5799, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité et conformité Microsoft 365 (Microsoft Defender, Purview, Compliance Manager)] sécurité Microsoft 365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7071,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7111,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7232,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité et conformité Microsoft 365 (Microsoft Defender, Purview, Compliance Manager)] conformité Microsoft 365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6649,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.68,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6976,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6649, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation avec PowerShell et Microsoft Graph API] PowerShell",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6612,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6977,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7038,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6612, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation avec PowerShell et Microsoft Graph API] Microsoft Graph API",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6043,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6194,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6463,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6043, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation avec PowerShell et Microsoft Graph API] automatisation PowerShell",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4586,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4963,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5526,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4586, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Automatisation avec PowerShell et Microsoft Graph API] scripting PowerShell",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6249,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6342,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6645,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6249, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des identités et des accès (IAM)] IAM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6621,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6957,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.698,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6621, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des identités et des accès (IAM)] Identity and Access Management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6516,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6992,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6992,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6516, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des identités et des accès (IAM)] gestion des identités",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5882,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5946,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6315,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5882, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des identités et des accès (IAM)] gestion des accès",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.524,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5347,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5401,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5240, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et gestion d'Exchange Online] Exchange Online",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6644,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7268,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7366,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6644, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et gestion d'Exchange Online] déploiement Exchange Online",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5696,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6129,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6342,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5696, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Déploiement et gestion d'Exchange Online] gestion Exchange Online",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6023,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6536,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6607,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6023, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Configuration et gestion de SharePoint Online et OneDrive] SharePoint Online",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6212,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6612,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7211,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6212, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Configuration et gestion de SharePoint Online et OneDrive] OneDrive",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.7853,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7869,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.8479,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Configuration et gestion de SharePoint Online et OneDrive] configuration SharePoint Online",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6004,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6328,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.704,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6004, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Configuration et gestion de SharePoint Online et OneDrive] gestion SharePoint Online",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6051,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6073,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6702,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6051, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support et résolution de problèmes liés à Microsoft 365] support Microsoft 365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.684,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7641,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.788,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support et résolution de problèmes liés à Microsoft 365] résolution de problèmes Microsoft 365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6697,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7236,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.726,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6697, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Support et résolution de problèmes liés à Microsoft 365] troubleshooting Microsoft 365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7094,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7752,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7904,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des licences et coûts Microsoft 365] licences Microsoft 365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7246,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7368,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7417,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des licences et coûts Microsoft 365] coûts Microsoft 365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7165,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7824,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7846,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des licences et coûts Microsoft 365] gestion des licences M365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6435,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6542,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6544,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6435, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration et communication avec Teams et Yammer] Microsoft Teams",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5868,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6542,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7206,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5868, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration et communication avec Teams et Yammer] Yammer",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.8346,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.8477,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.8484,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration et communication avec Teams et Yammer] collaboration Microsoft 365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6485,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6843,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6968,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6485, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration et communication avec Teams et Yammer] communication Microsoft 365",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.672,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7113,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7387,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    }
+  ],
+  "uncertain_flags": [
+    "Administration et configuration de Microsoft 365 (M365)",
+    "Gestion et déploiement d'Azure Active Directory (Azure AD)",
+    "Sécurité et conformité Microsoft 365 (Microsoft Defender, Purview, Compliance Manager)",
+    "Configuration et gestion de SharePoint Online et OneDrive",
+    "Support et résolution de problèmes liés à Microsoft 365",
+    "Connaissance des licences et coûts Microsoft 365",
+    "Collaboration et communication avec Teams et Yammer"
+  ]
+}
