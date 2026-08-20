@@ -1,0 +1,52 @@
+{
+  "matches": [
+    {
+      "skill": "modélisation statistique et apprentissage automatique",
+      "matched_chunk_summary": "Formation académique solide en statistiques et économétrie (Master ISFA, Licence Mathématiques appliquées). Expérience concrète en machine learning appliqué : développement d'un modèle de churn en production avec scikit-learn, optimisation des métriques (recall 85%) basée sur une logique métier (assurance)."
+    },
+    {
+      "skill": "détection d'anomalies et supervision en temps réel",
+      "matched_chunk_summary": "Expérience en modélisation prédictive (churn) avec mise en production, démontrant une capacité à concevoir des outils de supervision métier. Maîtrise de Playwright pour des interactions complexes (simulation humaine, contournement anti-bot), illustrant une sensibilité aux anomalies techniques."
+    },
+    {
+      "skill": "analyse et traitement des données",
+      "matched_chunk_summary": "Compétences avancées en SQL, Python (pandas, numpy), Power BI (DAX), et Snowflake (architecture ETL proche Medallion). Certifications DataCamp (Data Scientist/Analyst) couvrant Tableau, SQL avancé, et Python. Conception de tableaux de bord décisionnels adoptés à l'échelle de l'entreprise."
+    },
+    {
+      "skill": "veille technologique et innovation en data science",
+      "matched_chunk_summary": "Certifications récentes (2025) en data science/analytics. Expérience en architecture de données (Snowflake, organisation en couches) et prototypage d'outils innovants (tarification autonome pour les métiers). Familiarité avec les écosystèmes modernes (Claude Code, MCP)."
+    },
+    {
+      "skill": "gestion de volumes de données et scalabilité",
+      "matched_chunk_summary": "Structuration de pipelines ETL sur Snowflake avec une architecture en couches (staging/core/reporting) pour fiabiliser la production à grande échelle. Conception de tableaux de bord Power BI utilisés par l'ensemble des départements, démontrant une capacité à gérer des indicateurs sensibles."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "développement Python et bibliothèques data science",
+      "note": "Absence de maîtrise avérée des bibliothèques spécifiques à l'industrialisation (ex: FastAPI, Docker) ou du déploiement cloud (AWS/Azure en production), malgré une expérience solide en Python data science."
+    },
+    {
+      "skill": "industrialisation de prototypes et intégration continue",
+      "note": "Aucune expérience explicite en CI/CD (GitHub Actions) ou en industrialisation formelle de prototypes (ex: conteneurisation, tests automatisés). L'architecture Snowflake est inspirée de Medallion mais non certifiée."
+    },
+    {
+      "skill": "encadrement et mentorat d'équipes data",
+      "note": "Aucune mention d'expérience en encadrement de juniors, mentorat, ou participation à des revues de code en contexte professionnel. Les réalisations concernent principalement des projets autonomes ou techniques."
+    },
+    {
+      "skill": "communication et partage des connaissances",
+      "note": "Aucune preuve de formation de pairs, partage structuré de connaissances, ou animation d'ateliers. Les compétences en communication sont implicites (outils adoptés par les métiers) mais non documentées comme activité dédiée."
+    },
+    {
+      "skill": "conception de solutions sécurisées pour le traitement de données",
+      "note": "Aucune expérience spécifique en sécurité des données (ex: chiffrement, gestion des accès, conformité RGPD) ou en conception de solutions sécurisées au-delà de l'architecture technique (Snowflake)."
+    }
+  ],
+  "uncertain_flags": [
+    "développement Python et bibliothèques data science",
+    "industrialisation de prototypes et intégration continue",
+    "encadrement et mentorat d'équipes data",
+    "communication et partage des connaissances"
+  ]
+}

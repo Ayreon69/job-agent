@@ -1,0 +1,1009 @@
+{
+  "offer_id": 4416,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneve",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des réseaux sociaux et stratégie de contenu organique] stratégie de contenu organique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5824,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6336,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6387,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5824, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des réseaux sociaux et stratégie de contenu organique] gestion des réseaux sociaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6076,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6598,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6694,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6076, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des réseaux sociaux et stratégie de contenu organique] priorisation des canaux sociaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5679,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6335,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.656,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5679, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des réseaux sociaux et stratégie de contenu organique] contenu pertinent pour les réseaux sociaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6377,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6541,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6749,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6377, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[engagement communautaire et animation de communautés en ligne] engagement communautaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.598,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.663,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6719,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5980, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[engagement communautaire et animation de communautés en ligne] animation de communautés en ligne",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5493,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6018,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6339,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5493, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[engagement communautaire et animation de communautés en ligne] interaction avec les audiences",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6943,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6974,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6996,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[engagement communautaire et animation de communautés en ligne] modération de communautés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5406,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5856,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6133,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5406, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[création et édition de contenu pour les réseaux sociaux (textes, visuels, vidéos)] création de contenu",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4958,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5039,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5439,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4958, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[création et édition de contenu pour les réseaux sociaux (textes, visuels, vidéos)] rédaction pour les réseaux sociaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6036,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6133,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6347,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6036, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[création et édition de contenu pour les réseaux sociaux (textes, visuels, vidéos)] édition de visuels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6528,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.683,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6887,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6528, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[création et édition de contenu pour les réseaux sociaux (textes, visuels, vidéos)] montage vidéo",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5794,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6383,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7037,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5794, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[création et édition de contenu pour les réseaux sociaux (textes, visuels, vidéos)] contenu multiformat",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.588,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6274,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6385,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5880, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse de performance des campagnes et reporting sur les KPI des réseaux sociaux] analyse de performance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5146,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5179,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5294,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5146, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse de performance des campagnes et reporting sur les KPI des réseaux sociaux] reporting KPI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5699,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6726,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6904,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5699, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse de performance des campagnes et reporting sur les KPI des réseaux sociaux] métriques des réseaux sociaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6414,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.744,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7486,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6414, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse de performance des campagnes et reporting sur les KPI des réseaux sociaux] optimisation des campagnes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5694,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5859,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6261,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5694, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des algorithmes et bonnes pratiques des plateformes sociales (Facebook, Instagram, Twitter/X, LinkedIn, TikTok)] algorithmes des réseaux sociaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6166,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6188,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6555,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6166, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des algorithmes et bonnes pratiques des plateformes sociales (Facebook, Instagram, Twitter/X, LinkedIn, TikTok)] bonnes pratiques Facebook",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7167,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.723,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7521,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des algorithmes et bonnes pratiques des plateformes sociales (Facebook, Instagram, Twitter/X, LinkedIn, TikTok)] bonnes pratiques Instagram",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7754,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7783,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7939,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des algorithmes et bonnes pratiques des plateformes sociales (Facebook, Instagram, Twitter/X, LinkedIn, TikTok)] bonnes pratiques Twitter/X",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6553,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6563,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6643,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6553, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des algorithmes et bonnes pratiques des plateformes sociales (Facebook, Instagram, Twitter/X, LinkedIn, TikTok)] bonnes pratiques LinkedIn",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.669,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.675,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6951,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6690, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des algorithmes et bonnes pratiques des plateformes sociales (Facebook, Instagram, Twitter/X, LinkedIn, TikTok)] bonnes pratiques TikTok",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6329,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6556,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6708,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6329, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[sensibilisation et plaidoyer via les réseaux sociaux pour des causes humanitaires] sensibilisation via les réseaux sociaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6619,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6945,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7157,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6619, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[sensibilisation et plaidoyer via les réseaux sociaux pour des causes humanitaires] plaidoyer numérique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6372,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6519,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6531,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6372, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[sensibilisation et plaidoyer via les réseaux sociaux pour des causes humanitaires] communication humanitaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7143,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7194,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7266,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[sensibilisation et plaidoyer via les réseaux sociaux pour des causes humanitaires] mobilisation des soutiens",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6324,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6789,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7125,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6324, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets digitaux et coordination avec les équipes internes et externes] gestion de projets digitaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4675,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.489,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5402,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4675, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets digitaux et coordination avec les équipes internes et externes] coordination d'équipes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6722,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6823,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.694,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets digitaux et coordination avec les équipes internes et externes] collaboration interne",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5793,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.598,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6157,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5793, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets digitaux et coordination avec les équipes internes et externes] collaboration externe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5827,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6138,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6214,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5827, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[maîtrise des outils de gestion des réseaux sociaux (Hootsuite, Buffer, Meta Business Suite, etc.)] Hootsuite",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7685,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.788,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7962,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[maîtrise des outils de gestion des réseaux sociaux (Hootsuite, Buffer, Meta Business Suite, etc.)] Buffer",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6748,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6935,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7242,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[maîtrise des outils de gestion des réseaux sociaux (Hootsuite, Buffer, Meta Business Suite, etc.)] Meta Business Suite",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.569,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5722,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5953,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5690, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[maîtrise des outils de gestion des réseaux sociaux (Hootsuite, Buffer, Meta Business Suite, etc.)] outils de planification de contenu",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4252,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4905,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5375,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4252, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des enjeux liés à la diversité, l'inclusion et la prévention des discriminations] diversité et inclusion",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6889,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.7025,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.706,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des enjeux liés à la diversité, l'inclusion et la prévention des discriminations] prévention des discriminations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5998,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6357,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6362,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5998, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des enjeux liés à la diversité, l'inclusion et la prévention des discriminations] sensibilisation aux biais",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4478,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5168,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5483,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4478, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des enjeux liés à la diversité, l'inclusion et la prévention des discriminations] communication inclusive",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6718,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7044,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7087,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[expérience dans le secteur humanitaire ou associatif (un atout)] secteur humanitaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5823,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6503,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6644,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5823, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[expérience dans le secteur humanitaire ou associatif (un atout)] secteur associatif",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4976,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5741,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5913,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4976, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[expérience dans le secteur humanitaire ou associatif (un atout)] expérience ONG",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6082,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6462,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.662,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6082, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "engagement communautaire et animation de communautés en ligne",
+    "connaissance des algorithmes et bonnes pratiques des plateformes sociales (Facebook, Instagram, Twitter/X, LinkedIn, TikTok)",
+    "sensibilisation et plaidoyer via les réseaux sociaux pour des causes humanitaires",
+    "gestion de projets digitaux et coordination avec les équipes internes et externes",
+    "maîtrise des outils de gestion des réseaux sociaux (Hootsuite, Buffer, Meta Business Suite, etc.)",
+    "connaissance des enjeux liés à la diversité, l'inclusion et la prévention des discriminations"
+  ]
+}
