@@ -128,11 +128,51 @@ function zoneBadgeHtml(zone) {
 // SECTOR_SUGGESTIONS) — neutral badge styling, not a green/amber signal
 // like the zone badge, since it's descriptive rather than a verdict.
 function sectorBadgeHtml(sector) {
-  return sector ? `<span class="badge badge-sector">${escapeHtml(sector)}</span>` : '<span class="badge badge-gray">—</span>';
+  // title= carries the full label since the table truncates long ones with
+  // an ellipsis (dashboard.css .table-scroll .badge-sector).
+  return sector ? `<span class="badge badge-sector" title="${escapeHtml(sector)}">${escapeHtml(sector)}</span>` : '<span class="badge badge-gray">—</span>';
+}
+
+// jobs.published_at is stored verbatim in whichever format the source site
+// used (Hellowork: "DD/MM/YYYY", jobup.ch: French "DD mois AAAA" — see
+// storage/db.py's parse_published_at, which this mirrors). Displaying it
+// raw meant the table showed both formats side by side depending on which
+// source an offer came from — parse then reformat consistently instead.
+const MOIS_FR = {
+  janvier: 1, "février": 2, fevrier: 2, mars: 3, avril: 4, mai: 5,
+  juin: 6, juillet: 7, "août": 8, aout: 8, septembre: 9,
+  octobre: 10, novembre: 11, "décembre": 12, decembre: 12,
+};
+const PUBLISHED_AT_SLASH_RE = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
+const PUBLISHED_AT_FR_RE = /^(\d{1,2})\s+([a-zéû]+)\s+(\d{4})$/i;
+
+function parsePublishedAt(raw) {
+  if (!raw) return null;
+  const trimmed = raw.trim();
+
+  const slashMatch = trimmed.match(PUBLISHED_AT_SLASH_RE);
+  if (slashMatch) {
+    const [, day, month, year] = slashMatch.map(Number);
+    const date = new Date(Date.UTC(year, month - 1, day));
+    return Number.isNaN(date.getTime()) ? null : date;
+  }
+
+  const frMatch = trimmed.match(PUBLISHED_AT_FR_RE);
+  if (frMatch) {
+    const [, dayStr, monthName, yearStr] = frMatch;
+    const month = MOIS_FR[monthName.toLowerCase()];
+    if (month === undefined) return null;
+    const date = new Date(Date.UTC(Number(yearStr), month - 1, Number(dayStr)));
+    return Number.isNaN(date.getTime()) ? null : date;
+  }
+
+  return null;
 }
 
 function formatPublishedAt(publishedAt) {
-  return publishedAt ? escapeHtml(publishedAt) : "—";
+  const date = parsePublishedAt(publishedAt);
+  if (!date) return publishedAt ? escapeHtml(publishedAt) : "—";
+  return date.toLocaleDateString("fr-FR", { year: "numeric", month: "short", day: "numeric" });
 }
 
 function formatFirstSeenAt(firstSeenAt) {
@@ -347,8 +387,8 @@ function renderTable() {
       <td>${STATUS_LABELS[offer.status] || offer.status}</td>
       <td class="verdict-cell">${verdictPillHtml(offer)}</td>
       <td class="flags">${flagsHtml(offer)}</td>
-      <td>${formatPublishedAt(offer.published_at)}</td>
-      <td>${formatFirstSeenAt(offer.first_seen_at)}</td>
+      <td class="col-date">${formatPublishedAt(offer.published_at)}</td>
+      <td class="col-date">${formatFirstSeenAt(offer.first_seen_at)}</td>
     `;
     tr.querySelector(".verdict-pill")?.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -508,6 +548,15 @@ function buildSwipeQueue() {
   renderSwipeStack();
 }
 
+// Prefers the offer's own publication date (source's wording, as-is — same
+// choice as the table); falls back to "vue le" (first_seen_at) when the
+// source gave no usable date at all, so the card never shows a bare "—".
+function swipeCardDateLabel(offer) {
+  if (offer.published_at) return `Publiée le ${formatPublishedAt(offer.published_at)}`;
+  if (offer.first_seen_at) return `Vue le ${formatFirstSeenAt(offer.first_seen_at)}`;
+  return "Date inconnue";
+}
+
 function swipeCardSkeleton(offer, depth) {
   return `
     <article class="swipe-card" data-offer-id="${offer.id}" data-depth="${depth}">
@@ -521,6 +570,7 @@ function swipeCardSkeleton(offer, depth) {
         <h2>${escapeHtml(offer.title)}</h2>
         <p class="swipe-card__company">${escapeHtml(offer.company || "—")}</p>
         <div class="swipe-card__badges">${zoneBadgeHtml(offer.geography_zone)}${sectorBadgeHtml(offer.sector)}${offer.status === "a_valider_geographie" ? '<span class="badge badge-amber">⚠️ Géo à valider</span>' : ""}</div>
+        <p class="swipe-card__date">${swipeCardDateLabel(offer)}</p>
       </header>
       <div class="swipe-card__body"><p class="loading">Chargement…</p></div>
     </article>

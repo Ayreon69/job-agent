@@ -138,9 +138,10 @@ Pour une offre donnée, du scraping à l'analyse finale :
 
 1. **Scraping** (`scraper/`) — Playwright visite les pages de résultats de
    recherche puis chaque page de détail, extrait titre/entreprise/lieu/
-   description/salaire/date, et insère en SQLite via `upsert_job` (ignoré
-   silencieusement si `(source, source_id)` existe déjà → pas de doublon au
-   re-scraping).
+   description/salaire/date, et insère en SQLite via `upsert_job` (pas de
+   doublon au re-scraping grâce à `UNIQUE(source, source_id)`) — si l'offre
+   existe déjà, ses champs scrapés sont rafraîchis avec les valeurs de ce
+   run, `status`/`user_verdict`/`scraped_at` restant intacts, voir §5.1).
 
 2. **Indexation du profil** (`scoring/embeddings/`) — étape indépendante,
    relancée à chaque changement des fichiers `scoring/profile/*.md` : parse
@@ -196,6 +197,7 @@ CREATE TABLE jobs (
     salary TEXT, experience TEXT, description TEXT,
     published_at TEXT,              -- format brut, varie selon la source
     scraped_at TEXT NOT NULL DEFAULT (datetime('now')),  -- 1ère apparition, jamais réécrit
+    last_seen_at TEXT NOT NULL DEFAULT (datetime('now')),  -- dernier scraping où l'offre est réapparue
     status TEXT NOT NULL DEFAULT 'nouveau',
     user_verdict TEXT,               -- tri manuel dashboard, voir plus bas
     UNIQUE(source, source_id)
@@ -210,13 +212,41 @@ avec le même `source_id` numérique ne se percutent jamais.
 
 `user_verdict` (`interessante` | `peut_etre` | `pas_interessante` | `NULL`)
 est un jugement **manuel** de l'utilisateur, saisi depuis le dashboard (tri
-façon swipe, §5.7) — jamais lu, calculé ni influencé par le pipeline de
+façon swipe, §5.6) — jamais lu, calculé ni influencé par le pipeline de
 scoring/génération, une donnée strictement humaine.
 
-`init_db()` applique des migrations explicites (`_migrate_add_status_column`,
-`_migrate_add_user_verdict_column`) pour les bases créées avant l'ajout de
+`last_seen_at`, contrairement à `scraped_at` (figé à la première apparition
+pour toujours) et à `published_at` (date affichée par la source, qui peut
+être republiée/rafraîchie sur une offre encore active — confirmé en direct
+sur une offre Hellowork réelle dont la date affichée avait changé un mois
+après le premier scraping), est **rafraîchi à chaque fois qu'une offre déjà
+connue réapparaît dans un scraping** (`upsert_job`, §5.1 plus bas). C'est le
+seul signal fiable de "cette offre est probablement encore active" —
+utilisé par `storage/cleanup.py` pour décider quoi supprimer.
+
+`init_db()` applique des migrations explicites
+(`_migrate_add_status_column`, `_migrate_add_user_verdict_column`,
+`_migrate_add_last_seen_at_column`) pour les bases créées avant l'ajout de
 ces colonnes — un simple `CREATE TABLE IF NOT EXISTS` ne touche pas une
-table déjà existante.
+table déjà existante. La migration de `last_seen_at` rétro-remplit depuis
+`scraped_at` (meilleure approximation disponible pour les lignes
+historiques) plutôt que de laisser la colonne à `NULL`.
+
+**`upsert_job`** ne fait plus un simple `INSERT OR IGNORE` (comportement
+jusqu'à la session 14) : si l'offre existe déjà (`source`+`source_id`), ses
+**champs scrapés** (`url`, `title`, `company`, `location`, `contract_type`,
+`salary`, `experience`, `description`, `published_at`) sont rafraîchis avec
+les valeurs de ce run, ainsi que `last_seen_at` — le scraper revisite déjà
+la page de détail à chaque run, y compris pour les offres déjà connues
+(voir `scraper/hellowork.py`/`jobup.py`), cette donnée fraîche n'était
+auparavant tout simplement pas persistée. Correctif motivé par un cas réel
+signalé par l'utilisateur : le tableau du dashboard affichait une date de
+publication figée à la première visite, alors que l'offre était republiée
+avec une date plus récente sur le site source (voir §8 pour le détail
+complet). **`status`, `user_verdict` et `scraped_at` (première apparition)
+ne sont en revanche jamais touchés** — ce sont des données propres à ce
+projet (statut du pipeline, jugement humain, historique), pas des données
+scrapées, un re-scraping ne doit jamais les écraser silencieusement.
 
 ### 5.2 `scoring/` — l'agent de scoring
 
@@ -495,9 +525,26 @@ apporterait, et builder/puller ~6.6GB n'apporterait rien de spécifique
 ici). Cron quotidien à 06:00 UTC (~08:00 Paris) + déclenchement manuel
 (`workflow_dispatch`). Enchaîne : build de l'index ChromaDB (reconstruit à
 chaque run depuis les fichiers source versionnés, jamais persisté
-lui-même) → scraper (Hellowork + jobup.ch) → orchestrateur batch → commit
-bot des fichiers modifiés (`storage/jobs.db` + `orchestrator/runs/`) avec
-le message `[skip ci]` pour ne pas redéclencher le workflow lui-même.
+lui-même) → scraper (Hellowork + jobup.ch, rafraîchit `last_seen_at` pour
+toute offre déjà connue qu'il retrouve) → **suppression des offres
+obsolètes** (`storage/cleanup.py`, voir ci-dessous) → orchestrateur batch →
+commit bot des fichiers modifiés (`storage/jobs.db` + `orchestrator/runs/`)
+avec le message `[skip ci]` pour ne pas redéclencher le workflow lui-même.
+
+**`storage/cleanup.py`** (`python -m storage.cleanup [--days 30]
+[--dry-run]`) supprime toute offre dont `last_seen_at` dépasse le seuil
+(30 jours par défaut) — ligne SQLite **et** ses fichiers associés dans
+`orchestrator/runs/` (analyse, structured_analysis, 3 traces), pour ne
+jamais laisser de fichiers orphelins référençant une offre disparue. Le
+choix de `last_seen_at` plutôt que `published_at` (essayé en premier, puis
+abandonné) est délibéré et vérifié en conditions réelles : `published_at`
+est la date affichée par la source, que certains sites republient/
+rafraîchissent sur une offre encore active (constaté directement — une
+offre Hellowork scrapée le 13/07 affichait "Publiée le 12/08" un mois plus
+tard) — elle ne reflète donc pas fiablement si une offre est toujours en
+ligne. **Décision assumée : aucune protection pour les offres déjà triées**
+(`user_verdict` non pris en compte) — une offre marquée "intéressante" est
+supprimée comme n'importe quelle autre une fois le seuil dépassé.
 
 **Persistance par commit, pas par cache/artifact** — décision volontaire
 (voir ROADMAP session 8) : un run GitHub Actions repart d'un checkout

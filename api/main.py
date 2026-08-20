@@ -43,7 +43,6 @@ import os
 import re
 import time
 from contextlib import asynccontextmanager
-from datetime import date
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Response
@@ -61,7 +60,7 @@ from api.schemas import (
     VerdictRequest,
     VerdictResponse,
 )
-from storage.db import USER_VERDICTS, connect, init_db, set_user_verdict
+from storage.db import USER_VERDICTS, connect, init_db, parse_published_at, set_user_verdict
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -135,51 +134,18 @@ def dashboard() -> FileResponse:
     return FileResponse(STATIC_DIR / "index.html")
 
 
-# published_at is stored verbatim, in whichever format the source site used
-# at scrape time (see scraper/hellowork.py and scraper/jobup.py) — NOT
-# normalized to one format at scrape time. Two formats exist in practice:
-# Hellowork's "DD/MM/YYYY" and jobup.ch's French "DD mois AAAA" (session
-# 11). Sorting the raw strings lexicographically mixes the two conventions
-# (e.g. "12 juillet" sorts before "13 juin" — alphabetical on the month
-# NAME, not the month number) — reported by the user after the first
-# published_at/first_seen_at dashboard rollout. Parsed here into a real
-# date, exposed as a separate ISO field the dashboard sorts on, while
-# published_at itself keeps being shown as-is (its exact source wording is
-# still useful to see, just not useful to sort by).
-_MOIS_FR = {
-    "janvier": 1, "février": 2, "fevrier": 2, "mars": 3, "avril": 4, "mai": 5,
-    "juin": 6, "juillet": 7, "août": 8, "aout": 8, "septembre": 9,
-    "octobre": 10, "novembre": 11, "décembre": 12, "decembre": 12,
-}
-_PUBLISHED_AT_SLASH_RE = re.compile(r"^(\d{1,2})/(\d{1,2})/(\d{4})$")
-_PUBLISHED_AT_FR_RE = re.compile(r"^(\d{1,2})\s+([a-zéû]+)\s+(\d{4})$", re.IGNORECASE)
-
-
-def _parse_published_at(raw: str | None) -> str | None:
-    if not raw:
-        return None
-    raw = raw.strip()
-
-    slash_match = _PUBLISHED_AT_SLASH_RE.match(raw)
-    if slash_match:
-        day, month, year = (int(g) for g in slash_match.groups())
-        try:
-            return date(year, month, day).isoformat()
-        except ValueError:
-            return None
-
-    fr_match = _PUBLISHED_AT_FR_RE.match(raw)
-    if fr_match:
-        day_str, month_name, year_str = fr_match.groups()
-        month = _MOIS_FR.get(month_name.lower())
-        if month is None:
-            return None
-        try:
-            return date(int(year_str), month, int(day_str)).isoformat()
-        except ValueError:
-            return None
-
-    return None
+# Sorting jobs.published_at's raw strings lexicographically mixes Hellowork's
+# "DD/MM/YYYY" and jobup.ch's French "DD mois AAAA" (e.g. "12 juillet" sorts
+# before "13 juin" — alphabetical on the month NAME, not the month number) —
+# reported by the user after the first published_at/first_seen_at dashboard
+# rollout. parse_published_at (storage/db.py — shared with storage/cleanup.py,
+# which needs the same parsing to decide an offer's real age) turns it into a
+# real date; _published_at_sortable below re-exposes that as the ISO string
+# the dashboard sorts on, while published_at itself keeps being shown as-is
+# (its exact source wording is still useful to see, just not useful to sort by).
+def _published_at_sortable(raw: str | None) -> str | None:
+    parsed = parse_published_at(raw)
+    return parsed.isoformat() if parsed else None
 
 
 def _load_offer_row(offer_id: int) -> dict:
@@ -346,7 +312,7 @@ def list_offers() -> list[OfferSummary]:
                 id=offer_id, title=r[1], location=r[2], company=r[3],
                 status=r[4], score=score, geography_zone=zone,
                 gaps_count=gaps_count, uncertain_count=uncertain_count,
-                published_at=r[5], published_at_sortable=_parse_published_at(r[5]),
+                published_at=r[5], published_at_sortable=_published_at_sortable(r[5]),
                 first_seen_at=r[6], user_verdict=r[7], sector=sector,
             )
         )
@@ -374,7 +340,7 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
         score=score,
         geography_zone=zone,
         published_at=offer["published_at"],
-        published_at_sortable=_parse_published_at(offer["published_at"]),
+        published_at_sortable=_published_at_sortable(offer["published_at"]),
         first_seen_at=offer["scraped_at"],
         user_verdict=offer["user_verdict"],
         sector=structured.get("sector") if structured else None,
