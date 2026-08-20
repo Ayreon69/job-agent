@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS jobs (
     published_at TEXT,
     scraped_at TEXT NOT NULL DEFAULT (datetime('now')),
     status TEXT NOT NULL DEFAULT 'nouveau',
+    user_verdict TEXT,
     UNIQUE(source, source_id)
 );
 """
@@ -39,6 +40,11 @@ CREATE TABLE IF NOT EXISTS jobs (
 #   echec                   - une étape a levé une exception ; voir la trace
 #                              orchestrateur pour le détail
 JOB_STATUSES = ("nouveau", "analyse", "a_valider_geographie", "echec")
+
+# Verdict manuel de l'utilisateur (dashboard, tri façon swipe) — indépendant
+# du score/statut calculés par le pipeline : c'est un jugement humain, jamais
+# recalculé ni influencé par l'agent. NULL = pas encore trié.
+USER_VERDICTS = ("interessante", "peut_etre", "pas_interessante")
 
 
 @dataclass
@@ -60,6 +66,7 @@ def init_db(db_path: Path = DEFAULT_DB_PATH) -> None:
     with connect(db_path) as conn:
         conn.executescript(SCHEMA)
         _migrate_add_status_column(conn)
+        _migrate_add_user_verdict_column(conn)
 
 
 def _migrate_add_status_column(conn: sqlite3.Connection) -> None:
@@ -70,6 +77,15 @@ def _migrate_add_status_column(conn: sqlite3.Connection) -> None:
     columns = {row[1] for row in conn.execute("PRAGMA table_info(jobs)").fetchall()}
     if "status" not in columns:
         conn.execute("ALTER TABLE jobs ADD COLUMN status TEXT NOT NULL DEFAULT 'nouveau'")
+
+
+def _migrate_add_user_verdict_column(conn: sqlite3.Connection) -> None:
+    """Same pattern as _migrate_add_status_column, for databases created
+    before the dashboard's swipe-triage feature existed.
+    """
+    columns = {row[1] for row in conn.execute("PRAGMA table_info(jobs)").fetchall()}
+    if "user_verdict" not in columns:
+        conn.execute("ALTER TABLE jobs ADD COLUMN user_verdict TEXT")
 
 
 @contextmanager
@@ -120,3 +136,13 @@ def set_job_status(conn: sqlite3.Connection, job_id: int, status: str) -> None:
     if status not in JOB_STATUSES:
         raise ValueError(f"Unknown job status {status!r}, expected one of {JOB_STATUSES}")
     conn.execute("UPDATE jobs SET status = ? WHERE id = ?", (status, job_id))
+
+
+def set_user_verdict(conn: sqlite3.Connection, job_id: int, verdict: str | None) -> None:
+    """Set (or clear, with verdict=None) the user's own manual triage
+    decision for an offer — never touched by the scoring/generation
+    pipeline, purely a human judgment recorded from the dashboard.
+    """
+    if verdict is not None and verdict not in USER_VERDICTS:
+        raise ValueError(f"Unknown user verdict {verdict!r}, expected one of {USER_VERDICTS} or None")
+    conn.execute("UPDATE jobs SET user_verdict = ? WHERE id = ?", (verdict, job_id))

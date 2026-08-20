@@ -58,8 +58,10 @@ from api.schemas import (
     HealthResponse,
     OfferDetailResponse,
     OfferSummary,
+    VerdictRequest,
+    VerdictResponse,
 )
-from storage.db import connect, init_db
+from storage.db import USER_VERDICTS, connect, init_db, set_user_verdict
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -183,7 +185,7 @@ def _parse_published_at(raw: str | None) -> str | None:
 def _load_offer_row(offer_id: int) -> dict:
     with connect() as conn:
         row = conn.execute(
-            "SELECT id, title, location, description, company, url, status, published_at, scraped_at "
+            "SELECT id, title, location, description, company, url, status, published_at, scraped_at, user_verdict "
             "FROM jobs WHERE id = ?",
             (offer_id,),
         ).fetchone()
@@ -192,7 +194,7 @@ def _load_offer_row(offer_id: int) -> dict:
     return {
         "id": row[0], "title": row[1], "location": row[2], "description": row[3],
         "company": row[4], "url": row[5], "status": row[6], "published_at": row[7],
-        "scraped_at": row[8],
+        "scraped_at": row[8], "user_verdict": row[9],
     }
 
 
@@ -324,7 +326,8 @@ def list_offers() -> list[OfferSummary]:
     """
     with connect() as conn:
         rows = conn.execute(
-            "SELECT id, title, location, company, status, published_at, scraped_at FROM jobs ORDER BY id"
+            "SELECT id, title, location, company, status, published_at, scraped_at, user_verdict "
+            "FROM jobs ORDER BY id"
         ).fetchall()
 
     summaries = []
@@ -340,7 +343,7 @@ def list_offers() -> list[OfferSummary]:
                 status=r[4], score=score, geography_zone=zone,
                 gaps_count=gaps_count, uncertain_count=uncertain_count,
                 published_at=r[5], published_at_sortable=_parse_published_at(r[5]),
-                first_seen_at=r[6],
+                first_seen_at=r[6], user_verdict=r[7],
             )
         )
     return summaries
@@ -369,6 +372,7 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
         published_at=offer["published_at"],
         published_at_sortable=_parse_published_at(offer["published_at"]),
         first_seen_at=offer["scraped_at"],
+        user_verdict=offer["user_verdict"],
         matches=structured["matches"] if structured else [],
         gaps=structured["gaps"] if structured else [],
         uncertain_flags=structured["uncertain_flags"] if structured else [],
@@ -377,6 +381,32 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
         scoring_trace=_read_json_trace(offer_id, "trace_scoring"),
         generation_trace=_read_json_trace(offer_id, "trace_generation"),
     )
+
+
+@app.post("/offers/{offer_id}/verdict", response_model=VerdictResponse)
+def set_offer_verdict(offer_id: int, request: VerdictRequest) -> VerdictResponse:
+    """Record (or clear) the user's own manual triage decision for an offer
+    — the dashboard's swipe UI. Pure human judgment: never read, computed,
+    or influenced by the scoring/generation pipeline, and available in both
+    API_MODE values (a plain SQLite write, no embedding model or LLM call
+    involved) — unlike POST /analyze, this isn't gated to "full" mode.
+
+    404 if the offer_id doesn't exist (same existence check as the other
+    offer endpoints); 422 (via Pydantic/FastAPI's own validation, not a
+    custom check here) if verdict isn't one of storage.db.USER_VERDICTS or
+    null.
+    """
+    _load_offer_row(offer_id)  # raises 404 if missing, discarding the row otherwise
+    if request.verdict is not None and request.verdict not in USER_VERDICTS:
+        raise HTTPException(
+            status_code=422,
+            detail=f"verdict invalide {request.verdict!r}, attendu un de {USER_VERDICTS} ou null",
+        )
+
+    with connect() as conn:
+        set_user_verdict(conn, offer_id, request.verdict)
+
+    return VerdictResponse(id=offer_id, user_verdict=request.verdict)
 
 
 @app.post("/analyze", response_model=AnalyzeResponse)

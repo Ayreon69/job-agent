@@ -197,6 +197,7 @@ CREATE TABLE jobs (
     published_at TEXT,              -- format brut, varie selon la source
     scraped_at TEXT NOT NULL DEFAULT (datetime('now')),  -- 1ère apparition, jamais réécrit
     status TEXT NOT NULL DEFAULT 'nouveau',
+    user_verdict TEXT,               -- tri manuel dashboard, voir plus bas
     UNIQUE(source, source_id)
 );
 ```
@@ -207,9 +208,15 @@ voir la trace orchestrateur pour le détail). La contrainte `UNIQUE(source,
 source_id)` est scopée par source, donc deux offres de sources différentes
 avec le même `source_id` numérique ne se percutent jamais.
 
-`init_db()` applique une migration explicite (`_migrate_add_status_column`)
-pour les bases créées avant l'ajout de la colonne `status` — un simple
-`CREATE TABLE IF NOT EXISTS` ne touche pas une table déjà existante.
+`user_verdict` (`interessante` | `peut_etre` | `pas_interessante` | `NULL`)
+est un jugement **manuel** de l'utilisateur, saisi depuis le dashboard (tri
+façon swipe, §5.7) — jamais lu, calculé ni influencé par le pipeline de
+scoring/génération, une donnée strictement humaine.
+
+`init_db()` applique des migrations explicites (`_migrate_add_status_column`,
+`_migrate_add_user_verdict_column`) pour les bases créées avant l'ajout de
+ces colonnes — un simple `CREATE TABLE IF NOT EXISTS` ne touche pas une
+table déjà existante.
 
 ### 5.2 `scoring/` — l'agent de scoring
 
@@ -353,14 +360,17 @@ de saturer le rate limit Mistral en traitement par lot.
 
 ### 5.6 `api/` — l'API HTTP et le dashboard
 
-**`api/main.py`** expose 4 endpoints, en pure exposition de ce que
-l'orchestrateur produit déjà (aucune nouvelle logique métier) :
+**`api/main.py`** expose 5 endpoints, en pure exposition de ce que
+l'orchestrateur produit déjà (aucune nouvelle logique métier) — à
+l'exception de `POST /offers/{id}/verdict`, qui écrit un jugement humain,
+jamais un résultat de pipeline :
 
 | Endpoint | Rôle |
 |---|---|
 | `GET /health` | 3 vérifications sans appel réseau : clé Mistral présente, modèle d'embeddings chargé, base accessible. `200` si tout passe, `503` sinon. |
-| `GET /offers` | Liste légère (statut, score, zone, dates, compteurs gaps/incertains) pour le dashboard. |
-| `GET /offers/{id}` | Détail complet : markdown, matches/gaps/uncertain_flags structurés, 3 traces JSON. 404 seulement si l'`offer_id` n'existe pas. |
+| `GET /offers` | Liste légère (statut, score, zone, dates, compteurs gaps/incertains, `user_verdict`) pour le dashboard. |
+| `GET /offers/{id}` | Détail complet : markdown, matches/gaps/uncertain_flags structurés, `user_verdict`, 3 traces JSON. 404 seulement si l'`offer_id` n'existe pas. |
+| `POST /offers/{id}/verdict` | Enregistre (ou efface, `verdict: null`) le tri manuel de l'utilisateur. Simple écriture SQLite, disponible dans les deux `API_MODE` (contrairement à `/analyze`, aucun modèle d'embedding ni appel LLM impliqué). |
 | `POST /analyze` | Relance le pipeline complet sur une offre déjà en base. Synchrone (~30-90s), désactivé (503) en mode `readonly`. |
 
 **Mode `API_MODE` (`full` | `readonly`)** — décision née d'une contrainte
@@ -373,13 +383,33 @@ concrètement : ~58MB RAM au repos en `readonly` contre ~750-920MB en
 sont placés à l'intérieur des fonctions plutôt qu'en haut de fichier — ce
 n'est pas un oubli, c'est la source réelle de l'économie mémoire.
 
-**`api/static/`** (session 9) — dashboard HTML/CSS/JS vanilla (pas de
-framework, choix délibéré pour un usage mono-page personnel), servi par
-`StaticFiles` de FastAPI. Table triable/filtrable par zone/statut, panneau
-de détail en accordéon inséré directement sous la ligne cliquée, lien vers
-l'offre originale, dates de publication et de première apparition en base
-triables chronologiquement (via un champ `published_at_sortable` calculé
-côté API, normalisant les deux formats de date des deux sources).
+**`api/static/`** (session 9, redesign + tri manuel ajoutés ensuite) —
+dashboard HTML/CSS/JS vanilla (pas de framework, choix délibéré pour un
+usage mono-page personnel), servi par `StaticFiles` de FastAPI. Deux vues,
+basculables par onglet (mémorisée en `localStorage`) :
+
+- **Tableau** : table triable/filtrable par zone/statut/avis, panneau de
+  détail en accordéon inséré directement sous la ligne cliquée, lien vers
+  l'offre originale, dates de publication et de première apparition en base
+  triables chronologiquement (via `published_at_sortable`, calculé côté API
+  en normalisant les deux formats de date des sources). Une colonne "Mon
+  avis" affiche le tri manuel de chaque offre et ouvre un petit menu pour le
+  changer sans quitter le tableau.
+- **Trier** (façon swipe) : les offres analysées et pas encore triées
+  (`user_verdict IS NULL`) sont présentées une par une, triées par score
+  décroissant, sous forme de pile de cartes avec profondeur. Glisser une
+  carte (Pointer Events — souris, tactile et stylet unifiés) déclenche un
+  tampon "OUI"/"NON"/"PEUT-ÊTRE" dont l'opacité suit la distance de
+  glissement ; relâcher au-delà du seuil envoie `POST
+  /offers/{id}/verdict` et fait s'envoler la carte, révélant la suivante.
+  Boutons et raccourcis clavier (`←`/`→`/`↑`, `Z` pour annuler) offrent le
+  même résultat sans glisser. Une pile "annuler" locale permet de revenir
+  sur la dernière décision (efface le verdict côté serveur et replace
+  l'offre en tête de pile).
+- Une barre de statistiques (Toutes / Non triées / Intéressantes / Peut-être
+  / Pas pour moi), toujours visible au-dessus des deux vues, sert à la fois
+  de résumé et de filtre rapide — cliquer une puce bascule sur le tableau
+  filtré sur ce tri.
 
 ## 6. Règles métier critiques
 
