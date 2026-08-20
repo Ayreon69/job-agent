@@ -65,6 +65,12 @@
           <option value="">Tous</option>
         </select>
       </label>
+      <label>
+        Secteur
+        <select id="filter-sector">
+          <option value="">Tous</option>
+        </select>
+      </label>
       <span id="offer-count" class="offer-count"></span>
     </section>
 
@@ -75,6 +81,7 @@
             <th data-sort="title">Titre</th>
             <th data-sort="company">Entreprise</th>
             <th data-sort="geography_zone">Zone</th>
+            <th data-sort="sector">Secteur</th>
             <th data-sort="score" class="sortable sorted-desc">Score</th>
             <th data-sort="status">Statut</th>
             <th>Mon avis</th>
@@ -84,7 +91,7 @@
           </tr>
         </thead>
         <tbody id="offers-body">
-          <tr><td colspan="9" class="loading">Chargement…</td></tr>
+          <tr><td colspan="10" class="loading">Chargement…</td></tr>
         </tbody>
       </table>
     </div>

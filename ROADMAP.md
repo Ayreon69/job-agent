@@ -2298,3 +2298,128 @@ relancer plus tard.
 `api/static/dashboard.js` (les trois derniers réécrits en quasi-totalité),
 `.claude/launch.json` (nouveau, config de lancement local pour le
 navigateur intégré), `DOCUMENTATION.md` (sections 5.1 et 5.6 mises à jour).
+
+## Correctif post-session 12 (2026-08-20) : tampons OUI/NON/PEUT-ÊTRE cachés derrière le score
+
+**Signalé par l'utilisateur** (capture d'écran à l'appui) après avoir testé
+la vue Trier lui-même : les tampons de verdict pendant le glissé n'étaient
+pas assez visibles, un fragment de lettre apparaissant derrière le badge de
+score. Cause réelle : `.swipe-card__stamp--no` (`top: 2rem; right: 1.5rem`)
+et `.swipe-card__score` (`top: 1.3rem; right: 1.3rem`) occupaient la même
+zone top-right de la carte, sans z-index explicite — le score, plus tardif
+dans le DOM, s'affichait par-dessus le tampon.
+
+**Corrigé** (`api/static/dashboard.css`) : les trois tampons repositionnés
+au centre vertical de la carte (`top: 50%`, translation/rotation par
+variante), avec fond plein (`var(--bg-elevated)`), bordure épaissie, ombre
+portée et `z-index: 6` explicite — au-dessus du score (`z-index: 1`
+ajouté) et du corps de carte. Comme un seul tampon est jamais visible à la
+fois (logique déjà existante dans `applyDragVisuals`, `dashboard.js`),
+partager le même point d'ancrage ne pose aucun problème de chevauchement
+entre eux.
+
+**Test réel effectué :** glissé simulé (`applyDragVisuals(card, -140, 0)`)
+dans le navigateur — `getBoundingClientRect()` du tampon "NON" et du score
+confirmés sans intersection, opacité et z-index vérifiés directement via
+`getComputedStyle`.
+
+## Session 13 (2026-08-20) : secteur d'activité par offre
+
+**Objectif :** afficher, quand c'est possible, le secteur d'activité de
+l'entreprise/offre (énergie, finance, assurance, secteur public,
+agroalimentaire...) — demandé par l'utilisateur après avoir testé le
+dashboard.
+
+**Décision — piggyback sur l'appel d'extraction existant, zéro coût LLM
+additionnel :** `scoring/agent.py::_extract_requirements` lit déjà la
+description complète de l'offre pour en extraire les compétences ; demander
+en plus un champ `sector` dans le même JSON ne coûte rien de plus (même
+appel, même latence). `SECTOR_SUGGESTIONS` (14 libellés courants) est donné
+en guidance dans le prompt pour limiter la fragmentation du futur filtre du
+dashboard (éviter "Assurance" / "Assurances" / "Secteur assurance" comme
+trois valeurs distinctes) — le LLM peut proposer un libellé court hors
+liste si aucun ne convient, ou `null` si le texte ne donne vraiment aucun
+indice.
+
+**Propagation :** `ScoringResult.sector` → `StructuredAnalysis.sector`
+(`generation/analysis.py`, copié tel quel, pas re-dérivé) →
+`structured_analysis_<id>.json` → `api/schemas.py`
+(`OfferSummary.sector`/`OfferDetailResponse.sector`) → `api/main.py` (lu
+via `.get("sector")`, pas `[...]`, pour rester compatible avec les fichiers
+écrits avant l'ajout de ce champ) → dashboard (colonne + filtre "Secteur"
+dans le tableau, badge sur les cartes de la vue Trier).
+
+**Backfill des 107 offres déjà scorées (`scoring/backfill_sector.py`,
+nouveau) :** un script autonome, volontairement **pas** un simple
+re-lancement de `orchestrator.run` sur toute la base — ça aurait relancé
+géographie/RAG/arbitrage final et écrasé les analyses/traces existantes
+pour backfiller un seul champ. À la place : un appel LLM léger par offre
+(réutilise `_extract_requirements`, aucune recherche RAG), qui ne patch que
+la clé `"sector"` dans `structured_analysis_<id>.json` — markdown, matches,
+gaps, traces intacts. Idempotent (`_needs_backfill` saute toute offre déjà
+classée), donc relançable sans redemander aux offres déjà traitées après
+un échec de rate limit.
+
+**Tests réels effectués :**
+1. **Extraction testée sur 3 offres réelles avant le backfill complet** :
+   résultats plausibles (`Technologie / IT`, `Conseil / ESN`,
+   `Agroalimentaire`) — vérification manuelle de l'offre 3 (N4Brands,
+   "acteur majeur de la nutrition sportive et du home fitness") contre son
+   classement "Agroalimentaire" : jugement défendable ancré dans le texte
+   réel, pas une fabrication, même si "Nutrition / Bien-être" aurait été
+   tout aussi valable — limite honnête d'une classification automatique,
+   pas un bug.
+2. **Backfill complet sur les 107 offres réelles**, en 3 passes à cause du
+   rate limit Mistral (le backoff intégré à `scoring/llm.py` absorbe
+   certains 429 mais pas tous en cas de rafale) : 95 classées au premier
+   run, 12 échecs (429 après épuisement des 3 tentatives) ; 2e run
+   (`--delay-seconds 3`) → 14 de plus, 1 échec restant ; 3e run → dernière
+   offre traitée, **0 échec final**. Confirme concrètement le design
+   idempotent : chaque relance n'a retraité que les offres manquantes,
+   jamais les 95+ déjà classées.
+3. **Distribution finale vérifiée** (lecture directe des 107
+   `structured_analysis_<id>.json`) : 105/107 offres avec un secteur
+   (23 Conseil/ESN, 17 Technologie/IT, 12 Finance, 9 Santé, 7 Industrie, 7
+   Transport/Logistique, etc., plus une dizaine de libellés hors liste
+   proposée comme "Jeux vidéo", "Bâtiments intelligents", "Luxe/Lifestyle"
+   — la liste de guidage n'empêche pas une classification plus précise
+   quand elle est justifiée), 2 offres à `null` (le texte ne donnait
+   vraiment aucun indice de secteur).
+4. **API et dashboard vérifiés dans le navigateur** contre le serveur réel
+   de l'utilisateur (déjà lancé, `--reload` actif) : `GET /offers` renvoie
+   bien `sector` pour chaque offre ; colonne "Secteur" et badge présents
+   dans le tableau ; menu déroulant du filtre peuplé des 20 valeurs
+   réellement présentes en base, triées alphabétiquement ; filtre testé sur
+   "Assurance" → 3 offres (correspond exactement au compte réel) ; badge
+   secteur visible sur les cartes de la vue Trier, à côté du badge de zone.
+
+**Bug trouvé et corrigé pendant ce test (sans rapport avec le secteur) :**
+`setView()` ne réappelait jamais `renderTable()` lors d'un retour vers la
+vue Tableau — seul `init()` le faisait, une seule fois, et seulement si la
+vue de démarrage (persistée en `localStorage` depuis la session 12) était
+déjà "table". Concrètement : un utilisateur revenant à l'onglet Tableau
+après avoir été sur Trier voyait le tableau bloqué sur "Chargement…" pour
+toujours — découvert en testant le nouveau filtre secteur, pas un problème
+introduit par cette session mais une régression silencieuse de la session
+12 restée invisible jusqu'ici (mes propres tests de session 12 n'étaient
+jamais partis de "swipe" comme vue persistée). Corrigé en déplaçant l'appel
+`renderTable()` dans `setView()` lui-même (branché sur `else` du test
+existant sur la vue swipe), plutôt que dans chaque appelant séparément —
+un seul endroit décide désormais quoi rendre à chaque changement de vue.
+Revérifié après correctif : bascule Trier → Tableau affiche immédiatement
+les 107 offres, plus de blocage.
+
+**Limite connue :** 2 offres sur 107 sans secteur déterminable par le LLM
+(texte insuffisant) — resteront `null` indéfiniment sauf nouveau run du
+backfill (qui les retente à chaque fois, contrairement aux offres déjà
+classées : comportement documenté, pas un bug — un `null` n'est jamais vu
+comme "déjà traité" par `_needs_backfill`, ce qui permet aussi de
+retenter automatiquement si une future version du prompt fait mieux).
+
+**Fichiers :** `scoring/agent.py` (`SECTOR_SUGGESTIONS`, prompt et
+`ScoringResult.sector`), `scoring/backfill_sector.py` (nouveau),
+`generation/analysis.py` (`StructuredAnalysis.sector`), `api/schemas.py`,
+`api/main.py`, `api/static/index.html`, `api/static/dashboard.css`,
+`api/static/dashboard.js` (bug `setView`/`renderTable` inclus),
+`tests/test_generation.py` (`ScoringResult` du test synthétique mis à jour
+avec `sector=None`), `DOCUMENTATION.md` (sections 5.2 et 5.4 mises à jour).

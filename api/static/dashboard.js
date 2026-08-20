@@ -124,6 +124,13 @@ function zoneBadgeHtml(zone) {
   return `<span class="badge ${cls}">${escapeHtml(ZONE_LABELS[zone] || zone)}</span>`;
 }
 
+// sector is a free-ish LLM-classified label (scoring/agent.py's
+// SECTOR_SUGGESTIONS) — neutral badge styling, not a green/amber signal
+// like the zone badge, since it's descriptive rather than a verdict.
+function sectorBadgeHtml(sector) {
+  return sector ? `<span class="badge badge-sector">${escapeHtml(sector)}</span>` : '<span class="badge badge-gray">—</span>';
+}
+
 function formatPublishedAt(publishedAt) {
   return publishedAt ? escapeHtml(publishedAt) : "—";
 }
@@ -152,6 +159,9 @@ function setView(view) {
     tab.setAttribute("aria-selected", String(tab.dataset.view === view));
   });
   if (view === "swipe") buildSwipeQueue();
+  else renderTable(); // re-render on every switch INTO table, not just at page load — a
+                       // switch from a persisted "swipe" view (localStorage) otherwise left
+                       // the table stuck on its initial "Chargement…" placeholder forever.
 }
 
 function wireViewSwitch() {
@@ -188,8 +198,7 @@ function wireStatStrip() {
     chip.addEventListener("click", () => {
       currentVerdictFilter = chip.dataset.verdictFilter;
       renderStatStrip();
-      setView("table"); // drilling into a bucket reads most naturally as a filtered list
-      renderTable();
+      setView("table"); // drilling into a bucket reads most naturally as a filtered list; renders the table itself
     });
   });
 }
@@ -201,6 +210,7 @@ function wireStatStrip() {
 function populateFilterOptions(offers) {
   const zoneSelect = document.getElementById("filter-zone");
   const statusSelect = document.getElementById("filter-status");
+  const sectorSelect = document.getElementById("filter-sector");
 
   for (const zone of new Set(offers.map((o) => o.geography_zone).filter(Boolean))) {
     const opt = document.createElement("option");
@@ -214,14 +224,24 @@ function populateFilterOptions(offers) {
     opt.textContent = STATUS_LABELS[status] || status;
     statusSelect.appendChild(opt);
   }
+  // Sorted alphabetically (unlike zone/status, sector isn't a small fixed
+  // set — a stable order makes a growing list scannable as it fills in).
+  for (const sector of [...new Set(offers.map((o) => o.sector).filter(Boolean))].sort((a, b) => a.localeCompare(b, "fr"))) {
+    const opt = document.createElement("option");
+    opt.value = sector;
+    opt.textContent = sector;
+    sectorSelect.appendChild(opt);
+  }
 }
 
 function applyFilters(offers) {
   const zone = document.getElementById("filter-zone").value;
   const status = document.getElementById("filter-status").value;
+  const sector = document.getElementById("filter-sector").value;
   return offers.filter((o) => {
     if (zone && o.geography_zone !== zone) return false;
     if (status && o.status !== status) return false;
+    if (sector && o.sector !== sector) return false;
     if (currentVerdictFilter === "__pending__") return isTriageable(o) && !o.user_verdict;
     if (currentVerdictFilter) return o.user_verdict === currentVerdictFilter;
     return true;
@@ -309,7 +329,7 @@ function renderTable() {
   document.getElementById("offer-count").textContent = `${sorted.length} offre(s)`;
 
   if (sorted.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="9" class="empty">Aucune offre ne correspond aux filtres.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="10" class="empty">Aucune offre ne correspond aux filtres.</td></tr>';
     return;
   }
 
@@ -322,6 +342,7 @@ function renderTable() {
       <td>${escapeHtml(offer.title)}</td>
       <td>${escapeHtml(offer.company || "—")}</td>
       <td>${zoneBadgeHtml(offer.geography_zone)}</td>
+      <td>${sectorBadgeHtml(offer.sector)}</td>
       <td>${offer.score === null || offer.score === undefined ? "—" : offer.score}</td>
       <td>${STATUS_LABELS[offer.status] || offer.status}</td>
       <td class="verdict-cell">${verdictPillHtml(offer)}</td>
@@ -344,7 +365,7 @@ function renderTable() {
       detailTr.className = "detail-row";
       detailTr.dataset.detailFor = offer.id;
       const td = document.createElement("td");
-      td.colSpan = 9;
+      td.colSpan = 10;
       td.innerHTML = '<div class="detail-panel"><p class="loading">Chargement du détail…</p></div>';
       detailTr.appendChild(td);
       tbody.appendChild(detailTr);
@@ -432,7 +453,7 @@ function renderDetail(panel, detail) {
   panel.innerHTML = `
     <h2>${escapeHtml(detail.title)}</h2>
     ${originalOfferLinkHtml(detail)}
-    <p class="detail-meta">${escapeHtml(detail.company || "—")} · ${zoneBadgeHtml(detail.geography_zone)} · ${STATUS_LABELS[detail.status] || detail.status} · Publiée le ${formatPublishedAt(detail.published_at)} · Vue pour la première fois le ${formatFirstSeenAt(detail.first_seen_at)}</p>
+    <p class="detail-meta">${escapeHtml(detail.company || "—")} · ${zoneBadgeHtml(detail.geography_zone)} · ${sectorBadgeHtml(detail.sector)} · ${STATUS_LABELS[detail.status] || detail.status} · Publiée le ${formatPublishedAt(detail.published_at)} · Vue pour la première fois le ${formatFirstSeenAt(detail.first_seen_at)}</p>
     ${verdictButtonsHtml(detail.id, detail.user_verdict)}
     <dl>
       <dt>Score</dt>
@@ -499,7 +520,7 @@ function swipeCardSkeleton(offer, depth) {
       <header class="swipe-card__head">
         <h2>${escapeHtml(offer.title)}</h2>
         <p class="swipe-card__company">${escapeHtml(offer.company || "—")}</p>
-        <div class="swipe-card__badges">${zoneBadgeHtml(offer.geography_zone)}${offer.status === "a_valider_geographie" ? '<span class="badge badge-amber">⚠️ Géo à valider</span>' : ""}</div>
+        <div class="swipe-card__badges">${zoneBadgeHtml(offer.geography_zone)}${sectorBadgeHtml(offer.sector)}${offer.status === "a_valider_geographie" ? '<span class="badge badge-amber">⚠️ Géo à valider</span>' : ""}</div>
       </header>
       <div class="swipe-card__body"><p class="loading">Chargement…</p></div>
     </article>
@@ -734,20 +755,20 @@ async function init() {
   wireSwipeControls();
   document.getElementById("filter-zone").addEventListener("change", renderTable);
   document.getElementById("filter-status").addEventListener("change", renderTable);
+  document.getElementById("filter-sector").addEventListener("change", renderTable);
 
   try {
     allOffers = await fetchOffers();
   } catch (err) {
     showError(`Impossible de charger les offres depuis l'API (${err.message}). Vérifiez que le serveur FastAPI est démarré.`);
-    document.getElementById("offers-body").innerHTML = '<tr><td colspan="9" class="empty">—</td></tr>';
+    document.getElementById("offers-body").innerHTML = '<tr><td colspan="10" class="empty">—</td></tr>';
     return;
   }
 
   populateFilterOptions(allOffers);
   updateSortHeaders();
   renderStatStrip();
-  setView(activeView);
-  if (activeView === "table") renderTable();
+  setView(activeView); // renders the table itself when activeView === "table"
 }
 
 init();

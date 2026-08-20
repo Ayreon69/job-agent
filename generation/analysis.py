@@ -98,10 +98,15 @@ class StructuredAnalysis:
       - uncertain_flags: [str]  (no per-item justification in ScoringResult —
         these are requirement labels the scoring agent couldn't find a
         reliable RAG match for, see DecisionTrace.flag_uncertain)
+      - sector: str | None  (the offer/company's business sector, extracted
+        by the same LLM call as the requirements — see
+        scoring/agent.py::_extract_requirements; null if the offer text
+        didn't give the LLM enough to determine one)
     """
     matches: list[dict]
     gaps: list[dict]
     uncertain_flags: list[str]
+    sector: str | None = None
 
 
 def _build_structured_analysis(result: ScoringResult) -> StructuredAnalysis:
@@ -114,7 +119,8 @@ def _build_structured_analysis(result: ScoringResult) -> StructuredAnalysis:
     matches = _validate_items(result.matches, {"skill", "matched_chunk_summary"})
     gaps = _validate_items(result.gaps, {"skill", "note"})
     uncertain_flags = [f for f in result.uncertain_flags if isinstance(f, str) and f.strip()]
-    return StructuredAnalysis(matches=matches, gaps=gaps, uncertain_flags=uncertain_flags)
+    sector = result.sector if isinstance(result.sector, str) and result.sector.strip() else None
+    return StructuredAnalysis(matches=matches, gaps=gaps, uncertain_flags=uncertain_flags, sector=sector)
 
 
 def _fetch_tone_chunk(trace: GenerationTrace, zone: str) -> str | None:
@@ -287,6 +293,7 @@ def structured_analysis_to_json(structured: StructuredAnalysis) -> str:
             "matches": structured.matches,
             "gaps": structured.gaps,
             "uncertain_flags": structured.uncertain_flags,
+            "sector": structured.sector,
         },
         ensure_ascii=False,
         indent=2,

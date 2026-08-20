@@ -337,13 +337,17 @@ def list_offers() -> list[OfferSummary]:
         structured = _read_structured_analysis(offer_id)
         gaps_count = len(structured["gaps"]) if structured else None
         uncertain_count = len(structured["uncertain_flags"]) if structured else None
+        # .get(), not [...]: structured_analysis_<id>.json files written before
+        # this field existed don't have the key at all — null (not yet
+        # classified) rather than a KeyError for those pre-existing offers.
+        sector = structured.get("sector") if structured else None
         summaries.append(
             OfferSummary(
                 id=offer_id, title=r[1], location=r[2], company=r[3],
                 status=r[4], score=score, geography_zone=zone,
                 gaps_count=gaps_count, uncertain_count=uncertain_count,
                 published_at=r[5], published_at_sortable=_parse_published_at(r[5]),
-                first_seen_at=r[6], user_verdict=r[7],
+                first_seen_at=r[6], user_verdict=r[7], sector=sector,
             )
         )
     return summaries
@@ -373,6 +377,7 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
         published_at_sortable=_parse_published_at(offer["published_at"]),
         first_seen_at=offer["scraped_at"],
         user_verdict=offer["user_verdict"],
+        sector=structured.get("sector") if structured else None,
         matches=structured["matches"] if structured else [],
         gaps=structured["gaps"] if structured else [],
         uncertain_flags=structured["uncertain_flags"] if structured else [],
