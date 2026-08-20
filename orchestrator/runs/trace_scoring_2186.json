@@ -1,0 +1,961 @@
+{
+  "offer_id": 2186,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "lausanne",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et des frameworks IA/ML] Python",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6692,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7262,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et des frameworks IA/ML] TensorFlow",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.733,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7441,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.8032,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et des frameworks IA/ML] PyTorch",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6909,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7303,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7305,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et des frameworks IA/ML] scikit-learn",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5307,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5659,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6069,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5307, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et des frameworks IA/ML] Keras",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7095,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7112,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7152,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et des frameworks IA/ML] frameworks IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4369,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.478,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.511,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4369, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise de Python et des frameworks IA/ML] frameworks ML",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4531,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4618,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4748,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4531, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et développement de systèmes d'IA/ML de production] systèmes IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5389,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5436,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5752,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5389, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et développement de systèmes d'IA/ML de production] systèmes ML",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5877,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6066,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6158,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5877, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et développement de systèmes d'IA/ML de production] déploiement en production",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5153,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5227,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5878,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5153, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et développement de systèmes d'IA/ML de production] MLOps",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6473,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.653,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6802,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6473, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Applications alimentées par LLM (Large Language Models)] LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5624,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6051,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6565,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5624, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Applications alimentées par LLM (Large Language Models)] Large Language Models",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5671,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5976,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6039,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5671, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Applications alimentées par LLM (Large Language Models)] modèles de langage",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.4808,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5425,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5958,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4808, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modèles NLP (Natural Language Processing)] NLP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5013,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6103,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6117,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5013, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modèles NLP (Natural Language Processing)] Natural Language Processing",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5702,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.606,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.624,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5702, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modèles NLP (Natural Language Processing)] traitement du langage naturel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.4709,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5203,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5886,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4709, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines RAG (Retrieval-Augmented Generation)] RAG",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7246,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7449,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines RAG (Retrieval-Augmented Generation)] Retrieval-Augmented Generation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5598,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5608,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5776,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5598, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Pipelines RAG (Retrieval-Augmented Generation)] génération augmentée par récupération",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5174,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6721,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7432,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5174, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Systèmes multi-agents] systèmes multi-agents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5533,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5686,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5845,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5533, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Systèmes multi-agents] agents IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5296,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6175,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Décisions architecturales pour l'IA (sélection des modèles, fine-tuning, orchestration)] architecture IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4856,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5246,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5495,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4856, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Décisions architecturales pour l'IA (sélection des modèles, fine-tuning, orchestration)] sélection de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4939,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5019,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5346,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4939, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Décisions architecturales pour l'IA (sélection des modèles, fine-tuning, orchestration)] fine-tuning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.545,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5739,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5768,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5450, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Décisions architecturales pour l'IA (sélection des modèles, fine-tuning, orchestration)] orchestration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7062,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7569,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7735,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Décisions architecturales pour l'IA (sélection des modèles, fine-tuning, orchestration)] stratégies d'entraînement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6318,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6347,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.6666,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6318, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de services IA externes (fournisseurs LLM)] intégration de services IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5061,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5206,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5276,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5061, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de services IA externes (fournisseurs LLM)] API LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.3847,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4022,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5299,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3847, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de services IA externes (fournisseurs LLM)] fournisseurs LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5232,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5868,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6009,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5232, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des défis d'ingénierie (collecte de données, récupération, évaluation, inférence, latence, coûts)] collecte de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5234,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5288,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5491,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5234, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des défis d'ingénierie (collecte de données, récupération, évaluation, inférence, latence, coûts)] récupération de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.538,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5624,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5936,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5380, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des défis d'ingénierie (collecte de données, récupération, évaluation, inférence, latence, coûts)] évaluation de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4483,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.524,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5284,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4483, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des défis d'ingénierie (collecte de données, récupération, évaluation, inférence, latence, coûts)] inférence",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7136,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7655,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7701,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des défis d'ingénierie (collecte de données, récupération, évaluation, inférence, latence, coûts)] optimisation de latence",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4012,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6039,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6135,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4012, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des défis d'ingénierie (collecte de données, récupération, évaluation, inférence, latence, coûts)] optimisation des coûts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4747,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4837,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5843,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4747, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cadres d'évaluation robustes (en ligne et hors ligne) et indicateurs de succès] cadres d'évaluation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4644,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4807,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.489,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4644, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cadres d'évaluation robustes (en ligne et hors ligne) et indicateurs de succès] métriques de succès",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.567,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5766,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6467,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5670, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cadres d'évaluation robustes (en ligne et hors ligne) et indicateurs de succès] évaluation en ligne",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5512,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5871,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5939,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5512, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cadres d'évaluation robustes (en ligne et hors ligne) et indicateurs de succès] évaluation hors ligne",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4986,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5538,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.567,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4986, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Maîtrise de Python et des frameworks IA/ML",
+    "Pipelines RAG (Retrieval-Augmented Generation)",
+    "Décisions architecturales pour l'IA (sélection des modèles, fine-tuning, orchestration)",
+    "Optimisation des défis d'ingénierie (collecte de données, récupération, évaluation, inférence, latence, coûts)"
+  ]
+}

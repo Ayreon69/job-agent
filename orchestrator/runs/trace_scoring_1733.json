@@ -1,0 +1,684 @@
+{
+  "offer_id": 1733,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "gland",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement logiciel en Java et frameworks modernes] Java",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7165,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7559,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7624,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement logiciel en Java et frameworks modernes] frameworks modernes de développement logiciel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.3853,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4496,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.467,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3853, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'applications basées sur des agents IA et LLMs] LLMs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5515,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6097,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6306,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5515, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'applications basées sur des agents IA et LLMs] agents IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5296,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6128,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6175,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5296, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'applications basées sur des agents IA et LLMs] développement d'applications IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4283,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4338,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4375,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4283, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'applications basées sur des agents IA et LLMs] ClaudeCode",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5353,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6446,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7343,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5353, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de modèles et prompt engineering] intégration de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.526,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5502,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5548,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5260, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de modèles et prompt engineering] prompt engineering",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5259,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5846,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5865,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5259, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de modèles et prompt engineering] spec driven development",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5433,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5927,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5988,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5433, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture microservices et intégration d'écosystèmes] architecture microservices",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4005,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.47,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4988,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4005, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture microservices et intégration d'écosystèmes] intégration d'écosystèmes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6666,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.675,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6971,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6666, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture microservices et intégration d'écosystèmes] Genesys",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.8724,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.8737,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.8772,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'applications de qualité production] développement production-grade",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5951,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6046,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6185,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5951, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'applications de qualité production] applications logicielles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4297,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5076,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5184,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4297, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des Data Scientists et parties prenantes métiers] collaboration Data Scientists",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4732,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5654,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5943,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4732, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des Data Scientists et parties prenantes métiers] parties prenantes métiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4668,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4954,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5469,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4668, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité, conformité et gouvernance dans un environnement financier régulé] sécurité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5422,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6412,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.664,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5422, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité, conformité et gouvernance dans un environnement financier régulé] conformité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6268,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6574,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7312,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6268, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité, conformité et gouvernance dans un environnement financier régulé] gouvernance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6673,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7228,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7243,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6673, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurité, conformité et gouvernance dans un environnement financier régulé] environnement financier régulé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.578,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5844,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6125,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5780, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en applications CRM ou centres de relation client] CRM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6386,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.654,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6888,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6386, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en applications CRM ou centres de relation client] Customer Care",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5281,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5466,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5602,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5281, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en applications CRM ou centres de relation client] centres de relation client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5116,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5738,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5773,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5116, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en banque, services financiers ou fintech] banque",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6895,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7122,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.736,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en banque, services financiers ou fintech] services financiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.622,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6293,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6432,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6220, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en banque, services financiers ou fintech] fintech",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6526,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6813,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6825,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6526, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de problèmes et pensée orientée produit] résolution de problèmes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5942,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6289,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6688,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5942, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de problèmes et pensée orientée produit] pensée orientée produit",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5324,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5576,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6224,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5324, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Développement logiciel en Java et frameworks modernes",
+    "Architecture microservices et intégration d'écosystèmes",
+    "Expérience en banque, services financiers ou fintech"
+  ]
+}

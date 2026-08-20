@@ -1,0 +1,1214 @@
+{
+  "offer_id": 4277,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "lausanne",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et déploiement d'applications basées sur les LLM et systèmes multi-agents] LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5624,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6051,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6565,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5624, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et déploiement d'applications basées sur les LLM et systèmes multi-agents] multi-agent systems",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5573,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5752,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5934,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5573, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et déploiement d'applications basées sur les LLM et systèmes multi-agents] RAG pipelines",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5578,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.684,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5578, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et déploiement d'applications basées sur les LLM et systèmes multi-agents] NLP models",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5832,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5913,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6125,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5832, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et déploiement d'applications basées sur les LLM et systèmes multi-agents] développement d'applications IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4283,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4338,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4375,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4283, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement et déploiement d'applications basées sur les LLM et systèmes multi-agents] déploiement d'applications IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4368,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4398,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4512,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4368, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et conception de systèmes IA/ML en production] architecture IA/ML",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4374,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5157,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.54,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4374, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et conception de systèmes IA/ML en production] sélection de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4939,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5019,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5346,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4939, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et conception de systèmes IA/ML en production] stratégies d'entraînement",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6318,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6347,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.6666,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6318, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et conception de systèmes IA/ML en production] fine-tuning",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.545,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5739,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5768,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5450, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et conception de systèmes IA/ML en production] mécanismes de récupération",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5541,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.696,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6972,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5541, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et conception de systèmes IA/ML en production] couches d'orchestration",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7673,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7899,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.8221,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et conception de systèmes IA/ML en production] infrastructure IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4967,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5744,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.601,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4967, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de services IA externes (fournisseurs LLM)] intégration de services IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5061,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5206,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5276,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5061, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de services IA externes (fournisseurs LLM)] fournisseurs LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5232,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5868,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6009,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5232, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de services IA externes (fournisseurs LLM)] API externes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4486,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5404,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5789,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4486, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des défis d'ingénierie IA (collecte, récupération, évaluation, inférence, latence, coût)] collecte de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5234,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5288,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5491,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5234, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des défis d'ingénierie IA (collecte, récupération, évaluation, inférence, latence, coût)] récupération de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.538,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5624,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5936,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5380, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des défis d'ingénierie IA (collecte, récupération, évaluation, inférence, latence, coût)] évaluation de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4483,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.524,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5284,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4483, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des défis d'ingénierie IA (collecte, récupération, évaluation, inférence, latence, coût)] inférence",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7136,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7655,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7701,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des défis d'ingénierie IA (collecte, récupération, évaluation, inférence, latence, coût)] optimisation de latence",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4012,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6039,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6135,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4012, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des défis d'ingénierie IA (collecte, récupération, évaluation, inférence, latence, coût)] optimisation des coûts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4747,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4837,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5843,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4747, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cadre d'évaluation et métriques de succès pour systèmes IA] évaluation en ligne",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5512,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5871,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5939,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5512, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cadre d'évaluation et métriques de succès pour systèmes IA] évaluation hors ligne",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4986,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5538,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.567,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4986, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cadre d'évaluation et métriques de succès pour systèmes IA] métriques de succès",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.567,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5766,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6467,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5670, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Cadre d'évaluation et métriques de succès pour systèmes IA] cadre d'évaluation IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4144,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4528,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.483,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4144, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Observabilité et surveillance des systèmes IA en production] observabilité IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4899,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5349,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5474,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4899, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Observabilité et surveillance des systèmes IA en production] surveillance des modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4828,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5646,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5791,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4828, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Observabilité et surveillance des systèmes IA en production] détection de régressions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4704,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4717,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5866,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4704, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Observabilité et surveillance des systèmes IA en production] tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7165,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7214,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7329,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Observabilité et surveillance des systèmes IA en production] monitoring",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5692,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6048,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6286,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5692, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de pipelines d'évaluation automatisés pour prompts, embeddings, modèles et workflows d'agents] pipelines d'évaluation automatisés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4474,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.463,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4729,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4474, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de pipelines d'évaluation automatisés pour prompts, embeddings, modèles et workflows d'agents] évaluation de prompts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4512,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.5069,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5108,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4512, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de pipelines d'évaluation automatisés pour prompts, embeddings, modèles et workflows d'agents] évaluation d'embeddings",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5687,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6143,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6201,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5687, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de pipelines d'évaluation automatisés pour prompts, embeddings, modèles et workflows d'agents] évaluation de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4483,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.524,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5284,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4483, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de pipelines d'évaluation automatisés pour prompts, embeddings, modèles et workflows d'agents] évaluation de workflows d'agents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4826,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5277,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5291,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4826, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et ingénierie cloud pour systèmes IA] MLOps",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6473,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.653,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6802,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6473, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et ingénierie cloud pour systèmes IA] pipelines ML reproductibles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4958,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5472,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.599,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4958, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et ingénierie cloud pour systèmes IA] CI/CD pour IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6341,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6603,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6986,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6341, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et ingénierie cloud pour systèmes IA] déploiement de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4625,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4722,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4901,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4625, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et ingénierie cloud pour systèmes IA] cycle de vie des modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5494,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6775,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6942,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5494, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[MLOps et ingénierie cloud pour systèmes IA] gestion des artefacts IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4675,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4824,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5062,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4675, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des systèmes pour scalabilité, performance, débit et coût] scalabilité des systèmes IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5416,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5479,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5402, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des systèmes pour scalabilité, performance, débit et coût] optimisation des performances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4671,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5325,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5676,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4671, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des systèmes pour scalabilité, performance, débit et coût] optimisation du débit",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4988,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5789,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5886,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4988, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des systèmes pour scalabilité, performance, débit et coût] optimisation des coûts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4747,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4837,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5843,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4747, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en outils cloud et orchestration (AWS, Docker, Kubernetes/ECS)] AWS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6992,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7053,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7257,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en outils cloud et orchestration (AWS, Docker, Kubernetes/ECS)] Docker",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7566,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7796,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7965,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en outils cloud et orchestration (AWS, Docker, Kubernetes/ECS)] Kubernetes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6349,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.635,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6388,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6349, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en outils cloud et orchestration (AWS, Docker, Kubernetes/ECS)] ECS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6068,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.6201,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6249,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6068, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en outils cloud et orchestration (AWS, Docker, Kubernetes/ECS)] cloud computing",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5305,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6876,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6892,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5305, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Architecture et conception de systèmes IA/ML en production",
+    "Optimisation des défis d'ingénierie IA (collecte, récupération, évaluation, inférence, latence, coût)",
+    "Observabilité et surveillance des systèmes IA en production",
+    "Compétences en outils cloud et orchestration (AWS, Docker, Kubernetes/ECS)"
+  ]
+}

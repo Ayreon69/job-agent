@@ -1,0 +1,54 @@
+{
+  "matches": [
+    {
+      "skill": "Modélisation et transformation de données avec dbt (data build tool)",
+      "matched_chunk_summary": "Aucun chunk ne mentionne explicitement dbt, mais l'expérience en architecture ETL sur Snowflake (organisation en couches proche Medallion) et en transformation de données avec Python (pandas, numpy) démontre une maîtrise des concepts sous-jacents à dbt (modélisation, transformation, orchestration de pipelines)."
+    },
+    {
+      "skill": "Architecture et administration de Snowflake",
+      "matched_chunk_summary": "Structuration des pipelines ETL sur Snowflake avec une organisation en couches (staging, core, reporting), proche d'une architecture Medallion. Expérience concrète en architecture de données, fiabilisation et gouvernance technique sur Snowflake."
+    },
+    {
+      "skill": "Langages SQL et optimisation de requêtes",
+      "matched_chunk_summary": "Requêtes SQL avancées pour des demandes analytiques ad hoc, avec optimisation et vulgarisation pour des audiences non-techniques. Maîtrise confirmée par des certifications DataCamp et une expérience professionnelle répétée."
+    },
+    {
+      "skill": "Bonnes pratiques en gestion de données et gouvernance",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI alignés sur les KPIs métier, adoptés à l'échelle de l'entreprise. Structuration de pipelines ETL sur Snowflake avec une gouvernance technique (fiabilisation, organisation en couches)."
+    },
+    {
+      "skill": "Python pour le traitement et l'automatisation des données",
+      "matched_chunk_summary": "Maîtrise de Python (pandas, numpy, scipy, scikit-learn) pour le traitement de données et l'automatisation (scraping avec Playwright, emailing avec smtplib/Brevo). Expérience professionnelle concrète et répétée."
+    },
+    {
+      "skill": "Visualisation de données (Tableau, Power BI, Looker, etc.)",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI (DAX avancé) sur des indicateurs sensibles, adoptés par des départements non-techniques. Certifications DataCamp couvrant Power BI et Tableau."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Intégration et orchestration de pipelines de données (Airflow, Prefect, etc.)",
+      "note": "Aucune expérience mentionnée avec Airflow ou Prefect. L'orchestration de pipelines se limite à des architectures ETL sur Snowflake sans outil dédié."
+    },
+    {
+      "skill": "Connaissances en cloud (AWS, GCP, Azure)",
+      "note": "Notions uniquement sur AWS/Azure, sans déploiement en production. Aucune expérience concrète avec les services cloud."
+    },
+    {
+      "skill": "Data Warehousing et concepts associés",
+      "note": "Expérience limitée à Snowflake (architecture ETL, organisation en couches). Aucun chunk ne mentionne des concepts avancés de data warehousing (ex: modélisation dimensionnelle, gestion des métadonnées)."
+    },
+    {
+      "skill": "Méthodologies Agile et gestion de projet",
+      "note": "Aucune mention d'expérience avec des méthodologies Agile (Scrum, Kanban) ou des outils de gestion de projet (Jira, Trello)."
+    }
+  ],
+  "uncertain_flags": [
+    "Intégration et orchestration de pipelines de données (Airflow, Prefect, etc.)",
+    "Connaissances en cloud (AWS, GCP, Azure)",
+    "Data Warehousing et concepts associés",
+    "Python pour le traitement et l'automatisation des données",
+    "Visualisation de données (Tableau, Power BI, Looker, etc.)",
+    "Méthodologies Agile et gestion de projet"
+  ]
+}

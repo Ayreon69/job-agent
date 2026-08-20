@@ -1,0 +1,51 @@
+{
+  "matches": [
+    {
+      "skill": "statistiques avancées et modélisation prédictive",
+      "matched_chunk_summary": "Formation académique solide en statistiques et économétrie (Master ISFA, Licence Mathématiques appliquées). Expérience concrète en développement de modèles prédictifs (churn) en production avec scikit-learn, justifiant des choix métiers (recall vs précision)."
+    },
+    {
+      "skill": "régressions et modèles explicatifs",
+      "matched_chunk_summary": "Expérience en modélisation prédictive (churn) et formation académique en statistiques avancées (Master ISFA, Licence Mathématiques). Utilisation de scikit-learn et logique métier pour justifier les modèles."
+    },
+    {
+      "skill": "modèles de classification et prédiction",
+      "matched_chunk_summary": "Développement d'un modèle de classification (churn) en production avec un recall de 85%, utilisant scikit-learn et une logique métier pour optimiser les métriques."
+    },
+    {
+      "skill": "design d'études et validation méthodologique",
+      "matched_chunk_summary": "Prototypage d'outils basés sur des APIs LLM (Mistral) et création d'un outil de tarification pour les produits santé, démontrant une compréhension des compromis méthodologiques et des besoins métier."
+    },
+    {
+      "skill": "outils décisionnels et analyses evidence-based",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI adoptés à l'échelle de l'entreprise, alignés sur les KPIs métier. Développement de modèles prédictifs (churn) et d'outils de tarification pour des décisions data-driven."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "segmentation et scoring",
+      "note": "Aucune expérience explicite en segmentation (ex: clustering) ou scoring au-delà du modèle de churn. Le profil mentionne des modèles prédictifs mais pas de techniques spécifiques de segmentation comme K-means ou RFM."
+    },
+    {
+      "skill": "analyses multivariées (ACP, AFC)",
+      "note": "Aucune mention d'expérience pratique avec ACP (Analyse en Composantes Principales) ou AFC (Analyse Factorielle des Correspondances), malgré une formation académique en statistiques avancées."
+    },
+    {
+      "skill": "analyses conjointes (CBC, MaxDiff)",
+      "note": "Aucune expérience ou formation mentionnée sur les analyses conjointes (CBC, MaxDiff), techniques spécifiques souvent utilisées en études de marché."
+    },
+    {
+      "skill": "gestion et valorisation des données santé (bases patients, données marché, bases assurantielles)",
+      "note": "Expérience limitée aux données assurantielles (churn, tarification) sans mention de gestion de bases patients ou de données marché santé spécifiques. Le contexte est assurance, pas santé publique ou parcours de soins."
+    },
+    {
+      "skill": "encadrement d'équipes data (statisticiens, data scientists, spécialistes BI)",
+      "note": "Aucune expérience explicite en management d'équipe data. Les chunks mentionnent une autonomie sur des projets mais pas de leadership ou encadrement d'une équipe."
+    }
+  ],
+  "uncertain_flags": [
+    "segmentation et scoring",
+    "analyses conjointes (CBC, MaxDiff)",
+    "gestion et valorisation des données santé (bases patients, données marché, bases assurantielles)"
+  ]
+}

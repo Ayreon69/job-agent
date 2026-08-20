@@ -1,0 +1,53 @@
+{
+  "matches": [
+    {
+      "skill": "Analyse exploratoire de données complexes et hétérogènes",
+      "matched_chunk_summary": "Expérience en analyse de données métier (assurance) avec justification des choix statistiques et vulgarisation pour des audiences non-techniques. Maîtrise de SQL avancé et Power BI pour des indicateurs sensibles."
+    },
+    {
+      "skill": "Développement et entraînement de modèles de machine learning",
+      "matched_chunk_summary": "Développement d'un modèle de churn en production (scikit-learn) avec recall de 85%, justifié par une logique métier. Expérience en autonomie sur des projets de recherche appliquée."
+    },
+    {
+      "skill": "Bases de données et requêtage SQL (PostgreSQL)",
+      "matched_chunk_summary": "Maîtrise avancée de SQL (requêtes complexes, optimisation) et expérience avec Snowflake (architecture ETL proche Medallion). Certifications DataCamp en SQL avancé."
+    },
+    {
+      "skill": "Rédaction de documentation technique et scientifique",
+      "matched_chunk_summary": "Structuration de projets via fichiers CLAUDE.md pour l'agentic coding. Prototypage d'un assistant LLM avec documentation des choix architecturaux (ex: décision de ne pas utiliser RAG)."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Modélisation avec Graph Neural Networks (GNN)",
+      "note": "Aucune expérience identifiée avec les GNN ou Torch-geometric. Expérience limitée à des modèles classiques (scikit-learn) et à des architectures de données relationnelles."
+    },
+    {
+      "skill": "Python et librairies associées (Pandas, PySpark, Torch-geometric, Torchmetrics)",
+      "note": "Maîtrise partielle (Pandas, scikit-learn) mais absence d'expérience avec PySpark, Torch-geometric, Torchmetrics ou déploiement en production de modèles avancés."
+    },
+    {
+      "skill": "Développement de composants de visualisation (Dash)",
+      "note": "Expérience en visualisation limitée à Power BI (DAX avancé). Aucune mention de Dash ou de frameworks similaires."
+    },
+    {
+      "skill": "Création et maintenance de librairies internes Python",
+      "note": "Expérience en Python (pandas, numpy) mais pas de preuve de création ou maintenance de librairies internes. Utilisation d'outils existants plutôt que développement de composants réutilisables."
+    },
+    {
+      "skill": "Tests et validation de modèles et composants logiciels",
+      "note": "Aucune mention de tests unitaires, d'intégration ou de validation formelle de modèles. Expérience en production mais sans détails sur les pratiques de test."
+    },
+    {
+      "skill": "Jumeaux numériques et simulation de scénarios réseau",
+      "note": "Aucune expérience identifiée en jumeaux numériques ou simulation de réseaux. Expérience limitée à des modèles prédictifs classiques (churn) et automatisation de processus."
+    }
+  ],
+  "uncertain_flags": [
+    "Modélisation avec Graph Neural Networks (GNN)",
+    "Python et librairies associées (Pandas, PySpark, Torch-geometric, Torchmetrics)",
+    "Développement de composants de visualisation (Dash)",
+    "Tests et validation de modèles et composants logiciels",
+    "Jumeaux numériques et simulation de scénarios réseau"
+  ]
+}

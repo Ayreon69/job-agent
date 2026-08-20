@@ -1,0 +1,986 @@
+{
+  "offer_id": 1329,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'agents intelligents et pipelines IA avec LangChain.js et Vercel AI SDK] LangChain.js",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6387,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6514,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6855,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6387, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'agents intelligents et pipelines IA avec LangChain.js et Vercel AI SDK] Vercel AI SDK",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5282,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5414,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.544,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5282, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'agents intelligents et pipelines IA avec LangChain.js et Vercel AI SDK] développement d'agents intelligents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4748,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4862,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.495,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4748, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement d'agents intelligents et pipelines IA avec LangChain.js et Vercel AI SDK] pipelines IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.4639,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6262,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6842,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4639, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et validation d'APIs LLM (Vertex AI, OpenAI) avec Zod] Vertex AI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6343,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6376,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6428,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6343, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et validation d'APIs LLM (Vertex AI, OpenAI) avec Zod] OpenAI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6151,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6783,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6813,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6151, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et validation d'APIs LLM (Vertex AI, OpenAI) avec Zod] APIs LLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.379,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.3947,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5235,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3790, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et validation d'APIs LLM (Vertex AI, OpenAI) avec Zod] Zod",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7909,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.8287,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.8297,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration et validation d'APIs LLM (Vertex AI, OpenAI) avec Zod] validation de schémas",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5957,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6107,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6405,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5957, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de workflows multi-agents et protocoles de communication (A2A/ACP)] workflows multi-agents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4504,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4774,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5228,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4504, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de workflows multi-agents et protocoles de communication (A2A/ACP)] protocoles de communication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5464,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5654,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6038,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5464, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de workflows multi-agents et protocoles de communication (A2A/ACP)] A2A",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6695,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7109,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7295,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6695, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception de workflows multi-agents et protocoles de communication (A2A/ACP)] ACP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.6182,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6843,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7181,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6182, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des bases vectorielles (embeddings, indexation, requêtage) et recherche hybride] bases vectorielles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7022,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7479,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7732,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des bases vectorielles (embeddings, indexation, requêtage) et recherche hybride] embeddings",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6442,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6862,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6887,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6442, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des bases vectorielles (embeddings, indexation, requêtage) et recherche hybride] indexation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6303,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7019,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7057,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6303, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des bases vectorielles (embeddings, indexation, requêtage) et recherche hybride] requêtage",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5985,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6405,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6409,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5985, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des bases vectorielles (embeddings, indexation, requêtage) et recherche hybride] recherche hybride",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.641,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6446,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6769,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6410, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Parsing et structuration de données non structurées (PDF, images, tableaux)] parsing de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.522,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5612,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5706,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5220, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Parsing et structuration de données non structurées (PDF, images, tableaux)] structuration de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5215,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5466,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5549,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5215, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Parsing et structuration de données non structurées (PDF, images, tableaux)] PDF",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7302,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7492,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7613,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Parsing et structuration de données non structurées (PDF, images, tableaux)] images",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.8145,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.8349,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.8382,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Parsing et structuration de données non structurées (PDF, images, tableaux)] tableaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7137,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.7472,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.7652,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Parsing et structuration de données non structurées (PDF, images, tableaux)] données non structurées",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5647,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5865,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6143,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5647, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évaluation des performances des modèles via pipelines QA et méthodes automatisées (LLM-as-a-Judge)] évaluation de modèles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4483,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.524,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5284,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4483, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évaluation des performances des modèles via pipelines QA et méthodes automatisées (LLM-as-a-Judge)] pipelines QA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.543,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.6512,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6706,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5430, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évaluation des performances des modèles via pipelines QA et méthodes automatisées (LLM-as-a-Judge)] LLM-as-a-Judge",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6724,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6739,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7034,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Évaluation des performances des modèles via pipelines QA et méthodes automatisées (LLM-as-a-Judge)] méthodes d'évaluation automatisées",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4361,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4405,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4422,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4361, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurisation des systèmes IA (protection contre les prompt injections, filtrage RGPD)] sécurité des systèmes IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4904,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5945,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.601,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4904, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurisation des systèmes IA (protection contre les prompt injections, filtrage RGPD)] protection contre les prompt injections",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6335,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6395,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6548,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6335, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurisation des systèmes IA (protection contre les prompt injections, filtrage RGPD)] filtrage des données sensibles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5405,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5702,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.577,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5405, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Sécurisation des systèmes IA (protection contre les prompt injections, filtrage RGPD)] RGPD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6895,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6907,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7125,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement backend avec Node.js et TypeScript] Node.js",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6773,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7039,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7443,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement backend avec Node.js et TypeScript] TypeScript",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6717,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6955,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7019,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement backend avec Node.js et TypeScript] développement backend",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4712,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5027,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5288,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4712, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec équipes techniques et métiers pour affiner les besoins utilisateurs] collaboration technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5656,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5954,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6121,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5656, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec équipes techniques et métiers pour affiner les besoins utilisateurs] collaboration métier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5526,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5837,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5526, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec équipes techniques et métiers pour affiner les besoins utilisateurs] affinage des besoins utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.3888,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4795,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.4957,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3888, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des processus de Run Management et production] Run Management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5915,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6003,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6168,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5915, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des processus de Run Management et production] optimisation des processus",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.3833,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5157,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5163,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3833, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Optimisation des processus de Run Management et production] production",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6586,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6841,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6586, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Intégration et validation d'APIs LLM (Vertex AI, OpenAI) avec Zod",
+    "Optimisation des bases vectorielles (embeddings, indexation, requêtage) et recherche hybride",
+    "Parsing et structuration de données non structurées (PDF, images, tableaux)",
+    "Évaluation des performances des modèles via pipelines QA et méthodes automatisées (LLM-as-a-Judge)",
+    "Sécurisation des systèmes IA (protection contre les prompt injections, filtrage RGPD)",
+    "Développement backend avec Node.js et TypeScript"
+  ]
+}

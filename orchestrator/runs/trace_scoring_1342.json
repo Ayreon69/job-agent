@@ -1,0 +1,937 @@
+{
+  "offer_id": 1342,
+  "geography_verdict": {
+    "zone": "autre_france",
+    "priority_rank": null,
+    "mobility_signal_allowed": false,
+    "matched_keyword": null,
+    "match_method": "aucun"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en France hors Rhône-Alpes, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3167,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3601,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.394,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3167, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils d'analyse et de visualisation de données (Power BI, Minitab, Braincube ou équivalent)] Power BI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.3422,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6163,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6182,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3422, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils d'analyse et de visualisation de données (Power BI, Minitab, Braincube ou équivalent)] Minitab",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6666,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6687,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6734,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6666, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils d'analyse et de visualisation de données (Power BI, Minitab, Braincube ou équivalent)] Braincube",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7402,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7632,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils d'analyse et de visualisation de données (Power BI, Minitab, Braincube ou équivalent)] outils d'analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4253,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4291,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4545,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4253, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Maîtrise des outils d'analyse et de visualisation de données (Power BI, Minitab, Braincube ou équivalent)] outils de visualisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.541,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5653,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5679,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5410, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en analyse statistique (Six Sigma, capabilité process, études R&R, recherche de causes racines)] Six Sigma",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7963,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.8061,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.829,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en analyse statistique (Six Sigma, capabilité process, études R&R, recherche de causes racines)] capabilité process",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.436,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4572,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4777,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4360, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en analyse statistique (Six Sigma, capabilité process, études R&R, recherche de causes racines)] études R&R",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6284,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6453,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6867,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6284, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en analyse statistique (Six Sigma, capabilité process, études R&R, recherche de causes racines)] recherche de causes racines",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7091,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7618,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7772,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences en analyse statistique (Six Sigma, capabilité process, études R&R, recherche de causes racines)] analyse statistique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.463,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5249,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5704,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4630, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traduction des besoins opérationnels en indicateurs, analyses et outils d'aide à la décision] indicateurs de performance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4941,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5374,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5745,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4941, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traduction des besoins opérationnels en indicateurs, analyses et outils d'aide à la décision] outils d'aide à la décision",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4177,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4444,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4479,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4177, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traduction des besoins opérationnels en indicateurs, analyses et outils d'aide à la décision] traduction des besoins opérationnels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4869,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5197,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5238,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4869, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Structuration, fiabilisation et exploitation des données de production] structuration des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5131,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5344,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5448,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5131, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Structuration, fiabilisation et exploitation des données de production] fiabilisation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4703,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4973,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5423,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4703, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Structuration, fiabilisation et exploitation des données de production] exploitation des données de production",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4756,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4806,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4988,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4756, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception, déploiement et évolution de tableaux de bord et indicateurs de pilotage] conception de tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.582,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6098,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6177,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5820, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception, déploiement et évolution de tableaux de bord et indicateurs de pilotage] déploiement de tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5797,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.604,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6066,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5797, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception, déploiement et évolution de tableaux de bord et indicateurs de pilotage] évolution d'indicateurs de pilotage",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5331,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5595,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5651,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5331, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi de la performance des gammes de fabrication par paramètres clés] suivi de performance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5357,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5426,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5597,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5357, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi de la performance des gammes de fabrication par paramètres clés] gammes de fabrication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.56,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6205,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6321,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5600, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Suivi de la performance des gammes de fabrication par paramètres clés] paramètres clés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5233,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5754,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5774,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5233, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Extraction, consolidation et valorisation des données pour le calcul d'indicateurs clés (temps de traversée, temps de réalisation, rendements)] extraction de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5268,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5614,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5631,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5268, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Extraction, consolidation et valorisation des données pour le calcul d'indicateurs clés (temps de traversée, temps de réalisation, rendements)] consolidation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.5597,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.587,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6179,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5597, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Extraction, consolidation et valorisation des données pour le calcul d'indicateurs clés (temps de traversée, temps de réalisation, rendements)] valorisation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4353,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4442,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4923,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4353, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Extraction, consolidation et valorisation des données pour le calcul d'indicateurs clés (temps de traversée, temps de réalisation, rendements)] temps de traversée",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6217,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.6374,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6748,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6217, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Extraction, consolidation et valorisation des données pour le calcul d'indicateurs clés (temps de traversée, temps de réalisation, rendements)] temps de réalisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4701,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.476,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5521,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4701, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Extraction, consolidation et valorisation des données pour le calcul d'indicateurs clés (temps de traversée, temps de réalisation, rendements)] rendements",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5255,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5888,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6024,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5255, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données qualité lors de dérives, incidents ou situations de crise] analyse des données qualité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4171,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4583,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4903,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4171, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données qualité lors de dérives, incidents ou situations de crise] dérives process",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5766,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6415,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.653,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5766, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données qualité lors de dérives, incidents ou situations de crise] incidents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7202,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.8085,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.8287,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données qualité lors de dérives, incidents ou situations de crise] situations de crise",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.568,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.7034,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7036,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5680, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formulation de recommandations et accompagnement des opérationnels dans l'amélioration continue] recommandations basées sur les données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.41,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4364,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4677,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4100, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formulation de recommandations et accompagnement des opérationnels dans l'amélioration continue] amélioration continue",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5652,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6346,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6638,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5652, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formulation de recommandations et accompagnement des opérationnels dans l'amélioration continue] accompagnement opérationnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5216,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5696,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5797,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5216, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation en Data Science, Statistiques ou École d'ingénieur avec spécialisation en analyse de données] Data Science",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4536,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5714,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5766,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4536, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation en Data Science, Statistiques ou École d'ingénieur avec spécialisation en analyse de données] Statistiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5189,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6298,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6404,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5189, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation en Data Science, Statistiques ou École d'ingénieur avec spécialisation en analyse de données] École d'ingénieur",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.577,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6066,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6286,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5770, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation en Data Science, Statistiques ou École d'ingénieur avec spécialisation en analyse de données] spécialisation en analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.3927,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4191,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4201,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3927, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Maîtrise des outils d'analyse et de visualisation de données (Power BI, Minitab, Braincube ou équivalent)",
+    "Compétences en analyse statistique (Six Sigma, capabilité process, études R&R, recherche de causes racines)",
+    "Analyse des données qualité lors de dérives, incidents ou situations de crise"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "matches": [
+    {
+      "skill": "Support technique et résolution d'incidents (niveaux 1 à 2)",
+      "matched_chunk_summary": "Automatisation de processus métier critiques (ex: calcul des commissions) et développement d'outils décisionnels (Power BI) démontrant une capacité à résoudre des problèmes techniques et fonctionnels. Expérience en prototypage d'assistants internes (LLM) et en scraping avancé (Playwright), illustrant une approche proactive de la résolution de problèmes."
+    },
+    {
+      "skill": "Gestion des tickets et suivi des demandes utilisateurs",
+      "matched_chunk_summary": "Requêtes SQL avancées pour répondre aux demandes ad hoc des équipes opérationnelles, avec vulgarisation des résultats pour des audiences non-techniques. Expérience en automatisation de pipelines (scraping, emailing) et en gestion de projets de bout en bout, montrant une capacité à structurer et suivre des demandes."
+    },
+    {
+      "skill": "Définition et suivi d'indicateurs clés (KPI)",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI alignés sur les KPIs métier (commissions, sinistralité, coût moyen), adoptés par l'ensemble des départements. Développement d'un modèle de churn avec recall de 85% pour des stratégies de fidélisation ciblées, illustrant une maîtrise de la définition et du suivi d'indicateurs impactants."
+    },
+    {
+      "skill": "Analyse des tendances et incidents récurrents",
+      "matched_chunk_summary": "Développement d'un modèle de machine learning pour prédire la résiliation des clients (churn), avec justification métier des choix statistiques. Refonte de processus (calcul des commissions) avec impact chiffré, démontrant une capacité à analyser des tendances et à proposer des solutions préventives."
+    },
+    {
+      "skill": "Documentation fonctionnelle et technique",
+      "matched_chunk_summary": "Utilisation quotidienne de fichiers CLAUDE.md pour structurer des projets de développement assisté par agent (GitHub, Playwright, etc.), illustrant une pratique de documentation technique. Prototypage d'un assistant interne (Mistral API + Gradio) avec choix architecturaux documentés (décision de ne pas utiliser RAG)."
+    },
+    {
+      "skill": "Participation aux projets de digitalisation et IA",
+      "matched_chunk_summary": "Prototypage d'un assistant interne basé sur l'API Mistral et Gradio, avec compréhension des compromis techniques. Utilisation quotidienne d'outils agentiques (Claude Code, MCP) et automatisation avancée (Playwright, scraping). Expérience en architecture ETL (Snowflake) et en développement de modèles ML en production."
+    },
+    {
+      "skill": "Coordination avec les partenaires internes et externes",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI adoptés par des départements non-techniques, nécessitant une coordination avec les métiers. Création d'outils de tarification autonomes pour les équipes métier, illustrant une capacité à transférer de l'autonomie et à collaborer avec des partenaires internes."
+    },
+    {
+      "skill": "Compréhension des besoins utilisateurs et métiers",
+      "matched_chunk_summary": "Création d'un outil de tarification autonome pour les équipes métier, avec modélisation de scénarios tarifaires. Développement d'un modèle de churn aligné sur une logique métier (priorisation du recall). Vulgarisation de résultats techniques pour des audiences non-techniques, démontrant une compréhension fine des besoins utilisateurs."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Création et maintenance de tableaux de bord (dashboards)",
+      "note": "Aucune expérience explicite avec des outils autres que Power BI (ex: Tableau, outils de monitoring IT comme ServiceNow ou Zabbix). Les tableaux de bord créés sont orientés data métier, pas spécifiquement IT/support."
+    },
+    {
+      "skill": "Gestion des applications métier",
+      "note": "Aucune expérience directe en gestion d'applications métier (ex: ERP, CRM, outils de gestion de tickets comme Jira ou GLPI), ni en tests/mises à jour de ces applications. L'expérience se limite à des outils internes (Power BI, Snowflake) ou des prototypes (LLM)."
+    }
+  ],
+  "uncertain_flags": [
+    "Création et maintenance de tableaux de bord (dashboards)",
+    "Gestion des applications métier"
+  ]
+}

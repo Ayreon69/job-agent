@@ -1,0 +1,912 @@
+{
+  "offer_id": 3061,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneva",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[modélisation de données et SQL avancé (PL/SQL, Oracle)] modélisation de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4999,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5066,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5127,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4999, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[modélisation de données et SQL avancé (PL/SQL, Oracle)] SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.3241,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5331,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6353,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3241, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[modélisation de données et SQL avancé (PL/SQL, Oracle)] PL/SQL",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.4382,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5479,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.668,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4382, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[modélisation de données et SQL avancé (PL/SQL, Oracle)] Oracle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5235,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5889,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5941,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5235, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[modélisation de données et SQL avancé (PL/SQL, Oracle)] structures de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5346,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5684,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5808,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5346, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[développement et maintenance de systèmes CTRM (Commodity Trading and Risk Management)] CTRM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6654,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6715,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.7126,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6654, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[développement et maintenance de systèmes CTRM (Commodity Trading and Risk Management)] Commodity Trading and Risk Management",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5616,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6003,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6193,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5616, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[développement et maintenance de systèmes CTRM (Commodity Trading and Risk Management)] développement de systèmes de trading",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4898,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5741,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.575,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4898, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[développement et maintenance de systèmes CTRM (Commodity Trading and Risk Management)] gestion des risques de trading",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4847,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5711,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5784,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4847, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse métier et recueil des exigences utilisateurs] analyse métier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4016,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4636,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4878,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4016, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse métier et recueil des exigences utilisateurs] recueil des exigences",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4923,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5114,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5122,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4923, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse métier et recueil des exigences utilisateurs] besoins utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4631,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5138,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5275,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4631, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse métier et recueil des exigences utilisateurs] priorisation des fonctionnalités",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.4025,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4506,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5186,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4025, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[développement avec Oracle Forms Builder] Oracle Forms Builder",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.595,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6017,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6306,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5950, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[développement avec Oracle Forms Builder] développement d'interfaces utilisateur",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.383,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4449,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.4781,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3830, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[intégration de systèmes et gestion des acquisitions] intégration système",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5611,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6065,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6098,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5611, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[intégration de systèmes et gestion des acquisitions] gestion des acquisitions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5425,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.61,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6158,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5425, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[intégration de systèmes et gestion des acquisitions] migration technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.5079,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5434,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5779,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5079, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[reporting P&L et gestion du risque de prix] reporting P&L",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6229,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6345,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6413,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6229, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[reporting P&L et gestion du risque de prix] gestion du risque de prix",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4316,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4811,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5477,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4316, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[reporting P&L et gestion du risque de prix] Profit and Loss",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.566,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.592,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6746,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5660, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[support applicatif et formation des utilisateurs] support applicatif",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5117,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5468,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5861,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5117, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[support applicatif et formation des utilisateurs] formation utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4595,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5454,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5524,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4595, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[support applicatif et formation des utilisateurs] résolution de problèmes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5942,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6289,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6688,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5942, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets et collaboration avec les parties prenantes] gestion de projets",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4843,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5434,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.55,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4843, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets et collaboration avec les parties prenantes] collaboration avec les parties prenantes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5156,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5819,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5833,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5156, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion de projets et collaboration avec les parties prenantes] travail d'équipe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6501,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.658,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6593,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6501, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des marchés de l'énergie et des matières premières (électricité, gaz, pétrole, biocarburants, certificats carbone)] marchés de l'énergie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5674,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.641,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6552,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5674, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des marchés de l'énergie et des matières premières (électricité, gaz, pétrole, biocarburants, certificats carbone)] matières premières",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6166,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6344,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6684,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6166, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des marchés de l'énergie et des matières premières (électricité, gaz, pétrole, biocarburants, certificats carbone)] électricité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6266,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6675,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6935,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6266, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des marchés de l'énergie et des matières premières (électricité, gaz, pétrole, biocarburants, certificats carbone)] gaz",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7309,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.771,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.8064,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des marchés de l'énergie et des matières premières (électricité, gaz, pétrole, biocarburants, certificats carbone)] pétrole brut",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.8127,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.8347,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.838,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des marchés de l'énergie et des matières premières (électricité, gaz, pétrole, biocarburants, certificats carbone)] produits raffinés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6218,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6809,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6887,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6218, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des marchés de l'énergie et des matières premières (électricité, gaz, pétrole, biocarburants, certificats carbone)] biocarburants",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.8108,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.818,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.8342,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des marchés de l'énergie et des matières premières (électricité, gaz, pétrole, biocarburants, certificats carbone)] certificats carbone",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.6157,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.714,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7154,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6157, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[diplôme en informatique, ingénierie ou domaine équivalent] diplôme en informatique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4616,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5056,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5238,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4616, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[diplôme en informatique, ingénierie ou domaine équivalent] diplôme en ingénierie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5525,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5681,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.585,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5525, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[diplôme en informatique, ingénierie ou domaine équivalent] formation technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6132,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.647,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7372,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6132, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "connaissance des marchés de l'énergie et des matières premières (électricité, gaz, pétrole, biocarburants, certificats carbone)"
+  ]
+}

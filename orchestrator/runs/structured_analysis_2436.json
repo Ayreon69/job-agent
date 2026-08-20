@@ -1,0 +1,54 @@
+{
+  "matches": [
+    {
+      "skill": "SQL avancé et optimisation de requêtes",
+      "matched_chunk_summary": "Maîtrise confirmée de SQL avancé (requêtes complexes, agrégations, optimisation) via expérience professionnelle répétée chez ECA Assurances, certifications DataCamp, et résolution de demandes analytiques ad hoc pour des équipes non techniques."
+    },
+    {
+      "skill": "Expérience avec les APIs REST et les services web",
+      "matched_chunk_summary": "Expérience concrète avec les APIs REST via le prototypage d'un assistant interne utilisant l'API Mistral (appels directs, gestion de contexte, interface Gradio). Utilisation quotidienne d'APIs LLM (Mistral, Claude) et d'outils comme GitHub, Playwright, et Vercel dans un écosystème agentique."
+    },
+    {
+      "skill": "Leadership technique et encadrement d'équipes",
+      "matched_chunk_summary": "Leadership technique démontré par l'autonomie sur des projets clés (modèle de churn en production, outils Power BI adoptés à l'échelle de l'entreprise, pipelines ETL Snowflake). Capacité à aligner des solutions techniques avec les KPIs métier et à transférer de l'autonomie aux équipes non techniques (ex: outil de tarification)."
+    },
+    {
+      "skill": "Gouvernance des données et gestion de la qualité des données",
+      "matched_chunk_summary": "Expérience en gouvernance technique des données via la structuration de pipelines ETL sur Snowflake (architecture proche Medallion) et la conception de tableaux de bord Power BI alignés sur les KPIs métier, adoptés par l'ensemble de l'entreprise."
+    },
+    {
+      "skill": "Connaissance des architectures data (Data Warehouse, Data Lake, Lakehouse)",
+      "matched_chunk_summary": "Expérience pratique avec Snowflake et une architecture ETL en couches (staging → core → reporting), inspirée des principes Medallion. Maîtrise des concepts de Data Warehouse via des pipelines de production à grande échelle."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Maîtrise de la solution Semarchy xDM",
+      "note": "Aucune expérience mentionnée avec Semarchy xDM ou des solutions MDM équivalentes. Gap critique pour un poste de Lead Technique MDM."
+    },
+    {
+      "skill": "Conception et modélisation de modèles de données MDM",
+      "note": "Expérience en modélisation de données limitée à des projets ML (churn) et architectures ETL Snowflake. Aucun projet identifié en modélisation MDM (maîtres de données, hiérarchies, règles de réconciliation)."
+    },
+    {
+      "skill": "Développement et configuration de workflows dans Semarchy",
+      "note": "Aucune expérience avec les workflows MDM ou des outils comme Semarchy. Expérience en workflows limitée à des pipelines ETL (Snowflake) et automatisation (Playwright, pandas)."
+    },
+    {
+      "skill": "Intégration de données avec ETL/ELT (Talend, Informatica, SSIS, etc.)",
+      "note": "Expérience ETL limitée à Snowflake et pandas. Aucune mention d'outils comme Talend, Informatica, ou SSIS, pourtant cités dans l'offre."
+    },
+    {
+      "skill": "Gestion de projets agiles (Scrum, Kanban)",
+      "note": "Aucune mention d'expérience avec des méthodologies agiles formelles (Scrum, Kanban) ou de gestion d'équipes en mode agile. Expérience en gestion de projet limitée à l'autonomie sur des initiatives techniques."
+    }
+  ],
+  "uncertain_flags": [
+    "Maîtrise de la solution Semarchy xDM",
+    "Conception et modélisation de modèles de données MDM",
+    "Développement et configuration de workflows dans Semarchy",
+    "Intégration de données avec ETL/ELT (Talend, Informatica, SSIS, etc.)",
+    "Connaissance des architectures data (Data Warehouse, Data Lake, Lakehouse)",
+    "Gestion de projets agiles (Scrum, Kanban)"
+  ]
+}

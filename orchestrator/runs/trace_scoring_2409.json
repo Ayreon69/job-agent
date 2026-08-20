@@ -1,0 +1,565 @@
+{
+  "offer_id": 2409,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneva",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Diplôme en affaires, économie ou domaines STEM] diplôme en affaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5391,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5743,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6009,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5391, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Diplôme en affaires, économie ou domaines STEM] diplôme en économie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.4652,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.5429,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6026,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4652, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Diplôme en affaires, économie ou domaines STEM] domaines STEM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6551,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6755,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6821,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6551, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Excellentes compétences en communication en anglais et français] compétences en communication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5776,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5785,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5792,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5776, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Excellentes compétences en communication en anglais et français] anglais",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.4731,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7085,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.7094,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4731, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Excellentes compétences en communication en anglais et français] français",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5094,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::nationality_visa",
+          "distance": 0.5368,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5813,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5094, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Capacité à travailler en équipe avec des professionnels multidisciplinaires] travail d'équipe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6501,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.658,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6593,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6501, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Capacité à travailler en équipe avec des professionnels multidisciplinaires] collaboration multidisciplinaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5933,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5955,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5995,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5933, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en transformation numérique] transformation numérique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6202,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6368,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6568,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6202, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets à grande échelle] gestion de projets",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4843,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5434,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.55,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4843, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets à grande échelle] projets à grande échelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5262,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5442,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5669,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5262, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de relations clients et parties prenantes] relations clients",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5942,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6352,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6424,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5942, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de relations clients et parties prenantes] gestion des parties prenantes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4987,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5033,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5364,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4987, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies centrées sur l'utilisateur (Design Thinking)] Design Thinking",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5541,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.602,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6495,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5541, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies centrées sur l'utilisateur (Design Thinking)] méthodologies centrées utilisateur",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.3744,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.3896,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4178,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3744, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et développement de produits numériques en mode agile] conception de produits numériques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5469,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5526,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.567,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5469, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et développement de produits numériques en mode agile] développement agile",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.493,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5499,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5523,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4930, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conception et développement de produits numériques en mode agile] méthodologie agile",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5106,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5369,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5481,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5106, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Stratégie d'expérience client multicanal] expérience client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4643,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5757,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6088,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4643, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Stratégie d'expérience client multicanal] stratégie multicanal",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5669,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5689,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5922,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5669, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Équilibre entre besoins utilisateurs, business et technologie] besoins utilisateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4631,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5138,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5275,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4631, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Équilibre entre besoins utilisateurs, business et technologie] stratégie business",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5508,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5699,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5865,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5508, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Équilibre entre besoins utilisateurs, business et technologie] alignement technologie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6363,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6411,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.669,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6363, match retenu"
+    }
+  ],
+  "uncertain_flags": []
+}

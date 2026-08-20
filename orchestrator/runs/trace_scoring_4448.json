@@ -1,0 +1,986 @@
+{
+  "offer_id": 4448,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "VD",
+    "match_method": "canton_abbr"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des dossiers techniques et conformité réglementaire (MDR, FDA 21 CFR Part 820, ODim, PMDA)] MDR",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6809,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6991,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6993,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des dossiers techniques et conformité réglementaire (MDR, FDA 21 CFR Part 820, ODim, PMDA)] FDA 21 CFR Part 820",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6508,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6917,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7006,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6508, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des dossiers techniques et conformité réglementaire (MDR, FDA 21 CFR Part 820, ODim, PMDA)] ODim",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6773,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7337,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7368,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des dossiers techniques et conformité réglementaire (MDR, FDA 21 CFR Part 820, ODim, PMDA)] PMDA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6941,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.71,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7255,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des dossiers techniques et conformité réglementaire (MDR, FDA 21 CFR Part 820, ODim, PMDA)] gestion des dossiers techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4609,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.47,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4805,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4609, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des dossiers techniques et conformité réglementaire (MDR, FDA 21 CFR Part 820, ODim, PMDA)] conformité réglementaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.496,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5406,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5535,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4960, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des Design History Files (DHF) et documentation de conception] Design History Files",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5982,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6212,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6296,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5982, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des Design History Files (DHF) et documentation de conception] DHF",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7228,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.784,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7892,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des Design History Files (DHF) et documentation de conception] documentation de conception",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4861,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5458,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5522,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4861, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Normes qualité et audits (ISO 13485, organismes notifiés)] ISO 13485",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7625,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7722,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.779,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Normes qualité et audits (ISO 13485, organismes notifiés)] audits internes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5974,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6468,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6482,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5974, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Normes qualité et audits (ISO 13485, organismes notifiés)] audits externes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6225,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6288,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6574,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6225, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Normes qualité et audits (ISO 13485, organismes notifiés)] organismes notifiés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7039,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7101,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7505,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Normes qualité et audits (ISO 13485, organismes notifiés)] normes qualité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.581,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5825,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5907,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5810, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction et mise à jour des procédures (SOP, formulaires, instructions)] SOP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6951,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7181,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7318,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction et mise à jour des procédures (SOP, formulaires, instructions)] procédures opérationnelles standardisées",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4664,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5299,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5332,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4664, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction et mise à jour des procédures (SOP, formulaires, instructions)] formulaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.643,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6531,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6554,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6430, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction et mise à jour des procédures (SOP, formulaires, instructions)] instructions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6239,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6295,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6395,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6239, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Rédaction et mise à jour des procédures (SOP, formulaires, instructions)] rédaction documentaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.5617,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.5931,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6366,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5617, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de l'IA pour l'amélioration des processus qualité et documentaire] IA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6344,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6449,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6451,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6344, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de l'IA pour l'amélioration des processus qualité et documentaire] automatisation documentaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.3987,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.504,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5156,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3987, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de l'IA pour l'amélioration des processus qualité et documentaire] extraction automatique de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4318,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4884,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5189,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4318, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de l'IA pour l'amélioration des processus qualité et documentaire] harmonisation des documents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6513,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.653,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6619,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6513, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Intégration de l'IA pour l'amélioration des processus qualité et documentaire] détection d'incohérences",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5961,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6235,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.6531,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5961, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données issues de la production, R&D, service clinique et contrôle qualité] gestion des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4495,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4645,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.468,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4495, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données issues de la production, R&D, service clinique et contrôle qualité] production",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6586,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6841,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6586, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données issues de la production, R&D, service clinique et contrôle qualité] R&D",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6347,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.641,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6451,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6347, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données issues de la production, R&D, service clinique et contrôle qualité] service clinique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5615,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6014,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6924,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5615, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données issues de la production, R&D, service clinique et contrôle qualité] contrôle qualité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5112,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5481,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5622,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5112, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences linguistiques (anglais et français niveau C1)] anglais C1",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5309,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7122,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7258,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5309, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Compétences linguistiques (anglais et français niveau C1)] français C1",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.5323,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5791,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::nationality_visa",
+          "distance": 0.5814,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5323, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation en microtechnique ou ingénierie équivalente (HES/EPF)] microtechnique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6557,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6793,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6872,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6557, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation en microtechnique ou ingénierie équivalente (HES/EPF)] ingénierie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5411,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6035,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6406,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5411, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation en microtechnique ou ingénierie équivalente (HES/EPF)] HES",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7277,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7763,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7804,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Formation en microtechnique ou ingénierie équivalente (HES/EPF)] EPF",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6657,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7479,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7602,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6657, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience dans un environnement réglementé (ISO 13485 ou industries similaires)] environnement réglementé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5138,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.547,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5567,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5138, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience dans un environnement réglementé (ISO 13485 ou industries similaires)] ISO 13485",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7625,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7722,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.779,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience dans un environnement réglementé (ISO 13485 ou industries similaires)] expérience qualité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5583,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6386,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6509,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5583, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Aisance avec les documents structurés et analyses qualité] documents structurés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6009,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6014,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_langues",
+          "distance": 0.6391,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6009, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Aisance avec les documents structurés et analyses qualité] analyses qualité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4971,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.5578,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5726,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4971, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Aisance avec les documents structurés et analyses qualité] processus qualité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4869,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5688,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5726,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4869, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Gestion des dossiers techniques et conformité réglementaire (MDR, FDA 21 CFR Part 820, ODim, PMDA)",
+    "Gestion des Design History Files (DHF) et documentation de conception",
+    "Normes qualité et audits (ISO 13485, organismes notifiés)",
+    "Rédaction et mise à jour des procédures (SOP, formulaires, instructions)",
+    "Formation en microtechnique ou ingénierie équivalente (HES/EPF)",
+    "Expérience dans un environnement réglementé (ISO 13485 ou industries similaires)"
+  ]
+}

@@ -1,0 +1,637 @@
+{
+  "offer_id": 4449,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "yverdon-les-bains",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[maîtrise des outils bureautiques (Microsoft Office, Google Workspace)] Microsoft Office",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6969,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7261,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7285,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[maîtrise des outils bureautiques (Microsoft Office, Google Workspace)] Google Workspace",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6502,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6559,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6713,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6502, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[maîtrise des outils bureautiques (Microsoft Office, Google Workspace)] outils bureautiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4077,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.442,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4654,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4077, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion administrative et organisationnelle] gestion administrative",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5697,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5774,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5845,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5697, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion administrative et organisationnelle] organisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6156,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6183,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6591,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6156, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion administrative et organisationnelle] support administratif",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5798,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5932,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5943,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5798, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[accueil physique et téléphonique] accueil physique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5748,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.7522,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7613,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5748, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[accueil physique et téléphonique] accueil téléphonique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6816,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.69,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.705,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[accueil physique et téléphonique] gestion des visiteurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6069,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6423,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6668,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6069, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[rédaction et mise en forme de documents] rédaction de documents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4898,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5274,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5893,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4898, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[rédaction et mise en forme de documents] mise en forme de documents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5611,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5706,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5927,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5611, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion du courrier et des colis] réception du courrier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6242,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6313,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6704,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6242, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion du courrier et des colis] expédition du courrier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5821,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5979,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6151,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5821, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion du courrier et des colis] gestion des colis",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5261,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5454,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5468,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5261, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[réservation et coordination de ressources (salles, véhicules)] réservation de salles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6107,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6518,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6747,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6107, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[réservation et coordination de ressources (salles, véhicules)] réservation de véhicules",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6027,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6033,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.6196,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6027, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[réservation et coordination de ressources (salles, véhicules)] coordination de ressources",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6092,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6098,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6436,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6092, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des fournitures de bureau et consommables] gestion des fournitures de bureau",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4859,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5053,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5331,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4859, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des fournitures de bureau et consommables] gestion des consommables",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4034,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4421,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5386,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4034, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[suivi des contrats avec prestataires] suivi des contrats",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5033,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.5266,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5483,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5033, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[suivi des contrats avec prestataires] gestion des prestataires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.432,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5438,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5679,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4320, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[organisation logistique d'événements internes] organisation d'événements",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5972,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6137,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6156,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5972, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[organisation logistique d'événements internes] logistique événementielle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5238,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5438,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5559,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5238, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[réservations de voyages et événements (transports, hôtels, restaurants)] réservation de voyages",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5384,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5595,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5821,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5384, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[réservations de voyages et événements (transports, hôtels, restaurants)] réservation d'hôtels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6331,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6398,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6822,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6331, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[réservations de voyages et événements (transports, hôtels, restaurants)] réservation de restaurants",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6487,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6546,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6665,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6487, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "maîtrise des outils bureautiques (Microsoft Office, Google Workspace)",
+    "accueil physique et téléphonique"
+  ]
+}

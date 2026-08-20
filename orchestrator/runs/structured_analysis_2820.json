@@ -1,0 +1,51 @@
+{
+  "matches": [
+    {
+      "skill": "statistiques avancées et modélisation prédictive",
+      "matched_chunk_summary": "Formation académique solide en statistiques et économétrie (Master Économétrie et Statistiques, ISFA; Licence Mathématiques appliquées). Expérience concrète en développement de modèles de machine learning en production (modèle de churn avec recall de 85%, scikit-learn, justification métier des choix statistiques)."
+    },
+    {
+      "skill": "régressions et modèles explicatifs",
+      "matched_chunk_summary": "Expérience en modélisation prédictive (churn) et formation académique en statistiques appliquées (ISFA). Logique de justification des choix statistiques alignée sur des besoins métier (recall vs précision)."
+    },
+    {
+      "skill": "modèles de classification et prédiction",
+      "matched_chunk_summary": "Développement d'un modèle de classification (churn) en production avec scikit-learn, recall de 85%, et justification des métriques en fonction du coût métier des erreurs."
+    },
+    {
+      "skill": "design et validation d'études",
+      "matched_chunk_summary": "Prototypage d'un assistant interne basé sur l'API Mistral et création d'un outil de tarification pour les produits santé, démontrant une capacité à concevoir des outils alignés sur des besoins métier et à modéliser des scénarios."
+    },
+    {
+      "skill": "encadrement d'équipes data (statisticiens, data scientists, spécialistes BI)",
+      "matched_chunk_summary": "Structuration de pipelines ETL sur Snowflake (architecture proche Medallion) et conception de tableaux de bord Power BI adoptés à l'échelle de l'entreprise, suggérant une capacité à organiser et superviser des processus techniques."
+    },
+    {
+      "skill": "outils décisionnels et analyses evidence-based",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI alignés sur les KPIs métier, adoptés par des audiences non-techniques. Développement de modèles prédictifs (churn) avec impact direct sur les stratégies de fidélisation."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "segmentation et scoring",
+      "note": "Aucune mention explicite de segmentation client ou de scoring au-delà du modèle de churn. Les chunks disponibles ne couvrent pas les méthodes spécifiques comme RFM ou scoring comportemental."
+    },
+    {
+      "skill": "analyses multivariées (ACP, AFC)",
+      "note": "Certifications DataCamp couvrant Python et SQL, mais aucune preuve de pratique concrète d'ACP ou AFC en contexte professionnel ou académique."
+    },
+    {
+      "skill": "analyses conjointes (CBC, MaxDiff)",
+      "note": "Aucune expérience ou formation identifiée sur les méthodes d'analyses conjointes (CBC, MaxDiff), malgré une expertise en modélisation prédictive."
+    },
+    {
+      "skill": "gestion et valorisation de données santé (bases patients, données marché, bases assurantielles)",
+      "note": "Expérience limitée aux données assurantielles (churn, tarification santé individuelle), sans mention de gestion de bases patients ou de données marché spécifiques au secteur santé."
+    }
+  ],
+  "uncertain_flags": [
+    "segmentation et scoring",
+    "analyses conjointes (CBC, MaxDiff)",
+    "gestion et valorisation de données santé (bases patients, données marché, bases assurantielles)"
+  ]
+}

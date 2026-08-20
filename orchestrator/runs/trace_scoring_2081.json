@@ -1,0 +1,1008 @@
+{
+  "offer_id": 2081,
+  "geography_verdict": {
+    "zone": "autre_france",
+    "priority_rank": null,
+    "mobility_signal_allowed": false,
+    "matched_keyword": null,
+    "match_method": "aucun"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en France hors Rhône-Alpes, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3167,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3601,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.394,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3167, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Technologie de transfert et validation des procédés pharmaceutiques stériles] technologie de transfert",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6076,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6256,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6278,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6076, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Technologie de transfert et validation des procédés pharmaceutiques stériles] validation des procédés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5047,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5344,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5526,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5047, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Technologie de transfert et validation des procédés pharmaceutiques stériles] fabrication pharmaceutique stérile",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6625,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.8047,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.8119,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6625, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Technologie de transfert et validation des procédés pharmaceutiques stériles] procédés parenteraux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6569,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.66,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6992,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6569, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité réglementaire et normes cGMP pour les produits injectables] cGMP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5968,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6491,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6898,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5968, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité réglementaire et normes cGMP pour les produits injectables] conformité réglementaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.496,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5406,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5535,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4960, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité réglementaire et normes cGMP pour les produits injectables] bonnes pratiques de fabrication",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5501,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5532,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5931,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5501, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité réglementaire et normes cGMP pour les produits injectables] produits injectables",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6519,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6971,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7401,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6519, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des organisations de fabrication sous contrat (CMO) et collaboration internationale] CMO",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7082,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7383,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.747,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des organisations de fabrication sous contrat (CMO) et collaboration internationale] Contract Manufacturing Organizations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6093,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6107,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6325,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6093, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des organisations de fabrication sous contrat (CMO) et collaboration internationale] collaboration internationale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6247,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6427,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6602,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6247, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des organisations de fabrication sous contrat (CMO) et collaboration internationale] gestion des partenaires externes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5291,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5621,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5688,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5291, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données statistiques et outils (Minitab, JMP)] Minitab",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6666,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6687,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6734,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6666, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données statistiques et outils (Minitab, JMP)] JMP",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6432,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6632,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6915,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6432, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données statistiques et outils (Minitab, JMP)] analyse statistique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.463,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5249,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5704,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4630, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse des données statistiques et outils (Minitab, JMP)] data analysis",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4736,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.518,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5268,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4736, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies Quality by Design (QbD) et plans d'expériences (DoE)] Quality by Design",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6282,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6313,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6478,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6282, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies Quality by Design (QbD) et plans d'expériences (DoE)] QbD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6938,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7216,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.725,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies Quality by Design (QbD) et plans d'expériences (DoE)] Design of Experiments",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.5878,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6295,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6514,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5878, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologies Quality by Design (QbD) et plans d'expériences (DoE)] DoE",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::whisper_nlp_pipeline",
+          "distance": 0.7434,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7497,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7568,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de problèmes techniques et analyse des causes racines (CAPA, FMEA, Ishikawa)] CAPA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7135,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7313,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7317,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de problèmes techniques et analyse des causes racines (CAPA, FMEA, Ishikawa)] Corrective and Preventive Actions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5457,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5848,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6738,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5457, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de problèmes techniques et analyse des causes racines (CAPA, FMEA, Ishikawa)] FMEA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7063,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.7101,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7177,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de problèmes techniques et analyse des causes racines (CAPA, FMEA, Ishikawa)] Ishikawa",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.7919,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.8264,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.8429,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de problèmes techniques et analyse des causes racines (CAPA, FMEA, Ishikawa)] analyse des causes racines",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7101,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7377,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7681,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Résolution de problèmes techniques et analyse des causes racines (CAPA, FMEA, Ishikawa)] résolution de problèmes techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5786,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5838,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.5937,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5786, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vérification continue des procédés et optimisation des performances] vérification continue des procédés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5299,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5429,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6079,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5299, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vérification continue des procédés et optimisation des performances] Continuous Process Verification",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5107,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6012,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6215,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5107, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vérification continue des procédés et optimisation des performances] optimisation des performances",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4671,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5325,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5676,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4671, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Vérification continue des procédés et optimisation des performances] process robustness",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5487,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5815,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5895,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5487, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets techniques et leadership d'équipes pluridisciplinaires] gestion de projets",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4843,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5434,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.55,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4843, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets techniques et leadership d'équipes pluridisciplinaires] leadership technique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6471,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7013,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7231,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6471, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets techniques et leadership d'équipes pluridisciplinaires] équipes pluridisciplinaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5727,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.62,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.6232,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5727, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets techniques et leadership d'équipes pluridisciplinaires] cross-functional teams",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.613,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6486,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.6501,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6130, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation CMC et préparation aux inspections réglementaires] documentation CMC",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.516,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6379,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6399,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5160, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation CMC et préparation aux inspections réglementaires] Chemistry, Manufacturing and Controls",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7064,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7437,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7659,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation CMC et préparation aux inspections réglementaires] inspections réglementaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5347,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5685,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.59,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5347, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Documentation CMC et préparation aux inspections réglementaires] audits",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6042,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6096,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6347,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6042, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Excellence opérationnelle (OpEx) et amélioration des procédés industriels] Operational Excellence",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5604,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.6268,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.63,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5604, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Excellence opérationnelle (OpEx) et amélioration des procédés industriels] OpEx",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.8188,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.8252,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.843,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Excellence opérationnelle (OpEx) et amélioration des procédés industriels] amélioration des procédés",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4212,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4611,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5114,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4212, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Excellence opérationnelle (OpEx) et amélioration des procédés industriels] efficacité manufacturière",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5378,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5418,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5594,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5378, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Gestion des organisations de fabrication sous contrat (CMO) et collaboration internationale",
+    "Méthodologies Quality by Design (QbD) et plans d'expériences (DoE)",
+    "Résolution de problèmes techniques et analyse des causes racines (CAPA, FMEA, Ishikawa)",
+    "Documentation CMC et préparation aux inspections réglementaires",
+    "Excellence opérationnelle (OpEx) et amélioration des procédés industriels"
+  ]
+}

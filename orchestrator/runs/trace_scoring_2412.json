@@ -1,0 +1,867 @@
+{
+  "offer_id": 2412,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneva",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologie et analyse rigoureuse] méthodologie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5316,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5385,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5415,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5316, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologie et analyse rigoureuse] analyse rigoureuse",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4892,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5908,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.602,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4892, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologie et analyse rigoureuse] attention aux détails",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5246,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5422,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6144,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5246, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Méthodologie et analyse rigoureuse] travail méthodique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5486,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5524,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5531,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5486, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conseil en stratégie technologique et transformation digitale] conseil en stratégie technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4541,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4592,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4674,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4541, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conseil en stratégie technologique et transformation digitale] transformation digitale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.647,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6655,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7074,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6470, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conseil en stratégie technologique et transformation digitale] stratégie informatique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4979,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5074,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5266,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4979, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conseil en stratégie technologique et transformation digitale] modèle opérationnel IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4931,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4987,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5238,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4931, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et gestion des systèmes d'information] architecture informatique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5286,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5373,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5716,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5286, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et gestion des systèmes d'information] gestion des systèmes d'information",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4506,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5352,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5371,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4506, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Architecture et gestion des systèmes d'information] conception de systèmes IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4974,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4975,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5143,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4974, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Agilité et gestion de projets IT] conseil en agilité informatique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4149,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.4253,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4568,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4149, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Agilité et gestion de projets IT] gestion de projets IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4843,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.508,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5221,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4843, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Agilité et gestion de projets IT] méthodes agiles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5589,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5706,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5774,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5589, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Fusions & acquisitions IT] fusions & acquisitions IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.7079,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7227,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7277,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Fusions & acquisitions IT] due diligence IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5033,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5784,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5876,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5033, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Fusions & acquisitions IT] intégration IT post-fusion",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6236,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.633,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6348,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6236, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et préparation de documents (présentations, ateliers)] analyse de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4776,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.4916,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5031,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4776, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et préparation de documents (présentations, ateliers)] préparation de présentations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5173,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5428,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5752,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5173, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et préparation de documents (présentations, ateliers)] animation d'ateliers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.553,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.647,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6593,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5530, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et préparation de documents (présentations, ateliers)] rédaction de documents techniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.4427,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4706,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.496,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4427, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des clients internationaux et équipes pluridisciplinaires] collaboration client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4383,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4975,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.518,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4383, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des clients internationaux et équipes pluridisciplinaires] travail en équipe pluridisciplinaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5374,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5836,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5956,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5374, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration avec des clients internationaux et équipes pluridisciplinaires] gestion de stakeholders",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5703,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5767,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5938,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5703, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des secteurs bancaire et chimique] secteur bancaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6211,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6358,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6982,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6211, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des secteurs bancaire et chimique] gestion de patrimoine",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4912,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5771,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5962,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4912, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des secteurs bancaire et chimique] secteur chimique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6948,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7179,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7219,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des secteurs bancaire et chimique] stratégie commerciale internationale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5474,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5946,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5997,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5474, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en conseil IT ou département IT d'une entreprise mondiale] conseil IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5007,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5284,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5778,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5007, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en conseil IT ou département IT d'une entreprise mondiale] département IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6473,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6579,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6584,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6473, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en conseil IT ou département IT d'une entreprise mondiale] expérience professionnelle en IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4417,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::current_employment",
+          "distance": 0.4738,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5004,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4417, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience en conseil IT ou département IT d'une entreprise mondiale] stages en IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6177,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6262,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6405,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6177, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Innovation technologique et veille sur les tendances IT] innovation technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5994,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6276,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6679,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5994, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Innovation technologique et veille sur les tendances IT] veille technologique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5358,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5649,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5861,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5358, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Innovation technologique et veille sur les tendances IT] tendances IT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5973,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6676,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5973, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Innovation technologique et veille sur les tendances IT] technologies émergentes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5621,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6234,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.638,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5621, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Fusions & acquisitions IT",
+    "Connaissance des secteurs bancaire et chimique"
+  ]
+}

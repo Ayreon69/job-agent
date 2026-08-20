@@ -1,0 +1,58 @@
+{
+  "matches": [
+    {
+      "skill": "Data engineering et préparation des données (collecte, nettoyage, annotation)",
+      "matched_chunk_summary": "Expérience professionnelle en structuration de pipelines ETL sur Snowflake (organisation en couches staging/core/reporting), maîtrise de SQL avancé, Python (pandas, numpy), et automatisation de processus de données. Certifications DataCamp en SQL avancé et Python. Conception de tableaux de bord Power BI alignés sur des KPIs métier."
+    },
+    {
+      "skill": "Machine learning appliqué en production",
+      "matched_chunk_summary": "Développement d'un modèle de churn en production chez ECA Assurances (recall 85%), avec justification métier des choix statistiques. Maîtrise de scikit-learn et logique de modélisation prédictive."
+    },
+    {
+      "skill": "Amélioration continue et suivi des performances des modèles",
+      "matched_chunk_summary": "Modèle de churn en production avec intégration dans des stratégies de fidélisation ciblées. Automatisation de processus métier (calcul de commissions) avec impact chiffré (réduction de 10h à 35min)."
+    },
+    {
+      "skill": "Packaging et déploiement de modèles en production",
+      "matched_chunk_summary": "Modèle de churn déployé en production chez ECA Assurances. Prototypage d'un assistant interne basé sur l'API Mistral avec interface Gradio. Automatisation de pipelines de données (Playwright, pandas)."
+    },
+    {
+      "skill": "Traitement du langage naturel (NLP, OCR, analyse de rapports, génération de documents)",
+      "matched_chunk_summary": "Pipeline NLP audio (Whisper) pour transcription YouTube vers base recherchable (projet personnel). Expérience en prototypage de chatbots via Gradio et APIs LLM (Mistral, Claude)."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Vision par ordinateur (microscopie, imagerie industrielle, empreintes digitales)",
+      "note": "Aucune expérience identifiée dans le profil pour la vision par ordinateur appliquée à des domaines spécifiques comme la microscopie ou l'imagerie industrielle. Gap complet sur les empreintes digitales."
+    },
+    {
+      "skill": "Analyse de séries temporelles (surveillance d'instruments, détection d'anomalies, chromatographie)",
+      "note": "Expérience limitée à un modèle de churn (données tabulaires), sans application à des séries temporelles industrielles ou scientifiques. Aucun projet identifié en détection d'anomalies ou chromatographie."
+    },
+    {
+      "skill": "Intégration de données issues de LIMS et bases scientifiques",
+      "note": "Aucune expérience avec des systèmes LIMS (Laboratory Information Management Systems) ou des bases de données scientifiques. Expérience en ETL limitée à des contextes métier (assurance) et Snowflake."
+    },
+    {
+      "skill": "MLOps et industrialisation des modèles (API, CI/CD, monitoring, drift)",
+      "note": "Notions seulement en CI/CD (GitHub Actions), Docker, et cloud AWS/Azure. Aucune expérience en monitoring de drift ou industrialisation avancée de modèles. Prototypage limité à des APIs LLM sans architecture RAG ou orchestration complexe."
+    },
+    {
+      "skill": "Documentation technique et transfert de savoir-faire",
+      "note": "Aucune mention de documentation formelle de modèles ou de formation d'équipes métiers. Expérience limitée à la structuration de projets via CLAUDE.md (contexte pour agents IA), sans preuve de transfert de savoir-faire structuré."
+    },
+    {
+      "skill": "Connaissances en Santé, Sécurité et Environnement (SSE, MASE, EPI)",
+      "note": "Aucune expérience ou formation identifiée en SSE, MASE, ou utilisation d'EPI. Contexte professionnel limité à l'assurance et à des projets data/IA sans dimension industrielle ou laboratoire."
+    }
+  ],
+  "uncertain_flags": [
+    "Vision par ordinateur (microscopie, imagerie industrielle, empreintes digitales)",
+    "Traitement du langage naturel (NLP, OCR, analyse de rapports, génération de documents)",
+    "Analyse de séries temporelles (surveillance d'instruments, détection d'anomalies, chromatographie)",
+    "Intégration de données issues de LIMS et bases scientifiques",
+    "MLOps et industrialisation des modèles (API, CI/CD, monitoring, drift)",
+    "Documentation technique et transfert de savoir-faire"
+  ]
+}

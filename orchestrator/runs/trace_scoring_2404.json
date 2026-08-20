@@ -1,0 +1,1033 @@
+{
+  "offer_id": 2404,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "geneve",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des réglementations bancaires et financières suisses et internationales (LBC, FATCA, CRS, QI, Politique Personne US)] LBC",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6373,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6728,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.6749,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6373, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des réglementations bancaires et financières suisses et internationales (LBC, FATCA, CRS, QI, Politique Personne US)] Lutte contre le Blanchiment d'Argent",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.7175,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7299,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.7396,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des réglementations bancaires et financières suisses et internationales (LBC, FATCA, CRS, QI, Politique Personne US)] FATCA",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7493,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7687,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7908,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des réglementations bancaires et financières suisses et internationales (LBC, FATCA, CRS, QI, Politique Personne US)] CRS",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6672,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7499,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7571,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6672, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des réglementations bancaires et financières suisses et internationales (LBC, FATCA, CRS, QI, Politique Personne US)] QI",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6334,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6724,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.676,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6334, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des réglementations bancaires et financières suisses et internationales (LBC, FATCA, CRS, QI, Politique Personne US)] Politique Personne US",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7371,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.7567,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.7646,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des réglementations bancaires et financières suisses et internationales (LBC, FATCA, CRS, QI, Politique Personne US)] réglementations bancaires suisses",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.5339,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5813,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6044,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5339, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des réglementations bancaires et financières suisses et internationales (LBC, FATCA, CRS, QI, Politique Personne US)] réglementations financières internationales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6181,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6258,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6272,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6181, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de la Diligence Raisonnable Client (CDD) et Connaissance Client (KYC)] CDD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7591,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7755,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.7798,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de la Diligence Raisonnable Client (CDD) et Connaissance Client (KYC)] Diligence Raisonnable Client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4425,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5588,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5714,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4425, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de la Diligence Raisonnable Client (CDD) et Connaissance Client (KYC)] KYC",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7772,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.8121,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.8313,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de la Diligence Raisonnable Client (CDD) et Connaissance Client (KYC)] Connaissance Client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.464,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4913,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5074,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4640, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des transactions et filtrage (KYT, Sanctions)] KYT",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.678,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7026,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7314,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des transactions et filtrage (KYT, Sanctions)] Connaissance des Transactions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.509,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6322,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.636,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5090, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des transactions et filtrage (KYT, Sanctions)] filtrage des transactions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5684,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.619,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6361,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5684, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des transactions et filtrage (KYT, Sanctions)] sanctions financières",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6887,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.72,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7576,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données clients et des systèmes bancaires (CDM)] Gestion des Données Client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4565,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4888,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.5501,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4565, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données clients et des systèmes bancaires (CDM)] CDM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6976,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.7596,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7642,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données clients et des systèmes bancaires (CDM)] systèmes bancaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6718,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7091,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7445,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des données clients et des systèmes bancaires (CDM)] mise à jour de structure client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4261,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4852,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5088,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4261, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et validation de documents bancaires et fiscaux] analyse de documents bancaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6163,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6551,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.666,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6163, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et validation de documents bancaires et fiscaux] validation de documents",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.6068,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6871,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.69,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6068, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et validation de documents bancaires et fiscaux] formulaires bancaires",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.6379,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.669,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7279,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6379, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et validation de documents bancaires et fiscaux] documentation CDD",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6441,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.647,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.688,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6441, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et validation de documents bancaires et fiscaux] documents fiscaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7022,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.7237,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7606,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des revues périodiques et basées sur des événements (PEDR)] PEDR",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.7468,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7779,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_nlp_audio",
+          "distance": 0.79,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des revues périodiques et basées sur des événements (PEDR)] revues périodiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6432,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7044,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7056,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6432, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des revues périodiques et basées sur des événements (PEDR)] revues basées sur des événements",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5884,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6352,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6368,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5884, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des revues périodiques et basées sur des événements (PEDR)] déclencheurs d'événements",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5847,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7059,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7255,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5847, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité réglementaire et contrôles internes (ISO, directives HSBC)] conformité réglementaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.496,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5406,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5535,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4960, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité réglementaire et contrôles internes (ISO, directives HSBC)] contrôles internes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5821,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5997,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6111,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5821, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité réglementaire et contrôles internes (ISO, directives HSBC)] directives HSBC",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6617,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6693,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.6942,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6617, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Conformité réglementaire et contrôles internes (ISO, directives HSBC)] normes ISO",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.6508,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.6553,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6686,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6508, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des modifications de compte et blocage/déblocage d'activité] modification de compte",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5417,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5549,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5901,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5417, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des modifications de compte et blocage/déblocage d'activité] blocage de compte",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7073,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7419,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.7576,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des modifications de compte et blocage/déblocage d'activité] déblocage de compte",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.7077,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7233,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::notice_period",
+          "distance": 0.726,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion des modifications de compte et blocage/déblocage d'activité] mise à jour de structure client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.4261,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.4852,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5088,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4261, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience client et support opérationnel] expérience client",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4643,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.5757,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6088,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4643, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience client et support opérationnel] support opérationnel",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.614,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6209,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6218,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6140, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Expérience client et support opérationnel] équipes en contact avec la clientèle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::b2b_outreach_automation",
+          "distance": 0.4857,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.502,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5082,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4857, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Reporting et collaboration avec les équipes internes] reporting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6099,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6373,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6755,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6099, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Reporting et collaboration avec les équipes internes] collaboration interne",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5793,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::mistral_chatbot",
+          "distance": 0.598,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.6157,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5793, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Reporting et collaboration avec les équipes internes] Responsable Production CLM",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5611,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5723,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_intermediaires_llm",
+          "distance": 0.579,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5611, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "Connaissance des réglementations bancaires et financières suisses et internationales (LBC, FATCA, CRS, QI, Politique Personne US)",
+    "Gestion de la Diligence Raisonnable Client (CDD) et Connaissance Client (KYC)",
+    "Gestion des transactions et filtrage (KYT, Sanctions)",
+    "Gestion des données clients et des systèmes bancaires (CDM)",
+    "Analyse et validation de documents bancaires et fiscaux",
+    "Gestion des revues périodiques et basées sur des événements (PEDR)",
+    "Gestion des modifications de compte et blocage/déblocage d'activité"
+  ]
+}

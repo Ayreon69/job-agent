@@ -1,0 +1,56 @@
+{
+  "matches": [
+    {
+      "skill": "bases de données et requêtage SQL",
+      "matched_chunk_summary": "Maîtrise avancée de SQL (requêtes avancées, agrégations, optimisation) avec expérience professionnelle concrète, certifications DataCamp, et utilisation en contexte métier (réponses aux demandes analytiques ad hoc, vulgarisation pour des audiences non-techniques)."
+    },
+    {
+      "skill": "scripting (Python, Bash)",
+      "matched_chunk_summary": "Maîtrise de Python (pandas, numpy, scipy, scikit-learn) pour l'automatisation de processus (scraping avec Playwright, pipelines de données, emailing via smtplib/Brevo), certifications DataCamp, et expérience en production (ex: bot d'automatisation pour Hyperassur)."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "tests automatisés (Selenium, Cypress, JMeter)",
+      "note": "Aucune expérience mentionnée avec Selenium, Cypress ou JMeter. Playwright est maîtrisé pour du scraping et des interactions formulaires, mais pas pour des tests automatisés QA."
+    },
+    {
+      "skill": "méthodologies de test (ISTQB, Agile, Scrum)",
+      "note": "Aucune mention d'expérience avec ISTQB, Agile ou Scrum dans le contexte de tests logiciels. L'expérience en méthodologies se limite à des architectures ETL et des processus métier automatisés."
+    },
+    {
+      "skill": "outils de gestion de bugs (JIRA, Bugzilla)",
+      "note": "Aucune expérience rapportée avec JIRA ou Bugzilla. L'utilisation de GitHub est mentionnée dans un contexte d'agentic coding, mais pas pour la gestion de bugs."
+    },
+    {
+      "skill": "connaissance des protocoles bancaires (EBICS, SWIFT, SEPA)",
+      "note": "Aucune expérience ou connaissance des protocoles bancaires (EBICS, SWIFT, SEPA). L'expérience se limite au secteur assurance et à des architectures de données (Snowflake, ETL)."
+    },
+    {
+      "skill": "sécurité des applications (OWASP, chiffrement)",
+      "note": "Aucune expérience mentionnée en sécurité des applications (OWASP, chiffrement). Les compétences en architecture de données (Snowflake) ne couvrent pas ces aspects."
+    },
+    {
+      "skill": "intégration continue et déploiement (CI/CD, Jenkins, GitLab CI)",
+      "note": "Notions uniquement en CI/CD (GitHub Actions), sans expérience pratique en production. Aucune mention de Jenkins ou GitLab CI."
+    },
+    {
+      "skill": "normes de qualité bancaire (ISO 20022, PSD2)",
+      "note": "Aucune expérience ou connaissance des normes bancaires (ISO 20022, PSD2). L'expérience se limite à des modèles de risque en assurance et à des architectures de données."
+    },
+    {
+      "skill": "analyse des logs et monitoring (ELK Stack, Splunk)",
+      "note": "Aucune expérience mentionnée avec ELK Stack ou Splunk. L'expérience en monitoring se limite à la fiabilisation de pipelines ETL (Snowflake)."
+    }
+  ],
+  "uncertain_flags": [
+    "tests automatisés (Selenium, Cypress, JMeter)",
+    "méthodologies de test (ISTQB, Agile, Scrum)",
+    "outils de gestion de bugs (JIRA, Bugzilla)",
+    "connaissance des protocoles bancaires (EBICS, SWIFT, SEPA)",
+    "intégration continue et déploiement (CI/CD, Jenkins, GitLab CI)",
+    "scripting (Python, Bash)",
+    "normes de qualité bancaire (ISO 20022, PSD2)",
+    "analyse des logs et monitoring (ELK Stack, Splunk)"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "matches": [
+    {
+      "skill": "Python pour le Machine Learning et le Deep Learning",
+      "matched_chunk_summary": "Maîtrise de Python avec pandas, numpy, scipy et scikit-learn, confirmée par des réalisations professionnelles (modèle de churn en production avec recall de 85%). Expérience répétée en machine learning appliqué."
+    },
+    {
+      "skill": "Manipulation et analyse de données (Pandas, Scikit-Learn)",
+      "matched_chunk_summary": "Maîtrise de pandas et scikit-learn, avec application concrète dans un modèle de churn en production. Expérience en choix métier des métriques (recall vs précision)."
+    },
+    {
+      "skill": "Bases de données relationnelles (SQL, PostgreSQL)",
+      "matched_chunk_summary": "Maîtrise avancée de SQL (requêtes complexes, optimisation), certifiée par DataCamp. Expérience professionnelle en Snowflake avec architecture ETL proche Medallion."
+    },
+    {
+      "skill": "Machine Learning",
+      "matched_chunk_summary": "Construction de modèles prédictifs en production (churn), avec justification métier des choix statistiques. Expérience en scikit-learn et logique de métriques."
+    },
+    {
+      "skill": "Ingénierie des données et environnements Cloud",
+      "matched_chunk_summary": "Architecture ETL sur Snowflake (couches staging/core/reporting), proche d'une architecture Medallion. Expérience en Power BI pour des outils décisionnels adoptés à l'échelle de l'entreprise."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Frameworks de Deep Learning (PyTorch, Torch-Geometric)",
+      "note": "Aucune mention de PyTorch ou Torch-Geometric dans le profil, ni d'expérience en deep learning au-delà de scikit-learn."
+    },
+    {
+      "skill": "Graph Neural Networks (GNN) et Graph Machine Learning",
+      "note": "Aucune expérience identifiée en GNN ou en modélisation de données structurées en graphes, malgré une maîtrise partielle du machine learning classique."
+    },
+    {
+      "skill": "Environnement de développement (Linux, Git)",
+      "note": "Aucune mention de Linux ou Git dans les compétences ou réalisations professionnelles."
+    },
+    {
+      "skill": "Conteneurisation (Docker)",
+      "note": "Docker listé comme compétence en cours d'apprentissage, sans expérience professionnelle ou projet concret."
+    },
+    {
+      "skill": "MLOps et industrialisation des modèles",
+      "note": "Expérience limitée à des prototypes (NLP audio avec Whisper, chatbot Gradio) et notions de CI/CD, sans déploiement en production industrialisé."
+    },
+    {
+      "skill": "Calcul haute performance (GPU Computing)",
+      "note": "Notions uniquement, sans expérience pratique en GPU Computing ou déploiement sur infrastructure dédiée."
+    }
+  ],
+  "uncertain_flags": [
+    "Frameworks de Deep Learning (PyTorch, Torch-Geometric)",
+    "Graph Neural Networks (GNN) et Graph Machine Learning",
+    "Manipulation et analyse de données (Pandas, Scikit-Learn)",
+    "Environnement de développement (Linux, Git)",
+    "Conteneurisation (Docker)"
+  ]
+}

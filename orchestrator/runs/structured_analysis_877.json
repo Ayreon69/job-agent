@@ -1,0 +1,56 @@
+{
+  "matches": [
+    {
+      "skill": "Data Science et Machine Learning",
+      "matched_chunk_summary": "Développement d'un modèle de machine learning en production (prédiction de churn avec recall de 85%), maîtrise de scikit-learn et logique métier derrière les choix de métriques. Certifications DataCamp en Data Science."
+    },
+    {
+      "skill": "Visualisation de données",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI (DAX avancé, Power Query) adoptés à l'échelle de l'entreprise, alignés sur les KPIs métier. Certifications DataCamp couvrant Power BI."
+    },
+    {
+      "skill": "Data Warehousing",
+      "matched_chunk_summary": "Maîtrise de Snowflake pour l'architecture ETL et la fiabilisation de la production de rapports à grande échelle, avec une organisation en couches inspirée de Medallion."
+    },
+    {
+      "skill": "Audit et architecture des systèmes data",
+      "matched_chunk_summary": "Expérience en structuration de pipelines ETL sur Snowflake, audit implicite via la refonte de processus (ex: calcul des commissions) et prototypage d'assistants internes basés sur LLM avec choix architecturaux délibérés."
+    },
+    {
+      "skill": "Avant-vente et chiffrage de projets data/IA",
+      "matched_chunk_summary": "Création d'outils métier (tarification, churn) avec impact chiffré (réduction de temps de traitement, élimination de coûts de licence), démontrant une compréhension des besoins clients et une capacité à modéliser des scénarios."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Data Engineering et ETL",
+      "note": "Aucune expérience professionnelle avec Azure Data Factory, Databricks, Synapse Analytics, DBT, Talend Data Integration ou AWS Glue. Notions uniquement sur AWS/Azure sans déploiement en production."
+    },
+    {
+      "skill": "Cloud et plateformes IA",
+      "note": "Notions uniquement sur AWS/Azure/GCP sans expérience concrète de déploiement en production ou maîtrise des plateformes IA spécifiques (ex: Azure IA Platform)."
+    },
+    {
+      "skill": "Big Data et traitement distribué",
+      "note": "Aucune expérience avec Spark, Scala, Kubernetes ou Kafka. Notions de Docker et GitHub Actions en cours d'apprentissage."
+    },
+    {
+      "skill": "Data Platform",
+      "note": "Aucune expérience avec Microsoft Fabric ou Talend Data Fabric."
+    },
+    {
+      "skill": "Méthodologies de gestion de projet",
+      "note": "Aucune mention d'expérience avec Scrum, Kanban, SAFe ou Cycle en V dans le contexte professionnel."
+    }
+  ],
+  "uncertain_flags": [
+    "Data Engineering et ETL (Azure Data Factory, Databricks, Synapse Analytics, DBT, Talend Data Integration, AWS Glue)",
+    "Data Science et Machine Learning (TensorFlow, Keras, PyTorch, Scikit-learn, Synapse Data Science)",
+    "Visualisation de données (Matplotlib, Seaborn, Power BI)",
+    "Cloud et plateformes IA (Azure, AWS, GCP IA Platform)",
+    "Data Warehousing (Snowflake, Redshift, Hadoop, Azure Data Lake)",
+    "Big Data et traitement distribué (Spark, Scala, Kubernetes, Kafka)",
+    "Data Platform (Microsoft Fabric, Talend Data Fabric)",
+    "Méthodologies de gestion de projet (Scrum, Kanban, SAFe, Cycle en V)"
+  ]
+}

@@ -1,0 +1,912 @@
+{
+  "offer_id": 567,
+  "geography_verdict": {
+    "zone": "rhone_alpes",
+    "priority_rank": 2,
+    "mobility_signal_allowed": false,
+    "matched_keyword": "lyon",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Rhône-Alpes ou en France, mobilité",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3036,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.3377,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.3844,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3036, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse financière et gestion budgétaire] analyse financière",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.525,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5569,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6149,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5250, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse financière et gestion budgétaire] gestion budgétaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5063,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5524,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5853,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5063, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse financière et gestion budgétaire] préparation budgétaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4703,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5691,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6147,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4703, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse financière et gestion budgétaire] suivi des moyens",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4548,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5069,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.522,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4548, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[analyse financière et gestion budgétaire] optimisation des ressources",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5491,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5907,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.5907,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5491, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[pilotage de la performance et tableaux de bord] construction d'indicateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4961,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.571,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5767,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4961, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[pilotage de la performance et tableaux de bord] suivi d'indicateurs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5008,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5122,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6068,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5008, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[pilotage de la performance et tableaux de bord] tableaux de bord",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7165,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7214,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7329,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[pilotage de la performance et tableaux de bord] pilotage de la performance",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.486,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4997,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5445,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4860, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[pilotage de la performance et tableaux de bord] fiabilisation des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4703,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4973,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5423,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4703, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[études de coûts et benchmarks] études de coûts",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4598,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5358,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5772,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4598, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[études de coûts et benchmarks] benchmarks",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6073,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6248,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6273,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6073, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[études de coûts et benchmarks] évaluation de l'efficience",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4687,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5042,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5119,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4687, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[études de coûts et benchmarks] analyses d'organisation",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5434,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5894,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5942,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5434, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des risques financiers et organisationnels] gestion des risques financiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4554,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5491,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5964,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4554, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des risques financiers et organisationnels] maîtrise des dérives financières",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4669,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6028,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6223,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4669, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des risques financiers et organisationnels] alerte sur les risques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4628,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6114,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6196,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4628, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[gestion des risques financiers et organisationnels] sécurisation des processus",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4679,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5194,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5857,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4679, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[audit et contrôle des organismes subventionnés] audit financier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6338,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6584,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6914,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6338, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[audit et contrôle des organismes subventionnés] analyse financière des tiers",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.535,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5585,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5735,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5350, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[audit et contrôle des organismes subventionnés] suivi des recommandations",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4292,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.4586,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4645,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4292, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[audit et contrôle des organismes subventionnés] contrôle des subventions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4619,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5829,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.6075,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4619, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[procédures et dispositifs de subventions] procédures d'attribution des subventions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5091,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6086,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6153,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5091, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[procédures et dispositifs de subventions] suivi des subventions",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4515,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5379,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6066,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4515, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[procédures et dispositifs de subventions] structuration des dispositifs de subvention",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.37,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5458,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5602,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3700, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[procédures et dispositifs de subventions] fiabilisation des dispositifs de subvention",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4523,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5505,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6289,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4523, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[reporting et élaboration de documents de pilotage] reporting financier",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6272,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6752,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7091,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6272, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[reporting et élaboration de documents de pilotage] élaboration de reporting",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5106,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5244,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5609,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5106, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[reporting et élaboration de documents de pilotage] documentation de pilotage",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.5852,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.5871,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6397,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5852, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[collaboration avec les directions opérationnelles et ressources] collaboration avec les directions opérationnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5246,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5566,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5000, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[collaboration avec les directions opérationnelles et ressources] travail avec les Responsables Administratifs et Financiers (RAF)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5952,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6091,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6285,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5952, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[collaboration avec les directions opérationnelles et ressources] travail avec les Responsables Ressources Humaines (RRH)",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.5827,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.584,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5912,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5827, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[réunions partenariales et coordination d'équipe] réunions partenariales",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6057,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6411,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6665,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6057, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[réunions partenariales et coordination d'équipe] coordination d'équipe",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6687,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6817,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6943,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6687, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[réunions partenariales et coordination d'équipe] travail collaboratif",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.5931,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6194,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6428,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5931, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des politiques publiques et enjeux territoriaux] politiques publiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5996,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6417,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.702,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5996, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des politiques publiques et enjeux territoriaux] enjeux territoriaux",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.5211,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_uae_middle_east",
+          "distance": 0.5346,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.5662,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5211, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[connaissance des politiques publiques et enjeux territoriaux] secteur public",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5805,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6337,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6591,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5805, match retenu"
+    }
+  ],
+  "uncertain_flags": [
+    "pilotage de la performance et tableaux de bord"
+  ]
+}

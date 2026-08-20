@@ -1,0 +1,56 @@
+{
+  "matches": [
+    {
+      "skill": "conception et implémentation de pipelines de données (data engineering)",
+      "matched_chunk_summary": "Structuration des pipelines ETL sur Snowflake selon une organisation en couches (staging vers core vers reporting), proche d'une architecture Medallion. Expérience en architecture de données et fiabilisation de rapports à grande échelle."
+    },
+    {
+      "skill": "définition d'indicateurs de performance et de cadres analytiques",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI alignés sur les KPIs métier définis par la direction, adoptés par l'ensemble des départements. Maîtrise de Power BI (DAX avancé) et capacité à produire des outils décisionnels pour des audiences non-techniques."
+    },
+    {
+      "skill": "développement de solutions de machine learning de bout en bout",
+      "matched_chunk_summary": "Développement d'un modèle de prédiction de churn en production chez ECA Assurances (recall 85%), avec justification métier des choix statistiques. Autonomie sur un projet de recherche appliquée mis en production."
+    },
+    {
+      "skill": "Python avancé et frameworks de machine learning",
+      "matched_chunk_summary": "Maîtrise de Python (pandas, numpy, scipy, scikit-learn) et expérience professionnelle concrète en construction de modèles prédictifs. Certifications DataCamp en Data Science couvrant Python avancé."
+    },
+    {
+      "skill": "collaboration en environnement technique (IA, développement logiciel, analytics avancées)",
+      "matched_chunk_summary": "Collaboration avec des équipes métier et direction pour vulgariser des résultats techniques. Expérience en prototypage LLM (API Mistral, Gradio) et structuration de projets via des fichiers CLAUDE.md pour le contexte persistant."
+    },
+    {
+      "skill": "rédaction de documentation technique et transfert de connaissances",
+      "matched_chunk_summary": "Utilisation de fichiers CLAUDE.md pour structurer des projets et donner du contexte persistant aux sessions d'agent. Prototypage d'un assistant interne avec documentation des choix architecturaux (ex: décision de ne pas utiliser RAG)."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "modélisation et optimisation de modèles de machine learning pour l'analyse de séries temporelles et la détection d'anomalies",
+      "note": "Aucune expérience spécifique en séries temporelles ou détection d'anomalies mentionnée dans le profil. Expérience limitée aux modèles de churn (classification binaire)."
+    },
+    {
+      "skill": "développement de solutions d'IA explicable (XAI)",
+      "note": "Aucune mention de techniques d'explicabilité (SHAP, LIME, etc.) ou de frameworks dédiés à l'XAI. Expérience en justification métier des choix statistiques, mais pas en explicabilité technique des modèles."
+    },
+    {
+      "skill": "fondamentaux MLOps (suivi d'expériences, gestion du cycle de vie des modèles, workflows reproductibles)",
+      "note": "Aucune mention de suivi d'expériences (MLflow, Weights & Biases), gestion du cycle de vie des modèles ou workflows reproductibles. Expérience limitée à des notions de CI/CD et Docker (non maîtrisées)."
+    },
+    {
+      "skill": "bonnes pratiques d'ingénierie logicielle appliquées au machine learning",
+      "note": "Aucune mention de tests unitaires, intégration continue, ou déploiement en production de modèles ML. Expérience limitée à des notions de FastAPI, Docker et GitHub Actions (non maîtrisées)."
+    },
+    {
+      "skill": "expérience dans les environnements motorsport, automotive ou aerospace",
+      "note": "Aucune expérience mentionnée dans ces secteurs. Expérience limitée au domaine de l'assurance."
+    }
+  ],
+  "uncertain_flags": [
+    "modélisation et optimisation de modèles de machine learning pour l'analyse de séries temporelles et la détection d'anomalies",
+    "développement de solutions d'IA explicable (XAI)",
+    "Python avancé et frameworks de machine learning",
+    "bonnes pratiques d'ingénierie logicielle appliquées au machine learning"
+  ]
+}

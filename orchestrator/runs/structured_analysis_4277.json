@@ -1,0 +1,52 @@
+{
+  "matches": [
+    {
+      "skill": "Développement et déploiement d'applications basées sur les LLM et systèmes multi-agents",
+      "matched_chunk_summary": "Expérience intermédiaire en usage direct des APIs Mistral et Claude, prototypage de chatbots via Gradio, et pratique quotidienne de l'agentic coding avec Claude Code et serveurs MCP (GitHub, Playwright, Firecrawl, Context7, Vercel). Bonne compréhension des LLM en production, bien que sans architecture RAG ou orchestration complexe d'agents."
+    },
+    {
+      "skill": "Intégration de services IA externes (fournisseurs LLM)",
+      "matched_chunk_summary": "Prototypage d'un assistant interne basé sur l'API Mistral pour répondre aux questions sur les règles de commission, avec une architecture simple (appel API direct, interface Gradio). Expérience concrète avec les APIs de LLM en production interne."
+    },
+    {
+      "skill": "Cadre d'évaluation et métriques de succès pour systèmes IA",
+      "matched_chunk_summary": "Développement d'un modèle de churn en production avec justification métier des métriques (recall vs précision). Conception de tableaux de bord Power BI alignés sur les KPIs métier, adoptés à l'échelle de l'entreprise."
+    },
+    {
+      "skill": "Conception de pipelines d'évaluation automatisés pour prompts, embeddings, modèles et workflows d'agents",
+      "matched_chunk_summary": "Expérience en automatisation de processus métier critiques (ex: refonte du calcul des commissions, réduction du temps de traitement de 10h à 35min). Développement de modèles ML en production et prototypage d'assistants LLM."
+    },
+    {
+      "skill": "Optimisation des systèmes pour scalabilité, performance, débit et coût",
+      "matched_chunk_summary": "Automatisation de processus métier avec impact chiffré (réduction de temps, élimination de coûts de licence). Développement de modèles ML en production et optimisation de pipelines ETL sur Snowflake."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Architecture et conception de systèmes IA/ML en production",
+      "note": "Manque d'expérience en conception autonome d'architectures RAG ou d'orchestration complexe d'agents. Expérience limitée à des prototypes simples (ex: assistant interne sans RAG)."
+    },
+    {
+      "skill": "Optimisation des défis d'ingénierie IA (collecte, récupération, évaluation, inférence, latence, coût)",
+      "note": "Aucune expérience mentionnée en optimisation avancée de latence, coût ou inférence pour des systèmes IA à grande échelle. Expérience limitée à des projets ponctuels (ex: modèle de churn)."
+    },
+    {
+      "skill": "Observabilité et surveillance des systèmes IA en production",
+      "note": "Aucune expérience explicite en instrumentation de dashboards ou systèmes de monitoring pour des systèmes IA en production. Expérience limitée à des tableaux de bord Power BI pour des indicateurs métier classiques."
+    },
+    {
+      "skill": "MLOps et ingénierie cloud pour systèmes IA",
+      "note": "Notions uniquement en cloud AWS/Azure, Docker et CI/CD (GitHub Actions), sans déploiement en production. Expérience limitée à Snowflake pour des pipelines ETL."
+    },
+    {
+      "skill": "Compétences en outils cloud et orchestration (AWS, Docker, Kubernetes/ECS)",
+      "note": "Notions théoriques uniquement, sans pratique professionnelle en déploiement, monitoring ou orchestration (Kubernetes/ECS)."
+    }
+  ],
+  "uncertain_flags": [
+    "Architecture et conception de systèmes IA/ML en production",
+    "Optimisation des défis d'ingénierie IA (collecte, récupération, évaluation, inférence, latence, coût)",
+    "Observabilité et surveillance des systèmes IA en production",
+    "Compétences en outils cloud et orchestration (AWS, Docker, Kubernetes/ECS)"
+  ]
+}

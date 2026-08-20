@@ -1,0 +1,54 @@
+{
+  "matches": [
+    {
+      "skill": "Développement d'agents intelligents et pipelines IA avec LangChain.js et Vercel AI SDK",
+      "matched_chunk_summary": "Utilisation quotidienne de Claude Code et serveurs MCP (Vercel inclus) pour des projets de développement assisté par agent. Prototypage de chatbot via Gradio et expérience avec les APIs LLM (Mistral, Claude) en production interne. Familiarité avancée avec l'écosystème agentique moderne."
+    },
+    {
+      "skill": "Conception de workflows multi-agents et protocoles de communication (A2A/ACP)",
+      "matched_chunk_summary": "Pratique quotidienne de l'agentic coding avec des outils comme Claude Code et MCP (GitHub, Playwright, Firecrawl, Context7, Vercel). Structuration de projets via des fichiers CLAUDE.md pour un contexte persistant, démontrant une compréhension des interactions entre agents."
+    },
+    {
+      "skill": "Collaboration avec équipes techniques et métiers pour affiner les besoins utilisateurs",
+      "matched_chunk_summary": "Création d'outils métier (tarification santé, assistant interne sur les règles de commission) adoptés par les équipes non-techniques. Prototypage d'un assistant LLM en conditions réelles d'entreprise, avec une approche centrée sur les compromis techniques et métier."
+    },
+    {
+      "skill": "Optimisation des processus de Run Management et production",
+      "matched_chunk_summary": "Refonte de la méthodologie de calcul des commissions avec automatisation (réduction du temps de traitement de 10h à 35min). Développement d'un modèle de churn en production avec impact métier mesurable. Expérience en optimisation de pipelines ETL sur Snowflake."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Intégration et validation d'APIs LLM (Vertex AI, OpenAI) avec Zod",
+      "note": "Expérience limitée aux APIs Mistral et Claude, sans usage de Vertex AI ou OpenAI. Aucune mention de validation de schémas avec Zod dans le profil."
+    },
+    {
+      "skill": "Optimisation des bases vectorielles (embeddings, indexation, requêtage) et recherche hybride",
+      "note": "Notions seulement sur les bases vectorielles (ChromaDB, Pinecone) et architecture RAG, sans expérience pratique en embeddings, indexation ou recherche hybride."
+    },
+    {
+      "skill": "Parsing et structuration de données non structurées (PDF, images, tableaux)",
+      "note": "Aucune expérience concrète mentionnée dans le parsing de PDF, images ou tableaux. Expérience limitée au traitement de données structurées ou semi-structurées (scraping web, pipelines ETL)."
+    },
+    {
+      "skill": "Évaluation des performances des modèles via pipelines QA et méthodes automatisées (LLM-as-a-Judge)",
+      "note": "Expérience en évaluation de modèles ML classique (recall/précision pour le churn), mais aucune mention de pipelines QA ou méthodes LLM-as-a-Judge pour les systèmes IA."
+    },
+    {
+      "skill": "Sécurisation des systèmes IA (protection contre les prompt injections, filtrage RGPD)",
+      "note": "Aucune expérience mentionnée en sécurisation des systèmes IA, prompt injections ou filtrage RGPD. Expérience limitée à des projets internes sans enjeux de sécurité explicites."
+    },
+    {
+      "skill": "Développement backend avec Node.js et TypeScript",
+      "note": "Aucune expérience mentionnée en Node.js ou TypeScript. Compétences backend limitées à Python et outils d'automatisation (Playwright, pandas)."
+    }
+  ],
+  "uncertain_flags": [
+    "Intégration et validation d'APIs LLM (Vertex AI, OpenAI) avec Zod",
+    "Optimisation des bases vectorielles (embeddings, indexation, requêtage) et recherche hybride",
+    "Parsing et structuration de données non structurées (PDF, images, tableaux)",
+    "Évaluation des performances des modèles via pipelines QA et méthodes automatisées (LLM-as-a-Judge)",
+    "Sécurisation des systèmes IA (protection contre les prompt injections, filtrage RGPD)",
+    "Développement backend avec Node.js et TypeScript"
+  ]
+}

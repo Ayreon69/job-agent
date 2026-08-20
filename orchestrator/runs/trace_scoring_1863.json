@@ -1,0 +1,870 @@
+{
+  "offer_id": 1863,
+  "geography_verdict": {
+    "zone": "suisse_romande",
+    "priority_rank": 1,
+    "mobility_signal_allowed": true,
+    "matched_keyword": "lausanne",
+    "match_method": "ville_connue"
+  },
+  "rag_queries": [
+    {
+      "step": "geography_tone",
+      "query": "règle de ton pour une offre en Suisse romande, mobilité conjoint",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_other_mobility",
+          "distance": 0.2765,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "geography_rules::rule_lyon_no_mobility",
+          "distance": 0.3295,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.3385,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.2765, ok (seuil=0.6699)"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation mathématique avancée et statistiques appliquées à la biologie et la santé] modélisation mathématique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.6239,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.7032,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.7046,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6239, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation mathématique avancée et statistiques appliquées à la biologie et la santé] statistiques appliquées",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.4872,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.536,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5693,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4872, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation mathématique avancée et statistiques appliquées à la biologie et la santé] biologie computationnelle",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6552,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7148,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7245,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6552, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation mathématique avancée et statistiques appliquées à la biologie et la santé] santé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6152,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.6744,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6861,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6152, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Modélisation mathématique avancée et statistiques appliquées à la biologie et la santé] nutrition",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7942,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.8343,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.8402,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Science des données et intelligence artificielle scientifique pour la biologie digitale] science des données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4722,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5171,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5211,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4722, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Science des données et intelligence artificielle scientifique pour la biologie digitale] intelligence artificielle scientifique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4167,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4906,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.5068,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4167, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Science des données et intelligence artificielle scientifique pour la biologie digitale] biologie digitale",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6409,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6735,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.71,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6409, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Science des données et intelligence artificielle scientifique pour la biologie digitale] data science",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::certifications",
+          "distance": 0.4431,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5645,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5688,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4431, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et interprétation de données complexes (cliniques, biologiques, nutritionnelles, microbiomes, omiques)] analyse de données cliniques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5836,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6167,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.6504,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5836, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et interprétation de données complexes (cliniques, biologiques, nutritionnelles, microbiomes, omiques)] analyse de données biologiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6501,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.6637,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6728,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6501, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et interprétation de données complexes (cliniques, biologiques, nutritionnelles, microbiomes, omiques)] analyse de données nutritionnelles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7286,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.7574,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7619,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et interprétation de données complexes (cliniques, biologiques, nutritionnelles, microbiomes, omiques)] analyse de données microbiomes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.7531,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7585,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7617,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et interprétation de données complexes (cliniques, biologiques, nutritionnelles, microbiomes, omiques)] analyse de données omiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4755,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5517,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.558,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4755, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Analyse et interprétation de données complexes (cliniques, biologiques, nutritionnelles, microbiomes, omiques)] interprétation de données complexes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.5342,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5384,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_role_priority_current",
+          "distance": 0.6126,
+          "source_file": "geography_rules.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5342, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de modèles prédictifs et mécanistiques] modèles prédictifs",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3951,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4361,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "constraints::education",
+          "distance": 0.5737,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3951, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de modèles prédictifs et mécanistiques] modèles mécanistiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6083,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6171,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6184,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6083, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de modèles prédictifs et mécanistiques] modélisation prédictive",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3784,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4552,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5943,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3784, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Flux analytiques assistés par IA pour la prise de décision scientifique] flux analytiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "constraints::education",
+          "distance": 0.5788,
+          "source_file": "constraints.md"
+        },
+        {
+          "id": "skills::skills_gaps_specifiques_cern",
+          "distance": 0.6299,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::certifications",
+          "distance": 0.6599,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5788, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Flux analytiques assistés par IA pour la prise de décision scientifique] IA pour la prise de décision",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.3798,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.401,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.4939,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3798, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Flux analytiques assistés par IA pour la prise de décision scientifique] automatisation analytique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.369,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::commission_automation",
+          "distance": 0.4062,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.4449,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.3690, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration interdisciplinaire avec scientifiques, data scientists et biologistes computationnels] collaboration interdisciplinaire",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6146,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6305,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6483,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6146, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration interdisciplinaire avec scientifiques, data scientists et biologistes computationnels] travail d'équipe scientifique",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6279,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.6446,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6491,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6279, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Collaboration interdisciplinaire avec scientifiques, data scientists et biologistes computationnels] biologistes computationnels",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.6236,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.6538,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.6647,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.6236, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets de recherche en santé et nutrition] gestion de projets de recherche",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5262,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::snowflake_etl",
+          "distance": 0.56,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5608,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5262, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets de recherche en santé et nutrition] recherche en santé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4836,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5874,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6336,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4836, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Gestion de projets de recherche en santé et nutrition] recherche en nutrition",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.7038,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.742,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.7584,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de flux de travail reproductibles et robustes] flux de travail reproductibles",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6731,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6995,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "constraints::partner_relocation",
+          "distance": 0.7059,
+          "source_file": "constraints.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de flux de travail reproductibles et robustes] méthodologies robustes",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4975,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.5046,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5487,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4975, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Développement de flux de travail reproductibles et robustes] bonnes pratiques analytiques",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4069,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.4837,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_ml",
+          "distance": 0.496,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4069, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traduction de données en recommandations exploitables pour l'innovation] traduction de données",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::sql_adhoc_analysis",
+          "distance": 0.5788,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_maitrisees_automatisation",
+          "distance": 0.5985,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::agentic_coding",
+          "distance": 0.6071,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5788, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traduction de données en recommandations exploitables pour l'innovation] recommandations exploitables",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.4614,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5202,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.5251,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4614, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Traduction de données en recommandations exploitables pour l'innovation] innovation en santé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.4408,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.6723,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6824,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.4408, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des domaines de la santé, nutrition et biologie] connaissances en santé",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.5093,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.5712,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "achievements::power_bi_dashboards",
+          "distance": 0.6175,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "best_distance=0.5093, match retenu"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des domaines de la santé, nutrition et biologie] connaissances en nutrition",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "achievements::pricing_tool",
+          "distance": 0.6999,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "geography_rules::rule_switzerland_mobility",
+          "distance": 0.7109,
+          "source_file": "geography_rules.md"
+        },
+        {
+          "id": "achievements::churn_model",
+          "distance": 0.7312,
+          "source_file": "achievements.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    },
+    {
+      "step": "requirement_atom",
+      "query": "[Connaissance des domaines de la santé, nutrition et biologie] connaissances en biologie",
+      "n_results": 3,
+      "results": [
+        {
+          "id": "skills::skills_maitrisees_data",
+          "distance": 0.745,
+          "source_file": "skills.md"
+        },
+        {
+          "id": "achievements::playwright_scraping_insurance",
+          "distance": 0.7512,
+          "source_file": "achievements.md"
+        },
+        {
+          "id": "skills::skills_notions_seulement",
+          "distance": 0.7574,
+          "source_file": "skills.md"
+        }
+      ],
+      "conclusion": "aucun match fiable -> flag_uncertain"
+    }
+  ],
+  "uncertain_flags": [
+    "Modélisation mathématique avancée et statistiques appliquées à la biologie et la santé",
+    "Analyse et interprétation de données complexes (cliniques, biologiques, nutritionnelles, microbiomes, omiques)",
+    "Gestion de projets de recherche en santé et nutrition",
+    "Développement de flux de travail reproductibles et robustes",
+    "Connaissance des domaines de la santé, nutrition et biologie"
+  ]
+}

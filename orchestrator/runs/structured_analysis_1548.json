@@ -1,0 +1,50 @@
+{
+  "matches": [
+    {
+      "skill": "Optimisation et évaluation des systèmes d'IA Générative",
+      "matched_chunk_summary": "Expérience en machine learning appliqué (modèle de churn en production avec justification métier des métriques), prototypage LLM avec évaluation des compromis techniques (contexte complet vs retrieval), et priorisation de rôles IA appliquée."
+    },
+    {
+      "skill": "Collaboration avec les équipes métiers pour le cadrage de cas d'usage IA",
+      "matched_chunk_summary": "Développement d'un modèle de churn aligné sur les besoins métier (logique de recall vs précision), création d'outils décisionnels adoptés par les équipes non-techniques (Power BI), et prototypage d'un assistant interne pour les règles de commission."
+    },
+    {
+      "skill": "Industrialisation des solutions IA avec MLOps/LMOps",
+      "matched_chunk_summary": "Expérience en déploiement de modèles ML en production (churn), pipelines NLP audio (Whisper), et structuration de projets techniques (Snowflake, ETL). Bien que les pratiques MLOps avancées (CI/CD, Docker) soient en cours d'apprentissage, les bases d'industrialisation sont présentes."
+    },
+    {
+      "skill": "Monitoring, observabilité et gouvernance des systèmes IA",
+      "matched_chunk_summary": "Conception de tableaux de bord Power BI alignés sur les KPIs métier, automatisation de processus critiques (réduction des erreurs et temps de traitement), et déploiement de modèles en production avec suivi des performances."
+    },
+    {
+      "skill": "Programmation en Python pour le développement IA/Data",
+      "matched_chunk_summary": "Maîtrise confirmée de Python (pandas, numpy, scikit-learn) en contexte professionnel, automatisation de pipelines (Playwright, smtplib), et développement de solutions IA (LLM, ML)."
+    }
+  ],
+  "gaps": [
+    {
+      "skill": "Développement et déploiement de solutions d'IA Générative (LLM, RAG, agents IA)",
+      "note": "Absence d'expérience concrète en architecture RAG (chunking, embeddings, évaluation de retrieval) ou en orchestration complexe d'agents IA, malgré une pratique des APIs LLM et du prototypage."
+    },
+    {
+      "skill": "Utilisation des services Azure AI (Azure AI Foundry, Azure AI Search, Azure OpenAI)",
+      "note": "Notions théoriques uniquement sur Azure Cloud (pas de déploiement en production), sans expérience pratique des services Azure AI spécifiques."
+    },
+    {
+      "skill": "Gestion des données et traitement avec Databricks",
+      "note": "Aucune expérience professionnelle ou projet concret avec Databricks, malgré une maîtrise de Snowflake et des pipelines ETL."
+    },
+    {
+      "skill": "Gestion de version et CI/CD avec GitHub",
+      "note": "Utilisation de GitHub pour le versioning de base (via MCP), mais absence de pratique des workflows CI/CD avancés (GitHub Actions) ou de déploiement automatisé."
+    },
+    {
+      "skill": "Architecture et déploiement sur Azure Cloud",
+      "note": "Notions théoriques sur le cloud (AWS/Azure), mais aucun déploiement en production ou architecture sur Azure Cloud."
+    }
+  ],
+  "uncertain_flags": [
+    "Développement et déploiement de solutions d'IA Générative (LLM, RAG, agents IA)",
+    "Gestion de version et CI/CD avec GitHub"
+  ]
+}
