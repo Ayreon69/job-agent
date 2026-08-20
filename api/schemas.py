@@ -43,6 +43,7 @@ class OfferSummary(BaseModel):
     published_at_sortable: str | None = Field(default=None, description="published_at parsed into ISO 8601 (YYYY-MM-DD) so the dashboard can sort chronologically instead of lexicographically across sources' different date formats; null if published_at is missing or in an unrecognized format")
     first_seen_at: str | None = Field(default=None, description="When this offer was first inserted into the database (jobs.scraped_at, SQLite 'datetime(\"now\")' UTC, set once at INSERT OR IGNORE time via storage/db.py's upsert_job and never updated afterwards) — i.e. the first time it appeared in this database and on the dashboard")
     user_verdict: str | None = Field(default=None, description="Manual triage decision from the dashboard's swipe UI: 'interessante' | 'peut_etre' | 'pas_interessante', or null if not yet triaged. Never set or influenced by the scoring pipeline — a pure human judgment (storage/db.py's user_verdict column).")
+    sector: str | None = Field(default=None, description="Business sector of the offer/company (e.g. 'Assurance', 'Énergie'), extracted by the LLM alongside the requirements (scoring/agent.py's SECTOR_SUGGESTIONS), null if not yet analyzed or undeterminable from the offer text")
 
 
 class OfferDetailResponse(BaseModel):
@@ -61,6 +62,7 @@ class OfferDetailResponse(BaseModel):
     gaps: list[GapItem] = Field(default_factory=list, description="Confirmed gaps with a short note, straight from ScoringResult.gaps")
     uncertain_flags: list[str] = Field(default_factory=list, description="Requirement labels with no reliable RAG match, straight from ScoringResult.uncertain_flags")
     user_verdict: str | None = Field(default=None, description="Manual triage decision from the dashboard's swipe UI: 'interessante' | 'peut_etre' | 'pas_interessante', or null if not yet triaged")
+    sector: str | None = Field(default=None, description="Business sector of the offer/company, extracted by the LLM alongside the requirements, null if not yet analyzed or undeterminable")
     analysis_markdown: str | None = Field(default=None, description="Null if the offer hasn't been analyzed yet")
     orchestrator_trace: dict | None = Field(default=None, description="Orchestrator's own decision trace (session 5)")
     scoring_trace: dict | None = Field(default=None, description="Scoring agent's RAG decision trace (session 3)")

@@ -251,7 +251,15 @@ autre erreur (401, JSON malformé) remonte immédiatement sans retry inutile.
    texte brut de localisation de l'offre.
 5. Demande au LLM d'extraire les exigences clés de l'offre (max 10, chacune
    avec un libellé composite d'affichage **et** ses éléments atomiques —
-   voir encadré ci-dessous).
+   voir encadré ci-dessous), et le **secteur d'activité** de l'offre/entreprise
+   dans le même appel (zéro coût LLM additionnel — la description complète
+   est déjà lue à cette étape). Le prompt propose une liste de secteurs
+   courants (`SECTOR_SUGGESTIONS` : Énergie, Finance, Assurance, Secteur
+   public, Agroalimentaire, Industrie, Santé, Conseil/ESN, Technologie/IT,
+   Distribution/Retail, Transport/Logistique, Immobilier, Télécom, Média/
+   Communication) pour limiter la fragmentation du filtre du dashboard,
+   avec repli sur un libellé court proposé librement si aucun ne convient
+   vraiment, ou `null` si le texte ne donne vraiment aucun indice.
 6. Pour chaque exigence, recherche RAG **par atome individuel** (pas sur le
    libellé composite groupé), avec seuil de bruit appliqué atome par atome.
 7. Arbitrage final par le LLM à partir de tout le contexte rassemblé
@@ -345,6 +353,18 @@ Points clés :
   réintroduirait exactement le risque de divergence que cette approche
   élimine — zéro coût, zéro latence additionnelle, divergence
   structurellement impossible plutôt que simplement non observée.
+  `StructuredAnalysis` porte aussi `sector` (copié tel quel depuis
+  `ScoringResult.sector`, lui-même extrait par `scoring/agent.py`, §5.2) —
+  persisté dans `structured_analysis_<id>.json` aux côtés des autres champs,
+  lu par l'API via `.get("sector")` plutôt que `[...]` pour rester
+  rétrocompatible avec les fichiers écrits avant l'ajout de ce champ.
+  `scoring/backfill_sector.py` (script autonome, `python -m
+  scoring.backfill_sector`) classe rétroactivement le secteur des offres
+  déjà scorées sans relancer tout le pipeline (pas de RAG, pas de nouvel
+  arbitrage géographique/scoring) : un seul appel LLM léger par offre,
+  patché directement dans `structured_analysis_<id>.json` — idempotent,
+  relançable après un échec de rate limit sans redemander aux offres déjà
+  classées.
 
 ### 5.5 `orchestrator/` — la couche de décision de haut niveau
 
@@ -368,8 +388,8 @@ jamais un résultat de pipeline :
 | Endpoint | Rôle |
 |---|---|
 | `GET /health` | 3 vérifications sans appel réseau : clé Mistral présente, modèle d'embeddings chargé, base accessible. `200` si tout passe, `503` sinon. |
-| `GET /offers` | Liste légère (statut, score, zone, dates, compteurs gaps/incertains, `user_verdict`) pour le dashboard. |
-| `GET /offers/{id}` | Détail complet : markdown, matches/gaps/uncertain_flags structurés, `user_verdict`, 3 traces JSON. 404 seulement si l'`offer_id` n'existe pas. |
+| `GET /offers` | Liste légère (statut, score, zone, secteur, dates, compteurs gaps/incertains, `user_verdict`) pour le dashboard. |
+| `GET /offers/{id}` | Détail complet : markdown, matches/gaps/uncertain_flags structurés, secteur, `user_verdict`, 3 traces JSON. 404 seulement si l'`offer_id` n'existe pas. |
 | `POST /offers/{id}/verdict` | Enregistre (ou efface, `verdict: null`) le tri manuel de l'utilisateur. Simple écriture SQLite, disponible dans les deux `API_MODE` (contrairement à `/analyze`, aucun modèle d'embedding ni appel LLM impliqué). |
 | `POST /analyze` | Relance le pipeline complet sur une offre déjà en base. Synchrone (~30-90s), désactivé (503) en mode `readonly`. |
 

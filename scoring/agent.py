@@ -114,6 +114,7 @@ class ScoringResult:
     gaps: list[dict]
     uncertain_flags: list[str]
     reasoning_summary: str
+    sector: str | None
     trace: DecisionTrace
 
 
@@ -157,6 +158,19 @@ def _fetch_geography_tone_chunks(trace: DecisionTrace, zone: str, noise_threshol
 
 MAX_SKILLS = 10
 
+# Suggested sector labels (not a hard enum): given as guidance in the
+# extraction prompt below so the LLM converges on a small, consistent set of
+# French labels for the dashboard's "Secteur" filter, rather than fragmenting
+# into near-duplicates ("Assurance" vs "Assurances" vs "Secteur assurance")
+# across 100+ independently-classified offers. The LLM may still propose a
+# short custom label when none of these genuinely fit — see the prompt.
+SECTOR_SUGGESTIONS = [
+    "Énergie", "Finance", "Assurance", "Secteur public", "Agroalimentaire",
+    "Industrie", "Santé", "Conseil / ESN", "Technologie / IT",
+    "Distribution / Retail", "Transport / Logistique", "Immobilier",
+    "Télécom", "Média / Communication",
+]
+
 
 def _extract_requirements(offer_title: str, offer_description: str) -> dict:
     """Ask the LLM to pull out key requirements from the raw offer text.
@@ -165,13 +179,27 @@ def _extract_requirements(offer_title: str, offer_description: str) -> dict:
     MAX_SKILLS) plus its "atoms": the individual technical items it bundles
     together (e.g. distinct standards/tools mentioned in the same sentence).
     Matching runs on the atoms, not the composite label — see _search_requirement.
+
+    Also asks for the offer/company's business sector in the same call (zero
+    extra LLM cost — the full description is already being read here) rather
+    than a separate classification pass. This is a classification of the
+    OFFER's own text, not a claim about the candidate's profile, so it's
+    outside the scope of CLAUDE.md's honesty rule about never fabricating
+    candidate skills — but it's still a judgment call the LLM can get wrong
+    or be unable to make, hence "sector: null" is an explicit allowed value.
     """
     system_prompt = (
         "Tu extrais les exigences clés d'une offre d'emploi data/IA. Réponds en JSON "
         f"strict avec les clés: skills (liste d'AU PLUS {MAX_SKILLS} objets), "
         "seniority (chaîne libre décrivant le niveau d'expérience demandé, ou null si "
         "non précisé), role_focus (\"ia_agents_llm\" si le poste est orienté "
-        "agents/LLM/RAG, \"data_classique\" sinon). "
+        "agents/LLM/RAG, \"data_classique\" sinon), sector (le secteur d'activité de "
+        "l'entreprise ou de l'offre, en français, ou null si le texte ne permet vraiment "
+        "pas de le déterminer). "
+        f"Pour sector, choisis de préférence un libellé parmi: {', '.join(SECTOR_SUGGESTIONS)}. "
+        "Si aucun ne correspond réellement, propose un libellé court (2-3 mots) plutôt que "
+        "d'en forcer un — mais ne réponds null que si le texte ne donne vraiment aucun indice "
+        "(nom d'entreprise, domaine métier décrit, type de client mentionné...). "
         "Chaque objet de skills doit avoir EXACTEMENT les clés: "
         "\"label\" (le libellé composite lisible regroupant les variantes proches d'une "
         "même compétence, ex: 'gouvernance et gestion des données QMS (ISO 13485, FDA 21 "
@@ -197,6 +225,10 @@ def _extract_requirements(offer_title: str, offer_description: str) -> dict:
             atoms = [label]
         skills.append({"label": label, "atoms": atoms})
     result["skills"] = skills
+
+    sector = result.get("sector")
+    result["sector"] = sector.strip() if isinstance(sector, str) and sector.strip() else None
+
     return result
 
 
@@ -267,6 +299,7 @@ def score_offer(offer_id: int, title: str, location: str, description: str) -> S
     skills = requirements.get("skills", []) or []
     seniority = requirements.get("seniority")
     role_focus = requirements.get("role_focus")
+    sector = requirements.get("sector")
     logger.info("[offer %s] extracted requirements: %s", offer_id, requirements)
 
     # 5. Une recherche RAG séparée par élément atomique de chaque exigence
@@ -344,6 +377,7 @@ def score_offer(offer_id: int, title: str, location: str, description: str) -> S
         gaps=gaps,
         uncertain_flags=list(trace.uncertain_flags),
         reasoning_summary=verdict.get("reasoning_summary", ""),
+        sector=sector,
         trace=trace,
     )
     logger.info("[offer %s] final score=%d gaps=%d uncertain=%d", offer_id, result.score, len(result.gaps), len(result.uncertain_flags))
