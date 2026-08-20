@@ -3,50 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>job-agent — Dashboard</title>
+<title>job·agent — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/static/dashboard.css">
 </head>
 <body>
-  <header>
-    <h1>job-agent — offres scorées</h1>
-    <p class="subtitle">Vue d'ensemble en lecture seule. Aucune candidature n'est jamais soumise automatiquement.</p>
-  </header>
+  <div class="grain" aria-hidden="true"></div>
 
-  <section class="filters">
-    <label>
-      Zone géographique
-      <select id="filter-zone">
-        <option value="">Toutes</option>
-      </select>
-    </label>
-    <label>
-      Statut
-      <select id="filter-status">
-        <option value="">Tous</option>
-      </select>
-    </label>
-    <span id="offer-count" class="offer-count"></span>
-  </section>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">◆</span>
+      <div class="brand-text">
+        <h1>job<span class="brand-dot">·</span>agent</h1>
+        <p class="subtitle">Aucune candidature n'est jamais soumise automatiquement — la décision reste humaine.</p>
+      </div>
+    </div>
+    <nav class="view-switch" role="tablist" aria-label="Vue">
+      <button type="button" class="view-tab" data-view="table" role="tab" aria-selected="false">Tableau</button>
+      <button type="button" class="view-tab" data-view="swipe" role="tab" aria-selected="false">Trier ✦</button>
+    </nav>
+  </header>
 
   <section id="error-banner" class="error-banner" hidden></section>
 
-  <table id="offers-table">
-    <thead>
-      <tr>
-        <th data-sort="title">Titre</th>
-        <th data-sort="company">Entreprise</th>
-        <th data-sort="geography_zone">Zone</th>
-        <th data-sort="score" class="sortable sorted-desc">Score</th>
-        <th data-sort="status">Statut</th>
-        <th>Flags</th>
-        <th data-sort="published_at_sortable">Publiée le</th>
-        <th data-sort="first_seen_at">Vue le</th>
-      </tr>
-    </thead>
-    <tbody id="offers-body">
-      <tr><td colspan="8" class="loading">Chargement…</td></tr>
-    </tbody>
-  </table>
+  <section class="stat-strip" id="stat-strip" aria-label="Répartition par avis">
+    <button type="button" class="stat-chip is-active" data-verdict-filter="">
+      <span class="stat-count" id="stat-all">–</span>
+      <span class="stat-label">Toutes</span>
+    </button>
+    <button type="button" class="stat-chip stat-chip--pending" data-verdict-filter="__pending__">
+      <span class="stat-count" id="stat-pending">–</span>
+      <span class="stat-label">Non triées</span>
+    </button>
+    <button type="button" class="stat-chip stat-chip--yes" data-verdict-filter="interessante">
+      <span class="stat-count" id="stat-interessante">–</span>
+      <span class="stat-label">Intéressantes</span>
+    </button>
+    <button type="button" class="stat-chip stat-chip--maybe" data-verdict-filter="peut_etre">
+      <span class="stat-count" id="stat-peut_etre">–</span>
+      <span class="stat-label">Peut-être</span>
+    </button>
+    <button type="button" class="stat-chip stat-chip--no" data-verdict-filter="pas_interessante">
+      <span class="stat-count" id="stat-pas_interessante">–</span>
+      <span class="stat-label">Pas pour moi</span>
+    </button>
+  </section>
+
+  <section id="view-table" class="view">
+    <section class="filters">
+      <label>
+        Zone géographique
+        <select id="filter-zone">
+          <option value="">Toutes</option>
+        </select>
+      </label>
+      <label>
+        Statut
+        <select id="filter-status">
+          <option value="">Tous</option>
+        </select>
+      </label>
+      <span id="offer-count" class="offer-count"></span>
+    </section>
+
+    <div class="table-scroll">
+      <table id="offers-table">
+        <thead>
+          <tr>
+            <th data-sort="title">Titre</th>
+            <th data-sort="company">Entreprise</th>
+            <th data-sort="geography_zone">Zone</th>
+            <th data-sort="score" class="sortable sorted-desc">Score</th>
+            <th data-sort="status">Statut</th>
+            <th>Mon avis</th>
+            <th>Flags</th>
+            <th data-sort="published_at_sortable">Publiée le</th>
+            <th data-sort="first_seen_at">Vue le</th>
+          </tr>
+        </thead>
+        <tbody id="offers-body">
+          <tr><td colspan="9" class="loading">Chargement…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="view-swipe" class="view" hidden>
+    <div class="swipe-head">
+      <p class="swipe-count" id="swipe-count"></p>
+      <div class="swipe-progress"><div class="swipe-progress-bar" id="swipe-progress-bar"></div></div>
+    </div>
+
+    <div class="swipe-stage" id="swipe-stage"></div>
+
+    <div class="swipe-controls">
+      <button type="button" class="swipe-btn swipe-btn--no" id="btn-no" title="Pas pour moi (←)" aria-label="Pas pour moi">✕</button>
+      <button type="button" class="swipe-btn swipe-btn--undo" id="btn-undo" title="Annuler (Z)" aria-label="Annuler la dernière décision" disabled>↺</button>
+      <button type="button" class="swipe-btn swipe-btn--maybe" id="btn-maybe" title="Peut-être (↑)" aria-label="Peut-être">★</button>
+      <button type="button" class="swipe-btn swipe-btn--yes" id="btn-yes" title="Intéressante (→)" aria-label="Intéressante">♥</button>
+    </div>
+    <p class="swipe-hint"><kbd>←</kbd> pas pour moi · <kbd>↑</kbd> peut-être · <kbd>→</kbd> intéressante · <kbd>Z</kbd> annuler</p>
+  </section>
 
   <script src="/static/dashboard.js"></script>
 </body>

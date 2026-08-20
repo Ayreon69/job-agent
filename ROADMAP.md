@@ -2148,3 +2148,153 @@ cliquant sur l'en-tête de colonne.
 **Fichiers (en plus des précédents) :** `api/main.py` (nouvelle fonction
 `_parse_published_at`), `api/schemas.py` (champ `published_at_sortable`),
 `api/static/index.html` (`data-sort` mis à jour).
+
+## Session 12 (2026-08-20) : refonte visuelle du dashboard + tri manuel façon swipe
+
+**Objectif :** rendre le dashboard plus esthétique et ajouter un vrai
+système de tri manuel des offres en 3 catégories (intéressante / peut-être /
+pas du tout), avec une interface de swipe façon Tinder pour les assigner
+rapidement — en plus du tableau existant, pas à sa place.
+
+**Backend — un jugement humain, jamais mêlé au pipeline :**
+- `storage/db.py` : colonne `jobs.user_verdict` (`interessante` |
+  `peut_etre` | `pas_interessante` | `NULL`), migration explicite
+  (`_migrate_add_user_verdict_column`, même principe que
+  `_migrate_add_status_column` en session 5), constante `USER_VERDICTS`,
+  helper `set_user_verdict`. Volontairement séparé de `status` (piloté par
+  l'orchestrateur) : `user_verdict` n'est écrit que depuis le dashboard,
+  jamais lu ni recalculé par `scoring`/`generation`/`orchestrator`.
+- `api/main.py` : nouvel endpoint `POST /offers/{id}/verdict` (body
+  `{"verdict": "interessante"|"peut_etre"|"pas_interessante"|null}`), 404 si
+  l'offre n'existe pas, 422 si la valeur ne fait pas partie de
+  `USER_VERDICTS`. Délibérément **disponible dans les deux `API_MODE`**
+  (`full` et `readonly`, session 10) : contrairement à `/analyze`, c'est une
+  simple écriture SQLite, aucun modèle d'embedding ni appel LLM impliqué —
+  aucune raison de la désactiver sur le déploiement Render en lecture seule.
+- `api/schemas.py` : `user_verdict` ajouté à `OfferSummary` et
+  `OfferDetailResponse`, nouveaux modèles `VerdictRequest`/`VerdictResponse`.
+
+**Frontend — refonte visuelle complète :**
+- Direction esthétique délibérée (éviter le générique "IA slop") : thème
+  sombre par défaut chaleureux (fond café/charbon, pas noir pur), un seul
+  accent ambre décisif, trois teintes dédiées strictement réservées au
+  signal de tri (vert/or/rouge, jamais utilisées ailleurs dans l'UI).
+  Typographie Fraunces (titres, gros score) + IBM Plex Sans (texte/UI) + IBM
+  Plex Mono (chiffres/compteurs) via Google Fonts — abandon délibéré des
+  polices système génériques utilisées jusqu'ici. Variante claire complète
+  via `prefers-color-scheme`, vérifiée dans le navigateur (les deux
+  rendent correctement, couleurs de fond/texte/accent confirmées par lecture
+  des styles calculés).
+- Toujours vanilla HTML/CSS/JS, aucun framework ni build — cohérent avec la
+  décision de session 9 ("pas de valeur ajoutée réelle d'un framework ici"),
+  toujours vraie pour un usage mono-utilisateur.
+- Barre de statistiques (Toutes / Non triées / Intéressantes / Peut-être /
+  Pas pour moi) au-dessus des deux vues, cliquable pour filtrer le tableau.
+- Tableau existant conservé et enrichi d'une colonne "Mon avis" (pastille +
+  petit menu contextuel pour changer le tri sans quitter la vue), et le
+  panneau de détail en accordéon reçoit les mêmes boutons de tri.
+
+**Vue "Trier" (nouvelle) — l'essentiel de la demande :**
+- File d'attente construite côté client : offres `status` ∈
+  {`analyse`, `a_valider_geographie`} et `user_verdict IS NULL`, triées par
+  score décroissant — mêmes offres et même ordre par défaut que le tableau.
+- Pile de cartes avec profondeur (carte du dessus + 2 qui dépassent
+  derrière, mises à l'échelle/décalées), une seule carte interactive à la
+  fois. Contenu de carte chargé à la demande via `GET /offers/{id}` (mis en
+  cache en mémoire, `Map` par id) — la liste légère de `GET /offers` ne
+  suffit pas (pas de matches/gaps détaillés), donc le corps de la carte
+  affiche un état de chargement bref puis se remplit.
+- Glisser-déposer via Pointer Events (unifie souris/tactile/stylet, une
+  seule implémentation) : rotation + translation proportionnelles au
+  déplacement, tampon "OUI"/"NON"/"PEUT-ÊTRE" dont l'opacité suit la
+  distance parcourue, un seul tampon actif à la fois même en diagonale
+  (l'axe dominant l'emporte). Seuils de validation : 120px horizontal
+  (intéressante/pas pour moi), 100px vertical vers le haut (peut-être).
+  Sous le seuil, la carte revient au centre (transition avec léger
+  rebond) ; au-dessus, elle s'envole dans la direction du geste et la carte
+  suivante glisse en place.
+- Boutons (✕ / ↺ annuler / ★ / ♥) et raccourcis clavier (`←`/`→`/`↑`, `Z`)
+  déclenchent exactement le même chemin de validation que le glissé — même
+  animation de sortie, aucun code dupliqué.
+- Annulation : une pile locale mémorise `{offre, verdict précédent}` à
+  chaque validation ; annuler efface le verdict côté serveur (`verdict:
+  null`) et replace l'offre en tête de file, sans recharger toute la liste.
+- État vide ("🎉 Tout est trié !") quand la file est épuisée, avec un lien
+  direct vers le tableau.
+- Persistance de la vue active (Tableau/Trier) en `localStorage`, pour ne
+  pas revenir au tableau par défaut à chaque rechargement en pleine session
+  de tri.
+
+**Tests réels effectués (serveur FastAPI local, `.claude/launch.json`
+ajouté pour le lancer via le navigateur intégré, pas de simulation) :**
+1. Chargement du tableau avec les 107 offres réelles en base (73 Hellowork +
+   34 jobup.ch) : rendu correct, colonne "Mon avis" affichant "Trier" pour
+   toutes (aucun verdict initial), barre de stats à `107 / 0 / 0 / 0 / 0`
+   (Toutes / Intéressantes / Peut-être / Pas pour moi / — l'ordre affiché
+   étant Toutes, Non triées, Intéressantes, Peut-être, Pas pour moi),
+   **aucune erreur console**.
+2. **Tri depuis le tableau** : clic sur la pastille "Trier" d'une offre →
+   menu contextuel avec les 3 options + effacer → clic "Intéressante" →
+   `POST /offers/39/verdict` → `200 OK` confirmé (inspection réseau directe,
+   pas supposé), pastille mise à jour (`♥ Intéressante`), barre de stats
+   recalculée (`106 non triées / 1 intéressante`) sans recharger la page.
+3. **Persistance réelle en base** : rechargement complet de la page →
+   l'offre 39 affiche toujours `♥ Intéressante` et les compteurs restent
+   `106/1` — confirme une écriture SQLite réelle, pas un état en mémoire
+   perdu au refresh.
+4. **Vue Trier** : bascule d'onglet → file construite, première carte
+   (score le plus haut réel, 92) affichée avec titre/entreprise/zone/score
+   et le contenu complet (points forts/gaps) chargé depuis `GET
+   /offers/{id}` — vérifié texte à l'écran, correspond exactement aux vraies
+   données de l'offre.
+5. **Bouton "♥" (intéressante)** : `POST /offers/4/verdict` → `200 OK`, la
+   carte suivante de la file (offre réelle suivante par score) apparaît
+   immédiatement dans le DOM.
+6. **Annuler (`↺`)** : `POST /offers/4/verdict` avec `verdict: null` → `200
+   OK`, l'offre 4 réapparaît en tête de pile — revérifié par lecture du
+   contenu de la carte affichée après clic, correspond bien à l'offre
+   annulée.
+7. **Raccourci clavier** (`ArrowRight` dispatché) : déclenche le même appel
+   `POST /offers/39/verdict` que le bouton — comportement identique
+   confirmé par inspection réseau.
+8. **État vide** : file vidée pour test (`swipeQueue = []` puis
+   `renderSwipeStack()`, sans appel serveur) → message "🎉 Tout est trié !"
+   et bouton vers le tableau rendus correctement.
+9. **Filtre par clic sur une puce de statistique** : clic sur "Non triées"
+   → bascule automatique vers le tableau, filtré à 106 offres (107 − 1 déjà
+   triée) — comportement exact attendu.
+10. **Boutons de tri dans le panneau de détail du tableau** (pas seulement
+    la vue Trier) : ouverture de l'accordéon de l'offre 39 → bouton actif
+    correctement affiché (`interessante`) → clic sur "Peut-être" → `POST
+    /offers/39/verdict` → `200 OK`, bouton actif mis à jour.
+11. **Thème clair et sombre** : `getComputedStyle` vérifié directement dans
+    les deux cas (`prefers-color-scheme`) — couleurs de fond/texte/accent
+    correctes dans les deux, polices Fraunces/IBM Plex bien chargées et
+    appliquées (vérifié via `font-family` calculé, pas seulement déclaré en
+    CSS).
+12. `GET /health` après tous les tests → `200 {"status":"ok",
+    "mistral_key_present":true,"embeddings_loaded":true,
+    "database_accessible":true}` — aucune régression sur les autres
+    endpoints.
+
+**Données de test nettoyées** après chaque vérification (`user_verdict`
+remis à `NULL` sur les offres réelles utilisées pour les tests, comme pour
+les sessions précédentes) — la base finale ne contient aucun tri résiduel
+de test.
+
+**Limite connue :** pas de suite de tests automatisés (`pytest`) relancée
+pour cette session — le module `pytest` n'est pas installé dans
+`job-agent/.venv` au moment de cette session (`No module named pytest`),
+et ce changement ne touche de toute façon aucun des modules couverts par
+les tests existants (`scoring/geography.py`, `generation/analysis.py`,
+`scoring/llm.py`) : uniquement `storage/db.py` (ajout additif), `api/`
+(endpoint + champs additifs) et `api/static/` (aucun test existant). La
+vérification s'est donc faite entièrement en conditions réelles via le
+navigateur (12 scénarios ci-dessus), pas par une suite automatisée à
+relancer plus tard.
+
+**Fichiers :** `storage/db.py`, `api/schemas.py`, `api/main.py`,
+`api/static/index.html`, `api/static/dashboard.css`,
+`api/static/dashboard.js` (les trois derniers réécrits en quasi-totalité),
+`.claude/launch.json` (nouveau, config de lancement local pour le
+navigateur intégré), `DOCUMENTATION.md` (sections 5.1 et 5.6 mises à jour).
