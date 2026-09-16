@@ -18,23 +18,13 @@ Double objectif assumé :
 - Master Économétrie & Statistiques (Data Analytics & Risk Management), ISFA Lyon 1
 - Compétences clés : SQL, Python, Power BI, Snowflake, ML (churn recall 85%),
   prototypage LLM (Mistral API), agentic coding (Claude Code, MCP servers)
-- Citoyenneté française uniquement — visa de travail nécessaire pour le Moyen-Orient
 - Préavis : 3 mois
 
 ## Règles de scoring et de ciblage (critiques — ne jamais s'en écarter)
 
-Priorités géographiques dans cet ordre :
-1. Suisse francophone (Genève/Neuchâtel/Yverdon)
-2. Émirats Arabes Unis (priorité absolue)
-3. Autres pays du Moyen-Orient
-4. Lyon (repli, pragmatique)
-
-**Règle de séparation stricte par géographie :**
-- Offres Lyon/France : ZÉRO signal de mobilité internationale dans l'analyse générée.
-  Ne jamais mentionner le projet de relocalisation dans ce contexte.
-- Offres Suisse : mobilité personnelle du couple mentionnable.
-- Offres UAE/Moyen-Orient : ouverture à la relocalisation explicite, pas de framing
-  avantages spécifiques français.
+Priorités géographiques et règles de ton par zone : définies dans
+`scoring/geography.py` et dans le profil indexé. L'agent les applique, il ne les
+réinvente pas.
 
 Ouvert à tous les rôles data science / data analyse / ingénierie IA. Priorité actuelle :
 rôles orientés IA appliquée (agents, LLM, RAG) plutôt que reporting classique, mais
