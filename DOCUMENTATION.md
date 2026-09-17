@@ -473,7 +473,7 @@ elles ne sont jamais réinventées ailleurs dans le code :
   Implémentées dans `scoring/geography.py::ZONE_CONFIG`.
 - **Séparation stricte du signal de mobilité par géographie** :
   - Lyon/France : zéro mention, y compris en négation.
-  - Suisse : mobilité personnelle du couple mentionnable.
+  - Suisse : mobilité personnelle mentionnable.
   - UAE/Moyen-Orient : ouverture à la relocalisation explicite et assumée.
   Implémentée dans `scoring/profile/geography_rules.md` (règles de ton) et
   appliquée par le prompt de `generation/analysis.py`.

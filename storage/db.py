@@ -71,6 +71,45 @@ def init_db(db_path: Path = DEFAULT_DB_PATH) -> None:
         _migrate_add_status_column(conn)
         _migrate_add_user_verdict_column(conn)
         _migrate_add_last_seen_at_column(conn)
+        _migrate_add_scoring_summary_columns(conn)
+
+
+# Scoring summary persisted in SQLite (2026-09-17). The dashboard used to read
+# score/zone/sector/gap counts from orchestrator/runs/*.json, but those files
+# carry the personal analyses and are no longer versioned — so the public,
+# read-only deployment had nothing to show. These columns hold only the
+# non-personal summary; the full analyses stay local.
+SCORING_SUMMARY_COLUMNS = {
+    "score": "INTEGER",
+    "geography_zone": "TEXT",
+    "sector": "TEXT",
+    "gaps_count": "INTEGER",
+    "uncertain_count": "INTEGER",
+}
+
+
+def _migrate_add_scoring_summary_columns(conn: sqlite3.Connection) -> None:
+    columns = {row[1] for row in conn.execute("PRAGMA table_info(jobs)").fetchall()}
+    for name, sql_type in SCORING_SUMMARY_COLUMNS.items():
+        if name not in columns:
+            conn.execute(f"ALTER TABLE jobs ADD COLUMN {name} {sql_type}")
+
+
+def set_scoring_summary(
+    conn: sqlite3.Connection,
+    job_id: int,
+    *,
+    score: int,
+    geography_zone: str,
+    sector: str | None,
+    gaps_count: int,
+    uncertain_count: int,
+) -> None:
+    conn.execute(
+        "UPDATE jobs SET score = ?, geography_zone = ?, sector = ?, gaps_count = ?, uncertain_count = ? "
+        "WHERE id = ?",
+        (score, geography_zone, sector, gaps_count, uncertain_count, job_id),
+    )
 
 
 def _migrate_add_status_column(conn: sqlite3.Connection) -> None:

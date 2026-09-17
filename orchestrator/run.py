@@ -46,11 +46,17 @@ def load_offer(offer_id: int) -> dict:
     return {"id": row[0], "title": row[1], "location": row[2], "description": row[3], "company": row[4], "url": row[5]}
 
 
-def load_new_offers() -> list[dict]:
+def load_new_offers(include_missing_scores: bool = False, limit: int | None = None) -> list[dict]:
+    where = "status = 'nouveau'"
+    if include_missing_scores:
+        # Offers analyzed before the scoring summary was stored in SQLite
+        # (2026-09-17) have no score column value: rescore them too.
+        where = "(status = 'nouveau' OR score IS NULL)"
+    sql = f"SELECT id, title, location, description, company, url FROM jobs WHERE {where} ORDER BY id"
+    if limit is not None:
+        sql += f" LIMIT {int(limit)}"
     with connect() as conn:
-        rows = conn.execute(
-            "SELECT id, title, location, description, company, url FROM jobs WHERE status = 'nouveau' ORDER BY id"
-        ).fetchall()
+        rows = conn.execute(sql).fetchall()
     return [
         {"id": r[0], "title": r[1], "location": r[2], "description": r[3], "company": r[4], "url": r[5]}
         for r in rows
@@ -73,6 +79,29 @@ def write_outputs(output_dir: Path, offer_id: int, result) -> None:
         (output_dir / f"structured_analysis_{offer_id}.json").write_text(result.structured_analysis_json, encoding="utf-8")
 
 
+def score_only(offer: dict) -> int:
+    """Scoring step alone, summary written to SQLite; status left untouched.
+    Returns 1 on success, 0 on failure (logged, batch continues)."""
+    from scoring.agent import score_offer
+    from storage.db import set_scoring_summary
+
+    try:
+        result = score_offer(
+            offer_id=offer["id"], title=offer["title"],
+            location=offer.get("location"), description=offer.get("description"),
+        )
+    except Exception as exc:
+        logger.error("[offer %s] scoring échoué: %r", offer["id"], exc)
+        return 0
+    with connect() as conn:
+        set_scoring_summary(
+            conn, offer["id"], score=result.score, geography_zone=result.geography_zone,
+            sector=result.sector, gaps_count=len(result.gaps), uncertain_count=len(result.uncertain_flags),
+        )
+    logger.info("[offer %s] score=%s zone=%s", offer["id"], result.score, result.geography_zone)
+    return 1
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the orchestrator (scoring -> generation) on job offers")
     parser.add_argument("--offer-id", type=int, default=None, help="Process a single offer instead of the full batch")
@@ -81,12 +110,21 @@ def main() -> None:
         "--delay-seconds", type=float, default=2.0,
         help="Pause between offers in batch mode, to avoid bursting the Mistral API rate limit (seen in practice: 13/30 offers failed with HTTP 429 when run back-to-back without delay)",
     )
+    parser.add_argument(
+        "--missing-scores", action="store_true",
+        help="Also process offers with no stored score (backfill after the 2026-09-17 migration)",
+    )
+    parser.add_argument("--limit", type=int, default=None, help="Process at most N offers in batch mode")
+    parser.add_argument(
+        "--scoring-only", action="store_true",
+        help="Score and store the summary only, without generating an analysis (cheap backfill of already-analyzed offers)",
+    )
     args = parser.parse_args()
 
     init_db()
     output_dir = Path(args.output_dir)
 
-    offers = [load_offer(args.offer_id)] if args.offer_id is not None else load_new_offers()
+    offers = [load_offer(args.offer_id)] if args.offer_id is not None else load_new_offers(args.missing_scores, args.limit)
     if not offers:
         logger.info("Aucune offre à traiter (statut 'nouveau' introuvable).")
         return
@@ -98,6 +136,9 @@ def main() -> None:
         if i > 0 and args.delay_seconds > 0:
             time.sleep(args.delay_seconds)
         logger.info("=== Offre %s: %s ===", offer["id"], offer["title"])
+        if args.scoring_only:
+            summary["scored"] = summary.get("scored", 0) + score_only(offer)
+            continue
         result = process_offer(offer)
         summary[result.status] = summary.get(result.status, 0) + 1
         write_outputs(output_dir, offer["id"], result)

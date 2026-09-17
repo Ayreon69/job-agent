@@ -48,7 +48,7 @@ from generation.analysis import trace_to_json as generation_trace_to_json
 from scoring.agent import score_offer
 from scoring.agent import trace_to_json as scoring_trace_to_json
 from scraper.hellowork import JobListing, fetch_job_detail
-from storage.db import connect, set_job_status
+from storage.db import connect, set_job_status, set_scoring_summary
 
 logger = logging.getLogger(__name__)
 
@@ -157,6 +157,18 @@ def process_offer(offer: dict) -> OrchestrationResult:
             f"scoring terminé: score={scoring_result.score}, zone={scoring_result.geography_zone}, "
             f"gaps={len(scoring_result.gaps)}, uncertain_flags={len(scoring_result.uncertain_flags)}"
         )
+        # Persisted immediately, before generation: a generation failure must
+        # not lose a score that was already computed.
+        with connect() as conn:
+            set_scoring_summary(
+                conn,
+                offer_id,
+                score=scoring_result.score,
+                geography_zone=scoring_result.geography_zone,
+                sector=scoring_result.sector,
+                gaps_count=len(scoring_result.gaps),
+                uncertain_count=len(scoring_result.uncertain_flags),
+            )
 
         # Decision 2: unknown geography zone -> pipeline continues, but the
         # final status flags the result as needing manual geography review.

@@ -292,21 +292,24 @@ def list_offers() -> list[OfferSummary]:
     """
     with connect() as conn:
         rows = conn.execute(
-            "SELECT id, title, location, company, status, published_at, scraped_at, user_verdict "
+            "SELECT id, title, location, company, status, published_at, scraped_at, user_verdict, "
+            "score, geography_zone, sector, gaps_count, uncertain_count "
             "FROM jobs ORDER BY id"
         ).fetchall()
 
     summaries = []
     for r in rows:
         offer_id = r[0]
-        score, zone = _score_and_zone_from_trace(offer_id)
-        structured = _read_structured_analysis(offer_id)
-        gaps_count = len(structured["gaps"]) if structured else None
-        uncertain_count = len(structured["uncertain_flags"]) if structured else None
-        # .get(), not [...]: structured_analysis_<id>.json files written before
-        # this field existed don't have the key at all — null (not yet
-        # classified) rather than a KeyError for those pre-existing offers.
-        sector = structured.get("sector") if structured else None
+        # SQLite first (2026-09-17): the traces are no longer versioned, so
+        # the deployed dashboard only has these columns. Traces remain a
+        # local fallback for offers scored before the migration.
+        score, zone, sector, gaps_count, uncertain_count = r[8], r[9], r[10], r[11], r[12]
+        if score is None:
+            score, zone = _score_and_zone_from_trace(offer_id)
+            structured = _read_structured_analysis(offer_id)
+            gaps_count = len(structured["gaps"]) if structured else None
+            uncertain_count = len(structured["uncertain_flags"]) if structured else None
+            sector = structured.get("sector") if structured else None
         summaries.append(
             OfferSummary(
                 id=offer_id, title=r[1], location=r[2], company=r[3],
@@ -328,8 +331,14 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
     yet returns 200 with null analysis/traces (status='nouveau').
     """
     offer = _load_offer_row(offer_id)
-    score, zone = _score_and_zone_from_trace(offer_id)
     structured = _read_structured_analysis(offer_id)
+    with connect() as conn:
+        stored = conn.execute(
+            "SELECT score, geography_zone, sector FROM jobs WHERE id = ?", (offer_id,)
+        ).fetchone()
+    score, zone, stored_sector = stored if stored else (None, None, None)
+    if score is None:
+        score, zone = _score_and_zone_from_trace(offer_id)
     return OfferDetailResponse(
         id=offer["id"],
         title=offer["title"],
@@ -343,7 +352,7 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
         published_at_sortable=_published_at_sortable(offer["published_at"]),
         first_seen_at=offer["scraped_at"],
         user_verdict=offer["user_verdict"],
-        sector=structured.get("sector") if structured else None,
+        sector=stored_sector or (structured.get("sector") if structured else None),
         matches=structured["matches"] if structured else [],
         gaps=structured["gaps"] if structured else [],
         uncertain_flags=structured["uncertain_flags"] if structured else [],

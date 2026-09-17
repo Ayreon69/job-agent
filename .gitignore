@@ -38,3 +38,9 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Analyses générées (personnelles) : restent sur la machine qui les produit
+orchestrator/runs/
+
+# Profil personnel : jamais versionné (injecté en CI depuis un secret)
+scoring/profile/

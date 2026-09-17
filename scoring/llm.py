@@ -29,7 +29,10 @@ load_dotenv()
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_MODEL = "mistral-large-latest"
+# mistral-large-latest n'est plus inclus dans le tier gratuit (403), et medium/small y ont un
+# quota nul (429, limite 0 req/min), constaté le 2026-09-17 : ministral-14b est
+# le plus gros modèle encore servi. Surcharge possible via MISTRAL_MODEL.
+DEFAULT_MODEL = os.environ.get("MISTRAL_MODEL", "ministral-14b-latest")
 
 # Retry/backoff for HTTP 429 (rate limit) specifically — not a catch-all for
 # every SDKError. An auth failure or a malformed request should surface
