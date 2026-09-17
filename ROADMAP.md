@@ -2148,3 +2148,523 @@ cliquant sur l'en-tête de colonne.
 **Fichiers (en plus des précédents) :** `api/main.py` (nouvelle fonction
 `_parse_published_at`), `api/schemas.py` (champ `published_at_sortable`),
 `api/static/index.html` (`data-sort` mis à jour).
+
+## Session 12 (2026-08-20) : refonte visuelle du dashboard + tri manuel façon swipe
+
+**Objectif :** rendre le dashboard plus esthétique et ajouter un vrai
+système de tri manuel des offres en 3 catégories (intéressante / peut-être /
+pas du tout), avec une interface de swipe façon Tinder pour les assigner
+rapidement — en plus du tableau existant, pas à sa place.
+
+**Backend — un jugement humain, jamais mêlé au pipeline :**
+- `storage/db.py` : colonne `jobs.user_verdict` (`interessante` |
+  `peut_etre` | `pas_interessante` | `NULL`), migration explicite
+  (`_migrate_add_user_verdict_column`, même principe que
+  `_migrate_add_status_column` en session 5), constante `USER_VERDICTS`,
+  helper `set_user_verdict`. Volontairement séparé de `status` (piloté par
+  l'orchestrateur) : `user_verdict` n'est écrit que depuis le dashboard,
+  jamais lu ni recalculé par `scoring`/`generation`/`orchestrator`.
+- `api/main.py` : nouvel endpoint `POST /offers/{id}/verdict` (body
+  `{"verdict": "interessante"|"peut_etre"|"pas_interessante"|null}`), 404 si
+  l'offre n'existe pas, 422 si la valeur ne fait pas partie de
+  `USER_VERDICTS`. Délibérément **disponible dans les deux `API_MODE`**
+  (`full` et `readonly`, session 10) : contrairement à `/analyze`, c'est une
+  simple écriture SQLite, aucun modèle d'embedding ni appel LLM impliqué —
+  aucune raison de la désactiver sur le déploiement Render en lecture seule.
+- `api/schemas.py` : `user_verdict` ajouté à `OfferSummary` et
+  `OfferDetailResponse`, nouveaux modèles `VerdictRequest`/`VerdictResponse`.
+
+**Frontend — refonte visuelle complète :**
+- Direction esthétique délibérée (éviter le générique "IA slop") : thème
+  sombre par défaut chaleureux (fond café/charbon, pas noir pur), un seul
+  accent ambre décisif, trois teintes dédiées strictement réservées au
+  signal de tri (vert/or/rouge, jamais utilisées ailleurs dans l'UI).
+  Typographie Fraunces (titres, gros score) + IBM Plex Sans (texte/UI) + IBM
+  Plex Mono (chiffres/compteurs) via Google Fonts — abandon délibéré des
+  polices système génériques utilisées jusqu'ici. Variante claire complète
+  via `prefers-color-scheme`, vérifiée dans le navigateur (les deux
+  rendent correctement, couleurs de fond/texte/accent confirmées par lecture
+  des styles calculés).
+- Toujours vanilla HTML/CSS/JS, aucun framework ni build — cohérent avec la
+  décision de session 9 ("pas de valeur ajoutée réelle d'un framework ici"),
+  toujours vraie pour un usage mono-utilisateur.
+- Barre de statistiques (Toutes / Non triées / Intéressantes / Peut-être /
+  Pas pour moi) au-dessus des deux vues, cliquable pour filtrer le tableau.
+- Tableau existant conservé et enrichi d'une colonne "Mon avis" (pastille +
+  petit menu contextuel pour changer le tri sans quitter la vue), et le
+  panneau de détail en accordéon reçoit les mêmes boutons de tri.
+
+**Vue "Trier" (nouvelle) — l'essentiel de la demande :**
+- File d'attente construite côté client : offres `status` ∈
+  {`analyse`, `a_valider_geographie`} et `user_verdict IS NULL`, triées par
+  score décroissant — mêmes offres et même ordre par défaut que le tableau.
+- Pile de cartes avec profondeur (carte du dessus + 2 qui dépassent
+  derrière, mises à l'échelle/décalées), une seule carte interactive à la
+  fois. Contenu de carte chargé à la demande via `GET /offers/{id}` (mis en
+  cache en mémoire, `Map` par id) — la liste légère de `GET /offers` ne
+  suffit pas (pas de matches/gaps détaillés), donc le corps de la carte
+  affiche un état de chargement bref puis se remplit.
+- Glisser-déposer via Pointer Events (unifie souris/tactile/stylet, une
+  seule implémentation) : rotation + translation proportionnelles au
+  déplacement, tampon "OUI"/"NON"/"PEUT-ÊTRE" dont l'opacité suit la
+  distance parcourue, un seul tampon actif à la fois même en diagonale
+  (l'axe dominant l'emporte). Seuils de validation : 120px horizontal
+  (intéressante/pas pour moi), 100px vertical vers le haut (peut-être).
+  Sous le seuil, la carte revient au centre (transition avec léger
+  rebond) ; au-dessus, elle s'envole dans la direction du geste et la carte
+  suivante glisse en place.
+- Boutons (✕ / ↺ annuler / ★ / ♥) et raccourcis clavier (`←`/`→`/`↑`, `Z`)
+  déclenchent exactement le même chemin de validation que le glissé — même
+  animation de sortie, aucun code dupliqué.
+- Annulation : une pile locale mémorise `{offre, verdict précédent}` à
+  chaque validation ; annuler efface le verdict côté serveur (`verdict:
+  null`) et replace l'offre en tête de file, sans recharger toute la liste.
+- État vide ("🎉 Tout est trié !") quand la file est épuisée, avec un lien
+  direct vers le tableau.
+- Persistance de la vue active (Tableau/Trier) en `localStorage`, pour ne
+  pas revenir au tableau par défaut à chaque rechargement en pleine session
+  de tri.
+
+**Tests réels effectués (serveur FastAPI local, `.claude/launch.json`
+ajouté pour le lancer via le navigateur intégré, pas de simulation) :**
+1. Chargement du tableau avec les 107 offres réelles en base (73 Hellowork +
+   34 jobup.ch) : rendu correct, colonne "Mon avis" affichant "Trier" pour
+   toutes (aucun verdict initial), barre de stats à `107 / 0 / 0 / 0 / 0`
+   (Toutes / Intéressantes / Peut-être / Pas pour moi / — l'ordre affiché
+   étant Toutes, Non triées, Intéressantes, Peut-être, Pas pour moi),
+   **aucune erreur console**.
+2. **Tri depuis le tableau** : clic sur la pastille "Trier" d'une offre →
+   menu contextuel avec les 3 options + effacer → clic "Intéressante" →
+   `POST /offers/39/verdict` → `200 OK` confirmé (inspection réseau directe,
+   pas supposé), pastille mise à jour (`♥ Intéressante`), barre de stats
+   recalculée (`106 non triées / 1 intéressante`) sans recharger la page.
+3. **Persistance réelle en base** : rechargement complet de la page →
+   l'offre 39 affiche toujours `♥ Intéressante` et les compteurs restent
+   `106/1` — confirme une écriture SQLite réelle, pas un état en mémoire
+   perdu au refresh.
+4. **Vue Trier** : bascule d'onglet → file construite, première carte
+   (score le plus haut réel, 92) affichée avec titre/entreprise/zone/score
+   et le contenu complet (points forts/gaps) chargé depuis `GET
+   /offers/{id}` — vérifié texte à l'écran, correspond exactement aux vraies
+   données de l'offre.
+5. **Bouton "♥" (intéressante)** : `POST /offers/4/verdict` → `200 OK`, la
+   carte suivante de la file (offre réelle suivante par score) apparaît
+   immédiatement dans le DOM.
+6. **Annuler (`↺`)** : `POST /offers/4/verdict` avec `verdict: null` → `200
+   OK`, l'offre 4 réapparaît en tête de pile — revérifié par lecture du
+   contenu de la carte affichée après clic, correspond bien à l'offre
+   annulée.
+7. **Raccourci clavier** (`ArrowRight` dispatché) : déclenche le même appel
+   `POST /offers/39/verdict` que le bouton — comportement identique
+   confirmé par inspection réseau.
+8. **État vide** : file vidée pour test (`swipeQueue = []` puis
+   `renderSwipeStack()`, sans appel serveur) → message "🎉 Tout est trié !"
+   et bouton vers le tableau rendus correctement.
+9. **Filtre par clic sur une puce de statistique** : clic sur "Non triées"
+   → bascule automatique vers le tableau, filtré à 106 offres (107 − 1 déjà
+   triée) — comportement exact attendu.
+10. **Boutons de tri dans le panneau de détail du tableau** (pas seulement
+    la vue Trier) : ouverture de l'accordéon de l'offre 39 → bouton actif
+    correctement affiché (`interessante`) → clic sur "Peut-être" → `POST
+    /offers/39/verdict` → `200 OK`, bouton actif mis à jour.
+11. **Thème clair et sombre** : `getComputedStyle` vérifié directement dans
+    les deux cas (`prefers-color-scheme`) — couleurs de fond/texte/accent
+    correctes dans les deux, polices Fraunces/IBM Plex bien chargées et
+    appliquées (vérifié via `font-family` calculé, pas seulement déclaré en
+    CSS).
+12. `GET /health` après tous les tests → `200 {"status":"ok",
+    "mistral_key_present":true,"embeddings_loaded":true,
+    "database_accessible":true}` — aucune régression sur les autres
+    endpoints.
+
+**Données de test nettoyées** après chaque vérification (`user_verdict`
+remis à `NULL` sur les offres réelles utilisées pour les tests, comme pour
+les sessions précédentes) — la base finale ne contient aucun tri résiduel
+de test.
+
+**Limite connue :** pas de suite de tests automatisés (`pytest`) relancée
+pour cette session — le module `pytest` n'est pas installé dans
+`job-agent/.venv` au moment de cette session (`No module named pytest`),
+et ce changement ne touche de toute façon aucun des modules couverts par
+les tests existants (`scoring/geography.py`, `generation/analysis.py`,
+`scoring/llm.py`) : uniquement `storage/db.py` (ajout additif), `api/`
+(endpoint + champs additifs) et `api/static/` (aucun test existant). La
+vérification s'est donc faite entièrement en conditions réelles via le
+navigateur (12 scénarios ci-dessus), pas par une suite automatisée à
+relancer plus tard.
+
+**Fichiers :** `storage/db.py`, `api/schemas.py`, `api/main.py`,
+`api/static/index.html`, `api/static/dashboard.css`,
+`api/static/dashboard.js` (les trois derniers réécrits en quasi-totalité),
+`.claude/launch.json` (nouveau, config de lancement local pour le
+navigateur intégré), `DOCUMENTATION.md` (sections 5.1 et 5.6 mises à jour).
+
+## Correctif post-session 12 (2026-08-20) : tampons OUI/NON/PEUT-ÊTRE cachés derrière le score
+
+**Signalé par l'utilisateur** (capture d'écran à l'appui) après avoir testé
+la vue Trier lui-même : les tampons de verdict pendant le glissé n'étaient
+pas assez visibles, un fragment de lettre apparaissant derrière le badge de
+score. Cause réelle : `.swipe-card__stamp--no` (`top: 2rem; right: 1.5rem`)
+et `.swipe-card__score` (`top: 1.3rem; right: 1.3rem`) occupaient la même
+zone top-right de la carte, sans z-index explicite — le score, plus tardif
+dans le DOM, s'affichait par-dessus le tampon.
+
+**Corrigé** (`api/static/dashboard.css`) : les trois tampons repositionnés
+au centre vertical de la carte (`top: 50%`, translation/rotation par
+variante), avec fond plein (`var(--bg-elevated)`), bordure épaissie, ombre
+portée et `z-index: 6` explicite — au-dessus du score (`z-index: 1`
+ajouté) et du corps de carte. Comme un seul tampon est jamais visible à la
+fois (logique déjà existante dans `applyDragVisuals`, `dashboard.js`),
+partager le même point d'ancrage ne pose aucun problème de chevauchement
+entre eux.
+
+**Test réel effectué :** glissé simulé (`applyDragVisuals(card, -140, 0)`)
+dans le navigateur — `getBoundingClientRect()` du tampon "NON" et du score
+confirmés sans intersection, opacité et z-index vérifiés directement via
+`getComputedStyle`.
+
+## Session 13 (2026-08-20) : secteur d'activité par offre
+
+**Objectif :** afficher, quand c'est possible, le secteur d'activité de
+l'entreprise/offre (énergie, finance, assurance, secteur public,
+agroalimentaire...) — demandé par l'utilisateur après avoir testé le
+dashboard.
+
+**Décision — piggyback sur l'appel d'extraction existant, zéro coût LLM
+additionnel :** `scoring/agent.py::_extract_requirements` lit déjà la
+description complète de l'offre pour en extraire les compétences ; demander
+en plus un champ `sector` dans le même JSON ne coûte rien de plus (même
+appel, même latence). `SECTOR_SUGGESTIONS` (14 libellés courants) est donné
+en guidance dans le prompt pour limiter la fragmentation du futur filtre du
+dashboard (éviter "Assurance" / "Assurances" / "Secteur assurance" comme
+trois valeurs distinctes) — le LLM peut proposer un libellé court hors
+liste si aucun ne convient, ou `null` si le texte ne donne vraiment aucun
+indice.
+
+**Propagation :** `ScoringResult.sector` → `StructuredAnalysis.sector`
+(`generation/analysis.py`, copié tel quel, pas re-dérivé) →
+`structured_analysis_<id>.json` → `api/schemas.py`
+(`OfferSummary.sector`/`OfferDetailResponse.sector`) → `api/main.py` (lu
+via `.get("sector")`, pas `[...]`, pour rester compatible avec les fichiers
+écrits avant l'ajout de ce champ) → dashboard (colonne + filtre "Secteur"
+dans le tableau, badge sur les cartes de la vue Trier).
+
+**Backfill des 107 offres déjà scorées (`scoring/backfill_sector.py`,
+nouveau) :** un script autonome, volontairement **pas** un simple
+re-lancement de `orchestrator.run` sur toute la base — ça aurait relancé
+géographie/RAG/arbitrage final et écrasé les analyses/traces existantes
+pour backfiller un seul champ. À la place : un appel LLM léger par offre
+(réutilise `_extract_requirements`, aucune recherche RAG), qui ne patch que
+la clé `"sector"` dans `structured_analysis_<id>.json` — markdown, matches,
+gaps, traces intacts. Idempotent (`_needs_backfill` saute toute offre déjà
+classée), donc relançable sans redemander aux offres déjà traitées après
+un échec de rate limit.
+
+**Tests réels effectués :**
+1. **Extraction testée sur 3 offres réelles avant le backfill complet** :
+   résultats plausibles (`Technologie / IT`, `Conseil / ESN`,
+   `Agroalimentaire`) — vérification manuelle de l'offre 3 (N4Brands,
+   "acteur majeur de la nutrition sportive et du home fitness") contre son
+   classement "Agroalimentaire" : jugement défendable ancré dans le texte
+   réel, pas une fabrication, même si "Nutrition / Bien-être" aurait été
+   tout aussi valable — limite honnête d'une classification automatique,
+   pas un bug.
+2. **Backfill complet sur les 107 offres réelles**, en 3 passes à cause du
+   rate limit Mistral (le backoff intégré à `scoring/llm.py` absorbe
+   certains 429 mais pas tous en cas de rafale) : 95 classées au premier
+   run, 12 échecs (429 après épuisement des 3 tentatives) ; 2e run
+   (`--delay-seconds 3`) → 14 de plus, 1 échec restant ; 3e run → dernière
+   offre traitée, **0 échec final**. Confirme concrètement le design
+   idempotent : chaque relance n'a retraité que les offres manquantes,
+   jamais les 95+ déjà classées.
+3. **Distribution finale vérifiée** (lecture directe des 107
+   `structured_analysis_<id>.json`) : 105/107 offres avec un secteur
+   (23 Conseil/ESN, 17 Technologie/IT, 12 Finance, 9 Santé, 7 Industrie, 7
+   Transport/Logistique, etc., plus une dizaine de libellés hors liste
+   proposée comme "Jeux vidéo", "Bâtiments intelligents", "Luxe/Lifestyle"
+   — la liste de guidage n'empêche pas une classification plus précise
+   quand elle est justifiée), 2 offres à `null` (le texte ne donnait
+   vraiment aucun indice de secteur).
+4. **API et dashboard vérifiés dans le navigateur** contre le serveur réel
+   de l'utilisateur (déjà lancé, `--reload` actif) : `GET /offers` renvoie
+   bien `sector` pour chaque offre ; colonne "Secteur" et badge présents
+   dans le tableau ; menu déroulant du filtre peuplé des 20 valeurs
+   réellement présentes en base, triées alphabétiquement ; filtre testé sur
+   "Assurance" → 3 offres (correspond exactement au compte réel) ; badge
+   secteur visible sur les cartes de la vue Trier, à côté du badge de zone.
+
+**Bug trouvé et corrigé pendant ce test (sans rapport avec le secteur) :**
+`setView()` ne réappelait jamais `renderTable()` lors d'un retour vers la
+vue Tableau — seul `init()` le faisait, une seule fois, et seulement si la
+vue de démarrage (persistée en `localStorage` depuis la session 12) était
+déjà "table". Concrètement : un utilisateur revenant à l'onglet Tableau
+après avoir été sur Trier voyait le tableau bloqué sur "Chargement…" pour
+toujours — découvert en testant le nouveau filtre secteur, pas un problème
+introduit par cette session mais une régression silencieuse de la session
+12 restée invisible jusqu'ici (mes propres tests de session 12 n'étaient
+jamais partis de "swipe" comme vue persistée). Corrigé en déplaçant l'appel
+`renderTable()` dans `setView()` lui-même (branché sur `else` du test
+existant sur la vue swipe), plutôt que dans chaque appelant séparément —
+un seul endroit décide désormais quoi rendre à chaque changement de vue.
+Revérifié après correctif : bascule Trier → Tableau affiche immédiatement
+les 107 offres, plus de blocage.
+
+**Limite connue :** 2 offres sur 107 sans secteur déterminable par le LLM
+(texte insuffisant) — resteront `null` indéfiniment sauf nouveau run du
+backfill (qui les retente à chaque fois, contrairement aux offres déjà
+classées : comportement documenté, pas un bug — un `null` n'est jamais vu
+comme "déjà traité" par `_needs_backfill`, ce qui permet aussi de
+retenter automatiquement si une future version du prompt fait mieux).
+
+**Fichiers :** `scoring/agent.py` (`SECTOR_SUGGESTIONS`, prompt et
+`ScoringResult.sector`), `scoring/backfill_sector.py` (nouveau),
+`generation/analysis.py` (`StructuredAnalysis.sector`), `api/schemas.py`,
+`api/main.py`, `api/static/index.html`, `api/static/dashboard.css`,
+`api/static/dashboard.js` (bug `setView`/`renderTable` inclus),
+`tests/test_generation.py` (`ScoringResult` du test synthétique mis à jour
+avec `sector=None`), `DOCUMENTATION.md` (sections 5.2 et 5.4 mises à jour).
+
+## Session 14 (2026-08-20) : date de publication sur les cartes swipe + suppression des offres obsolètes
+
+**Objectif initial :** afficher la date de l'offre sur les cartes de la vue
+Trier, et supprimer automatiquement les offres trop anciennes (+1 mois par
+défaut, proposé par l'utilisateur).
+
+**Partie A — date sur les cartes swipe (livré sans détour) :**
+`swipeCardDateLabel` (`api/static/dashboard.js`) affiche "Publiée le
+{published_at}" (repli sur "Vue le {first_seen_at}" si la source n'a donné
+aucune date exploitable) sous les badges de zone/secteur. Testé en direct :
+carte réelle affichant "Publiée le 20/06/2026".
+
+**Partie B — suppression des offres obsolètes, bien plus complexe que prévu :**
+
+**Premier plan (published_at, seuil 30 jours) — invalidé par un vrai bug
+signalé par l'utilisateur avant toute exécution destructive :** l'utilisateur
+a remarqué qu'une offre du dashboard affichait "13/07/2026" alors que la
+même offre sur Hellowork affichait "Publiée le 12/08/2026". Vérifié en
+direct (navigation réelle sur `https://www.hellowork.com/fr-fr/emplois/
+81250774.html`) : confirmé, Hellowork republie/rafraîchit la date affichée
+sur une offre encore active, et `upsert_job` (`INSERT OR IGNORE`) ne
+remettait jamais à jour `published_at` lors d'un re-scraping d'une offre
+déjà connue — la colonne reflète donc "la date affichée le jour du premier
+scraping", pas l'âge réel de l'offre. Un `--dry-run` du premier script
+(basé sur `published_at`, repli `scraped_at`) confirmait le problème par
+l'absurde : **107/107 offres** auraient été supprimées d'un coup, y compris
+les 5 marquées "intéressante" par l'utilisateur — `scraped_at` a le même
+défaut (figé à la première apparition pour toujours, même pour une offre
+qui réapparaît à chaque scraping).
+
+**Nouveau design, validé par l'utilisateur : `jobs.last_seen_at`.**
+- `storage/db.py` : nouvelle colonne `last_seen_at`, migration
+  (`_migrate_add_last_seen_at_column`, rétro-remplie depuis `scraped_at`
+  pour les lignes historiques).
+- `upsert_job` réécrit : ce n'était plus un simple `INSERT OR IGNORE`.
+  Recherche explicite de l'offre existante (`source`+`source_id`) ; si
+  trouvée, **seul `last_seen_at` est rafraîchi** à `datetime('now')` — tout
+  le reste (titre, description, statut, `user_verdict`...) reste intact,
+  jamais écrasé silencieusement par un re-scraping. Contrat de retour
+  inchangé (`True` = ligne neuve, `False` = déjà existante).
+- `storage/cleanup.py` réécrit pour juger l'obsolescence sur `last_seen_at`
+  exclusivement (plus de `published_at`/`scraped_at` dans la logique de
+  suppression). Suppression = ligne SQLite + les 5 fichiers associés dans
+  `orchestrator/runs/` (analyse, structured_analysis, 3 traces) — sinon des
+  fichiers orphelins s'accumuleraient indéfiniment.
+- **Décision explicite de l'utilisateur : aucune protection pour les
+  offres déjà triées.** Une offre "intéressante" est supprimée comme
+  n'importe quelle autre une fois le seuil dépassé — pas de garde-fou sur
+  `user_verdict` dans `find_stale_offers`.
+- **Décision explicite : automatisation immédiate**, pas d'étape manuelle
+  intermédiaire — `.github/workflows/scrape-and-score.yml` appelle `python
+  -m storage.cleanup --days 30` juste après le scraper (et avant
+  l'orchestrateur), pour que `last_seen_at` soit à jour avant le jugement
+  d'obsolescence à chaque run.
+
+**Refactoring associé :** `_parse_published_at` (et ses regex/dictionnaire
+de mois français) déplacée de `api/main.py` vers `storage/db.py`
+(`parse_published_at`, retourne un vrai `date` plutôt qu'une chaîne ISO) —
+`api/main.py` n'a plus qu'un petit wrapper `_published_at_sortable` qui
+appelle `.isoformat()`. Évite une deuxième copie de cette logique dans
+`storage/cleanup.py` (qui, au final, ne l'utilise plus du tout depuis le
+passage à `last_seen_at`, mais le partage reste utile si un futur usage
+raisonne sur la date de publication).
+
+**Tests réels effectués (sur une copie de la vraie base, jamais sur le
+fichier utilisé par le serveur de l'utilisateur en cours d'exécution) :**
+1. **Reproduction du bug published_at**, décrite ci-dessus — navigation
+   réelle sur la page Hellowork, comparaison directe avec la valeur stockée
+   en base.
+2. **Migration testée sur une copie de `jobs.db`** : colonne `last_seen_at`
+   ajoutée, rétro-remplie depuis `scraped_at` pour les 3 premières lignes
+   vérifiées manuellement.
+3. **`upsert_job` réécrit, testé sur un cas réel** : re-upsert d'une offre
+   déjà existante (`hellowork`/`76492195`) → retourne `False`, `last_seen_at`
+   passe de `2026-07-10` à l'heure réelle du test ; upsert d'une offre
+   neuve (`source_id` inventé) → retourne `True`. Les deux comportements
+   confirmés par lecture directe de la base après coup, pas seulement par
+   la valeur de retour.
+4. **`find_stale_offers` testé sur la copie migrée** : 106 offres
+   obsolètes sur 108 (107 + 1 offre de test neuve) — les 2 exclusions
+   correspondent exactement à l'offre re-upsertée (protégée par son
+   `last_seen_at` frais) et à l'offre neuve, confirmant que le mécanisme
+   protège bien une offre "revue" et seulement elle.
+5. **Migration revérifiée sur la vraie base** (via le serveur de
+   l'utilisateur, déjà en `--reload`, qui a réappliqué `init_db()` tout
+   seul au rechargement) : colonne présente, `/health` toujours `200 ok`
+   après coup — aucune régression du serveur en cours d'exécution.
+6. **`--dry-run` sur la vraie base, seuil 30 jours** : confirme que sans
+   scraping intermédiaire, la quasi-totalité des offres restent listées
+   comme obsolètes (attendu — `last_seen_at` vient d'être rétro-rempli
+   depuis d'anciennes dates de premier scraping, aucune offre n'a encore
+   été "revue" sous le nouveau mécanisme). **Aucune suppression réelle
+   exécutée dans cette session** — le premier nettoyage réel se fera au
+   prochain run GitHub Actions, après le scraping qui rafraîchira
+   `last_seen_at` pour les offres encore trouvées.
+
+**Limite connue, documentée dans `storage/cleanup.py` :** une offre encore
+active mais qui ne remonte plus dans les résultats par défaut du scraper
+(page 1 uniquement, requêtes fixes) verra son `last_seen_at` ne plus être
+rafraîchi et sera donc vue comme obsolète même si elle n'a pas réellement
+expiré — limite de rappel du scraper, pas un bug de la logique de
+nettoyage elle-même.
+
+**Fichiers :** `storage/db.py` (`last_seen_at`, migration, `upsert_job`
+réécrit, `parse_published_at` déplacé depuis `api/main.py`),
+`storage/cleanup.py` (réécrit pour `last_seen_at`),
+`.github/workflows/scrape-and-score.yml` (étape de nettoyage ajoutée),
+`api/main.py` (`_published_at_sortable`, import `re`/`date` nettoyés),
+`api/static/dashboard.js` (`swipeCardDateLabel`), `api/static/dashboard.css`
+(`.swipe-card__date`), `DOCUMENTATION.md` (sections 5.1 et 8 mises à jour).
+
+## Correctif post-session 14 (2026-08-20) : `published_at` toujours figé à la première visite dans le tableau
+
+**Signalé par l'utilisateur** (capture d'écran du tableau) juste après la
+session 14 : la colonne "Publiée le" affichait encore des dates
+manifestement obsolètes pour plusieurs offres. Cause : le correctif de
+session 14 avait résolu le problème pour la **suppression** (bascule sur
+`last_seen_at`), mais pas pour l'**affichage** — `upsert_job` ne
+rafraîchissait toujours que `last_seen_at` sur une offre déjà connue,
+laissant `published_at` (et tous les autres champs scrapés) figés à leur
+valeur du tout premier scraping, exactement le bug d'origine que
+l'utilisateur avait signalé avant la session 14.
+
+**Corrigé** (`storage/db.py::upsert_job`) : sur une offre déjà connue, tous
+les **champs scrapés** (`url`, `title`, `company`, `location`,
+`contract_type`, `salary`, `experience`, `description`, `published_at`)
+sont désormais rafraîchis avec les valeurs de ce run, en plus de
+`last_seen_at`. Le scraper revisitait déjà systématiquement la page de
+détail de chaque offre à chaque run, y compris pour les offres déjà
+connues (`scraper/hellowork.py`/`jobup.py`, aucun changement nécessaire
+côté scraper) — cette donnée fraîche était simplement jetée avant ce
+correctif. `status` et `user_verdict` restent strictement protégés (ce
+sont des données du pipeline/de l'utilisateur, pas des données scrapées),
+ainsi que `scraped_at` (fait historique, jamais réécrit).
+
+**Test réel effectué** (sur une copie de la base, pas sur le fichier du
+serveur en cours d'exécution) : re-upsert de l'offre #23 (déjà marquée
+`status='analyse'`, `user_verdict='interessante'` par l'utilisateur) avec
+un `Job` simulant un re-scraping (nouvelle `published_at`, nouveau
+`salary`, nouvelle `description`) → `published_at` passe de `07/07/2026` à
+`19/08/2026`, `salary`/`description` mis à jour, **`status` et
+`user_verdict` inchangés** (`analyse`/`interessante`) — confirmé par
+lecture directe de la base après l'appel, pas seulement par la valeur de
+retour de la fonction.
+
+**Limite assumée, pas traitée dans ce correctif :** si la description
+d'une offre change significativement entre deux scrapings, l'analyse déjà
+générée (`analysis_<id>.md`, score, matches/gaps) ne se met pas à jour
+automatiquement — elle continue de décrire la version de l'offre au moment
+du dernier scoring, potentiellement désynchronisée de la nouvelle
+description stockée. Détecter un changement de contenu significatif et
+décider s'il faut redéclencher un scoring est un problème distinct, plus
+complexe (faux positifs sur des reformulations mineures), hors périmètre
+de ce correctif ciblé sur le seul bug de date signalé.
+
+**Fichiers :** `storage/db.py` (`upsert_job`), `DOCUMENTATION.md` (section
+5.1 mise à jour).
+
+## Session 15 (2026-08-20) : réconciliation de branche, mise en production du nettoyage, harmonisation des dates du tableau
+
+**Point de départ :** l'utilisateur signale qu'aucune offre postérieure au
+13/07 n'apparaît localement, alors que le site déployé
+(https://job-agent-otyo.onrender.com/, qui suit `master`) affiche bien des
+offres récentes.
+
+**Découverte :** toutes les sessions 12 à 14 (refonte dashboard, tri swipe,
+secteur, `last_seen_at`, nettoyage) ont été développées sur la branche de
+la PR #1 (`docs/comprehensive-documentation`), jamais fusionnée dans
+`master`. Le bot GitHub Actions, lui, commit chaque jour directement sur
+`master` avec l'ancien code — la branche locale était donc restée
+complètement isolée de 36 runs quotidiens (`git fetch origin` : 36 commits
+d'avance sur `origin/master`, 3 en retard). D'où l'absence d'offres
+récentes ET les dates figées : deux symptômes d'une seule et même cause.
+
+**Réconciliation :** `git merge origin/master` (un seul conflit binaire,
+`storage/jobs.db` — résolu en repartant de la version de master, en
+rejouant `init_db()` pour ré-appliquer les migrations de schéma de la
+branche, puis en ré-appliquant les 5 verdicts utilisateur par
+correspondance `(source, source_id)`). Résultat : 107 → 292 offres,
+schéma et verdicts préservés. Commit de fusion `92148da`.
+
+**Mise en production du nettoyage réel :** un `storage.cleanup --dry-run`
+sur la base fusionnée révèle que 135/292 offres ont un `last_seen_at`
+antérieur au 21/07 (seuil 30 jours) — y compris les **5 offres marquées
+"Intéressante"** par l'utilisateur, figées à `last_seen_at = scraped_at`
+du 10-12/07 puisque l'ancien code tournant sur `master` ne rafraîchissait
+jamais ce champ. Point signalé explicitement à l'utilisateur avant
+suppression (ces 5 offres ne sont probablement pas réellement expirées,
+c'est un artefact du déploiement manquant, pas un signal réel) —
+l'utilisateur a confirmé vouloir appliquer la règle sans exception malgré
+tout. `python -m storage.cleanup --days 30` exécuté pour de vrai : 135
+offres supprimées, 675 fichiers `orchestrator/runs/` associés nettoyés,
+157 offres restantes, 0 verdict restant.
+
+**Harmonisation des dates du tableau :** `formatPublishedAt` (côté
+`dashboard.js`) affichait `published_at` brut — deux formats visibles côte
+à côte selon la source (`DD/MM/YYYY` Hellowork vs `DD mois AAAA`
+jobup.ch). Ajout d'un `parsePublishedAt` JS miroir de
+`storage/db.py::parse_published_at`, puis reformatage systématique via
+`toLocaleDateString("fr-FR", {day, month: "short", year})` — même style
+que la colonne "Vue le" (`formatFirstSeenAt`), pour une cohérence
+visuelle entre les deux colonnes de date.
+
+**Débordement horizontal du tableau (deux allers-retours) :** l'apparence
+de colonne "trop étroite" signalée par l'utilisateur n'était en réalité
+pas un problème de largeur de colonne — c'était le tableau entier
+(auto-layout) qui dépassait la largeur du conteneur `.table-scroll`,
+plaçant la colonne "Publiée le" (puis "Vue le") pile à la limite visible
+sans que l'utilisateur pense à scroller. Élargir `.col-date` avait
+"corrigé" une colonne en poussant l'autre hors champ. Cause racine
+identifiée par mesure directe des largeurs de colonnes (`getBoundingClientRect`)
+sur chaque filtre : les badges secteur (`.badge-sector`, `white-space:
+nowrap` hérité de `.badge`) forçaient la colonne Secteur à s'élargir
+jusqu'à 228px pour les libellés longs ("Nettoyage / Facility
+Management"), présents uniquement dans le filtre "Toutes" et pas dans les
+petits sous-ensembles "Non triées"/"Intéressantes" testés initialement.
+Corrigé en plafonnant `.table-scroll .badge-sector` (`max-width: 5.5rem`,
+ellipsis, `title=` avec le libellé complet en tooltip), en réduisant le
+`min-width` de `.col-date` de 11rem (surdimensionné, ajouté par erreur
+lors du premier diagnostic) à 7.5rem (le texte le plus long,
+`"20 août 2026"`, ne mesure que ~85px), et en resserrant légèrement le
+padding horizontal des cellules (`0.8rem` → `0.6rem`). Vérifié par mesure
+précise des bords de colonnes sur les trois filtres (Toutes/Non
+triées/Intéressantes) : plus aucun débordement.
+
+**Secteur pour les offres fusionnées :** les ~185 offres venues de
+`master` datent d'avant la fonctionnalité secteur — `scoring/backfill_sector`
+relancé en tâche de fond (`--delay-seconds 1.5`) : 165 offres classées,
+20 échecs (rate-limiting Mistral 429 malgré les 3 tentatives de retry
+existantes), à relancer plus tard pour compléter (le script est
+idempotent, il ne retraite que les offres sans `sector` dans leur JSON).
+
+**Mis en production :** branche `docs/comprehensive-documentation`
+poussée et PR #1 fusionnée dans `master`, pour que le bot quotidien
+utilise enfin `last_seen_at`/`storage.cleanup` — sans cette fusion, le
+problème de départ (fonctionnalités actives uniquement en local) se
+reproduirait à chaque nettoyage local suivant.
+
+**Fichiers :** `api/static/dashboard.js` (`parsePublishedAt`,
+`formatPublishedAt`, `sectorBadgeHtml` avec `title=`), `api/static/dashboard.css`
+(`.col-date`, `.table-scroll .badge-sector`, padding `th, td`),
+`api/static/index.html` (classe `col-date` sur les `<th>`), `storage/jobs.db`
+(135 offres supprimées), `orchestrator/runs/` (675 fichiers supprimés,
+sector backfill sur les offres fusionnées).

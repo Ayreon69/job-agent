@@ -93,7 +93,21 @@ jobs:
         # --source defaults to "both" (scraper/run.py): Hellowork covers
         # Rhône-Alpes, jobup.ch covers Suisse romande (session 11) — one
         # invocation runs both sources sequentially in the same job.
+        # Also refreshes jobs.last_seen_at for every already-known offer
+        # this run still finds (storage/db.py's upsert_job) — the signal
+        # the next step's cleanup relies on, so it must run before it.
         run: python -m scraper.run
+
+      - name: Delete stale offers (not seen in any scrape for 30+ days)
+        # Runs right after scraping so last_seen_at is fresh for this run —
+        # an offer this run just re-found is never wrongly flagged stale.
+        # No verdict protection (explicit user decision, 2026-08-20): an
+        # offer marked "interessante" is deleted like any other once stale.
+        # See storage/cleanup.py's module docstring for why last_seen_at,
+        # not published_at (a source's own listing date, confirmed to get
+        # bumped/republished on a still-active offer — doesn't reliably
+        # track whether an offer is actually still live).
+        run: python -m storage.cleanup --days 30
 
       - name: Run orchestrator batch (status='nouveau' only)
         env:

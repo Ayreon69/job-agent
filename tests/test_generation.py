@@ -212,6 +212,7 @@ def main() -> None:
         gaps=[],
         uncertain_flags=[],
         reasoning_summary="Offre générique mais compétences de base alignées.",
+        sector=None,
         trace=None,
     )
     ok, md, structured, trace = run_case(
