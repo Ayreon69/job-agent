@@ -149,6 +149,17 @@ def main() -> None:
         print(f"  {status}: {count}")
     print(f"Total: {len(offers)}")
 
+    if args.offer_id is None and not args.missing_scores:
+        # Machine-parseable marker consumed by the CI workflow's loop: it
+        # keeps calling this script with --limit in a fresh process (each
+        # followed by a git commit+push of jobs.db) until this hits 0,
+        # rather than one unbounded call that risks losing an entire
+        # backlog's worth of work if the job gets killed by its timeout
+        # partway through — see .github/scripts/commit_db.sh.
+        with connect() as conn:
+            remaining = conn.execute("SELECT COUNT(*) FROM jobs WHERE status = 'nouveau'").fetchone()[0]
+        print(f"REMAINING={remaining}")
+
 
 if __name__ == "__main__":
     main()

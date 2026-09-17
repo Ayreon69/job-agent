@@ -16,15 +16,18 @@ name: Scrape and score job offers
 #
 # Persistence: GitHub Actions runners start from a clean checkout every run
 # (no local volumes like docker-compose gives locally). storage/jobs.db
-# (which offers are already known, and their status) and orchestrator/runs/
-# (generated analyses + traces) are committed back to the repo by this
-# workflow's own last step. See ROADMAP.md session 8 for why this was chosen
-# over actions/cache (not durable/versioned, LRU eviction) or artifacts (no
-# auto-restore, 90-day retention). scoring/embeddings/chroma/ (the ChromaDB
-# vector index) is NOT persisted this way: it's rebuilt from the static,
-# already-versioned scoring/profile/*.md files at the start of every run
-# instead (cheap — a few seconds — and avoids committing a binary index that
-# would just be regenerated identically from source anyway).
+# (which offers are already known, and their status) is committed back to
+# the repo throughout the run (see .github/scripts/commit_db.sh) rather
+# than only once at the end — session 16: a run killed by the job's
+# timeout used to lose everything it had done, since the only commit was
+# the workflow's very last step. orchestrator/runs/ (analyses + traces) is
+# NOT committed — personal analysis content, gitignored, stays local to
+# the runner (session 15's dashboard reads score/zone/sector/gaps from
+# SQLite columns instead, precisely so the public demo works without it).
+# scoring/embeddings/chroma/ (the ChromaDB vector index) is also not
+# persisted: it's rebuilt from scoring/profile/*.md at the start of every
+# run instead (cheap — a few seconds — and avoids committing a binary
+# index that would just be regenerated identically from source anyway).
 
 on:
   schedule:
@@ -39,15 +42,15 @@ on:
 
 permissions:
   contents: write
-    # Needed for the bot commit that persists storage/jobs.db and
-    # orchestrator/runs/ back to the repo at the end of the job.
+    # Needed for the bot commits that persist storage/jobs.db back to the
+    # repo throughout the run.
 
 concurrency:
   group: scrape-and-score
   cancel-in-progress: false
-    # Never cancel a mid-flight run to start another: the batch commits
-    # jobs.db back to the repo at the end, so two overlapping runs writing
-    # to the same file would race. Queue instead of cancelling.
+    # Never cancel a mid-flight run to start another: several steps commit
+    # jobs.db back to the repo during the run, so two overlapping runs
+    # writing to the same file would race. Queue instead of cancelling.
 
 jobs:
   scrape-and-score:
@@ -58,7 +61,9 @@ jobs:
       # roughly doubles the per-run offer volume on the first pass, before
       # the upsert-dedup makes subsequent runs process only the delta. Caps
       # a hang rather than letting a stuck job burn the whole Actions
-      # minutes budget.
+      # minutes budget. The orchestrator step below has its own tighter
+      # per-step timeout so setup/scraping/cleanup/backfill still get to
+      # run even on a day the batch alone would blow through 90 minutes.
 
     steps:
       - name: Checkout repository
@@ -102,42 +107,63 @@ jobs:
 
       - name: Run scraper (Hellowork + jobup.ch, default queries/regions)
         # --source defaults to "both" (scraper/run.py): Hellowork covers
-        # Rhône-Alpes, jobup.ch covers Suisse romande (session 11) — one
+        # Rhone-Alpes, jobup.ch couvre Suisse romande (session 11) - one
         # invocation runs both sources sequentially in the same job.
         # Also refreshes jobs.last_seen_at for every already-known offer
-        # this run still finds (storage/db.py's upsert_job) — the signal
+        # this run still finds (storage/db.py's upsert_job) - the signal
         # the next step's cleanup relies on, so it must run before it.
         run: python -m scraper.run
 
+      - name: Commit scraped data
+        run: |
+          bash .github/scripts/commit_db.sh "chore: scraping quotidien"
+
       - name: Delete stale offers (not seen in any scrape for 30+ days)
-        # Runs right after scraping so last_seen_at is fresh for this run —
+        # Runs right after scraping so last_seen_at is fresh for this run -
         # an offer this run just re-found is never wrongly flagged stale.
         # No verdict protection (explicit user decision, 2026-08-20): an
         # offer marked "interessante" is deleted like any other once stale.
         # See storage/cleanup.py's module docstring for why last_seen_at,
         # not published_at (a source's own listing date, confirmed to get
-        # bumped/republished on a still-active offer — doesn't reliably
+        # bumped/republished on a still-active offer - doesn't reliably
         # track whether an offer is actually still live).
         run: python -m storage.cleanup --days 30
 
-      - name: Run orchestrator batch (status='nouveau' only)
+      - name: Commit cleanup
+        run: |
+          bash .github/scripts/commit_db.sh "chore: nettoyage des offres perimees"
+
+      - name: Run orchestrator batch (status='nouveau'), par lots commites au fur et a mesure
+        # Un seul appel non borne a deja fait perdre un run entier (session
+        # 16) : apres 13 jours d'echecs (profil non restaure depuis le
+        # secret, voir le step ci-dessus), le backlog etait trop gros pour
+        # tenir dans le timeout du job, et comme le seul commit avait lieu
+        # a la toute fin, tout le travail - 90 minutes de scoring - a ete
+        # perdu quand le job s'est fait tuer. Ici, chaque lot de 10 offres
+        # est commite et pousse avant de passer au suivant : un run tue en
+        # cours de route ne perd au pire qu'un seul lot, et le run du
+        # lendemain reprend la ou celui-ci s'est arrete plutot que de
+        # repartir de zero. orchestrator/run.py imprime REMAINING=<n>
+        # (nombre d'offres encore au statut 'nouveau') en derniere ligne de
+        # sortie en mode batch - c'est ce que la boucle regarde pour savoir
+        # quand s'arreter.
+        timeout-minutes: 55
         env:
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
-        run: python -m orchestrator.run
+        run: |
+          remaining=1
+          while [ "${remaining:-0}" -gt 0 ]; do
+            output=$(python -m orchestrator.run --limit 10 2>&1 | tee /dev/stderr)
+            remaining=$(echo "$output" | grep -oE 'REMAINING=[0-9]+' | tail -1 | cut -d= -f2)
+            bash .github/scripts/commit_db.sh "chore: scoring/analyse - lot de 10 offres"
+          done
 
       - name: Backfill scores missing from SQLite (scoring only, capped)
+        timeout-minutes: 15
         env:
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
         run: python -m orchestrator.run --missing-scores --scoring-only --limit 40
 
-      - name: Commit updated data (jobs.db only — analyses stay off the repo)
+      - name: Commit backfill (filet de securite - les etapes precedentes ont deja pousse l'essentiel)
         run: |
-          git config user.name "job-agent-bot"
-          git config user.email "actions@github.com"
-          git add storage/jobs.db
-          if git diff --cached --quiet; then
-            echo "Aucun changement à committer (aucune nouvelle offre / aucun résultat modifié)."
-          else
-            git commit -m "chore: mise à jour automatique des offres et analyses [skip ci]"
-            git push
-          fi
+          bash .github/scripts/commit_db.sh "chore: mise a jour automatique des offres et analyses"
