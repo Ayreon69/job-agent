@@ -6,6 +6,13 @@
       "runtimeExecutable": ".venv/Scripts/python.exe",
       "runtimeArgs": ["-m", "uvicorn", "api.main:app", "--port", "8000"],
       "port": 8000
+    },
+    {
+      "name": "job-agent-readonly",
+      "runtimeExecutable": ".venv/Scripts/python.exe",
+      "runtimeArgs": ["-m", "uvicorn", "api.main:app", "--port", "8001", "--reload"],
+      "env": { "API_MODE": "readonly" },
+      "port": 8001
     }
   ]
 }
