@@ -129,6 +129,19 @@ STATIC_DIR = Path(__file__).parent / "static"
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 
+# StaticFiles sends ETag/Last-Modified but no Cache-Control, which lets
+# browsers apply heuristic caching: after a deploy, a visitor could keep
+# running the previous dashboard's JS modules/CSS for hours (seen during the
+# session-16 redesign). "no-cache" still caches — it just revalidates
+# against the ETag on every load, which is a cheap 304 when nothing changed.
+@app.middleware("http")
+async def revalidate_static(request, call_next):
+    response = await call_next(request)
+    if request.url.path.startswith("/static/") or request.url.path == "/":
+        response.headers["Cache-Control"] = "no-cache"
+    return response
+
+
 @app.get("/", include_in_schema=False)
 def dashboard() -> FileResponse:
     return FileResponse(STATIC_DIR / "index.html")
