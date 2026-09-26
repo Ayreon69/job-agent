@@ -15,10 +15,14 @@ de candidature** : il s'arrête à l'analyse, la décision reste humaine.
 scraping ──> géographie ──> scoring (RAG + LLM) ──> analyse rédigée ──> dashboard
 Hellowork     zone et        profil indexé dans     markdown structuré    FastAPI
 jobup.ch      priorité       ChromaDB, Mistral      gaps signalés         tri manuel
+LinkedIn
 ```
 
-1. **Collecte** (`scraper/`) : Playwright sur Hellowork et jobup.ch, stockage SQLite
-   avec dédoublonnage par `(source, source_id)`.
+1. **Collecte** (`scraper/`) : Playwright sur Hellowork (Rhône-Alpes) et jobup.ch
+   (Suisse romande), requêtes HTTP sur la recherche publique de LinkedIn, sans
+   compte (Suisse romande et Émirats). Stockage SQLite avec dédoublonnage par
+   `(source, source_id)`, republications jobup reconnues, et une offre publiée
+   sur deux sites gardée une seule fois.
 2. **Géographie** (`scoring/geography.py`) : chaque offre reçoit une zone et une
    priorité par règles déterministes, avant tout appel LLM. Une zone inconnue ne
    bloque rien mais marque l'offre « à valider ».
@@ -62,8 +66,10 @@ python -m scraper.run                # collecte
 python -m orchestrator.run           # scoring et analyse des nouvelles offres
 ```
 
-Tests : `python tests/test_geography.py`, `python tests/test_jobup_parsing.py`, `python tests/test_jobup_dedup.py`,
-`python tests/test_generation.py`, `python tests/test_llm_retry.py`.
+Tests : `python tests/test_geography.py`, `python tests/test_jobup_parsing.py`,
+`python tests/test_jobup_dedup.py`, `python tests/test_linkedin_parsing.py`,
+`python tests/test_cross_source.py`, `python tests/test_generation.py`,
+`python tests/test_llm_retry.py`.
 
 ## Stack
 

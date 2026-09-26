@@ -2814,3 +2814,127 @@ Contourné ici avec `COALESCE(last_seen_at, scraped_at)`, correctif à faire
 `scraper/merge_jobup_duplicates.py`, `storage/db.py`,
 `tests/test_jobup_dedup.py`, `DOCUMENTATION.md` (§4, §5.1, §9, §10, §11,
 §13), `README.md`.
+
+## Session 19 (2026-09-27) : LinkedIn, troisième source
+
+**Objectif :** couvrir la zone de priorité 3 (Émirats, Golfe), qu'aucune
+source ne couvrait, et compléter la Suisse romande, sans compte LinkedIn.
+
+### Reconnaissance
+
+LinkedIn sert sa recherche d'offres aux visiteurs non connectés via deux
+adresses qui renvoient du HTML simple, lisible sans navigateur :
+`jobs-guest/jobs/api/seeMoreJobPostings/search` (10 cartes par appel,
+`start` de 10 en 10, `location` en texte libre) et
+`jobs-guest/jobs/api/jobPosting/<id>` (description, critères, salaire).
+Testé avant d'écrire le code :
+
+- Genève, Vaud, Dubaï, Abu Dhabi : lieux correctement résolus ; deux pages
+  consécutives ne se chevauchent jamais (16 recherches).
+- « data scientist », « data analyst », « AI engineer » : 20/20 titres
+  pertinents à Genève, Dubaï et Lyon. « intelligence artificielle »
+  fonctionne aussi mais LinkedIn est d'abord anglophone.
+- `f_TPR=r2592000` (30 derniers jours) est respecté ; **`f_JT` (type de
+  contrat) est ignoré** sans connexion : `f_JT=I` (stages) renvoie
+  exactement les mêmes cartes que sans filtre. Stages écartés côté code.
+- Environ 350 requêtes au total sur la journée (reconnaissance + deux
+  collectes complètes) : aucun refus (429/999) depuis cette machine. Non
+  vérifié depuis un runner GitHub.
+
+### Géographie : deux bugs trouvés en passant
+
+- « United Arab Emirates » seul (9 lieux sur 20 d'une recherche Abu Dhabi)
+  tombait en `autre_france`. Ajouté avec « emirate(s) ».
+- `_find_first_keyword` cherchait des sous-chaînes : « Suisse romande »
+  était classée **UAE/GCC** (« oman » dans « romande ») et « Crolles - 38 »
+  **Suisse romande** (« rolle »). Deux offres iséroises de la base
+  (#4495 score 82, #4643 score 72) ont été scorées avec la mauvaise zone.
+  Passage au mot entier ; rejoué sur les 79 lieux distincts de la base :
+  seul Crolles change (vers Rhône-Alpes), après ajout des formes que la
+  sous-chaîne attrapait par hasard (« Nord vaudois », « Les
+  Geneveys-sur-Coffrane »). **À faire :** rescorer #4495 et #4643.
+
+### Scraper (`scraper/linkedin.py`)
+
+`urllib` de la bibliothèque standard, pas de Playwright. Parsing pur
+(`parse_search_cards`, `parse_job_detail`) testé sur du HTML réel. Page de
+détail chargée seulement pour les offres jamais vues (les autres :
+`storage/db.py::mark_seen`), pause de 2 à 4,5 s, arrêt pour la journée au
+premier 429/999. Titres de stage et offres réservées aux ressortissants du
+Golfe (« UAE Nationals Only », « Emirati Talent ») écartés sans requête.
+Contrat et niveau traduits en français, date convertie en JJ/MM/AAAA (format
+Hellowork déjà lu partout). Jamais d'identifiants LinkedIn.
+
+### Doublons entre sources (`scraper/cross_source.py`)
+
+Sur les 199 offres de la première collecte, 14 étaient déjà en base depuis
+jobup. Mesures qui ont fixé la règle : jobup traduit en français les offres
+rédigées en anglais, la même offre ne ressemble alors plus qu'à 0,08-0,12 à
+son original (FIA, Nexthink), contre 0,86-0,96 pour les jumeaux restés dans
+la même langue ; le piège « Senior AI Engineer » Chaberton vs Nexthink
+mesure 0,02. D'où : titre normalisé + même lieu, puis entreprise connue des
+deux côtés (décidable sur la carte, sans requête) ou, à défaut, description
+≥ 0,85. Vérification appliquée à toute nouvelle offre, dans les deux sens
+(une offre jobup arrivée après sa jumelle LinkedIn n'est pas stockée non
+plus).
+
+### Orchestrateur
+
+- Le re-scraping d'une offre trop courte passait toujours par le scraper
+  Hellowork, qui ne trouve rien sur une page jobup. Il choisit maintenant
+  le scraper d'après le domaine de l'URL (vérifié sur une vraie page jobup
+  et une vraie page LinkedIn).
+- File `nouveau` triée par priorité géographique puis par ordre d'arrivée.
+  Un batch analyse environ 70 offres en 55 minutes (≈ 45 s par offre,
+  mesuré sur le run du 26/09) ; la première collecte LinkedIn en ajoute
+  ~180, et dans l'ordre des id chaque nouvelle offre jobup aurait attendu
+  3 à 4 jours derrière.
+
+### Stockage
+
+`upsert_job` n'écrivait pas `last_seen_at` à l'insertion. La base réelle a
+reçu la colonne par migration, sans valeur par défaut : chaque nouvelle
+offre arrivait avec NULL (39 lignes aujourd'hui) et `storage.cleanup` ne
+pouvait jamais la supprimer (constat de la session 18). Corrigé pour les
+nouvelles lignes ; les 39 existantes restent NULL. `storage.cleanup` ne
+les juge pas sur `scraped_at`, car ce changement de comportement les
+supprimerait au prochain run : décision laissée à l'utilisateur.
+
+### Dashboard
+
+Libellé « LinkedIn », salaires au format LinkedIn (« CHF 45,000.00/yr -
+CHF 55,000.00/yr » → « 45 000 – 55 000 CHF / an », pris en compte dans le
+graphique des salaires ; montants horaires exclus du graphique), et les
+lignes à puce (« - ») des descriptions deviennent de vraies listes.
+
+**Vérifié :**
+- Tests : `test_linkedin_parsing` 27/27, `test_cross_source` 21/21,
+  `test_geography` 28/28, `test_jobup_dedup` 20/20, `test_jobup_parsing`
+  5/5, `test_llm_retry` 4/4.
+- Collecte réelle de bout en bout sur une copie de la base : 199 offres
+  trouvées en 13 minutes, 182 stockées (113 Émirats, 69 Suisse romande,
+  aucune mal classée ; toutes avec description, entreprise et date ; 5 avec
+  salaire). 9 doublons jobup écartés (3 sur la carte, 6 sur la
+  description), 3 stages et 5 offres réservées aux ressortissants écartés.
+- Seconde collecte : 182 offres marquées vues, 0 insertion, 7 pages de
+  détail seulement (les doublons à trancher sur la description et un stage
+  que seule la page de détail révèle, revus chaque jour), 2 minutes.
+- Dashboard alimenté par cette copie : fiche LinkedIn, lien source,
+  salaire, listes, Coulisses, aucune erreur console. Vraie base restaurée
+  ensuite (`git checkout storage/jobs.db`).
+
+**Limites :** conditions d'utilisation de LinkedIn (collecte automatisée
+interdite : volume bas, jamais de compte) ; adresses non documentées qui
+peuvent changer ; IP des runners GitHub possiblement refusées (LinkedIn
+tourne en dernier et isolé, les autres sources ne perdent rien) ; tant
+qu'une ligne jobup garde l'artefact « Offre pertinente ? », une offre
+traduite n'est pas reconnue comme doublon (Flyability et Nexthink
+aujourd'hui).
+
+**Fichiers :** `scraper/linkedin.py`, `scraper/cross_source.py`,
+`scraper/run.py`, `storage/db.py`, `scoring/geography.py`,
+`orchestrator/agent.py`, `orchestrator/run.py`,
+`api/static/js/format.js`, `api/static/js/views/coulisses.js`,
+`.github/workflows/scrape-and-score.yml`, `tests/test_linkedin_parsing.py`,
+`tests/test_cross_source.py`, `tests/test_geography.py`,
+`tests/fixtures/linkedin/`, `DOCUMENTATION.md`, `README.md`.

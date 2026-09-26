@@ -59,11 +59,13 @@ flowchart TD
     subgraph Sources["Sources d'offres"]
         HW["Hellowork.com<br/>(France / Rhône-Alpes)"]
         JU["jobup.ch<br/>(Suisse romande)"]
+        LI["LinkedIn, sans compte<br/>(Suisse romande, Émirats)"]
     end
 
     HW -->|scraper/hellowork.py| SCR
     JU -->|scraper/jobup.py| SCR
-    SCR["scraper/run.py<br/>Playwright"] --> DB[("SQLite<br/>storage/jobs.db")]
+    LI -->|scraper/linkedin.py| SCR
+    SCR["scraper/run.py<br/>Playwright + HTTP<br/>doublons entre sources écartés"] --> DB[("SQLite<br/>storage/jobs.db")]
 
     subgraph Profil["Profil candidat (source de vérité)"]
         MD["scoring/profile/*.md<br/>(compétences, réalisations,<br/>contraintes, règles géo)"]
@@ -116,7 +118,7 @@ recalcule jamais après l'avoir obtenue de `check_geography_rules`.
 
 | Composant | Techno | Rôle | Statut pédagogique |
 |---|---|---|---|
-| Scraping | Playwright (sync API) | Hellowork + jobup.ch | déjà maîtrisé |
+| Scraping | Playwright (sync API), `urllib` pour LinkedIn | Hellowork + jobup.ch + LinkedIn | déjà maîtrisé |
 | Stockage offres | SQLite (`storage/jobs.db`) | une table `jobs`, versionnée dans git | déjà maîtrisé |
 | Indexation profil | ChromaDB (client persistant local) | RAG sur le profil candidat | **objectif d'apprentissage central** |
 | Embeddings | `sentence-transformers` (`paraphrase-multilingual-mpnet-base-v2`), local | vectorisation, gratuit/offline | nouveau |
@@ -144,7 +146,9 @@ Pour une offre donnée, du scraping à l'analyse finale :
    run, `status`/`user_verdict`/`scraped_at` restant intacts, voir §5.1).
    Pour jobup.ch, une offre republiée sous un nouvel identifiant est
    reconnue et rattachée à sa ligne existante au lieu d'être réinsérée
-   (voir « Republications jobup » en §5.1).
+   (voir « Republications jobup » en §5.1). Une offre déjà stockée depuis
+   une autre source n'est pas stockée une seconde fois (« Doublons entre
+   sources », §5.1). LinkedIn (§5.1bis) passe par de simples requêtes HTTP.
 
 2. **Indexation du profil** (`scoring/embeddings/`) — étape indépendante,
    relancée à chaque changement des fichiers `scoring/profile/*.md` : parse
@@ -158,7 +162,12 @@ Pour une offre donnée, du scraping à l'analyse finale :
    - **Décision 1** : si le texte de l'offre (titre + description) fait
      moins de 300 caractères, tente un re-scraping ciblé de l'URL déjà en
      base avant de scorer (une offre trop courte n'a pas assez de matière
-     pour un scoring fiable).
+     pour un scoring fiable), avec le scraper de la source de l'offre,
+     déduite du domaine de l'URL (avant la session 19, toujours celui de
+     Hellowork, qui ne trouvait rien sur une page jobup).
+   - La file `nouveau` est traitée par **priorité géographique** puis par
+     ordre d'arrivée (`orchestrator/run.py::load_new_offers`), la zone étant
+     calculée par les mêmes règles déterministes que le scoring.
    - **Scoring** (`scoring/agent.py::score_offer`, détaillé en §5.2).
    - **Décision 2** : si la zone géographique déterminée est `inconnu`, le
      pipeline continue quand même (scoring + génération), mais le statut
@@ -192,7 +201,7 @@ Une seule table `jobs` :
 ```sql
 CREATE TABLE jobs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    source TEXT NOT NULL,           -- 'hellowork' | 'jobup'
+    source TEXT NOT NULL,           -- 'hellowork' | 'jobup' | 'linkedin'
     source_id TEXT NOT NULL,        -- id natif à la source
     url TEXT NOT NULL,
     title TEXT NOT NULL,
@@ -297,6 +306,67 @@ Les doublons stockés avant ce correctif se fusionnent avec
 `python -m scraper.merge_jobup_duplicates` (même règle ; garde la ligne
 avec verdict, sinon celle encore en ligne sur jobup, sinon la plus récemment
 vue ; `--dry-run` pour lister sans supprimer).
+
+**Doublons entre sources (session 19).** Sur la première collecte LinkedIn
+(199 offres), 14 étaient déjà en base depuis jobup (FIA, Nexthink, Talan,
+Vaudoise, Swissquote…). `is_same_offer` ne s'applique pas tel quel : les
+lieux s'écrivent différemment (« Paudex » / « Paudex, Vaud, Switzerland »),
+les noms d'entreprise aussi (« FIA – Fédération Internationale de
+l'Automobile » / « FEDERATION INTERNATIONALE DE L'AUTOMOBILE »), et jobup
+traduit en français les offres rédigées en anglais : la même offre Nexthink
+ne ressemble plus qu'à 0,12 à son original LinkedIn, contre 0,86 à 0,96 pour
+les jumeaux restés dans la même langue. `scraper/cross_source.py` exige donc
+titre normalisé identique et même lieu (même ville, ou même zone ciblée),
+puis :
+
+| Cas | Décision |
+|---|---|
+| Entreprise connue des deux côtés | Même entreprise (égale ou contenue dans l'autre) → même offre, quelle que soit la langue. Décidable sur la carte de recherche, avant de charger la page de détail. |
+| Entreprise inconnue d'un côté (lignes jobup avec l'artefact « Offre pertinente ? ») | Descriptions similaires ≥ 0,85 exigées. « Senior AI Engineer » Chaberton (LinkedIn) contre celui de Nexthink (jobup, entreprise inconnue) : 0,02 → séparés. |
+
+Une offre reconnue n'est simplement **pas stockée** : la ligne existante
+n'est pas touchée. La vérification s'applique à toute nouvelle offre, quelle
+que soit la source (`_store_jobs`, `store_jobup_jobs`), donc aussi à une
+offre jobup qui arrive après sa jumelle LinkedIn. Risque accepté : une même
+entreprise qui publierait deux postes distincts au titre identique, au même
+endroit, chacun sur un site différent.
+
+### 5.1bis `scraper/linkedin.py` — LinkedIn sans compte
+
+LinkedIn sert sa recherche d'offres aux visiteurs non connectés via deux
+adresses qui renvoient des fragments HTML simples, lisibles sans navigateur
+(`urllib` de la bibliothèque standard) :
+
+- recherche : `jobs-guest/jobs/api/seeMoreJobPostings/search?keywords=…&location=…&f_TPR=r2592000&start=0,10…`
+  (10 cartes par appel ; `location` en texte libre, résolu par LinkedIn) ;
+- détail : `jobs-guest/jobs/api/jobPosting/<id>` (description, type de
+  contrat, niveau, salaire quand l'employeur l'affiche).
+
+Par défaut : « data scientist », « data analyst », « AI engineer » × Genève,
+Vaud, Dubaï, Abu Dhabi, 2 pages chacune, offres des 30 derniers jours.
+Rhône-Alpes reste le rôle de Hellowork (`--linkedin-location Lyon` pour
+l'ajouter). Constats de la reconnaissance :
+
+- `f_JT` (type de contrat) est **ignoré** sans connexion : les stages sont
+  écartés côté code, d'abord sur le titre (sans requête), puis sur les
+  critères « Employment type » / « Seniority level » de la page de détail ;
+- les offres réservées aux ressortissants du Golfe (« UAE Nationals
+  Only », « Emirati Talent ») sont écartées sur le titre ;
+- les lieux sont en anglais (« United Arab Emirates » seul, « Geneva
+  Metropolitan Area ») : `scoring/geography.py` a été complété, et passé en
+  correspondance par mot entier (en sous-chaîne, « Suisse romande » tombait
+  en Émirats via « oman », et « Crolles » en Suisse romande via « rolle »).
+
+**Volume volontairement bas.** Les conditions d'utilisation de LinkedIn
+interdisent la collecte automatisée ; le module ne reçoit jamais
+d'identifiants (une session connectée automatisée est le moyen le plus sûr
+de faire restreindre le compte de l'utilisateur). Pause de 2 à 4,5 s entre
+deux requêtes, page de détail chargée **seulement pour les offres jamais
+vues** (les autres sont marquées vues via `storage/db.py::mark_seen`), et le
+premier refus (HTTP 429 ou 999) arrête LinkedIn pour la journée en gardant
+ce qui a été collecté. `scraper/run.py` lance LinkedIn en dernier et isole
+ses erreurs : les autres sources ne perdent rien si LinkedIn refuse l'IP du
+runner GitHub.
 
 ### 5.2 `scoring/` — l'agent de scoring
 
@@ -605,11 +675,14 @@ apporterait, et builder/puller ~6.6GB n'apporterait rien de spécifique
 ici). Cron quotidien à 06:00 UTC (~08:00 Paris) + déclenchement manuel
 (`workflow_dispatch`). Enchaîne : build de l'index ChromaDB (reconstruit à
 chaque run depuis les fichiers source versionnés, jamais persisté
-lui-même) → scraper (Hellowork + jobup.ch, rafraîchit `last_seen_at` pour
+lui-même) → scraper (Hellowork + jobup.ch + LinkedIn, rafraîchit `last_seen_at` pour
 toute offre déjà connue qu'il retrouve) → **suppression des offres
 obsolètes** (`storage/cleanup.py`, voir ci-dessous) → orchestrateur batch →
 commit bot des fichiers modifiés (`storage/jobs.db` + `orchestrator/runs/`)
 avec le message `[skip ci]` pour ne pas redéclencher le workflow lui-même.
+LinkedIn fait partie du scraper par défaut depuis la session 19 ; s'il
+refuse l'IP du runner, l'étape réussit quand même avec les deux autres
+sources (voir §5.1bis).
 
 **`storage/cleanup.py`** (`python -m storage.cleanup [--days 30]
 [--dry-run]`) supprime toute offre dont `last_seen_at` dépasse le seuil
@@ -643,11 +716,13 @@ ultérieure, jamais d'action vers un tiers.
 
 | Fichier | Couvre |
 |---|---|
-| `tests/test_geography.py` | `check_geography_rules` — 17 cas (11 de la spec + 6 ajoutés session 11 pour la couverture jobup.ch/Suisse romande) |
+| `tests/test_geography.py` | `check_geography_rules` — 28 cas (11 de la spec, 6 ajoutés session 11 pour jobup.ch/Suisse romande, 11 en session 19 : correspondance par mot entier et formats de lieu LinkedIn) |
 | `tests/test_generation.py` | Structure du markdown généré (4 sections, ordre), garde-fou anti-fabrication (chevauchement lexical entre `matched_chunk_summary` et le profil source), absence de vocabulaire de mobilité en zone France, fidélité `StructuredAnalysis` ↔ `ScoringResult` |
 | `tests/test_llm_retry.py` | Mécanique du retry/backoff sur 429, en mock (4 cas déterministes : succès après 2 échecs, épuisement, 401 non retenté, timing exact du backoff) |
 | `tests/test_llm_retry_live.py` | Preuve du retry contre un **vrai** rate limit Mistral (20 appels réels en rafale serrée) — pas un test à lancer en routine (consomme du vrai quota API) |
 | `tests/test_jobup_parsing.py` | Extraction de l'entreprise des cartes jobup (`_card_company`) sur des textes de cartes réels |
+| `tests/test_linkedin_parsing.py` | Cartes de recherche et pages de détail LinkedIn sur du HTML réel (`tests/fixtures/linkedin/`, scripts retirés) : id, URL canonique, entités HTML, contrat/niveau traduits, salaire, description structurée en lignes, filtres stage/ressortissants |
+| `tests/test_cross_source.py` | Doublons entre sources (§5.1) sur les paires réelles de la première collecte LinkedIn (FIA, Talan, Nexthink traduit, piège Chaberton), comparaison des lieux, et 5 scénarios de stockage dans les deux sens sur une base temporaire |
 | `tests/test_jobup_dedup.py` | Republications jobup (§5.1) : normalisation des titres, `is_same_offer` sur des descriptions réelles (cas limite 0,891, Senior vs Principal, même intitulé mais autre poste), et 5 scénarios `store_jobup_jobs` sur une base temporaire (re-pointage qui garde score/verdict, alias vivant, nouvelle offre vue deux fois, postes distincts, doublons antérieurs) |
 
 Pas de test des sélecteurs DOM de `scraper/` (testés
@@ -725,11 +800,15 @@ lit le code sans avoir lu tout `ROADMAP.md` :
 Non exhaustif — voir `ROADMAP.md` pour le détail complet de chaque
 limite, avec son contexte de découverte :
 
-- Pas de source de scraping dédiée UAE/Moyen-Orient à ce jour — la
-  priorité géographique la plus haute en type de rôle n'a jamais été
-  testée de bout en bout avec de vraies offres (seule la Suisse romande,
-  ajoutée en session 11, a été testée en conditions réelles au-delà de
-  Rhône-Alpes).
+- LinkedIn (§5.1bis) repose sur des adresses publiques non documentées,
+  que LinkedIn peut modifier ou fermer, et ses conditions d'utilisation
+  interdisent la collecte automatisée : volume volontairement bas, jamais
+  de compte. Les plages d'IP des runners GitHub sont souvent refusées : la
+  collecte LinkedIn peut n'aboutir qu'en local.
+- Doublons entre sources (§5.1) : tant qu'une ligne jobup porte encore
+  l'artefact « Offre pertinente ? », une offre traduite par jobup n'est pas
+  reconnue (l'entreprise manque et les descriptions diffèrent par la
+  langue) et reste stockée deux fois.
 - `POST /analyze` est synchrone (bloque ~30-90s), pas de file de tâches en
   arrière-plan — acceptable pour un usage personnel mono-utilisateur,
   deviendrait un problème sous charge concurrente.
@@ -769,8 +848,11 @@ par le workflow GitHub Actions quotidien.
 Toujours depuis `job-agent/`, avec l'environnement virtuel dédié.
 
 ```bash
-# Scraper (les deux sources par défaut)
+# Scraper (les trois sources par défaut ; --source both = Hellowork + jobup)
 .venv/Scripts/python.exe -m scraper.run
+
+# LinkedIn seul, en ajoutant Lyon aux lieux
+.venv/Scripts/python.exe -m scraper.run --source linkedin --linkedin-location Genève --linkedin-location Lyon
 
 # Scraper une seule source, avec une requête personnalisée
 .venv/Scripts/python.exe -m scraper.run --source jobup --query "data engineer" --pages 2
