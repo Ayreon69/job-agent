@@ -86,11 +86,14 @@ def store_jobup_jobs(conn, jobs: list[dict]) -> tuple[int, int, int]:
             refresh_job(conn, job_id, _to_job(job_dict))
             seen_this_run.add(job_id)
 
+    # last_seen_at is NULL on rows inserted after its migration and never
+    # seen again (the migrated column has no default): scraped_at is then
+    # the last time the offer was seen.
     stored = [
         {"id": r[0], "title": r[1], "company": r[2], "location": r[3], "description": r[4],
          "user_verdict": r[5], "last_seen_at": r[6]}
         for r in conn.execute(
-            "SELECT id, title, company, location, description, user_verdict, last_seen_at "
+            "SELECT id, title, company, location, description, user_verdict, COALESCE(last_seen_at, scraped_at) "
             "FROM jobs WHERE source = 'jobup'"
         ).fetchall()
     ]
