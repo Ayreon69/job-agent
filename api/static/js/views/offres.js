@@ -3,7 +3,7 @@
 
 import { esc, icon, fold, searchText, ZONE_LABELS, ZONE_ORDER, SOURCE_LABELS, VERDICTS, VERDICT_META, companyOf, parsePublished, isTriageable, plural, titleOf } from "../format.js";
 import { store, isNew, prefs } from "../store.js";
-import { $, $$, metaLine, zoneChip, sectorChip, newDot, dateLabel, verdictControl, decide, scorePill, twinBadge } from "../ui.js";
+import { $, $$, metaLine, zoneChip, sectorChip, newDot, dateLabel, verdictControl, decide, scorePill, twinBadge, staleChip } from "../ui.js";
 import { drawerOpenId } from "../drawer.js";
 
 const DEFAULTS = { q: "", verdict: "", zone: "", sector: "", source: "", min: 0, onlyNew: false, sort: "score" };
@@ -157,7 +157,7 @@ function rowHtml(o, i) {
         <p class="row__company">${highlight(companyOf(o))}</p>
         <p class="meta">${metaLine(o, { withSource: true })}</p>
       </div>
-      <div class="row__chips chips">${zoneChip(o.geography_zone)}${sectorChip(o.sector)}</div>
+      <div class="row__chips chips">${staleChip(o)}${zoneChip(o.geography_zone)}${sectorChip(o.sector)}</div>
       <div class="row__date" title="${esc(d.title)}">${d.text}</div>
       <div class="row__verdict">${isTriageable(o) ? verdictControl(o, { compact: true }) : ""}</div>
     </li>`;

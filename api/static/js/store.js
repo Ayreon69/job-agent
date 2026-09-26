@@ -92,6 +92,17 @@ export async function loadOffers() {
   emit({ type: "load" });
 }
 
+// Days since an offer last showed up in a scraping run, measured against the
+// most recent run (not "now"), so a paused pipeline doesn't flag everything.
+// The scraper only reads the first result pages: absence means "no longer
+// found by the collection", not proof the position is filled.
+export function staleDays(o) {
+  const seen = parseSqlUtc(o.last_seen_at) || o._firstSeen;
+  if (!seen || !store.lastRun) return 0;
+  return Math.floor((store.lastRun - seen) / 86400000);
+}
+export const STALE_AFTER = 3;
+
 export const isNew = (o) => !!(store.previousVisit && o._firstSeen && o._firstSeen > store.previousVisit);
 
 export const triageable = () => store.offers.filter(isTriageable);

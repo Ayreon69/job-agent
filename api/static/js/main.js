@@ -395,6 +395,24 @@ async function boot() {
   VIEWS[route].enter ? VIEWS[route].enter(rest) : VIEWS[route].render();
   if (offre) onRoute();
   setInterval(dateline, 60000);
+  showTipOnce();
+}
+
+// One-time hint about the keyboard layer, which is otherwise invisible.
+function showTipOnce() {
+  if (prefs.get("tip-seen")) return;
+  const tip = document.createElement("aside");
+  tip.className = "tip";
+  tip.setAttribute("role", "note");
+  tip.innerHTML = `
+    <h4>${icon("i-keyboard")}Tout se fait au clavier</h4>
+    <p><kbd>Ctrl</kbd> <kbd>K</kbd> pour chercher une offre, <kbd>g</kbd> puis <kbd>t</kbd> pour trier, <kbd>←</kbd> <kbd>↑</kbd> <kbd>→</kbd> pour décider, <kbd>?</kbd> pour tout le reste.</p>
+    <button type="button" class="btn btn--ghost">Compris</button>`;
+  document.body.appendChild(tip);
+  tip.querySelector("button").onclick = () => {
+    prefs.set("tip-seen", true);
+    tip.remove();
+  };
 }
 
 boot();

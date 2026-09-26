@@ -1,7 +1,7 @@
 // Shared UI fragments and small widgets (toasts, tooltip, verdict controls).
 
 import { esc, icon, VERDICTS, VERDICT_META, ZONE_LABELS, SOURCE_LABELS, companyOf, locationOf, cleanContract, cleanSalary, parsePublished, relDay, fmtDate, scoreTier, titleOf } from "./format.js";
-import { setVerdict, isNew } from "./store.js";
+import { setVerdict, isNew, staleDays, STALE_AFTER } from "./store.js";
 
 export const $ = (sel, root = document) => root.querySelector(sel);
 export const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -96,6 +96,12 @@ export function scorePill(score) {
 
 export function newDot(o) {
   return isNew(o) ? '<span class="new-dot" title="Nouvelle depuis ta dernière visite">Nouveau</span>' : "";
+}
+
+export function staleChip(o) {
+  const d = staleDays(o);
+  if (d < STALE_AFTER) return "";
+  return `<span class="chip chip--stale" title="Absente des ${d} derniers jours de collecte : peut-être pourvue. Supprimée automatiquement après 30 jours sans être revue.">${icon("i-alert")}hors collecte · ${d} j</span>`;
 }
 
 export function twinBadge(o) {

@@ -3,7 +3,7 @@
 
 import { esc, icon, plural, scoreRing, companyOf, excerpt, fmtTime, relTime, VERDICT_META, titleOf } from "../format.js";
 import { store, pending, triageable, isNew, getDetail } from "../store.js";
-import { $, $$, metaLine, zoneChip, sectorChip, newDot, dateLabel, countUp, wireTooltips, scorePill } from "../ui.js";
+import { $, $$, metaLine, zoneChip, sectorChip, newDot, dateLabel, countUp, wireTooltips, scorePill, staleChip } from "../ui.js";
 import { arrivalsChart, scoreHistogram, zoneBars, sectorBars, salaryStrips, tierLegend, radar } from "../charts.js";
 
 let root;
@@ -159,7 +159,7 @@ export function render() {
           <li data-open="${o.id}" tabindex="0">
             ${scorePill(o.score)}
             <span class="shortlist__title">${esc(titleOf(o))}</span>
-            <span class="shortlist__company">${esc(companyOf(o))}</span>
+            <span class="shortlist__company">${staleChip(o) || esc(companyOf(o))}</span>
             <span class="verdict-badge verdict-badge--${o.user_verdict}">${icon(VERDICT_META[o.user_verdict].icon)}${VERDICT_META[o.user_verdict].label}</span>
           </li>`).join("")}
       </ul>

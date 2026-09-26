@@ -2,8 +2,8 @@
 // verdict. Cards can be dragged between columns to change one's mind.
 
 import { esc, icon, VERDICTS, VERDICT_META, ZONE_LABELS, companyOf, locationOf, cleanSalary, cleanContract, parsePublished, fmtDate, titleOf } from "../format.js";
-import { store, triageable } from "../store.js";
-import { $, $$, decide, dateLabel, scorePill, zoneChip, toast } from "../ui.js";
+import { store, triageable, staleDays, STALE_AFTER } from "../store.js";
+import { $, $$, decide, dateLabel, scorePill, zoneChip, toast, staleChip } from "../ui.js";
 
 let root;
 let ctx;
@@ -76,9 +76,15 @@ function kcard(o, i) {
       <div class="kcard__top">${scorePill(o.score)}<span class="kcard__date" title="${esc(d.title)}">${d.text}</span></div>
       <h3 class="kcard__title">${esc(titleOf(o))}</h3>
       <p class="kcard__company">${esc(companyOf(o))}${locationOf(o) ? ` · ${esc(locationOf(o))}` : ""}</p>
-      <div class="chips">${zoneChip(o.geography_zone)}${sal ? `<span class="chip chip--ghost">${icon("i-coins")}${esc(sal)}</span>` : ""}</div>
+      <div class="chips">${staleChip(o)}${zoneChip(o.geography_zone)}${sal ? `<span class="chip chip--ghost">${icon("i-coins")}${esc(sal)}</span>` : ""}</div>
       ${o.url && o.user_verdict !== "pas_interessante" ? `<a class="kcard__link" href="${esc(o.url)}" target="_blank" rel="noopener" draggable="false">Ouvrir l'offre ${icon("i-external")}</a>` : ""}
     </li>`;
+}
+
+function staleNotice(judged) {
+  const stale = judged.filter((o) => o.user_verdict !== "pas_interessante" && staleDays(o) >= STALE_AFTER);
+  if (!stale.length) return "";
+  return `<p class="alert-strip reveal">${icon("i-alert")}<span><b>${stale.length} offre${stale.length > 1 ? "s" : ""} de ta sélection ${stale.length > 1 ? "n'apparaissent" : "n'apparaît"} plus</b> dans les dernières collectes — possiblement pourvue${stale.length > 1 ? "s" : ""}. Si elle${stale.length > 1 ? "s t'intéressent" : " t'intéresse"}, vérifie vite sur le site source : sans nouvelle apparition, une offre est supprimée après 30 jours.</span></p>`;
 }
 
 export function render() {
@@ -107,6 +113,7 @@ export function render() {
         <p>Chaque avis donné dans « Trier » ou dans la liste arrive ici.</p>
         <a class="btn btn--primary" href="#/trier">${icon("i-cards")}Commencer le tri</a>
       </div>` : `
+    ${staleNotice(judged)}
     <div class="board ${collapsed ? "board--folded" : ""} reveal" style="--d:1">
       ${cols.map(({ v, items }) => {
         const m = VERDICT_META[v];

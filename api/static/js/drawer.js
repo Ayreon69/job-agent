@@ -3,7 +3,7 @@
 
 import { esc, icon, scoreRing, scoreTier, TIER_LABELS, ZONE_LABELS, SOURCE_LABELS, STATUS_LABELS, companyOf, locationOf, cleanContract, cleanSalary, cleanExperience, parsePublished, parseSqlUtc, fmtDate, relDay, descriptionHtml, plural, titleOf } from "./format.js";
 import { store, getDetail, isNew } from "./store.js";
-import { $, decide, verdictControl, zoneChip, sectorChip, reducedMotion } from "./ui.js";
+import { $, decide, verdictControl, zoneChip, sectorChip, reducedMotion, staleChip } from "./ui.js";
 
 let context = []; // ordered offer ids the opening view was showing (prev/next)
 let currentId = null;
@@ -164,7 +164,7 @@ function shell(o, d) {
       <div class="drawer__titles">
         <p class="drawer__company">${esc(companyOf(o))}${isNew(o) ? ' <span class="new-dot">Nouveau</span>' : ""}</p>
         <h2 id="drawer-title">${esc(titleOf(o))}</h2>
-        <div class="chips">${zoneChip(o.geography_zone)}${sectorChip(o.sector)}${o.status === "a_valider_geographie" ? `<span class="chip chip--warn">${icon("i-alert")}Géographie à valider</span>` : ""}</div>
+        <div class="chips">${staleChip(o)}${zoneChip(o.geography_zone)}${sectorChip(o.sector)}${o.status === "a_valider_geographie" ? `<span class="chip chip--warn">${icon("i-alert")}Géographie à valider</span>` : ""}</div>
       </div>
     </div>
 
@@ -180,7 +180,7 @@ function shell(o, d) {
       ${fact("i-ladder", "Expérience", esc(cleanExperience(o.experience) || ""))}
       ${fact("i-clock", "Publiée", pub ? `${fmtDate(pub)} <small>(${relDay(pub)})</small>` : "")}
       ${fact("i-sparkle", "Repérée", first ? `${fmtDate(first)} <small>(${relDay(first)})</small>` : "")}
-      ${fact("i-search", "Revue en ligne", last ? `${fmtDate(last)} <small>(${relDay(last)})</small>` : "")}
+      ${fact("i-search", "Dernière collecte", last ? `${fmtDate(last)} <small>(${relDay(last)})</small>` : "")}
       ${fact("i-source", "Source", esc(SOURCE_LABELS[o.source] || o.source || ""))}
     </dl>
 
