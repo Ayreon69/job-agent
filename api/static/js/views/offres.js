@@ -12,6 +12,7 @@ let root;
 let ctx;
 let dedup = prefs.get("dedup", false); // per-viewer preference, not a filter reset by "Réinitialiser"
 let cursor = -1; // keyboard-selected row index
+let animateNext = true;
 let visible = [];
 
 const SORTS = {
@@ -229,10 +230,16 @@ function renderList() {
   }
   if (cursor >= visible.length) cursor = visible.length - 1;
   list.innerHTML = visible.map(rowHtml).join("");
+  // Staggered entrance only when arriving on the page — not on every
+  // keystroke of the search box, where it reads as flicker.
+  if (!animateNext) list.classList.add("no-anim");
+  animateNext = false;
 }
 
 export function enter(params = {}) {
   if (!store.loaded) return;
+  animateNext = true;
+  $("#of-rows", root).classList.remove("no-anim");
   if (Object.keys(params).some((k) => k in DEFAULTS)) {
     f = { ...DEFAULTS, sort: f.sort };
     for (const [k, v] of Object.entries(params)) if (k in DEFAULTS) f[k] = k === "min" ? Number(v) : k === "onlyNew" ? v === "1" : v;

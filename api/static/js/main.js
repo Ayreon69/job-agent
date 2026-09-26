@@ -76,8 +76,24 @@ function switchView(route, params) {
     moveInk();
     window.scrollTo({ top: 0, behavior: "instant" });
   };
-  if (document.startViewTransition && current && !reducedMotion()) document.startViewTransition(apply);
+  if (current) withTransition(apply);
   else apply();
+}
+
+// View Transitions are a progressive enhancement: skipped when unsupported,
+// in background tabs, or with reduced motion. A transition interrupted by
+// the next navigation rejects its promises — expected, so swallowed (the
+// DOM update itself still runs either way).
+function withTransition(update, { className } = {}) {
+  if (!document.startViewTransition || reducedMotion() || document.visibilityState !== "visible") {
+    update();
+    return;
+  }
+  if (className) document.documentElement.classList.add(className);
+  const t = document.startViewTransition(update);
+  t.ready.catch(() => {});
+  t.updateCallbackDone.catch(() => {});
+  t.finished.catch(() => {}).finally(() => className && document.documentElement.classList.remove(className));
 }
 
 function onRoute() {
@@ -146,10 +162,7 @@ function toggleTheme() {
       localStorage.setItem("ja-theme", next);
     } catch {}
   };
-  if (document.startViewTransition && !reducedMotion()) {
-    document.documentElement.classList.add("theme-swap");
-    document.startViewTransition(apply).finished.finally(() => document.documentElement.classList.remove("theme-swap"));
-  } else apply();
+  withTransition(apply, { className: "theme-swap" });
 }
 
 // ---------------------------------------------------------------------

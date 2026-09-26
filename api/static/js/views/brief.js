@@ -75,8 +75,11 @@ function pickCard(o, i) {
     </article>`;
 }
 
-export function render() {
+// calm: re-render after a verdict change — same content update, but no
+// entrance animations or count-ups replaying under the reader's eyes.
+export function render(calm = false) {
   if (!store.loaded) return;
+  root.classList.toggle("calm", calm);
   const now = new Date();
   const all = store.offers;
   const tri = triageable();
@@ -167,7 +170,7 @@ export function render() {
     </section>` : ""}
   `;
 
-  $$("[data-count]", root).forEach((el) => countUp(el, Number(el.dataset.count)));
+  $$("[data-count]", root).forEach((el) => (calm ? (el.textContent = el.dataset.count) : countUp(el, Number(el.dataset.count))));
 
   const lead = top[0];
   if (lead) {
@@ -188,6 +191,6 @@ export function onKey(e) {
   return false;
 }
 
-export function onStoreChange() {
-  render();
+export function onStoreChange(change) {
+  render(change?.type === "verdict");
 }

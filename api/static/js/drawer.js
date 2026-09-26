@@ -1,7 +1,7 @@
 // Offer detail drawer. Opened via the URL (#/<view>?offre=<id>) so the
 // browser's back button closes it and any offer can be linked directly.
 
-import { esc, icon, scoreRing, scoreTier, TIER_LABELS, ZONE_LABELS, SOURCE_LABELS, STATUS_LABELS, companyOf, locationOf, cleanContract, cleanSalary, cleanExperience, parsePublished, parseSqlUtc, fmtDate, relDay, descriptionHtml, plural, titleOf } from "./format.js";
+import { esc, icon, scoreRing, scoreTier, TIER_LABELS, SOURCE_LABELS, STATUS_LABELS, companyOf, locationOf, cleanContract, cleanSalary, cleanExperience, parsePublished, parseSqlUtc, fmtDate, relDay, descriptionHtml, titleOf } from "./format.js";
 import { store, getDetail, isNew } from "./store.js";
 import { $, decide, verdictControl, zoneChip, sectorChip, reducedMotion, staleChip } from "./ui.js";
 
@@ -72,6 +72,7 @@ export async function openDrawer(id) {
   drawer.hidden = false;
   scrim.hidden = false;
   document.body.classList.add("has-drawer");
+  setBackgroundInert(true);
   void drawer.offsetWidth; // commit the off-screen position so the slide-in transitions
   drawer.classList.add("is-open");
   scrim.classList.add("is-open");
@@ -96,6 +97,7 @@ export function closeDrawer() {
   drawer.classList.remove("is-open");
   scrim.classList.remove("is-open");
   document.body.classList.remove("has-drawer");
+  setBackgroundInert(false);
   setTimeout(() => {
     if (currentId === null) {
       drawer.hidden = true;
@@ -103,6 +105,12 @@ export function closeDrawer() {
     }
   }, reducedMotion() ? 0 : 320);
   lastFocus?.focus?.({ preventScroll: true });
+}
+
+// Keeps keyboard focus (and screen readers) inside the drawer while it's
+// open — native `inert` instead of a hand-rolled focus trap.
+function setBackgroundInert(on) {
+  for (const el of document.querySelectorAll(".masthead, .stage, .colophon")) el.inert = on;
 }
 
 function fact(iconId, label, value) {

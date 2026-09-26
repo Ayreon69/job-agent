@@ -1,6 +1,6 @@
 // Shared UI fragments and small widgets (toasts, tooltip, verdict controls).
 
-import { esc, icon, VERDICTS, VERDICT_META, ZONE_LABELS, SOURCE_LABELS, companyOf, locationOf, cleanContract, cleanSalary, parsePublished, relDay, fmtDate, scoreTier, titleOf } from "./format.js";
+import { esc, icon, VERDICTS, VERDICT_META, ZONE_LABELS, SOURCE_LABELS, locationOf, cleanContract, cleanSalary, parsePublished, relDay, fmtDate, scoreTier, titleOf } from "./format.js";
 import { setVerdict, isNew, staleDays, STALE_AFTER } from "./store.js";
 
 export const $ = (sel, root = document) => root.querySelector(sel);

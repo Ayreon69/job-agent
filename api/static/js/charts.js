@@ -228,8 +228,10 @@ export function radar(offers, isNew) {
     return ((h >>> 0) % 3600) / 10;
   };
   const rings = [80, 65, 50, 0]
-    .map((s) => `<circle class="radar__ring ${s ? "" : "radar__ring--outer"}" cx="${C}" cy="${C}" r="${rOf(s)}"/>${s ? `<text class="radar__label" x="${C + 4}" y="${C - rOf(s) - 4}">${s}</text>` : ""}`)
+    .map((s) => `<circle class="radar__ring radar__ring--${s || "outer"}" cx="${C}" cy="${C}" r="${rOf(s)}"/>`)
     .join("");
+  // labels drawn after the blips so they stay readable on top of the cloud
+  const labels = [80, 65, 50].map((s) => `<text class="radar__label radar__label--${s}" x="${C + 5}" y="${C - rOf(s) + 12}">${s}</text>`).join("");
   const blips = offers
     .filter((o) => o.score !== null && o.score !== undefined)
     .sort((a, b) => a.score - b.score)
@@ -255,6 +257,7 @@ export function radar(offers, isNew) {
       <line class="radar__axis" x1="${C}" y1="${C - R}" x2="${C}" y2="${C + R}"/>
       <g class="radar__sweep"><path d="M${C} ${C} L${C + R} ${C} A${R} ${R} 0 0 0 ${C + R * Math.cos(-Math.PI / 5)} ${C + R * Math.sin(-Math.PI / 5)} Z" fill="url(#radar-sweep)"/><line x1="${C}" y1="${C}" x2="${C + R}" y2="${C}"/></g>
       ${blips}
+      ${labels}
       <circle class="radar__core" cx="${C}" cy="${C}" r="5"/>
     </svg>`;
 }

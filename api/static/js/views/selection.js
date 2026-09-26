@@ -114,7 +114,7 @@ export function render() {
         <a class="btn btn--primary" href="#/trier">${icon("i-cards")}Commencer le tri</a>
       </div>` : `
     ${staleNotice(judged)}
-    <div class="board ${collapsed ? "board--folded" : ""} reveal" style="--d:1">
+    <div class="board ${collapsed ? "board--folded" : ""} ${calm ? "no-anim" : "reveal"}" style="--d:1">
       ${cols.map(({ v, items }) => {
         const m = VERDICT_META[v];
         const folded = v === "pas_interessante" && collapsed;
@@ -195,5 +195,12 @@ function exportSelection(kind) {
   );
 }
 
-export const enter = render;
-export const onStoreChange = render;
+let calm = false; // after the first paint, re-renders (drops) skip the entrance animation
+export function enter() {
+  calm = false;
+  render();
+  calm = true;
+}
+export function onStoreChange() {
+  render();
+}
