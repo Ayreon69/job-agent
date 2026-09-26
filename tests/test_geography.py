@@ -37,6 +37,21 @@ CASES = [
     # doit jamais être classée romande — la ville connue (suisse_autre) doit
     # gagner avant que le repli cantonal romand ne soit même consulté.
     ("Winterthur ZH", "suisse_autre", 4, True),
+    # Session 19 : correspondance par mot entier. En sous-chaîne, "romande"
+    # contenait "oman" (-> uae_gcc) et "Crolles" contenait "rolle" (-> une
+    # offre iséroise classée Suisse romande, vue en base).
+    ("Suisse romande", "suisse_romande", 1, True),
+    ("Crolles - 38", "rhone_alpes", 2, False),
+    ("Nord vaudois", "suisse_romande", 1, True),
+    ("Les Geneveys-sur-Coffrane", "suisse_romande", 1, True),
+    # Formats LinkedIn (session 19).
+    ("Geneva Metropolitan Area", "suisse_romande", 1, True),
+    ("Étoy, Vaud, Switzerland", "suisse_romande", 1, True),
+    ("United Arab Emirates", "uae_gcc", 3, True),
+    ("Abu Dhabi Emirate, United Arab Emirates", "uae_gcc", 3, True),
+    ("Greater Lyon Area", "rhone_alpes", 2, False),
+    ("Zurich, Zurich, Switzerland", "suisse_autre", 4, True),
+    ("Lisbon, Portugal", "inconnu", None, False),
 ]
 
 

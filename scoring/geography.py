@@ -56,7 +56,12 @@ SUISSE_ROMANDE_VILLES = [
     "nyon", "vevey", "montreux", "fribourg", "freiburg", "sion", "vaud", "valais",
     "gland", "renens", "palezieux", "marin-epagnier", "marin epagnier",
     "morges", "rolle", "aigle", "bulle", "delemont", "la chaux-de-fonds",
-    "la chaux de fonds", "le locle",
+    "la chaux de fonds", "le locle", "suisse romande", "romandie",
+    # Formes dérivées que la correspondance par sous-chaîne attrapait par
+    # hasard avant le passage au mot entier (session 19) : "Nord vaudois",
+    # "Les Geneveys-sur-Coffrane" (NE), vues en base.
+    "vaudois", "vaudoise", "genevois", "genevoise", "geneveys", "neuchatelois",
+    "neuchateloise", "valaisan", "valaisanne", "fribourgeois", "fribourgeoise",
 ]
 
 # Suffixe d'abréviation cantonale suisse tel qu'utilisé par jobup.ch (ex:
@@ -68,8 +73,12 @@ SUISSE_ROMANDE_VILLES = [
 # VD=Vaud, NE=Neuchâtel, GE=Genève, FR=Fribourg, VS=Valais.
 SUISSE_ROMANDE_CANTON_ABBR_RE = re.compile(r"\b(VD|NE|GE|FR|VS)\b")
 
+# "united arab emirates"/"emirate(s)" : LinkedIn (session 19) écrit souvent le
+# pays seul, en anglais ("United Arab Emirates", 9 offres sur 20 d'une
+# recherche Abu Dhabi), qui retombait à tort en "autre_france".
 UAE_GCC_VILLES = [
-    "dubai", "dubai", "abu dhabi", "abou dabi", "uae", "emirats", "sharjah",
+    "dubai", "abu dhabi", "abou dabi", "uae", "emirats", "sharjah",
+    "united arab emirates", "emirates", "emirate",
     "doha", "qatar", "riyadh", "riyad", "arabie saoudite", "saudi arabia",
     "koweit", "kuwait", "bahrain", "bahreïn", "bahrein", "oman", "muscat",
 ]
@@ -89,6 +98,9 @@ FOREIGN_NON_TARGET_COUNTRIES = [
     "belgique", "belgium", "luxembourg", "allemagne", "germany", "espagne", "spain",
     "italie", "italy", "royaume-uni", "royaume uni", "united kingdom", "pays-bas",
     "pays bas", "netherlands", "canada", "etats-unis", "etats unis", "usa",
+    # Noms anglais et zones larges tels que LinkedIn les écrit (session 19).
+    "united states", "portugal", "ireland", "austria", "poland", "india",
+    "europe", "emea",
 ]
 
 ZONE_CONFIG: dict[Zone, dict] = {
@@ -130,9 +142,13 @@ def _find_departement_code(text: str) -> str | None:
 
 
 def _find_first_keyword(normalized_text: str, keywords: list[str]) -> str | None:
-    """Return the first keyword (longest first, to prefer specific matches) found."""
+    """Return the first keyword (longest first, to prefer specific matches)
+    found as a whole word. Plain substring matching classified "Suisse
+    romande" as uae_gcc ("oman" inside "romande") — found while adding
+    LinkedIn (session 19), no stored offer affected.
+    """
     for keyword in sorted(keywords, key=len, reverse=True):
-        if keyword in normalized_text:
+        if re.search(rf"(?<![a-z0-9]){re.escape(keyword)}(?![a-z0-9])", normalized_text):
             return keyword
     return None
 
