@@ -13,7 +13,7 @@ export const ZONE_LABELS = {
 // scoring/geography.py rather than an alphabetical order.
 export const ZONE_ORDER = ["suisse_romande", "rhone_alpes", "uae_gcc", "suisse_autre", "autre_france", "inconnu"];
 
-export const SOURCE_LABELS = { hellowork: "Hellowork", jobup: "jobup.ch" };
+export const SOURCE_LABELS = { hellowork: "Hellowork", jobup: "jobup.ch", linkedin: "LinkedIn" };
 
 export const STATUS_LABELS = {
   nouveau: "En attente d'analyse",
@@ -152,11 +152,25 @@ export function offerAgeDays(o, now = new Date()) {
 // Offer fields
 // ---------------------------------------------------------------------
 
+// LinkedIn states pay in English notation: "CHF 45,000.00/yr - CHF 55,000.00/yr",
+// "AED 16,000.00/mo - AED 22,000.00/mo", "€54,400.00/yr".
+const LI_AMOUNT = "([A-Z]{3}|[$€£])\\s?([\\d,]+(?:\\.\\d+)?)\\/(yr|mo|hr)";
+const LI_SALARY = new RegExp(`^${LI_AMOUNT}(?:\\s*-\\s*${LI_AMOUNT})?$`);
+const LI_CURRENCY = { $: "USD", "€": "EUR", "£": "GBP" };
+const LI_PERIOD = { yr: "an", mo: "mois", hr: "heure" };
+
+function linkedinSalary(s) {
+  const m = s.match(LI_SALARY);
+  if (!m) return null;
+  const n = (x) => Math.round(Number(x.replace(/,/g, ""))).toLocaleString("fr-FR").replace(/[  ]/g, " ");
+  return `${n(m[2])}${m[5] ? ` – ${n(m[5])}` : ""} ${LI_CURRENCY[m[1]] || m[1]} / ${LI_PERIOD[m[3]]}`;
+}
+
 export function cleanSalary(raw) {
   if (!raw) return null;
   const s = raw.replace(/ | /g, " ").replace(/\s+/g, " ").trim();
   if (/pas de salaire|non (communiqué|renseigné)/i.test(s)) return null;
-  return s;
+  return linkedinSalary(s) || s;
 }
 
 // Annual amount in the stated currency, for charts only (never shown as a
@@ -164,7 +178,7 @@ export function cleanSalary(raw) {
 // are annualised x12 on their midpoint. Anything else -> null.
 export function salaryAnnual(raw) {
   const s = cleanSalary(raw);
-  if (!s) return null;
+  if (!s || /heure/i.test(s)) return null;
   const nums = [...s.matchAll(/(\d[\d ]*\d|\d)/g)].map((m) => Number(m[1].replace(/ /g, ""))).filter((n) => n > 100);
   if (!nums.length) return null;
   const mid = nums.length > 1 ? (nums[0] + nums[1]) / 2 : nums[0];
@@ -255,7 +269,11 @@ export function descriptionHtml(text) {
   const clean = cleanDescription(text);
   if (!clean) return '<p class="muted">Pas de description récupérée pour cette offre.</p>';
   // Every line becomes one item; blank lines only matter as separators.
-  const lines = clean.split("\n").map((l) => l.replace(/^[-•·*▪]\s*/, "").trim());
+  const raw = clean.split("\n");
+  // An explicit bullet ("- " as scraper/linkedin.py writes <li>) is a list
+  // item whatever the heuristics below would say.
+  const bulleted = raw.map((l) => /^\s*[-•·*▪]\s+\S/.test(l));
+  const lines = raw.map((l) => l.replace(/^[-•·*▪]\s*/, "").trim());
   const html = [];
   let list = [];
   let listMode = false; // true right after a heading ending with ":" (or a
@@ -267,6 +285,10 @@ export function descriptionHtml(text) {
   for (let i = 0; i < lines.length; i++) {
     const l = lines[i];
     if (!l) continue;
+    if (bulleted[i]) {
+      list.push(l);
+      continue;
+    }
     const bare = l.replace(/\s*:$/, "");
     const hasNext = lines.slice(i + 1).some(Boolean);
     if (looksLikeHeading(bare) && hasNext) {

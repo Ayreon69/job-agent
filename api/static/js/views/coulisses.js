@@ -108,7 +108,7 @@ export function render() {
     <ol class="pipeline reveal" style="--d:1">
       ${stage(1, "Collecte", "i-source", all.length, "offres suivies",
         [...sources.entries()].map(([s, n]) => `${esc(SOURCE_LABELS[s] || s)} <b>${n}</b>`),
-        "Playwright parcourt Hellowork et jobup.ch, dédoublonne, et note chaque jour quelles offres sont encore en ligne.")}
+        "Hellowork, jobup.ch et LinkedIn sont parcourus chaque matin. Une offre publiée sur deux sites n'est gardée qu'une fois, et l'agent note lesquelles sont encore en ligne.")}
       ${stage(2, "Géographie", "i-pin", zones.size, "zones reconnues",
         ZONE_ORDER.filter((z) => zones.has(z)).map((z) => `${ZONE_LABELS[z]} <b>${zones.get(z)}</b>`),
         "Des règles déterministes classent le lieu avant tout appel au LLM. Une zone inconnue ne bloque rien : l'offre est marquée « à valider ».")}
