@@ -2,118 +2,171 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>job·agent — Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>job·agent</title>
+<meta name="description" content="Agent de recherche d'emploi : collecte, scoring RAG et tri manuel des offres. Aucune candidature n'est soumise automatiquement.">
+<meta name="theme-color" content="#17130f" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#faf5eb" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static/dashboard.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/app.css">
+<script>
+  // Applied before first paint so a saved theme never flashes the wrong one.
+  try {
+    const t = localStorage.getItem("ja-theme");
+    if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+  } catch {}
+</script>
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
+  <!-- Icon sprite: hand-drawn 24px stroke icons, referenced via <use href="#i-…">. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-brief" viewBox="0 0 24 24"><path d="M4 5.5h13a2 2 0 0 1 2 2V19a1.5 1.5 0 0 1-3 0V5.5"/><path d="M4 5.5V18a2 2 0 0 0 2 2h11.5"/><path d="M7.5 9h6M7.5 12.5h6M7.5 16h3.5"/></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></symbol>
+      <symbol id="i-cards" viewBox="0 0 24 24"><rect x="6.5" y="4" width="11" height="15" rx="2" transform="rotate(8 12 11.5)"/><rect x="5" y="5" width="11" height="15" rx="2" transform="rotate(-6 10.5 12.5)"/></symbol>
+      <symbol id="i-board" viewBox="0 0 24 24"><rect x="3.5" y="4" width="5" height="16" rx="1.5"/><rect x="9.5" y="4" width="5" height="11" rx="1.5"/><rect x="15.5" y="4" width="5" height="7" rx="1.5"/></symbol>
+      <symbol id="i-flow" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7 6h10M6 8l5 8.3M18 8l-5 8.3"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10Z"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24"><path d="m14.5 6-6 6 6 6"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="m9.5 6 6 6-6 6"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></symbol>
+      <symbol id="i-keyboard" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M9.5 10h.01M13 10h.01M16.5 10h.01M7.5 14h9"/></symbol>
+      <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20Z"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8Z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+      <symbol id="i-case" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 12.5h18"/></symbol>
+      <symbol id="i-coins" viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="5.5" ry="2.5"/><path d="M3.5 7v4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5V7"/><path d="M9.5 16.3c.7.1 1.6.2 2.5.2 3 0 5.5-1.1 5.5-2.5v-4M3.5 11v4c0 1.4 2.5 2.5 5.5 2.5M20.5 10v4c0 1.4-2.5 2.5-5.5 2.5"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+      <symbol id="i-ladder" viewBox="0 0 24 24"><path d="M4 20h4v-5h4v-5h4V5h4"/></symbol>
+      <symbol id="i-source" viewBox="0 0 24 24"><path d="m12 3.5 8.5 4.5-8.5 4.5L3.5 8Z"/><path d="m3.5 12 8.5 4.5 8.5-4.5M3.5 16l8.5 4.5 8.5-4.5"/></symbol>
+      <symbol id="i-sector" viewBox="0 0 24 24"><path d="M4 20V9l5-3v14M9 20V4l7 4v12M16 20v-8l4 2v6M2.5 20h19"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4 2.8 19.5h18.4Z"/><path d="M12 10v4.5M12 17.2h.01"/></symbol>
+      <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.5a2.5 2.5 0 1 1 3.3 2.4c-.6.2-.9.8-.9 1.4v.4M12 16.8h.01"/></symbol>
+      <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3c.6 4.6 2.4 6.4 7 7-4.6.6-6.4 2.4-7 7-.6-4.6-2.4-6.4-7-7 4.6-.6 6.4-2.4 7-7Z"/><path d="M19 15.5c.2 1.6.9 2.3 2.5 2.5-1.6.2-2.3.9-2.5 2.5-.2-1.6-.9-2.3-2.5-2.5 1.6-.2 2.3-.9 2.5-2.5Z"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/></symbol>
+      <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 5h16l-6.2 7.5V19l-3.6-1.8v-4.7Z"/></symbol>
+    </defs>
+  </svg>
 
-  <header class="app-header">
-    <div class="brand">
-      <span class="brand-mark" aria-hidden="true">◆</span>
-      <div class="brand-text">
-        <h1>job<span class="brand-dot">·</span>agent</h1>
-        <p class="subtitle">Aucune candidature n'est jamais soumise automatiquement — la décision reste humaine.</p>
+  <div class="atmosphere" aria-hidden="true"><div class="glow glow--a"></div><div class="glow glow--b"></div><div class="grain"></div></div>
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="masthead">
+    <div class="masthead__inner">
+      <a class="brand" href="#/" aria-label="job·agent — accueil">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect class="brand__tile" x="0" y="0" width="32" height="32" rx="8"/>
+          <rect class="brand__gem" x="10.3" y="10.3" width="11.4" height="11.4" rx="2" transform="rotate(45 16 16)"/>
+        </svg>
+        <span class="brand__word">job<span class="brand__dot">·</span>agent</span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav__link" href="#/" data-route="brief"><svg class="icon"><use href="#i-brief"/></svg><span>Brief</span></a>
+        <a class="nav__link" href="#/offres" data-route="offres"><svg class="icon"><use href="#i-list"/></svg><span>Offres</span></a>
+        <a class="nav__link" href="#/trier" data-route="trier"><svg class="icon"><use href="#i-cards"/></svg><span>Trier</span><b class="nav__badge" id="nav-pending" hidden></b></a>
+        <a class="nav__link" href="#/selection" data-route="selection"><svg class="icon"><use href="#i-board"/></svg><span>Sélection</span></a>
+        <a class="nav__link" href="#/coulisses" data-route="coulisses"><svg class="icon"><use href="#i-flow"/></svg><span>Coulisses</span></a>
+        <span class="nav__ink" aria-hidden="true"></span>
+      </nav>
+
+      <div class="masthead__tools">
+        <button type="button" class="tool-btn tool-btn--search" id="open-palette" aria-label="Rechercher (Ctrl+K)">
+          <svg class="icon"><use href="#i-search"/></svg><span class="tool-btn__label">Rechercher</span><kbd>Ctrl K</kbd>
+        </button>
+        <button type="button" class="tool-btn" id="toggle-theme" aria-label="Changer de thème">
+          <svg class="icon icon--sun"><use href="#i-sun"/></svg><svg class="icon icon--moon"><use href="#i-moon"/></svg>
+        </button>
+        <button type="button" class="tool-btn" id="open-help" aria-label="Raccourcis clavier (?)">
+          <svg class="icon"><use href="#i-keyboard"/></svg>
+        </button>
       </div>
     </div>
-    <nav class="view-switch" role="tablist" aria-label="Vue">
-      <button type="button" class="view-tab" data-view="table" role="tab" aria-selected="false">Tableau</button>
-      <button type="button" class="view-tab" data-view="swipe" role="tab" aria-selected="false">Trier ✦</button>
-    </nav>
+    <div class="dateline" id="dateline" aria-live="polite"></div>
   </header>
 
-  <section id="error-banner" class="error-banner" hidden></section>
+  <div id="error-banner" class="error-banner" role="alert" hidden></div>
 
-  <section class="stat-strip" id="stat-strip" aria-label="Répartition par avis">
-    <button type="button" class="stat-chip is-active" data-verdict-filter="">
-      <span class="stat-count" id="stat-all">–</span>
-      <span class="stat-label">Toutes</span>
-    </button>
-    <button type="button" class="stat-chip stat-chip--pending" data-verdict-filter="__pending__">
-      <span class="stat-count" id="stat-pending">–</span>
-      <span class="stat-label">Non triées</span>
-    </button>
-    <button type="button" class="stat-chip stat-chip--yes" data-verdict-filter="interessante">
-      <span class="stat-count" id="stat-interessante">–</span>
-      <span class="stat-label">Intéressantes</span>
-    </button>
-    <button type="button" class="stat-chip stat-chip--maybe" data-verdict-filter="peut_etre">
-      <span class="stat-count" id="stat-peut_etre">–</span>
-      <span class="stat-label">Peut-être</span>
-    </button>
-    <button type="button" class="stat-chip stat-chip--no" data-verdict-filter="pas_interessante">
-      <span class="stat-count" id="stat-pas_interessante">–</span>
-      <span class="stat-label">Pas pour moi</span>
-    </button>
-  </section>
+  <main id="main" class="stage" tabindex="-1">
+    <section class="view" data-view="brief" hidden></section>
+    <section class="view" data-view="offres" hidden></section>
+    <section class="view" data-view="trier" hidden></section>
+    <section class="view" data-view="selection" hidden></section>
+    <section class="view" data-view="coulisses" hidden></section>
+  </main>
 
-  <section id="view-table" class="view">
-    <section class="filters">
-      <label>
-        Zone géographique
-        <select id="filter-zone">
-          <option value="">Toutes</option>
-        </select>
+  <footer class="colophon">
+    <p><svg class="icon"><use href="#i-lock"/></svg> Aucune candidature n'est jamais soumise automatiquement — la décision reste humaine.</p>
+    <p class="colophon__meta">Scraping Playwright · scoring RAG (ChromaDB + Mistral) · FastAPI · GitHub Actions</p>
+  </footer>
+
+  <!-- Offer detail drawer -->
+  <div class="drawer-scrim" id="drawer-scrim" hidden></div>
+  <aside class="drawer" id="drawer" aria-modal="true" role="dialog" aria-labelledby="drawer-title" hidden>
+    <div class="drawer__body" id="drawer-body"></div>
+  </aside>
+
+  <!-- Command palette -->
+  <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Recherche et commandes" hidden>
+    <div class="palette__box">
+      <label class="palette__field">
+        <svg class="icon"><use href="#i-search"/></svg>
+        <input id="palette-input" type="text" autocomplete="off" spellcheck="false" placeholder="Chercher une offre, une entreprise, une ville… ou une commande">
+        <kbd>Échap</kbd>
       </label>
-      <label>
-        Statut
-        <select id="filter-status">
-          <option value="">Tous</option>
-        </select>
-      </label>
-      <label>
-        Secteur
-        <select id="filter-sector">
-          <option value="">Tous</option>
-        </select>
-      </label>
-      <span id="offer-count" class="offer-count"></span>
-    </section>
-
-    <div class="table-scroll">
-      <table id="offers-table">
-        <thead>
-          <tr>
-            <th data-sort="title">Titre</th>
-            <th data-sort="company">Entreprise</th>
-            <th data-sort="geography_zone">Zone</th>
-            <th data-sort="sector">Secteur</th>
-            <th data-sort="score" class="sortable sorted-desc">Score</th>
-            <th data-sort="status">Statut</th>
-            <th>Mon avis</th>
-            <th>Flags</th>
-            <th data-sort="published_at_sortable" class="col-date">Publiée le</th>
-            <th data-sort="first_seen_at" class="col-date">Vue le</th>
-          </tr>
-        </thead>
-        <tbody id="offers-body">
-          <tr><td colspan="10" class="loading">Chargement…</td></tr>
-        </tbody>
-      </table>
+      <ul class="palette__list" id="palette-list" role="listbox"></ul>
     </div>
-  </section>
+  </div>
 
-  <section id="view-swipe" class="view" hidden>
-    <div class="swipe-head">
-      <p class="swipe-count" id="swipe-count"></p>
-      <div class="swipe-progress"><div class="swipe-progress-bar" id="swipe-progress-bar"></div></div>
+  <!-- Keyboard help -->
+  <div class="help" id="help" role="dialog" aria-modal="true" aria-labelledby="help-title" hidden>
+    <div class="help__box">
+      <header><h2 id="help-title">Raccourcis clavier</h2><button type="button" class="icon-btn" data-close-help aria-label="Fermer"><svg class="icon"><use href="#i-x"/></svg></button></header>
+      <div class="help__grid">
+        <section>
+          <h3>Partout</h3>
+          <dl>
+            <dt><kbd>Ctrl</kbd><kbd>K</kbd></dt><dd>Rechercher / commandes</dd>
+            <dt><kbd>g</kbd> puis <kbd>b</kbd> <kbd>o</kbd> <kbd>t</kbd> <kbd>s</kbd> <kbd>c</kbd></dt><dd>Aller à Brief, Offres, Trier, Sélection, Coulisses</dd>
+            <dt><kbd>?</kbd></dt><dd>Cette aide</dd>
+            <dt><kbd>Échap</kbd></dt><dd>Fermer</dd>
+          </dl>
+        </section>
+        <section>
+          <h3>Offres</h3>
+          <dl>
+            <dt><kbd>/</kbd></dt><dd>Filtrer la liste</dd>
+            <dt><kbd>j</kbd> <kbd>k</kbd></dt><dd>Offre suivante / précédente</dd>
+            <dt><kbd>Entrée</kbd></dt><dd>Ouvrir le détail</dd>
+            <dt><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd></dt><dd>Intéressante / peut-être / pas pour moi</dd>
+          </dl>
+        </section>
+        <section>
+          <h3>Trier</h3>
+          <dl>
+            <dt><kbd>→</kbd></dt><dd>Intéressante</dd>
+            <dt><kbd>↑</kbd></dt><dd>Peut-être</dd>
+            <dt><kbd>←</kbd></dt><dd>Pas pour moi</dd>
+            <dt><kbd>z</kbd></dt><dd>Annuler</dd>
+            <dt><kbd>Espace</kbd></dt><dd>Ouvrir le détail</dd>
+          </dl>
+        </section>
+      </div>
     </div>
+  </div>
 
-    <div class="swipe-stage" id="swipe-stage"></div>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
 
-    <div class="swipe-controls">
-      <button type="button" class="swipe-btn swipe-btn--no" id="btn-no" title="Pas pour moi (←)" aria-label="Pas pour moi">✕</button>
-      <button type="button" class="swipe-btn swipe-btn--undo" id="btn-undo" title="Annuler (Z)" aria-label="Annuler la dernière décision" disabled>↺</button>
-      <button type="button" class="swipe-btn swipe-btn--maybe" id="btn-maybe" title="Peut-être (↑)" aria-label="Peut-être">★</button>
-      <button type="button" class="swipe-btn swipe-btn--yes" id="btn-yes" title="Intéressante (→)" aria-label="Intéressante">♥</button>
-    </div>
-    <p class="swipe-hint"><kbd>←</kbd> pas pour moi · <kbd>↑</kbd> peut-être · <kbd>→</kbd> intéressante · <kbd>Z</kbd> annuler</p>
-  </section>
-
-  <script src="/static/dashboard.js"></script>
+  <script type="module" src="/static/js/main.js"></script>
 </body>
 </html>
