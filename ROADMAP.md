@@ -2668,3 +2668,64 @@ reproduirait à chaque nettoyage local suivant.
 `api/static/index.html` (classe `col-date` sur les `<th>`), `storage/jobs.db`
 (135 offres supprimées), `orchestrator/runs/` (675 fichiers supprimés,
 sector backfill sur les offres fusionnées).
+
+## Session 16 (2026-09-17) : pipeline quotidien — commits au fil de l'eau
+
+**Constat :** plus aucune offre nouvelle depuis le 20/08 sur le dashboard.
+Deux causes successives : d'abord le profil personnel retiré du dépôt sans
+que la restauration depuis le secret `JOB_AGENT_PROFILE` soit en place
+(`ValueError: No chunks found in scoring/profile`, corrigé dans
+`3688236`) ; puis, une fois le pipeline reparti, un backlog de 13 jours trop
+gros pour les 90 minutes du job — et comme `jobs.db` n'était commité qu'à
+la toute dernière étape, le run tué par le timeout perdait tout.
+
+**Correctif (`5e42946`) :** `.github/scripts/commit_db.sh` commite et
+pousse `jobs.db` après chaque étape (scraping, nettoyage, chaque lot de 10
+offres scorées). `orchestrator/run.py` imprime `REMAINING=<n>` en mode
+batch ; le workflow boucle sur `--limit 10` jusqu'à 0, avec un timeout
+propre à l'étape (55 min) pour laisser le backfill et le commit final
+tourner. Un run interrompu ne perd plus qu'un lot au pire, et le suivant
+reprend où il s'est arrêté. Vérifié : runs quotidiens verts depuis.
+
+## Session 17 (2026-09-26) : refonte complète du dashboard
+
+**Point de départ :** carte blanche pour rendre le site plus agréable, plus
+lisible et plus utile. Constat en l'ouvrant : le détail d'une offre était
+presque vide sur la démo (points forts / écarts vivent dans
+`orchestrator/runs/`, non publié), alors que la description, le contrat,
+le salaire et l'expérience étaient en base sans jamais être exposés.
+
+**API (pure exposition) :** `GET /offers` et `GET /offers/{id}` renvoient
+désormais `source`, `contract_type`, `salary`, `experience`,
+`last_seen_at`, `url`, et la description pour le détail.
+`Cache-Control: no-cache` sur le dashboard (revalidation ETag) pour qu'un
+déploiement ne laisse pas l'ancien JS en cache.
+
+**Dashboard :** réécrit en modules ES sans build (voir DOCUMENTATION.md
+§5.6) — Brief du jour (nouveautés depuis la dernière visite, radar, à la
+une, marché en chiffres), Offres (recherche, filtres, clavier), Trier
+(swipe avec extrait), Sélection (kanban, glisser-déposer, export CSV /
+Markdown), Coulisses (le pipeline avec ses chiffres réels), tiroir de
+détail adressable par URL, palette `Ctrl+K`, thème clair/sombre, mobile
+avec barre d'onglets. Favicon : le repère ◆ du bandeau en carré arrondi.
+
+**Trouvailles en route :**
+- *Scraper jobup* : 143/185 offres avaient « Offre pertinente ? » comme
+  entreprise — un widget de feedback ajouté par jobup sous certaines
+  cartes, pris pour la dernière ligne « entreprise ». Corrigé dans
+  `scraper/jobup.py` (`9e5a3e6`) ; les lignes existantes se réparent d'elles-
+  mêmes au prochain passage (`upsert_job` rafraîchit `company`). Le
+  dashboard affiche « Entreprise non précisée » d'ici là.
+- *Doublons jobup* : la même offre revient sous plusieurs identifiants
+  (ex. « Senior AI Engineer », Lausanne, ×3, même date, même texte) — elle
+  est donc scorée plusieurs fois par Mistral. Signalés et repliables dans
+  le dashboard ; **à traiter côté scraper** (dédoublonnage sur intitulé +
+  entreprise + date, pas seulement `source_id`).
+- *Offres « hors collecte »* : 87/288 n'ont pas été revues depuis 3 jours
+  ou plus. Le scraper ne lisant que la première page de résultats, c'est
+  « plus trouvée par la collecte », pas une preuve que le poste est
+  pourvu — formulé ainsi dans l'interface.
+
+**Fichiers :** `api/main.py`, `api/schemas.py`, `api/static/` (réécrit :
+`index.html`, `app.css`, `js/**`, `favicon.svg` ; `dashboard.js/.css`
+supprimés), `scraper/jobup.py`, `DOCUMENTATION.md` §5.6.

@@ -418,8 +418,8 @@ jamais un résultat de pipeline :
 | Endpoint | Rôle |
 |---|---|
 | `GET /health` | 3 vérifications sans appel réseau : clé Mistral présente, modèle d'embeddings chargé, base accessible. `200` si tout passe, `503` sinon. |
-| `GET /offers` | Liste légère (statut, score, zone, secteur, dates, compteurs gaps/incertains, `user_verdict`) pour le dashboard. |
-| `GET /offers/{id}` | Détail complet : markdown, matches/gaps/uncertain_flags structurés, secteur, `user_verdict`, 3 traces JSON. 404 seulement si l'`offer_id` n'existe pas. |
+| `GET /offers` | Liste légère (statut, score, zone, secteur, dates, compteurs gaps/incertains, `user_verdict`, source, contrat, salaire, expérience, lien, `last_seen_at`) pour le dashboard. |
+| `GET /offers/{id}` | Détail complet : description de l'offre, markdown, matches/gaps/uncertain_flags structurés, secteur, `user_verdict`, 3 traces JSON. 404 seulement si l'`offer_id` n'existe pas. |
 | `POST /offers/{id}/verdict` | Enregistre (ou efface, `verdict: null`) le tri manuel de l'utilisateur. Simple écriture SQLite, disponible dans les deux `API_MODE` (contrairement à `/analyze`, aucun modèle d'embedding ni appel LLM impliqué). |
 | `POST /analyze` | Relance le pipeline complet sur une offre déjà en base. Synchrone (~30-90s), désactivé (503) en mode `readonly`. |
 
@@ -433,33 +433,63 @@ concrètement : ~58MB RAM au repos en `readonly` contre ~750-920MB en
 sont placés à l'intérieur des fonctions plutôt qu'en haut de fichier — ce
 n'est pas un oubli, c'est la source réelle de l'économie mémoire.
 
-**`api/static/`** (session 9, redesign + tri manuel ajoutés ensuite) —
-dashboard HTML/CSS/JS vanilla (pas de framework, choix délibéré pour un
-usage mono-page personnel), servi par `StaticFiles` de FastAPI. Deux vues,
-basculables par onglet (mémorisée en `localStorage`) :
+**`api/static/`** (session 9, refondu en session 17) — dashboard en
+HTML/CSS/JS vanilla, sans framework ni étape de build : des modules ES
+natifs (`js/main.js` en point d'entrée) servis tels quels par `StaticFiles`.
+Choix délibéré pour un outil personnel mono-utilisateur : rien à compiler,
+rien à mettre à jour, et le déploiement reste « copier le dossier ».
+`Cache-Control: no-cache` est ajouté sur `/static` (middleware dans
+`api/main.py`) pour qu'un déploiement ne laisse pas un navigateur sur
+l'ancienne version des modules.
 
-- **Tableau** : table triable/filtrable par zone/statut/avis, panneau de
-  détail en accordéon inséré directement sous la ligne cliquée, lien vers
-  l'offre originale, dates de publication et de première apparition en base
-  triables chronologiquement (via `published_at_sortable`, calculé côté API
-  en normalisant les deux formats de date des sources). Une colonne "Mon
-  avis" affiche le tri manuel de chaque offre et ouvre un petit menu pour le
-  changer sans quitter le tableau.
-- **Trier** (façon swipe) : les offres analysées et pas encore triées
-  (`user_verdict IS NULL`) sont présentées une par une, triées par score
-  décroissant, sous forme de pile de cartes avec profondeur. Glisser une
-  carte (Pointer Events — souris, tactile et stylet unifiés) déclenche un
-  tampon "OUI"/"NON"/"PEUT-ÊTRE" dont l'opacité suit la distance de
-  glissement ; relâcher au-delà du seuil envoie `POST
-  /offers/{id}/verdict` et fait s'envoler la carte, révélant la suivante.
-  Boutons et raccourcis clavier (`←`/`→`/`↑`, `Z` pour annuler) offrent le
-  même résultat sans glisser. Une pile "annuler" locale permet de revenir
-  sur la dernière décision (efface le verdict côté serveur et replace
-  l'offre en tête de pile).
-- Une barre de statistiques (Toutes / Non triées / Intéressantes / Peut-être
-  / Pas pour moi), toujours visible au-dessus des deux vues, sert à la fois
-  de résumé et de filtre rapide — cliquer une puce bascule sur le tableau
-  filtré sur ce tri.
+Routage par hash (`#/`, `#/offres`, `#/trier`, `#/selection`,
+`#/coulisses`), avec le détail d'une offre ouvert dans un tiroir adressable
+(`#/offres?offre=4478`) — le bouton retour le ferme, et un lien vers une
+offre précise peut être partagé.
+
+| Fichier | Rôle |
+|---|---|
+| `js/api.js` | Appels `fetch` aux endpoints, rien d'autre. |
+| `js/store.js` | Liste des offres en mémoire, `setVerdict` optimiste (annulé si le serveur refuse), « nouveau depuis ta dernière visite », doublons probables, offres absentes des dernières collectes. |
+| `js/format.js` | Libellés, dates (mêmes formats que `storage/db.py::parse_published_at`), nettoyage d'affichage (titres sans « H/F », entreprise manquante, bruit de l'encart IA de jobup dans les descriptions). |
+| `js/charts.js` | Graphiques SVG faits main : arrivées par jour, distribution des scores, zones, secteurs, salaires, radar. |
+| `js/drawer.js` | Tiroir de détail d'une offre. |
+| `js/views/*.js` | Une vue par page. |
+
+Les pages :
+
+- **Brief** — ce qui a changé depuis la dernière visite (horodatage de la
+  visite précédente gardé en `localStorage`), un radar des offres en
+  attente (distance au centre = 100 − score), les meilleures offres
+  encore à trier, et le marché en chiffres. Le score affiché est toujours
+  le score brut du pipeline : les paliers 80/65/50 ne servent qu'à la
+  lecture, rien n'est repondéré côté client.
+- **Offres** — recherche plein texte (insensible aux accents), filtres
+  (avis, zone, secteur, source, score minimum, nouveautés), tri,
+  navigation clavier (`j`/`k`, `Entrée`, `1`/`2`/`3` pour donner un avis).
+  Les doublons probables (même intitulé nettoyé, même lieu, même
+  entreprise quand elle est connue) sont signalés `×n` et peuvent être
+  repliés — signalés, jamais fusionnés : ce peut être deux postes réels.
+- **Trier** — la pile de cartes façon swipe (Pointer Events : souris,
+  tactile, stylet ; `←`/`↑`/`→`, `Z` pour annuler). Chaque carte montre un
+  extrait de l'offre. Après une décision sur une offre qui a des doublons,
+  un toast propose d'appliquer le même avis — jamais appliqué sans clic.
+- **Sélection** — tableau par avis, glisser-déposer entre colonnes pour
+  changer d'avis, export CSV (séparateur `;` et BOM pour Excel fr, avec
+  des colonnes vides « Candidature envoyée le » / « Notes » pour suivre
+  ses démarches) ou copie Markdown. Une alerte signale les offres gardées
+  qui n'apparaissent plus dans les collectes depuis 3 jours (mesuré par
+  rapport au dernier passage du scraper, pas à « maintenant ») : elles
+  seront supprimées à 30 jours par `storage/cleanup.py`.
+- **Coulisses** — le pipeline expliqué avec ses vrais chiffres, le rythme
+  de collecte jour par jour (les pannes s'y voient comme des trous),
+  l'état de `GET /health`, et les trois règles non négociables.
+
+Transverses : palette de commandes (`Ctrl+K`), aide des raccourcis (`?`),
+thème clair/sombre (suit le système, forçable), barre d'onglets en bas
+d'écran sur mobile. Le détail de l'analyse (points forts, écarts) n'est
+affiché que s'il existe localement dans `orchestrator/runs/` ; sur la démo,
+seuls les compteurs sont publics et le tiroir le dit explicitement.
 
 ## 6. Règles métier critiques
 

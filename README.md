@@ -32,7 +32,10 @@ jobup.ch      priorité       ChromaDB, Mistral      gaps signalés         tri 
    aveuglément. Il relance un scraping ciblé si la description est trop maigre,
    isole les échecs offre par offre, et trace chacune de ses décisions.
 6. **API et dashboard** (`api/`) : FastAPI, `GET /offers`, `GET /offers/{id}`,
-   `GET /health`, et `POST /analyze` en mode complet.
+   `GET /health`, et `POST /analyze` en mode complet. Le dashboard (modules ES,
+   sans build) propose un brief du jour, la liste filtrable, un tri façon swipe,
+   un tableau de sélection exportable et une page « coulisses » qui explique le
+   pipeline avec ses vrais chiffres.
 
 ## Exécution
 
