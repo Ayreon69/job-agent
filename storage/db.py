@@ -186,27 +186,7 @@ def upsert_job(conn: sqlite3.Connection, job: Job) -> bool:
     ).fetchone()
 
     if existing is not None:
-        conn.execute(
-            """
-            UPDATE jobs SET
-                url = ?, title = ?, company = ?, location = ?,
-                contract_type = ?, salary = ?, experience = ?,
-                description = ?, published_at = ?, last_seen_at = datetime('now')
-            WHERE id = ?
-            """,
-            (
-                job.url,
-                job.title,
-                job.company,
-                job.location,
-                job.contract_type,
-                job.salary,
-                job.experience,
-                job.description,
-                job.published_at,
-                existing[0],
-            ),
-        )
+        refresh_job(conn, existing[0], job)
         return False
 
     conn.execute(
@@ -231,6 +211,38 @@ def upsert_job(conn: sqlite3.Connection, job: Job) -> bool:
         ),
     )
     return True
+
+
+def refresh_job(conn: sqlite3.Connection, job_id: int, job: Job) -> None:
+    """Overwrite row job_id's scraped fields with this run's values and
+    refresh last_seen_at — upsert_job's update path, also used to re-point
+    a known offer to the new source_id a source republished it under
+    (jobup.ch, see scraper/jobup.py's is_same_offer). source_id and url are
+    part of the refresh for that reason. status, user_verdict, scraped_at
+    and the scoring summary are left alone, exactly as in upsert_job.
+    """
+    conn.execute(
+        """
+        UPDATE jobs SET
+            source_id = ?, url = ?, title = ?, company = ?, location = ?,
+            contract_type = ?, salary = ?, experience = ?,
+            description = ?, published_at = ?, last_seen_at = datetime('now')
+        WHERE id = ?
+        """,
+        (
+            job.source_id,
+            job.url,
+            job.title,
+            job.company,
+            job.location,
+            job.contract_type,
+            job.salary,
+            job.experience,
+            job.description,
+            job.published_at,
+            job_id,
+        ),
+    )
 
 
 def count_jobs(db_path: Path = DEFAULT_DB_PATH) -> int:
