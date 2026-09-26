@@ -246,6 +246,13 @@ def refresh_job(conn: sqlite3.Connection, job_id: int, job: Job) -> None:
     )
 
 
+def mark_seen(conn: sqlite3.Connection, job_id: int) -> None:
+    """Refresh last_seen_at only: the offer showed up again in a search, but
+    its detail page wasn't re-fetched (LinkedIn, to keep the request volume
+    low — see scraper/linkedin.py). Stored fields stay as first fetched."""
+    conn.execute("UPDATE jobs SET last_seen_at = datetime('now') WHERE id = ?", (job_id,))
+
+
 def count_jobs(db_path: Path = DEFAULT_DB_PATH) -> int:
     with connect(db_path) as conn:
         return conn.execute("SELECT COUNT(*) FROM jobs").fetchone()[0]

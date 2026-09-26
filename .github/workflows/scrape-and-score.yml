@@ -55,13 +55,15 @@ concurrency:
 jobs:
   scrape-and-score:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 105
       # Bumped from 60 (session 11): a real Hellowork-only run already took
       # ~49 minutes for 36 offers (session 8 first run) — adding jobup.ch
       # roughly doubles the per-run offer volume on the first pass, before
       # the upsert-dedup makes subsequent runs process only the delta. Caps
       # a hang rather than letting a stuck job burn the whole Actions
-      # minutes budget. The orchestrator step below has its own tighter
+      # minutes budget. 90 -> 105 (session 19): LinkedIn adds ~12 minutes
+      # of scraping on its first run (~200 detail pages, paced), a few
+      # minutes afterwards (only offers never seen before are fetched). The orchestrator step below has its own tighter
       # per-step timeout so setup/scraping/cleanup/backfill still get to
       # run even on a day the batch alone would blow through 90 minutes.
 
@@ -105,10 +107,13 @@ jobs:
       - name: Build ChromaDB profile index
         run: python -m scoring.embeddings.build
 
-      - name: Run scraper (Hellowork + jobup.ch, default queries/regions)
-        # --source defaults to "both" (scraper/run.py): Hellowork covers
-        # Rhone-Alpes, jobup.ch couvre Suisse romande (session 11) - one
-        # invocation runs both sources sequentially in the same job.
+      - name: Run scraper (Hellowork + jobup.ch + LinkedIn, default queries/regions)
+        # --source defaults to "all" (scraper/run.py): Hellowork covers
+        # Rhone-Alpes, jobup.ch Suisse romande (session 11), LinkedIn
+        # Suisse romande + UAE (session 19) - one invocation runs the three
+        # sources sequentially in the same job. LinkedIn runs last and is
+        # isolated: if LinkedIn refuses the runner's IP (hosted CI ranges
+        # often are), the step still succeeds with the other two sources.
         # Also refreshes jobs.last_seen_at for every already-known offer
         # this run still finds (storage/db.py's upsert_job) - the signal
         # the next step's cleanup relies on, so it must run before it.
