@@ -124,6 +124,32 @@ def _card_field(lines: list[str], label: str) -> str | None:
     return lines[idx + 1] if idx + 1 < len(lines) else None
 
 
+# Card chrome that is never the company: trailer strings, plus
+# "Offre pertinente ?" (2026-09) — a feedback widget jobup appends to some
+# cards only, after the company line. It had become the "company" of
+# 143/185 stored jobup offers. Any line ending in "?" is excluded too, so
+# the next widget of that kind doesn't slip through the same way.
+_CARD_TRAILERS = {"Candidature simplifiée", "Nouveau", "Sauvegarder", "Offre pertinente ?", "Consulté", "·"}
+_CARD_LABELS = ("Lieu de travail:", "Taux d'activité:", "Type de contrat:")
+_RELATIVE_DATE_RE = re.compile(r"^(Il y a|Aujourd|Hier|Avant-hier|La semaine|Le mois)")
+
+
+def _card_company(lines: list[str], title: str, location: str | None, contract_type: str | None) -> str | None:
+    """Company isn't behind a label — it's whatever non-label line remains
+    after title/location/taux/contrat, generally the last substantive line
+    before trailer text. Takes the last line that isn't known card chrome.
+    """
+    for line in reversed(lines):
+        if line in _CARD_TRAILERS or line in _CARD_LABELS or line.endswith("?"):
+            continue
+        if line in (title, location, contract_type):
+            continue
+        if re.match(r"^\d+%$", line) or _RELATIVE_DATE_RE.match(line):
+            continue
+        return line
+    return None
+
+
 # jobup's own "Type de contrat" classification is real but not fully
 # reliable: a real scraping run found 3/34 offers whose title clearly
 # describes an internship ("Stagiaire...", "...Internship...") but whose
@@ -185,26 +211,7 @@ def search_jobs(
 
             card_location = _card_field(lines, "Lieu de travail:")
             contract_type = _card_field(lines, "Type de contrat:")
-            # Company isn't behind a label — it's whatever non-label line
-            # remains after title/location/taux/contrat, generally the last
-            # substantive line before "Candidature simplifiée"/"Nouveau"/
-            # "Sauvegarder" trailer text. Simpler and more robust: take the
-            # last line that isn't one of those known trailer strings.
-            # "Offre pertinente ?" (2026-09): a feedback widget jobup appends
-            # to some cards only, after the company line — it had become the
-            # "company" of 143/185 stored jobup offers. Any line ending in "?"
-            # is excluded too, so the next widget of that kind doesn't slip
-            # through the same way.
-            trailer_strings = {"Candidature simplifiée", "Nouveau", "Sauvegarder", "Offre pertinente ?"}
-            company = next(
-                (l for l in reversed(lines) if l not in trailer_strings and l != title
-                 and not l.endswith("?")
-                 and l not in ("Lieu de travail:", "Taux d'activité:", "Type de contrat:")
-                 and l != card_location and l != contract_type
-                 and not re.match(r"^\d+%$", l)
-                 and not re.match(r"^(Il y a|Aujourd|Hier|Avant-hier|La semaine|Le mois)", l)),
-                None,
-            )
+            company = _card_company(lines, title, card_location, contract_type)
 
             if _looks_like_internship(title):
                 logger.info("Skipping likely internship despite contract_type=%r: %r", contract_type, title)
