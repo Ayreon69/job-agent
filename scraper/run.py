@@ -18,7 +18,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from scraper import hellowork, jobup
-from storage.db import DEFAULT_DB_PATH, Job, connect, init_db, upsert_job
+from storage.db import DEFAULT_DB_PATH, Job, connect, init_db, refresh_job, upsert_job
 
 # Hellowork ne référence que des offres France (pas de Suisse/UAE/Moyen-Orient utile
 # ici). Ciblage géo limité au repli du CLAUDE.md, élargi de Lyon à toute la région
@@ -31,25 +31,109 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 
+def _to_job(job_dict: dict) -> Job:
+    return Job(
+        source=job_dict["source"],
+        source_id=job_dict["source_id"],
+        url=job_dict["url"],
+        title=job_dict["title"],
+        company=job_dict["company"],
+        location=job_dict["location"],
+        contract_type=job_dict["contract_type"],
+        salary=job_dict["salary"],
+        experience=job_dict["experience"],
+        description=job_dict["description"],
+        published_at=job_dict["published_at"],
+    )
+
+
 def _store_jobs(conn, jobs: list[dict]) -> int:
     total_new = 0
     for job_dict in jobs:
-        job = Job(
-            source=job_dict["source"],
-            source_id=job_dict["source_id"],
-            url=job_dict["url"],
-            title=job_dict["title"],
-            company=job_dict["company"],
-            location=job_dict["location"],
-            contract_type=job_dict["contract_type"],
-            salary=job_dict["salary"],
-            experience=job_dict["experience"],
-            description=job_dict["description"],
-            published_at=job_dict["published_at"],
-        )
-        if upsert_job(conn, job):
+        if upsert_job(conn, _to_job(job_dict)):
             total_new += 1
     return total_new
+
+
+def store_jobup_jobs(conn, jobs: list[dict]) -> tuple[int, int, int]:
+    """Store one jobup run's offers, recognizing an offer jobup republished
+    under a new source_id (see scraper/jobup.py's is_same_offer) instead of
+    inserting it as a new 'nouveau' row that the orchestrator would score
+    again. Returns (inserted, repointed, aliases).
+
+    Two passes, so the outcome doesn't depend on result order:
+      1. offers whose source_id is already stored: plain refresh; their
+         rows are marked "seen this run";
+      2. unknown source_ids, compared to every stored jobup row:
+         - no match                 -> inserted (and matchable by the next ones);
+         - match seen this run      -> alias: the same offer is live under
+                                        another UUID we just refreshed,
+                                        nothing written;
+         - match not seen this run  -> republication: the row is re-pointed
+                                        to the new source_id/url, keeping
+                                        its status, score and user_verdict.
+    When several stored rows match (duplicates stored before this fix), the
+    one carrying a user_verdict wins, then the most recently seen.
+    """
+    known = dict(conn.execute("SELECT source_id, id FROM jobs WHERE source = 'jobup'").fetchall())
+    seen_this_run: set[int] = set()
+    unknown: list[dict] = []
+    for job_dict in jobs:
+        job_id = known.get(job_dict["source_id"])
+        if job_id is None:
+            unknown.append(job_dict)
+        else:
+            refresh_job(conn, job_id, _to_job(job_dict))
+            seen_this_run.add(job_id)
+
+    # last_seen_at is NULL on rows inserted after its migration and never
+    # seen again (the migrated column has no default): scraped_at is then
+    # the last time the offer was seen.
+    stored = [
+        {"id": r[0], "title": r[1], "company": r[2], "location": r[3], "description": r[4],
+         "user_verdict": r[5], "last_seen_at": r[6]}
+        for r in conn.execute(
+            "SELECT id, title, company, location, description, user_verdict, COALESCE(last_seen_at, scraped_at) "
+            "FROM jobs WHERE source = 'jobup'"
+        ).fetchall()
+    ]
+
+    inserted = repointed = aliases = 0
+    for job_dict in unknown:
+        matches = [row for row in stored if jobup.is_same_offer(job_dict, row)]
+        live = [row for row in matches if row["id"] in seen_this_run]
+        if live:
+            logger.info(
+                "[jobup] %s is an alias of offer #%d (live under another source_id this run): not stored — %r",
+                job_dict["source_id"], live[0]["id"], job_dict["title"],
+            )
+            aliases += 1
+            continue
+
+        if matches:
+            target = max(matches, key=lambda row: (row["user_verdict"] is not None, row["last_seen_at"] or ""))
+            refresh_job(conn, target["id"], _to_job(job_dict))
+            target.update({k: job_dict[k] for k in ("title", "company", "location", "description")})
+            seen_this_run.add(target["id"])
+            logger.info(
+                "[jobup] %s is a republication of offer #%d: row re-pointed to the new source_id (status/score/verdict kept)%s — %r",
+                job_dict["source_id"], target["id"],
+                f", {len(matches) - 1} other stored duplicate(s) left untouched" if len(matches) > 1 else "",
+                job_dict["title"],
+            )
+            repointed += 1
+            continue
+
+        upsert_job(conn, _to_job(job_dict))
+        new_id = conn.execute(
+            "SELECT id FROM jobs WHERE source = 'jobup' AND source_id = ?", (job_dict["source_id"],)
+        ).fetchone()[0]
+        stored.append({"id": new_id, "user_verdict": None, "last_seen_at": None,
+                       **{k: job_dict[k] for k in ("title", "company", "location", "description")}})
+        seen_this_run.add(new_id)
+        inserted += 1
+
+    return inserted, repointed, aliases
 
 
 def run_hellowork(conn, queries: list[str], location: str, max_pages: int, headless: bool) -> tuple[int, int]:
@@ -64,14 +148,26 @@ def run_hellowork(conn, queries: list[str], location: str, max_pages: int, headl
 
 
 def run_jobup(conn, queries: list[str], locations: list[str], max_pages: int, headless: bool) -> tuple[int, int]:
+    # All queries are collected before storing: store_jobup_jobs needs the
+    # whole run to know which stored offers are still live under their own
+    # source_id (an offer can come back under its old UUID in one query and
+    # a new one in another). Nothing is lost by waiting: connect() only
+    # commits once the whole run is done anyway.
     total_seen = 0
-    total_new = 0
+    jobs_by_source_id: dict[str, dict] = {}
     for query in queries:
         logger.info("=== [jobup] Scraping query: %r (locations: %r) ===", query, locations)
         jobs = jobup.scrape(query, locations=locations, max_pages=max_pages, headless=headless)
         total_seen += len(jobs)
-        total_new += _store_jobs(conn, jobs)
-    return total_seen, total_new
+        for job in jobs:
+            jobs_by_source_id.setdefault(job["source_id"], job)
+
+    inserted, repointed, aliases = store_jobup_jobs(conn, list(jobs_by_source_id.values()))
+    logger.info(
+        "[jobup] Same offer under a new source_id: %d republication(s) re-pointed, %d live alias(es) skipped.",
+        repointed, aliases,
+    )
+    return total_seen, inserted
 
 
 def run(

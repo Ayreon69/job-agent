@@ -36,9 +36,12 @@ missing label rather than assuming a fixed line count.
 
 from __future__ import annotations
 
+import difflib
 import logging
 import re
+import unicodedata
 from dataclasses import dataclass
+from typing import Mapping
 from urllib.parse import urlencode
 
 from playwright.sync_api import Page, sync_playwright
@@ -166,6 +169,98 @@ def _looks_like_internship(title: str) -> bool:
     return bool(_INTERNSHIP_TITLE_RE.search(title))
 
 
+# ---------------------------------------------------------------------------
+# Same offer under several source_ids (2026-09-26 reconnaissance)
+#
+# jobup.ch mints a NEW UUID every time an offer is (re)published, and the
+# old one then answers 404/410 — checked live on the 61 rows of the 28
+# duplicate groups found in jobs.db. Three real causes, all observed:
+#   - employer ATS feeds (SmartRecruiters for Talan/Nexthink) re-create the
+#     posting under a new ATS id, sometimes with a new date, sometimes
+#     keeping the original one (Nexthink "Senior AI Engineer": 3 UUIDs,
+#     all "15 août 2026");
+#   - temp agencies (Proman, OK Job SA, Sigma) repost every few days with a
+#     new date and occasionally a touched-up title ("Technicien Qualité" ->
+#     "Technicien Qualité (H/F)", "Automation/développement" ->
+#     "Automation / développement");
+#   - plain double imports: two live UUIDs pointing to the very same
+#     external ATS URL (SpeciTec).
+# So published_at can't be part of the identity (it changes on half of the
+# real cases), and a source_id-only dedup can't see any of it. Each new
+# UUID was a new 'nouveau' row, scored again by Mistral.
+#
+# Descriptions of the same offer are not byte-identical either: jobup
+# regenerates its AI summary header and machine translation per UUID. Word-
+# level similarity over the whole description measured on jobs.db:
+#   same offer (same normalized title + place): 0.889 .. 1.0
+#   different offers, same employer/agency:     <= 0.79
+#   "Senior" vs "Principal Data and Applied Scientist" (Bellevue): 0.967
+# That last pair is two real positions with near-identical text: the
+# description alone can't tell openings apart, the title must match too.
+# ---------------------------------------------------------------------------
+
+DESCRIPTION_SIMILARITY_THRESHOLD = 0.85
+
+# Gender/inclusive markers agencies add or drop between two publications of
+# the same offer: "(H/F)", "(h/f/x)", "(m/w/d)", "F/H"... Only these are
+# neutralized — any other title difference ("Ingénieur qualité" vs
+# "Ingénieur qualité (TQ2)", Senior vs Principal) keeps offers apart.
+_GENDER_MARKER_RE = re.compile(r"\(?\b[hfmwxd](?:\s*/\s*[hfmwxd]){1,3}\b\)?", re.IGNORECASE)
+
+
+def _fold(text: str | None) -> str:
+    """Lowercase, strip accents, and turn any run of punctuation/space into
+    a single space — "Automation/développement" == "Automation / développement".
+    """
+    ascii_text = unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", " ", ascii_text.lower()).strip()
+
+
+def normalize_title(title: str | None) -> str:
+    return _fold(_GENDER_MARKER_RE.sub(" ", title or ""))
+
+
+def _reliable_company(company: str | None) -> str | None:
+    """Folded company name, or None when it's unknown or known card chrome.
+    Rows stored before the _card_company fix (9e5a3e6) carry "Offre
+    pertinente ?" as their company: treating that as a real name would stop
+    every new UUID from matching its old row, so it counts as unknown.
+    """
+    if not company or company in _CARD_TRAILERS or company.endswith("?"):
+        return None
+    return _fold(company) or None
+
+
+def description_similarity(a: str, b: str) -> float:
+    """Share of words the two descriptions have in common, in order
+    (difflib ratio over word lists: ~100x faster than over characters on
+    these 1-18k character texts, same separation on the measured data).
+    """
+    return difflib.SequenceMatcher(None, a.split(), b.split(), autojunk=False).ratio()
+
+
+def is_same_offer(a: Mapping[str, str | None], b: Mapping[str, str | None]) -> bool:
+    """True when two jobup offers (dicts with title/company/location/
+    description) are the same posting under two source_ids. Every check
+    has to pass; any missing evidence means "not the same" — two real
+    openings with the same title must never be merged on a guess:
+      - normalized titles equal (gender markers and punctuation aside);
+      - same place (card "Lieu de travail");
+      - same company, when both are known;
+      - both descriptions present and >= DESCRIPTION_SIMILARITY_THRESHOLD.
+    """
+    if normalize_title(a["title"]) != normalize_title(b["title"]):
+        return False
+    if _fold(a["location"]) != _fold(b["location"]):
+        return False
+    company_a, company_b = _reliable_company(a["company"]), _reliable_company(b["company"])
+    if company_a and company_b and company_a != company_b:
+        return False
+    if not a["description"] or not b["description"]:
+        return False
+    return description_similarity(a["description"], b["description"]) >= DESCRIPTION_SIMILARITY_THRESHOLD
+
+
 def search_jobs(
     page: Page,
     query: str,
@@ -277,6 +372,13 @@ def scrape(
     across locations (a job in Genève can also show up under a Vaud search
     if the region overlaps in jobup's own index) before fetching details, so
     the same offer is never fetched/stored twice within one scrape() call.
+
+    The same offer under two DIFFERENT source_ids (republication, see
+    is_same_offer) is deliberately not collapsed here: telling a
+    republication from a second real opening with the same title takes the
+    description, i.e. the detail page, and the twin is usually already in
+    the database from an earlier run anyway — scraper/run.py's
+    store_jobup_jobs handles both cases at storage time.
     """
     results: list[dict] = []
 

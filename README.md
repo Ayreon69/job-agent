@@ -62,8 +62,8 @@ python -m scraper.run                # collecte
 python -m orchestrator.run           # scoring et analyse des nouvelles offres
 ```
 
-Tests : `python tests/test_geography.py`, `python tests/test_jobup_parsing.py`, `python tests/test_generation.py`,
-`python tests/test_llm_retry.py`.
+Tests : `python tests/test_geography.py`, `python tests/test_jobup_parsing.py`, `python tests/test_jobup_dedup.py`,
+`python tests/test_generation.py`, `python tests/test_llm_retry.py`.
 
 ## Stack
 
