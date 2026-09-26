@@ -9,7 +9,7 @@ decision points, checked in priority order before/during the default path:
      to score meaningfully (same heuristic as generation's
      _should_search_web, reused here — a short offer is a short offer
      regardless of which downstream step cares), attempt a targeted
-     re-scrape of the offer's URL (scraper/hellowork.py, reusing
+     re-scrape of the offer's URL (the offer's own source's
      fetch_job_detail rather than a fresh full search) BEFORE scoring. If
      the re-scrape fails or doesn't add anything, continue anyway but log
      that this was a deliberate, logged choice — not a silent gap.
@@ -47,7 +47,7 @@ from generation.analysis import structured_analysis_to_json
 from generation.analysis import trace_to_json as generation_trace_to_json
 from scoring.agent import score_offer
 from scoring.agent import trace_to_json as scoring_trace_to_json
-from scraper.hellowork import JobListing, fetch_job_detail
+from scraper import hellowork, jobup, linkedin
 from storage.db import connect, set_job_status, set_scoring_summary
 
 logger = logging.getLogger(__name__)
@@ -85,6 +85,38 @@ def _offer_text_is_thin(title: str, description: str | None) -> bool:
     return len(f"{title or ''} {description or ''}".strip()) < MIN_OFFER_TEXT_LENGTH
 
 
+def _fetch_detail(offer: dict) -> dict:
+    """Detail page of the offer's own source, picked from its URL's domain
+    (every loader passes url, not all of them source). This used to always
+    go through Hellowork's fetcher, whose selectors find nothing on a jobup
+    page — a thin jobup offer was never actually enriched."""
+    url = offer["url"] or ""
+    if "linkedin.com" in url:
+        job_id = linkedin.job_id_from_url(url)
+        if job_id is None:
+            raise ValueError(f"no LinkedIn job id in {url}")
+        return linkedin.fetch_job_detail(job_id)
+
+    source = jobup if "jobup.ch" in url else hellowork
+    listing = source.JobListing(
+        source_id=str(offer["id"]),
+        url=url,
+        title=offer["title"] or "",
+        company=offer.get("company"),
+        location=offer.get("location"),
+        contract_type=None,
+    )
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+        try:
+            return source.fetch_job_detail(page, listing)
+        finally:
+            browser.close()
+
+
 def _attempt_rescrape(trace: OrchestratorTrace, offer: dict) -> str | None:
     """Try to re-fetch a fuller description from the offer's own URL.
 
@@ -92,24 +124,8 @@ def _attempt_rescrape(trace: OrchestratorTrace, offer: dict) -> str | None:
     None otherwise (any failure is caught here — a re-scrape is a best-effort
     enrichment, never something that should crash the pipeline).
     """
-    listing = JobListing(
-        source_id=str(offer["id"]),
-        url=offer["url"],
-        title=offer["title"] or "",
-        company=offer.get("company"),
-        location=offer.get("location"),
-        contract_type=None,
-    )
     try:
-        from playwright.sync_api import sync_playwright
-
-        with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
-            page = browser.new_page()
-            try:
-                detail = fetch_job_detail(page, listing)
-            finally:
-                browser.close()
+        detail = _fetch_detail(offer)
     except Exception as exc:
         trace.log(f"re-scraping échoué ({exc!r}) — poursuite avec la description existante en connaissance de cause")
         return None
