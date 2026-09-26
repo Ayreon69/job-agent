@@ -32,6 +32,7 @@ class GapItem(BaseModel):
 class OfferSummary(BaseModel):
     id: int
     title: str
+    url: str | None = Field(default=None, description="Link to the offer on its source site")
     location: str | None
     company: str | None
     status: str
@@ -44,6 +45,11 @@ class OfferSummary(BaseModel):
     first_seen_at: str | None = Field(default=None, description="When this offer was first inserted into the database (jobs.scraped_at, SQLite 'datetime(\"now\")' UTC, set once at INSERT OR IGNORE time via storage/db.py's upsert_job and never updated afterwards) — i.e. the first time it appeared in this database and on the dashboard")
     user_verdict: str | None = Field(default=None, description="Manual triage decision from the dashboard's swipe UI: 'interessante' | 'peut_etre' | 'pas_interessante', or null if not yet triaged. Never set or influenced by the scoring pipeline — a pure human judgment (storage/db.py's user_verdict column).")
     sector: str | None = Field(default=None, description="Business sector of the offer/company (e.g. 'Assurance', 'Énergie'), extracted by the LLM alongside the requirements (scoring/agent.py's SECTOR_SUGGESTIONS), null if not yet analyzed or undeterminable from the offer text")
+    source: str | None = Field(default=None, description="Scraping source ('hellowork' | 'jobup')")
+    contract_type: str | None = Field(default=None, description="Contract type as worded by the source (e.g. 'CDI', 'Durée indéterminée')")
+    salary: str | None = Field(default=None, description="Salary as worded by the source, null if not scraped — not normalized (EUR/an vs CHF/mois)")
+    experience: str | None = Field(default=None, description="Required experience as worded by the source (Hellowork only)")
+    last_seen_at: str | None = Field(default=None, description="Last time a scraping run still found this offer (jobs.last_seen_at, UTC) — null if only seen once")
 
 
 class OfferDetailResponse(BaseModel):
@@ -63,6 +69,14 @@ class OfferDetailResponse(BaseModel):
     uncertain_flags: list[str] = Field(default_factory=list, description="Requirement labels with no reliable RAG match, straight from ScoringResult.uncertain_flags")
     user_verdict: str | None = Field(default=None, description="Manual triage decision from the dashboard's swipe UI: 'interessante' | 'peut_etre' | 'pas_interessante', or null if not yet triaged")
     sector: str | None = Field(default=None, description="Business sector of the offer/company, extracted by the LLM alongside the requirements, null if not yet analyzed or undeterminable")
+    source: str | None = Field(default=None, description="Scraping source ('hellowork' | 'jobup')")
+    contract_type: str | None = Field(default=None, description="Contract type as worded by the source (e.g. 'CDI', 'Durée indéterminée')")
+    salary: str | None = Field(default=None, description="Salary as worded by the source, null if not scraped — not normalized (EUR/an vs CHF/mois)")
+    experience: str | None = Field(default=None, description="Required experience as worded by the source (Hellowork only)")
+    last_seen_at: str | None = Field(default=None, description="Last time a scraping run still found this offer (jobs.last_seen_at, UTC) — null if only seen once")
+    description: str | None = Field(default=None, description="Offer text as scraped from the source's detail page (public content, unlike the analysis files)")
+    gaps_count: int | None = Field(default=None, description="Number of confirmed gaps as stored in SQLite — available even where the gaps list itself isn't (orchestrator/runs/ isn't versioned)")
+    uncertain_count: int | None = Field(default=None, description="Number of uncertain flags as stored in SQLite")
     analysis_markdown: str | None = Field(default=None, description="Null if the offer hasn't been analyzed yet")
     orchestrator_trace: dict | None = Field(default=None, description="Orchestrator's own decision trace (session 5)")
     scoring_trace: dict | None = Field(default=None, description="Scoring agent's RAG decision trace (session 3)")

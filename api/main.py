@@ -293,7 +293,8 @@ def list_offers() -> list[OfferSummary]:
     with connect() as conn:
         rows = conn.execute(
             "SELECT id, title, location, company, status, published_at, scraped_at, user_verdict, "
-            "score, geography_zone, sector, gaps_count, uncertain_count "
+            "score, geography_zone, sector, gaps_count, uncertain_count, "
+            "source, contract_type, salary, experience, last_seen_at, url "
             "FROM jobs ORDER BY id"
         ).fetchall()
 
@@ -317,6 +318,8 @@ def list_offers() -> list[OfferSummary]:
                 gaps_count=gaps_count, uncertain_count=uncertain_count,
                 published_at=r[5], published_at_sortable=_published_at_sortable(r[5]),
                 first_seen_at=r[6], user_verdict=r[7], sector=sector,
+                source=r[13], contract_type=r[14], salary=r[15], experience=r[16],
+                last_seen_at=r[17], url=r[18],
             )
         )
     return summaries
@@ -334,9 +337,12 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
     structured = _read_structured_analysis(offer_id)
     with connect() as conn:
         stored = conn.execute(
-            "SELECT score, geography_zone, sector FROM jobs WHERE id = ?", (offer_id,)
+            "SELECT score, geography_zone, sector, source, contract_type, salary, experience, "
+            "last_seen_at, gaps_count, uncertain_count FROM jobs WHERE id = ?",
+            (offer_id,),
         ).fetchone()
-    score, zone, stored_sector = stored if stored else (None, None, None)
+    (score, zone, stored_sector, source, contract_type, salary, experience,
+     last_seen_at, gaps_count, uncertain_count) = stored if stored else (None,) * 10
     if score is None:
         score, zone = _score_and_zone_from_trace(offer_id)
     return OfferDetailResponse(
@@ -353,6 +359,14 @@ def get_offer(offer_id: int) -> OfferDetailResponse:
         first_seen_at=offer["scraped_at"],
         user_verdict=offer["user_verdict"],
         sector=stored_sector or (structured.get("sector") if structured else None),
+        source=source,
+        contract_type=contract_type,
+        salary=salary,
+        experience=experience,
+        last_seen_at=last_seen_at,
+        description=offer["description"],
+        gaps_count=len(structured["gaps"]) if structured else gaps_count,
+        uncertain_count=len(structured["uncertain_flags"]) if structured else uncertain_count,
         matches=structured["matches"] if structured else [],
         gaps=structured["gaps"] if structured else [],
         uncertain_flags=structured["uncertain_flags"] if structured else [],
