@@ -28,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 from orchestrator.agent import orchestrator_trace_to_json, process_offer
+from scoring.geography import check_geography_rules
 from storage.db import connect, init_db
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -53,14 +54,19 @@ def load_new_offers(include_missing_scores: bool = False, limit: int | None = No
         # (2026-09-17) have no score column value: rescore them too.
         where = "(status = 'nouveau' OR score IS NULL)"
     sql = f"SELECT id, title, location, description, company, url FROM jobs WHERE {where} ORDER BY id"
-    if limit is not None:
-        sql += f" LIMIT {int(limit)}"
     with connect() as conn:
         rows = conn.execute(sql).fetchall()
-    return [
+    offers = [
         {"id": r[0], "title": r[1], "location": r[2], "description": r[3], "company": r[4], "url": r[5]}
         for r in rows
     ]
+    # Geographic priority first, then arrival order (session 19). A batch
+    # scores ~70 offers in its 55 minutes; LinkedIn's first run alone adds
+    # ~180, and in plain id order every new Suisse romande offer would wait
+    # days behind that backlog. The zone comes from the same deterministic
+    # rules scoring applies (no LLM call); unranked zones go last.
+    offers.sort(key=lambda o: (check_geography_rules(o["location"] or "").priority_rank or 99, o["id"]))
+    return offers[:limit] if limit is not None else offers
 
 
 def write_outputs(output_dir: Path, offer_id: int, result) -> None:
