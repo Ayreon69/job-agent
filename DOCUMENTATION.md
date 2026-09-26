@@ -142,6 +142,9 @@ Pour une offre donnée, du scraping à l'analyse finale :
    doublon au re-scraping grâce à `UNIQUE(source, source_id)`) — si l'offre
    existe déjà, ses champs scrapés sont rafraîchis avec les valeurs de ce
    run, `status`/`user_verdict`/`scraped_at` restant intacts, voir §5.1).
+   Pour jobup.ch, une offre republiée sous un nouvel identifiant est
+   reconnue et rattachée à sa ligne existante au lieu d'être réinsérée
+   (voir « Republications jobup » en §5.1).
 
 2. **Indexation du profil** (`scoring/embeddings/`) — étape indépendante,
    relancée à chaque changement des fichiers `scoring/profile/*.md` : parse
@@ -247,6 +250,48 @@ complet). **`status`, `user_verdict` et `scraped_at` (première apparition)
 ne sont en revanche jamais touchés** — ce sont des données propres à ce
 projet (statut du pipeline, jugement humain, historique), pas des données
 scrapées, un re-scraping ne doit jamais les écraser silencieusement.
+Cette mise à jour vit dans `refresh_job(conn, job_id, job)`, qui réécrit
+aussi `source_id`/`url` pour le cas suivant.
+
+**Republications jobup (session 18).** jobup.ch attribue un **nouvel UUID
+à chaque (re)publication** d'une offre, l'ancien répondant ensuite 404/410
+(vérifié en direct sur les 61 lignes des 28 groupes de doublons trouvés en
+base). Causes observées : flux ATS d'employeurs (SmartRecruiters pour
+Talan/Nexthink) qui recréent l'annonce, agences d'intérim qui republient
+tous les quelques jours (nouvelle date, parfois « (H/F) » ajouté au
+titre), et doubles imports (deux UUID vivants pointant vers la même URL
+ATS). Avec une clé `(source, source_id)` seule, chaque republication
+devenait une nouvelle ligne `nouveau`, rescorée par Mistral : 38 lignes en
+trop sur 185 offres jobup au 2026-09-26.
+
+`scraper/jobup.py::is_same_offer(a, b)` décide si deux offres sont la même
+annonce ; toutes les conditions doivent tenir, et toute preuve manquante
+vaut « pas la même » :
+
+| Critère | Pourquoi |
+|---|---|
+| Titre normalisé identique (accents, ponctuation et marqueurs `(H/F)`, `(h/f/x)`, `(m/w/d)` neutralisés — rien d'autre) | « Senior » vs « Principal Data and Applied Scientist » ont des descriptions similaires à 0,967 : seul le titre les distingue |
+| Même lieu | |
+| Même entreprise **si les deux sont connues** | Les lignes antérieures au correctif `9e5a3e6` ont « Offre pertinente ? » comme entreprise : traité comme inconnu |
+| Descriptions présentes et similaires ≥ 0,85 (`difflib` sur les mots) | Mesuré : même annonce 0,889 à 1,0 (jobup régénère son résumé IA et sa traduction par UUID) ; autres postes du même employeur ≤ 0,79 ; deux vrais postes « Technicien qualité » à Neuchâtel (deux clients d'agence) : 0,20 |
+
+`published_at` ne fait **pas** partie de la clé : il change sur la moitié
+des republications réelles (ex. 14 → 22 septembre, description identique à
+l'octet près).
+
+`scraper/run.py::store_jobup_jobs` applique la règle au moment du stockage
+— c'est là que le jumeau déjà en base (souvent déjà scoré) est visible —
+en deux passes pour ne pas dépendre de l'ordre des résultats : d'abord les
+`source_id` déjà connus (rafraîchis, marqués « vus ce run ») ; puis les
+inconnus, comparés à toutes les lignes jobup. Sans correspondance → insertion.
+Correspondance vue ce run → **alias** (l'annonce est vivante sous un autre
+UUID déjà rafraîchi), rien n'est écrit. Correspondance non vue ce run →
+**republication** : la ligne est re-pointée vers le nouvel UUID
+(`refresh_job`), `status`, score et `user_verdict` conservés, donc aucun
+nouvel appel Mistral. S'il existe plusieurs lignes correspondantes
+(doublons antérieurs), celle qui porte un `user_verdict` est prioritaire,
+puis la plus récemment vue. `run_jobup` collecte désormais toutes les
+requêtes avant de stocker, pour que « vu ce run » couvre tout le run.
 
 ### 5.2 `scoring/` — l'agent de scoring
 
@@ -597,8 +642,10 @@ ultérieure, jamais d'action vers un tiers.
 | `tests/test_generation.py` | Structure du markdown généré (4 sections, ordre), garde-fou anti-fabrication (chevauchement lexical entre `matched_chunk_summary` et le profil source), absence de vocabulaire de mobilité en zone France, fidélité `StructuredAnalysis` ↔ `ScoringResult` |
 | `tests/test_llm_retry.py` | Mécanique du retry/backoff sur 429, en mock (4 cas déterministes : succès après 2 échecs, épuisement, 401 non retenté, timing exact du backoff) |
 | `tests/test_llm_retry_live.py` | Preuve du retry contre un **vrai** rate limit Mistral (20 appels réels en rafale serrée) — pas un test à lancer en routine (consomme du vrai quota API) |
+| `tests/test_jobup_parsing.py` | Extraction de l'entreprise des cartes jobup (`_card_company`) sur des textes de cartes réels |
+| `tests/test_jobup_dedup.py` | Republications jobup (§5.1) : normalisation des titres, `is_same_offer` sur des descriptions réelles (cas limite 0,891, Senior vs Principal, même intitulé mais autre poste), et 5 scénarios `store_jobup_jobs` sur une base temporaire (re-pointage qui garde score/verdict, alias vivant, nouvelle offre vue deux fois, postes distincts, doublons antérieurs) |
 
-Aucun test unitaire dédié pour `scraper/` (sélecteurs DOM testés
+Pas de test des sélecteurs DOM de `scraper/` (testés
 manuellement contre les sites réels à chaque session, documenté dans
 `ROADMAP.md`) ni pour `orchestrator/agent.py` en isolation (testé de bout
 en bout via des runs réels sur des offres synthétiques + réelles,
@@ -655,6 +702,14 @@ lit le code sans avoir lu tout `ROADMAP.md` :
   variante CPU — ~9GB de bibliothèques NVIDIA inutiles pour un projet qui
   n'utilise jamais le GPU. Installé explicitement depuis l'index CPU-only
   officiel de PyTorch pour lever l'ambiguïté.
+- **Dédoublonnage jobup au stockage, pas avant le fetch des détails**
+  (§5.1) : la page de résultats donne titre/entreprise/lieu/date, mais pas
+  de quoi distinguer une republication d'un second vrai poste au même
+  intitulé — seule la description le permet (0,20 contre ≥ 0,889 sur les
+  cas réels). Et la plupart des jumeaux sont en base depuis un run
+  précédent, pas dans le même run. Le coût évité est l'appel Mistral, pas
+  le chargement de la page de détail (déjà refait à chaque run pour
+  rafraîchir les offres connues).
 - **Persistance CI par commit git, pas par cache** (§8) : un runner GitHub
   Actions repart de zéro à chaque run, sans volume — le commit du bot est
   la source de vérité versionnée la plus simple et la plus robuste pour ce
@@ -685,6 +740,16 @@ limite, avec son contexte de découverte :
   multi-stage à ce jour.
 - `docker/requirements-lock.txt` est un `pip freeze` figé manuellement, pas
   de mécanisme automatique de synchronisation avec `requirements.txt`.
+- Dédoublonnage jobup (§5.1) : le seuil 0,85 est calibré sur 31 groupes
+  réels, pas sur un corpus étiqueté. Volontairement prudent : une
+  republication dont le titre change au-delà des marqueurs de genre (ex.
+  « Ingénieur Développeur logiciel » → « … (machines) », descriptions à
+  0,996) reste une ligne distincte, et donc un scoring de plus.
+- Le score d'une même annonce varie d'un scoring à l'autre : sur les
+  doublons jobup scorés séparément, jusqu'à 23 points d'écart pour un texte
+  quasi identique (« Développeur .Net API » : 45 et 68). C'est un bruit
+  propre au LLM, que le dédoublonnage rend moins visible mais ne corrige
+  pas.
 
 ## 12. État actuel des données
 

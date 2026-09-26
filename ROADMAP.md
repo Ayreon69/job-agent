@@ -2729,3 +2729,69 @@ avec barre d'onglets. Favicon : le repère ◆ du bandeau en carré arrondi.
 **Fichiers :** `api/main.py`, `api/schemas.py`, `api/static/` (réécrit :
 `index.html`, `app.css`, `js/**`, `favicon.svg` ; `dashboard.js/.css`
 supprimés), `scraper/jobup.py`, `DOCUMENTATION.md` §5.6.
+
+## Session 18 (2026-09-26) : doublons jobup — cause racine côté collecte
+
+**Constat :** 28 groupes d'offres jobup identiques en base sous plusieurs
+`source_id` (ex. « Senior AI Engineer », Lausanne, ×3), chacune scorée
+séparément par Mistral. Le scraper ne dédoublonnait que par `source_id`,
+`upsert_job` par `(source, source_id)`.
+
+**Reconnaissance (jobup.ch réel, pas deviné) :**
+- Statut HTTP des 61 UUID concernés : dans la plupart des groupes, seul le
+  plus récent répond 200, les anciens 404/410. jobup crée un **nouvel UUID
+  à chaque (re)publication** et retire l'ancien : ce sont des doublons
+  **entre runs**, invisibles pour un dédoublonnage interne à `scrape()`.
+- État `__REACT_QUERY_STATE__` des pages de détail (`company.id`,
+  `initialPublicationDate`, URL de candidature externe) : flux ATS
+  SmartRecruiters (Talan, Nexthink) recréés avec un nouvel ID ATS, parfois
+  une nouvelle date ; agences d'intérim (Proman, OK Job SA, Sigma) qui
+  republient avec une nouvelle date et parfois « (H/F) » ajouté au titre ;
+  double import (SpeciTec : deux UUID vivants, même URL ATS) ; Vaudoise :
+  deux postings softgarden distincts publiés à la même seconde, texte
+  identique.
+- La page de résultats expose déjà titre/entreprise/lieu/dates par offre,
+  mais pas de quoi distinguer une republication d'un second vrai poste.
+- Les descriptions d'une même annonce diffèrent légèrement : jobup
+  régénère son résumé IA et sa traduction automatique par UUID.
+- `published_at` change sur environ la moitié des republications
+  (ex. 14 → 22 septembre, description identique à l'octet) : inutilisable
+  comme clé.
+
+**Mesures sur la base (similarité `difflib` sur les mots) :** même annonce
+0,889 à 1,0 ; autres postes du même employeur ≤ 0,79 ; « Senior » vs
+« Principal Data and Applied Scientist » 0,967 (deux vrais postes : le
+titre est indispensable) ; « Technicien qualité », Neuchâtel ×2 : 0,20
+(deux clients d'agences différentes : la description est indispensable).
+
+**Correctif :**
+- `scraper/jobup.py::is_same_offer` : titre normalisé (accents,
+  ponctuation, marqueurs de genre) + lieu + entreprise si connue des deux
+  côtés (« Offre pertinente ? » = inconnue) + descriptions ≥ 0,85. Toute
+  preuve manquante → pas de fusion.
+- `scraper/run.py::store_jobup_jobs`, au stockage et en deux passes :
+  source_id connus d'abord, puis les inconnus → insertion, **alias**
+  (jumeau vivant ce run : rien d'écrit) ou **re-pointage** (jumeau absent
+  du run : la ligne prend le nouvel UUID, garde statut/score/verdict).
+  `run_jobup` collecte toutes les requêtes avant de stocker.
+- `storage/db.py::refresh_job` : mise à jour extraite de `upsert_job`,
+  réécrit aussi `source_id`/`url`.
+- Pas de dédoublonnage avant le fetch des détails, contrairement à l'idée
+  de départ : sans la description, impossible de trancher sans deviner, et
+  le coût évité est l'appel Mistral, pas la page de détail.
+
+**Vérifié :** `tests/test_jobup_dedup.py` 20/20 (dont 5 scénarios sur base
+temporaire), `tests/test_jobup_parsing.py` 5/5. Rejoué sur la base réelle
+(lecture seule) : 31 groupes, 38 lignes en trop sur 185 (~20 % des
+scorings jobup), aucun `user_verdict` parmi elles. De bout en bout sur
+jobup.ch réel, avec une copie de la base privée des UUID actuels de
+6 groupes : 3 alias (jumeaux encore en ligne), 3 re-pointages (jumeaux
+morts), 0 insertion — tous conformes à la reconnaissance.
+
+**Observé en passant :** une même annonce scorée deux fois peut recevoir
+des scores très différents (« Développeur .Net API » 45 et 68, « Consultant
+Power BI » 78 et 88) : bruit du LLM, à garder en tête en lisant un score.
+
+**Fichiers :** `scraper/jobup.py`, `scraper/run.py`, `storage/db.py`,
+`tests/test_jobup_dedup.py`, `DOCUMENTATION.md` (§4, §5.1, §9, §10, §11),
+`README.md`.
