@@ -190,9 +190,15 @@ def search_jobs(
             # substantive line before "Candidature simplifiée"/"Nouveau"/
             # "Sauvegarder" trailer text. Simpler and more robust: take the
             # last line that isn't one of those known trailer strings.
-            trailer_strings = {"Candidature simplifiée", "Nouveau", "Sauvegarder"}
+            # "Offre pertinente ?" (2026-09): a feedback widget jobup appends
+            # to some cards only, after the company line — it had become the
+            # "company" of 143/185 stored jobup offers. Any line ending in "?"
+            # is excluded too, so the next widget of that kind doesn't slip
+            # through the same way.
+            trailer_strings = {"Candidature simplifiée", "Nouveau", "Sauvegarder", "Offre pertinente ?"}
             company = next(
                 (l for l in reversed(lines) if l not in trailer_strings and l != title
+                 and not l.endswith("?")
                  and l not in ("Lieu de travail:", "Taux d'activité:", "Type de contrat:")
                  and l != card_location and l != contract_type
                  and not re.match(r"^\d+%$", l)
