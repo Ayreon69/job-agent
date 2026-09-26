@@ -193,8 +193,9 @@ def upsert_job(conn: sqlite3.Connection, job: Job) -> bool:
         """
         INSERT INTO jobs
             (source, source_id, url, title, company, location,
-             contract_type, salary, experience, description, published_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+             contract_type, salary, experience, description, published_at,
+             last_seen_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
         """,
         (
             job.source,
