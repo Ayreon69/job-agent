@@ -2792,6 +2792,25 @@ morts), 0 insertion — tous conformes à la reconnaissance.
 des scores très différents (« Développeur .Net API » 45 et 68, « Consultant
 Power BI » 78 et 88) : bruit du LLM, à garder en tête en lisant un score.
 
-**Fichiers :** `scraper/jobup.py`, `scraper/run.py`, `storage/db.py`,
-`tests/test_jobup_dedup.py`, `DOCUMENTATION.md` (§4, §5.1, §9, §10, §11),
-`README.md`.
+**Doublons déjà en base :** décision de l'utilisateur : fusionner.
+`python -m scraper.merge_jobup_duplicates` (`--dry-run` d'abord) garde,
+par groupe, la ligne qui porte un verdict, sinon celle dont la page jobup
+est encore en ligne, sinon la plus récemment vue ; il supprime les autres
+comme `storage.cleanup`. Dry-run du 2026-09-26 : 31 groupes, 38 lignes à
+supprimer, aucun verdict concerné. **À exécuter au moment de la fusion dans
+`master`**, sur la base à jour (le bot y commite `jobs.db` chaque jour :
+une suppression faite dans la branche entrerait en conflit), puis commiter
+`jobs.db`. Piège rencontré : un contexte de requête Playwright nu reçoit
+un HTTP 200 (avec la page « introuvable ») pour une offre expirée ; il
+faut passer par une page Chromium pour obtenir le vrai 404/410.
+
+**Découvert en passant :** `last_seen_at` est NULL sur 39 lignes. La
+migration a ajouté la colonne sans valeur par défaut et l'INSERT ne la
+renseigne pas, donc `storage.cleanup` ne supprimera jamais ces lignes.
+Contourné ici avec `COALESCE(last_seen_at, scraped_at)`, correctif à faire
+à part.
+
+**Fichiers :** `scraper/jobup.py`, `scraper/run.py`,
+`scraper/merge_jobup_duplicates.py`, `storage/db.py`,
+`tests/test_jobup_dedup.py`, `DOCUMENTATION.md` (§4, §5.1, §9, §10, §11,
+§13), `README.md`.

@@ -293,6 +293,11 @@ nouvel appel Mistral. S'il existe plusieurs lignes correspondantes
 puis la plus récemment vue. `run_jobup` collecte désormais toutes les
 requêtes avant de stocker, pour que « vu ce run » couvre tout le run.
 
+Les doublons stockés avant ce correctif se fusionnent avec
+`python -m scraper.merge_jobup_duplicates` (même règle ; garde la ligne
+avec verdict, sinon celle encore en ligne sur jobup, sinon la plus récemment
+vue ; `--dry-run` pour lister sans supprimer).
+
 ### 5.2 `scoring/` — l'agent de scoring
 
 Trois fichiers, trois responsabilités distinctes :
@@ -778,6 +783,9 @@ Toujours depuis `job-agent/`, avec l'environnement virtuel dédié.
 
 # Traiter toutes les offres au statut 'nouveau'
 .venv/Scripts/python.exe -m orchestrator.run --delay-seconds 2
+
+# Fusionner les offres jobup stockées sous plusieurs identifiants (§5.1)
+.venv/Scripts/python.exe -m scraper.merge_jobup_duplicates --dry-run
 
 # Lancer l'API + dashboard en local
 .venv/Scripts/python.exe -m uvicorn api.main:app --reload
