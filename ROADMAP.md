@@ -2956,3 +2956,13 @@ concurrent a aussi modifié `storage/jobs.db`, le rebase échoue et le script
 s'arrête plutôt que d'écraser la base. Testé sur un dépôt jetable : push de
 code concurrent → rebasé et poussé ; conflit sur `jobs.db` → arrêt, rien
 d'écrasé.
+
+**Run relancé (2026-09-27, 36324083461) : succès.** LinkedIn : 198 offres,
+176 déjà connues marquées vues, 2 nouvelles, 11 pages de détail seulement.
+Boucle d'analyse arrêtée proprement par le budget après 4 lots (40 offres,
+43 min), 83 offres restantes. Effet de bord découvert : l'étape de
+backfill (`--missing-scores --scoring-only --limit 40`) prenait aussi les
+offres `nouveau` ; avec une file non vide, elle en a scoré 40 que le run
+suivant rescorera en entier. Le mode `--scoring-only` ne prend plus que
+les offres déjà passées par le pipeline (`score IS NULL AND status !=
+'nouveau'`).

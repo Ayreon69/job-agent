@@ -47,12 +47,19 @@ def load_offer(offer_id: int) -> dict:
     return {"id": row[0], "title": row[1], "location": row[2], "description": row[3], "company": row[4], "url": row[5]}
 
 
-def load_new_offers(include_missing_scores: bool = False, limit: int | None = None) -> list[dict]:
+def load_new_offers(include_missing_scores: bool = False, limit: int | None = None, scoring_only: bool = False) -> list[dict]:
     where = "status = 'nouveau'"
     if include_missing_scores:
         # Offers analyzed before the scoring summary was stored in SQLite
         # (2026-09-17) have no score column value: rescore them too.
         where = "(status = 'nouveau' OR score IS NULL)"
+    if scoring_only:
+        # The scoring-only backfill is for offers already through the
+        # pipeline. It used to take 'nouveau' offers too: harmless while the
+        # batch before it always emptied the queue, but once that batch
+        # stops on its time budget (session 19) it scored 40 queued offers
+        # that the next batch then scored again, fully.
+        where = "score IS NULL AND status != 'nouveau'"
     sql = f"SELECT id, title, location, description, company, url FROM jobs WHERE {where} ORDER BY id"
     with connect() as conn:
         rows = conn.execute(sql).fetchall()
@@ -130,7 +137,7 @@ def main() -> None:
     init_db()
     output_dir = Path(args.output_dir)
 
-    offers = [load_offer(args.offer_id)] if args.offer_id is not None else load_new_offers(args.missing_scores, args.limit)
+    offers = [load_offer(args.offer_id)] if args.offer_id is not None else load_new_offers(args.missing_scores, args.limit, args.scoring_only)
     if not offers:
         logger.info("Aucune offre à traiter (statut 'nouveau' introuvable).")
         return
