@@ -2947,3 +2947,12 @@ refaire), job en échec et étapes suivantes sautées. Corrigé : la boucle ne
 lance plus de lot passé 42 min (un lot prend 6,5 à 9,6 min), le step se
 termine proprement et le backlog (~120 offres) se vide sur les runs
 suivants.
+
+**Push concurrent (2026-09-27) :** un run lancé à la main a échoué dès son
+premier commit (« rejected, fetch first ») : un push de code était arrivé
+sur `master` pendant le scraping. `.github/scripts/commit_db.sh` rebase
+désormais son commit sur `origin` et réessaie (3 fois). Si le push
+concurrent a aussi modifié `storage/jobs.db`, le rebase échoue et le script
+s'arrête plutôt que d'écraser la base. Testé sur un dépôt jetable : push de
+code concurrent → rebasé et poussé ; conflit sur `jobs.db` → arrêt, rien
+d'écrasé.
