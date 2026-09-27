@@ -2938,3 +2938,12 @@ aujourd'hui).
 `.github/workflows/scrape-and-score.yml`, `tests/test_linkedin_parsing.py`,
 `tests/test_cross_source.py`, `tests/test_geography.py`,
 `tests/fixtures/linkedin/`, `DOCUMENTATION.md`, `README.md`.
+
+**Premier run CI avec LinkedIn (2026-09-27) :** LinkedIn a répondu au
+runner GitHub (197 offres, 177 insérées, 11 doublons jobup écartés sur la
+carte, ~10 min). Mais le batch d'analyse a atteint le timeout de 55 min :
+6 lots commités (60 offres), le 7e tué en cours (7 analyses perdues, à
+refaire), job en échec et étapes suivantes sautées. Corrigé : la boucle ne
+lance plus de lot passé 42 min (un lot prend 6,5 à 9,6 min), le step se
+termine proprement et le backlog (~120 offres) se vide sur les runs
+suivants.

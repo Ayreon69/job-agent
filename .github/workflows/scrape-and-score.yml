@@ -155,9 +155,19 @@ jobs:
         timeout-minutes: 55
         env:
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+        # Budget (session 19) : le premier run avec LinkedIn a ajouté 177
+        # offres ; la boucle a enchaîné les lots jusqu'au timeout de 55 min,
+        # qui a tué le 7e lot en cours (7 analyses perdues, job en échec,
+        # étapes suivantes sautées). Un lot prend 6,5 à 9,6 min (mesuré) :
+        # plus de nouveau lot passé 42 min, le step finit proprement vers
+        # 52 min au pire, et le run suivant reprend la file.
         run: |
           remaining=1
           while [ "${remaining:-0}" -gt 0 ]; do
+            if [ "$SECONDS" -ge 2520 ]; then
+              echo "Budget de 42 min atteint : ${remaining} offre(s) restent pour le prochain run."
+              break
+            fi
             output=$(python -m orchestrator.run --limit 10 2>&1 | tee /dev/stderr)
             remaining=$(echo "$output" | grep -oE 'REMAINING=[0-9]+' | tail -1 | cut -d= -f2)
             bash .github/scripts/commit_db.sh "chore: scoring/analyse - lot de 10 offres"
