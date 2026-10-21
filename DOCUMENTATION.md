@@ -1,6 +1,6 @@
 # Documentation technique — job-agent
 
-> Documentation de référence, à jour au 2026-08-20. Complète `CLAUDE.md` (contexte
+> Documentation de référence, à jour au 2026-10-21 (session 20 : passage à Postgres). Complète `CLAUDE.md` (contexte
 > métier et règles à ne jamais enfreindre) et `ROADMAP.md` (journal détaillé
 > session par session, avec tous les tests réels effectués). Ce document a un
 > objectif différent : donner une vue d'ensemble complète et compréhensible de ce
@@ -65,7 +65,7 @@ flowchart TD
     HW -->|scraper/hellowork.py| SCR
     JU -->|scraper/jobup.py| SCR
     LI -->|scraper/linkedin.py| SCR
-    SCR["scraper/run.py<br/>Playwright + HTTP<br/>doublons entre sources écartés"] --> DB[("SQLite<br/>storage/jobs.db")]
+    SCR["scraper/run.py<br/>Playwright + HTTP<br/>doublons entre sources écartés"] --> DB[("Postgres (Neon)<br/>jobs + analyses")]
 
     subgraph Profil["Profil candidat (source de vérité)"]
         MD["scoring/profile/*.md<br/>(compétences, réalisations,<br/>contraintes, règles géo)"]
@@ -91,19 +91,17 @@ flowchart TD
     STATUS -->|zone inconnue| VALID["status = a_valider_geographie"]
     STATUS -->|exception| ECHEC["status = echec"]
 
-    ANALYSE --> OUT["orchestrator/runs/<br/>analysis_N.md<br/>structured_analysis_N.json<br/>3 traces JSON"]
+    ANALYSE --> OUT["table analyses<br/>matches, gaps, analyse rédigée<br/>3 traces JSON"]
     VALID --> OUT
     ECHEC --> OUT
     OUT --> DB
 
     DB --> API["api/main.py<br/>FastAPI"]
-    OUT --> API
     API --> DASH["api/static/<br/>dashboard web"]
     API -.->|"POST /analyze<br/>(mode full uniquement)"| ORCH
 
     CRON["GitHub Actions<br/>cron quotidien 06:00 UTC"] --> SCR
     CRON --> ORCH
-    CRON -->|"commit bot"| DB
 
     RENDER["Render.com<br/>API_MODE=readonly"] -.->|déploiement auto| API
 ```
@@ -119,10 +117,10 @@ recalcule jamais après l'avoir obtenue de `check_geography_rules`.
 | Composant | Techno | Rôle | Statut pédagogique |
 |---|---|---|---|
 | Scraping | Playwright (sync API), `urllib` pour LinkedIn | Hellowork + jobup.ch + LinkedIn | déjà maîtrisé |
-| Stockage offres | SQLite (`storage/jobs.db`) | une table `jobs`, versionnée dans git | déjà maîtrisé |
+| Stockage offres | Postgres hébergé (Neon, tier gratuit), `psycopg` 3 | tables `jobs` + `analyses`, hors du dépôt git | nouveau (SQL déjà maîtrisé) |
 | Indexation profil | ChromaDB (client persistant local) | RAG sur le profil candidat | **objectif d'apprentissage central** |
 | Embeddings | `sentence-transformers` (`paraphrase-multilingual-mpnet-base-v2`), local | vectorisation, gratuit/offline | nouveau |
-| LLM | API Mistral (`mistral-large-latest`) | extraction d'exigences, scoring, génération | déjà maîtrisé (usage), nouveau (agentique) |
+| LLM | API Mistral (`ministral-14b-latest`, surchargeable par `MISTRAL_MODEL`) | extraction d'exigences, scoring, génération | déjà maîtrisé (usage), nouveau (agentique) |
 | Orchestration | boucle Python + dataclasses, pas de framework | décisions de pipeline | nouveau |
 | API | FastAPI + uvicorn | HTTP sur l'orchestrateur | nouveau |
 | Frontend | HTML/CSS/JS vanilla | dashboard de consultation | — (délibérément simple) |
@@ -140,7 +138,7 @@ Pour une offre donnée, du scraping à l'analyse finale :
 
 1. **Scraping** (`scraper/`) — Playwright visite les pages de résultats de
    recherche puis chaque page de détail, extrait titre/entreprise/lieu/
-   description/salaire/date, et insère en SQLite via `upsert_job` (pas de
+   description/salaire/date, et insère en base via `upsert_job` (pas de
    doublon au re-scraping grâce à `UNIQUE(source, source_id)`) — si l'offre
    existe déjà, ses champs scrapés sont rafraîchis avec les valeurs de ce
    run, `status`/`user_verdict`/`scraped_at` restant intacts, voir §5.1).
@@ -180,41 +178,59 @@ Pour une offre donnée, du scraping à l'analyse finale :
      `echec`, et le batch continue avec l'offre suivante plutôt que de
      planter entièrement.
 
-4. **Persistance des résultats** (`orchestrator/run.py::write_outputs`) —
-   chaque offre traitée produit jusqu'à 5 fichiers dans `orchestrator/runs/` :
-   `analysis_<id>.md` (le markdown lisible), `structured_analysis_<id>.json`
-   (matches/gaps/uncertain_flags en JSON, fidèle au `ScoringResult`),
-   `trace_orchestrator_<id>.json`, `trace_scoring_<id>.json`,
-   `trace_generation_<id>.json` (traçabilité complète pour audit).
+4. **Persistance des résultats** (`orchestrator/agent.py::process_offer`) —
+   le statut final, l'analyse (matches/gaps/uncertain_flags fidèles au
+   `ScoringResult`, markdown rédigé) et les trois traces (orchestrateur,
+   scoring, génération) sont écrits dans la table `analyses`, dans la même
+   transaction que le statut (§5.1). Jusqu'à la session 20, c'étaient des
+   fichiers dans `orchestrator/runs/`, jamais sortis du runner de CI.
 
-5. **Consultation** (`api/` + `api/static/`) — l'API FastAPI lit SQLite +
-   les fichiers de `orchestrator/runs/` et les expose via 4 endpoints ; le
-   dashboard web les affiche dans un tableau triable/filtrable avec un
-   panneau de détail en accordéon.
+5. **Consultation** (`api/` + `api/static/`) — l'API FastAPI lit Postgres ;
+   le dashboard affiche les offres, et le détail de l'analyse au seul
+   propriétaire (jeton, §5.6).
 
 ## 5. Module par module
 
-### 5.1 `storage/db.py` — schéma SQLite
+### 5.1 `storage/db.py` — schéma Postgres
 
-Une seule table `jobs` :
+Base Postgres hébergée chez Neon (tier gratuit, région Francfort) depuis la
+session 20, chaîne de connexion dans `DATABASE_URL`. Deux tables :
 
 ```sql
 CREATE TABLE jobs (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    source TEXT NOT NULL,           -- 'hellowork' | 'jobup' | 'linkedin'
-    source_id TEXT NOT NULL,        -- id natif à la source
-    url TEXT NOT NULL,
-    title TEXT NOT NULL,
-    company TEXT, location TEXT, contract_type TEXT,
-    salary TEXT, experience TEXT, description TEXT,
-    published_at TEXT,              -- format brut, varie selon la source
-    scraped_at TEXT NOT NULL DEFAULT (datetime('now')),  -- 1ère apparition, jamais réécrit
-    last_seen_at TEXT NOT NULL DEFAULT (datetime('now')),  -- dernier scraping où l'offre est réapparue
-    status TEXT NOT NULL DEFAULT 'nouveau',
-    user_verdict TEXT,               -- tri manuel dashboard, voir plus bas
-    UNIQUE(source, source_id)
+    id integer GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
+    source text NOT NULL,           -- 'hellowork' | 'jobup' | 'linkedin'
+    source_id text NOT NULL,        -- id natif à la source
+    url text NOT NULL,
+    title text NOT NULL,
+    company text, location text, contract_type text,
+    salary text, experience text, description text,
+    published_at text,              -- format brut, varie selon la source
+    scraped_at timestamptz NOT NULL DEFAULT now(),  -- 1ère apparition, jamais réécrit
+    last_seen_at timestamptz DEFAULT now(),         -- dernier scraping où l'offre est réapparue
+    status text NOT NULL DEFAULT 'nouveau' CHECK (status IN (...)),
+    user_verdict text CHECK (user_verdict IN (...)),  -- tri manuel dashboard, voir plus bas
+    score integer, geography_zone text, sector text,  -- résumé public du scoring
+    gaps_count integer, uncertain_count integer,
+    UNIQUE (source, source_id)
+);
+
+CREATE TABLE analyses (            -- contenu personnel, servi au seul propriétaire
+    job_id integer PRIMARY KEY REFERENCES jobs (id) ON DELETE CASCADE,
+    matches jsonb, gaps jsonb, uncertain_flags jsonb,
+    analysis_markdown text,
+    orchestrator_trace jsonb, scoring_trace jsonb, generation_trace jsonb,
+    updated_at timestamptz NOT NULL DEFAULT now()
 );
 ```
+
+La séparation suit la frontière public/privé : `jobs` contient ce que la
+démo publique peut montrer (l'offre, le score, les compteurs), `analyses` ce
+qui parle du candidat (points forts, écarts détaillés, analyse rédigée,
+traces). `ON DELETE CASCADE` : supprimer une offre supprime son analyse.
+L'orchestrateur écrit le statut final et l'analyse **dans la même
+transaction** (`save_analysis`) : une offre au statut `analyse` a toujours
+son analyse en base.
 
 `status` prend 4 valeurs : `nouveau` (pas traité), `analyse` (succès),
 `a_valider_geographie` (succès mais zone incertaine), `echec` (exception —
@@ -236,13 +252,17 @@ connue réapparaît dans un scraping** (`upsert_job`, §5.1 plus bas). C'est le
 seul signal fiable de "cette offre est probablement encore active" —
 utilisé par `storage/cleanup.py` pour décider quoi supprimer.
 
-`init_db()` applique des migrations explicites
-(`_migrate_add_status_column`, `_migrate_add_user_verdict_column`,
-`_migrate_add_last_seen_at_column`) pour les bases créées avant l'ajout de
-ces colonnes — un simple `CREATE TABLE IF NOT EXISTS` ne touche pas une
-table déjà existante. La migration de `last_seen_at` rétro-remplit depuis
-`scraped_at` (meilleure approximation disponible pour les lignes
-historiques) plutôt que de laisser la colonne à `NULL`.
+`init_db()` crée les tables si elles n'existent pas. Les migrations de
+colonnes de l'époque SQLite ont disparu avec le passage à Postgres :
+`storage/migrate_from_sqlite.py` a importé les 913 offres de l'ancien
+`jobs.db` (identifiants conservés, horodatages convertis en UTC). 16 lignes
+héritées n'ont pas de `last_seen_at` (colonne nullable pour elles) :
+`storage/cleanup.py` ne les supprime jamais, décision laissée ouverte.
+
+`connect()` ouvre une transaction courte : commit en sortie de bloc,
+rollback sur exception. La base étant distante, le scraper n'en garde plus
+une ouverte pendant toute la collecte : chaque étape (requête Hellowork, lot
+jobup, LinkedIn) commite dès que ses offres sont stockées.
 
 **`upsert_job`** ne fait plus un simple `INSERT OR IGNORE` (comportement
 jusqu'à la session 14) : si l'offre existe déjà (`source`+`source_id`), ses
@@ -260,7 +280,11 @@ ne sont en revanche jamais touchés** — ce sont des données propres à ce
 projet (statut du pipeline, jugement humain, historique), pas des données
 scrapées, un re-scraping ne doit jamais les écraser silencieusement.
 Cette mise à jour vit dans `refresh_job(conn, job_id, job)`, qui réécrit
-aussi `source_id`/`url` pour le cas suivant.
+aussi `source_id`/`url` pour le cas suivant. Depuis la session 20,
+`upsert_job` fait insertion ou rafraîchissement en une seule requête
+(`INSERT … ON CONFLICT (source, source_id) DO UPDATE … RETURNING (xmax = 0)`,
+`xmax = 0` signalant une ligne tout juste insérée) : un aller-retour réseau
+au lieu de deux.
 
 **Republications jobup (session 18).** jobup.ch attribue un **nouvel UUID
 à chaque (re)publication** d'une offre, l'ancien répondant ensuite 404/410
@@ -530,7 +554,7 @@ de saturer le rate limit Mistral en traitement par lot.
 
 ### 5.6 `api/` — l'API HTTP et le dashboard
 
-**`api/main.py`** expose 5 endpoints, en pure exposition de ce que
+**`api/main.py`** expose 6 endpoints, en pure exposition de ce que
 l'orchestrateur produit déjà (aucune nouvelle logique métier) — à
 l'exception de `POST /offers/{id}/verdict`, qui écrit un jugement humain,
 jamais un résultat de pipeline :
@@ -539,9 +563,19 @@ jamais un résultat de pipeline :
 |---|---|
 | `GET /health` | 3 vérifications sans appel réseau : clé Mistral présente, modèle d'embeddings chargé, base accessible. `200` si tout passe, `503` sinon. |
 | `GET /offers` | Liste légère (statut, score, zone, secteur, dates, compteurs gaps/incertains, `user_verdict`, source, contrat, salaire, expérience, lien, `last_seen_at`) pour le dashboard. |
-| `GET /offers/{id}` | Détail complet : description de l'offre, markdown, matches/gaps/uncertain_flags structurés, secteur, `user_verdict`, 3 traces JSON. 404 seulement si l'`offer_id` n'existe pas. |
-| `POST /offers/{id}/verdict` | Enregistre (ou efface, `verdict: null`) le tri manuel de l'utilisateur. Simple écriture SQLite, disponible dans les deux `API_MODE` (contrairement à `/analyze`, aucun modèle d'embedding ni appel LLM impliqué). |
-| `POST /analyze` | Relance le pipeline complet sur une offre déjà en base. Synchrone (~30-90s), désactivé (503) en mode `readonly`. |
+| `GET /offers/{id}` | Détail : description de l'offre, secteur, compteurs, `user_verdict`. Pour le propriétaire seulement : matches/gaps/uncertain_flags, markdown, 3 traces JSON. 404 seulement si l'`offer_id` n'existe pas. |
+| `GET /owner` | `{"owner": true/false}` : le jeton envoyé est-il celui du propriétaire ? Utilisé par le dashboard avant de garder un jeton collé. |
+| `POST /offers/{id}/verdict` | Propriétaire seulement (401 sinon). Enregistre (ou efface, `verdict: null`) le tri manuel. Simple écriture en base, disponible dans les deux `API_MODE`. |
+| `POST /analyze` | Propriétaire seulement. Relance le pipeline complet sur une offre déjà en base. Synchrone (~30-90s), désactivé (503) en mode `readonly`. |
+
+**Accès propriétaire (session 20)** — la base étant désormais partagée et
+persistante, une écriture anonyme sur la démo publique modifierait les
+vraies données. `OWNER_TOKEN` (variable d'environnement) est un secret que
+le propriétaire colle une fois dans le dashboard ; il est ensuite envoyé en
+`Authorization: Bearer <jeton>`. Comparaison en temps constant
+(`secrets.compare_digest`), réponse propriétaire en
+`Cache-Control: private, no-store`. Sans `OWNER_TOKEN` configuré côté
+serveur, personne n'est propriétaire.
 
 **Mode `API_MODE` (`full` | `readonly`)** — décision née d'une contrainte
 réelle de déploiement (Render 512MB max) : en mode `readonly`, les imports
@@ -569,7 +603,7 @@ offre précise peut être partagé.
 
 | Fichier | Rôle |
 |---|---|
-| `js/api.js` | Appels `fetch` aux endpoints, rien d'autre. |
+| `js/api.js` | Appels `fetch` aux endpoints, avec le jeton propriétaire (gardé en `localStorage`) en `Authorization: Bearer`. |
 | `js/store.js` | Liste des offres en mémoire, `setVerdict` optimiste (annulé si le serveur refuse), « nouveau depuis ta dernière visite », doublons probables, offres absentes des dernières collectes. |
 | `js/format.js` | Libellés, dates (mêmes formats que `storage/db.py::parse_published_at`), nettoyage d'affichage (titres sans « H/F », entreprise manquante, bruit de l'encart IA de jobup dans les descriptions). |
 | `js/charts.js` | Graphiques SVG faits main : arrivées par jour, distribution des scores, zones, secteurs, salaires, radar. |
@@ -607,9 +641,10 @@ Les pages :
 
 Transverses : palette de commandes (`Ctrl+K`), aide des raccourcis (`?`),
 thème clair/sombre (suit le système, forçable), barre d'onglets en bas
-d'écran sur mobile. Le détail de l'analyse (points forts, écarts) n'est
-affiché que s'il existe localement dans `orchestrator/runs/` ; sur la démo,
-seuls les compteurs sont publics et le tiroir le dit explicitement.
+d'écran sur mobile. Mode propriétaire (cadenas de l'en-tête, ou la palette) :
+le jeton collé est vérifié par `GET /owner` avant d'être gardé, puis débloque
+le tri et le détail de l'analyse (points forts, écarts, incertains). Sans
+lui, seuls les compteurs sont visibles et le tiroir le dit.
 
 ## 6. Règles métier critiques
 
@@ -652,18 +687,18 @@ ici puisque l'inférence tourne sur CPU), dépendances verrouillées via
 local qui a résolu le conflit `opentelemetry` entre `chromadb` et
 `mistralai`, voir §10), Playwright/Chromium avec ses libs système Debian,
 modèle `sentence-transformers` pré-téléchargé au build. Taille finale :
-~6.6GB (poids incompressible du stack RAG local + Chromium). Trois volumes
-nommés (`storage`, `chroma`, `orchestrator/runs`) pour survivre aux
-redémarrages. `docker/entrypoint.sh` construit l'index ChromaDB au premier
-démarrage si le volume est neuf.
+~6.6GB (poids incompressible du stack RAG local + Chromium). Les données
+sont dans Postgres (`DATABASE_URL` du `.env`) ; un seul volume nommé
+(`chroma`) garde l'index entre deux redémarrages, et
+`docker/entrypoint.sh` le construit au premier démarrage si le volume est
+neuf.
 
 **Render.com** (`render.yaml`) — mode `readonly` : sert uniquement le
-dashboard et les endpoints de lecture (`GET /offers`, `/offers/{id}`,
-`/health`) contre les données déjà produites par GitHub Actions. Ne charge
-jamais le modèle d'embeddings ni ChromaDB (~58MB RAM au repos, tient
-largement dans le tier gratuit 512MB). Redéploiement automatique sur
-chaque commit, y compris ceux du bot GitHub Actions — une offre scrapée le
-matin apparaît sur le dashboard public sans étape manuelle. Le tier `free`
+dashboard et les endpoints de lecture, en lisant Postgres en direct (les
+verdicts du propriétaire y sont écrits aussi). Ne charge jamais le modèle
+d'embeddings ni ChromaDB (~58MB RAM au repos, tient largement dans le tier
+gratuit 512MB). Redéploiement automatique sur chaque push de code ; une
+offre analysée par la CI apparaît sans redéploiement. Le tier `free`
 Render met le service en veille après 15 min d'inactivité (cold start
 ~30-50s au réveil, propre à l'infrastructure Render).
 
@@ -677,18 +712,18 @@ ici). Cron quotidien à 06:00 UTC (~08:00 Paris) + déclenchement manuel
 chaque run depuis les fichiers source versionnés, jamais persisté
 lui-même) → scraper (Hellowork + jobup.ch + LinkedIn, rafraîchit `last_seen_at` pour
 toute offre déjà connue qu'il retrouve) → **suppression des offres
-obsolètes** (`storage/cleanup.py`, voir ci-dessous) → orchestrateur batch →
-commit bot des fichiers modifiés (`storage/jobs.db` + `orchestrator/runs/`)
-avec le message `[skip ci]` pour ne pas redéclencher le workflow lui-même.
+obsolètes** (`storage/cleanup.py`, voir ci-dessous) → orchestrateur batch
+(`--max-minutes 50` : plus de nouvelle offre une fois le budget dépensé, la
+file reprend au run suivant) → rattrapage des scores manquants. Chaque étape
+écrit directement dans Postgres (secret `DATABASE_URL`) ; le workflow ne
+commite plus rien.
 LinkedIn fait partie du scraper par défaut depuis la session 19 ; s'il
 refuse l'IP du runner, l'étape réussit quand même avec les deux autres
 sources (voir §5.1bis).
 
 **`storage/cleanup.py`** (`python -m storage.cleanup [--days 30]
 [--dry-run]`) supprime toute offre dont `last_seen_at` dépasse le seuil
-(30 jours par défaut) — ligne SQLite **et** ses fichiers associés dans
-`orchestrator/runs/` (analyse, structured_analysis, 3 traces), pour ne
-jamais laisser de fichiers orphelins référençant une offre disparue. Le
+(30 jours par défaut), avec son analyse (cascade). Le
 choix de `last_seen_at` plutôt que `published_at` (essayé en premier, puis
 abandonné) est délibéré et vérifié en conditions réelles : `published_at`
 est la date affichée par la source, que certains sites republient/
@@ -699,18 +734,16 @@ ligne. **Décision assumée : aucune protection pour les offres déjà triées**
 (`user_verdict` non pris en compte) — une offre marquée "intéressante" est
 supprimée comme n'importe quelle autre une fois le seuil dépassé.
 
-**Persistance par commit, pas par cache/artifact** — décision volontaire
-(voir ROADMAP session 8) : un run GitHub Actions repart d'un checkout
-propre à chaque fois, sans volume local. Committer `jobs.db` +
-`orchestrator/runs/` dans le repo donne une source de vérité versionnée,
-inspectable via `git log`/`git diff`, sans risque d'éviction — contrairement
-à `actions/cache` (LRU, pas fait pour être une source de vérité) ou aux
-artifacts (pas de restauration automatique, rétention 90 jours).
+**Persistance dans Postgres, plus par commit** (session 20) — de la session
+8 à la 19, le bot committait `storage/jobs.db` après chaque étape. Simple,
+mais : l'historique git grossissait d'un binaire de plusieurs Mo plusieurs
+fois par jour, les verdicts posés sur la démo Render (écrits dans la copie
+du conteneur) disparaissaient au redéploiement suivant, et les analyses
+restaient sur le runner. Une base hébergée règle les trois ; chaque offre y
+est écrite dès qu'elle est traitée, donc un run tué par un timeout ne perd
+au pire que l'offre en cours.
 
-`permissions: contents: write` est le seul droit élevé accordé, requis pour
-ce commit — cohérent avec la règle "jamais de soumission automatique" : le
-workflow ne fait que scraper/scorer/générer/committer pour consultation
-ultérieure, jamais d'action vers un tiers.
+`permissions: contents: read` : le workflow n'écrit plus dans le dépôt.
 
 ## 9. Tests
 
@@ -722,8 +755,15 @@ ultérieure, jamais d'action vers un tiers.
 | `tests/test_llm_retry_live.py` | Preuve du retry contre un **vrai** rate limit Mistral (20 appels réels en rafale serrée) — pas un test à lancer en routine (consomme du vrai quota API) |
 | `tests/test_jobup_parsing.py` | Extraction de l'entreprise des cartes jobup (`_card_company`) sur des textes de cartes réels |
 | `tests/test_linkedin_parsing.py` | Cartes de recherche et pages de détail LinkedIn sur du HTML réel (`tests/fixtures/linkedin/`, scripts retirés) : id, URL canonique, entités HTML, contrat/niveau traduits, salaire, description structurée en lignes, filtres stage/ressortissants |
-| `tests/test_cross_source.py` | Doublons entre sources (§5.1) sur les paires réelles de la première collecte LinkedIn (FIA, Talan, Nexthink traduit, piège Chaberton), comparaison des lieux, et 5 scénarios de stockage dans les deux sens sur une base temporaire |
-| `tests/test_jobup_dedup.py` | Republications jobup (§5.1) : normalisation des titres, `is_same_offer` sur des descriptions réelles (cas limite 0,891, Senior vs Principal, même intitulé mais autre poste), et 5 scénarios `store_jobup_jobs` sur une base temporaire (re-pointage qui garde score/verdict, alias vivant, nouvelle offre vue deux fois, postes distincts, doublons antérieurs) |
+| `tests/test_cross_source.py` | Doublons entre sources (§5.1) sur les paires réelles de la première collecte LinkedIn (FIA, Talan, Nexthink traduit, piège Chaberton), comparaison des lieux, et 5 scénarios de stockage dans les deux sens sur un schéma Postgres jetable |
+| `tests/test_jobup_dedup.py` | Republications jobup (§5.1) : normalisation des titres, `is_same_offer` sur des descriptions réelles (cas limite 0,891, Senior vs Principal, même intitulé mais autre poste), et 5 scénarios `store_jobup_jobs` sur un schéma Postgres jetable (re-pointage qui garde score/verdict, alias vivant, nouvelle offre vue deux fois, postes distincts, doublons antérieurs) |
+| `tests/test_storage.py` | `storage/db.py` (upsert insertion/rafraîchissement, champs jamais écrasés, `mark_seen`, contrainte de statut, analyse remplacée puis supprimée en cascade), requête du nettoyage, import SQLite (ids, horodatages UTC, séquence, refus sans `--replace`) |
+| `tests/test_api.py` | Les deux vues de l'API : public (compteurs, pas d'analyse) contre propriétaire (analyse, `no-store`), verdicts 401/200/422/404, `/analyze` 401 puis 503 en lecture seule, aucun propriétaire sans `OWNER_TOKEN` |
+
+Les tests qui ont besoin d'une base créent chacun un schéma Postgres jetable
+(`tests/db_fixture.py`) : sur `TEST_DATABASE_URL` si défini, sinon sur un
+Postgres embarqué démarré par `pgserver` (`pip install pgserver`, sans
+Docker). Ils ne touchent jamais aux tables du schéma public.
 
 Pas de test des sélecteurs DOM de `scraper/` (testés
 manuellement contre les sites réels à chaque session, documenté dans
@@ -790,10 +830,16 @@ lit le code sans avoir lu tout `ROADMAP.md` :
   précédent, pas dans le même run. Le coût évité est l'appel Mistral, pas
   le chargement de la page de détail (déjà refait à chaque run pour
   rafraîchir les offres connues).
-- **Persistance CI par commit git, pas par cache** (§8) : un runner GitHub
-  Actions repart de zéro à chaque run, sans volume — le commit du bot est
-  la source de vérité versionnée la plus simple et la plus robuste pour ce
-  volume de données (quelques centaines de Ko à quelques Mo).
+- **Postgres hébergé plutôt que SQLite commité** (§8, session 20) : même
+  langage SQL, mais une base que la CI, l'API déployée et le poste local
+  lisent et écrivent tous en direct. Neon parce que son tier gratuit suffit
+  (0,5 Go), qu'il se met en veille sans perdre les données et se réveille
+  en environ une seconde. `timestamptz` plutôt que du texte pour les dates,
+  `jsonb` pour les listes de l'analyse, contraintes `CHECK` sur les statuts.
+- **Accès propriétaire par jeton** (§5.6) : un seul utilisateur, donc pas de
+  comptes ni de mots de passe — un secret partagé entre le serveur et un
+  navigateur suffit, et il ne protège que les écritures et le contenu
+  personnel ; le reste de la démo reste public.
 
 ## 11. Limites connues
 
@@ -837,11 +883,10 @@ limite, avec son contexte de découverte :
 
 ## 12. État actuel des données
 
-Au 2026-08-20, `storage/jobs.db` contient **107 offres**, toutes au statut
-`analyse` : 73 issues de Hellowork (Rhône-Alpes), 34 de jobup.ch (Suisse
-romande — Genève/Vaud/Neuchâtel). `orchestrator/runs/` contient les
-fichiers d'analyse et de trace correspondants, committés automatiquement
-par le workflow GitHub Actions quotidien.
+Au 2026-10-21, la base contient **913 offres** (909 `analyse`, 4 `echec`) :
+409 de LinkedIn, 322 de jobup.ch, 182 de Hellowork. Les analyses détaillées
+ne sont conservées que depuis la session 20 : celles produites avant par la
+CI n'ont jamais quitté le runner, il n'en reste que les compteurs.
 
 ## 13. Commandes utiles
 
@@ -873,8 +918,11 @@ Toujours depuis `job-agent/`, avec l'environnement virtuel dédié.
 .venv/Scripts/python.exe -m uvicorn api.main:app --reload
 # puis ouvrir http://127.0.0.1:8000
 
-# Lancer les tests
-.venv/Scripts/python.exe -m pytest tests/ -v
+# Importer l'ancien jobs.db dans une base Postgres vide (une seule fois, §5.1)
+.venv/Scripts/python.exe -m storage.migrate_from_sqlite jobs-latest.db --dry-run
+
+# Lancer les tests hors ligne (Postgres jetable : pgserver ou TEST_DATABASE_URL)
+for t in storage api jobup_dedup cross_source geography jobup_parsing linkedin_parsing llm_retry; do .venv/Scripts/python.exe tests/test_$t.py; done
 
 # Docker (mode full, local)
 docker compose up -d

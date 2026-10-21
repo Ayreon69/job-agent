@@ -7,10 +7,14 @@ Suivi de session à session. Voir CLAUDE.md pour le contexte projet complet.
 1. **Scraper + stockage SQLite (Hellowork)** — ✅ terminé (2026-07-10)
 2. **Indexation profil utilisateur dans ChromaDB** — ✅ terminé (2026-07-10)
 3. **Scoring d'une offre via agent (score + justification)** — ✅ terminé (2026-07-11)
-4. Génération d'analyse de candidature (markdown structuré) — à faire
-5. Wrapper FastAPI (endpoint `/analyze`) — à faire
-6. Dockerisation — à faire
-7. GitHub Actions (scraping programmé) — à faire
+4. **Génération d'analyse de candidature (markdown structuré)** — ✅ terminé (2026-07-11)
+5. **Wrapper FastAPI (endpoint `/analyze`)** — ✅ terminé (2026-07-11)
+6. **Dockerisation** — ✅ terminé (2026-07-12)
+7. **GitHub Actions (scraping programmé)** — ✅ terminé (2026-07-12)
+
+Après le plan initial : dashboard (sessions 9, 12, 17), jobup.ch (11), LinkedIn
+(19), passage de SQLite à Postgres hébergé (20). Prochaine étape : héberger le
+dashboard sur Vercel (démarrage lent de Render, voir session 20).
 
 ## Session 1 (2026-07-10) — Scraper Hellowork + SQLite
 
@@ -2966,3 +2970,102 @@ offres `nouveau` ; avec une file non vide, elle en a scoré 40 que le run
 suivant rescorera en entier. Le mode `--scoring-only` ne prend plus que
 les offres déjà passées par le pipeline (`score IS NULL AND status !=
 'nouveau'`).
+
+## Session 20 (2026-10-21) : SQLite → Postgres (Neon), la CI n'écrit plus dans git
+
+**Constat (revue du 2026-10-21, mesuré sur la démo et la base) :**
+- Les verdicts posés sur la démo Render étaient écrits dans la copie de
+  `jobs.db` du conteneur, perdue à chaque redéploiement (4 à 6 par jour avec
+  les commits du bot) : 1 verdict sur 913 offres en base.
+- `POST /offers/{id}/verdict` était ouvert à n'importe quel visiteur.
+- Les analyses (points forts, écarts, markdown, traces) restaient sur le
+  runner de CI : vérifié sur 3 offres de la démo, `matches`/`gaps` vides
+  alors que `gaps_count` valait 3 à 6. L'appel LLM de génération était fait
+  pour rien.
+- Le bot commitait un binaire de 2 à 4 Mo plusieurs fois par jour.
+
+**Livré :**
+- `storage/db.py` : `psycopg` 3 sur `DATABASE_URL`. Table `jobs` (mêmes
+  colonnes, `timestamptz`, `CHECK` sur statut et verdict) et nouvelle table
+  `analyses` (`jsonb`, `ON DELETE CASCADE`), séparées selon la frontière
+  public/personnel. `upsert_job` en un `INSERT … ON CONFLICT … RETURNING
+  (xmax = 0)` ; `mark_seen` sur une liste (`= ANY`) ; `save_analysis`.
+  `prepare_threshold=None` pour rester compatible avec le pooler de Neon.
+- `orchestrator/agent.py` : statut final et analyse écrits dans la même
+  transaction. `orchestrator/run.py` : plus de fichiers, `--max-minutes`
+  remplace la boucle shell de la CI.
+- `scraper/run.py` : une transaction courte par étape au lieu d'une seule
+  pendant toute la collecte (base distante).
+- `storage/cleanup.py`, `scraper/merge_jobup_duplicates.py` : suppression en
+  une requête, les analyses suivent par cascade.
+- `api/main.py` : tout en SQL, plus de lecture de `orchestrator/runs/`.
+  **Accès propriétaire** : `OWNER_TOKEN`, envoyé en `Authorization: Bearer`
+  (`secrets.compare_digest`). Verdicts et `/analyze` réservés (401) ;
+  analyse détaillée servie au seul propriétaire, en `Cache-Control:
+  private, no-store`. `GET /owner` pour vérifier un jeton. Dates en ISO 8601
+  UTC.
+- Dashboard : cadenas dans l'en-tête et commande de palette, dialogue de
+  saisie du jeton (vérifié avant d'être gardé en `localStorage`), message
+  « lecture seule » sur un verdict refusé, note du tiroir selon le cas.
+- `storage/migrate_from_sqlite.py` : import de `jobs.db` par `COPY`, ids
+  conservés, séquence recalée ; refuse une base non vide sans `--replace`.
+- CI : secret `DATABASE_URL`, `permissions: contents: read`, plus aucun
+  commit ; `.github/scripts/commit_db.sh` supprimé. `storage/jobs.db` n'est
+  plus suivi (il reste dans l'historique git, non réécrit).
+- Supprimé : `scoring/backfill_sector.py` (patchait des fichiers
+  `structured_analysis_*.json` qui n'existent plus nulle part).
+- `render.yaml` (`DATABASE_URL`, `OWNER_TOKEN`), `docker-compose.yml` (plus
+  que le volume ChromaDB), `.env.example`, `.gitignore`, `.dockerignore`.
+
+**Décisions :**
+- `last_seen_at` reste nullable : les 16 lignes héritées sans valeur ne sont
+  toujours pas supprimées par le nettoyage (décision de la session 19 laissée
+  ouverte).
+- Pas de couche d'abstraction SQLite/Postgres : Postgres partout, y compris
+  en local et en test. Les tests créent un schéma jetable
+  (`tests/db_fixture.py`) sur `TEST_DATABASE_URL` ou sur un Postgres embarqué
+  (`pgserver`, dépendance de dev seulement : Docker Desktop ne démarrait pas
+  sur cette machine).
+- Les analyses produites avant cette session sont perdues (jamais sorties du
+  runner) : seuls les compteurs restent.
+
+**Vérifié :**
+- Tests : `test_storage` 12/12 et `test_api` 16/16 (nouveaux),
+  `test_jobup_dedup` 20/20 et `test_cross_source` 21/21 (portés), inchangés
+  `test_geography` 28/28, `test_jobup_parsing` 5/5, `test_linkedin_parsing`
+  27/27, `test_llm_retry` 4/4.
+- Import du `jobs.db` d'`origin/master` du jour dans un Postgres local :
+  913 offres, id max 5390, 1 verdict, 16 `last_seen_at` vides ; second
+  import refusé, `--replace` rejoué ; nettoyage à blanc : rien à supprimer.
+- Collecte Hellowork réelle (« data scientist », 1 page) : 30 offres, toutes
+  connues, `last_seen_at` rafraîchi sur les 30.
+- Analyse réelle de l'offre 5368 (Mistral + ChromaDB) : statut `analyse`,
+  score 78, 5 écarts et 4 points forts en `jsonb`, markdown et 3 traces.
+- Dashboard (navigateur, Postgres local, `API_MODE=readonly`) : vue
+  publique (compteurs, note « réservé au propriétaire »), verdict refusé
+  avec le message, mauvais jeton refusé, bon jeton → analyse affichée,
+  verdict enregistré et toujours là après rechargement (POST 401 puis 200
+  dans les logs serveur), en-tête mobile sans débordement.
+- Pas encore vérifié : la base Neon elle-même, un run de CI complet.
+
+**Bascule (dans cet ordre) :**
+1. Créer le projet Neon (région Francfort) ; dans `.env` : `DATABASE_URL`
+   (chaîne de connexion Neon) et `OWNER_TOKEN`
+   (`python -c "import secrets; print(secrets.token_urlsafe(32))"`).
+2. `git fetch` puis `git show origin/master:storage/jobs.db > jobs-latest.db`
+   et `python -m storage.migrate_from_sqlite jobs-latest.db`.
+3. `gh secret set DATABASE_URL` ; sur Render : `DATABASE_URL` et
+   `OWNER_TOKEN` (Environment).
+4. Fusionner dans `master` hors de la fenêtre du batch (le cron démarre en
+   pratique entre 10 h et 15 h UTC). Si le bot a commité `jobs.db` entre
+   l'étape 2 et la fusion : relancer l'import avec `--replace`, et résoudre
+   le conflit modification/suppression sur `jobs.db` en gardant la
+   suppression.
+5. Lancer le workflow à la main (`workflow_dispatch`) et vérifier la démo.
+
+**Reste à faire :**
+- Héberger le dashboard sur Vercel (le démarrage de Render reste lent).
+- Afficher l'analyse rédigée (`analysis_markdown`) dans le tiroir : stockée,
+  servie au propriétaire, pas encore rendue.
+- `tests/test_generation.py` échoue toujours (`No offer with id=7`) : il lit
+  des offres réelles supprimées depuis par le nettoyage.
