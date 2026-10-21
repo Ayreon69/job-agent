@@ -1,4 +1,4 @@
-"""Entry point: scrape job offers (Hellowork, jobup.ch, LinkedIn) into SQLite.
+"""Entry point: scrape job offers (Hellowork, jobup.ch, LinkedIn) into the database.
 
 Usage:
     python -m scraper.run
@@ -14,12 +14,13 @@ from __future__ import annotations
 import argparse
 import logging
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from scraper import cross_source, hellowork, jobup, linkedin
-from storage.db import DEFAULT_DB_PATH, Job, connect, init_db, mark_seen, refresh_job, upsert_job
+from storage.db import Job, connect, init_db, mark_seen, refresh_job, upsert_job
 
 # Hellowork ne référence que des offres France (pas de Suisse/UAE/Moyen-Orient utile
 # ici). Ciblage géo limité au repli du CLAUDE.md, élargi de Lyon à toute la région
@@ -51,13 +52,16 @@ def _to_job(job_dict: dict) -> Job:
 
 SOURCES = ["hellowork", "jobup", "linkedin"]
 
+# Sorts below any real last_seen_at.
+_NEVER = datetime.min.replace(tzinfo=timezone.utc)
+
 
 def _other_source_rows(conn, source: str) -> list[dict]:
     """Stored offers of every other source, for scraper/cross_source.py."""
     return [
         {"id": r[0], "source": r[1], "title": r[2], "company": r[3], "location": r[4], "description": r[5]}
         for r in conn.execute(
-            "SELECT id, source, title, company, location, description FROM jobs WHERE source != ?", (source,)
+            "SELECT id, source, title, company, location, description FROM jobs WHERE source != %s", (source,)
         ).fetchall()
     ]
 
@@ -79,7 +83,7 @@ def _store_jobs(conn, jobs: list[dict]) -> int:
     other_rows: list[dict] | None = None
     for job_dict in jobs:
         is_known = conn.execute(
-            "SELECT 1 FROM jobs WHERE source = ? AND source_id = ?", (job_dict["source"], job_dict["source_id"])
+            "SELECT 1 FROM jobs WHERE source = %s AND source_id = %s", (job_dict["source"], job_dict["source_id"])
         ).fetchone()
         if not is_known:
             if other_rows is None:
@@ -150,7 +154,7 @@ def store_jobup_jobs(conn, jobs: list[dict]) -> tuple[int, int, int]:
             continue
 
         if matches:
-            target = max(matches, key=lambda row: (row["user_verdict"] is not None, row["last_seen_at"] or ""))
+            target = max(matches, key=lambda row: (row["user_verdict"] is not None, row["last_seen_at"] or _NEVER))
             refresh_job(conn, target["id"], _to_job(job_dict))
             target.update({k: job_dict[k] for k in ("title", "company", "location", "description")})
             seen_this_run.add(target["id"])
@@ -168,7 +172,7 @@ def store_jobup_jobs(conn, jobs: list[dict]) -> tuple[int, int, int]:
 
         upsert_job(conn, _to_job(job_dict))
         new_id = conn.execute(
-            "SELECT id FROM jobs WHERE source = 'jobup' AND source_id = ?", (job_dict["source_id"],)
+            "SELECT id FROM jobs WHERE source = 'jobup' AND source_id = %s", (job_dict["source_id"],)
         ).fetchone()[0]
         stored.append({"id": new_id, "user_verdict": None, "last_seen_at": None,
                        **{k: job_dict[k] for k in ("title", "company", "location", "description")}})
@@ -178,23 +182,29 @@ def store_jobup_jobs(conn, jobs: list[dict]) -> tuple[int, int, int]:
     return inserted, repointed, aliases
 
 
-def run_hellowork(conn, queries: list[str], location: str, max_pages: int, headless: bool) -> tuple[int, int]:
+# The database is remote: every run_* below opens a short connection around
+# its writes instead of one transaction held across minutes of scraping,
+# which a dropped connection would lose entirely. Each stage's results are
+# committed as soon as they're stored.
+
+
+def run_hellowork(queries: list[str], location: str, max_pages: int, headless: bool) -> tuple[int, int]:
     total_seen = 0
     total_new = 0
     for query in queries:
         logger.info("=== [hellowork] Scraping query: %r (location: %r) ===", query, location)
         jobs = hellowork.scrape(query, location=location, max_pages=max_pages, headless=headless)
         total_seen += len(jobs)
-        total_new += _store_jobs(conn, jobs)
+        with connect() as conn:
+            total_new += _store_jobs(conn, jobs)
     return total_seen, total_new
 
 
-def run_jobup(conn, queries: list[str], locations: list[str], max_pages: int, headless: bool) -> tuple[int, int]:
+def run_jobup(queries: list[str], locations: list[str], max_pages: int, headless: bool) -> tuple[int, int]:
     # All queries are collected before storing: store_jobup_jobs needs the
     # whole run to know which stored offers are still live under their own
     # source_id (an offer can come back under its old UUID in one query and
-    # a new one in another). Nothing is lost by waiting: connect() only
-    # commits once the whole run is done anyway.
+    # a new one in another). The batch is then stored in one transaction.
     total_seen = 0
     jobs_by_source_id: dict[str, dict] = {}
     for query in queries:
@@ -204,7 +214,8 @@ def run_jobup(conn, queries: list[str], locations: list[str], max_pages: int, he
         for job in jobs:
             jobs_by_source_id.setdefault(job["source_id"], job)
 
-    inserted, repointed, aliases = store_jobup_jobs(conn, list(jobs_by_source_id.values()))
+    with connect() as conn:
+        inserted, repointed, aliases = store_jobup_jobs(conn, list(jobs_by_source_id.values()))
     logger.info(
         "[jobup] Same offer under a new source_id: %d republication(s) re-pointed, %d live alias(es) skipped.",
         repointed, aliases,
@@ -212,22 +223,23 @@ def run_jobup(conn, queries: list[str], locations: list[str], max_pages: int, he
     return total_seen, inserted
 
 
-def run_linkedin(conn, queries: list[str], locations: list[str], max_pages: int) -> tuple[int, int]:
+def run_linkedin(queries: list[str], locations: list[str], max_pages: int) -> tuple[int, int]:
     """Only offers never seen before cost a detail request: already-stored
     ones are just marked as seen, and a card whose twin is already stored
     from another source (same title, place and company) is dropped before
     its detail page is fetched. Twins that need the description to be told
     apart (company unknown on the other side) are checked once fetched."""
-    known = dict(conn.execute("SELECT source_id, id FROM jobs WHERE source = 'linkedin'").fetchall())
-    other_rows = _other_source_rows(conn, "linkedin")
+    with connect() as conn:
+        known = dict(conn.execute("SELECT source_id, id FROM jobs WHERE source = 'linkedin'").fetchall())
+        other_rows = _other_source_rows(conn, "linkedin")
 
     listings = linkedin.collect_listings(queries, locations, max_pages=max_pages)
     to_fetch: list[linkedin.JobListing] = []
-    seen_again = twins_on_card = 0
+    seen_again: list[int] = []
+    twins_on_card = 0
     for listing in listings:
         if listing.source_id in known:
-            mark_seen(conn, known[listing.source_id])
-            seen_again += 1
+            seen_again.append(known[listing.source_id])
             continue
         card = {"source": "linkedin", "title": listing.title, "company": listing.company, "location": listing.location}
         twin = cross_source.find_twin(card, other_rows, need_description=False)
@@ -241,11 +253,14 @@ def run_linkedin(conn, queries: list[str], locations: list[str], max_pages: int)
         to_fetch.append(listing)
     logger.info(
         "[linkedin] %d unique listings: %d already stored (marked seen), %d stored from another source, %d to fetch",
-        len(listings), seen_again, twins_on_card, len(to_fetch),
+        len(listings), len(seen_again), twins_on_card, len(to_fetch),
     )
+    with connect() as conn:
+        mark_seen(conn, seen_again)
 
     offers = linkedin.fetch_offers(to_fetch)
-    return len(listings), _store_jobs(conn, offers)
+    with connect() as conn:
+        return len(listings), _store_jobs(conn, offers)
 
 
 def run(
@@ -262,29 +277,28 @@ def run(
 ) -> None:
     init_db()
 
-    with connect() as conn:
-        if "hellowork" in sources:
-            seen, new = run_hellowork(conn, hellowork_queries, hellowork_location, max_pages, headless)
-            logger.info("[hellowork] Done. %d offers scraped, %d new rows inserted.", seen, new)
-        if "jobup" in sources:
-            seen, new = run_jobup(conn, jobup_queries, jobup_locations, max_pages, headless)
-            logger.info("[jobup] Done. %d offers scraped, %d new rows inserted.", seen, new)
-        if "linkedin" in sources:
-            # Last, and isolated: LinkedIn may refuse the runner's IP (hosted
-            # CI ranges often are), which must not cost the other sources'
-            # results. Its own refusals (429/999) are already handled inside
-            # scraper/linkedin.py; this catches anything unexpected.
-            try:
-                seen, new = run_linkedin(conn, linkedin_queries, linkedin_locations, linkedin_pages)
-                logger.info("[linkedin] Done. %d offers found, %d new rows inserted.", seen, new)
-            except Exception:
-                logger.exception("[linkedin] Failed — other sources' results are kept")
+    if "hellowork" in sources:
+        seen, new = run_hellowork(hellowork_queries, hellowork_location, max_pages, headless)
+        logger.info("[hellowork] Done. %d offers scraped, %d new rows inserted.", seen, new)
+    if "jobup" in sources:
+        seen, new = run_jobup(jobup_queries, jobup_locations, max_pages, headless)
+        logger.info("[jobup] Done. %d offers scraped, %d new rows inserted.", seen, new)
+    if "linkedin" in sources:
+        # Last, and isolated: LinkedIn may refuse the runner's IP (hosted
+        # CI ranges often are), which must not cost the other sources'
+        # results. Its own refusals (429/999) are already handled inside
+        # scraper/linkedin.py; this catches anything unexpected.
+        try:
+            seen, new = run_linkedin(linkedin_queries, linkedin_locations, linkedin_pages)
+            logger.info("[linkedin] Done. %d offers found, %d new rows inserted.", seen, new)
+        except Exception:
+            logger.exception("[linkedin] Failed — other sources' results are kept")
 
-    logger.info("All sources done. Database: %s", DEFAULT_DB_PATH)
+    logger.info("All sources done.")
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Scrape job offers (Hellowork, jobup.ch, LinkedIn) into SQLite")
+    parser = argparse.ArgumentParser(description="Scrape job offers (Hellowork, jobup.ch, LinkedIn) into the database")
     parser.add_argument(
         "--source",
         choices=[*SOURCES, "both", "all"],

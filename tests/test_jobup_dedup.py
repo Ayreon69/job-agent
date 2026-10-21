@@ -6,14 +6,14 @@ jobs.db rows (2026-09-26 reconnaissance — see ROADMAP.md session 18)."""
 from __future__ import annotations
 
 import sys
-import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from db_fixture import temp_database
 from scraper.jobup import description_similarity, is_same_offer, normalize_title
 from scraper.run import store_jobup_jobs
-from storage.db import connect, init_db
+from storage.db import connect
 
 _WIDGET = """Vous correspondez très bien à ce poste
 
@@ -147,15 +147,15 @@ def _job(source_id: str, title: str = BECKHOFF, description: str = BECKHOFF_A) -
     }
 
 
-def _seed(conn, source_id: str, *, verdict: str | None = None, last_seen: str = "2026-09-20 11:00:00",
+def _seed(conn, source_id: str, *, verdict: str | None = None, last_seen: str = "2026-09-20 11:00:00+00",
           company: str = "Offre pertinente ?", description: str = BECKHOFF_B) -> int:
     conn.execute(
         "INSERT INTO jobs (source, source_id, url, title, company, location, description, status, score, "
-        "user_verdict, last_seen_at) VALUES ('jobup', ?, ?, ?, ?, 'La Chaux-de-Fonds', ?, 'analyse', 45, ?, ?)",
+        "user_verdict, last_seen_at) VALUES ('jobup', %s, %s, %s, %s, 'La Chaux-de-Fonds', %s, 'analyse', 45, %s, %s)",
         (source_id, f"https://www.jobup.ch/fr/emplois/detail/{source_id}/", BECKHOFF, company, description,
          verdict, last_seen),
     )
-    return conn.execute("SELECT id FROM jobs WHERE source_id = ?", (source_id,)).fetchone()[0]
+    return conn.execute("SELECT id FROM jobs WHERE source_id = %s", (source_id,)).fetchone()[0]
 
 
 def _rows(conn) -> list[tuple]:
@@ -220,8 +220,8 @@ def scenario_distinct_openings(conn) -> list[str]:
 def scenario_existing_duplicates(conn) -> list[str]:
     """Several stored duplicates (from before the fix): the row the user
     triaged is the one kept alive, even if another was seen more recently."""
-    _seed(conn, "dup-recent", last_seen="2026-09-25 11:00:00")
-    triaged = _seed(conn, "dup-triaged", verdict="peut_etre", last_seen="2026-09-19 11:00:00")
+    _seed(conn, "dup-recent", last_seen="2026-09-25 11:00:00+00")
+    triaged = _seed(conn, "dup-triaged", verdict="peut_etre", last_seen="2026-09-19 11:00:00+00")
     counts = store_jobup_jobs(conn, [_job("new-uuid")])
     errors = []
     if counts != (0, 1, 0):
@@ -257,11 +257,8 @@ def main() -> None:
         print(f"[{'OK' if ok else 'FAIL'}] {label:58} sim={sim_text} -> {got}" + ("" if ok else f"  (attendu {expected})"))
 
     for scenario in SCENARIOS:
-        with tempfile.TemporaryDirectory() as tmp:
-            db_path = Path(tmp) / "jobs.db"
-            init_db(db_path)
-            with connect(db_path) as conn:
-                errors = scenario(conn)
+        with temp_database() as dsn, connect(dsn) as conn:
+            errors = scenario(conn)
         total += 1
         failures += bool(errors)
         print(f"[{'OK' if not errors else 'FAIL'}] {scenario.__name__}" + "".join(f"\n       {e}" for e in errors))

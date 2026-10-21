@@ -1,7 +1,7 @@
 // Offer detail drawer. Opened via the URL (#/<view>?offre=<id>) so the
 // browser's back button closes it and any offer can be linked directly.
 
-import { esc, icon, scoreRing, scoreTier, TIER_LABELS, SOURCE_LABELS, STATUS_LABELS, companyOf, locationOf, cleanContract, cleanSalary, cleanExperience, parsePublished, parseSqlUtc, fmtDate, relDay, descriptionHtml, titleOf } from "./format.js";
+import { esc, icon, scoreRing, scoreTier, TIER_LABELS, SOURCE_LABELS, STATUS_LABELS, companyOf, locationOf, cleanContract, cleanSalary, cleanExperience, parsePublished, parseUtc, fmtDate, relDay, descriptionHtml, titleOf } from "./format.js";
 import { store, getDetail, isNew } from "./store.js";
 import { $, decide, verdictControl, zoneChip, sectorChip, reducedMotion, staleChip } from "./ui.js";
 
@@ -152,8 +152,8 @@ function analysisBlock(o, d) {
 function shell(o, d) {
   const idx = context.indexOf(o.id);
   const pub = parsePublished(o.published_at);
-  const first = parseSqlUtc(o.first_seen_at);
-  const last = parseSqlUtc(d?.last_seen_at ?? o.last_seen_at);
+  const first = parseUtc(o.first_seen_at);
+  const last = parseUtc(d?.last_seen_at ?? o.last_seen_at);
   const tier = scoreTier(o.score);
   const url = d?.url || o.url;
 

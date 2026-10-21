@@ -5,7 +5,7 @@ instead of following a fixed sequence unconditionally.
 What makes this an orchestrator rather than a plain sequential script — three
 decision points, checked in priority order before/during the default path:
 
-  1. Insufficient offer description: if the offer text in SQLite is too thin
+  1. Insufficient offer description: if the stored offer text is too thin
      to score meaningfully (same heuristic as generation's
      _should_search_web, reused here — a short offer is a short offer
      regardless of which downstream step cares), attempt a targeted
@@ -20,13 +20,15 @@ decision points, checked in priority order before/during the default path:
      trust the generated tone silently.
   3. Any technical failure (malformed offer row, LLM call exception,
      uncaught exception anywhere in scoring/generation): caught, logged with
-     full context for later debugging, offer marked "echec" in SQLite, and
+     full context for later debugging, offer marked "echec" in the database, and
      the orchestrator moves on to the next offer rather than crashing the
      whole batch run.
 
 Every decision the orchestrator itself makes (not just the RAG queries made
 by scoring/generation, which have their own traces) is recorded in an
-OrchestratorTrace for audit.
+OrchestratorTrace for audit. The analysis and the three traces are stored in
+the same transaction as the final status (storage/db.py's analyses table):
+an offer marked "analyse" always has its analysis in the database.
 
 Hard rule (CLAUDE.md): the orchestrator NEVER submits a candidacy
 automatically. It stops after producing the analysis; human validation is a
@@ -43,12 +45,11 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from generation.analysis import generate_analysis
-from generation.analysis import structured_analysis_to_json
 from generation.analysis import trace_to_json as generation_trace_to_json
 from scoring.agent import score_offer
 from scoring.agent import trace_to_json as scoring_trace_to_json
 from scraper import hellowork, jobup, linkedin
-from storage.db import connect, set_job_status, set_scoring_summary
+from storage.db import connect, save_analysis, set_job_status, set_scoring_summary
 
 logger = logging.getLogger(__name__)
 
@@ -76,9 +77,6 @@ class OrchestrationResult:
     status: str
     analysis_markdown: str | None
     trace: OrchestratorTrace
-    scoring_trace_json: str | None = None
-    generation_trace_json: str | None = None
-    structured_analysis_json: str | None = None
 
 
 def _offer_text_is_thin(title: str, description: str | None) -> bool:
@@ -209,20 +207,28 @@ def process_offer(offer: dict) -> OrchestrationResult:
 
         with connect() as conn:
             set_job_status(conn, offer_id, final_status)
+            save_analysis(
+                conn,
+                offer_id,
+                matches=structured_analysis.matches,
+                gaps=structured_analysis.gaps,
+                uncertain_flags=structured_analysis.uncertain_flags,
+                analysis_markdown=markdown,
+                orchestrator_trace=json.loads(orchestrator_trace_to_json(trace)),
+                scoring_trace=json.loads(scoring_trace_to_json(scoring_result.trace)),
+                generation_trace=json.loads(generation_trace_to_json(generation_trace)),
+            )
 
         return OrchestrationResult(
             offer_id=offer_id,
             status=final_status,
             analysis_markdown=markdown,
             trace=trace,
-            scoring_trace_json=scoring_trace_to_json(scoring_result.trace),
-            generation_trace_json=generation_trace_to_json(generation_trace),
-            structured_analysis_json=structured_analysis_to_json(structured_analysis),
         )
 
     except Exception as exc:
         # Decision 3: any technical failure -> capture, log with context,
-        # mark as "echec" in SQLite, and let the caller continue the batch.
+        # mark as "echec" in the database, and let the caller continue the batch.
         error_context = (
             f"{type(exc).__name__}: {exc}\n"
             f"offer_id={offer_id}, title={offer.get('title')!r}, url={offer.get('url')!r}\n"
@@ -235,6 +241,17 @@ def process_offer(offer: dict) -> OrchestrationResult:
 
         with connect() as conn:
             set_job_status(conn, offer_id, "echec")
+            save_analysis(
+                conn,
+                offer_id,
+                matches=[],
+                gaps=[],
+                uncertain_flags=[],
+                analysis_markdown=None,
+                orchestrator_trace=json.loads(orchestrator_trace_to_json(trace)),
+                scoring_trace=None,
+                generation_trace=None,
+            )
 
         return OrchestrationResult(
             offer_id=offer_id,

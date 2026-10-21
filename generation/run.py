@@ -1,5 +1,5 @@
 """Entry point: generate a candidacy analysis for a job offer already stored
-in SQLite, chaining the session-3 scoring agent into the session-4
+in the database, chaining the session-3 scoring agent into the session-4
 generation agent.
 
 Usage:
@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 def load_offer(offer_id: int) -> dict:
     with connect() as conn:
         row = conn.execute(
-            "SELECT id, title, location, description, company FROM jobs WHERE id = ?", (offer_id,)
+            "SELECT id, title, location, description, company FROM jobs WHERE id = %s", (offer_id,)
         ).fetchone()
     if row is None:
         raise ValueError(f"No offer with id={offer_id}")

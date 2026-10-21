@@ -1,55 +1,38 @@
-"""FastAPI wrapper exposing the existing orchestrator (session 5) over HTTP.
+"""FastAPI wrapper: the dashboard, read access to the offers, and the
+orchestrator (session 5) over HTTP.
 
 Pure exposition, no new decision logic: every endpoint calls into
-orchestrator/, scoring/, generation/, or storage/db.py as-is. If a decision
-needs to change, it belongs in orchestrator/agent.py, not here.
+orchestrator/ or storage/db.py as-is. If a decision needs to change, it
+belongs in orchestrator/agent.py, not here.
 
 Run locally:
     uvicorn api.main:app --reload
-    (from the job-agent/ directory, with .venv activated)
+    (from the job-agent/ directory, with .venv activated; DATABASE_URL and
+    MISTRAL_API_KEY come from .env, loaded by storage.db)
 
-MISTRAL_API_KEY is loaded exactly as scoring/llm.py already does (via
-python-dotenv + os.environ) — importing scoring.llm triggers that load_dotenv()
-call, so this module doesn't duplicate the .env loading logic.
-
-API_MODE (Render deployment follow-up): "full" (default, unchanged behavior —
-local dev, docker-compose, GitHub Actions batch don't set this var) or
-"readonly". Render's free/Starter tiers cap at 512MB RAM; a real measurement
-of the "full" container at rest was ~749MB (sentence-transformers + torch
-loaded via the session-6 embedding singleton) — over budget on either tier.
-"readonly" trades away POST /analyze (scoring is Render's job never anyway;
-GitHub Actions already owns the batch pipeline, see session 8) to stay under
-that budget: GET /health, /offers, /offers/{id} only need SQLite +
-already-generated structured_analysis_<id>.json/markdown files on disk, none
-of which need the embedding model or ChromaDB.
-
-The memory saving comes from WHERE the import of scoring.embeddings.index
-(and therefore chromadb + sentence-transformers + torch) happens, not just
-from skipping construction of the singleton: torch's own C extension gets
-loaded into the process the moment its Python module is imported, before any
-class is ever instantiated. orchestrator.agent (imported by /analyze)
-imports scoring.agent at module top level, which imports
-scoring.embeddings.index — so importing orchestrator.agent unconditionally
-at the top of this file would load torch into every readonly-mode process
-too, defeating the point. The import is therefore deferred to inside the
-/analyze handler itself (see analyze() below), executed only if API_MODE
-allows it.
+API_MODE: "full" (default — local dev, docker-compose) or "readonly" (the
+deployed dashboard). Render's free tier caps at 512MB RAM; the "full"
+container measured ~749MB at rest (sentence-transformers + torch, loaded for
+POST /analyze). "readonly" trades /analyze away — scoring is GitHub
+Actions' job — and never imports that stack: torch's C extension is loaded
+the moment its module is imported, before anything is instantiated, so the
+orchestrator import is deferred to inside /analyze rather than done at the
+top of this file.
 """
 
 from __future__ import annotations
 
 import logging
 import os
-import re
 import time
 from contextlib import asynccontextmanager
+from datetime import datetime, timezone
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Response
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-import scoring.llm  # noqa: F401  (side effect: load_dotenv() for MISTRAL_API_KEY)
 from api.schemas import (
     AnalyzeRequest,
     AnalyzeResponse,
@@ -60,7 +43,7 @@ from api.schemas import (
     VerdictRequest,
     VerdictResponse,
 )
-from storage.db import USER_VERDICTS, connect, init_db, parse_published_at, set_user_verdict
+from storage.db import USER_VERDICTS, connect, parse_published_at, set_user_verdict
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
@@ -74,8 +57,6 @@ if API_MODE not in VALID_API_MODES:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    init_db()
-
     if API_MODE == "readonly":
         logger.info("API_MODE=readonly — modèle d'embeddings/ChromaDB non chargés (POST /analyze désactivé)")
         yield
@@ -103,29 +84,15 @@ app = FastAPI(
         "Wraps the existing scoring -> generation orchestrator (sessions 3-5) over HTTP. "
         "Never submits a candidacy automatically — see CLAUDE.md."
     ),
-    version="0.1.0",
+    version="0.2.0",
     lifespan=lifespan,
 )
 
-# Same path orchestrator/run.py's own DEFAULT_OUTPUT_DIR resolves to
-# (orchestrator/runs/, relative to that module's location) — computed here
-# directly rather than imported from orchestrator.run, because that module
-# imports orchestrator.agent at its own top level, which imports
-# scoring.agent -> scoring.embeddings.index -> chromadb/torch. Every
-# readonly-safe endpoint (health, offers, offers/{id}) needs this path, so
-# it can't depend on an import chain that pulls in the very weight
-# API_MODE=readonly exists to avoid.
-RUNS_DIR = Path(__file__).parent.parent / "orchestrator" / "runs"
 STATIC_DIR = Path(__file__).parent / "static"
 
-# Dashboard (session 9): a static HTML/JS page consuming GET /offers and
-# GET /offers/{id} client-side — no server-side templating, no new backend
-# logic. Served by FastAPI's own StaticFiles rather than a separate
-# frontend server: for a single-user read-only dashboard, standing up a
-# second process (or a JS build toolchain) would add operational surface
-# without buying anything a `fetch()` against the API already running here
-# can't do plainly. Mounted at /static (not /) so it doesn't shadow the
-# /offers, /health, /analyze API routes below.
+# Dashboard (session 9): a static HTML/JS page consuming the endpoints below
+# client-side — no server-side templating, no JS build step. Mounted at
+# /static (not /) so it doesn't shadow the API routes.
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 
@@ -147,124 +114,71 @@ def dashboard() -> FileResponse:
     return FileResponse(STATIC_DIR / "index.html")
 
 
+# ---------------------------------------------------------------------
+# Offers
+# ---------------------------------------------------------------------
+
+def _iso_utc(value: datetime | None) -> str | None:
+    """timestamptz -> "2026-10-21T11:58:36Z", whatever the session's time zone."""
+    if value is None:
+        return None
+    return value.astimezone(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+
+
 # Sorting jobs.published_at's raw strings lexicographically mixes Hellowork's
 # "DD/MM/YYYY" and jobup.ch's French "DD mois AAAA" (e.g. "12 juillet" sorts
-# before "13 juin" — alphabetical on the month NAME, not the month number) —
-# reported by the user after the first published_at/first_seen_at dashboard
-# rollout. parse_published_at (storage/db.py — shared with storage/cleanup.py,
-# which needs the same parsing to decide an offer's real age) turns it into a
-# real date; _published_at_sortable below re-exposes that as the ISO string
-# the dashboard sorts on, while published_at itself keeps being shown as-is
-# (its exact source wording is still useful to see, just not useful to sort by).
+# before "13 juin"). parse_published_at (storage/db.py, shared with
+# storage/cleanup.py) turns it into a real date; published_at itself keeps
+# being shown as-is (its exact source wording is still useful to see).
 def _published_at_sortable(raw: str | None) -> str | None:
     parsed = parse_published_at(raw)
     return parsed.isoformat() if parsed else None
 
 
-def _load_offer_row(offer_id: int) -> dict:
-    with connect() as conn:
-        row = conn.execute(
-            "SELECT id, title, location, description, company, url, status, published_at, scraped_at, user_verdict "
-            "FROM jobs WHERE id = ?",
-            (offer_id,),
-        ).fetchone()
-    if row is None:
-        raise HTTPException(status_code=404, detail=f"Offre {offer_id} introuvable")
+OFFER_COLUMNS = (
+    "id, title, location, company, url, status, published_at, scraped_at, last_seen_at, user_verdict, "
+    "score, geography_zone, sector, gaps_count, uncertain_count, source, contract_type, salary, experience"
+)
+
+
+def _summary_fields(row: dict) -> dict:
     return {
-        "id": row[0], "title": row[1], "location": row[2], "description": row[3],
-        "company": row[4], "url": row[5], "status": row[6], "published_at": row[7],
-        "scraped_at": row[8], "user_verdict": row[9],
+        "id": row["id"], "title": row["title"], "location": row["location"], "company": row["company"],
+        "url": row["url"], "status": row["status"], "score": row["score"],
+        "geography_zone": row["geography_zone"], "sector": row["sector"],
+        "gaps_count": row["gaps_count"], "uncertain_count": row["uncertain_count"],
+        "published_at": row["published_at"], "published_at_sortable": _published_at_sortable(row["published_at"]),
+        "first_seen_at": _iso_utc(row["scraped_at"]), "last_seen_at": _iso_utc(row["last_seen_at"]),
+        "user_verdict": row["user_verdict"], "source": row["source"],
+        "contract_type": row["contract_type"], "salary": row["salary"], "experience": row["experience"],
     }
 
 
-def _read_json_trace(offer_id: int, prefix: str) -> dict | None:
-    path = RUNS_DIR / f"{prefix}_{offer_id}.json"
-    if not path.exists():
-        return None
-    import json
-
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
-def _read_markdown(offer_id: int) -> str | None:
-    path = RUNS_DIR / f"analysis_{offer_id}.md"
-    return path.read_text(encoding="utf-8") if path.exists() else None
-
-
-def _read_structured_analysis(offer_id: int) -> dict | None:
-    """matches/gaps/uncertain_flags, straight from generation's
-    StructuredAnalysis (session 9 follow-up) — a faithful, non-LLM
-    reformatting of ScoringResult's own fields, persisted by
-    orchestrator/run.py as structured_analysis_<id>.json. Replaces the
-    earlier markdown-reparsing approach (_parse_gaps_and_uncertain /
-    _parse_matching_summary, removed): that parsed prose whose subheading
-    wording wasn't contractual, which worked in practice but depended on an
-    LLM output format with no guarantee. This reads a field the generation
-    agent commits to directly instead.
-    """
-    return _read_json_trace(offer_id, "structured_analysis")
-
-
-def _score_and_zone_from_trace(offer_id: int) -> tuple[int | None, str | None]:
-    """score isn't stored in scoring's own trace JSON (only geography/RAG
-    steps are) — reconstructed here from the orchestrator's own decision log
-    line, which records it in plain text ("scoring terminé: score=X, zone=Y, ...").
-    A small text scrape rather than adding a new persisted field, since the
-    orchestrator trace already carries this information.
-    """
-    orch_trace = _read_json_trace(offer_id, "trace_orchestrator")
-    if not orch_trace:
-        return None, None
-    for decision in orch_trace.get("decisions", []):
-        if decision.startswith("scoring terminé:"):
-            import re
-
-            score_match = re.search(r"score=(\d+)", decision)
-            zone_match = re.search(r"zone=(\w+)", decision)
-            return (
-                int(score_match.group(1)) if score_match else None,
-                zone_match.group(1) if zone_match else None,
-            )
-    return None, None
+def _fetch_dicts(conn, sql: str, params: tuple = ()) -> list[dict]:
+    cursor = conn.execute(sql, params)
+    names = [column.name for column in cursor.description]
+    return [dict(zip(names, row)) for row in cursor.fetchall()]
 
 
 @app.get("/health", response_model=HealthResponse)
 def health(response: Response) -> HealthResponse:
     """Distinguishes "the process is up" from "the pipeline is actually
-    configured correctly" (session 7 follow-up — the previous version always
-    returned 200 {"status": "ok"} as long as the process was alive, which
-    would NOT have caught a docker-compose up with a missing/empty
-    MISTRAL_API_KEY: the container would look healthy while every /analyze
-    silently failed).
+    configured correctly" (session 7 follow-up): a container with a missing
+    MISTRAL_API_KEY used to look healthy while every /analyze failed.
 
-    Three checks, none of which make a network call (deliberately — this
-    endpoint must stay cheap to poll and must never spend a real Mistral
-    request just to answer a health check):
-      - mistral_key_present: presence/non-emptiness only, not validity. A
-        real Mistral call would be needed to confirm the key actually
-        authenticates, which is out of scope here by design.
-      - embeddings_loaded: reads the session-6 singleton state via
-        is_initialized() WITHOUT constructing it — if the lifespan startup
-        hook failed to load the model, this reports that failure instead of
-        lazily loading the model just to make the check pass. In
-        API_MODE=readonly (Render deployment follow-up), the embedding
-        model is never loaded BY DESIGN (that's the whole memory saving —
-        see module docstring), so this check is skipped entirely rather
-        than reported as a false "degraded": is_initialized() itself isn't
-        even called, since merely importing scoring.embeddings.index would
-        pull chromadb/torch into a process that's specifically trying not
-        to carry that weight.
-      - database_accessible: SQLite connection opens and answers a trivial
-        query — not a full read/write test, just reachability.
+    None of the checks makes an LLM call — this endpoint must stay cheap to
+    poll:
+      - mistral_key_present: presence only, not validity.
+      - embeddings_loaded: the session-6 singleton's state, read WITHOUT
+        constructing it; None in API_MODE=readonly, where the model is never
+        loaded by design (importing scoring.embeddings.index would pull
+        torch into a process that's specifically avoiding it).
+      - database_accessible: a connection opens and answers SELECT 1.
 
-    HTTP status: 200 when every applicable check passes, 503 (Service
-    Unavailable) if any fails. Decision: a monitoring/orchestration layer
-    (e.g. Docker's own HEALTHCHECK, Render's health check poller, or a
-    future load balancer) needs the STATUS CODE to act automatically — a
-    200 with "degraded" buried in the JSON body would be silently ignored
-    by anything that only checks for a 2xx response, which defeats the
-    point of catching this at the container level rather than at the first
-    failed /analyze.
+    200 when every applicable check passes, 503 otherwise: monitoring
+    (Docker's HEALTHCHECK, Render's poller) acts on the status code, and a
+    200 with "degraded" in the body would be ignored by anything checking
+    for a 2xx.
     """
     mistral_key_present = bool(os.environ.get("MISTRAL_API_KEY", "").strip())
 
@@ -280,6 +194,7 @@ def health(response: Response) -> HealthResponse:
             conn.execute("SELECT 1")
         database_accessible = True
     except Exception:
+        logger.exception("Base de données injoignable")
         database_accessible = False
 
     checks = HealthChecks(
@@ -287,8 +202,7 @@ def health(response: Response) -> HealthResponse:
         embeddings_loaded=embeddings_loaded,
         database_accessible=database_accessible,
     )
-    # embeddings_loaded=None (readonly mode) is deliberately excluded from
-    # the all_ok computation — it's "not applicable", not "failed".
+    # embeddings_loaded=None (readonly mode) is "not applicable", not "failed".
     required_checks = [mistral_key_present, database_accessible]
     if embeddings_loaded is not None:
         required_checks.append(embeddings_loaded)
@@ -300,110 +214,32 @@ def health(response: Response) -> HealthResponse:
 
 @app.get("/offers", response_model=list[OfferSummary])
 def list_offers() -> list[OfferSummary]:
-    """Lightweight listing for a dashboard-style view: status, score, zone,
-    title — not the full analysis or trace (see GET /offers/{id} for that).
-    """
+    """Every offer, without description or analysis (see GET /offers/{id})."""
     with connect() as conn:
-        rows = conn.execute(
-            "SELECT id, title, location, company, status, published_at, scraped_at, user_verdict, "
-            "score, geography_zone, sector, gaps_count, uncertain_count, "
-            "source, contract_type, salary, experience, last_seen_at, url "
-            "FROM jobs ORDER BY id"
-        ).fetchall()
-
-    summaries = []
-    for r in rows:
-        offer_id = r[0]
-        # SQLite first (2026-09-17): the traces are no longer versioned, so
-        # the deployed dashboard only has these columns. Traces remain a
-        # local fallback for offers scored before the migration.
-        score, zone, sector, gaps_count, uncertain_count = r[8], r[9], r[10], r[11], r[12]
-        if score is None:
-            score, zone = _score_and_zone_from_trace(offer_id)
-            structured = _read_structured_analysis(offer_id)
-            gaps_count = len(structured["gaps"]) if structured else None
-            uncertain_count = len(structured["uncertain_flags"]) if structured else None
-            sector = structured.get("sector") if structured else None
-        summaries.append(
-            OfferSummary(
-                id=offer_id, title=r[1], location=r[2], company=r[3],
-                status=r[4], score=score, geography_zone=zone,
-                gaps_count=gaps_count, uncertain_count=uncertain_count,
-                published_at=r[5], published_at_sortable=_published_at_sortable(r[5]),
-                first_seen_at=r[6], user_verdict=r[7], sector=sector,
-                source=r[13], contract_type=r[14], salary=r[15], experience=r[16],
-                last_seen_at=r[17], url=r[18],
-            )
-        )
-    return summaries
+        rows = _fetch_dicts(conn, f"SELECT {OFFER_COLUMNS} FROM jobs ORDER BY id")
+    return [OfferSummary(**_summary_fields(row)) for row in rows]
 
 
 @app.get("/offers/{offer_id}", response_model=OfferDetailResponse)
 def get_offer(offer_id: int) -> OfferDetailResponse:
-    """Full detail for one already-processed offer: markdown analysis (if
-    any), and the three traces (orchestrator/scoring/generation) as recorded
-    on disk by orchestrator/run.py. A 404 here means the offer_id itself
-    doesn't exist in SQLite — an offer that exists but hasn't been analyzed
-    yet returns 200 with null analysis/traces (status='nouveau').
-    """
-    offer = _load_offer_row(offer_id)
-    structured = _read_structured_analysis(offer_id)
+    """One offer with its description. 404 if offer_id doesn't exist."""
     with connect() as conn:
-        stored = conn.execute(
-            "SELECT score, geography_zone, sector, source, contract_type, salary, experience, "
-            "last_seen_at, gaps_count, uncertain_count FROM jobs WHERE id = ?",
-            (offer_id,),
-        ).fetchone()
-    (score, zone, stored_sector, source, contract_type, salary, experience,
-     last_seen_at, gaps_count, uncertain_count) = stored if stored else (None,) * 10
-    if score is None:
-        score, zone = _score_and_zone_from_trace(offer_id)
-    return OfferDetailResponse(
-        id=offer["id"],
-        title=offer["title"],
-        location=offer["location"],
-        company=offer["company"],
-        url=offer["url"],
-        status=offer["status"],
-        score=score,
-        geography_zone=zone,
-        published_at=offer["published_at"],
-        published_at_sortable=_published_at_sortable(offer["published_at"]),
-        first_seen_at=offer["scraped_at"],
-        user_verdict=offer["user_verdict"],
-        sector=stored_sector or (structured.get("sector") if structured else None),
-        source=source,
-        contract_type=contract_type,
-        salary=salary,
-        experience=experience,
-        last_seen_at=last_seen_at,
-        description=offer["description"],
-        gaps_count=len(structured["gaps"]) if structured else gaps_count,
-        uncertain_count=len(structured["uncertain_flags"]) if structured else uncertain_count,
-        matches=structured["matches"] if structured else [],
-        gaps=structured["gaps"] if structured else [],
-        uncertain_flags=structured["uncertain_flags"] if structured else [],
-        analysis_markdown=_read_markdown(offer_id),
-        orchestrator_trace=_read_json_trace(offer_id, "trace_orchestrator"),
-        scoring_trace=_read_json_trace(offer_id, "trace_scoring"),
-        generation_trace=_read_json_trace(offer_id, "trace_generation"),
-    )
+        rows = _fetch_dicts(conn, f"SELECT {OFFER_COLUMNS}, description FROM jobs WHERE id = %s", (offer_id,))
+    if not rows:
+        raise HTTPException(status_code=404, detail=f"Offre {offer_id} introuvable")
+    return OfferDetailResponse(**_summary_fields(rows[0]), description=rows[0]["description"])
 
 
 @app.post("/offers/{offer_id}/verdict", response_model=VerdictResponse)
 def set_offer_verdict(offer_id: int, request: VerdictRequest) -> VerdictResponse:
-    """Record (or clear) the user's own manual triage decision for an offer
-    — the dashboard's swipe UI. Pure human judgment: never read, computed,
-    or influenced by the scoring/generation pipeline, and available in both
-    API_MODE values (a plain SQLite write, no embedding model or LLM call
-    involved) — unlike POST /analyze, this isn't gated to "full" mode.
+    """Record (or clear) the user's own triage decision for an offer — the
+    dashboard's swipe UI. Pure human judgment: never read, computed, or
+    influenced by the scoring/generation pipeline. Available in both
+    API_MODE values (a plain database write, no model or LLM involved).
 
-    404 if the offer_id doesn't exist (same existence check as the other
-    offer endpoints); 422 (via Pydantic/FastAPI's own validation, not a
-    custom check here) if verdict isn't one of storage.db.USER_VERDICTS or
-    null.
+    404 if offer_id doesn't exist, 422 if verdict isn't one of
+    storage.db.USER_VERDICTS or null.
     """
-    _load_offer_row(offer_id)  # raises 404 if missing, discarding the row otherwise
     if request.verdict is not None and request.verdict not in USER_VERDICTS:
         raise HTTPException(
             status_code=422,
@@ -411,6 +247,9 @@ def set_offer_verdict(offer_id: int, request: VerdictRequest) -> VerdictResponse
         )
 
     with connect() as conn:
+        exists = conn.execute("SELECT 1 FROM jobs WHERE id = %s", (offer_id,)).fetchone()
+        if exists is None:
+            raise HTTPException(status_code=404, detail=f"Offre {offer_id} introuvable")
         set_user_verdict(conn, offer_id, request.verdict)
 
     return VerdictResponse(id=offer_id, user_verdict=request.verdict)
@@ -419,28 +258,15 @@ def set_offer_verdict(offer_id: int, request: VerdictRequest) -> VerdictResponse
 @app.post("/analyze", response_model=AnalyzeResponse)
 def analyze(request: AnalyzeRequest) -> AnalyzeResponse:
     """Run the orchestrator (scoring -> generation) on one offer already in
-    SQLite. Synchronous: this call blocks for the duration of at least two
-    real LLM calls (extraction + arbitrage in scoring, one more in
-    generation) plus local RAG lookups — in practice several seconds to
-    ~30s depending on offer size and Mistral API latency. Set an HTTP client
-    timeout of at least 60s when calling this endpoint; no background-task
-    queue is implemented in this session (see ROADMAP.md session 6 for the
-    tradeoff — kept deliberately synchronous to avoid the added complexity
-    of a job queue at this stage).
+    the database; the analysis is stored like in a batch run. Synchronous:
+    at least three real LLM calls plus local RAG lookups, several seconds to
+    ~30s — set an HTTP client timeout of at least 60s. No job queue on
+    purpose (ROADMAP.md session 6).
 
-    Only accepts an offer_id already present in the database (from a prior
-    scraper run) — scraping an arbitrary URL on the fly is left as a future
-    iteration (see ROADMAP.md).
-
-    Disabled in API_MODE=readonly (Render deployment follow-up): 503 Service
-    Unavailable rather than attempting to run and crashing on an unloaded
-    embedding model / OOM under Render's 512MB tiers. 503 chosen over 409:
-    this isn't a state conflict on the resource (an offer_id, a request body)
-    — it's a permanent characteristic of THIS deployment (scoring/generation
-    is GitHub Actions' job, see session 8; this deployment only serves
-    already-computed results), which is exactly what 503 communicates for an
-    endpoint that legitimately isn't available here, as opposed to 409's
-    "you conflicted with existing state" semantics.
+    Disabled in API_MODE=readonly: 503 rather than crashing on an unloaded
+    embedding model / OOM under Render's 512MB. 503, not 409: it isn't a
+    conflict with the resource's state, it's a permanent characteristic of
+    this deployment (scoring is GitHub Actions' job).
     """
     if API_MODE == "readonly":
         raise HTTPException(
@@ -453,19 +279,20 @@ def analyze(request: AnalyzeRequest) -> AnalyzeResponse:
             ),
         )
 
+    with connect() as conn:
+        rows = _fetch_dicts(
+            conn, "SELECT id, title, location, description, company, url FROM jobs WHERE id = %s", (request.offer_id,)
+        )
+    if not rows:
+        raise HTTPException(status_code=404, detail=f"Offre {request.offer_id} introuvable")
+
     from orchestrator.agent import process_offer
-    from orchestrator.run import write_outputs
 
-    offer = _load_offer_row(request.offer_id)
-    result = process_offer(offer)
-    write_outputs(RUNS_DIR, request.offer_id, result)
-
-    trace_summary = list(result.trace.decisions)
-
+    result = process_offer(rows[0])
     return AnalyzeResponse(
         offer_id=result.offer_id,
         status=result.status,
         analysis_markdown=result.analysis_markdown,
-        trace_summary=trace_summary,
+        trace_summary=list(result.trace.decisions),
         error=result.trace.error,
     )

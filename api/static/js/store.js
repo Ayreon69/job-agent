@@ -3,7 +3,7 @@
 // influenced by the scoring pipeline), and per-viewer conveniences.
 
 import { fetchOffers, fetchOffer, postVerdict } from "./api.js";
-import { isTriageable, parseSqlUtc, duplicateKey } from "./format.js";
+import { isTriageable, parseUtc, duplicateKey } from "./format.js";
 
 const listeners = new Set();
 const detailCache = new Map();
@@ -71,8 +71,8 @@ export async function loadOffers() {
 
   let latest = null;
   for (const o of offers) {
-    o._firstSeen = parseSqlUtc(o.first_seen_at);
-    const seen = parseSqlUtc(o.last_seen_at);
+    o._firstSeen = parseUtc(o.first_seen_at);
+    const seen = parseUtc(o.last_seen_at);
     for (const d of [o._firstSeen, seen]) if (d && (!latest || d > latest)) latest = d;
   }
   store.lastRun = latest;
@@ -97,7 +97,7 @@ export async function loadOffers() {
 // The scraper only reads the first result pages: absence means "no longer
 // found by the collection", not proof the position is filled.
 export function staleDays(o) {
-  const seen = parseSqlUtc(o.last_seen_at) || o._firstSeen;
+  const seen = parseUtc(o.last_seen_at) || o._firstSeen;
   if (!seen || !store.lastRun) return 0;
   return Math.floor((store.lastRun - seen) / 86400000);
 }

@@ -98,10 +98,10 @@ export function parsePublished(raw) {
   return null;
 }
 
-// SQLite datetime('now') strings are UTC without a zone marker.
-export function parseSqlUtc(raw) {
+// The API sends timestamps as ISO 8601 UTC ("2026-10-21T11:58:36Z").
+export function parseUtc(raw) {
   if (!raw) return null;
-  const d = new Date(raw.replace(" ", "T") + "Z");
+  const d = new Date(raw);
   return Number.isNaN(d.getTime()) ? null : d;
 }
 
@@ -144,7 +144,7 @@ export function relTime(date, now = new Date()) {
 }
 
 export function offerAgeDays(o, now = new Date()) {
-  const d = parsePublished(o.published_at) || parseSqlUtc(o.first_seen_at);
+  const d = parsePublished(o.published_at) || parseUtc(o.first_seen_at);
   return d ? Math.max(0, Math.round((startOfDay(now) - startOfDay(d)) / DAY)) : null;
 }
 

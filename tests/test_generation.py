@@ -59,7 +59,7 @@ SKILL_STOPWORDS = {
 def load_offer(offer_id: int) -> dict:
     with connect() as conn:
         row = conn.execute(
-            "SELECT id, title, location, description, company FROM jobs WHERE id = ?", (offer_id,)
+            "SELECT id, title, location, description, company FROM jobs WHERE id = %s", (offer_id,)
         ).fetchone()
     if row is None:
         raise ValueError(f"No offer with id={offer_id}")

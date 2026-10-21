@@ -81,7 +81,7 @@ function healthCard() {
   const row = (ok, label, detail) => `<li class="${ok === null ? "is-na" : ok ? "is-ok" : "is-bad"}"><i></i><span>${label}</span><small>${detail}</small></li>`;
   return `
     <ul class="health-list">
-      ${row(c.database_accessible, "Base SQLite", c.database_accessible ? "accessible" : "injoignable")}
+      ${row(c.database_accessible, "Base Postgres", c.database_accessible ? "accessible" : "injoignable")}
       ${row(c.mistral_key_present, "Clé Mistral", c.mistral_key_present ? "présente" : "absente")}
       ${row(c.embeddings_loaded, "Modèle d'embeddings", c.embeddings_loaded === null ? "non chargé — déploiement en lecture seule" : c.embeddings_loaded ? "chargé" : "échec du chargement")}
     </ul>
@@ -150,7 +150,7 @@ export function render() {
     </section>
 
     <section class="stack-list reveal" style="--d:4">
-      ${["Playwright", "SQLite", "ChromaDB", "sentence-transformers", "Mistral", "FastAPI", "Docker", "GitHub Actions", "Render"].map((t, i) => `<span style="--i:${i}">${t}</span>`).join("")}
+      ${["Playwright", "Postgres (Neon)", "ChromaDB", "sentence-transformers", "Mistral", "FastAPI", "Docker", "GitHub Actions", "Render"].map((t, i) => `<span style="--i:${i}">${t}</span>`).join("")}
     </section>
   `;
 

@@ -1,18 +1,14 @@
 """Entry point: run the orchestrator over a single offer or over every
-offer currently at status='nouveau' in SQLite.
+offer currently at status='nouveau' in the database.
 
 Usage:
     python -m orchestrator.run --offer-id 7
     python -m orchestrator.run
         (batch mode: every offer with status='nouveau')
 
-Each processed offer produces, under --output-dir (default: orchestrator/runs/):
-    analysis_<id>.md              - the markdown analysis, only on success
-    trace_orchestrator_<id>.json  - the orchestrator's own decision trace
-    trace_scoring_<id>.json       - session 3's decision trace
-    trace_generation_<id>.json    - session 4's decision trace
-    structured_analysis_<id>.json - matches/gaps/uncertain_flags, machine-readable
-                                     (session 9 follow-up — see generation/analysis.py)
+Each processed offer's analysis and traces are stored in the analyses table
+(storage/db.py) by process_offer itself, in the same transaction as its
+final status.
 """
 
 from __future__ import annotations
@@ -27,20 +23,18 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
-from orchestrator.agent import orchestrator_trace_to_json, process_offer
+from orchestrator.agent import process_offer
 from scoring.geography import check_geography_rules
 from storage.db import connect, init_db
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
-DEFAULT_OUTPUT_DIR = Path(__file__).parent / "runs"
-
 
 def load_offer(offer_id: int) -> dict:
     with connect() as conn:
         row = conn.execute(
-            "SELECT id, title, location, description, company, url FROM jobs WHERE id = ?", (offer_id,)
+            "SELECT id, title, location, description, company, url FROM jobs WHERE id = %s", (offer_id,)
         ).fetchone()
     if row is None:
         raise ValueError(f"No offer with id={offer_id}")
@@ -50,8 +44,8 @@ def load_offer(offer_id: int) -> dict:
 def load_new_offers(include_missing_scores: bool = False, limit: int | None = None, scoring_only: bool = False) -> list[dict]:
     where = "status = 'nouveau'"
     if include_missing_scores:
-        # Offers analyzed before the scoring summary was stored in SQLite
-        # (2026-09-17) have no score column value: rescore them too.
+        # Offers analyzed before the scoring summary was stored in the
+        # database (2026-09-17) have no score column value: rescore them too.
         where = "(status = 'nouveau' OR score IS NULL)"
     if scoring_only:
         # The scoring-only backfill is for offers already through the
@@ -76,25 +70,9 @@ def load_new_offers(include_missing_scores: bool = False, limit: int | None = No
     return offers[:limit] if limit is not None else offers
 
 
-def write_outputs(output_dir: Path, offer_id: int, result) -> None:
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    (output_dir / f"trace_orchestrator_{offer_id}.json").write_text(
-        orchestrator_trace_to_json(result.trace), encoding="utf-8"
-    )
-    if result.analysis_markdown:
-        (output_dir / f"analysis_{offer_id}.md").write_text(result.analysis_markdown, encoding="utf-8")
-    if result.scoring_trace_json:
-        (output_dir / f"trace_scoring_{offer_id}.json").write_text(result.scoring_trace_json, encoding="utf-8")
-    if result.generation_trace_json:
-        (output_dir / f"trace_generation_{offer_id}.json").write_text(result.generation_trace_json, encoding="utf-8")
-    if result.structured_analysis_json:
-        (output_dir / f"structured_analysis_{offer_id}.json").write_text(result.structured_analysis_json, encoding="utf-8")
-
-
 def score_only(offer: dict) -> int:
-    """Scoring step alone, summary written to SQLite; status left untouched.
-    Returns 1 on success, 0 on failure (logged, batch continues)."""
+    """Scoring step alone, summary written to the database; status left
+    untouched. Returns 1 on success, 0 on failure (logged, batch continues)."""
     from scoring.agent import score_offer
     from storage.db import set_scoring_summary
 
@@ -118,7 +96,6 @@ def score_only(offer: dict) -> int:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the orchestrator (scoring -> generation) on job offers")
     parser.add_argument("--offer-id", type=int, default=None, help="Process a single offer instead of the full batch")
-    parser.add_argument("--output-dir", type=str, default=str(DEFAULT_OUTPUT_DIR))
     parser.add_argument(
         "--delay-seconds", type=float, default=2.0,
         help="Pause between offers in batch mode, to avoid bursting the Mistral API rate limit (seen in practice: 13/30 offers failed with HTTP 429 when run back-to-back without delay)",
@@ -135,7 +112,6 @@ def main() -> None:
     args = parser.parse_args()
 
     init_db()
-    output_dir = Path(args.output_dir)
 
     offers = [load_offer(args.offer_id)] if args.offer_id is not None else load_new_offers(args.missing_scores, args.limit, args.scoring_only)
     if not offers:
@@ -154,7 +130,6 @@ def main() -> None:
             continue
         result = process_offer(offer)
         summary[result.status] = summary.get(result.status, 0) + 1
-        write_outputs(output_dir, offer["id"], result)
         logger.info("[offer %s] statut final: %s", offer["id"], result.status)
 
     print("\n=== Résumé du run ===")
@@ -163,12 +138,6 @@ def main() -> None:
     print(f"Total: {len(offers)}")
 
     if args.offer_id is None and not args.missing_scores:
-        # Machine-parseable marker consumed by the CI workflow's loop: it
-        # keeps calling this script with --limit in a fresh process (each
-        # followed by a git commit+push of jobs.db) until this hits 0,
-        # rather than one unbounded call that risks losing an entire
-        # backlog's worth of work if the job gets killed by its timeout
-        # partway through — see .github/scripts/commit_db.sh.
         with connect() as conn:
             remaining = conn.execute("SELECT COUNT(*) FROM jobs WHERE status = 'nouveau'").fetchone()[0]
         print(f"REMAINING={remaining}")

@@ -1,4 +1,4 @@
-"""Entry point: score a job offer already stored in SQLite.
+"""Entry point: score a job offer already stored in the database.
 
 Usage:
     python -m scoring.run --offer-id 7
@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 def load_offer(offer_id: int) -> dict:
     with connect() as conn:
         row = conn.execute(
-            "SELECT id, title, location, description FROM jobs WHERE id = ?", (offer_id,)
+            "SELECT id, title, location, description FROM jobs WHERE id = %s", (offer_id,)
         ).fetchone()
     if row is None:
         raise ValueError(f"No offer with id={offer_id}")
@@ -32,7 +32,7 @@ def load_offer(offer_id: int) -> dict:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Score a job offer from the SQLite store")
+    parser = argparse.ArgumentParser(description="Score a job offer from the database")
     parser.add_argument("--offer-id", type=int, required=True)
     parser.add_argument("--trace-file", type=str, default=None, help="Optional path to write the decision trace JSON")
     args = parser.parse_args()

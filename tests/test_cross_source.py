@@ -6,14 +6,14 @@ session 19); descriptions are short stand-ins — no network access."""
 from __future__ import annotations
 
 import sys
-import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from db_fixture import temp_database
 from scraper.cross_source import companies_match, find_twin, is_cross_source_twin, same_place
 from scraper.run import _store_jobs, store_jobup_jobs
-from storage.db import connect, init_db
+from storage.db import connect
 
 TEXT_A = " ".join(f"mission{i} competence{i}" for i in range(80))
 TEXT_B = " ".join(f"autre{i} texte{i}" for i in range(80))
@@ -82,7 +82,7 @@ def check(label: str, got, expected) -> int:
 
 def _insert(conn, source: str, source_id: str, title: str, company: str | None, location: str, description: str) -> None:
     conn.execute(
-        "INSERT INTO jobs (source, source_id, url, title, company, location, description) VALUES (?, ?, ?, ?, ?, ?, ?)",
+        "INSERT INTO jobs (source, source_id, url, title, company, location, description) VALUES (%s, %s, %s, %s, %s, %s, %s)",
         (source, source_id, f"https://example.test/{source}/{source_id}", title, company, location, description),
     )
 
@@ -97,10 +97,8 @@ def _job(source: str, source_id: str, title: str, company: str | None, location:
 
 def store_scenarios() -> int:
     failures = 0
-    with tempfile.TemporaryDirectory() as tmp:
-        db_path = Path(tmp) / "jobs.db"
-        init_db(db_path)
-        with connect(db_path) as conn:
+    with temp_database() as dsn:
+        with connect(dsn) as conn:
             _insert(conn, "jobup", "uuid-talan", "Lead Data Analyst", "Talan", "Genève", TEXT_B)
             _insert(conn, "linkedin", "111", "Senior AI Engineer", "Nexthink", "Lausanne, Vaud, Switzerland", TEXT_A)
 

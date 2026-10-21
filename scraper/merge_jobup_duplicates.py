@@ -3,7 +3,7 @@ source_ids before store_jobup_jobs existed (ROADMAP.md session 18).
 
 Groups stored jobup rows with the same rule the scraper now applies at
 storage time (scraper/jobup.py's is_same_offer), keeps one row per group
-and deletes the others — rows and orchestrator/runs/ files, exactly like
+and deletes the others (with their analyses), exactly like
 storage/cleanup.py. The row kept is, in order of preference:
   1. the one carrying a user_verdict (a human judgment is never dropped;
      a group where SEVERAL rows carry one is left untouched and reported);
@@ -21,21 +21,21 @@ from __future__ import annotations
 
 import argparse
 import logging
-import sqlite3
 import sys
 from pathlib import Path
+
+import psycopg
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from scraper.jobup import BASE_URL, _fold, is_same_offer, normalize_title
-from storage.cleanup import delete_offer_files
 from storage.db import connect, init_db
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
 
-def find_duplicate_groups(conn: sqlite3.Connection) -> list[list[dict]]:
+def find_duplicate_groups(conn: psycopg.Connection) -> list[list[dict]]:
     """Groups of 2+ stored jobup rows that is_same_offer links together
     (transitively: A~B and B~C put A, B, C in one group)."""
     rows = [
@@ -91,7 +91,7 @@ def pick_keeper(group: list[dict]) -> dict | None:
     (no automatic choice between two human judgments)."""
     if sum(row["user_verdict"] is not None for row in group) > 1:
         return None
-    return max(group, key=lambda row: (row["user_verdict"] is not None, row.get("live", False), row["last_seen"] or ""))
+    return max(group, key=lambda row: (row["user_verdict"] is not None, row.get("live", False), row["last_seen"]))
 
 
 def main() -> None:
@@ -131,12 +131,9 @@ def main() -> None:
             logger.info("--dry-run : aucune suppression effectuée.")
             return
 
-        total_files = 0
-        for job_id in to_delete:
-            total_files += delete_offer_files(job_id)
-            conn.execute("DELETE FROM jobs WHERE id = ?", (job_id,))
+        conn.execute("DELETE FROM jobs WHERE id = ANY(%s)", (to_delete,))
 
-    logger.info("Supprimé : %d offre(s), %d fichier(s) associé(s) dans orchestrator/runs/.", len(to_delete), total_files)
+    logger.info("Supprimé : %d offre(s) et leurs analyses.", len(to_delete))
 
 
 if __name__ == "__main__":
