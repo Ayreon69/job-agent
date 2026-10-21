@@ -350,6 +350,7 @@ mark { background: color-mix(in srgb, var(--accent) 35%, transparent); color: in
 .tool-btn--search { padding: 0 0.5rem 0 0.7rem; min-width: 200px; justify-content: flex-start; }
 .tool-btn--search kbd { margin-left: auto; }
 .tool-btn__label { font-size: 0.86rem; }
+.tool-btn--owner[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
 
 .icon--sun { display: none; }
 :root[data-theme="light"] .icon--sun { display: block; }
@@ -1540,6 +1541,11 @@ select option { background: var(--surface); color: var(--text); }
 .palette__empty { padding: 1.5rem; text-align: center; color: var(--dim); }
 
 .help__box { width: min(820px, 100%); }
+.owner__box { width: min(440px, 100%); }
+.owner__form { display: grid; gap: 0.9rem; padding: 1.2rem; }
+.owner__form p { margin: 0; }
+.owner__field { border: 1px solid var(--line); border-radius: 12px; height: 48px; }
+.owner__error { color: var(--no); font-size: 0.86rem; }
 .help__box header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.2rem; border-bottom: 1px solid var(--line-soft); }
 .help__box h2 { font-family: var(--font-display); font-weight: 600; margin: 0; font-size: 1.3rem; }
 .help__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding: 1.2rem; }

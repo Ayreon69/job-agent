@@ -3,6 +3,7 @@
 // from GET /offers and GET /offers/{id}; the only write is user_verdict.
 
 import { store, loadOffers, subscribe, pending, prefs } from "./store.js";
+import { fetchOwner, setOwnerToken } from "./api.js";
 import { esc, icon, fold, searchText, companyOf, locationOf, fmtDate, relTime, titleOf } from "./format.js";
 import { $, $$, showError, reducedMotion, scorePill, newDot, decide } from "./ui.js";
 import { initDrawer, openDrawer, closeDrawer, drawerOpenId, setDrawerContext, step, refreshDrawerVerdict } from "./drawer.js";
@@ -179,6 +180,7 @@ const COMMANDS = [
   { label: "Nouveautés depuis ma dernière visite", hint: "", icon: "i-clock", run: () => ctx.go("offres", { onlyNew: "1", sort: "score" }) },
   { label: "Changer de thème (clair / sombre)", hint: "", icon: "i-moon", run: toggleTheme },
   { label: "Raccourcis clavier", hint: "?", icon: "i-keyboard", run: () => openHelp() },
+  { label: "Mode propriétaire (déverrouiller / verrouiller)", hint: "", icon: "i-lock", run: () => ownerAction() },
 ];
 
 let palItems = [];
@@ -296,6 +298,53 @@ function closeHelp() {
 }
 
 // ---------------------------------------------------------------------
+// Owner mode: the token unlocks verdicts and detailed analyses (api/main.py)
+// ---------------------------------------------------------------------
+
+function updateOwnerButton() {
+  const b = $("#toggle-owner");
+  b.setAttribute("aria-pressed", String(store.owner));
+  b.title = store.owner ? "Mode propriétaire actif — cliquer pour verrouiller" : "Déverrouiller le mode propriétaire";
+}
+
+function ownerAction() {
+  if (!store.owner) return openOwner();
+  if (confirm("Verrouiller le mode propriétaire sur ce navigateur ?")) {
+    setOwnerToken(null);
+    location.reload();
+  }
+}
+
+function openOwner() {
+  const o = $("#owner");
+  $("#owner-error").hidden = true;
+  o.hidden = false;
+  void o.offsetWidth;
+  o.classList.add("is-open");
+  $("#owner-token").focus();
+}
+
+function closeOwner() {
+  const o = $("#owner");
+  o.classList.remove("is-open");
+  setTimeout(() => (o.hidden = true), 150);
+}
+
+// Checked against the API before being kept, then a reload: every cached
+// offer detail was fetched without the token.
+async function submitOwner(e) {
+  e.preventDefault();
+  const token = $("#owner-token").value.trim();
+  if (!token) return;
+  if (await fetchOwner(token)) {
+    setOwnerToken(token);
+    location.reload();
+  } else {
+    $("#owner-error").hidden = false;
+  }
+}
+
+// ---------------------------------------------------------------------
 // Keyboard
 // ---------------------------------------------------------------------
 
@@ -310,6 +359,10 @@ function onKeydown(e) {
   if (!$("#palette").hidden) return; // the palette input handles its own keys
   if (!$("#help").hidden) {
     if (e.key === "Escape" || e.key === "?") closeHelp();
+    return;
+  }
+  if (!$("#owner").hidden) {
+    if (e.key === "Escape") closeOwner();
     return;
   }
   const typing = e.target.closest?.("input, textarea, select, [contenteditable]");
@@ -374,6 +427,11 @@ async function boot() {
   $("#help").addEventListener("click", (e) => {
     if (e.target.id === "help" || e.target.closest("[data-close-help]")) closeHelp();
   });
+  $("#toggle-owner").onclick = ownerAction;
+  $("#owner").addEventListener("click", (e) => {
+    if (e.target.id === "owner" || e.target.closest("[data-close-owner]")) closeOwner();
+  });
+  $("#owner-form").addEventListener("submit", submitOwner);
   document.addEventListener("keydown", onKeydown);
   window.addEventListener("hashchange", onRoute);
   window.addEventListener("resize", moveInk);
@@ -401,6 +459,7 @@ async function boot() {
   $$(".boot-skeleton").forEach((n) => n.remove());
   $$(".is-booting").forEach((n) => n.classList.remove("is-booting"));
   document.body.classList.add("is-loaded");
+  updateOwnerButton();
   dateline();
   updateBadge();
   const { route, params } = parseHash();

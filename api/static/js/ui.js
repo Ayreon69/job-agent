@@ -46,7 +46,11 @@ export async function decide(offer, verdict, { quiet = false } = {}) {
     toast(msg, { action: "Annuler", onAction: () => setVerdict(offer.id, previous ?? null).catch(() => {}) });
     return true;
   } catch (err) {
-    showError(`Impossible d'enregistrer l'avis (${err.message}).`);
+    showError(
+      err.status === 401
+        ? "Lecture seule : déverrouille le mode propriétaire (cadenas en haut à droite) pour trier les offres."
+        : `Impossible d'enregistrer l'avis (${err.message}).`,
+    );
     return false;
   }
 }

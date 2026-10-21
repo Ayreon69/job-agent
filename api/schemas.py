@@ -64,9 +64,9 @@ class OfferDetailResponse(BaseModel):
     published_at: str | None = Field(default=None, description="Publication date as scraped from the source offer (jobs.published_at), format varies by source and is not normalized")
     published_at_sortable: str | None = Field(default=None, description="published_at parsed into ISO 8601 (YYYY-MM-DD) so the dashboard can sort chronologically instead of lexicographically across sources' different date formats; null if published_at is missing or in an unrecognized format")
     first_seen_at: str | None = Field(default=None, description="When this offer was first inserted into the database (jobs.scraped_at, ISO 8601 UTC)")
-    matches: list[MatchItem] = Field(default_factory=list, description="Matched skills with grounding, straight from ScoringResult.matches via generation's StructuredAnalysis (session 9 follow-up) — not re-parsed from the markdown")
-    gaps: list[GapItem] = Field(default_factory=list, description="Confirmed gaps with a short note, straight from ScoringResult.gaps")
-    uncertain_flags: list[str] = Field(default_factory=list, description="Requirement labels with no reliable RAG match, straight from ScoringResult.uncertain_flags")
+    matches: list[MatchItem] = Field(default_factory=list, description="Owner only. Matched skills with grounding, straight from ScoringResult.matches via generation's StructuredAnalysis (session 9 follow-up) — not re-parsed from the markdown")
+    gaps: list[GapItem] = Field(default_factory=list, description="Owner only. Confirmed gaps with a short note, straight from ScoringResult.gaps")
+    uncertain_flags: list[str] = Field(default_factory=list, description="Owner only. Requirement labels with no reliable RAG match, straight from ScoringResult.uncertain_flags")
     user_verdict: str | None = Field(default=None, description="Manual triage decision from the dashboard's swipe UI: 'interessante' | 'peut_etre' | 'pas_interessante', or null if not yet triaged")
     sector: str | None = Field(default=None, description="Business sector of the offer/company, extracted by the LLM alongside the requirements, null if not yet analyzed or undeterminable")
     source: str | None = Field(default=None, description="Scraping source ('hellowork' | 'jobup' | 'linkedin')")
@@ -77,10 +77,10 @@ class OfferDetailResponse(BaseModel):
     description: str | None = Field(default=None, description="Offer text as scraped from the source's detail page (public content, unlike the analysis)")
     gaps_count: int | None = Field(default=None, description="Number of confirmed gaps — public, unlike the gaps list itself")
     uncertain_count: int | None = Field(default=None, description="Number of uncertain flags — public")
-    analysis_markdown: str | None = Field(default=None, description="Null if the offer hasn't been analyzed, or was analyzed before analyses were stored in the database")
-    orchestrator_trace: dict | None = Field(default=None, description="Orchestrator's own decision trace (session 5)")
-    scoring_trace: dict | None = Field(default=None, description="Scoring agent's RAG decision trace (session 3)")
-    generation_trace: dict | None = Field(default=None, description="Generation agent's decision trace (session 4)")
+    analysis_markdown: str | None = Field(default=None, description="Owner only. Null if the offer hasn't been analyzed, or was analyzed before analyses were stored in the database")
+    orchestrator_trace: dict | None = Field(default=None, description="Owner only. Orchestrator's own decision trace (session 5)")
+    scoring_trace: dict | None = Field(default=None, description="Owner only. Scoring agent's RAG decision trace (session 3)")
+    generation_trace: dict | None = Field(default=None, description="Owner only. Generation agent's decision trace (session 4)")
 
 
 class AnalyzeRequest(BaseModel):
@@ -103,3 +103,6 @@ class VerdictResponse(BaseModel):
     id: int
     user_verdict: str | None
 
+
+class OwnerResponse(BaseModel):
+    owner: bool = Field(description="The request carries the owner token (Authorization: Bearer <OWNER_TOKEN>)")

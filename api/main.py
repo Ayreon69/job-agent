@@ -7,8 +7,8 @@ belongs in orchestrator/agent.py, not here.
 
 Run locally:
     uvicorn api.main:app --reload
-    (from the job-agent/ directory, with .venv activated; DATABASE_URL and
-    MISTRAL_API_KEY come from .env, loaded by storage.db)
+    (from the job-agent/ directory, with .venv activated; DATABASE_URL,
+    OWNER_TOKEN and MISTRAL_API_KEY come from .env, loaded by storage.db)
 
 API_MODE: "full" (default — local dev, docker-compose) or "readonly" (the
 deployed dashboard). Render's free tier caps at 512MB RAM; the "full"
@@ -18,18 +18,27 @@ Actions' job — and never imports that stack: torch's C extension is loaded
 the moment its module is imported, before anything is instantiated, so the
 orchestrator import is deferred to inside /analyze rather than done at the
 top of this file.
+
+Owner access (session 20): the database is now shared and persistent, so
+writes and personal content need a gate. OWNER_TOKEN is a secret the owner
+pastes once into the dashboard, which then sends it as
+"Authorization: Bearer <token>". With it: record verdicts, run /analyze,
+and see an offer's analysis (matches, gaps, written analysis, traces).
+Without it: offers, scores and counts — what the public demo always showed.
+No OWNER_TOKEN configured on the server means no owner at all.
 """
 
 from __future__ import annotations
 
 import logging
 import os
+import secrets
 import time
 from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Response
+from fastapi import Depends, FastAPI, Header, HTTPException, Response
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -40,6 +49,7 @@ from api.schemas import (
     HealthResponse,
     OfferDetailResponse,
     OfferSummary,
+    OwnerResponse,
     VerdictRequest,
     VerdictResponse,
 )
@@ -112,6 +122,40 @@ async def revalidate_static(request, call_next):
 @app.get("/", include_in_schema=False)
 def dashboard() -> FileResponse:
     return FileResponse(STATIC_DIR / "index.html")
+
+
+# ---------------------------------------------------------------------
+# Owner access
+# ---------------------------------------------------------------------
+
+def is_owner(authorization: str | None = Header(default=None)) -> bool:
+    """True when the request carries "Bearer <OWNER_TOKEN>". Read from the
+    environment on every call (not at import) so a test or a redeploy with a
+    new token never sees a stale value. compare_digest: the comparison takes
+    the same time wherever the first wrong character is, so response timing
+    can't be used to guess the token one character at a time."""
+    expected = os.environ.get("OWNER_TOKEN", "").strip()
+    if not expected or not authorization:
+        return False
+    scheme, _, token = authorization.partition(" ")
+    if scheme.lower() != "bearer":
+        return False
+    return secrets.compare_digest(token.strip().encode(), expected.encode())
+
+
+def require_owner(owner: bool = Depends(is_owner)) -> None:
+    if not owner:
+        raise HTTPException(
+            status_code=401,
+            detail="Réservé au propriétaire : jeton absent ou invalide.",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+
+
+@app.get("/owner", response_model=OwnerResponse)
+def owner_status(owner: bool = Depends(is_owner)) -> OwnerResponse:
+    """Lets the dashboard check a pasted token before storing it."""
+    return OwnerResponse(owner=owner)
 
 
 # ---------------------------------------------------------------------
@@ -221,24 +265,45 @@ def list_offers() -> list[OfferSummary]:
 
 
 @app.get("/offers/{offer_id}", response_model=OfferDetailResponse)
-def get_offer(offer_id: int) -> OfferDetailResponse:
-    """One offer with its description. 404 if offer_id doesn't exist."""
+def get_offer(offer_id: int, response: Response, owner: bool = Depends(is_owner)) -> OfferDetailResponse:
+    """One offer with its description. For the owner, also its analysis as
+    stored by the last pipeline run (matches, gaps, uncertain flags, written
+    analysis, the three traces) — null/empty if it hasn't been analyzed, or
+    was analyzed before analyses were stored in the database (session 20).
+    404 if offer_id doesn't exist.
+    """
     with connect() as conn:
         rows = _fetch_dicts(conn, f"SELECT {OFFER_COLUMNS}, description FROM jobs WHERE id = %s", (offer_id,))
-    if not rows:
-        raise HTTPException(status_code=404, detail=f"Offre {offer_id} introuvable")
-    return OfferDetailResponse(**_summary_fields(rows[0]), description=rows[0]["description"])
+        if not rows:
+            raise HTTPException(status_code=404, detail=f"Offre {offer_id} introuvable")
+        analysis = None
+        if owner:
+            found = _fetch_dicts(
+                conn,
+                "SELECT matches, gaps, uncertain_flags, analysis_markdown, orchestrator_trace, "
+                "scoring_trace, generation_trace FROM analyses WHERE job_id = %s",
+                (offer_id,),
+            )
+            analysis = found[0] if found else None
+
+    detail = {**_summary_fields(rows[0]), "description": rows[0]["description"]}
+    if analysis:
+        detail.update(analysis)
+    if owner:
+        # Personal content: never kept by a shared cache.
+        response.headers["Cache-Control"] = "private, no-store"
+    return OfferDetailResponse(**detail)
 
 
-@app.post("/offers/{offer_id}/verdict", response_model=VerdictResponse)
+@app.post("/offers/{offer_id}/verdict", response_model=VerdictResponse, dependencies=[Depends(require_owner)])
 def set_offer_verdict(offer_id: int, request: VerdictRequest) -> VerdictResponse:
-    """Record (or clear) the user's own triage decision for an offer — the
+    """Record (or clear) the owner's own triage decision for an offer — the
     dashboard's swipe UI. Pure human judgment: never read, computed, or
     influenced by the scoring/generation pipeline. Available in both
     API_MODE values (a plain database write, no model or LLM involved).
 
-    404 if offer_id doesn't exist, 422 if verdict isn't one of
-    storage.db.USER_VERDICTS or null.
+    401 without the owner token, 404 if offer_id doesn't exist, 422 if
+    verdict isn't one of storage.db.USER_VERDICTS or null.
     """
     if request.verdict is not None and request.verdict not in USER_VERDICTS:
         raise HTTPException(
@@ -255,7 +320,7 @@ def set_offer_verdict(offer_id: int, request: VerdictRequest) -> VerdictResponse
     return VerdictResponse(id=offer_id, user_verdict=request.verdict)
 
 
-@app.post("/analyze", response_model=AnalyzeResponse)
+@app.post("/analyze", response_model=AnalyzeResponse, dependencies=[Depends(require_owner)])
 def analyze(request: AnalyzeRequest) -> AnalyzeResponse:
     """Run the orchestrator (scoring -> generation) on one offer already in
     the database; the analysis is stored like in a batch run. Synchronous:

@@ -137,8 +137,11 @@ function analysisBlock(o, d) {
     </div>`;
 
   if (!hasLists) {
+    const why = store.owner
+      ? "Pas d'analyse détaillée conservée pour cette offre : elle a été traitée avant que les analyses soient enregistrées en base."
+      : "Le détail de l'analyse (points forts, écarts, passages du profil utilisés) est réservé au propriétaire. Seuls les compteurs sont publics.";
     return `${counters}
-      <p class="note">${icon("i-lock")}<span>Le détail de l'analyse (points forts, écarts, passages du profil utilisés) reste privé : il est produit par le pipeline mais n'est pas publié. Seuls les compteurs le sont.</span></p>`;
+      <p class="note">${icon("i-lock")}<span>${why}</span></p>`;
   }
   const list = (items, render) => (items.length ? `<ul>${items.map(render).join("")}</ul>` : '<p class="muted">Aucun.</p>');
   return `${counters}

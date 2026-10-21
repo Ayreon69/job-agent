@@ -89,6 +89,9 @@
         <button type="button" class="tool-btn" id="open-help" aria-label="Raccourcis clavier (?)">
           <svg class="icon"><use href="#i-keyboard"/></svg>
         </button>
+        <button type="button" class="tool-btn tool-btn--owner" id="toggle-owner" aria-pressed="false" aria-label="Mode propriétaire">
+          <svg class="icon"><use href="#i-lock"/></svg>
+        </button>
       </div>
     </div>
     <div class="dateline" id="dateline" aria-live="polite"></div>
@@ -161,6 +164,22 @@
           </dl>
         </section>
       </div>
+    </div>
+  </div>
+
+  <!-- Owner unlock: the token is checked by GET /owner before being kept -->
+  <div class="help owner" id="owner" role="dialog" aria-modal="true" aria-labelledby="owner-title" hidden>
+    <div class="help__box owner__box">
+      <header><h2 id="owner-title">Mode propriétaire</h2><button type="button" class="icon-btn" data-close-owner aria-label="Fermer"><svg class="icon"><use href="#i-x"/></svg></button></header>
+      <form class="owner__form" id="owner-form">
+        <p class="muted small">Le jeton (OWNER_TOKEN) permet de trier les offres et d'afficher les analyses détaillées. Il reste dans ce navigateur.</p>
+        <label class="palette__field owner__field">
+          <svg class="icon"><use href="#i-lock"/></svg>
+          <input id="owner-token" type="password" autocomplete="current-password" spellcheck="false" placeholder="Jeton propriétaire" required>
+        </label>
+        <p class="owner__error" id="owner-error" role="alert" hidden>Jeton refusé par l'API.</p>
+        <button type="submit" class="btn btn--primary">Déverrouiller</button>
+      </form>
     </div>
   </div>
 

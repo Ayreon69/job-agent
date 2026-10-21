@@ -2,7 +2,7 @@
 // back (user_verdict — a pure human triage decision, never read or
 // influenced by the scoring pipeline), and per-viewer conveniences.
 
-import { fetchOffers, fetchOffer, postVerdict } from "./api.js";
+import { fetchOffers, fetchOffer, fetchOwner, ownerToken, postVerdict } from "./api.js";
 import { isTriageable, parseUtc, duplicateKey } from "./format.js";
 
 const listeners = new Set();
@@ -14,6 +14,7 @@ export const store = {
   loaded: false,
   previousVisit: null, // Date — offers first seen after it are "new"
   lastRun: null, // Date — most recent scraping activity seen in the data
+  owner: false, // the stored owner token was accepted by the API
 };
 
 export function subscribe(fn) {
@@ -64,7 +65,8 @@ function resolvePreviousVisit() {
 }
 
 export async function loadOffers() {
-  const offers = await fetchOffers();
+  const [offers, owner] = await Promise.all([fetchOffers(), ownerToken() ? fetchOwner() : false]);
+  store.owner = owner;
   store.offers = offers;
   store.byId = new Map(offers.map((o) => [o.id, o]));
   store.loaded = true;
