@@ -14,15 +14,11 @@ venv/
 !.env.example
 
 # Data / DB
-# storage/jobs.db IS versioned (see .github/workflows/scrape-and-score.yml,
-# session 8): a GitHub Actions run starts from a clean checkout each time, so
-# the SQLite DB is committed back by the workflow itself to persist which
-# offers are already known/scored across runs. Other *.db/*.sqlite3 files
-# (local experiments, test DBs) stay ignored.
+# The store is Postgres (Neon, DATABASE_URL) since session 20. storage/jobs.db
+# was the SQLite store the CI bot committed until then: it stays in the git
+# history, no longer tracked.
 *.sqlite3
 *.db
-storage/*.db
-!storage/jobs.db
 
 # ChromaDB
 chroma/
@@ -39,7 +35,7 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Analyses générées (personnelles) : restent sur la machine qui les produit
+# Anciennes analyses en fichiers (avant la session 20, elles sont en base)
 orchestrator/runs/
 
 # Profil personnel : jamais versionné (injecté en CI depuis un secret)

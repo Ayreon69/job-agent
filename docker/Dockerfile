@@ -71,13 +71,12 @@ RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTr
 COPY . /app
 RUN chmod +x /app/docker/entrypoint.sh
 
-# storage/ (SQLite) and scoring/embeddings/chroma/ (the ChromaDB index) are
-# meant to be Docker volumes (see docker-compose.yml) — not baked into the
-# image, so offer/analysis data survives a container restart or rebuild. A
-# fresh volume means an empty scoring/embeddings/chroma/, which would make
-# every offer fail with 'echec' at scoring time (search_profile() raises on
-# a missing collection) — the entrypoint builds the index once if it's not
-# there yet, see docker/entrypoint.sh.
+# Offers and analyses live in Postgres (DATABASE_URL), outside the container.
+# scoring/embeddings/chroma/ (the ChromaDB index) is a Docker volume (see
+# docker-compose.yml), not baked into the image. A fresh volume means an
+# empty index, which would make every offer fail with 'echec' at scoring time
+# (search_profile() raises on a missing collection) — the entrypoint builds
+# the index once if it's not there yet, see docker/entrypoint.sh.
 
 # Render deployment follow-up: Render sets $PORT at runtime (default 10000,
 # see ROADMAP.md) and requires the container to bind that exact port on

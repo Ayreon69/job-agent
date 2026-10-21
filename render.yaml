@@ -1,4 +1,5 @@
-# Render Blueprint — deploys the job-agent API/dashboard in read-only mode.
+# Render Blueprint — deploys the job-agent API/dashboard in read-only mode,
+# reading the Postgres database (Neon) the GitHub Actions batch writes to.
 #
 # Session 10 (Render deployment): the "full" mode (scoring/generation via
 # POST /analyze, session 6) needs ~750MB-900MB RAM at rest once the
@@ -31,13 +32,20 @@ services:
       # readonly mode (embeddings_loaded is excluded from the pass/fail
       # computation there, see api/main.py), no endpoint changes needed.
     autoDeployTrigger: commit
-      # Redeploys on every push to the connected branch — including the
-      # GitHub Actions bot's own commits (session 8: storage/jobs.db +
-      # orchestrator/runs/ pushed back after each scrape/score run), so a
-      # fresh scrape shows up on the live dashboard without any manual step.
+      # Redeploys on code pushes. Data no longer needs a deploy (session 20):
+      # the dashboard reads Neon live, where each offer lands as soon as the
+      # batch has processed it.
     envVars:
       - key: API_MODE
         value: readonly
+      - key: DATABASE_URL
+        sync: false
+        # Neon connection string, entered in the Render dashboard — never
+        # committed (same rule as MISTRAL_API_KEY below).
+      - key: OWNER_TOKEN
+        sync: false
+        # Owner secret (verdicts, analyses — see api/main.py). Unset means
+        # nobody can write from this deployment.
       - key: MISTRAL_API_KEY
         sync: false
         # sync: false means Render prompts for this value in the dashboard

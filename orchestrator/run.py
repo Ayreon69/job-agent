@@ -5,6 +5,8 @@ Usage:
     python -m orchestrator.run --offer-id 7
     python -m orchestrator.run
         (batch mode: every offer with status='nouveau')
+    python -m orchestrator.run --max-minutes 45
+        (batch mode, no new offer started once 45 minutes have passed)
 
 Each processed offer's analysis and traces are stored in the analyses table
 (storage/db.py) by process_offer itself, in the same transaction as its
@@ -106,12 +108,17 @@ def main() -> None:
     )
     parser.add_argument("--limit", type=int, default=None, help="Process at most N offers in batch mode")
     parser.add_argument(
+        "--max-minutes", type=float, default=None,
+        help="Batch mode: start no new offer once this many minutes have passed (the queue resumes on the next run)",
+    )
+    parser.add_argument(
         "--scoring-only", action="store_true",
         help="Score and store the summary only, without generating an analysis (cheap backfill of already-analyzed offers)",
     )
     args = parser.parse_args()
 
     init_db()
+    started = time.monotonic()
 
     offers = [load_offer(args.offer_id)] if args.offer_id is not None else load_new_offers(args.missing_scores, args.limit, args.scoring_only)
     if not offers:
@@ -121,10 +128,17 @@ def main() -> None:
     logger.info("Traitement de %d offre(s)...", len(offers))
 
     summary = {"analyse": 0, "a_valider_geographie": 0, "echec": 0}
+    processed = 0
     for i, offer in enumerate(offers):
+        # Checked before each offer, not each batch: every offer is stored
+        # as soon as it's processed, so stopping here loses nothing.
+        if args.max_minutes is not None and time.monotonic() - started >= args.max_minutes * 60:
+            logger.info("Budget de %.0f min atteint : %d offre(s) laissée(s) pour le prochain run.", args.max_minutes, len(offers) - i)
+            break
         if i > 0 and args.delay_seconds > 0:
             time.sleep(args.delay_seconds)
         logger.info("=== Offre %s: %s ===", offer["id"], offer["title"])
+        processed += 1
         if args.scoring_only:
             summary["scored"] = summary.get("scored", 0) + score_only(offer)
             continue
@@ -135,7 +149,7 @@ def main() -> None:
     print("\n=== Résumé du run ===")
     for status, count in summary.items():
         print(f"  {status}: {count}")
-    print(f"Total: {len(offers)}")
+    print(f"Total: {processed}/{len(offers)}")
 
     if args.offer_id is None and not args.missing_scores:
         with connect() as conn:
